@@ -1,0 +1,21 @@
+lodspeakr - Simple Publishing Kit for Linked Open Data
+author: Alvaro Graves (alvaro@graves.cl)
+version: 20120223
+
+Simplest Installation
+---------------------
+
+Just run
+
+            bash < <(curl -s http://lodspeakr.org/install)
+
+Alternative methods of installation available at
+
+   https://github.com/alangrafu/lodspeakr/wiki/Installation
+
+            
+That's it. You should be able to serve your data in RDF/XML, Turtle, Ntriples, JSONRDF and RDFa.
+
+Documentation available at
+
+    https://github.com/alangrafu/lodspeakr/wiki
