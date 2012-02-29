@@ -3,7 +3,7 @@
 # Author: Alvaro Graves (alvaro@graves.cl)
 # Modified by: Tim Lebo (lebot@rpi.edu)
 
-lodspeakr_repository="git://github.com/alangrafu/lodspeakr.git"
+lodspeakr_repository="git@github.com:timrdf/prov-lodspeakr.git"
 home=`basename $lodspeakr_repository | sed 's/.git//'`
 
 source ~/.bashrc
