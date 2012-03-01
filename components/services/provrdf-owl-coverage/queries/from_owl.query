@@ -1,0 +1,29 @@
+#{%for h in base.header %} 
+#PREFIX {{h.prefix}}: <{{h.ns}}> 
+#{%endfor%} 
+#
+#SELECT DISTINCT ?resource 
+#WHERE { 
+#   GRAPH {%if base.args.arg0 %}<{{lodspk.args.arg0}}>{%else%}?g{%endif%} { 
+#      [] a ?resource . 
+#   } 
+#}
+
+prefix dcterms: <http://purl.org/dc/terms/>
+
+select distinct ?construct ?yes
+where {
+   #graph <http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Feb-29/meta> {
+   #}
+   graph <http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Feb-29/owl> {
+      {?construct a owl:Class}          union 
+      {?construct a owl:ObjectProperty} union 
+      {?construct a owl:DatatypeProperty}
+      filter(regex(str(?construct),'http://www.w3.org/ns/prov.*'))
+   }
+   optional {
+      graph <http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Feb-29/provrdf> {
+         ?yes dcterms:subject ?construct
+      }
+   }
+}
