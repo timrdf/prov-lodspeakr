@@ -21,3 +21,4 @@ if [ ! -e "$home" ]; then
 else
    echo "There is already an existing directory called '$home'. Installation cancelled. Remove it first and try again."
 fi
+
