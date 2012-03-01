@@ -1,0 +1,18 @@
+prefix pmlp:    <http://inference-web.org/2.0/pml-provenance.owl#>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix prov:    <http://www.w3.org/ns/prov#>
+prefix void:    <http://rdfs.org/ns/void#>
+
+      select ?meta (MAX(?m) AS ?modified) # This gives old-and-do-not-care/meta AND 2012-Mar-01/meta
+      where {                             # but I only want 2012-Mar-01/meta b/c it has the greatest ?m
+         graph ?meta {
+            # This graph knows when stuff was retrieved. From here, want to find the latest retrieval.
+            [] a pmlp:SourceUsage;
+               pmlp:hasSource       <https://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl>;
+               pmlp:hasUsageDateTime ?m
+            .
+            [] void:subset ?meta, ?mappings, ?owl .
+            ?mappings prov:wasDerivedFrom <http://www.w3.org/2011/prov/wiki/ProvRDF> .
+            ?owl      prov:wasDerivedFrom <https://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl> .
+         }
+      } group by ?meta order by desc(?modified)
