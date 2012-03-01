@@ -8,7 +8,7 @@
    </head> 
    <body> 
       <h1>Coverage as of {% for row in models.modified %}{%if forloop.first%}{{row.modified.value}}{%endif%}{% endfor %}</h1> 
-      <p>For questions, contact <a rel="prov:attributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has provenance embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
+      <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has provenance embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
 
       <p>The following table lists the classes and properties mentioned in ProvenanceOntology.owl. The first column indicates whether or not the class/property is mentioned in the ProvRDF mappings page.</p>
       <table> 
@@ -38,5 +38,6 @@
             </tr> 
          {% endfor %} 
       </table> 
+      <p>Powered by <a rel="prov:wasAttributedTo" href="https://github.com/timrdf/prov-lodspeakr/tree/master/components/services/provrdf-owl-coverage">prov-lodspeakr</a></p>
    </body> 
 </html>
