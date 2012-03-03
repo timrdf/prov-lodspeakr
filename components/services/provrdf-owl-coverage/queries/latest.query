@@ -3,17 +3,17 @@ prefix dcterms: <http://purl.org/dc/terms/>
 prefix prov:    <http://www.w3.org/ns/prov#>
 prefix void:    <http://rdfs.org/ns/void#>
 
-      select (MAX(?m) AS ?modified) ?provdm ?provrdf ?provo
+      select ?modified ?meta ?provdm ?provrdf ?provo 
       where {
          graph ?meta { # This graph knows when stuff was retrieved.
                        # Using that, we want to find the latest retrieval.
             [] a pmlp:SourceUsage;
                pmlp:hasSource       <https://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl>;
-               pmlp:hasUsageDateTime ?m
+               pmlp:hasUsageDateTime ?modified
             .
             [] void:subset ?provdm, ?provrdf, ?provo .
             ?provdm  prov:wasDerivedFrom <http://www.w3.org/TR/2012/WD-prov-dm-20120202/> .
             ?provrdf prov:wasDerivedFrom <http://www.w3.org/2011/prov/wiki/ProvRDF> .
-            ?provo   prov:wasDerivedFrom <http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl> .
+            ?provo   prov:wasDerivedFrom <https://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl> .
          }
       } group by ?meta ?provdm ?provrdf ?provo order by desc(?modified) limit 1
