@@ -1,0 +1,21 @@
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix example: <http://example.org/ns#>
+
+select distinct ?construct min(?o) as ?yes
+where {
+   # e.g. http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/provrdf
+   graph <{{first.latest.provrdf.value}}> {
+      [] dcterms:subject ?construct .
+      ?construct a example:URI .
+   } 
+   optional {
+      # e.g. http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/owl
+      graph <{{first.latest.provo.value}}> {
+         {?construct a owl:Class}          union
+         {?construct a owl:ObjectProperty} union
+         {?construct a owl:DatatypeProperty}
+         filter(regex(str(?construct),'http://www.w3.org/ns/prov.*'))
+         ?construct ?p ?o
+      }
+   }
+} order by ?construct
