@@ -5,13 +5,15 @@ prefix prov:    <http://www.w3.org/ns/prov#>
 
 select ?expression max(?type) as ?yes
 where {
-   graph <http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/provrdf> {
+   # e.g. http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/provrdf
+   graph <{{first.latest.provrdf.value}}> {
       [] a example:Expression;
          rdf:value        ?expression;
          prov:hadLocation ?order .
    }
    optional {
-      graph <http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/provdm> {
+      # e.g. http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/provdm>
+      graph <{{first.latest.provdm.value}}> {
          [] a ?type;
             rdf:value ?expression .
       }

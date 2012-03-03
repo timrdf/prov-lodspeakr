@@ -18,22 +18,20 @@
       </style>
    </head> 
    <body> 
-      <h1>Coverage as of {{first.modified.modified.value}}</h1> 
-      <!-- todo, after queries below are fixed. h1>Coverage as of {{first.latest.modified.value}}</h1--> 
+      <h1>Coverage as of {{first.latest.modified.value}}</h1> 
       <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has <a href="http://www.w3.org/2011/prov/wiki/Eg-9-provrdf-owl-coverage">provenance</a> embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
 
 
 
 
 
-      {{first.latest.provdm.value}}
       <table about="#asn_from_provdm" typeof="dcat:Dataset" class="alignment">
          <caption property="dcterms:description">This table lists the ASN expressions mentioned in PROV-DM WD3, in the order that they appear on that page. The second column indicates whether or not the expression is mentioned in ProvRDF.</caption>
          <tr>
             <th><a rel="dcterms:subject" href="http://www.w3.org/TR/2012/WD-prov-dm-20120202/">PROV-DM WD3</a></th>
             <th><a rel="dcterms:subject" href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
          <tr>
-         {% for row in models.asn_from_provdm %} 
+         {% for row in models.local.asn_from_provdm %} 
             <tr>
                <td>{{row.expression.value}}</a></td>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
@@ -45,15 +43,7 @@
          <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
       </span>
 
-      <!-- not working: -->
-      <table about="#asn_from_provdm" typeof="dcat:Dataset">
-         {% for row in models.local.asn_from_provdm %} 
-            <tr>
-               <td>{{row.expression.value}}</a></td>
-               {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
-            </tr> 
-         {% endfor %} 
-      </table>
+
 
 
 
@@ -64,7 +54,7 @@
             <th><a rel="dcterms:subject" href="http://www.w3.org/TR/2012/WD-prov-dm-20120202/">PROV-DM WD3</a></th>
             <th><a rel="dcterms:subject" href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
          <tr>
-         {% for row in models.asn_from_provrdf %} 
+         {% for row in models.local.asn_from_provrdf %} 
             <tr>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
                <td>{{row.expression.value}}</a></td>
@@ -88,7 +78,7 @@
             <th><a href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
             <th><a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></th>
          <tr>
-         {% for row in models.rdf_from_provrdf %} 
+         {% for row in models.local.rdf_from_provrdf %} 
             <tr>
                <td><a href="{{ row.construct.value }}">{{row.construct.curie}}</a></td>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
@@ -111,7 +101,7 @@
             <th><a href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
             <th><a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></th>
          <tr>
-         {% for row in models.rdf_from_provo %} 
+         {% for row in models.local.rdf_from_provo %} 
             <tr>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
                <td><a href="{{ row.construct.curie }}">{{row.construct.curie}}</a></td>
