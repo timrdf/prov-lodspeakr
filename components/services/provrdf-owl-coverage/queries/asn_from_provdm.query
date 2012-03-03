@@ -1,7 +1,9 @@
 prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 prefix dcterms: <http://purl.org/dc/terms/>
-prefix example: <http://example.org/ns#>
+prefix pmlp:    <http://inference-web.org/2.0/pml-provenance.owl#>
+prefix void:    <http://rdfs.org/ns/void#>
 prefix prov:    <http://www.w3.org/ns/prov#>
+prefix example: <http://example.org/ns#>
 
 select ?expression max(?type) as ?yes
 where {
