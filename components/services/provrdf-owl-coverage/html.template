@@ -22,27 +22,6 @@
       <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has <a href="http://www.w3.org/2011/prov/wiki/Eg-9-provrdf-owl-coverage">provenance</a> embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
 
 
-      <table about="#modifications" typeof="dcat:Dataset" class="alignment">
-         <caption property="dcterms:description">The modification or retrieval time for PROV-DM, ProvRDF, and PROV-O; newest listed first.</caption>
-         <tr>
-            <th>Source document</th>
-            <th>Modification Time</th>
-            <th>Retrieval Time</th>
-         <tr>
-         {% for row in models.local.modifications %} 
-            <tr>
-               <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
-               <td>{{row.modified.value}}</td>
-               <td>{{row.retrieved.value}}</td>
-            </tr> 
-         {% endfor %} 
-      </table>
-      <span about="#asn_from_provdm">
-         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provdm.query"></a>
-         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
-      </span>
-
-
 
 
       <table about="#asn_from_provdm" typeof="dcat:Dataset" class="alignment">
@@ -130,6 +109,31 @@
       </table>
       <span about="#rdf_from_provo">
          <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/rdf_from_provo.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
+
+
+
+
+
+
+      <table about="#modifications" typeof="dcat:Dataset" class="alignment">
+         <caption property="dcterms:description">The modification or retrieval time for PROV-DM, ProvRDF, and PROV-O; newest listed first.</caption>
+         <tr>
+            <th>Source document</th>
+            <th>Modification Time</th>
+            <th>Retrieval Time</th>
+         <tr>
+         {% for row in models.local.modifications %} 
+            <tr>
+               <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+               <td>{{row.modified.value}}</td>
+               <td>{{row.retrieved.value}}</td>
+            </tr> 
+         {% endfor %} 
+      </table>
+      <span about="#modifications">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provdm.query"></a>
          <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
       </span>
 
