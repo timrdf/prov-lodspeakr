@@ -8,4 +8,4 @@ where {
          pmlp:hasUsageDateTime ?modified
       .
    }
-}
+} order by desc(?modified) limit 1
