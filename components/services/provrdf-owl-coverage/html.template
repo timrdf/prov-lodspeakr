@@ -1,43 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd"> 
 
-<html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in base.ns %}xmlns:{{i}}="{{ns}}" {%endfor%} xmlns:prov="http://www.w3.org/ns/prov#" version="XHTML+RDFa 1.0" xml:lang="en"> 
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:dcterms="http://purl.org/dc/terms/" 
+      xmlns:dcat="http://www.w3.org/ns/dcat#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+      xmlns:prov="http://www.w3.org/ns/prov#" 
+      version="XHTML+RDFa 1.0" xml:lang="en"> 
    <head> 
       <title>PROV-O Coverage</title> 
       <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" /> 
+      <style type="text/css">
+      table.alignment {
+         margin: 50px;
+         border: 1px solid gray;
+      }
+      </style>
    </head> 
    <body> 
-      <h1>Coverage as of {% for row in models.modified %}{%if forloop.first%}{{row.modified.value}}{%endif%}{% endfor %}</h1> 
-      <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has provenance embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
+      <h1>Coverage as of {{first.latest.modified.value}}</h1> 
+      <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has <a href="http://www.w3.org/2011/prov/wiki/Eg-9-provrdf-owl-coverage">provenance</a> embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
 
-      <p>The following table lists the classes and properties mentioned in ProvenanceOntology.owl. The first column indicates whether or not the class/property is mentioned in the ProvRDF mappings page.</p>
-      <table> 
-         <!--li><a href="{{lodspk.baseUrl}}special/instances/{{ row.resource.curie }}">{{row.resource.curie}}</a></li--> 
+
+
+
+      <table about="#asn_from_provdm" typeof="dcat:Dataset" class="alignment">
+         <caption property="dcterms:description">This table lists the ASN expressions mentioned in PROV-DM WD3, in the order that they appear on that page. The second column indicates whether or not the expression is mentioned in ProvRDF.</caption>
          <tr>
-            <th><a href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
-            <th><a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></th>
+            <th><a rel="dcterms:subject" href="http://www.w3.org/TR/2012/WD-prov-dm-20120202/">PROV-DM WD3</a></th>
+            <th><a rel="dcterms:subject" href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
          <tr>
-         {% for row in models.from_owl %} 
+         {% for row in models.local.asn_from_provdm %} 
             <tr>
+               <td>{{row.expression.value}}</a></td>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
-               <td><a href="{{ row.construct.curie }}">{{row.construct.curie}}</a></td>
             </tr> 
          {% endfor %} 
       </table>
+      <span about="#asn_from_provdm">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provdm.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
 
-      <p>The following table lists the classes and properties mentioned in the ProvRDF mappings page. The second column indicates whether or not the class/property is mentioned in the ProvenanceOntology.owl.</p>
-      <table>
+
+
+
+
+
+      <table about="#asn_from_provrdf" typeof="dcat:Dataset" class="alignment"> 
+         <caption property="dcterms:description">This table lists the ASN expressions mentioned in ProvRDF, in the order that they appear on that page. The first column indicates whether or not the expression is mentioned in PROV-DM.</caption>
+         <tr>
+            <th><a rel="dcterms:subject" href="http://www.w3.org/TR/2012/WD-prov-dm-20120202/">PROV-DM WD3</a></th>
+            <th><a rel="dcterms:subject" href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
+         <tr>
+         {% for row in models.local.asn_from_provrdf %} 
+            <tr>
+               {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
+               <td>{{row.expression.value}}</a></td>
+            </tr> 
+         {% endfor %} 
+      </table>
+      <span about="#asn_from_provrdf">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provrdf.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
+
+
+
+
+
+
+
+      <table about="#rdf_from_provrdf" typeof="dcat:Dataset" class="alignment">
+         <caption property="dcterms:description">This table lists the classes and properties mentioned in the ProvRDF mappings page. The second column indicates whether or not the class/property is mentioned in the ProvenanceOntology.owl.</caption>
          <tr>
             <th><a href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
             <th><a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></th>
          <tr>
-         {% for row in models.from_provrdf %} 
+         {% for row in models.local.rdf_from_provrdf %} 
             <tr>
                <td><a href="{{ row.construct.value }}">{{row.construct.curie}}</a></td>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
             </tr> 
          {% endfor %} 
       </table> 
+      <span about="#rdf_from_provrdf">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/rdf_from_provrdf.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
+
+
+
+
+
+
+      <table about="#rdf_from_provo" typeof="dcat:Dataset" class="alignment"> 
+         <caption property="dcterms:description">This table lists the classes and properties mentioned in ProvenanceOntology.owl. The first column indicates whether or not the class/property is mentioned in the ProvRDF mappings page.</caption>
+         <tr>
+            <th><a href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
+            <th><a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></th>
+         <tr>
+         {% for row in models.local.rdf_from_provo %} 
+            <tr>
+               {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
+               <td><a href="{{ row.construct.curie }}">{{row.construct.curie}}</a></td>
+            </tr> 
+         {% endfor %} 
+      </table>
+      <span about="#rdf_from_provo">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/rdf_from_provo.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
+
+
+
+
+
+
+      <table about="#modifications" typeof="dcat:Dataset" class="alignment">
+         <caption property="dcterms:description">The modification or retrieval time for PROV-DM, ProvRDF, and PROV-O; newest listed first.</caption>
+         <tr>
+            <th>Source document</th>
+            <th>Modification Time</th>
+            <th>Retrieval Time</th>
+         <tr>
+         {% for row in models.local.modifications %} 
+            <tr>
+               <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+               <td>{{row.modified.value}}</td>
+               <td>{{row.retrieved.value}}</td>
+            </tr> 
+         {% endfor %} 
+      </table>
+      <span about="#modifications">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provdm.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
+
+
+
+
+
+
+
+      <table about="#property-properties" typeof="dcat:Dataset" class="alignment">
+         <caption property="dcterms:description"></caption>
+         <tr>
+            <th>PROV-O Property</th>
+            <th>Functional</th>
+            <th>InverseFunctional</th>
+            <th>Transitive</th>
+            <th>Symmetric</th>
+            <th>Asymmetric</th>
+            <th>Reflexive</th>
+            <th>Irreflexive</th>
+         <tr>
+         {% for row in models.property_properties %} 
+            <tr>
+               <td>{{row.property.curie}}</td>
+               <td>{{row.functional.value}}</td>
+               <td>{{row.inversefunctional.curie}}</td>
+               <td>{{row.transitive.curie}}</td>
+               <td>{{row.symmetric.curie}}</td>
+               <td>{{row.asymmetric.curie}}</td>
+               <td>{{row.reflexive.curie}}</td>
+               <td>{{row.irreflexive.curie}}</td>
+            </tr> 
+         {% endfor %} 
+      </table>
+      <span about="#property-properties">
+         <a rel="prov:tracedTo" href="https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/property-properties.query"></a>
+         <span property="dcterms:modified" content="{{first.modified.modified.value}}" datatype="xsd:dateTime"></span>
+      </span>
+
+
+
+
+
       <p>Powered by <a rel="prov:wasAttributedTo" href="https://github.com/timrdf/prov-lodspeakr/tree/master/components/services/provrdf-owl-coverage">prov-lodspeakr</a></p>
    </body> 
 </html>

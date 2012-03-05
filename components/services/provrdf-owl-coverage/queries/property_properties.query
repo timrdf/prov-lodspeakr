@@ -1,0 +1,41 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+select distinct ?property ?functional ?inversefunctional ?transitive ?symmetric ?asymmetric ?reflexive ?irreflexive
+where { 
+   graph <http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl> { 
+
+      ?property a ?type .
+
+      filter(?type = owl:DatatypeProperty || ?type = owl:ObjectProperty)
+      filter(regex(str(?property),'http://www.w3.org/ns/prov'))
+
+      optional {
+         ?property a ?functional .
+         filter(?functional = owl:FunctionalProperty)
+      }
+      optional {
+         ?property a ?inversefunctional .
+         filter(?inversefunctional = owl:InverseFunctionalProperty)
+      }
+      optional {
+         ?property a ?transitive .
+         filter(?transitive = owl:TransitiveProperty)
+      }
+      optional {
+         ?property a ?symmetric .
+         filter(?symmetric = owl:SymmetricProperty)
+      }
+      optional {
+         ?property a ?asymmetric .
+         filter(?asymmetric = owl:AsymmetricProperty)
+      }
+      optional {
+         ?property a ?reflexive .
+         filter(?reflexive = owl:ReflexiveProperty)
+      }
+      optional {
+         ?property a ?irreflexive .
+         filter(?irreflexive = owl:IrreflexiveProperty)
+      }
+   }
+}
