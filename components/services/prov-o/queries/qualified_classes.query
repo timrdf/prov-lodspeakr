@@ -1,0 +1,12 @@
+prefix owl:  <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+
+select distinct ?class
+where { 
+   graph <http://www.w3.org/ns/prov#> { 
+
+      ?class a owl:Class; prov:category "qualified" .
+
+      filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+   }
+} order by ?class

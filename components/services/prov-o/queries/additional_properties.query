@@ -1,0 +1,12 @@
+prefix owl:  <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+
+select distinct ?property
+where { 
+   graph <http://www.w3.org/ns/prov#> { 
+      ?property a ?type; prov:category "additional" .
+
+      filter(?type = owl:DatatypeProperty || ?type = owl:ObjectProperty)
+      filter(regex(str(?property),'http://www.w3.org/ns/prov'))
+   }
+} order by ?property
