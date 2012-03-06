@@ -1,0 +1,20 @@
+prefix owl:  <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+
+select distinct ?unqualified ?qualified ?involvement
+where {
+   graph <http://www.w3.org/ns/prov#> {
+
+      ?unqualified prov:qualifiedForm []; prov:category "core" .
+
+      optional { 
+         ?unqualified prov:qualifiedForm ?qualified   . 
+                                         ?qualified   a owl:ObjectProperty 
+      }
+
+      optional { 
+         ?unqualified prov:qualifiedForm ?involvement . 
+                                         ?involvement a owl:Class
+      }
+   }
+} order by ?unqualified

@@ -261,11 +261,69 @@ on" value="Show Examples" />
 
      <section>
 	  	<h3>Qualified Relationships in PROV-O</h3>
-        <p>        
-		</p>
-        <div class="issue">
-        <code>http://www.w3.org/ns/prov/</code> for terms that are common in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
-        </div>
+        <p>        </p>
+
+         <table>
+            <tr>
+               <th>Binary Property</th>
+               <th>Qualification Property</th>
+               <th>Involvement Class</th>
+            <tr>
+            {% for row in models.core_qualified_forms %}
+            <tr>
+               <td>
+                  <a href="{{row.unqualified.curie}}">{{row.unqualified.curie}}</a>
+               </td>
+               <td>
+                  <a href="{{row.qualified.curie}}">{{row.qualified.curie}}</a>
+               </td>
+               <td>
+                  <a href="{{row.involvement.curie}}">{{row.involvement.curie}}</a>
+               </td>
+            </tr>
+            {% endfor %} 
+         </table>
+         <table>
+            <tr>
+               <th>Binary Property</th>
+               <th>Qualification Property</th>
+               <th>Involvement Class</th>
+            <tr>
+            {% for row in models.qualified_qualified_forms %}
+            <tr>
+               <td>
+                  <a href="{{row.unqualified.curie}}">{{row.unqualified.curie}}</a>
+               </td>
+               <td>
+                  <a href="{{row.qualified.curie}}">{{row.qualified.curie}}</a>
+               </td>
+               <td>
+                  <a href="{{row.involvement.curie}}">{{row.involvement.curie}}</a>
+               </td>
+            </tr>
+            {% endfor %} 
+         </table>
+         <table>
+            <tr>
+               <th>Binary Property</th>
+               <th>Qualification Property</th>
+               <th>Involvement Class</th>
+            <tr>
+            {% for row in models.additional_qualified_forms %}
+            <tr>
+               <td>
+                  <a href="{{row.unqualified.curie}}">{{row.unqualified.curie}}</a>
+               </td>
+               <td>
+                  <a href="{{row.qualified.curie}}">{{row.qualified.curie}}</a>
+               </td>
+               <td>
+                  <a href="{{row.involvement.curie}}">{{row.involvement.curie}}</a>
+               </td>
+            </tr>
+            {% endfor %} 
+         </table>
+         </div>
 	  </section>
 
      <section>
