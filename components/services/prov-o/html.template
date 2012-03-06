@@ -240,6 +240,15 @@
         <code>http://www.w3.org/ns/prov/</code> for terms that are common in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
         </div>
 
+         <form action=""><p>
+         <input id="hide-examples1" onclick="set_display_by_class('div','anexample','none'); set_display_by_id('hide-examples1','none'); set_display_by_id('show-examples1','');" type="button" value="Hide Ex
+amples" />
+         <input id="show-examples1" onclick="set_display_by_class('div','anexample',''); set_display_by_id('hide-examples1',''); set_display_by_id('show-examples1','none');" style="display: none" type="butt
+on" value="Show Examples" />
+         </p>
+         </form>
+
+
         <div class="anexample">
         <div><b>Example</b></div>
            <p> Example of instances of class Entity from the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario"> provenance scenario </a> are files with identifiers <i>e1</i> and <i>e2
