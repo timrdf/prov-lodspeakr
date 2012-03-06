@@ -3,3 +3,4 @@ settings.inc.php
 cache/*
 meta/*
 meta/db.sqlite
+components/services/prov-o/eg*
