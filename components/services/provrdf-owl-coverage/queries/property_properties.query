@@ -2,7 +2,7 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 
 select distinct ?property ?functional ?inversefunctional ?transitive ?symmetric ?asymmetric ?reflexive ?irreflexive
 where { 
-   graph <http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl> { 
+   graph <http://www.w3.org/ns/prov#> { 
 
       ?property a ?type .
 

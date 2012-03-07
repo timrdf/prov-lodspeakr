@@ -154,17 +154,17 @@
             <th>Asymmetric</th>
             <th>Reflexive</th>
             <th>Irreflexive</th>
-         <tr>
+         </tr>
          {% for row in models.property_properties %} 
             <tr>
                <td>{{row.property.curie}}</td>
-               <td>{{row.functional.value}}</td>
+               <td>{{row.functional.curie}}</td>
                <td>{{row.inversefunctional.curie}}</td>
                <td>{{row.transitive.curie}}</td>
                <td>{{row.symmetric.curie}}</td>
                <td>{{row.asymmetric.curie}}</td>
-               <td>{{row.reflexive.curie}}</td>
-               <td>{{row.irreflexive.curie}}</td>
+               <td>{{row.reflexibe.curie}}</td>
+               <td>{{row.irreflexibe.curie}}</td>
             </tr> 
          {% endfor %} 
       </table>
