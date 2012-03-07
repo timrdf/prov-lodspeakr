@@ -1,0 +1,25 @@
+prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix pmlp:    <http://inference-web.org/2.0/pml-provenance.owl#>
+prefix void:    <http://rdfs.org/ns/void#>
+prefix prov:    <http://www.w3.org/ns/prov#>
+prefix example: <http://example.org/ns#>
+
+select distinct ?type count(?instance) as ?count
+where {
+   graph <http://www.w3.org/ns/prov#> {
+      ?type a owl:Class
+   }
+   <http://thedatahub.org/dataset/w3c-provenance-working-group-prov-examples>
+      dcterms:hasPart ?dataset .
+   optional { ?dataset dcterms:title    ?title }
+   optional { ?dataset prov:hadLocation ?num   }
+
+   ?dataset void:dataDump ?dump .
+   optional {
+      graph ?dump {
+         ?instance a ?type 
+      }
+   }
+   filter(?type != owl:Thing)
+} group by ?type order by desc(?count)
