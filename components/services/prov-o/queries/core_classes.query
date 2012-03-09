@@ -5,7 +5,7 @@ select distinct ?class
 where { 
    graph <http://www.w3.org/ns/prov#> { 
 
-      ?class a owl:Class; prov:category "core" .
+      ?class a owl:Class; prov:category "simple" .
 
       filter(regex(str(?class),'http://www.w3.org/ns/prov'))
    }

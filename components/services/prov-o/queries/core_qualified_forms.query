@@ -5,7 +5,7 @@ select distinct ?unqualified ?qualified ?involvement
 where {
    graph <http://www.w3.org/ns/prov#> {
 
-      ?unqualified prov:qualifiedForm []; prov:category "core" .
+      ?unqualified prov:qualifiedForm []; prov:category "simple" .
 
       optional { 
          ?unqualified prov:qualifiedForm ?qualified   . 

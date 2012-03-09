@@ -4,7 +4,7 @@ prefix prov: <http://www.w3.org/ns/prov#>
 select distinct ?property
 where { 
    graph <http://www.w3.org/ns/prov#> { 
-      ?property a ?type; prov:category "core" .
+      ?property a ?type; prov:category "simple" .
 
       filter(?type = owl:DatatypeProperty || ?type = owl:ObjectProperty)
       filter(regex(str(?property),'http://www.w3.org/ns/prov'))

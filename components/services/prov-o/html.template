@@ -173,8 +173,70 @@
 
 
 
-	<section>
+	<section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
+
+      <p>Core classes and properties</p>
+      <div id="simple-glance">
+         <div>
+            <ul class="hlist">
+               {% for row in models.core_classes %}
+                 <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+               {% endfor %} 
+            <ul>
+         </div>
+         <div>
+            <ul class="hlist">
+               {% for row in models.core_properties %}
+                 <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+               {% endfor %} 
+            </ul>
+         </div>
+      </div>
+
+      <p>Qualified classes and properties</p>
+      <div id="qualified-glance">
+         <div>
+            <ul class="hlist">
+               {% for row in models.qualified_classes %}
+                  <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+               {% endfor %} 
+            </ul>
+         <div>
+         </div>
+            <ul class="hlist">
+               {% for row in models.qualified_properties %}
+                 <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+               {% endfor %} 
+            </ul>
+         </div>
+      </div>
+
+      <p>Additional classes and properties</p>
+      <div id="additional-glance">
+         <div>
+            <ul class="hlist">
+               {% for row in models.additional_classes %}
+                <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+               {% endfor %} 
+            </ul>
+         <div>
+         </div>
+            <ul class="hlist">
+               {% for row in models.additional_properties %}
+                 <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+               {% endfor %} 
+            </ul>
+         </div>
+      </div>
+
+      <div>
+      {% for row in models.uncategorized %}
+         <p>TODO: categorize as "core", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
+         <a href="{{row.prov.curie}}">{{row.prov.curie}}</a>{%if !forloop.last%} | {%endif%}
+      {% endfor %} 
+      </div>
+
       <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-DIRECT-SEMANTICS]] [[!OWL2-RDF-BASED-SEMANTICS]]. 
 	  </p>
 	  <p>The PROV Ontology can be used directly in a domain application, though many domain applications may require specialization of PROV-O Classes and Properties for representing domain-specific provenance information. We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of common characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
@@ -182,51 +244,15 @@
 	  <p>The PROV Data Model document [[PROV-DM]] introduces an example <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario"> provenance scenario </a> describing the creation of crime statistics file stored on a shared file system and edited by journalists Alice, Bob, Charles, David, and Edith. This scenario is used as a running example in this document to describe the PROV ontology classes and properties, the specialization mechanism, and the entailments supported by the PROV ontology. 
 	  </p>
 
-
 	</section> <!-- PROV-O at a glance -->
+
+
 
 
     <section id="prov-ontology--owl-encoding-of-prov-data-model">
       <h2>The PROVO Ontology Description</h2>    	
       <p> We now introduce the classes and properties that constitute the PROV ontology. We first give a textual description of each ontology term, followed by OWL2 syntax representing the ontology term and an example use of the class in the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a>.
 	  </p>
-
-      <p>Core classes and properties</p>
-      <div>
-      {% for row in models.core_classes %}
-         <a href="{{row.class.curie}}">{{row.class.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      {% for row in models.core_properties %}
-         <a href="{{row.property.curie}}">{{row.property.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      </div>
-
-      <p>Qualified classes and properties</p>
-      <div>
-      {% for row in models.qualified_classes %}
-         <a href="{{row.class.curie}}">{{row.class.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      {% for row in models.qualified_properties %}
-         <a href="{{row.property.curie}}">{{row.property.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      </div>
-
-      <p>Additional classes and properties</p>
-      <div>
-      {% for row in models.additional_classes %}
-         <a href="{{row.class.curie}}">{{row.class.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      {% for row in models.additional_properties %}
-         <a href="{{row.property.curie}}">{{row.property.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      </div>
-
-      <p>TODO: categorize as "core", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
-      <div>
-      {% for row in models.uncategorized %}
-         <a href="{{row.prov.curie}}">{{row.prov.curie}}</a>{%if !forloop.last%} | {%endif%}
-      {% endfor %} 
-      </div>
 
            <img src="diagram-3-1.png"
           style="width: 70%; min-width: 25em; max-width: 60em" 
@@ -239,15 +265,6 @@
         <div class="issue">
         <code>http://www.w3.org/ns/prov/</code> for terms that are common in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
         </div>
-
-         <form action=""><p>
-         <input id="hide-examples1" onclick="set_display_by_class('div','anexample','none'); set_display_by_id('hide-examples1','none'); set_display_by_id('show-examples1','');" type="button" value="Hide Ex
-amples" />
-         <input id="show-examples1" onclick="set_display_by_class('div','anexample',''); set_display_by_id('hide-examples1',''); set_display_by_id('show-examples1','none');" style="display: none" type="butt
-on" value="Show Examples" />
-         </p>
-         </form>
-
 
         <div class="anexample">
         <div><b>Example</b></div>
@@ -264,48 +281,33 @@ on" value="Show Examples" />
         <p>        </p>
 
          <table>
+         <caption>Qualifying Simple Properties</caption>
             <tr>
-               <th>Binary Property</th>
+               <th>Simple Property</th>
                <th>Qualification Property</th>
                <th>Involvement Class</th>
             <tr>
             {% for row in models.core_qualified_forms %}
             <tr>
                <td>
-                  <a href="{{row.unqualified.curie}}">{{row.unqualified.curie}}</a>
+                  <a href="#{{row.unqualified.value|safe|urifragment}}">{{row.unqualified.curie}}</a>
                </td>
                <td>
-                  <a href="{{row.qualified.curie}}">{{row.qualified.curie}}</a>
+                  <a href="#{{row.qualified.value|safe|urifragment}}">{{row.qualified.curie}}</a>
                </td>
                <td>
-                  <a href="{{row.involvement.curie}}">{{row.involvement.curie}}</a>
+                  <a href="#{{row.involvement.value|safe|urifragment}}">{{row.involvement.curie}}</a>
                </td>
             </tr>
             {% endfor %} 
          </table>
+
+
+
          <table>
+         <caption>Qualifying Additional Properties</caption>
             <tr>
-               <th>Binary Property</th>
-               <th>Qualification Property</th>
-               <th>Involvement Class</th>
-            <tr>
-            {% for row in models.qualified_qualified_forms %}
-            <tr>
-               <td>
-                  <a href="{{row.unqualified.curie}}">{{row.unqualified.curie}}</a>
-               </td>
-               <td>
-                  <a href="{{row.qualified.curie}}">{{row.qualified.curie}}</a>
-               </td>
-               <td>
-                  <a href="{{row.involvement.curie}}">{{row.involvement.curie}}</a>
-               </td>
-            </tr>
-            {% endfor %} 
-         </table>
-         <table>
-            <tr>
-               <th>Binary Property</th>
+               <th>Simple Property</th>
                <th>Qualification Property</th>
                <th>Involvement Class</th>
             <tr>
@@ -364,6 +366,14 @@ on" value="Show Examples" />
 
 	<section class='informative' id="specializing-provenance-ontology-for-domain-specific-provenance-applications">
       <h2>Cross reference for PROVO classes and properties</h2>
+     
+ 
+      {% for row in models.core_classes %}
+        <div id="{{row.class.value|safe|urifragment}}">
+         <p>about {{row.class.curie}}</p>
+        </div>
+      {% endfor %} 
+
 	    <p>The PROV Ontology does not include all the provenance terms that are required by different application to model provenance information. For example, the classes and properties to model provenance information in the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a>, such as "Journalist" or "FileEditing", are not part of the PROV ontology. This is a deliberate design choice for PROV ontology, since modeling provenance terms for a variety of domain applications in a single ontology is impractical. Hence, the PROV Ontology is conceived as an ontology that can be extended by various domain-specific applications to model the required set of provenance terms. The PROV Ontology classes and properties can be specialized using the following two RDFS properties:</p>
    		<ul>
             <li><i>rdfs:subClassOf</i>: The property rdfs:subClassOf is an instance of rdf:Property that is used to state that all the instances of one class are instances of another [[!RDF-SCHEMA]]</li>
