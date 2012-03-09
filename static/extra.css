@@ -145,3 +145,19 @@
     background: #fff;
     padding:    3px 1em;
 }
+
+/* added prov-wg lebot  */
+
+.hlist {
+    border: 1px solid navy;
+    padding:5px;
+    background-color: #F4FFFF; 
+}
+
+.hlist li {
+    display: inline;
+    display: inline-table;
+    list-style-type: none;
+    padding-right: 20px;
+    
+}
