@@ -12,7 +12,7 @@ prefix void:    <http://rdfs.org/ns/void#>
                pmlp:hasUsageDateTime ?modified
             .
             [] void:subset ?provdm, ?provrdf, ?provo .
-            ?provdm  prov:wasDerivedFrom <http://www.w3.org/TR/2012/WD-prov-dm-20120202/> .
+            ?provdm  prov:wasDerivedFrom <http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-dm.html> .
             ?provrdf prov:wasDerivedFrom <http://www.w3.org/2011/prov/wiki/ProvRDF> .
             ?provo   prov:wasDerivedFrom <https://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl> .
          }

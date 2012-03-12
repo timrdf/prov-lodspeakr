@@ -84,6 +84,9 @@
           // editors, add as many as you like
           // only "name" is required
           editors:  [
+  			  { name: "Timothy Lebo",
+			        url:"http://tw.rpi.edu/instances/TimLebo",
+			       company: "Rensselaer Polytechnic Institute, USA" },
               { name: "Satya Sahoo", url: "http://cci.case.edu/cci/index.php/Satya_Sahoo",
                 company: "Case Western Reserve University, USA" },
 			  { name: "Deborah McGuinness", url: "http://tw.rpi.edu/instances/Deborah_L_McGuinness",
@@ -107,9 +110,6 @@
 			  { name: "Daniel Garijo",
 			        url:"http://www.oeg-upm.net/index.php/en/phdstudents/28-dgarijo",
 	                company: "Universidad Politécnica de Madrid, Spain" },
-  			  { name: "Timothy Lebo",
-			        url:"http://tw.rpi.edu/instances/TimLebo",
-			       company: "Rensselaer Polytechnic Institute, USA" },
 			  { name: "Stian Soiland-Reyes",
 	                url:"http://soiland-reyes.com/stian/",
 	               company: "University of Manchester, UK" },

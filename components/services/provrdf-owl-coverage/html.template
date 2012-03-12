@@ -25,14 +25,17 @@
 
 
       <table about="#asn_from_provdm" typeof="dcat:Dataset" class="alignment">
-         <caption property="dcterms:description">This table lists the ASN expressions mentioned in PROV-DM WD3, in the order that they appear on that page. The second column indicates whether or not the expression is mentioned in ProvRDF.</caption>
+         <caption property="dcterms:description">This table lists the ASN expressions mentioned in PROV-DM WD4, in the order that they appear on that page. The second column indicates whether or not the expression is mentioned in ProvRDF.</caption>
          <tr>
-            <th><a rel="dcterms:subject" href="http://www.w3.org/TR/2012/WD-prov-dm-20120202/">PROV-DM WD3</a></th>
+            <th>PROV-DM WD4 <a rel="dcterms:subject" href="http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-dm.html">intro</a>
+                            <a rel="dcterms:subject" href="http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-dm-constraints.html">constraints</a>
+                            <a rel="dcterms:subject" href="http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-n.html">prov-n</a>
+            </th>
             <th><a rel="dcterms:subject" href="http://www.w3.org/2011/prov/wiki/ProvRDF">ProvRDF</a></th>
          <tr>
          {% for row in models.local.asn_from_provdm %} 
             <tr>
-               <td>{{row.expression.value}}</a></td>
+               <td>{% if row.page%}(<a href="{{row.page.value}}">page</a>) {%endif%}{{row.expression.value}}</a></td>
                {%if row.yes%}<td style="background: LightGreen">Mentioned</a></td>{%else%}<td style="background: crimson">Not Mentioned</td>{%endif%}
             </tr> 
          {% endfor %} 

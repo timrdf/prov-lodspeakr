@@ -5,13 +5,14 @@ prefix void:    <http://rdfs.org/ns/void#>
 prefix prov:    <http://www.w3.org/ns/prov#>
 prefix example: <http://example.org/ns#>
 
-select ?expression max(?type) as ?yes
+select ?page ?expression max(?type) as ?yes
 where {
    # e.g. http://logd.tw.rpi.edu/source/w3-org/dataset/2011-prov-rdf-mappings/version/2012-Mar-01/provdm
    graph <{{first.latest.provdm.value}}> {
-      [] a example:Expression;
-         rdf:value ?expression;
-         prov:hadLocation ?order .
+      ?page dcterms:subject ?ex .
+      ?ex a example:Expression;
+          rdf:value ?expression;
+          prov:hadLocation ?order .
    }
 
    optional {
