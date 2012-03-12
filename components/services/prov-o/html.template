@@ -13,6 +13,14 @@
       .note { font-size:small; margin-left:50px }
    table { text-align: center; vertical-align: middle }
      </style>
+	<style type="text/css">
+      table.prov-detail {
+         margin: 10px; border:1px solid green;
+      }
+      table.prov-detail td {
+         text-align: left;
+      }
+     </style>
 
     <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove'></script>
 	<script src="http://www.w3.org/2007/OWL/toggles.js" class="remove"></script>
@@ -158,6 +166,11 @@
      <section id="introduction">    
       <h2>Introduction</h2>  
       <p>
+  Talk about prov-dm
+  Say that we are using OWL-RL
+
+      </p>
+      <p>
         PROV Ontology (also PROV-O) defines the normative modeling of the PROV Data Model [[PROV-DM]] using the W3C OWL2 Web Ontology Language. This document specification describes the set of classes, properties, and restrictions that constitute the PROV ontology, which have been introduced in the PROV Data Model [[PROV-DM]]. This ontology specification provides the foundation for implementation of provenance applications in different domains using the PROV ontology for representing, exchanging, and integrating provenance information. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange and management in domain-specific Web-based applications.
       </p>
 	  <p>
@@ -176,6 +189,9 @@
 	<section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
 
+      <p>
+The terms (classes and properties) in provo can be categorized into three categories: core terms, terms used to encode qualified relationships, and “common” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
+      </p>
       <p>Core classes and properties</p>
       <div id="simple-glance">
          <div>
@@ -249,36 +265,134 @@
 
 
 
-    <section id="prov-ontology--owl-encoding-of-prov-data-model">
+    <section id="ontology-description">
       <h2>The PROVO Ontology Description</h2>    	
-      <p> We now introduce the classes and properties that constitute the PROV ontology. We first give a textual description of each ontology term, followed by OWL2 syntax representing the ontology term and an example use of the class in the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a>.
-	  </p>
+      <p>
+This section provides the reader with an understanding about the structure of the section, so that they know which section they should go to read and where they should stop. That said, the message about the purpose of each section can still be repeated at each individual section.
+      </p>
 
-           <img src="diagram-3-1.png"
-          style="width: 70%; min-width: 25em; max-width: 60em" 
-          alt="Class hierarchy of the PROV ontology"/>
- 
      <section>
 	  	<h3>Simple Relationships in PROV-O</h3>
-        <p>        
-		</p>
+      <p> 
+This section presents a diagram illustrating the concepts and properties that compose the ontology, without talking about involvement.  The following example diagram illustrates the level of details we want to present and the exact classes and properties we believe fall into this category. No need to show the “Thing” class in the diagram, as we are doing now. That just makes the diagram more complex. Neither SIOC nor OPMV do that.  The classes and properties to show in this diagram are the following:
+Entity, Agent, Activity, used, wasGeneratedBy, wasDerivedFrom, wasAssociatedWith (wasEndedBy? wasStartedBy??), actedOnBehalfOf, wasInformedBy, wasAttributedTo, “Temporal stuff”
+	  </p>
+
+      <div style="text-align: center;">
+         <figure>
+                 <img src="prov-o-diagrams/core.png"
+                style="width: 70%; min-width: 25em; max-width: 60em" 
+                alt="Class hierarchy of the PROV ontology"/>
+            <figcaption>Core classes and properties in Prov-o</figcaption>
+         </figure>
+      </div>
+
         <div class="issue">
-        <code>http://www.w3.org/ns/prov/</code> for terms that are common in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
+           Luc has general comments in <a href="http://www.w3.org/2011/prov/track/issues/117">ISSUE-117</a>
+        </div>
+        <div class="issue">
+           Vanilla RDF versus OWL <a href="http://www.w3.org/2011/prov/track/issues/119">ISSUE-119</a>
+        </div>
+        <div class="issue">
+           Location concerns <a href="http://www.w3.org/2011/prov/track/issues/128">ISSUE-128</a>
+        </div>
+        <div class="issue">
+           Diagram consistency <a href="http://www.w3.org/2011/prov/track/issues/227">ISSUE-227</a>
+        </div>
+        <div class="issue">
+           Eric's comments <a href="http://www.w3.org/2011/prov/track/issues/250">ISSUE-250</a>
+        </div>
+        <div class="issue">
+           Conforming to W3C Style guides <a href="http://www.w3.org/2011/prov/track/issues/308">ISSUE-308</a>
         </div>
 
         <div class="anexample">
-        <div><b>Example</b></div>
-           <p> Example of instances of class Entity from the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario"> provenance scenario </a> are files with identifiers <i>e1</i> and <i>e2
-</i>. The RDF/XML syntax for asserting that e1 is an instance of Entity is given below.
+           <div><b>Example</b></div>
+            <p>
+Turtle + Explanation. The example does not have to illustrate all the terms. Instead, it focuses on the main ones. (see eg16-journalism-simple-without-comments.ttl). We chose this example over others because we think it is simple, intuitive. Moreover, it is used in the primer, and therefore people who read the primer before the provo HTML document, will find it easy to follow.
+
+            </p>
            <div class="exampleOuter">
-            <pre class="example">{% include "eg-9-provrdf-owl-coverage.html.ttl" %}</pre>
+              <pre class="example">{% include "includes/eg16-journalism-simple-without-comments.ttl" %}</pre>
            </div>
         </div>
 	  </section> <!-- Simple Relationships in PROV-O -->
 
      <section>
 	  	<h3>Qualified Relationships in PROV-O</h3>
-        <p>        </p>
+        <p>        
+This section shows how qualified relationships in prov-dm are encoded in provo. We need two diagrams: one to show the hierarchical relationship between involvement classes, and another to using Association as an exemplar to illustrate the general pattern to qualify a binary relationship. 
+   </p>
+
+      <div style="text-align: center;">
+         <figure>
+                 <img src="prov-o-diagrams/involvements.png"
+                style="width: 70%; min-width: 25em; max-width: 60em" 
+                alt="A hierarchical illustration of core involvements"/>
+            <figcaption>A hierarchical illustration of core involvements</figcaption>
+         </figure>
+      </div>
+
+      <div style="text-align: center;">
+         <figure>
+                 <img src="prov-o-diagrams/Qualified-Association.png"
+                style="width: 70%; min-width: 25em; max-width: 60em" 
+                alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
+            <figcaption>Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship</figcaption>
+         </figure>
+      </div>
+
+
+         <p>
+         We have in the current provo HTML document a diagram about qualified involvement in Section 8 “Overview of Qualified Involvement”, but we don’t think that such a diagram is great. We need to illustrate the hierarchy of involvements and some, not necessarily all, the associated object properties. The focus in the diagram will be on the elements of prov-dm that are illustrates in the previous overview sub-section. 
+         The diagram can show the following kinds on involvements, and shows some (not necessarily all) the properties that link them together, e.g., entity, activity, agent, qualified. Note that, not all the sub-classes of involvements are included here; they will appear in section 3.3 because they are additional terms in prov-o.
+         Involvement, EntityInvolvement, ActicityInvolvement, AgentInvolvement, Derivation, Usage, Generation, Association (End, Start), Responsibility, Attribution,
+         </p>
+
+         <p>
+         Turtle + Explanation. We do not to cover all the kinds of involvement and properties in the example. We only show how Derivation, Usage, Generation and Association can be expressed using this reification pattern. If need be, examples of other types of involvement should be given in section 4, where they are defined.  For the qualified relationships we provide the following example files:
+         </p>
+
+        <div class="anexample">
+           <div><b>Qualified DerivationExample</b></div>
+            <p>
+eg16-journalism-derivation.ttl, to show how additional information about derivation can be expressed, such as when it all happened.
+            </p>
+           <div class="exampleOuter">
+              <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
+           </div>
+        </div>
+
+        <div class="anexample">
+           <div><b>Qualified Generation Example</b></div>
+            <p>
+ eg16-journalism-generation.ttl, to show how additional information about generation can be expressed, such as when it all happened.
+            </p>
+           <div class="exampleOuter">
+              <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
+           </div>
+        </div>
+
+        <div class="anexample">
+           <div><b>Qualified Usage Example</b></div>
+            <p>
+eg16-journalism-usage.ttl, to show how additional information about usage can be expressed, such as when it all happened.
+            </p>
+           <div class="exampleOuter">
+              <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
+           </div>
+        </div>
+
+        <div class="anexample">
+           <div><b>Qualified Association Example</b></div>
+            <p>
+ eg16-journalism-association.ttl, to show how we can express plan or recipe used in an activity by an agent
+            </p>
+           <div class="exampleOuter">
+              <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
+           </div>
+        </div>
+
 
          <table>
          <caption>Qualifying Simple Properties</caption>
@@ -331,6 +445,10 @@
      <section>
 	  	<h3>Common Relationships in PROV-O</h3>
         <p>        
+This section presents the rest of classes and properties textually without using a diagram. We may use some examples in English. 
+The classes and properties covered in this section are: 
+Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom, hadQuotatedAgent, hadQuoterAgent, wasSummaryOf, alternateOf, terms related to Collection? Bundle? Role?? , hadRole, Location??, hadLocation?, wasStartedByActivity?? specializationOf?
+
 		</p>
         <div class="issue">
         <code>http://www.w3.org/ns/prov/</code> for terms that are common in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
@@ -366,26 +484,62 @@
 
 	<section class='informative' id="specializing-provenance-ontology-for-domain-specific-provenance-applications">
       <h2>Cross reference for PROVO classes and properties</h2>
-     
- 
-      {% for row in models.core_classes %}
-        <div id="{{row.class.value|safe|urifragment}}">
-         <p>about {{row.class.curie}}</p>
-        </div>
-      {% endfor %} 
 
-	    <p>The PROV Ontology does not include all the provenance terms that are required by different application to model provenance information. For example, the classes and properties to model provenance information in the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a>, such as "Journalist" or "FileEditing", are not part of the PROV ontology. This is a deliberate design choice for PROV ontology, since modeling provenance terms for a variety of domain applications in a single ontology is impractical. Hence, the PROV Ontology is conceived as an ontology that can be extended by various domain-specific applications to model the required set of provenance terms. The PROV Ontology classes and properties can be specialized using the following two RDFS properties:</p>
-   		<ul>
-            <li><i>rdfs:subClassOf</i>: The property rdfs:subClassOf is an instance of rdf:Property that is used to state that all the instances of one class are instances of another [[!RDF-SCHEMA]]</li>
-            <li><i>rdfs:subPropertyOf</i>: "A rdfs:subPropertyOf axiom defines that the property is a subproperty of some other property" [[!RDF-SCHEMA]]</li>
-         </ul>
-         <p>A new provenance ontology can be created to model the classes and properties required by an application to represent its domain-specific provenance terms. The new provenance ontology, for the given application, is also expected to include all the PROV Ontology classes and properties, which will facilitate provenance exchange through a common set of terms.</p>
-         <p>The following are a few example classes from the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a> that are created by specializing PROV Ontology classes:
-		   <ul>
-		     <li>The <a href="#agent">Agent</a> class can be specialized to define a class called Journalist, which has individuals such as alice, bob, and edith </li>
-			 <li>Similarly, the <a href="#activity">Activity</a> class can be specialized to define classes called FileCreation, FileAppending, and FileEditing </li>
-		   </ul>
-	      The [[PROV-BestPractices]] document describes in detail the approach used to model provenance information in two domain-specific examples by specializing the PROV Ontology.</p>
+<p>
+This section, i.e., Section 4, presents the classes and properties that compose the ontology. No need to provide a diagram illustrating the domain and the range of the object properties. Also, no need to provide an example for each class and property. We should be able to present most of classes with an example stated using a sentence or two in English. In other words, we don’t need to provide the turtle for every small example if a sentence in English is enough. We should reserve the use of turtle only for the classes and properties that we think may be difficult for the user to grasp, e.g., involvement. In particular, some of the involvements that reify relations that are not part of the core ontology, such as inform and Trace may need to be illustrated using turtle examples.
+</p>     
+
+      <section id="core-terms">
+         <h3>Simple Terms</h3>
+         {% for row in models.core_classes %}
+           <div id="{{row.class.value|safe|urifragment}}">
+            <p>about <a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></p>
+           </div>
+         {% endfor %} 
+      </section>
+
+      <section id="qualified-terms">
+         <h3>Qualified Terms</h3>
+            {%for row in models.all_property_details%}
+
+               {%ifchanged row.property.value%}
+                  {%if !forloop.first%}
+                  </div>
+                  </table>
+                  {%endif%}
+                  <div id="{{row.property.value|safe|urifragment}}">
+                  <table class="prov-detail">
+                     <tr><th colspan="2" style="background-color:#EAF2D3; color:black;"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
+                     <tr><td>IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
+               {%endifchanged%}
+
+                     {%if row.comment%}
+                        <tr><td>comment</td><td>{{row.comment.value}}}</a></td></tr>
+                     {%endif%}
+                     {%if row.domain%}
+                        <tr><td>has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.range%}
+                        <tr><td>has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.inverse%}
+                        <tr><td>has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
+                     {%endif%}
+
+               {%if forloop.first%}
+                  </table>
+                  </div>
+               {%endif%}
+            {%endfor%}
+      </section>
+
+      <section id="common-terms">
+         <h3>Common Terms</h3>
+      </section>
+
+<p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROVO in a glance”, as well as links used throughout the document. 
+</p>
+
 	</section>
 
 
