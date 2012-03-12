@@ -9,7 +9,7 @@
 #       303 redirects to this script.
 
 lodspeakr_dir="lodspeakr"
-lodspeakr_repository="git@github.com:alangrafu/lodspeakr.git" # NOTE: the rest of this file should be identical to file 'install'
+lodspeakr_repository="git@github.com:timrdf/prov-lodspeakr.git" # NOTE: the rest of this file should be identical to file 'install'
 home=`basename $lodspeakr_repository | sed 's/.git//'`
 
 source ~/.bashrc
