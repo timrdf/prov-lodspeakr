@@ -7,7 +7,7 @@ Simplest Installation
 
 Just run
 
-   bash < <(curl -sL http://lodspeakr.org/install)
+   bash < <(curl -sL http:///purl.org/twc/projects/prov-lodspeakr/install)
 
 Alternative methods of installation available at
 
