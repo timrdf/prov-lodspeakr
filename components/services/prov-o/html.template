@@ -19,6 +19,9 @@
    table { text-align: center; vertical-align: middle }
      </style>
 	<style type="text/css">
+      table.qualified-forms {
+         width: 75%;
+      }
       ul.hlist {
          margin: 20px;
       }
@@ -378,55 +381,12 @@ eg16-journalism-usage.ttl, to show how additional information about usage can be
            </div>
         </div>
 
-
          <div style="text-align: center;">
-            <table>
-            <caption>Qualification Property and Involvement Class used to qualify a Simple Property.</caption>
-               <tr>
-                  <th>Simple Property</th>
-                  <th>Qualification Property</th>
-                  <th>Involvement Class</th>
-               </tr>
-               {% for row in models.simple_qualified_forms %}
-               <tr>
-                  <td>
-                     <a href="#{{row.unqualified.value|safe|urifragment}}">{{row.unqualified.curie}}</a>
-                  </td>
-                  <td>
-                     <a href="#{{row.qualified.value|safe|urifragment}}">{{row.qualified.curie}}</a>
-                  </td>
-                  <td>
-                     <a href="#{{row.involvement.value|safe|urifragment}}">{{row.involvement.curie}}</a>
-                  </td>
-               </tr>
-               {% endfor %} 
-            </table>
+            {% include "includes/qualifed-forms-simple.html" %}
          </div>
 
-
-
          <div style="text-align: center;">
-            <table>
-            <caption>Qualifying Additional Properties</caption>
-               <tr>
-                  <th>Simple Property</th>
-                  <th>Qualification Property</th>
-                  <th>Involvement Class</th>
-               </tr>
-               {% for row in models.additional_qualified_forms %}
-               <tr>
-                  <td>
-                     <a href="#{{row.unqualified.value|safe|urifragment}}">{{row.unqualified.curie}}</a>
-                  </td>
-                  <td>
-                     <a href="#{{row.qualified.value|safe|urifragment}}">{{row.qualified.curie}}</a>
-                  </td>
-                  <td>
-                     <a href="#{{row.involvement.value|safe|urifragment}}">{{row.involvement.curie}}</a>
-                  </td>
-               </tr>
-               {% endfor %} 
-            </table>
+            {% include "includes/qualifed-forms-additional.html" %}
          </div>
 	  </section>
 

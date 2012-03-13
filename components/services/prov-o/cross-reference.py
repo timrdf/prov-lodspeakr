@@ -42,6 +42,29 @@ DatatypeProperties = session.get_class(ns.OWL["DatatypeProperty"])
 ObjectProperties   = session.get_class(ns.OWL["ObjectProperty"])
 Classes            = session.get_class(ns.OWL["Class"])
 
+qualifiedFormsQ = '''
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix prov: <http://www.w3.org/ns/prov#>
+
+select distinct ?unqualified ?qualified ?involvement
+where {
+   graph <http://www.w3.org/ns/prov#> {
+
+      ?unqualified prov:qualifiedForm []; prov:category "CATEGORY" .
+
+      optional {
+         ?unqualified prov:qualifiedForm ?qualified .
+                                         ?qualified a owl:ObjectProperty
+      }
+
+      optional {
+         ?unqualified prov:qualifiedForm ?involvement .
+                                         ?involvement a owl:Class
+      }
+   }
+} order by ?unqualified
+'''
+
 results = graph.query('select distinct ?cat where { [] prov:category ?cat } order by ?cat', initNs=prefixes)
 categories = {}
 for bindings in results:
@@ -49,12 +72,14 @@ for bindings in results:
 for category in categories.keys():
    print category
 
-   glanceName = 'at-a-glance-'+category+'.html'
-   crossName  = 'cross-reference-'+category+'.html'
-   if not(os.path.exists(glanceName)) and not(os.path.exists(crossName)):
+   glanceName    = 'at-a-glance-'+category+'.html'
+   crossName     = 'cross-reference-'+category+'.html'
+   qualsName = 'qualifed-forms-'+category+'.html'
+   if not(os.path.exists(glanceName)) and not(os.path.exists(crossName)) and not(os.path.exists(qualsName)):
       print '  '+glanceName + ' ' + crossName
       glance = open(glanceName, 'w')
       cross  = open(crossName, 'w')
+      quals = open(qualsName, 'w')
 
       # Classes # # # # # # # # # # # # # # # # #
       glance.write('\n')
@@ -109,6 +134,8 @@ for category in categories.keys():
          glance.write('    <li class="'+propertyTypes[uri]+'">\n')
          glance.write('      <a href="#'+qname[1]+'">'+PREFIX+':'+qname[1]+'</a>\n')
          glance.write('    </li>\n')
+      glance.write('  </ul>\n')
+      glance.write('</div>\n')
 
 
       # Classes # # # # # # # # # # # # # # # # #
@@ -320,6 +347,26 @@ for category in categories.keys():
             cross.write('        </ul>\n')
             cross.write('      </dd>\n')
 
+         # ?sub rdfs:subPropertyOf property
+         do = False
+         for sub in property.is_rdfs_subPropertyOf_of:
+            qname = sub.subject.split('#')
+            if qname[0] == 'http://www.w3.org/ns/prov':
+               do = True
+         if do:
+            cross.write('      <dt>has sub-properties</dt>\n')
+            cross.write('      <dd>\n')
+            cross.write('        <ul>\n')
+            for sub in property.is_rdfs_subPropertyOf_of:
+               qname = sub.subject.split('#')
+               if qname[0] == 'http://www.w3.org/ns/prov':
+                  cross.write('          <li>\n')
+                  cross.write('            <a title="'+sub.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+                  cross.write('          </li>\n')
+            cross.write('        </ul>\n')
+            cross.write('      </dd>\n')
+
+
          cross.write('      </dl>\n')
 
          cross.write('    </div>\n')
@@ -327,10 +374,44 @@ for category in categories.keys():
          cross.write('\n')
       cross.write('</div>\n')
 
+      n = ''
+      if category.lower()[0] == 'a':
+         n = 'n'
+      quals.write('<table class="qualified-forms">\n')
+      quals.write('  <caption>Qualification Property and Involvement Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
+      quals.write('  <tr>\n')
+      qname = property.subject.split('#')
+      quals.write('    <th>'+category.capitalize()+' Property</th>\n')
+      quals.write('    <th>Qualification Property</th>\n')
+      quals.write('    <th>Involvement Class</th>\n')
+      quals.write('  </tr>\n')
+      for uri in ordered['properties']:
+         property = []
+         if propertyTypes[uri] == 'datatype-property':
+            property = session.get_resource(uri,DatatypeProperties)
+         else:
+            property = session.get_resource(uri,ObjectProperties)
+         if len(property.prov_qualifiedForm) > 0:
+            qualProp  = 'no'
+            qualClass = 'no'
+            for qualified in property.prov_qualifiedForm:
+               if ns.OWL['ObjectProperty'] in qualified.rdf_type:
+                  qualProp  = qualified 
+               else:
+                  qualClass = qualified 
+            if qualProp != 'no' and qualClass != 'no':
+               quals.write('  <tr>\n')
+               qname = property.subject.split('#')
+               quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+               qname = qualProp.subject.split('#')
+               quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+               qname = qualClass.subject.split('#')
+               quals.write('    <td><a title="'+qualClass.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+               quals.write('  </tr>\n')
+      quals.write('</table>\n')
 
-      glance.write('  </ul>\n')
-      glance.write('</div>\n')
       glance.close()
       cross.close()
+      quals.close()
    else:
       print '  '+glanceName + ' or ' + crossName + " already exists. Not modifying."
