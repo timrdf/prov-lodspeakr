@@ -14,11 +14,36 @@
    table { text-align: center; vertical-align: middle }
      </style>
 	<style type="text/css">
-      table.prov-detail {
-         margin: 10px; border:1px solid green;
+      ul.hlist {
+         margin: 20px;
       }
-      table.prov-detail td {
+      table {
+         margin: 20px; 
+         border:1px solid navy;
+         background-color: #F4FFFF;
+      }
+      table th {
+         background-color: LightGoldenRodYellow;
+      }
+      table tr {
+         padding: 2px;
+         border: 1px solid navy;
+      }
+      table td {
          text-align: left;
+         padding-top: 5px;
+         padding-bottom: 5px;
+         padding-left: 15px;
+         padding-right: 15px;
+      }
+      table td.prov-attribute {
+         width: 20%
+      }
+      table.prov-detail a:visited {
+          color:black; text-decoration:none; 
+      }
+      table.prov-detail a:link {
+          color:black; text-decoration:none; 
       }
      </style>
 
@@ -190,21 +215,25 @@
       <h2>PROV-O at a glance</h2>
 
       <p>
-The terms (classes and properties) in provo can be categorized into three categories: core terms, terms used to encode qualified relationships, and “common” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
+The terms (classes and properties) in provo can be categorized into three categories: simple terms, terms used to encode qualified relationships, and “additional” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
       </p>
-      <p>Core classes and properties</p>
+      <p>Simple classes and properties</p>
       <div id="simple-glance">
          <div>
             <ul class="hlist">
-               {% for row in models.core_classes %}
-                 <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+               {% for row in models.simple_classes %}
+                  {%ifchanged row.class.value%}
+                    <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+                  {%endifchanged%}
                {% endfor %} 
-            <ul>
+            </ul>
          </div>
          <div>
             <ul class="hlist">
-               {% for row in models.core_properties %}
-                 <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+               {% for row in models.simple_properties %}
+                  {%ifchanged row.property.value%}
+                    <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+                  {%endifchanged%}
                {% endfor %} 
             </ul>
          </div>
@@ -215,14 +244,18 @@ The terms (classes and properties) in provo can be categorized into three catego
          <div>
             <ul class="hlist">
                {% for row in models.qualified_classes %}
-                  <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+                  {%ifchanged row.class.value%}
+                     <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+                  {%endifchanged%}
                {% endfor %} 
             </ul>
          <div>
          </div>
             <ul class="hlist">
                {% for row in models.qualified_properties %}
-                 <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+                  {%ifchanged row.property.value%}
+                    <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+                  {%endifchanged%}
                {% endfor %} 
             </ul>
          </div>
@@ -233,14 +266,18 @@ The terms (classes and properties) in provo can be categorized into three catego
          <div>
             <ul class="hlist">
                {% for row in models.additional_classes %}
-                <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+                  {%ifchanged row.class.value%}
+                   <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
+                  {%endifchanged%}
                {% endfor %} 
             </ul>
          <div>
          </div>
             <ul class="hlist">
                {% for row in models.additional_properties %}
-                 <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+                  {%ifchanged row.property.value%}
+                    <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
+                  {%endifchanged%}
                {% endfor %} 
             </ul>
          </div>
@@ -248,14 +285,14 @@ The terms (classes and properties) in provo can be categorized into three catego
 
       <div>
       {% for row in models.uncategorized %}
-         <p>TODO: categorize as "core", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
+         <p>TODO: categorize as "simple", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
          <a href="{{row.prov.curie}}">{{row.prov.curie}}</a>{%if !forloop.last%} | {%endif%}
       {% endfor %} 
       </div>
 
       <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-DIRECT-SEMANTICS]] [[!OWL2-RDF-BASED-SEMANTICS]]. 
 	  </p>
-	  <p>The PROV Ontology can be used directly in a domain application, though many domain applications may require specialization of PROV-O Classes and Properties for representing domain-specific provenance information. We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of common characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
+	  <p>The PROV Ontology can be used directly in a domain application, though many domain applications may require specialization of PROV-O Classes and Properties for representing domain-specific provenance information. We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
 	  </p>
 	  <p>The PROV Data Model document [[PROV-DM]] introduces an example <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario"> provenance scenario </a> describing the creation of crime statistics file stored on a shared file system and edited by journalists Alice, Bob, Charles, David, and Edith. This scenario is used as a running example in this document to describe the PROV ontology classes and properties, the specialization mechanism, and the entailments supported by the PROV ontology. 
 	  </p>
@@ -280,10 +317,10 @@ Entity, Agent, Activity, used, wasGeneratedBy, wasDerivedFrom, wasAssociatedWith
 
       <div style="text-align: center;">
          <figure>
-                 <img src="prov-o-diagrams/core.png"
-                style="width: 70%; min-width: 25em; max-width: 60em" 
-                alt="Class hierarchy of the PROV ontology"/>
-            <figcaption>Core classes and properties in Prov-o</figcaption>
+            <img src="prov-o-diagrams/core.png"
+                 style="width: 70%; min-width: 25em; max-width: 60em" 
+                 alt="Class hierarchy of the PROV ontology"/>
+            <figcaption>Simple classes and properties in Prov-o</figcaption>
          </figure>
       </div>
 
@@ -328,8 +365,8 @@ This section shows how qualified relationships in prov-dm are encoded in provo. 
          <figure>
                  <img src="prov-o-diagrams/involvements.png"
                 style="width: 70%; min-width: 25em; max-width: 60em" 
-                alt="A hierarchical illustration of core involvements"/>
-            <figcaption>A hierarchical illustration of core involvements</figcaption>
+                alt="A hierarchical illustration of simple involvements"/>
+            <figcaption>A hierarchical illustration of simple involvements</figcaption>
          </figure>
       </div>
 
@@ -394,56 +431,59 @@ eg16-journalism-usage.ttl, to show how additional information about usage can be
         </div>
 
 
-         <table>
-         <caption>Qualifying Simple Properties</caption>
-            <tr>
-               <th>Simple Property</th>
-               <th>Qualification Property</th>
-               <th>Involvement Class</th>
-            <tr>
-            {% for row in models.core_qualified_forms %}
-            <tr>
-               <td>
-                  <a href="#{{row.unqualified.value|safe|urifragment}}">{{row.unqualified.curie}}</a>
-               </td>
-               <td>
-                  <a href="#{{row.qualified.value|safe|urifragment}}">{{row.qualified.curie}}</a>
-               </td>
-               <td>
-                  <a href="#{{row.involvement.value|safe|urifragment}}">{{row.involvement.curie}}</a>
-               </td>
-            </tr>
-            {% endfor %} 
-         </table>
+         <div style="text-align: center;">
+            <table>
+            <caption>Qualification Property and Involvement Class used to qualify a Simple Property.</caption>
+               <tr>
+                  <th>Simple Property</th>
+                  <th>Qualification Property</th>
+                  <th>Involvement Class</th>
+               </tr>
+               {% for row in models.simple_qualified_forms %}
+               <tr>
+                  <td>
+                     <a href="#{{row.unqualified.value|safe|urifragment}}">{{row.unqualified.curie}}</a>
+                  </td>
+                  <td>
+                     <a href="#{{row.qualified.value|safe|urifragment}}">{{row.qualified.curie}}</a>
+                  </td>
+                  <td>
+                     <a href="#{{row.involvement.value|safe|urifragment}}">{{row.involvement.curie}}</a>
+                  </td>
+               </tr>
+               {% endfor %} 
+            </table>
+         </div>
 
 
 
-         <table>
-         <caption>Qualifying Additional Properties</caption>
-            <tr>
-               <th>Simple Property</th>
-               <th>Qualification Property</th>
-               <th>Involvement Class</th>
-            <tr>
-            {% for row in models.additional_qualified_forms %}
-            <tr>
-               <td>
-                  <a href="{{row.unqualified.curie}}">{{row.unqualified.curie}}</a>
-               </td>
-               <td>
-                  <a href="{{row.qualified.curie}}">{{row.qualified.curie}}</a>
-               </td>
-               <td>
-                  <a href="{{row.involvement.curie}}">{{row.involvement.curie}}</a>
-               </td>
-            </tr>
-            {% endfor %} 
-         </table>
+         <div style="text-align: center;">
+            <table>
+            <caption>Qualifying Additional Properties</caption>
+               <tr>
+                  <th>Simple Property</th>
+                  <th>Qualification Property</th>
+                  <th>Involvement Class</th>
+               </tr>
+               {% for row in models.additional_qualified_forms %}
+               <tr>
+                  <td>
+                     <a href="#{{row.unqualified.value|safe|urifragment}}">{{row.unqualified.curie}}</a>
+                  </td>
+                  <td>
+                     <a href="#{{row.qualified.value|safe|urifragment}}">{{row.qualified.curie}}</a>
+                  </td>
+                  <td>
+                     <a href="#{{row.involvement.value|safe|urifragment}}">{{row.involvement.curie}}</a>
+                  </td>
+               </tr>
+               {% endfor %} 
+            </table>
          </div>
 	  </section>
 
      <section>
-	  	<h3>Common Relationships in PROV-O</h3>
+	  	<h3>Additional Relationships in PROV-O</h3>
         <p>        
 This section presents the rest of classes and properties textually without using a diagram. We may use some examples in English. 
 The classes and properties covered in this section are: 
@@ -451,7 +491,7 @@ Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom
 
 		</p>
         <div class="issue">
-        <code>http://www.w3.org/ns/prov/</code> for terms that are common in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
+        <code>http://www.w3.org/ns/prov/</code> for terms that are additional in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
         </div>
 	  </section>
 
@@ -486,21 +526,52 @@ Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom
       <h2>Cross reference for PROVO classes and properties</h2>
 
 <p>
-This section, i.e., Section 4, presents the classes and properties that compose the ontology. No need to provide a diagram illustrating the domain and the range of the object properties. Also, no need to provide an example for each class and property. We should be able to present most of classes with an example stated using a sentence or two in English. In other words, we don’t need to provide the turtle for every small example if a sentence in English is enough. We should reserve the use of turtle only for the classes and properties that we think may be difficult for the user to grasp, e.g., involvement. In particular, some of the involvements that reify relations that are not part of the core ontology, such as inform and Trace may need to be illustrated using turtle examples.
+This section, i.e., Section 4, presents the classes and properties that compose the ontology. No need to provide a diagram illustrating the domain and the range of the object properties. Also, no need to provide an example for each class and property. We should be able to present most of classes with an example stated using a sentence or two in English. In other words, we don’t need to provide the turtle for every small example if a sentence in English is enough. We should reserve the use of turtle only for the classes and properties that we think may be difficult for the user to grasp, e.g., involvement. In particular, some of the involvements that reify relations that are not part of the simple ontology, such as inform and Trace may need to be illustrated using turtle examples.
 </p>     
 
-      <section id="core-terms">
+      <section id="simple-terms">
          <h3>Simple Terms</h3>
-         {% for row in models.core_classes %}
-           <div id="{{row.class.value|safe|urifragment}}">
-            <p>about <a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></p>
-           </div>
-         {% endfor %} 
-      </section>
+            {%for row in models.simple_classes%}
 
-      <section id="qualified-terms">
-         <h3>Qualified Terms</h3>
-            {%for row in models.all_property_details%}
+               {%ifchanged row.class.value%}
+                  {%if !forloop.first%}
+                  </div>
+                  </table>
+                  {%endif%}
+                  <div id="{{row.class.value|safe|urifragment}}">
+                  <table class="prov-detail">
+                     <tr><th colspan="2"><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></th></tr>
+                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.class.value}}</span></td></tr>
+               {%endifchanged%}
+
+                     {%if row.comment%}
+                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
+                     {%endif%}
+                     {%if row.disjoint%}
+                        <tr><td class="prov-attribute">disjoint with</td><td><a href="#{{row.disjoint.value|safe|urifragment}}">{{row.disjoint.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.super%}
+                        <tr><td class="prov-attribute">subclass of</td><td><a href="#{{row.super.value|safe|urifragment}}">{{row.super.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.sub%}
+                        <tr><td class="prov-attribute">has subclass</td><td><a href="#{{row.sub.value|safe|urifragment}}">{{row.sub.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.inp%}
+                        <tr><td class="prov-attribute">in range of</td><td><a href="#{{row.inp.value|safe|urifragment}}">{{row.inp.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.out%}
+                        <tr><td class="prov-attribute">in domain of</td><td><a href="#{{row.out.value|safe|urifragment}}">{{row.out.curie}}</a></td></tr>
+                     {%endif%}
+
+               {%if forloop.first%}
+                  </table>
+                  </div>
+               {%endif%}
+            {%endfor%}
+
+
+
+            {%for row in models.simple_properties%}
 
                {%ifchanged row.property.value%}
                   {%if !forloop.first%}
@@ -509,21 +580,64 @@ This section, i.e., Section 4, presents the classes and properties that compose 
                   {%endif%}
                   <div id="{{row.property.value|safe|urifragment}}">
                   <table class="prov-detail">
-                     <tr><th colspan="2" style="background-color:#EAF2D3; color:black;"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
-                     <tr><td>IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
+                     <tr><th colspan="2"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
+                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
                {%endifchanged%}
 
                      {%if row.comment%}
-                        <tr><td>comment</td><td>{{row.comment.value}}}</a></td></tr>
+                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
                      {%endif%}
                      {%if row.domain%}
-                        <tr><td>has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
+                        <tr><td class="prov-attribute">has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
                      {%endif%}
                      {%if row.range%}
-                        <tr><td>has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
+                        <tr><td class="prov-attribute">has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
                      {%endif%}
                      {%if row.inverse%}
-                        <tr><td>has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
+                        <tr><td class="prov-attribute">has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
+                     {%endif%}
+
+               {%if forloop.last%}
+                  </table>
+                  </div>
+               {%endif%}
+            {%endfor%}
+
+      </section> <!-- Simple Classes and Properties - crossreference -->
+
+      <section id="qualified-terms">
+         <h3>Qualified Terms</h3>
+
+            {%for row in models.qualified_classes%}
+
+               {%ifchanged row.class.value%}
+                  {%if !forloop.first%}
+                  </div>
+                  </table>
+                  {%endif%}
+                  <div id="{{row.class.value|safe|urifragment}}">
+                  <table class="prov-detail">
+                     <tr><th colspan="2"><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></th></tr>
+                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.class.value}}</span></td></tr>
+               {%endifchanged%}
+
+                     {%if row.comment%}
+                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
+                     {%endif%}
+                     {%if row.disjoint%}
+                        <tr><td class="prov-attribute">disjoint with</td><td><a href="#{{row.disjoint.value|safe|urifragment}}">{{row.disjoint.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.super%}
+                        <tr><td class="prov-attribute">subclass of</td><td><a href="#{{row.super.value|safe|urifragment}}">{{row.super.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.sub%}
+                        <tr><td class="prov-attribute">has subclass</td><td><a href="#{{row.sub.value|safe|urifragment}}">{{row.sub.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.inp%}
+                        <tr><td class="prov-attribute">in range of</td><td><a href="#{{row.inp.value|safe|urifragment}}">{{row.inp.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.out%}
+                        <tr><td class="prov-attribute">in domain of</td><td><a href="#{{row.out.value|safe|urifragment}}">{{row.out.curie}}</a></td></tr>
                      {%endif%}
 
                {%if forloop.first%}
@@ -531,10 +645,117 @@ This section, i.e., Section 4, presents the classes and properties that compose 
                   </div>
                {%endif%}
             {%endfor%}
-      </section>
 
-      <section id="common-terms">
-         <h3>Common Terms</h3>
+
+
+            {%for row in models.qualified_properties%}
+
+               {%ifchanged row.property.value%}
+                  {%if !forloop.first%}
+                  </div>
+                  </table>
+                  {%endif%}
+                  <div id="{{row.property.value|safe|urifragment}}">
+                  <table class="prov-detail">
+                     <tr><th colspan="2"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
+                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
+               {%endifchanged%}
+
+                     {%if row.comment%}
+                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
+                     {%endif%}
+                     {%if row.domain%}
+                        <tr><td class="prov-attribute">has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.range%}
+                        <tr><td class="prov-attribute">has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.inverse%}
+                        <tr><td class="prov-attribute">has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
+                     {%endif%}
+
+               {%if forloop.last%}
+                  </table>
+                  </div>
+               {%endif%}
+            {%endfor%}
+      </section> <!-- Qualified Classes and Properties - crossreference -->
+
+      <section id="additional-terms">
+         <h3>Additional Terms</h3>
+            {%for row in models.additional_classes%}
+
+               {%ifchanged row.class.value%}
+                  {%if !forloop.first%}
+                  </div>
+                  </table>
+                  {%endif%}
+                  <div id="{{row.class.value|safe|urifragment}}">
+                  <table class="prov-detail">
+                     <tr><th colspan="2"><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></th></tr>
+                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.class.value}}</span></td></tr>
+               {%endifchanged%}
+
+                     {%if row.comment%}
+                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
+                     {%endif%}
+                     {%if row.disjoint%}
+                        <tr><td class="prov-attribute">disjoint with</td><td><a href="#{{row.disjoint.value|safe|urifragment}}">{{row.disjoint.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.super%}
+                        <tr><td class="prov-attribute">subclass of</td><td><a href="#{{row.super.value|safe|urifragment}}">{{row.super.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.sub%}
+                        <tr><td class="prov-attribute">has subclass</td><td><a href="#{{row.sub.value|safe|urifragment}}">{{row.sub.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.inp%}
+                        <tr><td class="prov-attribute">in range of</td><td><a href="#{{row.inp.value|safe|urifragment}}">{{row.inp.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.out%}
+                        <tr><td class="prov-attribute">in domain of</td><td><a href="#{{row.out.value|safe|urifragment}}">{{row.out.curie}}</a></td></tr>
+                     {%endif%}
+
+            {%endfor%}
+                  </table>
+                  </div>
+
+
+
+            {%for row in models.additional_properties%}
+
+               {%ifchanged row.property.value%}
+                  {%if !forloop.first%}
+                  </div>
+                  </table>
+                  {%endif%}
+                  <div id="{{row.property.value|safe|urifragment}}">
+                  <table class="prov-detail">
+                     <tr><th colspan="2"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
+                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
+               {%endifchanged%}
+
+                     {%if row.comment%}
+                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
+                     {%endif%}
+                     {%if row.domain%}
+                        <tr><td class="prov-attribute">has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.range%}
+                        <tr><td class="prov-attribute">has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
+                     {%endif%}
+                     {%if row.inverse%}
+                        <tr><td class="prov-attribute">has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
+                     {%endif%}
+
+               {%if forloop.last%}
+                  </table>
+                  </div>
+               {%endif%}
+            {%endfor%}
+
+
+
+
       </section>
 
 <p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROVO in a glance”, as well as links used throughout the document. 

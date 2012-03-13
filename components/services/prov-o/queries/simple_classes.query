@@ -5,16 +5,17 @@ prefix prov: <http://www.w3.org/ns/prov#>
 select distinct ?class ?comment ?disjoint ?super ?sub ?inp ?out
 where { 
    graph <http://www.w3.org/ns/prov#> { 
-
-      {?class a owl:Class; prov:category "simple" .
-
-      filter(regex(str(?class),'http://www.w3.org/ns/prov'))}
-
-      union { optional{ ?class rdfs:comment     ?comment  } }
-      union { optional{ ?class owl:disjointWith ?disjoint } }
-      union { optional{ ?class rdfs:subClassOf  ?super    } }
-      union { optional{ ?sub   rdfs:subClassOf  ?class    } }
-      union { optional{ ?inp   rdfs:range       ?class    } }
-      union { optional{ ?out   rdfs:domain      ?class    } }
+      { ?class a owl:Class; prov:category "simple" . filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+        ?class rdfs:comment     ?comment .  } union
+      { ?class a owl:Class; prov:category "simple" . filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+        ?class owl:disjointWith ?disjoint } union
+      { ?class a owl:Class; prov:category "simple" . filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+        ?class rdfs:subClassOf  ?super    } union
+      { ?class a owl:Class; prov:category "simple" . filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+        ?sub   rdfs:subClassOf  ?class    } union
+      { ?class a owl:Class; prov:category "simple" . filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+        ?inp   rdfs:range       ?class    } union
+      { ?class a owl:Class; prov:category "simple" . filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+        ?out   rdfs:domain      ?class    }
    }
 } order by ?class ?comment ?disjoint ?super ?sub ?inp ?out

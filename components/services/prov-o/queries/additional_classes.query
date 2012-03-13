@@ -1,12 +1,20 @@
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix owl:  <http://www.w3.org/2002/07/owl#>
 prefix prov: <http://www.w3.org/ns/prov#>
 
-select distinct ?class
+select distinct ?class ?comment ?disjoint ?super ?sub ?inp ?out
 where { 
    graph <http://www.w3.org/ns/prov#> { 
 
       ?class a owl:Class; prov:category "additional" .
 
       filter(regex(str(?class),'http://www.w3.org/ns/prov'))
+
+      optional{ ?class rdfs:comment     ?comment  }
+      optional{ ?class owl:disjointWith ?disjoint }
+      optional{ ?class rdfs:subClassOf  ?super    }
+      optional{ ?sub   rdfs:subClassOf  ?class    }
+      optional{ ?inp   rdfs:range       ?class    }
+      optional{ ?out   rdfs:domain      ?class    }
    }
-} order by ?class
+} order by ?class ?comment ?disjoint ?super ?sub ?inp ?out
