@@ -223,13 +223,13 @@
 The terms (classes and properties) in provo can be categorized into three categories: simple terms, terms used to encode qualified relationships, and “additional” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
       </p>
       <p>Simple classes and properties</p>
-      {% include "includes/at-a-glance-additional.html" %}
+      {% include "includes/at-a-glance-simple.html" %}
 
       <p>Qualified classes and properties</p>
       {% include "includes/at-a-glance-qualified.html" %}
 
       <p>Additional classes and properties</p>
-      {% include "includes/at-a-glance-simple.html" %}
+      {% include "includes/at-a-glance-additional.html" %}
 
       <div>
       {% for row in models.uncategorized %}
@@ -479,7 +479,7 @@ This section, i.e., Section 4, presents the classes and properties that compose 
 
       <section id="simple-terms">
          <h3>Simple Terms</h3>
-         {% include "includes/cross-reference-additional.html" %}
+         {% include "includes/cross-reference-simple.html" %}
       </section> <!-- Simple Classes and Properties - crossreference -->
 
       <section id="qualified-terms">
@@ -489,7 +489,7 @@ This section, i.e., Section 4, presents the classes and properties that compose 
 
       <section id="additional-terms">
          <h3>Additional Terms</h3>
-         {% include "includes/cross-reference-simple.html" %}
+         {% include "includes/cross-reference-additional.html" %}
       </section>
 
 <p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROVO in a glance”, as well as links used throughout the document. 
