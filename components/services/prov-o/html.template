@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The PROV Ontology: Model and Formal Semantics</title>
+    <title>The PROV Ontology: It's not scary.</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
 
     <link href="{{lodspk.home}}prov-o-lode/owl.css"    rel="stylesheet" type="text/css" />
@@ -101,7 +101,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2011-12-13",
+          publishDate:  "2012-03-13",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -254,7 +254,7 @@ The terms (classes and properties) in provo can be categorized into three catego
 
 
     <section id="ontology-description">
-      <h2>The PROVO Ontology Description</h2>    	
+      <h2>The PROV-O Ontology Description</h2>    	
       <p>
 This section provides the reader with an understanding about the structure of the section, so that they know which section they should go to read and where they should stop. That said, the message about the purpose of each section can still be repeated at each individual section.
       </p>
@@ -398,9 +398,6 @@ The classes and properties covered in this section are:
 Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom, hadQuotatedAgent, hadQuoterAgent, wasSummaryOf, alternateOf, terms related to Collection? Bundle? Role?? , hadRole, Location??, hadLocation?, wasStartedByActivity?? specializationOf?
 
 		</p>
-        <div class="issue">
-        <code>http://www.w3.org/ns/prov/</code> for terms that are additional in both models. This is <a href="http://www.w3.org/2011/prov/track/issues/90">ISSUE-90</a>
-        </div>
 	  </section>
 
 
@@ -431,7 +428,7 @@ Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom
  
 
 	<section class='informative' id="specializing-provenance-ontology-for-domain-specific-provenance-applications">
-      <h2>Cross reference for PROVO classes and properties</h2>
+      <h2>Cross reference for PROV-O classes and properties</h2>
 
 <p>
 This section, i.e., Section 4, presents the classes and properties that compose the ontology. No need to provide a diagram illustrating the domain and the range of the object properties. Also, no need to provide an example for each class and property. We should be able to present most of classes with an example stated using a sentence or two in English. In other words, we don’t need to provide the turtle for every small example if a sentence in English is enough. We should reserve the use of turtle only for the classes and properties that we think may be difficult for the user to grasp, e.g., involvement. In particular, some of the involvements that reify relations that are not part of the simple ontology, such as inform and Trace may need to be illustrated using turtle examples.
@@ -452,7 +449,7 @@ This section, i.e., Section 4, presents the classes and properties that compose 
          {% include "includes/cross-reference-additional.html" %}
       </section>
 
-<p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROVO in a glance”, as well as links used throughout the document. 
+<p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROV-O in a glance”, as well as links used throughout the document. 
 </p>
 
 	</section>

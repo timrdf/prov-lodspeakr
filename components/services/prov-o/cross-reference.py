@@ -175,7 +175,7 @@ for category in categories.keys():
 
          # ?p rdfs:domain class
          if len(owlClass.is_rdfs_domain_of) > 0:
-            cross.write('      <dt>is in domain of</dt>\n')
+            cross.write('      <dt>in domain of</dt>\n')
             cross.write('      <dd>\n')
             for p in owlClass.is_rdfs_domain_of:
                pqname = p.subject.split('#')
@@ -188,7 +188,7 @@ for category in categories.keys():
 
          # ?p rdfs:range class
          if len(owlClass.is_rdfs_range_of) > 0:
-            cross.write('      <dt>is in range of</dt>\n')
+            cross.write('      <dt>in range of</dt>\n')
             cross.write('      <dd>\n')
             for p in owlClass.is_rdfs_range_of:
                pqname = p.subject.split('#')
