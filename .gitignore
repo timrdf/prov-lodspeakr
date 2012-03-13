@@ -6,3 +6,5 @@ meta/db.sqlite
 components/services/prov-o/eg*
 components/services/prov-o/*png
 static/prov-o-diagrams/
+static/prov-o-lode/
+components/services/prov-o/includes/

@@ -3,6 +3,11 @@
   <head>
     <title>The PROV Ontology: Model and Formal Semantics</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+
+    <link href="{{lodspk.home}}prov-o-lode/owl.css"    rel="stylesheet" type="text/css" />
+    <link href="{{lodspk.home}}prov-o-lode/Primer.css" rel="stylesheet" type="text/css" />
+    <link href="{{lodspk.home}}prov-o-lode/rec.css"    rel="stylesheet" type="text/css" />
+    <link href="{{lodspk.home}}prov-o-lode/extra.css"  rel="stylesheet" type="text/css" />
     <!-- 
       === NOTA BENE ===
       For the three scripts below, if your spec resides on dev.w3 you can check them
@@ -218,70 +223,13 @@
 The terms (classes and properties) in provo can be categorized into three categories: simple terms, terms used to encode qualified relationships, and “additional” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
       </p>
       <p>Simple classes and properties</p>
-      <div id="simple-glance">
-         <div>
-            <ul class="hlist">
-               {% for row in models.simple_classes %}
-                  {%ifchanged row.class.value%}
-                    <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
-                  {%endifchanged%}
-               {% endfor %} 
-            </ul>
-         </div>
-         <div>
-            <ul class="hlist">
-               {% for row in models.simple_properties %}
-                  {%ifchanged row.property.value%}
-                    <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
-                  {%endifchanged%}
-               {% endfor %} 
-            </ul>
-         </div>
-      </div>
+      {% include "includes/at-a-glance-additional.html" %}
 
       <p>Qualified classes and properties</p>
-      <div id="qualified-glance">
-         <div>
-            <ul class="hlist">
-               {% for row in models.qualified_classes %}
-                  {%ifchanged row.class.value%}
-                     <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
-                  {%endifchanged%}
-               {% endfor %} 
-            </ul>
-         <div>
-         </div>
-            <ul class="hlist">
-               {% for row in models.qualified_properties %}
-                  {%ifchanged row.property.value%}
-                    <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
-                  {%endifchanged%}
-               {% endfor %} 
-            </ul>
-         </div>
-      </div>
+      {% include "includes/at-a-glance-qualified.html" %}
 
       <p>Additional classes and properties</p>
-      <div id="additional-glance">
-         <div>
-            <ul class="hlist">
-               {% for row in models.additional_classes %}
-                  {%ifchanged row.class.value%}
-                   <li><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></li>
-                  {%endifchanged%}
-               {% endfor %} 
-            </ul>
-         <div>
-         </div>
-            <ul class="hlist">
-               {% for row in models.additional_properties %}
-                  {%ifchanged row.property.value%}
-                    <li><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></li>
-                  {%endifchanged%}
-               {% endfor %} 
-            </ul>
-         </div>
-      </div>
+      {% include "includes/at-a-glance-simple.html" %}
 
       <div>
       {% for row in models.uncategorized %}
@@ -531,231 +479,17 @@ This section, i.e., Section 4, presents the classes and properties that compose 
 
       <section id="simple-terms">
          <h3>Simple Terms</h3>
-            {%for row in models.simple_classes%}
-
-               {%ifchanged row.class.value%}
-                  {%if !forloop.first%}
-                  </div>
-                  </table>
-                  {%endif%}
-                  <div id="{{row.class.value|safe|urifragment}}">
-                  <table class="prov-detail">
-                     <tr><th colspan="2"><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></th></tr>
-                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.class.value}}</span></td></tr>
-               {%endifchanged%}
-
-                     {%if row.comment%}
-                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
-                     {%endif%}
-                     {%if row.disjoint%}
-                        <tr><td class="prov-attribute">disjoint with</td><td><a href="#{{row.disjoint.value|safe|urifragment}}">{{row.disjoint.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.super%}
-                        <tr><td class="prov-attribute">subclass of</td><td><a href="#{{row.super.value|safe|urifragment}}">{{row.super.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.sub%}
-                        <tr><td class="prov-attribute">has subclass</td><td><a href="#{{row.sub.value|safe|urifragment}}">{{row.sub.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.inp%}
-                        <tr><td class="prov-attribute">in range of</td><td><a href="#{{row.inp.value|safe|urifragment}}">{{row.inp.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.out%}
-                        <tr><td class="prov-attribute">in domain of</td><td><a href="#{{row.out.value|safe|urifragment}}">{{row.out.curie}}</a></td></tr>
-                     {%endif%}
-
-               {%if forloop.first%}
-                  </table>
-                  </div>
-               {%endif%}
-            {%endfor%}
-
-
-
-            {%for row in models.simple_properties%}
-
-               {%ifchanged row.property.value%}
-                  {%if !forloop.first%}
-                  </div>
-                  </table>
-                  {%endif%}
-                  <div id="{{row.property.value|safe|urifragment}}">
-                  <table class="prov-detail">
-                     <tr><th colspan="2"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
-                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
-               {%endifchanged%}
-
-                     {%if row.comment%}
-                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
-                     {%endif%}
-                     {%if row.domain%}
-                        <tr><td class="prov-attribute">has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.range%}
-                        <tr><td class="prov-attribute">has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.inverse%}
-                        <tr><td class="prov-attribute">has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
-                     {%endif%}
-
-               {%if forloop.last%}
-                  </table>
-                  </div>
-               {%endif%}
-            {%endfor%}
-
+         {% include "includes/cross-reference-additional.html" %}
       </section> <!-- Simple Classes and Properties - crossreference -->
 
       <section id="qualified-terms">
          <h3>Qualified Terms</h3>
-
-            {%for row in models.qualified_classes%}
-
-               {%ifchanged row.class.value%}
-                  {%if !forloop.first%}
-                  </div>
-                  </table>
-                  {%endif%}
-                  <div id="{{row.class.value|safe|urifragment}}">
-                  <table class="prov-detail">
-                     <tr><th colspan="2"><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></th></tr>
-                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.class.value}}</span></td></tr>
-               {%endifchanged%}
-
-                     {%if row.comment%}
-                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
-                     {%endif%}
-                     {%if row.disjoint%}
-                        <tr><td class="prov-attribute">disjoint with</td><td><a href="#{{row.disjoint.value|safe|urifragment}}">{{row.disjoint.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.super%}
-                        <tr><td class="prov-attribute">subclass of</td><td><a href="#{{row.super.value|safe|urifragment}}">{{row.super.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.sub%}
-                        <tr><td class="prov-attribute">has subclass</td><td><a href="#{{row.sub.value|safe|urifragment}}">{{row.sub.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.inp%}
-                        <tr><td class="prov-attribute">in range of</td><td><a href="#{{row.inp.value|safe|urifragment}}">{{row.inp.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.out%}
-                        <tr><td class="prov-attribute">in domain of</td><td><a href="#{{row.out.value|safe|urifragment}}">{{row.out.curie}}</a></td></tr>
-                     {%endif%}
-
-               {%if forloop.first%}
-                  </table>
-                  </div>
-               {%endif%}
-            {%endfor%}
-
-
-
-            {%for row in models.qualified_properties%}
-
-               {%ifchanged row.property.value%}
-                  {%if !forloop.first%}
-                  </div>
-                  </table>
-                  {%endif%}
-                  <div id="{{row.property.value|safe|urifragment}}">
-                  <table class="prov-detail">
-                     <tr><th colspan="2"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
-                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
-               {%endifchanged%}
-
-                     {%if row.comment%}
-                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
-                     {%endif%}
-                     {%if row.domain%}
-                        <tr><td class="prov-attribute">has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.range%}
-                        <tr><td class="prov-attribute">has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.inverse%}
-                        <tr><td class="prov-attribute">has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
-                     {%endif%}
-
-               {%if forloop.last%}
-                  </table>
-                  </div>
-               {%endif%}
-            {%endfor%}
+         {% include "includes/cross-reference-qualified.html" %}
       </section> <!-- Qualified Classes and Properties - crossreference -->
 
       <section id="additional-terms">
          <h3>Additional Terms</h3>
-            {%for row in models.additional_classes%}
-
-               {%ifchanged row.class.value%}
-                  {%if !forloop.first%}
-                  </div>
-                  </table>
-                  {%endif%}
-                  <div id="{{row.class.value|safe|urifragment}}">
-                  <table class="prov-detail">
-                     <tr><th colspan="2"><a href="#{{row.class.value|safe|urifragment}}">{{row.class.curie}}</a></th></tr>
-                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.class.value}}</span></td></tr>
-               {%endifchanged%}
-
-                     {%if row.comment%}
-                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
-                     {%endif%}
-                     {%if row.disjoint%}
-                        <tr><td class="prov-attribute">disjoint with</td><td><a href="#{{row.disjoint.value|safe|urifragment}}">{{row.disjoint.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.super%}
-                        <tr><td class="prov-attribute">subclass of</td><td><a href="#{{row.super.value|safe|urifragment}}">{{row.super.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.sub%}
-                        <tr><td class="prov-attribute">has subclass</td><td><a href="#{{row.sub.value|safe|urifragment}}">{{row.sub.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.inp%}
-                        <tr><td class="prov-attribute">in range of</td><td><a href="#{{row.inp.value|safe|urifragment}}">{{row.inp.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.out%}
-                        <tr><td class="prov-attribute">in domain of</td><td><a href="#{{row.out.value|safe|urifragment}}">{{row.out.curie}}</a></td></tr>
-                     {%endif%}
-
-            {%endfor%}
-                  </table>
-                  </div>
-
-
-
-            {%for row in models.additional_properties%}
-
-               {%ifchanged row.property.value%}
-                  {%if !forloop.first%}
-                  </div>
-                  </table>
-                  {%endif%}
-                  <div id="{{row.property.value|safe|urifragment}}">
-                  <table class="prov-detail">
-                     <tr><th colspan="2"><a href="#{{row.property.value|safe|urifragment}}">{{row.property.curie}}</a></th></tr>
-                     <tr><td class="prov-attribute">IRI</td><td><span style="font-family: sans-serif">{{row.property.value}}</span></td></tr>
-               {%endifchanged%}
-
-                     {%if row.comment%}
-                        <tr><td class="prov-attribute">comment</td><td>{{row.comment.value}}</td></tr>
-                     {%endif%}
-                     {%if row.domain%}
-                        <tr><td class="prov-attribute">has domain</td><td><a href="#{{row.domain.value|safe|urifragment}}">{{row.domain.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.range%}
-                        <tr><td class="prov-attribute">has range</td><td><a href="#{{row.range.value|safe|urifragment}}">{{row.range.curie}}</a></td></tr>
-                     {%endif%}
-                     {%if row.inverse%}
-                        <tr><td class="prov-attribute">has inverse</td><td><a href="#{{row.inverse.value|safe|urifragment}}">{{row.inverse.curie}}</a></td></tr>
-                     {%endif%}
-
-               {%if forloop.last%}
-                  </table>
-                  </div>
-               {%endif%}
-            {%endfor%}
-
-
-
-
+         {% include "includes/cross-reference-simple.html" %}
       </section>
 
 <p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROVO in a glance”, as well as links used throughout the document. 
