@@ -8,10 +8,11 @@
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-    <h1>Retrieval Classes available</h1>
+    <h1>Retrieval</h1>
 	<ul>
-    {% for row in models.main %}
-        <li><a href="{{lodspk.baseUrl}}special/instances/{{ row.resource.curie }}">{{row.resource.curie}}</a></li>
+      <li>hi</li>
+    {% for row in models.sourceusages %}
+        <li>{{row.source.value}} {{row.time.value}}</a></li>
     {% endfor %}
     </ul>
   </body>
