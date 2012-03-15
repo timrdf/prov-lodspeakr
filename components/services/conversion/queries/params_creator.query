@@ -1,0 +1,14 @@
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+prefix void:       <http://rdfs.org/ns/void#>
+prefix dcterms:    <http://purl.org/dc/terms/>
+
+select distinct ?layer ?creator ?created
+where {
+   <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-11> void:subset ?layer .
+   #<{{base.args.arg0}}> void:subset ?layer .
+   ?layer 
+      a conversion:LayerDataset;
+      conversion:conversion_process ?process .
+   ?process dcterms:creator ?creator
+   optional {?process dcterms:created ?created }
+}
