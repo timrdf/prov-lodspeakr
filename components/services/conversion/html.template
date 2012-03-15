@@ -14,14 +14,29 @@
       <li>Person holding User account that made Enhancement parameters</li>
     </ul>
     <p>Enhancement parameters creator</p>
-	 <table>
-       {% for row in models.params_creator %}
+    {% for row in models.params_creator %}
+       <table>
           <tr>
-             <td><a href="{{row.layer.value}}">{{row.layer.curie}}</a></td>
-             <td><a href="{{row.creator.value}}">{{row.creator.curie}}</a></td>
-             <td>{{row.created.value|date:"H:i l F jS \o"}}</td>
+            <td>the RDF dataset</td>
+            <td><a href="{{row.layer.value}}">{{row.layer.curie}}</a></td>
           </tr>
-       {% endfor %}
-    </table>
+          <tr> 
+            <td>user account</td>
+            <td><a href="{{row.creator.value}}">{{row.creator.curie}}</a></td>
+          <tr>
+          <tr>
+            <td>date the enhancment parameters were created</td>
+            <td>{{row.created.value|date:"H:i l F jS \o"}}</td>
+          </tr>
+          {% if row.username %}<li>{{row.username.value}} user name of account</li> {%endif%}
+          {% if row.machine %}
+            <tr>
+               <td>the computer used</td>
+               <td>{{row.machine.value}}</td>
+            </tr>
+          {%endif%}
+          {% if row.person %}<li>{{row.person.value}} the person with the account.</li> {%endif%}
+       </ul>
+    {% endfor %}
   </body>
 </html>

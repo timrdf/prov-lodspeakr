@@ -1,14 +1,25 @@
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
 prefix void:       <http://rdfs.org/ns/void#>
 prefix dcterms:    <http://purl.org/dc/terms/>
+prefix sioc:       <http://rdfs.org/sioc/ns#>
+prefix foaf:       <http://xmlns.com/foaf/0.1/>
 
-select distinct ?layer ?creator ?created
+select distinct ?layer ?creator ?created ?username ?machine ?person
 where {
    <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-11> void:subset ?layer .
    #<{{base.args.arg0}}> void:subset ?layer .
    ?layer 
       a conversion:LayerDataset;
       conversion:conversion_process ?process .
-   ?process dcterms:creator ?creator
-   optional {?process dcterms:created ?created }
+                          optional {?process dcterms:created ?created}
+                                    ?process dcterms:creator ?creator
+#   optional {
+#      ?creator
+#         a foaf:OnlineAccount;
+#         foaf:accountName ?username;
+#         sioc:account_of  ?person
+#   }
+   optional {
+      ?creator dcterms:isPartOf ?machine .
+   }
 }
