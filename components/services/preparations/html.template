@@ -15,23 +15,49 @@
     {% endfor %}
     </ul>-->
     <h1>Preparations</h1>
-<p>We use the inference rule HTTP_GET to get data as follows.</p>
+<p>We conduct several inference steps (e.g. HTTP_GET, unzip and xls2rdf) to get data as shown below.</p>
 <table border="1">
 <tr>
-<th>Data downloaded</th>
-<th>Data source</th>
-<th>Download time</th>
+<th>Source Data</th>
+<th>Conclusion Data</th>
+<th>Time</th>
+<th>Inference rule</th>
 <th>Engine used</th>
-</tr>
+<th>Actor involved</th>
+</tr><!--
  {% for row in models.get %}
 <tr>
-<td>{{row.conclusion.value}}</td>
-<td>{{row.source.value}}</td>
+<td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
 <td>{{row.time.value}}</td>
+<th>HTTP GET</th>
 <td>{{row.engine.value}}</td>
+<td>{{row.actor.value}}</td>
+</tr>
+    {% endfor %}-->
+ {% for row in models.unzip %}
+<tr>
+<td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
+<td>{{row.time.value}}</td>
+<th>Unzip</th>
+<td>{{row.engine.value}}</td>
+<td>{{row.actor.value}}</td>
 </tr>
     {% endfor %}
-</table> 
+ {% for row in models.xls2csv %}
+<tr>
+<td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
+<td>{{row.time.value}}</td>
+<th>xls2csv</th>
+<td>{{row.engine.value}}</td>
+<td>{{row.actor.value}}</td>
+</tr>
+    {% endfor %}
+
+</table>
+
 <!--        <ul>
       <li>hi</li>
     {% for row in models.get %}

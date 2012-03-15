@@ -2,6 +2,7 @@ PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
 prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
 PREFIX pmlj: <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
+prefix conv:       <http://purl.org/twc/vocab/conversion/> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
 
 SELECT distinct ?engine ?source ?time ?actor ?conclusion
@@ -14,14 +15,12 @@ WHERE {
    ?step
       a pmlj:InferenceStep;
       pmlj:hasInferenceEngine ?engine;
-      pmlj:hasInferenceRule   httpget:HTTP_1_1_GET;
+      pmlj:hasInferenceRule   conv:spaceless_unzip;
       pmlj:hasSourceUsage     ?sUsage;
       hartigprov:involvedActor ?actor.
    ?sUsage 
       pmlp:hasSource ?source;
       pmlp:hasUsageDateTime ?time.
   }
-  #assume know the version of the dataset
-  FILTER regex(?conclusion, "/version/2012-Mar-15/source") 
 }
 
