@@ -8,11 +8,31 @@
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-    <h1>Classes available</h1>
+<!--    <h1>Classes available</h1>
 	<ul>
     {% for row in models.main %}
         <li><a href="{{lodspk.baseUrl}}special/instances/{{ row.resource.curie }}">{{row.resource.curie}}</a></li>
     {% endfor %}
     </ul>
+-->
+<p>The converted data is loaded into a triple store as a named graph. Related provenance infomation is shown as below.</p>
+<table border="1">
+<tr>
+<th>Graph name</th>
+<th>Time</th>
+<th>Inference rule</th>
+<th>Engine used</th>
+<th>Actor involved</th>
+</tr>
+ {% for row in models.namedGraphsKnow %}
+<tr>
+<td><a href="{{row.graphName.value}}">{{row.graphName.value}}</a></td>
+<td>{{row.when.value}}</td>
+<td><a href="{{row.rule.value}}">{{row.rule.value}}</a></td>
+<td><a href="{{row.engineType.value}}">{{row.engineType.value}}</a></td>
+<td><a href="{{row.user.value}}">{{row.user.value}}</a></td>
+</tr>
+    {% endfor %}
+</table>
   </body>
 </html>
