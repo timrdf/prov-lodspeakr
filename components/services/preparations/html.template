@@ -7,12 +7,37 @@
     <title>My new Service</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
-  <body>
+  <body><!--
     <h1>Classes available</h1>
 	<ul>
     {% for row in models.main %}
         <li><a href="{{lodspk.baseUrl}}special/instances/{{ row.resource.curie }}">{{row.resource.curie}}</a></li>
     {% endfor %}
+    </ul>-->
+    <h1>Preparations</h1>
+<p>We use the inference rule HTTP_GET to get data as follows.</p>
+<table border="1">
+<tr>
+<th>Data downloaded</th>
+<th>Data source</th>
+<th>Download time</th>
+<th>Engine used</th>
+</tr>
+ {% for row in models.get %}
+<tr>
+<td>{{row.conclusion.value}}</td>
+<td>{{row.source.value}}</td>
+<td>{{row.time.value}}</td>
+<td>{{row.engine.value}}</td>
+</tr>
+    {% endfor %}
+</table> 
+<!--        <ul>
+      <li>hi</li>
+    {% for row in models.get %}
+        <li>{{row.engine.value}} {{row.source.value}}</a></li>
+    {% endfor %}
     </ul>
+-->
   </body>
 </html>

@@ -1,0 +1,23 @@
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
+PREFIX pmlj: <http://inference-web.org/2.0/pml-justification.owl#>
+prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
+
+SELECT distinct ?engine ?source ?time ?conclusion
+WHERE {
+  GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-11> {
+   ?nodeset
+      a pmlj:NodeSet;
+      pmlj:isConsequentOf ?step;
+      pmlj:hasConclusion ?conclusion.
+   ?step
+      a pmlj:InferenceStep;
+      pmlj:hasInferenceEngine ?engine;
+      pmlj:hasInferenceRule   httpget:HTTP_1_1_GET;
+      pmlj:hasSourceUsage     ?sUsage.
+   ?sUsage 
+      pmlp:hasSource ?source;
+      pmlp:hasUsageDateTime ?time.
+  }
+}
+
