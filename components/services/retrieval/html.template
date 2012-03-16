@@ -4,40 +4,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in base.ns %}xmlns:{{i}}="{{ns}}" 
     {%endfor%}version="XHTML+RDFa 1.0" xml:lang="en">
   <head>
-    <title>My new Service</title>
+    <title>Retrieval Provenance</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
     <h1>Retrieval</h1>
-<!--	<ul>
+
+    <!--	<ul>
       <li>hi</li>
     {% for row in models.sourceusages %}
         <li>{{row.source.value}} {{row.time.value}}</a></li>
     {% endfor %}
     </ul> -->
-<p>We conduct one or more inference steps (e.g. HTTP_GET, HTTP_POST) to get data as shown below.</p>
-<table border="1">
-<tr>
-<th>Time</th>
-<th>Inference rule</th>
-<th>Source Data</th>
-<!--<th>Redirected from</th>-->
-<th>Conclusion Data</th>
-<!--<th>Engine used</th>-->
-<th>Actor involved</th>
-</tr>
- {% for row in models.get %}
-<tr>
-<td>{{row.time.value|date:"H:i l F jS \o"}}</td>
-<th>{{ row.rule.value }}</th>
-<td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
-<!--<td><a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a></td>-->
-<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
-<!--<td>{{row.engine.value}}</td>-->
-<td>{{row.actor.value}}</td>
-</tr>
-    {% endfor %}
-</table>
-<p>Subsequent stage: <a href='preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
+
+    <p>The following original sources were retrieved to create RDF datset {{lodspk.args.all|deurifier}}</p>
+    <table border="1">
+      <tr>
+         <th>Time</th>
+         <th>Inference rule</th>
+         <th>Source Data</th>
+         <!--<th>Redirected from</th>-->
+         <th>Conclusion Data</th>
+         <!--<th>Engine used</th>-->
+         <th>Actor involved</th>
+      </tr>
+      {% for row in models.get %}
+         <tr>
+            <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+            <td>{{row.rule.value|urifragment}}</td>
+            <td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
+            <!--<td><a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a></td>-->
+            <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a><br/><br/> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <!--<td>{{row.engine.value}}</td>-->
+            <td>{{row.actor.value}}</td>
+         </tr>
+       {% endfor %}
+      </table>
+
+    <p>Subsequent stage: <a href='preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
   </body>
 </html>
