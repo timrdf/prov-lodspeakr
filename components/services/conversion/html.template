@@ -7,6 +7,7 @@
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
+<h1>Conversion</h1>
 <p>Previous stage: <a href='{{lodspk.baseUrl}}preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
     <ul>
       <li>Time Enhancement parameters were created</li>
@@ -37,8 +38,9 @@
             </tr>
           {%endif%}
           {% if row.person %}<li>{{row.person.value}} the person with the account.</li> {%endif%}
-       </ul>
-    {% endfor %}
+      <!-- </ul>-->
+         </table>
+    {% endfor %i}
 <p>Subsequent stage: <a href='{{lodspk.baseUrl}}publishings/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of publishings</a></p>
   </body>
 </html>
