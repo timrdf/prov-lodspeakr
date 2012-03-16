@@ -15,14 +15,15 @@
     {% endfor %}
     </ul>-->
     <h1>Preparations</h1>
-<p>We conduct several inference steps (e.g. HTTP_GET, unzip and xls2rdf) to get data as shown below.</p>
+<p><a href='retrieval/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of retrieval</a></p>
+<p>We conduct several inference steps (e.g. unzip and xls2csv) to get data as shown below.</p>
 <table border="1">
 <tr>
-<th>Source Data</th>
-<th>Conclusion Data</th>
 <th>Time</th>
 <th>Inference rule</th>
-<th>Engine used</th>
+<th>Source Data</th>
+<th>Conclusion Data</th>
+<!--<th>Engine used</th>-->
 <th>Actor involved</th>
 </tr><!--
  {% for row in models.get %}
@@ -37,27 +38,27 @@
     {% endfor %}-->
  {% for row in models.unzip %}
 <tr>
+<td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+<th>unzip</th>
 <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
 <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
-<td>{{row.time.value}}</td>
-<th>Unzip</th>
-<td>{{row.engine.value}}</td>
+<!--<td>{{row.engine.value}}</td>-->
 <td>{{row.actor.value}}</td>
 </tr>
     {% endfor %}
  {% for row in models.xls2csv %}
 <tr>
+<td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+<th>xls2csv</th>
 <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
 <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
-<td>{{row.time.value}}</td>
-<th>xls2csv</th>
-<td>{{row.engine.value}}</td>
+<!--<td>{{row.engine.value}}</td>-->
 <td>{{row.actor.value}}</td>
 </tr>
     {% endfor %}
 
 </table>
-
+<p><a href='conversion/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of conversion</a></p>
 <!--        <ul>
       <li>hi</li>
     {% for row in models.get %}
