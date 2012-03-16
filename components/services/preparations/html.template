@@ -15,56 +15,60 @@
     {% endfor %}
     </ul>-->
     <h1>Preparations</h1>
-<p>Previous stage: <a href='retrieval/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of retrieval</a></p>
-<p>We conduct several inference steps (e.g. unzip and xls2csv) to get data as shown below.</p>
-<table border="1">
-<tr>
-<th>Time</th>
-<th>Inference rule</th>
-<th>Source Data</th>
-<th>Conclusion Data</th>
-<!--<th>Engine used</th>-->
-<th>Actor involved</th>
-</tr><!--
- {% for row in models.get %}
-<tr>
-<td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
-<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
-<td>{{row.time.value}}</td>
-<th>HTTP GET</th>
-<td>{{row.engine.value}}</td>
-<td>{{row.actor.value}}</td>
-</tr>
-    {% endfor %}-->
- {% for row in models.unzip %}
-<tr>
-<td>{{row.time.value|date:"H:i l F jS \o"}}</td>
-<th>unzip</th>
-<td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
-<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
-<!--<td>{{row.engine.value}}</td>-->
-<td>{{row.actor.value}}</td>
-</tr>
-    {% endfor %}
- {% for row in models.xls2csv %}
-<tr>
-<td>{{row.time.value|date:"H:i l F jS \o"}}</td>
-<th>xls2csv</th>
-<td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
-<td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
-<!--<td>{{row.engine.value}}</td>-->
-<td>{{row.actor.value}}</td>
-</tr>
-    {% endfor %}
 
-</table>
-<p>Subsequent stage: <a href='conversion/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of conversion</a></p>
-<!--        <ul>
-      <li>hi</li>
-    {% for row in models.get %}
-        <li>{{row.engine.value}} {{row.source.value}}</a></li>
-    {% endfor %}
-    </ul>
--->
+    <p>Previous stage: <a href='{{lodspk.baseUrl}}retrieval/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of retrieval</a></p>
+
+    <p>We conduct several inference steps (e.g. unzip and xls2csv) to get data as shown below.</p>
+    <table border="1">
+      <tr>
+         <th>Time</th>
+         <th>Inference rule</th>
+         <th>Source Data</th>
+         <th>Conclusion Data</th>
+         <!--<th>Engine used</th>-->
+         <th>Actor involved</th>
+      </tr>
+      <!-- {% for row in models.get %}
+      <tr>
+      <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+      <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a></td>
+      <td>{{row.time.value}}</td>
+      <th>HTTP GET</th>
+      <td>{{row.engine.value}}</td>
+      <td>{{row.actor.value}}</td>
+      </tr>
+       {% endfor %}-->
+
+      {% for row in models.unzip %}
+         <tr>
+            <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+            <td>unzip</td>
+            <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+            <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <!--<td>{{row.engine.value}}</td>-->
+            <td>{{row.actor.value}}</td>
+         </tr>
+      {% endfor %}
+
+      {% for row in models.xls2csv %}
+         <tr>
+            <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+            <td>xls2csv</td>
+            <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
+            <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <!--<td>{{row.engine.value}}</td>-->
+            <td>{{row.actor.value}}</td>
+         </tr>
+      {% endfor %}
+   </table>
+
+   <p>Subsequent stage: <a href='{{lodspk.baseUrl}}conversion/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of conversion</a></p>
+
+   <!-- <ul>
+         <li>hi</li>
+       {% for row in models.get %}
+           <li>{{row.engine.value}} {{row.source.value}}</a></li>
+       {% endfor %}
+       </ul> -->
   </body>
 </html>
