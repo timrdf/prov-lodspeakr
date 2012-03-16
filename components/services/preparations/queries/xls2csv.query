@@ -4,8 +4,9 @@ PREFIX pmlj: <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
 prefix conv:       <http://purl.org/twc/vocab/conversion/> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
-SELECT distinct ?engine ?source ?time ?actor ?conclusion
+SELECT distinct ?engine ?source ?time ?actor ?conclusion ?rule ?alg ?hashValue
 WHERE {
   GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
    ?nodeset
@@ -18,12 +19,19 @@ WHERE {
       a pmlj:InferenceStep;
       pmlj:hasInferenceEngine ?engine;
       pmlj:hasInferenceRule   conv:xls2csv_d1c34d66890e1355337df68b87ad621f_Method;
+      pmlj:hasInferenceRule   ?rule;
       pmlj:hasAntecedentList ?antList;
       hartigprov:involvedActor ?actor.
    ?antList 
       rdf:first ?antFirst.
    ?antFirst
       pmlj:hasConclusion ?source.
+   ?conclusion
+      nfo:hasHash ?hash.
+   ?hash
+      nfo:hashAlgorithm ?alg;
+      nfo:hashValue ?hashValue.
   }
-}
+} ORDER BY DESC(?time)
+
 

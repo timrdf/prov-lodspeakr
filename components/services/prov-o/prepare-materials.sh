@@ -3,7 +3,7 @@ if [ ! -d ../../../static/prov-o-diagrams ]; then
 fi
 pushd ../../../static/prov-o-diagrams
    # Diagrams
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/core.png
+   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/diagram-simple.png
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Qualified-Association.png
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/involvements.png
 popd &> /dev/null

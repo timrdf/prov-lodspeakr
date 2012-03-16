@@ -4,8 +4,9 @@ PREFIX pmlj: <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
 prefix irw:        <http://www.ontologydesignpatterns.org/ont/web/irw.owl#> 
+prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
-SELECT distinct ?engine ?source ?time ?actor ?conclusion ?rule ?fromUrl 
+SELECT distinct ?engine ?source ?time ?actor ?conclusion ?rule ?fromUrl ?alg ?hashValue 
 WHERE {
   GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
    ?nodeset
@@ -23,9 +24,14 @@ WHERE {
    ?sUsage 
       pmlp:hasSource ?source;
       pmlp:hasUsageDateTime ?time.
-    optional {?fromUrl irw:redirectsTo ?source.}
+   ?conclusion
+      nfo:hasHash ?hash.
+   ?hash
+      nfo:hashAlgorithm ?alg;
+      nfo:hashValue ?hashValue.
+   optional {?fromUrl irw:redirectsTo ?source.}
   }
   #assume know the version of the dataset
   FILTER regex(?conclusion, "/version/2012-Mar-15/source") 
-}
+} ORDER BY DESC(?time)
 
