@@ -9,11 +9,11 @@ SELECT ?graphName ?user ?person ?when ?engineType ?rule ?fileFirst ?fileFirstFir
 WHERE {
 #   tried to use the paramter, but not work 
 #   GRAPH <{{base.args.all|deurifier}}> {
+#   do we want to specify in a specific graph?
     GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>  {
     ?node pmlj:hasConclusion ?conclusion;
        pmlj:isConsequentOf ?infstep .
     ?conclusion skos:broader ?namedGraph.
-#   ?namedGraph sd:name <{{base.args.all|deurifier}}>.     
     ?namedGraph sd:name ?graphName.
     OPTIONAL {     ?infstep pmlj:hasAntecedentList ?antList.
     ?antList rdf:first ?antFirst.

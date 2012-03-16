@@ -1,0 +1,21 @@
+PREFIX dcterms:    <http://purl.org/dc/terms/>
+PREFIX sd:         <http://www.w3.org/ns/sparql-service-description#>
+PREFIX sioc:       <http://rdfs.org/sioc/ns#>
+PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
+PREFIX pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
+PREFIX hartigprov: <http://purl.org/net/provenance/ns#>
+PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+SELECT ?fileLoaded
+WHERE {
+#   tried to use the paramter, but not work
+#   GRAPH <{{base.args.all|deurifier}}> {
+#   do we want to specify in a specific graph?
+    GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>  {
+    ?node pmlj:hasConclusion ?conclusion;
+       pmlj:isConsequentOf ?infstep .
+    ?conclusion skos:broader ?namedGraph.
+    ?namedGraph sd:name <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>
+    ?namedGraph sd:name ?graphName.
+    ?infstep pmlj:hasAntecedentList ( [ a ?type; pmlj:hasConclusion ?fileLoaded ] ) .
+  }
+} 
