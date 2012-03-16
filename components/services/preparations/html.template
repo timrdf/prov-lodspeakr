@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in base.ns %}xmlns:{{i}}="{{ns}}" 
     {%endfor%}version="XHTML+RDFa 1.0" xml:lang="en">
   <head>
-    <title>My new Service</title>
+    <title>Preparations Provenance</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body><!--
@@ -16,15 +16,15 @@
     </ul>-->
     <h1>Preparations</h1>
 
-    <p>Previous stage: <a href='{{lodspk.baseUrl}}retrieval/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of retrieval</a></p>
+    <p>Previous stage: <a href='{{lodspk.baseUrl}}retrievals/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of retrieval</a></p>
 
-    <p>We conduct several inference steps (e.g. unzip and xls2csv) to get data as shown below.</p>
+    <p>The following steps were performed to the original source data files before converting them to RDF.</p>
     <table border="1">
       <tr>
          <th>Time</th>
-         <th>Inference rule</th>
-         <th>Source Data</th>
-         <th>Conclusion Data</th>
+         <th>Method applied</th>
+         <th>Input Data</th>
+         <th>Resulting Data</th>
          <!--<th>Engine used</th>-->
          <th>Actor involved</th>
       </tr>
