@@ -2,9 +2,11 @@ PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
 prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
 PREFIX pmlj: <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
+prefix conv:       <http://purl.org/twc/vocab/conversion/> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
-SELECT distinct ?engine ?source ?time ?actor ?conclusion
+SELECT distinct ?engine ?source ?time ?actor ?conclusion ?rule ?alg ?hashValue
 WHERE {
   GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
    ?nodeset
@@ -14,14 +16,19 @@ WHERE {
    ?step
       a pmlj:InferenceStep;
       pmlj:hasInferenceEngine ?engine;
-      pmlj:hasInferenceRule   httpget:HTTP_1_1_GET;
+      #Assume we know the inference rule or iterate over the set of rules supported
+      pmlj:hasInferenceRule   conv:spaceless_unzip;
+      pmlj:hasInferenceRule   ?rule;
       pmlj:hasSourceUsage     ?sUsage;
       hartigprov:involvedActor ?actor.
    ?sUsage 
       pmlp:hasSource ?source;
       pmlp:hasUsageDateTime ?time.
+   ?conclusion
+      nfo:hasHash ?hash.
+   ?hash
+      nfo:hashAlgorithm ?alg;
+      nfo:hashValue ?hashValue.
   }
-  #assume know the version of the dataset
-  FILTER regex(?conclusion, "/version/2012-Mar-15/source") 
-}
+} ORDER BY DESC(?time)
 
