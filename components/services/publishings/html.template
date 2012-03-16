@@ -11,7 +11,7 @@
       <p>
          <a href='{{lodspk.baseUrl}}retrievals/{{lodspk.args.all}}'>provenance of retrievals</a> ->
          <a href='{{lodspk.baseUrl}}preparations/{{lodspk.args.all}}'>provenance of preparations</a> ->
-         <a href='{{lodspk.baseUrl}}conversion/{{lodspk.args.all}}'>provenance of conversion</a> ->
+         <a href='{{lodspk.baseUrl}}conversions/{{lodspk.args.all}}'>provenance of conversions</a> ->
          provenance of publishings
       </p>
 
