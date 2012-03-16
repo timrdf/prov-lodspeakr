@@ -41,6 +41,6 @@
        {% endfor %}
       </table>
 
-    <p>Subsequent stage: <a href='preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
+    <p>Subsequent stage: <a href='{{lodspk.baseUrl}}preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
   </body>
 </html>
