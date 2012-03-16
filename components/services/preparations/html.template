@@ -7,18 +7,16 @@
     <title>Preparations Provenance</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
-  <body><!--
-    <h1>Classes available</h1>
-	<ul>
-    {% for row in models.main %}
-        <li><a href="{{lodspk.baseUrl}}special/instances/{{ row.resource.curie }}">{{row.resource.curie}}</a></li>
-    {% endfor %}
-    </ul>-->
+  <body>
+    <p>
+       <a href='{{lodspk.baseUrl}}retrievals/{{lodspk.args.all}}'>provenance of retrievals</a> ->
+       provenance of preparations ->
+       <a href='{{lodspk.baseUrl}}conversion/{{lodspk.args.all}}'>provenance of conversion</a> ->
+       <a href='{{lodspk.baseUrl}}publishings/{{lodspk.args.all}}'>provenance of publishings</a>
+    </p>
+
     <h1>Preparations</h1>
-
-    <p>Previous stage: <a href='{{lodspk.baseUrl}}retrievals/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of retrieval</a></p>
-
-    <p>The following steps were performed to the original source data files before converting them to RDF.</p>
+    <p>The following steps were performed to the original data files before converting them to RDF for dataset {{lodspk.args.all|deurifier}}.</p>
     <table border="1">
       <tr>
          <th>Time</th>
@@ -61,8 +59,6 @@
          </tr>
       {% endfor %}
    </table>
-
-   <p>Subsequent stage: <a href='{{lodspk.baseUrl}}conversion/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of conversion</a></p>
 
    <!-- <ul>
          <li>hi</li>
