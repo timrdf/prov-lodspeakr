@@ -8,7 +8,8 @@ prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
 SELECT distinct ?engine ?source ?time ?actor ?conclusion ?rule ?fromUrl ?alg ?hashValue 
 WHERE {
-  GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
+#  GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
+   GRAPH <{{lodspk.args.all|deurifier}}> {
    ?nodeset
       a pmlj:NodeSet;
       pmlj:isConsequentOf ?step;
