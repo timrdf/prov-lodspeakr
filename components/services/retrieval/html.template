@@ -20,23 +20,23 @@
     <p>The following original sources were retrieved to create RDF datset {{lodspk.args.all|deurifier}}</p>
     <table border="1">
       <tr>
-         <th>Time</th>
-         <th>Inference rule</th>
          <th>Source Data</th>
+         <th>Time</th>
+         <th>Retrieval method</th>
          <!--<th>Redirected from</th>-->
-         <th>Conclusion Data</th>
-         <!--<th>Engine used</th>-->
          <th>Actor involved</th>
+         <th>Cached Copy</th>
+         <!--<th>Engine used</th>-->
       </tr>
       {% for row in models.get %}
          <tr>
+            <td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
             <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
             <td>{{row.rule.value|urifragment}}</td>
-            <td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
             <!--<td><a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a></td>-->
+            <td>{{row.actor.value}}</td>
             <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a><br/><br/> ({{row.alg.value}} = {{row.hashValue.value}})</td>
             <!--<td>{{row.engine.value}}</td>-->
-            <td>{{row.actor.value}}</td>
          </tr>
        {% endfor %}
       </table>
