@@ -7,14 +7,15 @@
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-<h1>Conversion</h1>
-<p>Previous stage: <a href='{{lodspk.baseUrl}}preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
-    <ul>
-      <li>Time Enhancement parameters were created</li>
-      <li>User account that made Enhancement parameters</li>
-      <li>Person holding User account that made Enhancement parameters</li>
-      <li>Person holding User account that made Enhancement parameters</li>
-    </ul>
+    <p>
+       provenance of retrievals ->
+       <a href='{{lodspk.baseUrl}}prepartions/{{lodspk.args.all}}'>provenance of prepartions</a> ->
+       <a href='{{lodspk.baseUrl}}conversion/{{lodspk.args.all}}'>provenance of conversion</a> ->
+       <a href='{{lodspk.baseUrl}}publishings/{{lodspk.args.all}}'>provenance of publishings</a>
+    </p>
+
+    <h1>Conversion</h1>
+    <p>Previous stage: <a href='{{lodspk.baseUrl}}preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
     <p>Enhancement parameters creator</p>
     {% for row in models.params_creator %}
        <table>
@@ -37,10 +38,17 @@
                <td>{{row.machine.value}}</td>
             </tr>
           {%endif%}
-          {% if row.person %}<li>{{row.person.value}} the person with the account.</li> {%endif%}
-      <!-- </ul>-->
-         </table>
-    {% endfor %i}
-<p>Subsequent stage: <a href='{{lodspk.baseUrl}}publishings/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of publishings</a></p>
+          {% if row.person %}
+             <li>{{row.person.value}} the person with the account.</li> 
+          {%endif%}
+        </table>
+    {% endfor %}
+
+    <ul>
+      <li>Time Enhancement parameters were created</li>
+      <li>User account that made Enhancement parameters</li>
+      <li>Person holding User account that made Enhancement parameters</li>
+      <li>Person holding User account that made Enhancement parameters</li>
+    </ul>
   </body>
 </html>
