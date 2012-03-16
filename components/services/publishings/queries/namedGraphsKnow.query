@@ -5,28 +5,31 @@ PREFIX skos:       <http://www.w3.org/2004/02/skos/core#>
 PREFIX pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
 PREFIX hartigprov: <http://purl.org/net/provenance/ns#>
 PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+
 SELECT ?graphName ?user ?person ?when ?engineType ?rule ?fileFirst ?fileFirstFirst
 WHERE {
-#   tried to use the paramter, but not work 
-#   GRAPH <{{base.args.all|deurifier}}> {
-    GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>  {
-    ?node pmlj:hasConclusion ?conclusion;
-       pmlj:isConsequentOf ?infstep .
-    ?conclusion skos:broader ?namedGraph.
-#   ?namedGraph sd:name <{{base.args.all|deurifier}}>.     
-    ?namedGraph sd:name ?graphName.
-    OPTIONAL {     ?infstep pmlj:hasAntecedentList ?antList.
-    ?antList rdf:first ?antFirst.
-    ?antFirst pmlj:hasConclusion ?fileFirst.
-    ?antList rdf:rest ?antRest.}
-    OPTIONAL {
-    ?antRest rdf:first ?antFirstFirst.
-    ?antFirstFirst pmlj:hasConclusion ?fileFirstFirst. }
-    OPTIONAL { ?infstep hartigprov:involvedActor ?user   }
-    OPTIONAL { ?infstep dcterms:date             ?when   }
-    OPTIONAL { ?user    sioc:account_of          ?person }
-    OPTIONAL { ?infstep pmlj:hasInferenceEngine ?engine }
-    OPTIONAL { ?engine a ?engineType }
-    OPTIONAL { ?infstep pmlj:hasInferenceRule   ?rule }
+   # e.g. GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>  {
+   GRAPH <{{lodspk.args.all|deurifier}}> {
+      ?node pmlj:hasConclusion ?conclusion;
+            pmlj:isConsequentOf ?infstep .
+      ?conclusion skos:broader ?namedGraph.
+  #   ?namedGraph sd:name <{{base.args.all|deurifier}}>.     
+      ?namedGraph sd:name ?graphName.
+      OPTIONAL {     
+         ?infstep pmlj:hasAntecedentList ?antList.
+         ?antList rdf:first ?antFirst.
+         ?antFirst pmlj:hasConclusion ?fileFirst.
+         ?antList rdf:rest ?antRest.
+      }
+      OPTIONAL {
+         ?antRest rdf:first ?antFirstFirst.
+         ?antFirstFirst pmlj:hasConclusion ?fileFirstFirst. 
+      }
+      OPTIONAL { ?infstep hartigprov:involvedActor ?user   }
+      OPTIONAL { ?infstep dcterms:date             ?when   }
+      OPTIONAL { ?user    sioc:account_of          ?person }
+      OPTIONAL { ?infstep pmlj:hasInferenceEngine ?engine  }
+      OPTIONAL { ?engine a ?engineType                     }
+      OPTIONAL { ?infstep pmlj:hasInferenceRule   ?rule    }
   }
-} ORDER BY DESC(?when)
+} order by ?when

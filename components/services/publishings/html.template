@@ -21,7 +21,7 @@
          <tr>
             <th>Time</th>
             <th>Inference rule</th>
-            <th>Files loaded into the graph</th>
+            <th>RDF Graphs loaded into named graph</th>
             <th>Graph name</th>
             <!--<th>Engine used</th>-->
             <th>Actor involved</th>
