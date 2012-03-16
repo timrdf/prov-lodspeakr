@@ -4,10 +4,10 @@ prefix dcterms:    <http://purl.org/dc/terms/>
 prefix sioc:       <http://rdfs.org/sioc/ns#>
 prefix foaf:       <http://xmlns.com/foaf/0.1/>
 
-select distinct ?layer ?creator ?created ?username ?machine ?person
+select distinct ?layer ?creator ?created ?machine
 where {
    # e.g. <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-11> void:subset ?layer .
-   <{{base.args.all|deurifier}}> void:subset ?layer .
+   <{{lodspk.args.all|deurifier}}> void:subset ?layer .
    ?layer 
       a conversion:LayerDataset;
       conversion:conversion_process ?process .
