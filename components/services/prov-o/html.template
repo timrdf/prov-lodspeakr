@@ -157,6 +157,9 @@
 			  { name: "Stephan Zednik",
 		                url:"http://tw.rpi.edu/web/person/StephanZednik",
 		               company: "Rensselaer Polytechnic Institute, USA" },
+			  { name: "Jun Zhao",
+		                url:"http://users.ox.ac.uk/~zool0770/",
+		               company: "University of Oxford, UK" },
           ],
           
           // name of the WG
@@ -268,10 +271,10 @@ Entity, Agent, Activity, used, wasGeneratedBy, wasDerivedFrom, wasAssociatedWith
 
       <div style="text-align: center;">
          <figure>
-            <img src="prov-o-diagrams/core.png"
+            <img src="prov-o-diagrams/diagram-simple.png"
                  style="width: 70%; min-width: 25em; max-width: 60em" 
                  alt="Class hierarchy of the PROV ontology"/>
-            <figcaption>Simple classes and properties in Prov-o</figcaption>
+            <figcaption>Figure 1. Simple classes and properties in PROV-O</figcaption>
          </figure>
       </div>
 
@@ -317,7 +320,7 @@ This section shows how qualified relationships in prov-dm are encoded in provo. 
                  <img src="prov-o-diagrams/involvements.png"
                 style="width: 70%; min-width: 25em; max-width: 60em" 
                 alt="A hierarchical illustration of simple involvements"/>
-            <figcaption>A hierarchical illustration of simple involvements</figcaption>
+            <figcaption>Figure 2. A hierarchical illustration of simple involvements</figcaption>
          </figure>
       </div>
 
@@ -326,7 +329,7 @@ This section shows how qualified relationships in prov-dm are encoded in provo. 
                  <img src="prov-o-diagrams/Qualified-Association.png"
                 style="width: 70%; min-width: 25em; max-width: 60em" 
                 alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
-            <figcaption>Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship</figcaption>
+            <figcaption>Figure 3. Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship</figcaption>
          </figure>
       </div>
 
