@@ -8,30 +8,38 @@
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-      <h1>Publishings</h1>
-
-      <p><a href='{{lodspk.baseUrl}}retrievals/{{lodspk.args.all}}'>provenance of retrievals</a> ->
+      <p>
+         <a href='{{lodspk.baseUrl}}retrievals/{{lodspk.args.all}}'>provenance of retrievals</a> ->
          <a href='{{lodspk.baseUrl}}preparations/{{lodspk.args.all}}'>provenance of preparations</a> ->
          <a href='{{lodspk.baseUrl}}conversion/{{lodspk.args.all}}'>provenance of conversion</a> ->
          provenance of publishings
       </p>
 
+      <h1>Publishings</h1>
       <p>The converted data is loaded into a triple store as a named graph. Related provenance infomation is shown as below.</p>
       <table border="1">
          <tr>
             <th>Time</th>
+            <th>Endpoint's graph name</th>
             <th>Inference rule</th>
             <th>RDF Graphs loaded into named graph</th>
-            <th>Graph name</th>
             <!--<th>Engine used</th>-->
             <th>Actor involved</th>
          </tr>
          {% for row in models.namedGraphsKnow %}
            <tr>
-              <td>{{row.when.value|date:"H:i l F jS \o"}}</td>
+              <td>{{row.when.value|date:"H:i:s l F jS \o"}}</td>
+              <td>GRAPH &lt;{{row.graphName.value}}&gt; {}</td>
               <td><a href="{{row.rule.value}}">{{row.rule.value|urifragment}}</a></td>
-              <td>{{row.fileFirst.value}}<br><br>{{row.fileFirstFirst.value}}</td>
-              <td><a href="{{row.graphName.value}}">{{row.graphName.value}}</a></td>
+              <td>
+                  {% if row.fileFirstFirst %}
+                     <a href="{{row.fileFirst.value}}">previous named graph contents</a>
+                     <br><br>
+                     <a href="{{row.fileFirstFirst.value}}">{{row.fileFirstFirst.value}}</a>
+                  {% else %}
+                     <a href="{{row.fileFirst.value}}">{{row.fileFirst.value}}</a>
+                  {% endif %}
+              </td>
               <!--<td><a href="{{row.engineType.value}}">{{row.engineType.value}}</a></td>-->
               <td><a href="{{row.user.value}}">{{row.user.value}}</a></td>
            </tr>
