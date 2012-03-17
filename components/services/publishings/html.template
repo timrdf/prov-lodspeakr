@@ -46,7 +46,8 @@
       </table>
       <p about="#results">
          <ul rel="prov:used">
-            <li><a href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/publishings/queries/pvloads.query"/>query</a></li>
+            <li><a href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/publishings/queries/pvloads.query"/>query</a> used 
+                (query <a href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/publishings/queries/pvloads.query.ttl"/>metadata</a>)</li>
          </ul>
       </p>
   </body>
