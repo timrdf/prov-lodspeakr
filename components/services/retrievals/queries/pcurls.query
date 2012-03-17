@@ -2,34 +2,36 @@ prefix conversion: <http://purl.org/twc/vocab/conversion/>
 prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
 prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
-prefix conv:       <http://purl.org/twc/vocab/conversion/> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix irw:        <http://www.ontologydesignpatterns.org/ont/web/irw.owl#> 
 prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
-select distinct ?engine ?source ?time ?actor ?conclusion ?rule ?alg ?hashValue
+select distinct ?engine ?source ?time ?actor ?conclusion ?rule ?fromUrl ?alg ?hashValue 
 where {
    # e.g. graph <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
    graph <{{lodspk.args.all|deurifier}}> {
-      ?nodeset
+      [] 
          pmlj:isConsequentOf ?step;
-         pmlj:hasConclusion ?conclusion.
-      ?conclusion
-         pmlp:hasModificationDateTime ?time.
+         pmlj:hasConclusion  ?conclusion.
       ?step
          a pmlj:InferenceStep;
-         pmlj:hasInferenceEngine ?engine;
-         pmlj:hasInferenceRule   conv:xls2csv_d1c34d66890e1355337df68b87ad621f_Method;
-         pmlj:hasInferenceRule   ?rule;
-         pmlj:hasAntecedentList ?antList;
+         pmlj:hasInferenceEngine  ?engine;
+         pmlj:hasInferenceRule   httpget:HTTP_1_1_GET; # ASSUME we know the rule or we can iterate over the set of rules supported
+         pmlj:hasInferenceRule    ?rule;
+         pmlj:hasSourceUsage      ?sUsage;
          hartigprov:involvedActor ?actor.
-      ?antList 
-         rdf:first ?antFirst.
-      ?antFirst
-         pmlj:hasConclusion ?source.
+      ?sUsage 
+         pmlp:hasSource        ?source;
+         pmlp:hasUsageDateTime ?time.
       ?conclusion
          nfo:hasHash ?hash.
       ?hash
          nfo:hashAlgorithm ?alg;
-         nfo:hashValue ?hashValue.
-   }
+         nfo:hashValue     ?hashValue.
+      optional {
+         ?fromUrl irw:redirectsTo ?source.
+      }
+  }
+  #assume know the version of the dataset
+  #filter regex(?conclusion, "/version/2012-Mar-15/source") 
 } order by desc(?time)

@@ -35,7 +35,7 @@
          <th>Cached Copy</th>
          <!--<th>Engine used</th>-->
       </tr>
-      {% for row in models.get %}
+      {% for row in models.pcurls %}
          <tr>
             <td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
             <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
@@ -47,6 +47,6 @@
          </tr>
        {% endfor %}
       </table>
-      <p about="#results"><a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/get.query"/>query</a></p>
+      <p about="#results"><a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/pcurls.query"/>query</a></p>
   </body>
 </html>
