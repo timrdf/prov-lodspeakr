@@ -25,7 +25,7 @@
             <!--<th>Engine used</th>-->
             <th>Actor involved</th>
          </tr>
-         {% for row in models.namedGraphsKnow %}
+         {% for row in models.pvloads %}
            <tr>
               <td>{{row.when.value|date:"H:i:s l F jS \o"}}</td>
               <td>GRAPH &lt;{{row.graphName.value}}&gt; {}</td>
@@ -46,8 +46,7 @@
       </table>
       <p about="#results">
          <ul rel="prov:used">
-            <li><a href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/publishings/queries/namedGraphsKnow.query"/>query</a></li>
-            <li><a href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/publishings/queries/fileLoadedDistOne.query"/>query</a></li>
+            <li><a href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/publishings/queries/pvloads.query"/>query</a></li>
          </ul>
       </p>
   </body>
