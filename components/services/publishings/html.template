@@ -31,12 +31,12 @@
               <td>GRAPH &lt;{{row.graphName.value}}&gt; {}</td>
               <td><a href="{{row.rule.value}}">{{row.rule.value|urifragment}}</a></td>
               <td>
-                  {% if row.fileFirstFirst %}
-                     <a href="{{row.fileFirst.value}}">previous named graph contents</a>
+                  {% if row.secondGraph %}
+                     <a href="{{row.firstGraph.value}}">previous named graph contents</a>
                      <br><br>
-                     <a href="{{row.fileFirstFirst.value}}">{{row.fileFirstFirst.value}}</a>
+                     <a href="{{row.secondGraph.value}}">{{row.secondGraph.value}}</a>
                   {% else %}
-                     <a href="{{row.fileFirst.value}}">{{row.fileFirst.value}}</a>
+                     <a href="{{row.firstGraph.value}}">{{row.firstGraph.value}}</a>
                   {% endif %}
               </td>
               <!--<td><a href="{{row.engineType.value}}">{{row.engineType.value}}</a></td>-->
