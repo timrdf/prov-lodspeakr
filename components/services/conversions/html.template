@@ -5,6 +5,13 @@
   <head>
     <title>csv2rdf4lod provenance overview: conversion phase</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
+    <style type="text/css">
+      div.topic {
+         margin: 30px; 
+         border: solid 1px gray; 
+         padding: 20px;
+      }
+    </style>
   </head>
   <body>
     <p>
@@ -15,38 +22,70 @@
     </p>
 
     <h1>Conversion</h1>
-    <p>Enhancement parameters creator</p>
-    {% for row in models.params_creator %}
-       <table>
-          <tr>
-            <td>the RDF dataset</td>
-            <td><a href="{{row.layer.value}}">{{row.layer.curie}}</a></td>
-          </tr>
-          <tr> 
-            <td>user account</td>
-            <td><a href="{{row.creator.value}}">{{row.creator.curie}}</a></td>
-          <tr>
-          <tr>
-            <td>date the enhancement parameters were created</td>
-            <td>{{row.created.value|date:"H:i l F jS \o"}}</td>
-          </tr>
-          {% if row.username %}<li>{{row.username.value}} user name of account</li> {%endif%}
-          {% if row.machine %}
-            <tr>
-               <td>the computer used</td>
-               <td>{{row.machine.value}}</td>
-            </tr>
-          {%endif%}
-          {% if row.person %}
-             <li>{{row.person.value}} the person with the account.</li> 
-          {%endif%}
-        </table>
+    <p>Files produced by the conversion process:</p>
+
+    {% for row in models.dumps %}
+       <div class="topic">
+          <span><a href="{{row.dump.value}}">{{row.dump.value}}</a></span>
+          <table style="margin: 20px">
+             <tr>
+               <td>the VoID RDF dataset</td>
+               <td><a href="{{row.dataset.value}}">{{row.dataset.value}}</a></td>
+             </tr>
+             <tr> 
+               <td>Input table</td>
+               <td><a href="{{row.input.value}}">{{row.input.value}}</a></td>
+             <tr>
+             <tr> 
+               <td>Enhancement parameters</td>
+               <td><a href="{{row.params.value}}">{{row.params.value}}</a></td>
+             <tr>
+             <tr> 
+               <td>Converter version</td>
+               <td><a href="{{row.engine.value}}">{{row.revision.value}}</a></td>
+             <tr>
+             {% if row.modified %}
+                <tr>
+                  <td>modified</td>
+                  <td>{{row.modified.value|date:"H:i l F jS \o"}}</td>
+                </tr>
+             {% endif %}
+           </table>
+        </div>
     {% endfor %}
 
+
+    <div class="topic">
+       <p>Enhancement parameters creator</p>
+       {% for row in models.params_creator %}
+          <table>
+             <tr>
+               <td>the RDF dataset</td>
+               <td><a href="{{row.layer.value}}">{{row.layer.curie}}</a></td>
+             </tr>
+             <tr> 
+               <td>user account</td>
+               <td><a href="{{row.creator.value}}">{{row.creator.curie}}</a></td>
+             <tr>
+             <tr>
+               <td>date the enhancement parameters were created</td>
+               <td>{{row.created.value|date:"H:i l F jS \o"}}</td>
+             </tr>
+             {% if row.username %}<li>{{row.username.value}} user name of account</li> {%endif%}
+             {% if row.machine %}
+               <tr>
+                  <td>the computer used</td>
+                  <td>{{row.machine.value}}</td>
+               </tr>
+             {%endif%}
+             {% if row.person %}
+                <li>{{row.person.value}} the person with the account.</li> 
+             {%endif%}
+           </table>
+       {% endfor %}
+    </div>
+
     <ul>
-      <li>Time Enhancement parameters were created</li>
-      <li>User account that made Enhancement parameters</li>
-      <li>Person holding User account that made Enhancement parameters</li>
       <li>Person holding User account that made Enhancement parameters</li>
     </ul>
   </body>

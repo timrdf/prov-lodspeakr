@@ -8,7 +8,7 @@ prefix pmlx:       <http://inference-web.org/2.1exper/pml-provenance.owl#>
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
 
-select ?dump ?dataset ?engine ?engineL ?revision ?input ?params
+select distinct ?dump ?dataset ?engine ?engineL ?revision ?input ?params
 
 where {
   graph <{{lodspk.args.all|deurifier}}> {
