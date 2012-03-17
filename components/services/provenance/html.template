@@ -8,9 +8,10 @@
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-    <p>Provenance is captured during all stages of conversion from retrieval to publishing.</p>
-    <p>Click a phase to see the provenance of dataset <a href="{{lodspk.args.all|deurifier}}">{{lodspk.args.all|deurifier}}</a></p>
-    <p>
+    <div style="text-align: center">
+    <p><a href="https://github.com/timrdf/csv2rdf4lod-automation/wiki">csv2rdf4lod-automation</a> captured provenance during all stages of converting dataset</p>
+    <p><a href="{{lodspk.args.all|deurifier}}">{{lodspk.args.all|deurifier}}</a></p>
+    <p style="background: LightGoldenRodYellow">
        <a href='{{lodspk.baseUrl}}retrievals/{{lodspk.args.all}}'>provenance of retrievals</a> ->
        <a href='{{lodspk.baseUrl}}preparations/{{lodspk.args.all}}'>provenance of preparations</a> ->
        <a href='{{lodspk.baseUrl}}conversions/{{lodspk.args.all}}'>provenance of conversion</a> ->
