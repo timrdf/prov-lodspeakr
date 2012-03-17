@@ -1,0 +1,39 @@
+prefix dcterms:    <http://purl.org/dc/terms/>
+prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
+prefix sioc:       <http://rdfs.org/sioc/ns#>
+prefix skos:       <http://www.w3.org/2004/02/skos/core#>
+prefix doap:       <http://usefulinc.com/ns/doap#>
+prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
+prefix pmlx:       <http://inference-web.org/2.1exper/pml-provenance.owl#>
+prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select ?dump ?dataset ?engine ?engineL ?revision ?input ?params
+
+where {
+  graph <{{lodspk.args.all|deurifier}}> {
+
+    ?dataset void:dataDump ?dump .
+
+    [] pmlj:hasConclusion  ?dump;
+       pmlj:isConsequentOf [ 
+          pmlj:hasInferenceEngine ?engine;
+          pmlj:hasAntecedentList [ 
+             rdf:first [             pmlj:hasConclusion ?input    ];
+             rdf:rest  [ rdf:first [ pmlj:hasConclusion ?params ] ];
+          ];
+          pmlx:hasAntecedentRole [
+             pmlx:hasAntecedent ?input;
+             pmlx:hasRole <http://inference-web.org/registry/ROLE/Input.owl#Input>
+          ];
+          pmlx:hasAntecedentRole [
+             pmlx:hasAntecedent ?params;
+             pmlx:hasRole <http://inference-web.org/registry/ROLE/Parameters.owl#Parameters>
+          ];
+       ] .
+
+    ?engine
+       dcterms:identifier ?engineL;
+       doap:revision      ?revision .
+  }
+}
