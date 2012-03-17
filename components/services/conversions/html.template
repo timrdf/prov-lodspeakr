@@ -8,14 +8,13 @@
   </head>
   <body>
     <p>
-       provenance of retrievals ->
-       <a href='{{lodspk.baseUrl}}prepartions/{{lodspk.args.all}}'>provenance of prepartions</a> ->
-       <a href='{{lodspk.baseUrl}}conversions/{{lodspk.args.all}}'>provenance of conversions</a> ->
+       <a href='{{lodspk.baseUrl}}retrievals/{{lodspk.args.all}}'>provenance of retrievals</a> ->
+       <a href='{{lodspk.baseUrl}}preparations/{{lodspk.args.all}}'>provenance of preparations</a> ->
+       provenance of conversions ->
        <a href='{{lodspk.baseUrl}}publishings/{{lodspk.args.all}}'>provenance of publishings</a>
     </p>
 
     <h1>Conversion</h1>
-    <p>Previous stage: <a href='{{lodspk.baseUrl}}preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
     <p>Enhancement parameters creator</p>
     {% for row in models.params_creator %}
        <table>
