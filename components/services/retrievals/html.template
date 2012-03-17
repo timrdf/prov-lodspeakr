@@ -37,7 +37,9 @@
       </tr>
       {% for row in models.pcurls %}
          <tr>
-            <td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
+            <td><a href="{{row.source.value}}">{{row.source.value}}</a> 
+                {% if row.fromUrl %}(redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>){% endif %}
+            </td>
             <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
             <td>{{row.rule.value|urifragment}}</td>
             <!--<td><a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a></td>-->
@@ -47,6 +49,9 @@
          </tr>
        {% endfor %}
       </table>
-      <p about="#results"><a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/pcurls.query"/>query</a></p>
+      <p about="#results">
+         <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/pcurls.query"/>query</a>
+         (query <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/pcurls.query.ttl"/>metadata</a>)
+      </p>
   </body>
 </html>

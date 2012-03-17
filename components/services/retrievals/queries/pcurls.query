@@ -1,3 +1,5 @@
+#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/retrievals/queries/pcurls.query>
+
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
 prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
 prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
@@ -34,4 +36,4 @@ where {
   }
   #assume know the version of the dataset
   #filter regex(?conclusion, "/version/2012-Mar-15/source") 
-} order by desc(?time)
+} order by ?time
