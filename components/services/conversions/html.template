@@ -27,7 +27,7 @@
             <td><a href="{{row.creator.value}}">{{row.creator.curie}}</a></td>
           <tr>
           <tr>
-            <td>date the enhancment parameters were created</td>
+            <td>date the enhancement parameters were created</td>
             <td>{{row.created.value|date:"H:i l F jS \o"}}</td>
           </tr>
           {% if row.username %}<li>{{row.username.value}} user name of account</li> {%endif%}
