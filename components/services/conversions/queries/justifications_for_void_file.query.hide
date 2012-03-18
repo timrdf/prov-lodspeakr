@@ -1,0 +1,21 @@
+prefix dcterms:    <http://purl.org/dc/terms/>
+prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
+prefix sioc:       <http://rdfs.org/sioc/ns#>
+prefix skos:       <http://www.w3.org/2004/02/skos/core#>
+prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
+prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select ?g ?s ?p1 ?p2
+where {
+  {graph ?g {
+     ?s ?p1 [rdf:rest [ rdf:first [ 
+     pmlj:hasConclusion 
+     <http://logd.tw.rpi.edu/source/lebot/file/golfers/version/2012-Mar-15/conversion/lebot-golfers-2012-Mar-15.void.ttl> ]]]
+  }}union{
+  graph ?g {
+     ?s ?p2 [ pmlj:hasAntecedentList [ rdf:first [ 
+     pmlj:hasConclusion 
+     <http://logd.tw.rpi.edu/source/lebot/file/golfers/version/2012-Mar-15/conversion/lebot-golfers-2012-Mar-15.void.ttl> ]]]
+  }}
+}

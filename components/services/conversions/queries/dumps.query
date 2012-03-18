@@ -1,3 +1,5 @@
+#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/conversions/queries/dumps.query> .
+
 prefix dcterms:    <http://purl.org/dc/terms/>
 prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
 prefix sioc:       <http://rdfs.org/sioc/ns#>

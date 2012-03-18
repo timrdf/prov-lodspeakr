@@ -88,5 +88,17 @@
     <ul>
       <li>Person holding User account that made Enhancement parameters</li>
     </ul>
+
+   <ul about="#results">
+      <li>
+         <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/conversions/queries/dumps.query"/>query</a>
+         (query <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/conversions/queries/dumps.query.ttl"/>metadata</a>)
+      </li>
+      <li>
+         <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/conversions/queries/params_creator.query"/>query</a>
+         (query <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/conversions/queries/params_creator.query.ttl"/>metadata</a>)
+      </li>
+   </ul>
+
   </body>
 </html>
