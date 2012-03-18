@@ -41,8 +41,8 @@
          <tr>
             <td>{{row.time.value|date:"H:i:s l F jS \o"}}</td>
             <td>unzip</td>
-            <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
-            <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <td>{{row.source.value|hostname}}<a href="{{row.source.value}}">...{{row.source.value|path|explode:"/"|pop}}</a></td>
+            <td>{{row.conclusion.value|hostname}}<a href="{{row.conclusion.value}}">...{{row.conclusion.value|path|explode:"/"|pop}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
             <!--<td>{{row.engine.value}}</td>-->
             <td>{{row.actor.value}}</td>
          </tr>
@@ -52,14 +52,24 @@
          <tr>
             <td>{{row.time.value|date:"H:i:s l F jS \o"}}</td>
             <td>xls2csv</td>
-            <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
-            <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <td>{{row.source.value|hostname}}<a href="{{row.source.value}}">...{{row.source.value|path|explode:"/"|pop}}</a></td>
+            <td>{{row.conclusion.value|hostname}}<a href="{{row.conclusion.value}}">...{{row.conclusion.value|path|explode:"/"|pop}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
             <!--<td>{{row.engine.value}}</td>-->
             <td>{{row.actor.value}}</td>
          </tr>
       {% endfor %}
    </table>
 
+   <ul about="#results">
+      <li>
+         <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/preparations/queries/unzip.query"/>query</a>
+         (query <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/preparations/queries/unzip.query.ttl"/>metadata</a>)
+      </li>
+      <li>
+         <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/preparations/queries/xls2csv.query"/>query</a>
+         (query <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/preparations/queries/xls2csv.query.ttl"/>metadata</a>)
+      </li>
+   </ul>
    <!-- <ul>
          <li>hi</li>
        {% for row in models.get %}

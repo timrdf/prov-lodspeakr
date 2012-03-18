@@ -34,9 +34,9 @@
                   {% if row.secondGraph %}
                      <a href="{{row.firstGraph.value}}">previous named graph contents</a>
                      <br><br>
-                     <a href="{{row.secondGraph.value}}">{{row.secondGraph.value}}</a>
+                     {{row.secondGraph.value|hostname}}<a href="{{row.secondGraph.value}}">...{{row.secondGraph.value|path|explode:"/"|pop}}</a>
                   {% else %}
-                     <a href="{{row.firstGraph.value}}">{{row.firstGraph.value}}</a>
+                     {{row.firstGraph.value|hostname}}<a href="{{row.firstGraph.value}}">...{{row.firstGraph.value|path|explode:"/"|pop}}</a>
                   {% endif %}
               </td>
               <!--<td><a href="{{row.engineType.value}}">{{row.engineType.value}}</a></td>-->
