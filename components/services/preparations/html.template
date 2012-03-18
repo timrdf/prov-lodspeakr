@@ -39,7 +39,7 @@
 
       {% for row in models.unzip %}
          <tr>
-            <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+            <td>{{row.time.value|date:"H:i:s l F jS \o"}}</td>
             <td>unzip</td>
             <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
             <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
@@ -50,7 +50,7 @@
 
       {% for row in models.xls2csv %}
          <tr>
-            <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
+            <td>{{row.time.value|date:"H:i:s l F jS \o"}}</td>
             <td>xls2csv</td>
             <td><a href="{{row.source.value}}">{{row.source.value}}</a></td>
             <td><a href="{{row.conclusion.value}}">{{row.conclusion.value}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
