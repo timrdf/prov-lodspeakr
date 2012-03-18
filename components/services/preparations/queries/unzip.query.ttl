@@ -19,3 +19,6 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix twi: <http://tw.rpi.edu/instances/> .
 
+<>
+    prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/preparations/queries/unzip.query> .
+
