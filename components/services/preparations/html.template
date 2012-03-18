@@ -41,8 +41,8 @@
          <tr>
             <td>{{row.time.value|date:"H:i:s l F jS \o"}}</td>
             <td>unzip</td>
-            <td>{{row.source.value|hostname}}<a href="{{row.source.value}}">...{{row.source.value|path|explode:"/"|pop}}</a></td>
-            <td>{{row.conclusion.value|hostname}}<a href="{{row.conclusion.value}}">...{{row.conclusion.value|path|explode:"/"|pop}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <td>{{row.source.value|urischeme}}{{row.source.value|hostname}}<a href="{{row.source.value}}">...{{row.source.value|uripath|explode:"/"|pop}}</a></td>
+            <td>{{row.conclusion.value|urischeme}}{{row.conclusion.value|hostname}}<a href="{{row.conclusion.value}}">...{{row.conclusion.value|uripath|explode:"/"|pop}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
             <!--<td>{{row.engine.value}}</td>-->
             <td>{{row.actor.value}}</td>
          </tr>
@@ -52,8 +52,8 @@
          <tr>
             <td>{{row.time.value|date:"H:i:s l F jS \o"}}</td>
             <td>xls2csv</td>
-            <td>{{row.source.value|hostname}}<a href="{{row.source.value}}">...{{row.source.value|path|explode:"/"|pop}}</a></td>
-            <td>{{row.conclusion.value|hostname}}<a href="{{row.conclusion.value}}">...{{row.conclusion.value|path|explode:"/"|pop}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
+            <td>{{row.source.value|urischeme}}{{row.source.value|hostname}}<a href="{{row.source.value}}">...{{row.source.value|uripath|explode:"/"|pop}}</a></td>
+            <td>{{row.conclusion.value|urischeme}}{{row.conclusion.value|hostname}}<a href="{{row.conclusion.value}}">...{{row.conclusion.value|uripath|explode:"/"|pop}}</a> ({{row.alg.value}} = {{row.hashValue.value}})</td>
             <!--<td>{{row.engine.value}}</td>-->
             <td>{{row.actor.value}}</td>
          </tr>
