@@ -1,0 +1,42 @@
+#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/publishings/queries/pvloads.query> .
+
+prefix dcterms:    <http://purl.org/dc/terms/>
+prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
+prefix sioc:       <http://rdfs.org/sioc/ns#>
+prefix skos:       <http://www.w3.org/2004/02/skos/core#>
+prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
+prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select ?graphName ?user ?person ?when ?engineType ?rule ?firstGraph ?secondGraph
+where {
+   # e.g. graph <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>  {
+
+   # TODO: should relax constraint that provenance be in its own named graph.
+   graph <{{lodspk.args.all|deurifier}}> {
+
+      [] pmlj:hasConclusion  [ skos:broader [ sd:name ?graphName ] ]; # TODO: <{{lodspk.args.all|deurifier}}>
+         pmlj:isConsequentOf ?infstep .
+      filter( str(?graphName) = "{{lodspk.args.all|deurifier}}" ) # TODO: shouldn't have to squash to string.
+
+      optional { # Determine the two operands
+         ?infstep 
+            pmlj:hasAntecedentList [ 
+               rdf:first [ pmlj:hasConclusion ?firstGraph ];
+                           rdf:rest           ?second;
+            ]
+      }
+      optional {
+         ?second rdf:first [ pmlj:hasConclusion ?secondGraph ]
+      }
+
+      optional { ?infstep dcterms:date             ?when       }
+      optional { ?infstep pmlj:hasInferenceRule    ?rule       }
+
+      optional { ?infstep hartigprov:involvedActor ?user       }
+      optional { ?user    sioc:account_of          ?person     }
+
+      optional { ?infstep pmlj:hasInferenceEngine  ?engine     }
+      optional { ?engine  a                        ?engineType }
+  }
+} order by ?when

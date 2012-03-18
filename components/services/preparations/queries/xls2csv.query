@@ -1,37 +1,40 @@
-PREFIX conversion: <http://purl.org/twc/vocab/conversion/>
+#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/preparations/queries/xls2csv.query> .
+
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
 prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
-PREFIX pmlj: <http://inference-web.org/2.0/pml-justification.owl#>
+prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
-prefix conv:       <http://purl.org/twc/vocab/conversion/> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
 prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
-SELECT distinct ?engine ?source ?time ?actor ?conclusion ?rule ?alg ?hashValue
-WHERE {
-  GRAPH <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
-   ?nodeset
-      a pmlj:NodeSet;
-      pmlj:isConsequentOf ?step;
-      pmlj:hasConclusion ?conclusion.
-   ?conclusion
-      pmlp:hasModificationDateTime ?time.
-   ?step
-      a pmlj:InferenceStep;
-      pmlj:hasInferenceEngine ?engine;
-      pmlj:hasInferenceRule   conv:xls2csv_d1c34d66890e1355337df68b87ad621f_Method;
-      pmlj:hasInferenceRule   ?rule;
-      pmlj:hasAntecedentList ?antList;
-      hartigprov:involvedActor ?actor.
-   ?antList 
-      rdf:first ?antFirst.
-   ?antFirst
-      pmlj:hasConclusion ?source.
-   ?conclusion
-      nfo:hasHash ?hash.
-   ?hash
-      nfo:hashAlgorithm ?alg;
-      nfo:hashValue ?hashValue.
-  }
-} ORDER BY DESC(?time)
-
-
+select distinct ?time ?source ?rule ?engine ?conclusion ?actor ?hashAlgorithm ?hashValue
+where {
+   # e.g. graph <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
+   graph <{{lodspk.args.all|deurifier}}> {
+      ?nodeset
+         pmlj:isConsequentOf ?step;
+         pmlj:hasConclusion ?conclusion
+      .
+      ?conclusion
+         pmlp:hasModificationDateTime ?time;
+         nfo:hasHash [
+            nfo:hashAlgorithm ?hashAlgorithm;
+            nfo:hashValue     ?hashValue
+         ]
+      .
+      ?step
+         a pmlj:InferenceStep;
+         pmlj:hasInferenceEngine  ?engine;
+         pmlj:hasInferenceRule   conversion:csv2rdf4lod_xls2csv_sh_Method;
+         pmlj:hasInferenceRule    ?rule;
+         pmlj:hasAntecedentList   ?antList;
+         hartigprov:involvedActor ?actor
+      .
+      ?antList 
+         rdf:first ?antFirst
+      .
+      ?antFirst
+         pmlj:hasConclusion ?source
+      .
+   }
+} order by ?time

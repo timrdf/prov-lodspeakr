@@ -1,0 +1,38 @@
+prefix dcterms:    <http://purl.org/dc/terms/>
+prefix sd:         <http://www.w3.org/ns/sparql-service-description#>
+prefix sioc:       <http://rdfs.org/sioc/ns#>
+prefix skos:       <http://www.w3.org/2004/02/skos/core#>
+prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
+prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select ?graphName ?user ?person ?when ?engineType ?rule ?fileFirst ?fileFirstFirst
+where {
+   # e.g. graph <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15>  {
+   graph <{{lodspk.args.all|deurifier}}> { # Do we want to specify in a specific graph?
+      [] 
+         pmlj:hasConclusion  ?conclusion;
+         pmlj:isConsequentOf ?infstep .
+      ?conclusion skos:broader ?namedGraph.
+      ?namedGraph sd:name      ?graphName.
+
+      optional {
+         ?infstep pmlj:hasAntecedentList ?antList.
+         ?antList rdf:first ?antFirst.
+         ?antFirst pmlj:hasConclusion ?fileFirst.
+         ?antList rdf:rest ?antRest.
+      }
+
+      optional {
+         ?antRest rdf:first ?antFirstFirst.
+         ?antFirstFirst pmlj:hasConclusion ?fileFirstFirst. 
+      }
+
+      optional { ?infstep hartigprov:involvedActor ?user       }
+      optional { ?infstep dcterms:date             ?when       }
+      optional { ?user    sioc:account_of          ?person     }
+      optional { ?infstep pmlj:hasInferenceEngine  ?engine     }
+      optional { ?engine  a                        ?engineType }
+      optional { ?infstep pmlj:hasInferenceRule    ?rule       }
+  }
+} order by desc(?when)

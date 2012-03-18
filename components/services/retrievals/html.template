@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
     "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in base.ns %}xmlns:{{i}}="{{ns}}" 
-    {%endfor%}version="XHTML+RDFa 1.0" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:prov="http://www.w3.org/ns/prov#" 
+         version="XHTML+RDFa 1.0" xml:lang="en">
   <head>
-    <title>Retrieval Provenance</title>
+    <title>csv2rdf4lod provenance overview: retrievals phase</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
   </head>
   <body>
-    <h1>Retrieval</h1>
+    <p>
+       provenance of retrievals ->
+       <a href='{{lodspk.baseUrl}}preparations/{{lodspk.args.all}}'>provenance of preparations</a> ->
+       <a href='{{lodspk.baseUrl}}conversions/{{lodspk.args.all}}'>provenance of conversion</a> ->
+       <a href='{{lodspk.baseUrl}}publishings/{{lodspk.args.all}}'>provenance of publishings</a>
+    </p>
+
 
     <!--	<ul>
       <li>hi</li>
@@ -17,7 +23,8 @@
     {% endfor %}
     </ul> -->
 
-    <p>The following original sources were retrieved to create RDF datset {{lodspk.args.all|deurifier}}</p>
+    <h1>Retrievals</h1>
+    <p>The following original sources were retrieved to create RDF dataset {{lodspk.args.all|deurifier}}</p>
     <table border="1">
       <tr>
          <th>Source Data</th>
@@ -28,9 +35,11 @@
          <th>Cached Copy</th>
          <!--<th>Engine used</th>-->
       </tr>
-      {% for row in models.get %}
+      {% for row in models.pcurls %}
          <tr>
-            <td><a href="{{row.source.value}}">{{row.source.value}}</a> (redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>)</td>
+            <td><a href="{{row.source.value}}">{{row.source.value}}</a> 
+                {% if row.fromUrl %}(redirected from <a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a>){% endif %}
+            </td>
             <td>{{row.time.value|date:"H:i l F jS \o"}}</td>
             <td>{{row.rule.value|urifragment}}</td>
             <!--<td><a href="{{row.fromUrl.value}}">{{row.fromUrl.value}}</a></td>-->
@@ -40,7 +49,9 @@
          </tr>
        {% endfor %}
       </table>
-
-    <p>Subsequent stage: <a href='{{lodspk.baseUrl}}preparations/http/logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15'>provenance of preparations</a></p>
+      <p about="#results">
+         <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/pcurls.query"/>query</a>
+         (query <a rel="prov:used" href="{{lodspk.baseUrl}}prov-lodspeakr/components/services/retrievals/queries/pcurls.query.ttl"/>metadata</a>)
+      </p>
   </body>
 </html>

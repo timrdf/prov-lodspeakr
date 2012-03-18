@@ -1,24 +1,24 @@
-#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/preparations/queries/unzip.query> .
+#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/retrievals/queries/pcurls.query>
 
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
 prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
 prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
 prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> 
-prefix conv:       <http://purl.org/twc/vocab/conversion/> 
 prefix hartigprov: <http://purl.org/net/provenance/ns#>
+prefix irw:        <http://www.ontologydesignpatterns.org/ont/web/irw.owl#> 
 prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#>
 
-select distinct ?engine ?source ?time ?actor ?conclusion ?rule ?alg ?hashValue
+select distinct ?engine ?source ?time ?actor ?conclusion ?rule ?fromUrl ?alg ?hashValue 
 where {
    # e.g. graph <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-15> {
    graph <{{lodspk.args.all|deurifier}}> {
-      []
+      [] 
          pmlj:isConsequentOf ?step;
          pmlj:hasConclusion  ?conclusion.
       ?step
          a pmlj:InferenceStep;
          pmlj:hasInferenceEngine  ?engine;
-         pmlj:hasInferenceRule    conv:spaceless_unzip; #ASSUME we know the inference rule or iterate over the set of rules supported
+         pmlj:hasInferenceRule   httpget:HTTP_1_1_GET; # ASSUME we know the rule or we can iterate over the set of rules supported
          pmlj:hasInferenceRule    ?rule;
          pmlj:hasSourceUsage      ?sUsage;
          hartigprov:involvedActor ?actor.
@@ -29,6 +29,11 @@ where {
          nfo:hasHash ?hash.
       ?hash
          nfo:hashAlgorithm ?alg;
-         nfo:hashValue ?hashValue.
+         nfo:hashValue     ?hashValue.
+      optional {
+         ?fromUrl irw:redirectsTo ?source.
+      }
   }
-} order by desc(?time)
+  #assume know the version of the dataset
+  #filter regex(?conclusion, "/version/2012-Mar-15/source") 
+} order by ?time

@@ -1,3 +1,5 @@
+#3> <> prov:specializationOf <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/conversions/queries/params_creator.query> .
+
 prefix conversion: <http://purl.org/twc/vocab/conversion/>
 prefix void:       <http://rdfs.org/ns/void#>
 prefix dcterms:    <http://purl.org/dc/terms/>
