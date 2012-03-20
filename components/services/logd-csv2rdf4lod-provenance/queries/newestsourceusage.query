@@ -1,0 +1,9 @@
+prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#>
+prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select distinct ?date
+where {
+   ?s a pmlp:SourceUsage; pmlp:hasUsageDateTime ?date
+}order by desc(?date) limit 1
+
