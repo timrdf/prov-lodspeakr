@@ -226,20 +226,20 @@
       <h2>PROV-O at a glance</h2>
 
       <p>
-The terms (classes and properties) in provo can be categorized into three categories: simple terms, terms used to encode qualified relationships, and “additional” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
+The terms (classes and properties) in provo can be categorized into three categories: starting point terms, terms used to encode qualified relationships, and “expanded” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
       </p>
-      <p>Simple classes and properties</p>
-      {% include "includes/at-a-glance-simple.html" %}
+      <p>Starting Point classes and properties</p>
+      {% include "includes/at-a-glance-starting-point.html" %}
 
       <p>Qualified classes and properties</p>
       {% include "includes/at-a-glance-qualified.html" %}
 
-      <p>Additional classes and properties</p>
-      {% include "includes/at-a-glance-additional.html" %}
+      <p>Expanded classes and properties</p>
+      {% include "includes/at-a-glance-expanded.html" %}
 
       <div>
       {% for row in models.uncategorized %}
-         <p>TODO: categorize as "simple", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
+         <p>TODO: categorize as "starting-point", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
          <a href="{{row.prov.curie}}">{{row.prov.curie}}</a>{%if !forloop.last%} | {%endif%}
       {% endfor %} 
       </div>
@@ -263,7 +263,7 @@ This section provides the reader with an understanding about the structure of th
       </p>
 
      <section>
-	  	<h3>Simple Relationships in PROV-O</h3>
+	  	<h3>Relationships in PROV-O</h3>
       <p> 
 This section presents a diagram illustrating the concepts and properties that compose the ontology, without talking about involvement.  The following example diagram illustrates the level of details we want to present and the exact classes and properties we believe fall into this category. No need to show the “Thing” class in the diagram, as we are doing now. That just makes the diagram more complex. Neither SIOC nor OPMV do that.  The classes and properties to show in this diagram are the following:
 Entity, Agent, Activity, used, wasGeneratedBy, wasDerivedFrom, wasAssociatedWith (wasEndedBy? wasStartedBy??), actedOnBehalfOf, wasInformedBy, wasAttributedTo, “Temporal stuff”
@@ -385,11 +385,11 @@ eg16-journalism-usage.ttl, to show how additional information about usage can be
         </div>
 
          <div style="text-align: center;">
-            {% include "includes/qualifed-forms-simple.html" %}
+            {% include "includes/qualifed-forms-starting-point.html" %}
          </div>
 
          <div style="text-align: center;">
-            {% include "includes/qualifed-forms-additional.html" %}
+            {% include "includes/qualifed-forms-expanded.html" %}
          </div>
 	  </section>
 
@@ -437,20 +437,20 @@ Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom
 This section, i.e., Section 4, presents the classes and properties that compose the ontology. No need to provide a diagram illustrating the domain and the range of the object properties. Also, no need to provide an example for each class and property. We should be able to present most of classes with an example stated using a sentence or two in English. In other words, we don’t need to provide the turtle for every small example if a sentence in English is enough. We should reserve the use of turtle only for the classes and properties that we think may be difficult for the user to grasp, e.g., involvement. In particular, some of the involvements that reify relations that are not part of the simple ontology, such as inform and Trace may need to be illustrated using turtle examples.
 </p>     
 
-      <section id="simple-terms">
-         <h3>Simple Terms</h3>
-         {% include "includes/cross-reference-simple.html" %}
+      <section id="starting-point-terms">
+         <h3>Starting Point Terms</h3>
+         {% include "includes/cross-reference-starting-point.html" %}
       </section> <!-- Simple Classes and Properties - crossreference -->
+
+      <section id="additional-terms">
+         <h3>Expanded Terms</h3>
+         {% include "includes/cross-reference-expanded.html" %}
+      </section>
 
       <section id="qualified-terms">
          <h3>Qualified Terms</h3>
          {% include "includes/cross-reference-qualified.html" %}
       </section> <!-- Qualified Classes and Properties - crossreference -->
-
-      <section id="additional-terms">
-         <h3>Additional Terms</h3>
-         {% include "includes/cross-reference-additional.html" %}
-      </section>
 
 <p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROV-O in a glance”, as well as links used throughout the document. 
 </p>
