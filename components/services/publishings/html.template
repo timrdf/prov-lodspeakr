@@ -34,9 +34,9 @@
                   {% if row.secondGraph %}
                      <a href="{{row.firstGraph.value}}">previous named graph contents</a>
                      <br><br>
-                     {{row.secondGraph.value|urischeme}}{{row.secondGraph.value|hostname}}<a href="{{row.secondGraph.value}}">...{{row.secondGraph.value|uripath|explode:"/"|pop}}</a>
+                     {{row.secondGraph.value|urischeme}}://{{row.secondGraph.value|hostname}}<a href="{{row.secondGraph.value}}">...{{row.secondGraph.value|uripath|explode:"/"|pop}}</a>
                   {% else %}
-                     {{row.firstGraph.value|urischeme}}{{row.firstGraph.value|hostname}}<a href="{{row.firstGraph.value}}">...{{row.firstGraph.value|uripath|explode:"/"|pop}}</a>
+                     {{row.firstGraph.value|urischeme}}://{{row.firstGraph.value|hostname}}<a href="{{row.firstGraph.value}}">...{{row.firstGraph.value|uripath|explode:"/"|pop}}</a>
                   {% endif %}
               </td>
               <!--<td><a href="{{row.engineType.value}}">{{row.engineType.value}}</a></td>-->

@@ -1,0 +1,7 @@
+prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#>
+prefix conversion: <http://purl.org/twc/vocab/conversion/>
+
+select (count(distinct ?s) as ?count)
+where {
+   ?s a pmlp:Information
+} 
