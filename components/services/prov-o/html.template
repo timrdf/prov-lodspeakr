@@ -258,12 +258,19 @@ The terms (classes and properties) in provo can be categorized into three catego
 
     <section id="ontology-description">
       <h2>The PROV-O Ontology Description</h2>    	
-      <p>
-This section provides the reader with an understanding about the structure of the section, so that they know which section they should go to read and where they should stop. That said, the message about the purpose of each section can still be repeated at each individual section.
-      </p>
+      <p>PROV-O is a lightweight OWL-RL ontology designed to represent and interchange provenance information generated in different systems, under different context. Users of PROV-O might only need to grasp part of the vocabulary, which will be sufficient to their needs, according to how much detail they want to go with their provenance information. For this, we group PROV-O terms into several categories in order to provide a gentle, incremental introduction to the ontology, and they are introduced in the following order:</p>
+
+      <ul>
+         <li>Starting-point terms, as the name suggests, consist of a small collection of terms for users to kick start, to provide simple provenance descriptions.
+         </li>
+         <li>Terms for expressing expanded relationships, are for users who want to express more detailed provenance, in a more precise manner.For example, instead of simply stating that one entity was derived from another one, one can specify more specifically that one actually was a revision of, source of, or quotation of the other entity.
+         </li>
+         <li>Terms for expressing Qualified relationship, are for users who wish to &quot;qualify&quot; relationships between entities, agents and activities. These qualification statements allow expression of additional attributes of these relationships, such as the time at which an entity was used by an activity, or of additional entities involved in a relationship, for example, the plan/recipe used by an agent in an activity.
+         </li>
+      </ul>
 
      <section>
-	  	<h3>Relationships in PROV-O</h3>
+	  	<h3>Starting Points</h3>
       <p> 
 This section presents a diagram illustrating the concepts and properties that compose the ontology, without talking about involvement.  The following example diagram illustrates the level of details we want to present and the exact classes and properties we believe fall into this category. No need to show the “Thing” class in the diagram, as we are doing now. That just makes the diagram more complex. Neither SIOC nor OPMV do that.  The classes and properties to show in this diagram are the following:
 Entity, Agent, Activity, used, wasGeneratedBy, wasDerivedFrom, wasAssociatedWith (wasEndedBy? wasStartedBy??), actedOnBehalfOf, wasInformedBy, wasAttributedTo, “Temporal stuff”
@@ -307,10 +314,25 @@ Turtle + Explanation. The example does not have to illustrate all the terms. Ins
               <pre class="example">{% include "includes/eg16-journalism-simple-without-comments.ttl" %}</pre>
            </div>
         </div>
-	  </section> <!-- Simple Relationships in PROV-O -->
+	  </section> <!-- Starting Points  in PROV-O -->
+
+
 
      <section>
-	  	<h3>Qualified Relationships in PROV-O</h3>
+	  	<h3>Expanded Terms</h3>
+        <p>        
+This section presents the rest of classes and properties textually without using a diagram. We may use some examples in English. 
+The classes and properties covered in this section are: 
+Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom, hadQuotatedAgent, hadQuoterAgent, wasSummaryOf, alternateOf, terms related to Collection? Bundle? Role?? , hadRole, Location??, hadLocation?, wasStartedByActivity?? specializationOf?
+
+		</p>
+	  </section> < !-- Expaned Terms subsection -->
+
+
+
+
+     <section>
+	  	<h3>Qualified Terms</h3>
         <p>        
 This section shows how qualified relationships in prov-dm are encoded in provo. We need two diagrams: one to show the hierarchical relationship between involvement classes, and another to using Association as an exemplar to illustrate the general pattern to qualify a binary relationship. 
    </p>
@@ -391,16 +413,6 @@ eg16-journalism-usage.ttl, to show how additional information about usage can be
          <div style="text-align: center;">
             {% include "includes/qualifed-forms-expanded.html" %}
          </div>
-	  </section>
-
-     <section>
-	  	<h3>Additional Relationships in PROV-O</h3>
-        <p>        
-This section presents the rest of classes and properties textually without using a diagram. We may use some examples in English. 
-The classes and properties covered in this section are: 
-Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, wasQuotatedFrom, hadQuotatedAgent, hadQuoterAgent, wasSummaryOf, alternateOf, terms related to Collection? Bundle? Role?? , hadRole, Location??, hadLocation?, wasStartedByActivity?? specializationOf?
-
-		</p>
 	  </section>
 
 
