@@ -6,6 +6,7 @@ pushd ../../../static/prov-o-diagrams
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/diagram-simple.png
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Qualified-Association.png
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/involvements.png
+   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Starting-points-terms.png
 popd &> /dev/null
 
 if [ ! -d ../../../static/prov-o-lode ]; then
