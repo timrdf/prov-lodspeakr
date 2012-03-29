@@ -416,7 +416,7 @@ eg16-journalism-usage.ttl, to show how additional information about usage can be
 	  </section>
 
 
-      {% include "section-3-4.inc.html" %}
+      {% include "prov-o-html-sections/description-collections.inc.html" %}
 
 	  </section>
 
