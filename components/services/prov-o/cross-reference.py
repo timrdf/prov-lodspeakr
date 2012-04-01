@@ -395,10 +395,13 @@ for category in categories.keys():
             qualProp  = 'no'
             qualClass = 'no'
             for qualified in property.prov_qualifiedForm:
-               if ns.OWL['ObjectProperty'] in qualified.rdf_type:
-                  qualProp  = qualified 
-               else:
+               if len(qualified.rdf_type) == 0:
+                  print 'ERROR on qualifiedForm annotation for ' + property.subject
+                  print qualified + ' is not defined'
+               elif ns.OWL['Class'] in qualified.rdf_type:
                   qualClass = qualified 
+               else:
+                  qualProp  = qualified 
             if qualProp != 'no' and qualClass != 'no':
                quals.write('  <tr>\n')
                qname = property.subject.split('#')
