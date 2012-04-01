@@ -164,6 +164,14 @@ for category in categories.keys():
             cross.write('    </div>\n')
          cross.write('    <dl class="description">\n')
 
+         # class prov:component ?component
+         if len(owlClass.prov_component) > 0:
+            cross.write('      <dt>in PROV component</dt>\n')
+            cross.write('      <dd class="component-'+owlClass.prov_component.first+'">\n')
+            for component in owlClass.prov_component:
+               cross.write('        <a title="'+component+'" href="#component-'+component+'">'+component+'</a>\n')
+            cross.write('      </dd>\n')
+
          # class rdfs:subClassOf ?super
          if len(owlClass.rdfs_subClassOf) > 0:
             cross.write('      <dt>is subclass of</dt>\n')
@@ -244,10 +252,18 @@ for category in categories.keys():
 
          cross.write('    <div class="description">\n')
 
-         # class rdfs:comment
+         # property rdfs:comment
          for comment in property.rdfs_comment:
             cross.write('    <div class="comment"><p>'+comment+'</p>\n')
             cross.write('    </div>\n')
+
+         # property prov:component ?component
+         if len(property.prov_component) > 0:
+            cross.write('      <dt>in PROV component</dt>\n')
+            cross.write('      <dd class="component-'+property.prov_component.first+'">\n')
+            for component in property.prov_component:
+               cross.write('        <a title="'+component+'" href="#component-'+component+'">'+component+'</a>\n')
+            cross.write('      </dd>\n')
 
          # Characteristics
          characteristics = [ns.OWL['FunctionalProperty'],
