@@ -53,6 +53,30 @@
       table.prov-detail a:link {
           color:black; text-decoration:none; 
       }
+      .component-entities-activities {
+         border:1px solid gray;
+         background-color: #FFD4D4
+      }
+      .component-agents-responsibility {
+         border:1px solid gray;
+         background-color: #CCD9EE;
+      }
+      .component-derivations {
+         border:1px solid gray;
+         background-color: #CCEED9;
+      }
+      .component-collections {
+         border:1px solid gray;
+         background-color: #CED4D4;
+      }
+      .component-alternate {
+         border:1px solid gray;
+         background-color: #F4FFD9;
+      }
+      .component-annotations {
+         border:1px solid gray;
+         background-color: #FCE1CE;
+      }
      </style>
 
     <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove'></script>
@@ -187,7 +211,7 @@
 
     <section id="abstract">
       <p>
-	  The PROV Ontology (also PROV-O) encodes the PROV Data Model [[PROV-DM]] in the OWL2 Web Ontology Language (OWL2). The PROV ontology consists of a set of classes, properties, and restrictions that can be used to represent and interchange provenance information. The PROV ontology can also be specialized to create new classes and properties for modeling provenance information specific to different domain applications. The PROV ontology supports a set of entailments based on OWL2 formal semantics and provenance specific inference rules. The PROV ontology is available for download as a separate <a href="http://www.w3.org/ns/prov#">OWL2 document</a>.
+	  The PROV Ontology (also PROV-O) encodes the PROV Data Model [[PROV-DM]] in the OWL2 Web Ontology Language (OWL2). The PROV ontology consists of a set of classes, properties, and restrictions that can be used to represent and interchange provenance information. The PROV ontology can also be specialized to create new classes and properties for modeling provenance information specific to different domain applications. The PROV ontology supports a set of entailments based on OWL2 formal semantics. The PROV ontology is available for download as a separate <a href="http://www.w3.org/ns/prov#">OWL2 document</a>.
 	  </p>
 
     </section>
@@ -211,6 +235,10 @@
 		Finally, this document describes the formal semantics of the PROV ontology using the OWL2 semantics, [[!OWL2-DIRECT-SEMANTICS]], [[!OWL2-RDF-BASED-SEMANTICS]], and a set of provenance-specific inference rules. This is expected to support provenance implementations to automatically check for consistency of provenance information represented using PROV ontology and explicitly assert implicit provenance knowledge. 
 	  </p>
 	  <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
+
+      <p>PROV-O is a lightweight OWL-RL ontology designed to represent and interchange provenance information generated in different systems and under different contexts.
+      </p>
+
 	  	
       <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-DIRECT-SEMANTICS]] [[!OWL2-RDF-BASED-SEMANTICS]]. 
 	  </p>
@@ -225,18 +253,18 @@
 	<section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
 
-      <p>The PROV-O terms (classes and properties) are categorized into four categories: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections. This section introduces each category and presents a list of their terms hyperlinked to their detailed description in <a href="#cross-reference">Section 4</a>.
+      <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into four categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections.
       </p>
-      <p><strong>Starting Point classes and properties</strong> provide the basis for the rest of the PROV ontology and it is recommended that readers are comfortable with how to apply these terms before continuing to the remaining categories. The classes and properties in this category are listed below and are discussed in <a href="#description-starting-points">Section 3.1</a>.</p>
+      <p><strong>Starting Point classes and properties</strong> provide the basis for the rest of the PROV ontology and thus it is recommended that readers are comfortable with how to apply these terms before continuing to the remaining categories. These terms are used to create simple provenance descriptions that can be elaborated using terms from other categories. The classes and properties in this category are listed below and are discussed in <a href="#description-starting-point-terms">Section 3.1</a>.</p>
       {% include "includes/at-a-glance-starting-point.html" %}
 
-      <p><strong>Expanded classes and properties</strong> provide additional terms that can be used to relate those in the Starting Point category. The terms in this category are applied in the same way as the terms in the Starting Point category. The classes and properties in this category are listed below and are discussed in <a href="#description-expanded-terms">Section 3.2</a></p>
+      <p><strong>Expanded classes and properties</strong> provide additional terms that can be used to relate classes in the Starting Point category. The terms in this category are applied in the same way as the terms in the Starting Point category. The classes and properties in this category are listed below and are discussed in <a href="#description-expanded-terms">Section 3.2</a>.</p>
       {% include "includes/at-a-glance-expanded.html" %}
 
-      <p><strong>Qualified classes and properties</strong> are applied using a pattern that differs from those in the Starting Point and Expanded categories. While those terms were applied using direct, binary assertions, these classes and properties are used to further describe the relations asserted using Starting Points and Expanded terms. The pattern used in this category allows users to provide elaborate details that are not available using only Starting Point and Expanded terms. The classes and properties in this category are listed below and are discussed in <a href="#description-qualified-terms">Section 3.3</a></p>
+      <p><strong>Qualified classes and properties</strong> are applied using a pattern that differs from those in the Starting Point and Expanded categories. While those terms are applied using direct, binary assertions, these terms are used to describe the relations asserted using Starting Point and Expanded properties. The pattern used in this category allows users to provide elaborate details that are not available using only Starting Point and Expanded terms. The classes and properties in this category are listed below and are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
       {% include "includes/at-a-glance-qualified.html" %}
 
-      <p><strong>Collection classes and properties</strong> collections <a href="#description-collections">Section 3.4</a></p>
+      <p><strong>Collection classes and properties</strong> are specializations of the Starting Point and Qualified terms that describe the provenance of collections as key-value pairs are inserted and removed to create new collections. The classes and properties in this category are listed below and are discussed in <a href="#description-collections">Section 3.4</a>.</p>
       {% include "includes/at-a-glance-collections.html" %}
 
       <div>
@@ -250,22 +278,16 @@
 
 
 
-
-
-
-
-    <section id="ontology-description">
+    <section id="description">
       <h2>The PROV-O Ontology Description</h2>    	
-      <p>PROV-O is a lightweight OWL-RL ontology designed to represent and interchange provenance information generated in different systems and under different contexts. Users of PROV-O might only need to grasp part of the vocabulary, which will be sufficient to their needs according to how much detail they want to include in their provenance information. For this, the PROV-O terms are grouped into four categories to provide an incremental introduction to the ontology. The categories are introduced in the following order:</p>
-
+      <p>This section introduces the terms in each of the following categories:
       <ul>
-         <li><strong>Starting-point terms</strong> are a small collection of terms that provide initial, simple provenance descriptions.
-         </li>
-         <li>Terms for expressing <strong>expanded relationships</strong>, are for users who want to express more detailed provenance, in a more precise manner.For example, instead of simply stating that one entity was derived from another one, one can specify more specifically that one actually was a revision of, source of, or quotation of the other entity.
-         </li>
-         <li>Terms for expressing <strong>Qualified relationship</strong>, are for users who wish to &quot;qualify&quot; relationships between entities, agents and activities. These qualification statements allow expression of additional attributes of these relationships, such as the time at which an entity was used by an activity, or of additional entities involved in a relationship, for example, the plan/recipe used by an agent in an activity.
-         </li>
+         <li><a href="#description-starting-point-terms">Starting Point Terms</a></li>
+         <li><a href="#description-expanded-terms">Expanded Terms</a></li>
+         <li><a href="#description-qualified-terms">Qualified Terms</a></li>
+         <li><a href="#description-collections-terms">Collections Terms</a></li>
       </ul>
+      </p>     
 
 {% include "prov-o-html-sections/description-starting-points.inc.html" %}
 {% include "prov-o-html-sections/description-expanded-terms.inc.html" %}
@@ -274,37 +296,46 @@
 
 	  </section>
 
-
-
-
-
  
 
 	<section id="cross-reference"> <!-- class='informative' -->
       <h2>Cross reference for PROV-O classes and properties</h2>
+      <p>This section provides details for each class and property defined by the PROV ontology, grouped by the categories described above:
+       <ul>
+         <li><a href="#cross-reference-starting-point-terms">Starting Point Terms</a></li>
+         <li><a href="#cross-reference-expanded-terms">Expanded Terms</a></li>
+         <li><a href="#cross-reference-qualified-terms">Qualified Terms</a></li>
+         <li><a href="#cross-reference-collection-terms">Collections Terms</a></li>
+      </ul>
+      </p>     
 
-<p>
-This section, i.e., Section 4, presents the classes and properties that compose the ontology. No need to provide a diagram illustrating the domain and the range of the object properties. Also, no need to provide an example for each class and property. We should be able to present most of classes with an example stated using a sentence or two in English. In other words, we don’t need to provide the turtle for every small example if a sentence in English is enough. We should reserve the use of turtle only for the classes and properties that we think may be difficult for the user to grasp, e.g., involvement. In particular, some of the involvements that reify relations that are not part of the simple ontology, such as inform and Trace may need to be illustrated using turtle examples.
-</p>     
-
-      <section id="starting-point-terms">
+      <section id="cross-reference-starting-point-terms">
          <h3>Starting Point Terms</h3>
+         <p>The classes and properties that provide a basis for all other PROV-O terms are discussed in <a href="#description-starting-point-terms">Section 3.1</a>.</p>
+         {% include "includes/at-a-glance-starting-point.html" %}
          {% include "includes/cross-reference-starting-point.html" %}
-      </section> <!-- Simple Classes and Properties - crossreference -->
+      </section>
 
-      <section id="additional-terms">
+      <section id="cross-reference-additional-terms">
          <h3>Expanded Terms</h3>
+         <p>The additional terms used to describe relations among Starting Point classes are discussed in <a href="#description-expanded">Section 3.2</a>.</p>
+         {% include "includes/at-a-glance-expanded.html" %}
          {% include "includes/cross-reference-expanded.html" %}
       </section>
 
-      <section id="qualified-terms">
+      <section id="cross-reference-qualified-terms">
          <h3>Qualified Terms</h3>
+         <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified">Section 3.3</a>.</p>
+         {% include "includes/at-a-glance-qualified.html" %}
          {% include "includes/cross-reference-qualified.html" %}
-      </section> <!-- Qualified Classes and Properties - crossreference -->
+      </section>
 
-<p>Note that there is no need to reference terms listed in Section 4 from within the table of contents, this makes the table of contents difficult to browse. We think that the reader is likely to prefer to use the links provided in “PROV-O in a glance”, as well as links used throughout the document. 
-</p>
-
+      <section id="cross-reference-collection-terms">
+         <h3>Collections Terms</h3>
+         <p>The terms used to describe the provenance of collections of key-value pairs are discussed in <a href="#description-collections">Section 3.4</a>.</p>
+         {% include "includes/at-a-glance-collections.html" %}
+         {% include "includes/cross-reference-qualified.html" %}
+      </section>
 	</section>
 
 

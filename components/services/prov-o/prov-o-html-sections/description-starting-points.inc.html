@@ -1,39 +1,26 @@
-     <section id="description-starting-points">
+     <section id="description-starting-point-terms">
 	  	<h3>Starting Point Terms</h3>
-       <p>
-      The classes and properties that constitute the starting-point terms of provo are illustrated in Figure 1. 
+       <p>The Starting Point category is a small collection of classes and properties that can be used to create simple, initial provenance descriptions.
+         Three classes provide a basis for the rest of PROV-O:  
+         <ul>
+            <li> <a href="#Entity">prov:Entity</a>: An entity is a thing one wants to provide provenance for. Things can be physical, digital, conceptual, or otherwise.
+            </li>
+            <li> <a href="#Activity">prov:Activity</a>: An activity is something that occurs over a period of time and acts upon or with entities. This action can take multiple forms: consuming, processing, transforming, modifying, relocating, using, generating, etc.
+            </li>
+            <li> <a href="#Agent">prov:Agent</a>: An agent bears some form of responsibility for an activity taking place. Further, an agent may act on behalf of another agent when involved with an activity.
+            </li>
+         </ul> 
+      These three classes and the properties that relate them are illustrated in the following figure. 
       </p>
 
       <div style="text-align: center;">
          <figure>
             <img src="prov-o-diagrams/Starting-points-terms.png"
                  style="width: 50%; min-width: 25em; max-width: 60em" 
-                 alt="provo starting-point terms"/>
-            <figcaption>Figure 1. Starting-point classes and properties in PROV-O</figcaption>
+                 alt="PROV-O Starting Point terms"/>
+            <figcaption>Figure 1. The three Starting Point classes and the properties that relate them.</figcaption>
          </figure>
       </div>
-
-          <p>
-         There are three starting point classes in provo: Entity, Activity and Agent.  
-         </p>
-
-
-         <ul>
-         <li>
-         <a href="#Entity">prov:Entity</a>: Entities are things that one wants to provide provenance for. 
-         </li>
-         <li>
-         <a href="#Activity">prov:Activity</a>: Entities are acted upon using activities. An activity is 
-         characterized by a start and end time. It may use one or more entities, 
-         and may generate one or more entities.
-         </li>
-         <li>
-         <a href="#Agent">prov:Agent</a>: An agent is a sub-class of Entity that is associated with an 
-         activity. An agent bears some form of responsibility for the activity 
-         taking place. Note also that an agent may act on behalf of another 
-         agent.
-         </li>
-         </ul> 
 
          <p>
          Entities are related to each other using derivation, which is used to 
@@ -45,7 +32,7 @@
          </p>
 
          <p>
-         Activities may depend on each other. provo distinguishes between two 
+         Activities may depend on each other. PROV-O distinguishes between two 
          kinds of dependencies which are specified using the properties 
          wasInformedBy and wasStartedBy. 
          The first is used to specify that an activity used an entity that was 

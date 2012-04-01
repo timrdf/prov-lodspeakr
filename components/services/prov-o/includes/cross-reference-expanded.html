@@ -1,17 +1,15 @@
 <div    id="prov-expanded-owl-classes-crossreference"
      class="prov-expanded owl-classes crossreference">
 
-  <div id="Bundle" class="entity">
+  <div id="Account" class="entity">
     <h3>
-      <a href="#Bundle"><span class="dotted" title="http://www.w3.org/ns/prov#Bundle">prov:Bundle</span></a>
+      <a href="#Account"><span class="dotted" title="http://www.w3.org/ns/prov#Account">prov:Account</span></a>
       <span class="backlink">
          back to <a href="#prov-expanded-owl-classes-at-a-glance">expanded classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Bundle</p>
-    <div class="comment"><p>A prov:Bundle is a group of PROV statements.</p>
-    </div>
-    <div class="comment"><p>prov:Bundles are best modeled using sd:NamedGraphs.</p>
+    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Account</p>
+    <div class="comment"><p>Note that there are kinds of accounts (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O.</p>
     </div>
     <dl class="description">
       <dt>is subclass of</dt>
@@ -29,8 +27,6 @@
       </span>
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Location</p>
-    <div class="comment"><p>This is wgs:SpatialThing</p>
-    </div>
     <dl class="description">
       <dt>in range of</dt>
       <dd>
@@ -49,6 +45,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Note</p>
     <dl class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-annotations">
+        <a title="annotations" href="#component-annotations">annotations</a>
+      </dd>
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#hasAnnotation" href="#hasAnnotation">prov:hasAnnotation</a>
@@ -66,6 +66,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Organization</p>
     <dl class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-agents-responsibility">
+        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
+      </dd>
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Agent" href="#Agent" class="owlclass">prov:Agent</a>
@@ -82,6 +86,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Person</p>
     <dl class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-agents-responsibility">
+        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
+      </dd>
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Agent" href="#Agent" class="owlclass">prov:Agent</a>
@@ -98,6 +106,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#SoftwareAgent</p>
     <dl class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-agents-responsibility">
+        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
+      </dd>
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Agent" href="#Agent" class="owlclass">prov:Agent</a>
@@ -117,8 +129,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#alternateOf</p>
     <div class="description">
-    <div class="comment"><p>Another prov:Entity that characterizes the same thing as this prov:Entity, potentially in a different manner.</p>
-    </div>
+      <dt>in PROV component</dt>
+      <dd class="component-alternate">
+        <a title="alternate" href="#component-alternate">alternate</a>
+      </dd>
       <dl>
       <dt>has domain</dt>
       <dd>
@@ -152,6 +166,10 @@
     <div class="description">
     <div class="comment"><p>This inverse of prov:wasGeneratedBy is defined so that Activities being described can reference their generated outputs directly without needing to 'stop' and start describing the Entity. This helps 'Activity-centric' modeling as opposed to 'Entity-centric' modeling.</p>
     </div>
+      <dt>in PROV component</dt>
+      <dd class="component-entities-activities">
+        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
+      </dd>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -199,9 +217,7 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#hadLocation</p>
     <div class="description">
-    <div class="comment"><p>DM: Location is an optional attribute of Entity and Activity.</p>
-    </div>
-    <div class="comment"><p>This property is not functional because the many values could be at a variety of granularies (In this room, in that chair).</p>
+    <div class="comment"><p>Location is an optional attribute of Entity and Activity.</p>
     </div>
       <p><strong>has characteristics</strong>
  Asymmetric
@@ -230,8 +246,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#hadOriginalSource</p>
     <div class="description">
-    <div class="comment"><p>how is this different from wasDerivedFrom?</p>
-    </div>
+      <dt>in PROV component</dt>
+      <dd class="component-derivations">
+        <a title="derivations" href="#component-derivations">derivations</a>
+      </dd>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -271,6 +289,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#hasAnnotation</p>
     <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-annotations">
+        <a title="annotations" href="#component-annotations">annotations</a>
+      </dd>
       <dl>
       <dt>has range</dt>
       <dd>
@@ -294,6 +316,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#specializationOf</p>
     <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-alternate">
+        <a title="alternate" href="#component-alternate">alternate</a>
+      </dd>
       <dl>
       <dt>has domain</dt>
       <dd>
@@ -325,6 +351,13 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#tracedTo</p>
     <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-derivations">
+        <a title="derivations" href="#component-derivations">derivations</a>
+      </dd>
+      <p><strong>has characteristics</strong>
+ Transitive
+      </p>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -375,6 +408,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#wasEndedBy</p>
     <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-entities-activities">
+        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
+      </dd>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -406,8 +443,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#wasQuotedFrom</p>
     <div class="description">
-    <div class="comment"><p>Different from wasAttributedTo?</p>
-    </div>
+      <dt>in PROV component</dt>
+      <dd class="component-derivations">
+        <a title="derivations" href="#component-derivations">derivations</a>
+      </dd>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -447,6 +486,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#wasRevisionOf</p>
     <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-derivations">
+        <a title="derivations" href="#component-derivations">derivations</a>
+      </dd>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -486,6 +529,10 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#wasStartedBy</p>
     <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-entities-activities">
+        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
+      </dd>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -500,6 +547,14 @@
         <ul>
           <li>
             <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>has range</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
           </li>
         </ul>
       </dd>

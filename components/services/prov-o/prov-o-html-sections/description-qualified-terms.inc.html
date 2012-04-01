@@ -1,53 +1,61 @@
      <section id="description-qualified-terms">
-	  	<h3>Qualified Terms</h3>
-        <p>        
-This section shows how qualified relationships in prov-dm are encoded in provo. We need two diagrams: one to show the hierarchical relationship between involvement classes, and another to using Association as an exemplar to illustrate the general pattern to qualify a binary relationship. 
-   </p>
+       <h3>Qualified Terms</h3>
+       <p>The classes and properties in the Qualified terms category are for users who wish to provide additional details about the relationships between entities, activities, and agents. The terms in this category are the result of applying the <strong>Qualification Pattern</strong> to the simple relations available in the <a href="#prov-starting-point-owl-properties-at-a-glance">Starting Point</a> and <a href="#prov-expanded-owl-properties-at-a-glance">Expanded</a> categories.
+      </p>
+      <p>For example, Figure 2 illustrates the classes and properties needed to fulfill the qualification pattern for the <a href="#used">prov:used</a> and <a href="#wasAssociatedWith">prov:wasAssociatedWith</a> properties. While prov:qualifiedUsage, prov:Usage, and prov:entity are needed to qualify prov:used relations, prov:qualifiedAssociation, prov:Association, and prov:agent are needed to qualify prov:wasAssociatedWith relations. This pattern applies to the twelve other relations that can be qualified.
+      </p>
+      <p>In the example, the prov:qualifiedUsage property parallels the prov:used property, and references an instance of prov:Usage that provides attributes of the prov:used relation between the Activity and Entity. The prov:entity property is used to cite the Entity that was used by the Activity. In this case, the time that the Activity used the Entity is provided using the prov:atTime property and a literal xsd:dateTime value.
+      </p>
+      <p>Similarly, the prov:qualifiedAssociation property parallels the prov:wasAssociatedWith property, and references an instance of prov:Association that provides attributes of the prov:wasAssociatedWith relation between the Activity and Agent. The prov:agent property is used to cite the Agent that was involved in the Activity. In this case, the plan that the Agent used is provided using the prov:hadPlan property and an instance of prov:Plan.
+      </p>
 
-      <div style="text-align: center;">
+       <div style="text-align: center;">
          <figure>
-                 <img src="prov-o-diagrams/Qualified-Association.png"
-                style="width: 50%; min-width: 25em; max-width: 60em" 
-                alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
-            <figcaption>Figure 2. Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship</figcaption>
+            <img src="prov-o-diagrams/Qualified-Association.png"
+                 style="width: 50%; min-width: 25em; max-width: 60em" 
+                 alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
+            <figcaption>Figure 2. An illustration of the qualification pattern applied to the Starting Point properties <a href="#used">prov:used</a> and <a href="#wasAssociatedWith">prov:wasAssociatedWith</a>.</figcaption>
          </figure>
-      </div>
+       </div>
 
-      <div style="text-align: center;">
-         <figure>
-                 <img src="prov-o-diagrams/involvements.png"
-                style="width: 50%; min-width: 25em; max-width: 60em" 
-                alt="A hierarchical illustration of simple involvements"/>
-            <figcaption>Figure 3. A hierarchical illustration of simple involvements</figcaption>
-         </figure>
-      </div>
+      <p>The following two examples show the result of applying the Usage and Association patterns to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
+      </p>
+       <div class="anexample">
+          <div><b>Qualified Usage</b></div>
+            <p>The prov:qualifiedUsage property parallels the prov:used property to provide an additional description to ex:illustrationActivity. The instance of prov:Usage cites the data used (ex:aggregatedByRegions) and the time the activity used it (2011-07-14T03:03:03Z).
+          </p>
+          <div class="exampleOuter">
+             <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
+          </div>
+       </div>
 
-
-
-         <p>
-         We have in the current provo HTML document a diagram about qualified involvement in Section 8 “Overview of Qualified Involvement”, but we don’t think that such a diagram is great. We need to illustrate the hierarchy of involvements and some, not necessarily all, the associated object properties. The focus in the diagram will be on the elements of prov-dm that are illustrates in the previous overview sub-section. 
-         The diagram can show the following kinds on involvements, and shows some (not necessarily all) the properties that link them together, e.g., entity, activity, agent, qualified. Note that, not all the sub-classes of involvements are included here; they will appear in section 3.3 because they are additional terms in prov-o.
-         Involvement, EntityInvolvement, ActicityInvolvement, AgentInvolvement, Derivation, Usage, Generation, Association (End, Start), Responsibility, Attribution,
-         </p>
-
-         <p>
-         Turtle + Explanation. We do not to cover all the kinds of involvement and properties in the example. We only show how Derivation, Usage, Generation and Association can be expressed using this reification pattern. If need be, examples of other types of involvement should be given in section 4, where they are defined.  For the qualified relationships we provide the following example files:
-         </p>
-
-        <div class="anexample">
-           <div><b>Qualified Usage Example</b></div>
-            <p>
-eg16-journalism-usage.ttl, to show how additional information about usage can be expressed, such as when it all happened.
+       <div class="anexample">
+           <div><b>Qualified Association</b></div>
+            <p>The prov:qualifiedAssociation property parallels the prov:wasAssociatedWith property to provide an additional description to ex:illustrationActivity. The instance of prov:Association cites the agent (ex:derek) that followed the instructions (ex:tutorial_blog).
             </p>
            <div class="exampleOuter">
-              <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
+              <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
            </div>
-        </div>
+       </div>
+
+      <p>Usage and Association (described above) are accompanied by six other qualifications of Starting Point relations. The following table lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
+      </p>
+      <div style="text-align: center;">
+         {% include "includes/qualifed-forms-starting-point.html" %}
+      </div>
+
+      <p>Six relations from the Expanded category can also be qualified. The following table lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
+      </p>
+      <div style="text-align: center;">
+         {% include "includes/qualifed-forms-expanded.html" %}
+      </div>
+
+       <p>This section finishes with two more examples of qualification as applied to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
+       </p>
 
         <div class="anexample">
-           <div><b>Qualified Generation Example</b></div>
-            <p>
- eg16-journalism-generation.ttl, to show how additional information about generation can be expressed, such as when it all happened.
+           <div><b>Qualified Generation</b></div>
+            <p>The prov:qualifiedGeneration property parallels the prov:wasGeneratedBy property to provide an additional description to ex:chart1. The instance of prov:Generation cites the time (2011-07-14T15:52:14Z) that the activity (ex:illustrationActivity) generated the chart (ex:chart1).
             </p>
            <div class="exampleOuter">
               <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
@@ -55,30 +63,12 @@ eg16-journalism-usage.ttl, to show how additional information about usage can be
         </div>
 
         <div class="anexample">
-           <div><b>Qualified Association Example</b></div>
-            <p>
- eg16-journalism-association.ttl, to show how we can express plan or recipe used in an activity by an agent
-            </p>
-           <div class="exampleOuter">
-              <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
-           </div>
-        </div>
-
-        <div class="anexample">
-           <div><b>Qualified Derivation Example</b></div>
-            <p>
-eg16-journalism-derivation.ttl, to show how additional information about derivation can be expressed, such as when it all happened.
+           <div><b>Qualified Derivation</b></div>
+            <p>The prov:qualifiedDerivation property parallels the prov:wasDerivedFrom property to provide an additional description to ex:chart1. The instance of prov:Derivation cites the activity (ex:illustrationActivity) and the Usages and Generations that the activity conduced to create the chart (ex:chart1).
             </p>
            <div class="exampleOuter">
               <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
            </div>
         </div>
 
-         <div style="text-align: center;">
-            {% include "includes/qualifed-forms-starting-point.html" %}
-         </div>
-
-         <div style="text-align: center;">
-            {% include "includes/qualifed-forms-expanded.html" %}
-         </div>
 	  </section>
