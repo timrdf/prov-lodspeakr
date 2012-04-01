@@ -23,9 +23,9 @@ if [ ! -d prov-o-html-sections ]; then
    mkdir prov-o-html-sections
 fi
 pushd prov-o-html-sections
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-starting-points.inc.html
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-expanded-terms.inc.html
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-qualified-terms.inc.html
+#   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-starting-points.inc.html
+#   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-expanded-terms.inc.html
+#   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-qualified-terms.inc.html
    # Stian is doing it to github curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-collections.inc.html
 popd &> /dev/null
 

@@ -1,5 +1,5 @@
      <section id="description-starting-points">
-	  	<h3>Starting Points</h3>
+	  	<h3>Starting Point Terms</h3>
        <p>
       The classes and properties that constitute the starting-point terms of provo are illustrated in Figure 1. 
       </p>
@@ -7,7 +7,7 @@
       <div style="text-align: center;">
          <figure>
             <img src="prov-o-diagrams/Starting-points-terms.png"
-                 style="width: 70%; min-width: 25em; max-width: 60em" 
+                 style="width: 50%; min-width: 25em; max-width: 60em" 
                  alt="provo starting-point terms"/>
             <figcaption>Figure 1. Starting-point classes and properties in PROV-O</figcaption>
          </figure>
@@ -20,15 +20,15 @@
 
          <ul>
          <li>
-         Entity: Entities are things that one wants to provide provenance for. 
+         <a href="#Entity">prov:Entity</a>: Entities are things that one wants to provide provenance for. 
          </li>
          <li>
-         Activity: Entities are acted upon using activities. An activity is 
+         <a href="#Activity">prov:Activity</a>: Entities are acted upon using activities. An activity is 
          characterized by a start and end time. It may use one or more entities, 
          and may generate one or more entities.
          </li>
          <li>
-         Agent: An agent is a sub-class of Entity that is associated with an 
+         <a href="#Agent">prov:Agent</a>: An agent is a sub-class of Entity that is associated with an 
          activity. An agent bears some form of responsibility for the activity 
          taking place. Note also that an agent may act on behalf of another 
          agent.
@@ -73,21 +73,10 @@
         </div>
 
 
-         <p>
-         Here is a basic example that shows how  the above starting-point terms 
-         can be used to describe provenance information specifying how some 
-         government data about crime statistics, ex:dataset1, was processed to 
-         generate a graphical chart, ex:chart1 that depicts the statistics in 
-         ex:dataset1 according to national regions.
-         </p> 
-
         <div class="anexample">
-           <div><b>Example</b></div>
-            <p>
-Turtle + Explanation. The example does not have to illustrate all the terms. Instead, it focuses on the main ones. (see eg16-journalism-simple-without-comments.ttl). We chose this example over others because we think it is simple, intuitive. Moreover, it is used in the primer, and therefore people who read the primer before the provo HTML document, will find it easy to follow.
-
-            </p>
            <div class="exampleOuter">
+              <p>The following PROV-O describes the resources involved when creating a chart about crime statistics. The example uses only Starting Point terms and serves as a basis for elaboration that will be described in subsequent sections. In the example, Derek performs an aggregation of some government crime data, grouping by national regions that are described in a separate dataset by a civil action group.
+              </p> 
               <pre class="example">{% include "includes/eg16-journalism-simple-without-comments.ttl" %}</pre>
            </div>
         </div>

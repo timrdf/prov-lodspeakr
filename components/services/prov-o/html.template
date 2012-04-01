@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The PROV Ontology: It's not scary.</title>
+    <title>PROV-O: The PROV Ontology</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
 
     <link href="{{lodspk.home}}prov-o-lode/owl.css"    rel="stylesheet" type="text/css" />
@@ -187,7 +187,7 @@
 
     <section id="abstract">
       <p>
-	  The PROV Ontology (also PROV-O) encodes the PROV Data Model [[PROV-DM]] in the OWL2 Web Ontology Language (OWL2). The PROV ontology consists of a set of classes, properties, and restrictions that can be used to represent provenance information. The PROV ontology can also be specialized to create new classes and properties for modeling provenance information specific to different domain applications. The PROV ontology supports a set of entailments based on OWL2 formal semantics and provenance specific inference rules. The PROV ontology is available for download as a separate OWL2 document.
+	  The PROV Ontology (also PROV-O) encodes the PROV Data Model [[PROV-DM]] in the OWL2 Web Ontology Language (OWL2). The PROV ontology consists of a set of classes, properties, and restrictions that can be used to represent and interchange provenance information. The PROV ontology can also be specialized to create new classes and properties for modeling provenance information specific to different domain applications. The PROV ontology supports a set of entailments based on OWL2 formal semantics and provenance specific inference rules. The PROV ontology is available for download as a separate <a href="http://www.w3.org/ns/prov#">OWL2 document</a>.
 	  </p>
 
     </section>
@@ -202,11 +202,6 @@
      <section id="introduction">    
       <h2>Introduction</h2>  
       <p>
-  Talk about prov-dm
-  Say that we are using OWL-RL
-
-      </p>
-      <p>
         PROV Ontology (also PROV-O) defines the normative modeling of the PROV Data Model [[PROV-DM]] using the W3C OWL2 Web Ontology Language. This document specification describes the set of classes, properties, and restrictions that constitute the PROV ontology, which have been introduced in the PROV Data Model [[PROV-DM]]. This ontology specification provides the foundation for implementation of provenance applications in different domains using the PROV ontology for representing, exchanging, and integrating provenance information. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange and management in domain-specific Web-based applications.
       </p>
 	  <p>
@@ -217,7 +212,12 @@
 	  </p>
 	  <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
 	  	
-
+      <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-DIRECT-SEMANTICS]] [[!OWL2-RDF-BASED-SEMANTICS]]. 
+	  </p>
+	  <p>The PROV Ontology can be used directly in a domain application, though many domain applications may require specialization of PROV-O Classes and Properties for representing domain-specific provenance information. We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
+	  </p>
+	  <p>The PROV Data Model document [[PROV-DM]] introduces an example <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario"> provenance scenario </a> describing the creation of crime statistics file stored on a shared file system and edited by journalists Alice, Bob, Charles, David, and Edith. This scenario is used as a running example in this document to describe the PROV ontology classes and properties, the specialization mechanism, and the entailments supported by the PROV ontology. 
+	  </p>
     </section> <!-- Introduction -->
 
 
@@ -225,17 +225,19 @@
 	<section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
 
-      <p>
-The terms (classes and properties) in provo can be categorized into three categories: starting point terms, terms used to encode qualified relationships, and “expanded” (or what we can also call additional or convenient) terms. This section provides a rational on this categorization preferably in one paragraph, and then presents three indexes that list the terms in each category hyperlinked to their detailed description in Section 4 for quick reference.  To see what we mean by an index, take a look at the following link http://rdfs.org/sioc/spec/#sec-glance
+      <p>The PROV-O terms (classes and properties) are categorized into four categories: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections. This section introduces each category and presents a list of their terms hyperlinked to their detailed description in <a href="#cross-reference">Section 4</a>.
       </p>
-      <p>Starting Point classes and properties</p>
+      <p><strong>Starting Point classes and properties</strong> provide the basis for the rest of the PROV ontology and it is recommended that readers are comfortable with how to apply these terms before continuing to the remaining categories. The classes and properties in this category are listed below and are discussed in <a href="#description-starting-points">Section 3.1</a>.</p>
       {% include "includes/at-a-glance-starting-point.html" %}
 
-      <p>Qualified classes and properties</p>
+      <p><strong>Expanded classes and properties</strong> provide additional terms that can be used to relate those in the Starting Point category. The terms in this category are applied in the same way as the terms in the Starting Point category. The classes and properties in this category are listed below and are discussed in <a href="#description-expanded-terms">Section 3.2</a></p>
+      {% include "includes/at-a-glance-expanded.html" %}
+
+      <p><strong>Qualified classes and properties</strong> are applied using a pattern that differs from those in the Starting Point and Expanded categories. While those terms were applied using direct, binary assertions, these classes and properties are used to further describe the relations asserted using Starting Points and Expanded terms. The pattern used in this category allows users to provide elaborate details that are not available using only Starting Point and Expanded terms. The classes and properties in this category are listed below and are discussed in <a href="#description-qualified-terms">Section 3.3</a></p>
       {% include "includes/at-a-glance-qualified.html" %}
 
-      <p>Expanded classes and properties</p>
-      {% include "includes/at-a-glance-expanded.html" %}
+      <p><strong>Collection classes and properties</strong> collections <a href="#description-collections">Section 3.4</a></p>
+      {% include "includes/at-a-glance-collections.html" %}
 
       <div>
       {% for row in models.uncategorized %}
@@ -243,13 +245,6 @@ The terms (classes and properties) in provo can be categorized into three catego
          <a href="{{row.prov.curie}}">{{row.prov.curie}}</a>{%if !forloop.last%} | {%endif%}
       {% endfor %} 
       </div>
-
-      <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-DIRECT-SEMANTICS]] [[!OWL2-RDF-BASED-SEMANTICS]]. 
-	  </p>
-	  <p>The PROV Ontology can be used directly in a domain application, though many domain applications may require specialization of PROV-O Classes and Properties for representing domain-specific provenance information. We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
-	  </p>
-	  <p>The PROV Data Model document [[PROV-DM]] introduces an example <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario"> provenance scenario </a> describing the creation of crime statistics file stored on a shared file system and edited by journalists Alice, Bob, Charles, David, and Edith. This scenario is used as a running example in this document to describe the PROV ontology classes and properties, the specialization mechanism, and the entailments supported by the PROV ontology. 
-	  </p>
 
 	</section> <!-- PROV-O at a glance -->
 
@@ -261,14 +256,14 @@ The terms (classes and properties) in provo can be categorized into three catego
 
     <section id="ontology-description">
       <h2>The PROV-O Ontology Description</h2>    	
-      <p>PROV-O is a lightweight OWL-RL ontology designed to represent and interchange provenance information generated in different systems, under different context. Users of PROV-O might only need to grasp part of the vocabulary, which will be sufficient to their needs, according to how much detail they want to go with their provenance information. For this, we group PROV-O terms into several categories in order to provide a gentle, incremental introduction to the ontology, and they are introduced in the following order:</p>
+      <p>PROV-O is a lightweight OWL-RL ontology designed to represent and interchange provenance information generated in different systems and under different contexts. Users of PROV-O might only need to grasp part of the vocabulary, which will be sufficient to their needs according to how much detail they want to include in their provenance information. For this, the PROV-O terms are grouped into four categories to provide an incremental introduction to the ontology. The categories are introduced in the following order:</p>
 
       <ul>
-         <li>Starting-point terms, as the name suggests, consist of a small collection of terms for users to kick start, to provide simple provenance descriptions.
+         <li><strong>Starting-point terms</strong> are a small collection of terms that provide initial, simple provenance descriptions.
          </li>
-         <li>Terms for expressing expanded relationships, are for users who want to express more detailed provenance, in a more precise manner.For example, instead of simply stating that one entity was derived from another one, one can specify more specifically that one actually was a revision of, source of, or quotation of the other entity.
+         <li>Terms for expressing <strong>expanded relationships</strong>, are for users who want to express more detailed provenance, in a more precise manner.For example, instead of simply stating that one entity was derived from another one, one can specify more specifically that one actually was a revision of, source of, or quotation of the other entity.
          </li>
-         <li>Terms for expressing Qualified relationship, are for users who wish to &quot;qualify&quot; relationships between entities, agents and activities. These qualification statements allow expression of additional attributes of these relationships, such as the time at which an entity was used by an activity, or of additional entities involved in a relationship, for example, the plan/recipe used by an agent in an activity.
+         <li>Terms for expressing <strong>Qualified relationship</strong>, are for users who wish to &quot;qualify&quot; relationships between entities, agents and activities. These qualification statements allow expression of additional attributes of these relationships, such as the time at which an entity was used by an activity, or of additional entities involved in a relationship, for example, the plan/recipe used by an agent in an activity.
          </li>
       </ul>
 
@@ -285,7 +280,7 @@ The terms (classes and properties) in provo can be categorized into three catego
 
  
 
-	<section class='informative' id="specializing-provenance-ontology-for-domain-specific-provenance-applications">
+	<section id="cross-reference"> <!-- class='informative' -->
       <h2>Cross reference for PROV-O classes and properties</h2>
 
 <p>
@@ -438,8 +433,9 @@ This section, i.e., Section 4, presents the classes and properties that compose 
 -->
     <section class='appendix'>
       <h2>Acknowledgements</h2>
-      <p>
-        The Provenance Working Group Members.
+      <p>We thank the members of the Provenance Working Group for their feedback throughout the development of the PROV ontology and its documentation.
+      </p>
+      <p>We also thank the developers of the tools used to create the PROV-O ontology and portions of this page. Protege for editing the ontology, rapper for the many serialization changes and checks, LODE for the styling of the cross references in this page, LODSpeaKr for automated construction of this page, rspec for handling the W3C styling, SuRF and rdflib for constructing the PROV-O cross references in this page. Without these great tools, developing PROV-O would have been much less of a pleasure.
       </p>
     </section>
 

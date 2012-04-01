@@ -1,4 +1,4 @@
-     <section>
+     <section id="description-qualified-terms">
 	  	<h3>Qualified Terms</h3>
         <p>        
 This section shows how qualified relationships in prov-dm are encoded in provo. We need two diagrams: one to show the hierarchical relationship between involvement classes, and another to using Association as an exemplar to illustrate the general pattern to qualify a binary relationship. 
@@ -6,21 +6,22 @@ This section shows how qualified relationships in prov-dm are encoded in provo. 
 
       <div style="text-align: center;">
          <figure>
-                 <img src="prov-o-diagrams/involvements.png"
-                style="width: 70%; min-width: 25em; max-width: 60em" 
-                alt="A hierarchical illustration of simple involvements"/>
-            <figcaption>Figure 2. A hierarchical illustration of simple involvements</figcaption>
+                 <img src="prov-o-diagrams/Qualified-Association.png"
+                style="width: 50%; min-width: 25em; max-width: 60em" 
+                alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
+            <figcaption>Figure 2. Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship</figcaption>
          </figure>
       </div>
 
       <div style="text-align: center;">
          <figure>
-                 <img src="prov-o-diagrams/Qualified-Association.png"
-                style="width: 70%; min-width: 25em; max-width: 60em" 
-                alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
-            <figcaption>Figure 3. Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship</figcaption>
+                 <img src="prov-o-diagrams/involvements.png"
+                style="width: 50%; min-width: 25em; max-width: 60em" 
+                alt="A hierarchical illustration of simple involvements"/>
+            <figcaption>Figure 3. A hierarchical illustration of simple involvements</figcaption>
          </figure>
       </div>
+
 
 
          <p>
@@ -34,12 +35,12 @@ This section shows how qualified relationships in prov-dm are encoded in provo. 
          </p>
 
         <div class="anexample">
-           <div><b>Qualified DerivationExample</b></div>
+           <div><b>Qualified Usage Example</b></div>
             <p>
-eg16-journalism-derivation.ttl, to show how additional information about derivation can be expressed, such as when it all happened.
+eg16-journalism-usage.ttl, to show how additional information about usage can be expressed, such as when it all happened.
             </p>
            <div class="exampleOuter">
-              <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
+              <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
            </div>
         </div>
 
@@ -54,22 +55,22 @@ eg16-journalism-derivation.ttl, to show how additional information about derivat
         </div>
 
         <div class="anexample">
-           <div><b>Qualified Usage Example</b></div>
-            <p>
-eg16-journalism-usage.ttl, to show how additional information about usage can be expressed, such as when it all happened.
-            </p>
-           <div class="exampleOuter">
-              <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
-           </div>
-        </div>
-
-        <div class="anexample">
            <div><b>Qualified Association Example</b></div>
             <p>
  eg16-journalism-association.ttl, to show how we can express plan or recipe used in an activity by an agent
             </p>
            <div class="exampleOuter">
               <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
+           </div>
+        </div>
+
+        <div class="anexample">
+           <div><b>Qualified Derivation Example</b></div>
+            <p>
+eg16-journalism-derivation.ttl, to show how additional information about derivation can be expressed, such as when it all happened.
+            </p>
+           <div class="exampleOuter">
+              <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
            </div>
         </div>
 
