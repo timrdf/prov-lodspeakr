@@ -139,13 +139,15 @@
       </span>
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#KeyValuePair</p>
+    <div class="comment"><p>A key-value pair. Part of a prov:Collection through prov:Membership. The key is any RDF Literal, the value is a prov:Entity.</p>
+    </div>
     <dl class="description">
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
         <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
+        <sup class="type-op" title="object property">op</sup>
       </dd>
       <dt>in range of</dt>
       <dd>
@@ -165,6 +167,8 @@
       </span>
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Membership</p>
+    <div class="comment"><p>Described members of a collection, in the form of key-value pairs. The Membership resource can also be annotated with attributes.</p>
+    </div>
     <dl class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -215,6 +219,41 @@
 </div>
 <div    id="prov-collections-owl-properties-crossreference"
      class="prov-collections owl-properties crossreference">
+  <div id="collection" class="entity">
+    <h3>
+      <a href="#collection"><span class="dotted" title="http://www.w3.org/ns/prov#collection">prov:collection</span></a>
+      <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#collection</p>
+    <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-collections">
+        <a title="collections" href="#component-collections">collections</a>
+      </dd>
+      <dl>
+      <dt>has domain</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>has range</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+          </li>
+        </ul>
+      </dd>
+      </dl>
+    </div>
+  </div>
+
   <div id="derivedByInsertionFrom" class="entity">
     <h3>
       <a href="#derivedByInsertionFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByInsertionFrom">prov:derivedByInsertionFrom</span></a>
@@ -225,13 +264,12 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#derivedByInsertionFrom</p>
     <div class="description">
+    <div class="comment"><p>The collection was derived from the other by insertion. prov:qualifiedInsertion shows details of the insertion, in particular the inserted key-value pairs.</p>
+    </div>
       <dt>in PROV component</dt>
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
-      <p><strong>has characteristics</strong>
-  Functional
-      </p>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -271,13 +309,12 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#derivedByRemovalFrom</p>
     <div class="description">
+    <div class="comment"><p>The collection was derived from the other by removal. prov:qualifiedRemoval shows details of the removal, in particular the removed key-value pairs.</p>
+    </div>
       <dt>in PROV component</dt>
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
-      <p><strong>has characteristics</strong>
-  Functional
-      </p>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -390,6 +427,8 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#knownMembership</p>
     <div class="description">
+    <div class="comment"><p>The collection included the specified membership of keys-values.</p>
+    </div>
       <dt>in PROV component</dt>
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
@@ -425,6 +464,8 @@
     </h3>
     <p><strong>IRI:</strong>http://www.w3.org/ns/prov#member</p>
     <div class="description">
+    <div class="comment"><p>The key-value pair was part of the membership. A membership can have multiple members.</p>
+    </div>
       <dt>in PROV component</dt>
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
@@ -513,6 +554,41 @@
         <ul>
           <li>
             <a title="http://www.w3.org/ns/prov#Removal" href="#Removal" class="owlclass">prov:Removal</a>
+          </li>
+        </ul>
+      </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div id="removedKey" class="entity">
+    <h3>
+      <a href="#removedKey"><span class="dotted" title="http://www.w3.org/ns/prov#removedKey">prov:removedKey</span></a>
+      <sup class="type-dp" title="data property">dp</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#removedKey</p>
+    <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-collections">
+        <a title="collections" href="#component-collections">collections</a>
+      </dd>
+      <dl>
+      <dt>has domain</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#Removal" href="#Removal" class="owlclass">prov:Removal</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>has range</dt>
+      <dd>
+        <ul>
+          <li>
+            http://www.w3.org/2000/01/rdf-schema#Literal
           </li>
         </ul>
       </dd>
