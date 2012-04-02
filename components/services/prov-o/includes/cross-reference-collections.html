@@ -8,10 +8,12 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Collection</p>
-    <div class="comment"><p>This concept allows for the provenance of the collection, but also of its constituents to be expressed. Such a notion of collection corresponds to a wide variety of concrete data structures, such as a maps, dictionaries, or associative arrays.</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Collection</p>
+    <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</p>
     </div>
     <div class="comment"><p>A given collection forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different collection.</p>
+    </div>
+    <div class="comment"><p>This concept allows for the provenance of the collection, but also of its constituents to be expressed. Such a notion of collection corresponds to a wide variety of concrete data structures, such as a maps, dictionaries, or associative arrays.</p>
     </div>
     <dl class="description">
       <dt>in PROV component</dt>
@@ -58,7 +60,7 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#CollectionInvolvement</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#CollectionInvolvement</p>
     <dl class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -88,7 +90,7 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#EmptyCollection</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#EmptyCollection</p>
     <dl class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -108,7 +110,9 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Insertion</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Insertion</p>
+    <div class="definition"><p>Insertion is a derivation that transforms a collection into another, by insertion of one or more key-value pairs.</p>
+    </div>
     <dl class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -138,16 +142,16 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#KeyValuePair</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#KeyValuePair</p>
     <div class="comment"><p>A key-value pair. Part of a prov:Collection through prov:Membership. The key is any RDF Literal, the value is a prov:Entity.</p>
     </div>
     <dl class="description">
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
-        <sup class="type-dp" title="data property">dp</sup>
         <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
         <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
+        <sup class="type-dp" title="data property">dp</sup>
       </dd>
       <dt>in range of</dt>
       <dd>
@@ -166,7 +170,7 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Membership</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Membership</p>
     <div class="comment"><p>Described members of a collection, in the form of key-value pairs. The Membership resource can also be annotated with attributes.</p>
     </div>
     <dl class="description">
@@ -194,7 +198,9 @@
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Removal</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Removal</p>
+    <div class="definition"><p>Removal is a derivation that transforms a collection into another, by removing one or more key-value pairs.</p>
+    </div>
     <dl class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -227,7 +233,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#collection</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#collection</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -262,7 +268,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#derivedByInsertionFrom</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#derivedByInsertionFrom</p>
     <div class="description">
     <div class="comment"><p>The collection was derived from the other by insertion. prov:qualifiedInsertion shows details of the insertion, in particular the inserted key-value pairs.</p>
     </div>
@@ -307,7 +313,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#derivedByRemovalFrom</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#derivedByRemovalFrom</p>
     <div class="description">
     <div class="comment"><p>The collection was derived from the other by removal. prov:qualifiedRemoval shows details of the removal, in particular the removed key-value pairs.</p>
     </div>
@@ -352,7 +358,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#inserted</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#inserted</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -387,7 +393,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#key</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#key</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -425,7 +431,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#knownMembership</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#knownMembership</p>
     <div class="description">
     <div class="comment"><p>The collection included the specified membership of keys-values.</p>
     </div>
@@ -462,7 +468,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#member</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#member</p>
     <div class="description">
     <div class="comment"><p>The key-value pair was part of the membership. A membership can have multiple members.</p>
     </div>
@@ -499,7 +505,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#qualifiedInsertion</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedInsertion</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -534,7 +540,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#qualifiedRemoval</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedRemoval</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -569,7 +575,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#removedKey</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#removedKey</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -604,7 +610,7 @@
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#value</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#value</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">

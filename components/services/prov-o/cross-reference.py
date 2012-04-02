@@ -72,14 +72,14 @@ for bindings in results:
 for category in categories.keys():
    print category
 
-   glanceName    = 'at-a-glance-'+category+'.html'
-   crossName     = 'cross-reference-'+category+'.html'
-   qualsName = 'qualifed-forms-'+category+'.html'
+   glanceName = 'at-a-glance-'+category+'.html'
+   crossName  = 'cross-reference-'+category+'.html'
+   qualsName  = 'qualifed-forms-'+category+'.html'
    if not(os.path.exists(glanceName)) and not(os.path.exists(crossName)) and not(os.path.exists(qualsName)):
       print '  '+glanceName + ' ' + crossName
       glance = open(glanceName, 'w')
       cross  = open(crossName, 'w')
-      quals = open(qualsName, 'w')
+      quals  = open(qualsName, 'w')
 
       # Classes # # # # # # # # # # # # # # # # #
       glance.write('\n')
@@ -156,13 +156,18 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # class
-         cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
+         cross.write('    <p><strong>IRI:</strong> '+uri+'</p>\n')
 
+         # class prov:definition
+         for definition in owlClass.prov_definition: # TODO: not done for properties. How to reconcile def vs comments vs editorNote?
+            cross.write('    <div class="definition"><p>'+definition+'</p>\n')
+            cross.write('    </div>\n')
+
+         cross.write('    <dl class="description">\n')
          # class rdfs:comment
          for comment in owlClass.rdfs_comment:
             cross.write('    <div class="comment"><p>'+comment+'</p>\n')
             cross.write('    </div>\n')
-         cross.write('    <dl class="description">\n')
 
          # class prov:component ?component
          if len(owlClass.prov_component) > 0:
@@ -248,7 +253,7 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # property
-         cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
+         cross.write('    <p><strong>IRI:</strong> '+uri+'</p>\n')
 
          cross.write('    <div class="description">\n')
 
