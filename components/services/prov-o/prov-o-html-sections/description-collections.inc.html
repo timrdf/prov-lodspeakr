@@ -10,7 +10,7 @@
        <p>
         Conceptually, a collection has a logical structure consisting of
         key-value pairs. This structure is often referred to as a map, and is a
-        generic indexing mechanism that can abstract commonly used data
+        generic indexing mechanisms that can abstract commonly used data
         structures, including associative lists (also known as "dictionaries" in
         some programming languages), relational tables, ordered lists, and more
         (the specification of such specialized structures in terms of key-value
@@ -27,44 +27,33 @@
        </p>
        <p>
        In PROV-O, an entity is indicated to be a collection by using the
-       subclass <a href='#Collection'>prov:Collection</a>. Its subclass <a
-       href='#EmptyCollection'>prov:EmptyCollection</a> indicates
+       subclass <a class="qname" href='#Collection'>prov:Collection</a>. Its subclass <a class="qname" href='#EmptyCollection'>prov:EmptyCollection</a> indicates
        that the collection has no members. 
-       <a href='#KeyValuePair'>prov:KeyValuePair</a>s are members of a collection.
-       The members can be expressed explicitly using <a href='#knownMembership' class="qname">prov:knownMembership</a>, and indirectly
+       Members of a collection are expressed through <a class="qname" href='#KeyValuePair'>prov:KeyValuePair</a>s. 
+       The members can be expressed explicitly using <a class="qname" href='#knownMembership'>prov:knownMembership</a>, and indirectly
        through a series of collection derivations of insertions and
-       removals, using <a
-           href='#derivedByInsertionFrom'>prov:derivedByInsertionFrom</a>
-       and <a
-           href='#derivedByRemovalFrom'>prov:derivedByRemovalFrom</a>. 
+       removals, using <a class="qname" href='#derivedByInsertionFrom'>prov:derivedByInsertionFrom</a>
+       and <a class="qname" href='#derivedByRemovalFrom'>prov:derivedByRemovalFrom</a>. 
        </p>
        <p>
        To specify the key-value pairs inserted,
-       <span class="repeated">prov:derivedByInsertionFrom</span> must be qualified using <a
-       href='#qualifiedInsertion'>prov:qualifiedInsertion</a> to a
-       <a href='#Insertion'>Insertion</a>, which indicates the pairs
-       using <a href='#inserted'>prov:inserted</a> to some <a
-       href='#KeyValuePair'>prov:KeyValuePair</a>. Its <a
-       href='#key'>prov:key</a> is any RDF literal, while the <a
-       href='#value'>prov:value</a> is a <a
-       href='#Entity'>prov:Entity</a>. 
-       Likewise, removal are qualified using <a
-       href='#qualifiedRemoval'>prov:qualifiedRemoval</a> to a <a
-       href='#Removal'>Removal</a>, which <a
-       href='#removedKey'>prov:removedKey</a>
+       <span class="repeated">prov:derivedByInsertionFrom</span> must be qualified using <a class="qname" href='#qualifiedInsertion'>prov:qualifiedInsertion</a> to a
+       <a class="qname" href='#Insertion'>Insertion</a>, which indicates the pairs
+       using <a class="qname" href='#inserted'>prov:inserted</a> to some <a class="qname" href='#KeyValuePair'>prov:KeyValuePair</a>. Its <a class="qname" href='#key'>prov:key</a> is any RDF literal, while the <a class="qname" href='#value'>prov:value</a> is a <a class="qname" href='#Entity'>prov:Entity</a>. 
+       Likewise, removal are qualified using <a class="qname" href='#qualifiedRemoval'>prov:qualifiedRemoval</a> to a <a class="qname" href='#Removal'>Removal</a>, which <a class="qname" href='#removedKey'>prov:removedKey</a>
    points to the removed key. <span class="repeated">prov:Insertion</span>, 
    <span class="repeated">prov:Removal</span> and <span class="repeated">prov:Membership</span> can have
    custom properties and identifiers, as described in PROV-DM.
        </p>
 
-     <div class="exampleOuter">
-        <p>
-        The example below shows how <code>:c</code> and <code>:c1</code> are
-        collections.  <code>:c</code> is empty, while <code>:c1</code>
-        is derived by inserting the key-value pairs <code>{("k1", :e1),
-        ("k2", :e2)}</code>.
-        </p>
-        <pre class="example">
+       <div class="exampleOuter">
+           <p>
+           The example below shows how 
+           <code>:c</code> and <code>:c1</code> are
+           collections.  <code>:c</code> is empty, while <code>:c1</code>
+           is derived by inserting the key-value pairs <code>{("k1", :e1),
+           ("k2", :e2)}</code>.</p>
+           <pre class="example">
 @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
@@ -83,16 +72,16 @@
             prov:value :e2 ;
           ]
       ] .
-        </pre>
-     </div>
-     <div class="exampleOuter">
-       <p>
-       The following example shows how <code>:c3</code> has been derived from
-       <code>:c2</code>, which content is not asserted. The keys
-       <code>"k1"</code> and <code>"k3"</code> and their corresponding
-       values have been removed in <code>:c3</code>. 
-       </p>
-       <pre class="example">
+           </pre>
+       </div>
+       <div class="exampleOuter">
+          <p>
+          The following example shows how <code>:c3</code> has been derived from
+          <code>:c2</code>, which content is not asserted. The keys
+          <code>"k1"</code> and <code>"k3"</code> and their corresponding
+          values have been removed in <code>:c3</code>. 
+          </p>
+           <pre class="example">
 @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
            
@@ -103,9 +92,8 @@
          prov:collection :c2 ;
          prov:removed "k1"^^xsd:string, "k3"^^xsd:string 
       ] .  
-       </pre>
+           </pre>
        </div>
-
     <div class="exampleOuter">
        <p>
        The next example shows how the members of
@@ -113,7 +101,7 @@
        pairs <code>{("k1", :e1), ("k2", :e2)}</code>. Note that this
        assertion does not claim there are not other members.
        </p>
-       <pre class="example">
+            <pre class="example">
 @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
 
@@ -125,7 +113,7 @@
         prov:key "k2"^^xsd:string ;
         prov:value :e2
       ] .
-       </pre>
+            </pre>
     </div>
     
      </section>
