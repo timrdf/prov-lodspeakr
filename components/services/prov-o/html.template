@@ -292,13 +292,13 @@
     <section id="description">
       <h2>The PROV-O Ontology Description</h2>    	
       <p>This section introduces the terms in each of the following categories:
+      </p>     
       <ul>
          <li><a href="#description-starting-point-terms">Starting Point Terms</a></li>
          <li><a href="#description-expanded-terms">Expanded Terms</a></li>
          <li><a href="#description-qualified-terms">Qualified Terms</a></li>
          <li><a href="#description-collections-terms">Collections Terms</a></li>
       </ul>
-      </p>     
 
 {% include "prov-o-html-sections/description-starting-points.inc.html" %}
 {% include "prov-o-html-sections/description-expanded-terms.inc.html" %}
@@ -312,13 +312,13 @@
 	<section id="cross-reference"> <!-- class='informative' -->
       <h2>Cross reference for PROV-O classes and properties</h2>
       <p>This section provides details for each class and property defined by the PROV ontology, grouped by the categories described above:
-       <ul>
+      </p>     
+      <ul>
          <li><a href="#cross-reference-starting-point-terms">Starting Point Terms</a></li>
          <li><a href="#cross-reference-expanded-terms">Expanded Terms</a></li>
          <li><a href="#cross-reference-qualified-terms">Qualified Terms</a></li>
          <li><a href="#cross-reference-collection-terms">Collections Terms</a></li>
       </ul>
-      </p>     
 
       <section id="cross-reference-starting-point-terms">
          <h3>Starting Point Terms</h3>

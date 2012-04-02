@@ -11,9 +11,10 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Account</p>
     <div class="definition"><p>An account is any mechanism by which a set of provenance descriptions can be bundled up and named.</p>
     </div>
+    <dl class="description">
     <div class="comment"><p>Note that there are kinds of accounts (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O.</p>
     </div>
-    <dl class="description">
+
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
@@ -32,6 +33,7 @@
     <div class="definition"><p>A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.</p>
     </div>
     <dl class="description">
+
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#hadLocation" href="#hadLocation">prov:hadLocation</a>
@@ -51,10 +53,12 @@
     <div class="definition"><p>Attribute-value pairs occurring in notes are application specific.</p>
     </div>
     <dl class="description">
+
       <dt>in PROV component</dt>
       <dd class="component-annotations">
         <a title="annotations" href="#component-annotations">annotations</a>
       </dd>
+
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#hasAnnotation" href="#hasAnnotation">prov:hasAnnotation</a>
@@ -74,10 +78,12 @@
     <div class="definition"><p>Agents of type Organization are social institutions such as companies, societies etc.</p>
     </div>
     <dl class="description">
+
       <dt>in PROV component</dt>
       <dd class="component-agents-responsibility">
         <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
       </dd>
+
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Agent" href="#Agent" class="owlclass">prov:Agent</a>
@@ -96,10 +102,12 @@
     <div class="definition"><p>Agents of type Person are people.</p>
     </div>
     <dl class="description">
+
       <dt>in PROV component</dt>
       <dd class="component-agents-responsibility">
         <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
       </dd>
+
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Agent" href="#Agent" class="owlclass">prov:Agent</a>
@@ -118,10 +126,12 @@
     <div class="definition"><p>A software agent is running software.</p>
     </div>
     <dl class="description">
+
       <dt>in PROV component</dt>
       <dd class="component-agents-responsibility">
         <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
       </dd>
+
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Agent" href="#Agent" class="owlclass">prov:Agent</a>
@@ -141,27 +151,31 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#alternateOf</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-alternate">
         <a title="alternate" href="#component-alternate">alternate</a>
       </dd>
-      <dl>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -176,45 +190,51 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#generated</p>
     <div class="description">
-    <div class="comment"><p>This inverse of prov:wasGeneratedBy is defined so that Activities being described can reference their generated outputs directly without needing to 'stop' and start describing the Entity. This helps 'Activity-centric' modeling as opposed to 'Entity-centric' modeling.</p>
-    </div>
+      <div class="comment"><p>This inverse of prov:wasGeneratedBy is defined so that Activities being described can reference their generated outputs directly without needing to 'stop' and start describing the Entity. This helps 'Activity-centric' modeling as opposed to 'Entity-centric' modeling.</p>
+      </div>
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-entities-activities">
         <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
       </dd>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#involved" href="#involved" class="owlclass">prov:involved</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has inverse</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy" class="owlclass">prov:wasGeneratedBy</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involved" href="#involved" class="owlclass">prov:involved</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has inverse</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy" class="owlclass">prov:wasGeneratedBy</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -229,21 +249,20 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadLocation</p>
     <div class="description">
-    <div class="comment"><p>Location is an optional attribute of Entity and Activity.</p>
-    </div>
-      <p><strong>has characteristics</strong>
- Asymmetric
-, Irreflexive
-      </p>
+      <div class="comment"><p>Location is an optional attribute of Entity and Activity.</p>
+      </div>
+      <p><strong>has characteristics</strong> Asymmetric , Irreflexive       </p>
       <dl>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Location" href="#Location" class="owlclass">prov:Location</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Location" href="#Location" class="owlclass">prov:Location</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -258,35 +277,52 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadOriginalSource</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-derivations">
         <a title="derivations" href="#component-derivations">derivations</a>
       </dd>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>can be qualified with</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Source" href="#Source" class="owlclass">prov:Source</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#qualifiedSource" href="#qualifiedSource" class="owlproperty">prov:qualifiedSource</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -301,19 +337,22 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hasAnnotation</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-annotations">
         <a title="annotations" href="#component-annotations">annotations</a>
       </dd>
-      <dl>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Note" href="#Note" class="owlclass">prov:Note</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Note" href="#Note" class="owlclass">prov:Note</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -328,27 +367,31 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#specializationOf</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-alternate">
         <a title="alternate" href="#component-alternate">alternate</a>
       </dd>
-      <dl>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -363,49 +406,65 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#tracedTo</p>
     <div class="description">
+      <p><strong>has characteristics</strong> Transitive       </p>
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-derivations">
         <a title="derivations" href="#component-derivations">derivations</a>
       </dd>
-      <p><strong>has characteristics</strong>
- Transitive
-      </p>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#involved" href="#involved" class="owlclass">prov:involved</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has sub-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
-          </li>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasAttributedTo" href="#wasAttributedTo" class="owlclass">prov:wasAttributedTo</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involved" href="#involved" class="owlclass">prov:involved</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has sub-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasAttributedTo" href="#wasAttributedTo" class="owlclass">prov:wasAttributedTo</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>can be qualified with</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Trace" href="#Trace" class="owlclass">prov:Trace</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#qualifiedTrace" href="#qualifiedTrace" class="owlproperty">prov:qualifiedTrace</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -420,27 +479,43 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasEndedBy</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-entities-activities">
         <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
       </dd>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith" class="owlclass">prov:wasAssociatedWith</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith" class="owlclass">prov:wasAssociatedWith</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>can be qualified with</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#qualifiedEnd" href="#qualifiedEnd" class="owlproperty">prov:qualifiedEnd</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -455,35 +530,52 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasQuotedFrom</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-derivations">
         <a title="derivations" href="#component-derivations">derivations</a>
       </dd>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>can be qualified with</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#qualifiedQuotation" href="#qualifiedQuotation" class="owlproperty">prov:qualifiedQuotation</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Quotation" href="#Quotation" class="owlclass">prov:Quotation</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -498,35 +590,52 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasRevisionOf</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-derivations">
         <a title="derivations" href="#component-derivations">derivations</a>
       </dd>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom" class="owlclass">prov:wasDerivedFrom</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>can be qualified with</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Revision" href="#Revision" class="owlclass">prov:Revision</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#qualifiedRevision" href="#qualifiedRevision" class="owlproperty">prov:qualifiedRevision</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
@@ -541,35 +650,52 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasStartedBy</p>
     <div class="description">
+      <dl>
+
       <dt>in PROV component</dt>
       <dd class="component-entities-activities">
         <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
       </dd>
-      <dl>
-      <dt>has super-properties</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith" class="owlclass">prov:wasAssociatedWith</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has domain</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
-          </li>
-        </ul>
-      </dd>
-      <dt>has range</dt>
-      <dd>
-        <ul>
-          <li>
-            <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
-          </li>
-        </ul>
-      </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith" class="owlclass">prov:wasAssociatedWith</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>can be qualified with</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#qualifiedStart" href="#qualifiedStart" class="owlproperty">prov:qualifiedStart</a>
+            </li>
+          </ul>
+        </dd>
+
       </dl>
     </div>
   </div>
