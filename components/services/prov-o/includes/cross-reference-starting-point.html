@@ -24,8 +24,6 @@
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasEndedBy" href="#wasEndedBy">prov:wasEndedBy</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasStartedBy" href="#wasStartedBy">prov:wasStartedBy</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#startedAtTime" href="#startedAtTime">prov:startedAtTime</a>
         <sup class="type-dp" title="data property">dp</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedCommunication" href="#qualifiedCommunication">prov:qualifiedCommunication</a>
@@ -40,9 +38,11 @@
         <sup class="type-dp" title="data property">dp</sup>
         <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith">prov:wasAssociatedWith</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy">prov:wasInformedBy</a>
+        <a title="http://www.w3.org/ns/prov#wasStartedBy" href="#wasStartedBy">prov:wasStartedBy</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedUsage" href="#qualifiedUsage">prov:qualifiedUsage</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy">prov:wasInformedBy</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#used" href="#used">prov:used</a>
         <sup class="type-op" title="object property">op</sup>
@@ -138,7 +138,7 @@
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom">prov:wasQuotedFrom</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy">prov:wasGeneratedBy</a>
+        <a title="http://www.w3.org/ns/prov#wasAttributedTo" href="#wasAttributedTo">prov:wasAttributedTo</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource">prov:hadOriginalSource</a>
         <sup class="type-op" title="object property">op</sup>
@@ -152,7 +152,7 @@
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedRevision" href="#qualifiedRevision">prov:qualifiedRevision</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasAttributedTo" href="#wasAttributedTo">prov:wasAttributedTo</a>
+        <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy">prov:wasGeneratedBy</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom">prov:wasDerivedFrom</a>
         <sup class="type-op" title="object property">op</sup>
@@ -173,11 +173,11 @@
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource">prov:hadOriginalSource</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo">prov:tracedTo</a>
+        <a title="http://www.w3.org/ns/prov#generated" href="#generated">prov:generated</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf">prov:wasRevisionOf</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#generated" href="#generated">prov:generated</a>
+        <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo">prov:tracedTo</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom">prov:wasDerivedFrom</a>
         <sup class="type-op" title="object property">op</sup>
@@ -513,13 +513,13 @@
       <dd>
         <ul>
           <li>
+            <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource" class="owlclass">prov:hadOriginalSource</a>
+          </li>
+          <li>
             <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom" class="owlclass">prov:derivedByInsertionFrom</a>
           </li>
           <li>
             <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom" class="owlclass">prov:wasQuotedFrom</a>
-          </li>
-          <li>
-            <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource" class="owlclass">prov:hadOriginalSource</a>
           </li>
           <li>
             <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom" class="owlclass">prov:derivedByRemovalFrom</a>

@@ -24,8 +24,6 @@
       </dd>
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#knownMember" href="#knownMember">prov:knownMember</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom">prov:derivedByInsertionFrom</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedRemoval" href="#qualifiedRemoval">prov:qualifiedRemoval</a>
@@ -33,6 +31,8 @@
         <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#knownMembership" href="#knownMembership">prov:knownMembership</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
       <dt>in range of</dt>
@@ -118,6 +118,11 @@
       <dd>
         <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
       </dd>
+      <dt>in domain of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a>
+        <sup class="type-op" title="object property">op</sup>
+      </dd>
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a>
@@ -139,10 +144,40 @@
       <dd>
         <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
         <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
+        <sup class="type-dp" title="data property">dp</sup>
       </dd>
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#knownMember" href="#knownMember">prov:knownMember</a>
+        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a>
+        <sup class="type-op" title="object property">op</sup>
+      </dd>
+    </dl>
+  </div>
+
+  <div id="Membership" class="entity">
+    <h3>
+      <a href="#Membership"><span class="dotted" title="http://www.w3.org/ns/prov#Membership">prov:Membership</span></a>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#Membership</p>
+    <dl class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-collections">
+        <a title="collections" href="#component-collections">collections</a>
+      </dd>
+      <dt>in domain of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>
+        <sup class="type-op" title="object property">op</sup>
+      </dd>
+      <dt>in range of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#knownMembership" href="#knownMembership">prov:knownMembership</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
@@ -164,6 +199,11 @@
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
+      </dd>
+      <dt>in domain of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#removedKey" href="#removedKey">prov:removedKey</a>
+        <sup class="type-dp" title="data property">dp</sup>
       </dd>
       <dt>in range of</dt>
       <dd>
@@ -189,6 +229,9 @@
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
+      <p><strong>has characteristics</strong>
+  Functional
+      </p>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -232,6 +275,9 @@
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
+      <p><strong>has characteristics</strong>
+  Functional
+      </p>
       <dl>
       <dt>has super-properties</dt>
       <dd>
@@ -276,6 +322,22 @@
         <a title="collections" href="#component-collections">collections</a>
       </dd>
       <dl>
+      <dt>has domain</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#Insertion" href="#Insertion" class="owlclass">prov:Insertion</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>has range</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#KeyValuePair" href="#KeyValuePair" class="owlclass">prov:KeyValuePair</a>
+          </li>
+        </ul>
+      </dd>
       </dl>
     </div>
   </div>
@@ -294,20 +356,39 @@
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
+      <p><strong>has characteristics</strong>
+  Functional
+      </p>
       <dl>
+      <dt>has domain</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#KeyValuePair" href="#KeyValuePair" class="owlclass">prov:KeyValuePair</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>has range</dt>
+      <dd>
+        <ul>
+          <li>
+            http://www.w3.org/2000/01/rdf-schema#Literal
+          </li>
+        </ul>
+      </dd>
       </dl>
     </div>
   </div>
 
-  <div id="knownMember" class="entity">
+  <div id="knownMembership" class="entity">
     <h3>
-      <a href="#knownMember"><span class="dotted" title="http://www.w3.org/ns/prov#knownMember">prov:knownMember</span></a>
+      <a href="#knownMembership"><span class="dotted" title="http://www.w3.org/ns/prov#knownMembership">prov:knownMembership</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#knownMember</p>
+    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#knownMembership</p>
     <div class="description">
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -319,6 +400,41 @@
         <ul>
           <li>
             <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+          </li>
+        </ul>
+      </dd>
+      <dt>has range</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
+          </li>
+        </ul>
+      </dd>
+      </dl>
+    </div>
+  </div>
+
+  <div id="member" class="entity">
+    <h3>
+      <a href="#member"><span class="dotted" title="http://www.w3.org/ns/prov#member">prov:member</span></a>
+      <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong>http://www.w3.org/ns/prov#member</p>
+    <div class="description">
+      <dt>in PROV component</dt>
+      <dd class="component-collections">
+        <a title="collections" href="#component-collections">collections</a>
+      </dd>
+      <dl>
+      <dt>has domain</dt>
+      <dd>
+        <ul>
+          <li>
+            <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
           </li>
         </ul>
       </dd>
@@ -418,6 +534,9 @@
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
+      <p><strong>has characteristics</strong>
+  Functional
+      </p>
       <dl>
       <dt>has domain</dt>
       <dd>

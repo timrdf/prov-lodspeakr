@@ -44,6 +44,7 @@ pushd includes
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-generation.ttl
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-usage.ttl
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-simple-without-comments.ttl
+   curl -sO http://dvcs.w3.org/hg/prov/raw-file/6bbc47ad770e/examples/eg-22-blog-original-source/rdf/eg-22-blog-original-source.ttl
    for ttl in `find . -name "*.ttl" -newer beforefetch`; do
       cat $ttl | sed 's/</\&lt;/g; s/>/\&gt;/g' > b
       mv b $ttl

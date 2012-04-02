@@ -20,22 +20,18 @@
 
       <p>The following two examples show the result of applying the Usage and Association patterns to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
       </p>
-       <div class="anexample">
+       <div class="exampleOuter">
           <div><b>Qualified Usage</b></div>
             <p>The prov:qualifiedUsage property parallels the prov:used property to provide an additional description to ex:illustrationActivity. The instance of prov:Usage cites the data used (ex:aggregatedByRegions) and the time the activity used it (2011-07-14T03:03:03Z).
           </p>
-          <div class="exampleOuter">
              <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
-          </div>
        </div>
 
-       <div class="anexample">
+        <div class="exampleOuter">
            <div><b>Qualified Association</b></div>
             <p>The prov:qualifiedAssociation property parallels the prov:wasAssociatedWith property to provide an additional description to ex:illustrationActivity. The instance of prov:Association cites the agent (ex:derek) that followed the instructions (ex:tutorial_blog).
             </p>
-           <div class="exampleOuter">
               <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
-           </div>
        </div>
 
       <p>Usage and Association (described above) are accompanied by six other qualifications of Starting Point relations. The following table lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
@@ -53,22 +49,18 @@
        <p>This section finishes with two more examples of qualification as applied to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
        </p>
 
-        <div class="anexample">
+        <div class="exampleOuter">
            <div><b>Qualified Generation</b></div>
             <p>The prov:qualifiedGeneration property parallels the prov:wasGeneratedBy property to provide an additional description to ex:chart1. The instance of prov:Generation cites the time (2011-07-14T15:52:14Z) that the activity (ex:illustrationActivity) generated the chart (ex:chart1).
             </p>
-           <div class="exampleOuter">
               <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
-           </div>
         </div>
 
-        <div class="anexample">
+        <div class="exampleOuter">
            <div><b>Qualified Derivation</b></div>
             <p>The prov:qualifiedDerivation property parallels the prov:wasDerivedFrom property to provide an additional description to ex:chart1. The instance of prov:Derivation cites the activity (ex:illustrationActivity) and the Usages and Generations that the activity conduced to create the chart (ex:chart1).
             </p>
-           <div class="exampleOuter">
               <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
-           </div>
         </div>
 
 	  </section>
