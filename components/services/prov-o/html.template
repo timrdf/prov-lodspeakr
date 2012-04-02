@@ -77,6 +77,12 @@
          border:1px solid gray;
          background-color: #FCE1CE;
       }
+      span.repeated {
+         font-family: monospace;
+      }
+      a.qname {
+         font-family: monospace;
+      }
      </style>
 
     <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove'></script>
@@ -216,7 +222,7 @@
   <body>
 
     <section id="abstract">
-      <p>The <a href="http://www.w3.org/ns/prov#">PROV Ontology</a> (also PROV-O) encodes the PROV Data Model [[PROV-DM]] in the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information. It can also be specialized to create new classes and properties for modeling provenance information specific to different domain applications.
+      <p>The <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">PROV Ontology</a> (also PROV-O) encodes the PROV Data Model [[PROV-DM]] in the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information. It can also be specialized to create new classes and properties for modeling provenance information specific to different domain applications.
 	  </p>
 
     </section>
