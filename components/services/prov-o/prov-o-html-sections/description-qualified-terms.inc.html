@@ -1,0 +1,66 @@
+     <section id="description-qualified-terms">
+       <h3>Qualified Terms</h3>
+       <p>The classes and properties in the Qualified terms category are for users who wish to provide additional details about the relationships between entities, activities, and agents. The terms in this category are the result of applying the <strong>Qualification Pattern</strong> to the simple relations available in the <a href="#prov-starting-point-owl-properties-at-a-glance">Starting Point</a> and <a href="#prov-expanded-owl-properties-at-a-glance">Expanded</a> categories.
+      </p>
+      <p>For example, Figure 2 illustrates the classes and properties needed to fulfill the qualification pattern for the <a href="#used">prov:used</a> and <a href="#wasAssociatedWith">prov:wasAssociatedWith</a> properties. While <a href="#qualifiedUsage">prov:qualifiedUsage</a>, <a href="#Usage">prov:Usage</a>, and <a href="#entity">prov:entity</a> are needed to qualify prov:used relations, <a href="#qualifiedAssociation">prov:qualifiedAssociation</a>, <a href="#Association">prov:Association</a>, and <a href="#agent">prov:agent</a> are needed to qualify prov:wasAssociatedWith relations. This pattern applies to the twelve other relations that can be qualified.
+      </p>
+      <p>In the example, the <code>prov:qualifiedUsage</code> property parallels the <code>prov:used</code> property, and references an instance of <code>prov:Usage</code> that provides attributes of the <code>prov:used</code> relation between the Activity and Entity. The <code>prov:entity</code> property is used to cite the Entity that was used by the Activity. In this case, the time that the Activity used the Entity is provided using the <code>prov:atTime</code> property and a literal <code>xsd:dateTime</code> value.
+      </p>
+      <p>Similarly, the <code>prov:qualifiedAssociation</code> property parallels the <code>prov:wasAssociatedWith</code> property, and references an instance of <code>prov:Association</code> that provides attributes of the <code>prov:wasAssociatedWith</code> relation between the Activity and Agent. The <code>prov:agent</code> property is used to cite the Agent that was involved in the Activity. In this case, the plan that the Agent used is provided using the <code>prov:hadPlan</code> property and an instance of <code>prov:Plan</code>.
+      </p>
+
+       <div style="text-align: center;">
+         <figure>
+            <img src="prov-o-diagrams/Qualified-Association.png"
+                 style="width: 50%; min-width: 25em; max-width: 60em" 
+                 alt="Express association between an activity and an agent using a binary relationship and an alternatie qualified relationship"/>
+            <figcaption>Figure 2. An illustration of the qualification pattern applied to the Starting Point properties <a href="#used">prov:used</a> and <a href="#wasAssociatedWith">prov:wasAssociatedWith</a>.</figcaption>
+         </figure>
+       </div>
+
+      <p>The following two examples show the result of applying the Usage and Association patterns to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
+      </p>
+       <div class="exampleOuter">
+          <div><b>Qualified Usage</b></div>
+            <p>The <code>prov:qualifiedUsage</code> property parallels the <code>prov:used</code> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <code>prov:Usage</code> cites the data used (<code>ex:aggregatedByRegions</code>) and the time the activity used it (2011-07-14T03:03:03Z).
+          </p>
+             <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
+       </div>
+
+        <div class="exampleOuter">
+           <div><b>Qualified Association</b></div>
+            <p>The <code>prov:qualifiedAssociation</code> property parallels the <code>prov:wasAssociatedWith</code> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <code>prov:Association</code> cites the agent (<code>ex:derek</code>) that followed the instructions (<code>ex:tutorial_blog</code>).
+            </p>
+              <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
+       </div>
+
+      <p>Usage and Association (described above) are accompanied by six other qualifications of Starting Point relations. The following table lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
+      </p>
+      <div style="text-align: center;">
+         {% include "includes/qualifed-forms-starting-point.html" %}
+      </div>
+
+      <p>Six relations from the Expanded category can also be qualified. The following table lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
+      </p>
+      <div style="text-align: center;">
+         {% include "includes/qualifed-forms-expanded.html" %}
+      </div>
+
+       <p>This section finishes with two more examples of qualification as applied to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
+       </p>
+
+        <div class="exampleOuter">
+           <div><b>Qualified Generation</b></div>
+            <p>The <code>prov:qualifiedGeneration</code> property parallels the <code>prov:wasGeneratedBy</code> property to provide an additional description to <code>ex:chart1</code>. The instance of <code>prov:Generation</code> cites the time (2011-07-14T15:52:14Z) that the activity (<code>ex:illustrationActivity</code>) generated the chart (<code>ex:chart1</code>).
+            </p>
+              <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
+        </div>
+
+        <div class="exampleOuter">
+           <div><b>Qualified Derivation</b></div>
+            <p>The <code>prov:qualifiedDerivation</code> property parallels the <code>prov:wasDerivedFrom</code> property to provide an additional description to <code>ex:chart1</code>. The instance of <code>prov:Derivation</code> cites the activity (<code>ex:illustrationActivity</code>) and the Usages and Generations that the activity conduced to create the chart (<code>ex:chart1</code>).
+            </p>
+              <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
+        </div>
+
+	  </section>

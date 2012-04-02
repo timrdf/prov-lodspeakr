@@ -164,6 +164,14 @@ for category in categories.keys():
             cross.write('    </div>\n')
          cross.write('    <dl class="description">\n')
 
+         # class prov:component ?component
+         if len(owlClass.prov_component) > 0:
+            cross.write('      <dt>in PROV component</dt>\n')
+            cross.write('      <dd class="component-'+owlClass.prov_component.first+'">\n')
+            for component in owlClass.prov_component:
+               cross.write('        <a title="'+component+'" href="#component-'+component+'">'+component+'</a>\n')
+            cross.write('      </dd>\n')
+
          # class rdfs:subClassOf ?super
          if len(owlClass.rdfs_subClassOf) > 0:
             cross.write('      <dt>is subclass of</dt>\n')
@@ -244,10 +252,18 @@ for category in categories.keys():
 
          cross.write('    <div class="description">\n')
 
-         # class rdfs:comment
+         # property rdfs:comment
          for comment in property.rdfs_comment:
             cross.write('    <div class="comment"><p>'+comment+'</p>\n')
             cross.write('    </div>\n')
+
+         # property prov:component ?component
+         if len(property.prov_component) > 0:
+            cross.write('      <dt>in PROV component</dt>\n')
+            cross.write('      <dd class="component-'+property.prov_component.first+'">\n')
+            for component in property.prov_component:
+               cross.write('        <a title="'+component+'" href="#component-'+component+'">'+component+'</a>\n')
+            cross.write('      </dd>\n')
 
          # Characteristics
          characteristics = [ns.OWL['FunctionalProperty'],
@@ -375,7 +391,7 @@ for category in categories.keys():
       cross.write('</div>\n')
 
       n = ''
-      if category.lower()[0] == 'a':
+      if category.lower()[0] in ['a','e','i,','o','u']:
          n = 'n'
       quals.write('<table class="qualified-forms">\n')
       quals.write('  <caption>Qualification Property and Involvement Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
@@ -384,29 +400,45 @@ for category in categories.keys():
       quals.write('    <th>'+category.capitalize()+' Property</th>\n')
       quals.write('    <th>Qualification Property</th>\n')
       quals.write('    <th>Involvement Class</th>\n')
+      quals.write('    <th>Object Property</th>\n')
       quals.write('  </tr>\n')
       for uri in ordered['properties']:
          property = []
          if propertyTypes[uri] == 'datatype-property':
             property = session.get_resource(uri,DatatypeProperties)
          else:
-            property = session.get_resource(uri,ObjectProperties)
+            property = session.get_resource(uri,ObjectProperties) # e.g. http://www.w3.org/ns/prov#actedOnBehalfOf
          if len(property.prov_qualifiedForm) > 0:
-            qualProp  = 'no'
-            qualClass = 'no'
+            qualProp   = 'no'
+            qualClass  = 'no'
+            objectProp = 'no'
             for qualified in property.prov_qualifiedForm:
-               if ns.OWL['ObjectProperty'] in qualified.rdf_type:
-                  qualProp  = qualified 
+               if len(qualified.rdf_type) == 0:
+                  print 'ERROR on qualifiedForm annotation for ' + property.subject
+                  print qualified + ' is not defined'
+               elif ns.OWL['Class'] in qualified.rdf_type:
+                  qualClass = qualified                           # e.g. http://www.w3.org/ns/prov#Responsibility
+                  for super in qualClass.rdfs_subClassOf:
+                     qname = super.subject.split('#')
+                     if   ( qname[1]  == 'EntityInvolvement' ):
+                        objectProp = 'entity' 
+                     elif ( qname[1]  == 'ActivityInvolvement' ):
+                        objectProp = 'activity' 
+                     elif ( qname[1]  == 'AgentInvolvement' ):
+                        objectProp = 'agent' 
+                     elif ( qname[1]  == 'CollectionInvolvement' ):
+                        objectProp = 'collection' 
                else:
-                  qualClass = qualified 
-            if qualProp != 'no' and qualClass != 'no':
+                  qualProp  = qualified                           # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
+            if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
                quals.write('  <tr>\n')
                qname = property.subject.split('#')
-               quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+               quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
                qname = qualProp.subject.split('#')
-               quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+               quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
                qname = qualClass.subject.split('#')
                quals.write('    <td><a title="'+qualClass.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+               quals.write('    <td><a title="'+qname[0]+'#'+objectProp+'" href="#'+objectProp+'" class="owlproperty">'+PREFIX+':'+objectProp+'</a></td>\n')
                quals.write('  </tr>\n')
       quals.write('</table>\n')
 

@@ -23,7 +23,7 @@
    </head> 
    <body> 
       <h1>Coverage as of {{first.latest.modified.value}}</h1> 
-      <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has <a href="http://www.w3.org/2011/prov/wiki/Eg-9-provrdf-owl-coverage">provenance</a> embedded in it that can be extracted using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
+      <p>For questions, contact <a rel="prov:wasAttributedTo" href="http://tw.rpi.edu/instances/TimLebo">Tim Lebo</a> (Note, this page has <a href="http://www.w3.org/2011/prov/wiki/Eg-9-provrdf-owl-coverage">provenance</a> embedded in it that can be <a href="http://www.w3.org/2007/08/pyRdfa/extract?format=turtle&uri=http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage">extracted</a> using <a href="http://www.w3.org/2007/08/pyRdfa/">RDFa Distiller</a>).</p>
 
 
 

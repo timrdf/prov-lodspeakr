@@ -1,0 +1,24 @@
+     <section id="description-expanded-terms">
+	  	<h3>Expanded Terms</h3>
+        <!-- *****Initial comments*****
+This section presents the rest of classes and properties textually 
+without using a diagram. We may use some examples in English. 
+The classes and properties covered in this section are: 
+Note, hasAnnotation, tracedTo, wasRevisionOf, hadOriginalSource, 
+wasQuotatedFrom, hadQuotatedAgent, hadQuoterAgent, wasSummaryOf, 
+alternateOf, terms related to Collection? Bundle? Role?? , hadRole, 
+Location??, hadLocation?, wasStartedByActivity?? specializationOf?
+DanielG: I'd say that hadRole, hadLocation, collection, bundle, location, alternate, specialization should not be here.
+*****End comments*********
+       -->
+
+        <p>This section defines additional terms to describe provenance at a greater level of specificity (for example, prov:Person or prov:SoftwareAgent in place of prov:Agent) and with more details (for example, prov:Location to describe address of a prov:Organization). In addition, the new terms in this section facilitate modeling of common provenance assertions related to web resources. For example, different version of a web page can be represented using the prov:wasRevisionOf property and the prov:hadOriginalSource property can be used to reference the original source of information used in a web resource. Many of the properties introduced in this section are also "shortcut" notations for combining the PROV-O terms introduced in Section 3.1 "Starting Point Terms", which make it easier for provenance annotation of a resource. 
+        </p>
+
+        <div class="exampleOuter">
+           <p>We illustrate the use of the new terms using an example below </p> 
+           <pre class="example">
+              {% include "includes/eg-22-blog-original-source.ttl" %}
+           </pre>
+        </div>
+	  </section>

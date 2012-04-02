@@ -1,0 +1,131 @@
+     <section id="description-collections"> <!-- section 3.1 -->
+       <!-- This section is version controlled at http://dvcs.w3.org/hg/prov/file/tip/ontology and mirroed to
+             https://github.com/timrdf/prov-lodspeakr/tree/master/components/services/prov-o -->
+       <h3>Collections Terms</h3>
+       <p><em>
+        A collection is an entity that provides a structure to some
+        constituents, which are themselves entities. These constituents
+        are said to be member of the collections. 
+       </em></p>
+       <p>
+        Conceptually, a collection has a logical structure consisting of
+        key-value pairs. This structure is often referred to as a map, and is a
+        generic indexing mechanisms that can abstract commonly used data
+        structures, including associative lists (also known as "dictionaries" in
+        some programming languages), relational tables, ordered lists, and more
+        (the specification of such specialized structures in terms of key-value
+        pairs is out of the scope of this document).
+       </p>
+       <p> 
+       A given collection forms a given structure for its members. A
+       different structure (obtained either by insertion or removal of
+       members) constitutes a different collection. Hence, for the
+       purpose of provenance, a collection entity is viewed as a
+       snapshot of a structure. Insertion and removal operations result
+       in new snapshots, each snapshot forming an identifiable
+       collection entity.
+       </p>
+       <p>
+       In PROV-O, an entity is indicated to be a collection by using the
+       subclass <a href='#Collection'>prov:Collection</a>. Its subclass <a
+       href='#EmptyCollection'>prov:EmptyCollection</a> indicates
+       that the collection has no members. 
+       Members of a collection are expressed through <a 
+       href='#KeyValuePair'>prov:KeyValuePair</a>s. 
+       The members can be expressed explicitly using <a
+           href='#knownMembership'>prov:knownMembership</a>, and indirectly
+       through a series of collection derivations of insertions and
+       removals, using <a
+           href='#derivedByInsertionFrom'>prov:derivedByInsertionFrom</a>
+       and <a
+           href='#derivedByRemovalFrom'>prov:derivedByRemovalFrom</a>. 
+       </p>
+       <p>
+       To specify the key-value pairs inserted,
+       <code>prov:derivedByInsertionFrom</code> must be qualified using <a
+       href='#qualifiedInsertion'>prov:qualifiedInsertion</a> to a
+       <a href='#Insertion'>Insertion</a>, which indicates the pairs
+       using <a href='#inserted'>prov:inserted</a> to some <a
+       href='#KeyValuePair'>prov:KeyValuePair</a>. Its <a
+       href='#key'>prov:key</a> is any RDF literal, while the <a
+       href='#value'>prov:value</a> is a <a
+       href='#Entity'>prov:Entity</a>. 
+       Likewise, removal are qualified using <a
+       href='#qualifiedRemoval'>prov:qualifiedRemoval</a> to a <a
+       href='#Removal'>Removal</a>, which <a
+       href='#removedKey'>prov:removedKey</a>
+   points to the removed key. <code>prov:Insertion</code>, 
+   <code>prov:Removal</code> and <code>prov:Membership</code> can have
+   custom properties and identifiers, as described in PROV-DM.
+       </p>
+     <p>
+     The example below shows how 
+     <code>:c</code> and <code>:c1</code> are
+     collections.  <code>:c</code> is empty, while <code>:c1</code>
+     is derived by inserting the key-value pairs <code>{("k1", :e1),
+     ("k2", :e2)}</code>.</p>
+       <div class="anExample">
+           <pre>
+@prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:e1 a prov:Entity .
+:e2 a prov:Entity .
+:c a prov:EmptyCollection .
+:c1 a prov:Collection .
+    prov:derivedByInsertionFrom :c ;
+    prov:qualifiedInsertion [ a prov:Insertion ;  
+        prov:collection :c ;
+        prov:inserted [ a prov:KeyValuePair ;
+            prov:key "k1"^^xsd:string ;
+            prov:value :e1 ;
+          ], [ a prov:KeyValuePair ;
+            prov:key "k2"^^xsd:string ;
+            prov:value :e2 ;
+          ]
+      ] .
+           </pre>
+       </div>
+    <p>
+    The following example shows how <code>:c3</code> has been derived from
+    <code>:c2</code>, which content is not asserted. The keys
+    <code>"k1"</code> and <code>"k3"</code> and their corresponding
+    values have been removed in <code>:c3</code>. 
+    </p>
+       <div class="anExample">
+           <pre>
+@prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+           
+:c2 a prov:Collection .
+:c3 a prov:Collection .
+    prov:derivedByRemovalFrom :c2 ;
+    prov:qualifiedRemoval [ a prov:Removal ;
+         prov:collection :c2 ;
+         prov:removed "k1"^^xsd:string, "k3"^^xsd:string 
+      ] .  
+           </pre>
+       </div>
+    <p>
+    The next example shows how the members of
+    <code>:c1</code> has been described as the key-value
+    pairs <code>{("k1", :e1), ("k2", :e2)}</code>. Note that this
+    assertion does not claim there are not other members.
+    </p>
+    <div class="anExample">
+            <pre>
+@prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
+@prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:c1 prov:knownMembership [ a prov:Membership ;
+    prov:member [ a prov:KeyValuePair;
+        prov:key "k1"^^xsd:string ;
+        prov:value :e1
+      ] , [ a prov:KeyValuePair;
+        prov:key "k2"^^xsd:string ;
+        prov:value :e2
+      ] .
+            </pre>
+    </div>
+    
+     </section>
