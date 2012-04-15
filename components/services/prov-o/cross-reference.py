@@ -148,7 +148,7 @@ for category in categories.keys():
          cross.write('\n')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
-         cross.write('      <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
+         cross.write('      Class: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
          cross.write('      <span class="backlink">\n')
          #cross.write('         back to <a href="#toc">ToC</a> or\n')
          cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-classes-at-a-glance">'+category+' classes</a>\n')
@@ -162,6 +162,12 @@ for category in categories.keys():
          for definition in owlClass.prov_definition: # TODO: not done for properties. How to reconcile def vs comments vs editorNote?
             cross.write('    <div class="definition"><p>'+definition+'</p>\n')
             cross.write('    </div>\n')
+
+         # TODO:
+         #    <div class="example">
+         #      <strong>Example</strong>
+         #      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/Activity.ttl"%}{% endescape %}</pre>
+         #    </div>
 
          cross.write('    <dl class="description">\n')
          # class rdfs:comment
@@ -256,7 +262,7 @@ for category in categories.keys():
          qname = property.subject.split('#')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
-         cross.write('      <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
+         cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
          if ns.OWL['DatatypeProperty'] in property.rdf_type:
             cross.write('      <sup class="type-dp" title="data property">dp</sup>\n')
          else:
