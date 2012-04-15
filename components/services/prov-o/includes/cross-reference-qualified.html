@@ -3,12 +3,18 @@
 
   <div id="ActivityInvolvement" class="entity">
     <h3>
-      <a href="#ActivityInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#ActivityInvolvement">prov:ActivityInvolvement</span></a>
+      Class: <a href="#ActivityInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#ActivityInvolvement">prov:ActivityInvolvement</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#ActivityInvolvement</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_ActivityInvolvement.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>prov:ActivityInvolvement provides descriptions of any binary involvement between any instance and an prov:Activity.</p>
     </div>
@@ -35,12 +41,18 @@
 
   <div id="AgentInvolvement" class="entity">
     <h3>
-      <a href="#AgentInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#AgentInvolvement">prov:AgentInvolvement</span></a>
+      Class: <a href="#AgentInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#AgentInvolvement">prov:AgentInvolvement</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#AgentInvolvement</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_AgentInvolvement.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>prov:AgentInvolvement provides descriptions of any binary involvement between any instance and an prov:Agent.</p>
     </div>
@@ -58,18 +70,18 @@
 
       <dt>has subclasses</dt>
       <dd>
+        <a title="http://www.w3.org/ns/prov#Responsibility" href="#Responsibility" class="owlclass">prov:Responsibility</a>
         <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
-        <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
         <a title="http://www.w3.org/ns/prov#Association" href="#Association" class="owlclass">prov:Association</a>
         <a title="http://www.w3.org/ns/prov#Attribution" href="#Attribution" class="owlclass">prov:Attribution</a>
-        <a title="http://www.w3.org/ns/prov#Responsibility" href="#Responsibility" class="owlclass">prov:Responsibility</a>
+        <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
       </dd>
     </dl>
   </div>
 
   <div id="Association" class="entity">
     <h3>
-      <a href="#Association"><span class="dotted" title="http://www.w3.org/ns/prov#Association">prov:Association</span></a>
+      Class: <a href="#Association"><span class="dotted" title="http://www.w3.org/ns/prov#Association">prov:Association</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -77,6 +89,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Association</p>
     <div class="definition"><p>An activity association is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Association.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that is responsible for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualified [ a prov:Association; prov:entity :baker; :foo :bar ].</p>
     </div>
@@ -112,7 +130,7 @@
 
   <div id="Attribution" class="entity">
     <h3>
-      <a href="#Attribution"><span class="dotted" title="http://www.w3.org/ns/prov#Attribution">prov:Attribution</span></a>
+      Class: <a href="#Attribution"><span class="dotted" title="http://www.w3.org/ns/prov#Attribution">prov:Attribution</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -120,6 +138,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Attribution</p>
     <div class="definition"><p>Attribution is the ascribing of an entity to an agent.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Attribution.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that is responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualified [ a prov:Attribution; prov:entity :baker; :foo :bar ].</p>
     </div>
@@ -149,7 +173,7 @@
 
   <div id="Communication" class="entity">
     <h3>
-      <a href="#Communication"><span class="dotted" title="http://www.w3.org/ns/prov#Communication">prov:Communication</span></a>
+      Class: <a href="#Communication"><span class="dotted" title="http://www.w3.org/ns/prov#Communication">prov:Communication</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -157,6 +181,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Communication</p>
     <div class="definition"><p>Communication is the exchange of an entity by two activities, one activity using the entity generated by the other.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Communication.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Communication provides additional descriptions about the binary prov:wasInformedBy relation from an informed prov:Activity to the prov:Activity that informed it. For example, :you_jumping_off_bridge prov:wasInformedBy :everyone_else_jumping_off_bridge; prov:qualifiedCommunication [ a prov:Communication; prov:entity :everyone_else_jumping_off_bridge; :foo :bar ].</p>
     </div>
@@ -186,7 +216,7 @@
 
   <div id="Derivation" class="entity">
     <h3>
-      <a href="#Derivation"><span class="dotted" title="http://www.w3.org/ns/prov#Derivation">prov:Derivation</span></a>
+      Class: <a href="#Derivation"><span class="dotted" title="http://www.w3.org/ns/prov#Derivation">prov:Derivation</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -194,6 +224,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Derivation</p>
     <div class="definition"><p>A derivation is a transformation of an entity into another, a construction of an entity into another, or an update of an entity, resulting in a new one.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Derivation.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some prov:Entity to another prov:Entity. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualified [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ].</p>
     </div>
@@ -211,8 +247,6 @@
       <dt>in domain of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#hadGeneration" href="#hadGeneration">prov:hadGeneration</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#hadActivity" href="#hadActivity">prov:hadActivity</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadUsage" href="#hadUsage">prov:hadUsage</a>
         <sup class="type-op" title="object property">op</sup>
@@ -233,7 +267,7 @@
 
   <div id="End" class="entity">
     <h3>
-      <a href="#End"><span class="dotted" title="http://www.w3.org/ns/prov#End">prov:End</span></a>
+      Class: <a href="#End"><span class="dotted" title="http://www.w3.org/ns/prov#End">prov:End</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -241,6 +275,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#End</p>
     <div class="definition"><p>An activity end event is the instantaneous event that marks the instant an activity ends.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_End.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualified [ a prov:Usage; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
     </div>
@@ -271,12 +311,18 @@
 
   <div id="EntityInvolvement" class="entity">
     <h3>
-      <a href="#EntityInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#EntityInvolvement">prov:EntityInvolvement</span></a>
+      Class: <a href="#EntityInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#EntityInvolvement">prov:EntityInvolvement</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#EntityInvolvement</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EntityInvolvement.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>prov:EntityInvolvement provides descriptions of any binary involvement between any instance and an prov:Entity.</p>
     </div>
@@ -306,7 +352,7 @@
 
   <div id="Generation" class="entity">
     <h3>
-      <a href="#Generation"><span class="dotted" title="http://www.w3.org/ns/prov#Generation">prov:Generation</span></a>
+      Class: <a href="#Generation"><span class="dotted" title="http://www.w3.org/ns/prov#Generation">prov:Generation</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -314,6 +360,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Generation</p>
     <div class="definition"><p>An entity generation event is the instantaneous event that marks the final instant of an entity's creation timespan, after which it is no longer available for use.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Generation.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:entity :baking; :foo :bar ].</p>
     </div>
@@ -346,7 +398,7 @@
 
   <div id="InstantaneousEvent" class="entity">
     <h3>
-      <a href="#InstantaneousEvent"><span class="dotted" title="http://www.w3.org/ns/prov#InstantaneousEvent">prov:InstantaneousEvent</span></a>
+      Class: <a href="#InstantaneousEvent"><span class="dotted" title="http://www.w3.org/ns/prov#InstantaneousEvent">prov:InstantaneousEvent</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -354,6 +406,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#InstantaneousEvent</p>
     <div class="definition"><p>An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_InstantaneousEvent.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
 
       <dt>in PROV component</dt>
@@ -370,8 +428,8 @@
       <dt>has subclasses</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
-        <a title="http://www.w3.org/ns/prov#Usage" href="#Usage" class="owlclass">prov:Usage</a>
         <a title="http://www.w3.org/ns/prov#Generation" href="#Generation" class="owlclass">prov:Generation</a>
+        <a title="http://www.w3.org/ns/prov#Usage" href="#Usage" class="owlclass">prov:Usage</a>
         <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
       </dd>
     </dl>
@@ -379,12 +437,18 @@
 
   <div id="Involvement" class="entity">
     <h3>
-      <a href="#Involvement"><span class="dotted" title="http://www.w3.org/ns/prov#Involvement">prov:Involvement</span></a>
+      Class: <a href="#Involvement"><span class="dotted" title="http://www.w3.org/ns/prov#Involvement">prov:Involvement</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Involvement</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Involvement.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>Any resource that involved an prov:Activity, prov:Entity, or prov:Agent can qualify its involvement by also referencing an instance of prov:Involvement. Instances of prov:Involvement reference the involved Activity, Entity, or Agent (using prov:activity, prov:entity, or prov:agent, respectively) and may be described with any kind of attributes, including user-defined attributes and those provided by PROV (prov:hadRole, prov:hadPlan, prov:atTime, prov:hadLocation). A description (via prov:Involvement) of the binary involvement implies the assertion of the binary involvement.</p>
     </div>
@@ -393,13 +457,17 @@
       <dd>
         <a title="http://www.w3.org/ns/prov#hadRole" href="#hadRole">prov:hadRole</a>
         <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadActivity" href="#hadActivity">prov:hadActivity</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#involvee" href="#involvee">prov:involvee</a>
+        <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>has subclasses</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
-        <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
         <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
+        <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
         <a title="http://www.w3.org/ns/prov#ActivityInvolvement" href="#ActivityInvolvement" class="owlclass">prov:ActivityInvolvement</a>
       </dd>
 
@@ -412,7 +480,7 @@
 
   <div id="Plan" class="entity">
     <h3>
-      <a href="#Plan"><span class="dotted" title="http://www.w3.org/ns/prov#Plan">prov:Plan</span></a>
+      Class: <a href="#Plan"><span class="dotted" title="http://www.w3.org/ns/prov#Plan">prov:Plan</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -420,6 +488,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Plan</p>
     <div class="definition"><p>A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Plan.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations.</p>
     </div>
@@ -444,7 +518,7 @@
 
   <div id="Quotation" class="entity">
     <h3>
-      <a href="#Quotation"><span class="dotted" title="http://www.w3.org/ns/prov#Quotation">prov:Quotation</span></a>
+      Class: <a href="#Quotation"><span class="dotted" title="http://www.w3.org/ns/prov#Quotation">prov:Quotation</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -452,6 +526,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Quotation</p>
     <div class="definition"><p>A quotation is the repeat of (some or all of) an entity, such as text or image, by someone other than its original author.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Quotation.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Quotation provides additional descriptions about the binary prov:wasQuotedFrom relation from some prov:Entity to another prov:Entity. For example, :here_is_looking_at_you_kid prov:wasQuotedFrom :casablanca_script; prov:qualified [ a prov:Quotation; prov:entity :casablanca_script; :foo :bar ].</p>
     </div>
@@ -489,7 +569,7 @@
 
   <div id="Responsibility" class="entity">
     <h3>
-      <a href="#Responsibility"><span class="dotted" title="http://www.w3.org/ns/prov#Responsibility">prov:Responsibility</span></a>
+      Class: <a href="#Responsibility"><span class="dotted" title="http://www.w3.org/ns/prov#Responsibility">prov:Responsibility</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -497,6 +577,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Responsibility</p>
     <div class="definition"><p>Responsibility is the fact that an agent is accountable for the actions of a 'subordinate' agent, in the context of an activity.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Responsibility.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Responsibility provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualified [ a prov:Responsiblity; prov:entity :mother; :foo :bar ].</p>
     </div>
@@ -509,12 +595,6 @@
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
-      </dd>
-
-      <dt>in domain of</dt>
-      <dd>
-        <a title="http://www.w3.org/ns/prov#responsibleForActivity" href="#responsibleForActivity">prov:responsibleForActivity</a>
-        <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
@@ -532,7 +612,7 @@
 
   <div id="Revision" class="entity">
     <h3>
-      <a href="#Revision"><span class="dotted" title="http://www.w3.org/ns/prov#Revision">prov:Revision</span></a>
+      Class: <a href="#Revision"><span class="dotted" title="http://www.w3.org/ns/prov#Revision">prov:Revision</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -540,6 +620,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Revision</p>
     <div class="definition"><p>A revision is a derivation that revises an entity into a revised version.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Revision.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Revision provides additional descriptions about the binary prov:wasRevisionOf relation from some prov:Entity to another prov:Entity. For example, :draft_2 prov:wasRevisionOf :draft_1; prov:qualified [ a prov:Source; prov:entity :draft_1; :foo :bar ].</p>
     </div>
@@ -569,7 +655,7 @@
 
   <div id="Role" class="entity">
     <h3>
-      <a href="#Role"><span class="dotted" title="http://www.w3.org/ns/prov#Role">prov:Role</span></a>
+      Class: <a href="#Role"><span class="dotted" title="http://www.w3.org/ns/prov#Role">prov:Role</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -577,6 +663,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Role</p>
     <div class="definition"><p>A Role is the function of an entity with respect to an activity, in the context of a usage, generation, association, start, and end.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Role.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
 
       <dt>in PROV component</dt>
@@ -594,7 +686,7 @@
 
   <div id="Source" class="entity">
     <h3>
-      <a href="#Source"><span class="dotted" title="http://www.w3.org/ns/prov#Source">prov:Source</span></a>
+      Class: <a href="#Source"><span class="dotted" title="http://www.w3.org/ns/prov#Source">prov:Source</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -602,6 +694,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Source</p>
     <div class="definition"><p>An original source refers to the source material that is closest to the person, information, period, or idea being studied.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Source.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Source provides additional descriptions about the binary prov:hadOriginalSource relation from some prov:Entity to another prov:Entity. For example, :blog prov:hadOriginalSource :newsArticle; prov:qualified [ a prov:Source; prov:entity :newsArticle; :foo :bar ].</p>
     </div>
@@ -631,7 +729,7 @@
 
   <div id="Start" class="entity">
     <h3>
-      <a href="#Start"><span class="dotted" title="http://www.w3.org/ns/prov#Start">prov:Start</span></a>
+      Class: <a href="#Start"><span class="dotted" title="http://www.w3.org/ns/prov#Start">prov:Start</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -639,6 +737,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Start</p>
     <div class="definition"><p>An activity start event is the instantaneous event that marks the instant an activity starts.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Start.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Start provides additional descriptions about the binary prov:wasStartedBy relation from some started prov:Activity to an prov:Entity that started it. For example, :foot_race prov:wasStartedBy :bang; prov:qualified [ a prov:Usage; prov:entity :bang; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
     </div>
@@ -669,7 +773,7 @@
 
   <div id="StartByActivity" class="entity">
     <h3>
-      <a href="#StartByActivity"><span class="dotted" title="http://www.w3.org/ns/prov#StartByActivity">prov:StartByActivity</span></a>
+      Class: <a href="#StartByActivity"><span class="dotted" title="http://www.w3.org/ns/prov#StartByActivity">prov:StartByActivity</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -677,6 +781,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#StartByActivity</p>
     <div class="definition"><p>Start by Activity is the start of an activity with an implicit trigger generated by another activity.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_StartByActivity.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:StartedByActivity provides additional descriptions about the binary prov:wasStartedByActivity relation from some started prov:Activity to another prov:Activity started it. For example, :second_leg_of_relay prov:wasStartedByActivity :handed_baton; prov:qualified [ a prov:Usage; prov:entity :handed_baton; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
     </div>
@@ -706,7 +816,7 @@
 
   <div id="Trace" class="entity">
     <h3>
-      <a href="#Trace"><span class="dotted" title="http://www.w3.org/ns/prov#Trace">prov:Trace</span></a>
+      Class: <a href="#Trace"><span class="dotted" title="http://www.w3.org/ns/prov#Trace">prov:Trace</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -714,6 +824,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Trace</p>
     <div class="definition"><p>Traceability is the ability to link back an entity to another by means of derivation or responsibility relations, possibly repeatedly traversed.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Trace.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Trace provides additional descriptions about the binary prov:tracedTo relation from some prov:Entity to some other prov:Element. For example, :stomach_ache prov:tracedTo :spoon; prov:qualified [ a prov:Trace; prov:entity :spoon; :foo :bar ].</p>
     </div>
@@ -743,7 +859,7 @@
 
   <div id="Usage" class="entity">
     <h3>
-      <a href="#Usage"><span class="dotted" title="http://www.w3.org/ns/prov#Usage">prov:Usage</span></a>
+      Class: <a href="#Usage"><span class="dotted" title="http://www.w3.org/ns/prov#Usage">prov:Usage</span></a>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-classes-at-a-glance">qualified classes</a>
       </span>
@@ -751,6 +867,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Usage</p>
     <div class="definition"><p>A usage is an instantaneous world event: an activity beginning to consume an entity. Before this event, the activity had not begun to consume or use to this entity.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Usage.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualified [ a prov:Usage; prov:entity :podium; :foo :bar ].</p>
     </div>
@@ -785,17 +907,33 @@
      class="prov-qualified owl-properties crossreference">
   <div id="activity" class="entity">
     <h3>
-      <a href="#activity"><span class="dotted" title="http://www.w3.org/ns/prov#activity">prov:activity</span></a>
+      Property: <a href="#activity"><span class="dotted" title="http://www.w3.org/ns/prov#activity">prov:activity</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#activity</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_activity.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The property used by an prov:ActivityInvolvement to cite the Activity that was prov:involved with either an Activity or Entity.</p>
       </div>
+      <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a>
+            </li>
+          </ul>
+        </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -821,22 +959,38 @@
 
   <div id="agent" class="entity">
     <h3>
-      <a href="#agent"><span class="dotted" title="http://www.w3.org/ns/prov#agent">prov:agent</span></a>
+      Property: <a href="#agent"><span class="dotted" title="http://www.w3.org/ns/prov#agent">prov:agent</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#agent</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_agent.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The property used by a prov:AgentInvolvement to cite the Agent that was prov:involved with either an Activity or Entity.</p>
       </div>
+      <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
       <dt>in PROV component</dt>
       <dd class="component-alternate">
         <a title="alternate" href="#component-alternate">alternate</a>
       </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a>
+            </li>
+          </ul>
+        </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -862,13 +1016,19 @@
 
   <div id="atTime" class="entity">
     <h3>
-      <a href="#atTime"><span class="dotted" title="http://www.w3.org/ns/prov#atTime">prov:atTime</span></a>
+      Property: <a href="#atTime"><span class="dotted" title="http://www.w3.org/ns/prov#atTime">prov:atTime</span></a>
       <sup class="type-dp" title="data property">dp</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#atTime</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_atTime.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
@@ -902,17 +1062,33 @@
 
   <div id="entity" class="entity">
     <h3>
-      <a href="#entity"><span class="dotted" title="http://www.w3.org/ns/prov#entity">prov:entity</span></a>
+      Property: <a href="#entity"><span class="dotted" title="http://www.w3.org/ns/prov#entity">prov:entity</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#entity</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_entity.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The property used by an prov:EntityInvolvement to cite the Entity that was prov:involved with either an Activity or Entity.</p>
       </div>
+      <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a>
+            </li>
+          </ul>
+        </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -938,16 +1114,23 @@
 
   <div id="hadActivity" class="entity">
     <h3>
-      <a href="#hadActivity"><span class="dotted" title="http://www.w3.org/ns/prov#hadActivity">prov:hadActivity</span></a>
+      Property: <a href="#hadActivity"><span class="dotted" title="http://www.w3.org/ns/prov#hadActivity">prov:hadActivity</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadActivity</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadActivity.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The activity generating the derived entity and using the derived-from entity.</p>
       </div>
+      <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
       <dt>in PROV component</dt>
@@ -959,7 +1142,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Derivation" href="#Derivation" class="owlclass">prov:Derivation</a>
+              <a title="http://www.w3.org/ns/prov#Involvement" href="#Involvement" class="owlclass">prov:Involvement</a>
             </li>
           </ul>
         </dd>
@@ -979,16 +1162,23 @@
 
   <div id="hadGeneration" class="entity">
     <h3>
-      <a href="#hadGeneration"><span class="dotted" title="http://www.w3.org/ns/prov#hadGeneration">prov:hadGeneration</span></a>
+      Property: <a href="#hadGeneration"><span class="dotted" title="http://www.w3.org/ns/prov#hadGeneration">prov:hadGeneration</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadGeneration</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadGeneration.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The generation involving the generated entity and activity.</p>
       </div>
+      <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
       <dt>in PROV component</dt>
@@ -1020,13 +1210,19 @@
 
   <div id="hadPlan" class="entity">
     <h3>
-      <a href="#hadPlan"><span class="dotted" title="http://www.w3.org/ns/prov#hadPlan">prov:hadPlan</span></a>
+      Property: <a href="#hadPlan"><span class="dotted" title="http://www.w3.org/ns/prov#hadPlan">prov:hadPlan</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadPlan</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadPlan.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The Activity performed was described by the given plan resource. Activity specifications, as referred to by plan links, are out of scope of this specification</p>
       </div>
@@ -1062,13 +1258,19 @@
 
   <div id="hadQuoted" class="entity">
     <h3>
-      <a href="#hadQuoted"><span class="dotted" title="http://www.w3.org/ns/prov#hadQuoted">prov:hadQuoted</span></a>
+      Property: <a href="#hadQuoted"><span class="dotted" title="http://www.w3.org/ns/prov#hadQuoted">prov:hadQuoted</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadQuoted</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadQuoted.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The agent who attributed to the original entity.</p>
       </div>
@@ -1103,13 +1305,19 @@
 
   <div id="hadQuoter" class="entity">
     <h3>
-      <a href="#hadQuoter"><span class="dotted" title="http://www.w3.org/ns/prov#hadQuoter">prov:hadQuoter</span></a>
+      Property: <a href="#hadQuoter"><span class="dotted" title="http://www.w3.org/ns/prov#hadQuoter">prov:hadQuoter</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadQuoter</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadQuoter.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The agent who is doing the quoting.</p>
       </div>
@@ -1144,13 +1352,19 @@
 
   <div id="hadRole" class="entity">
     <h3>
-      <a href="#hadRole"><span class="dotted" title="http://www.w3.org/ns/prov#hadRole">prov:hadRole</span></a>
+      Property: <a href="#hadRole"><span class="dotted" title="http://www.w3.org/ns/prov#hadRole">prov:hadRole</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadRole</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadRole.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>When an instance of prov:Involvement uses the prov:hadRole property to cite a prov:Role, it is providing a role for the instance referenced by the prov:entity or the prov:activity properties. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</p>
       </div>
@@ -1186,16 +1400,23 @@
 
   <div id="hadUsage" class="entity">
     <h3>
-      <a href="#hadUsage"><span class="dotted" title="http://www.w3.org/ns/prov#hadUsage">prov:hadUsage</span></a>
+      Property: <a href="#hadUsage"><span class="dotted" title="http://www.w3.org/ns/prov#hadUsage">prov:hadUsage</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#hadUsage</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadUsage.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The usage involving the used entity and activity.</p>
       </div>
+      <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
       <dt>in PROV component</dt>
@@ -1227,13 +1448,19 @@
 
   <div id="involved" class="entity">
     <h3>
-      <a href="#involved"><span class="dotted" title="http://www.w3.org/ns/prov#involved">prov:involved</span></a>
+      Property: <a href="#involved"><span class="dotted" title="http://www.w3.org/ns/prov#involved">prov:involved</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#involved</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_involved.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>Subproperties of prov:involved may be be qualified by creating instances of a corresponding prov:Involvement class. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualified [ a prov:Usage; prov:entity :baking; :foo :bar ]
 
@@ -1279,13 +1506,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedAssociation" class="entity">
     <h3>
-      <a href="#qualifiedAssociation"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedAssociation">prov:qualifiedAssociation</span></a>
+      Property: <a href="#qualifiedAssociation"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedAssociation">prov:qualifiedAssociation</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedAssociation</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedAssociation.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:wasAssociatedWith Agent :ag, then it can qualify the Association using prov:qualifiedAssociation [ a prov:Association;  prov:agent :ag; :foo :bar ].</p>
       </div>
@@ -1326,13 +1559,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedAttribution" class="entity">
     <h3>
-      <a href="#qualifiedAttribution"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedAttribution">prov:qualifiedAttribution</span></a>
+      Property: <a href="#qualifiedAttribution"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedAttribution">prov:qualifiedAttribution</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedAttribution</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedAttribution.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was  using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].</p>
       </div>
@@ -1373,13 +1612,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedCommunication" class="entity">
     <h3>
-      <a href="#qualifiedCommunication"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedCommunication">prov:qualifiedCommunication</span></a>
+      Property: <a href="#qualifiedCommunication"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedCommunication">prov:qualifiedCommunication</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedCommunication</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedCommunication.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:wasInformedBy Activity :a, then it can qualify how it was Inform[ed] using prov:qualifiedInform [ a prov:Inform;  prov:activity :a; :foo :bar ].</p>
       </div>
@@ -1424,13 +1669,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedDerivation" class="entity">
     <h3>
-      <a href="#qualifiedDerivation"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedDerivation">prov:qualifiedDerivation</span></a>
+      Property: <a href="#qualifiedDerivation"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedDerivation">prov:qualifiedDerivation</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedDerivation</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedDerivation.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Entity prov:wasDerivedFrom Entity :e, then it can qualify how it was derived using prov:qualifiedDerivation [ a prov:Derivation;  prov:entity :e; :foo :bar ].</p>
       </div>
@@ -1471,13 +1722,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedEnd" class="entity">
     <h3>
-      <a href="#qualifiedEnd"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedEnd">prov:qualifiedEnd</span></a>
+      Property: <a href="#qualifiedEnd"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedEnd">prov:qualifiedEnd</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedEnd</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedEnd.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:wasEndedBy Agent :ag, then it can qualify how it was ended using prov:qualifiedEnd [ a prov:End;  prov:agent :ag; :foo :bar ].</p>
       </div>
@@ -1518,13 +1775,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedGeneration" class="entity">
     <h3>
-      <a href="#qualifiedGeneration"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedGeneration">prov:qualifiedGeneration</span></a>
+      Property: <a href="#qualifiedGeneration"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedGeneration">prov:qualifiedGeneration</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedGeneration</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedGeneration.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:generated Entity :e, then it can qualify how it did performed the Generation using prov:qualifiedGeneration [ a prov:Generation;  prov:entity :e; :foo :bar ].</p>
       </div>
@@ -1565,13 +1828,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedQuotation" class="entity">
     <h3>
-      <a href="#qualifiedQuotation"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedQuotation">prov:qualifiedQuotation</span></a>
+      Property: <a href="#qualifiedQuotation"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedQuotation">prov:qualifiedQuotation</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedQuotation</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedQuotation.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Entity prov:wasQuotedFrom Entity :e, then it can qualify how using prov:qualifiedQuotation [ a prov:Quotation;  prov:entity :e; :foo :bar ].</p>
       </div>
@@ -1612,13 +1881,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedResponsibility" class="entity">
     <h3>
-      <a href="#qualifiedResponsibility"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedResponsibility">prov:qualifiedResponsibility</span></a>
+      Property: <a href="#qualifiedResponsibility"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedResponsibility">prov:qualifiedResponsibility</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedResponsibility</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedResponsibility.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Agent prov:actedOnBehalfOf Agent :ag, then it can qualify how with prov:qualifiedResponsibility [ a prov:Responsibility;  prov:agent :ag; :foo :bar ].</p>
       </div>
@@ -1659,13 +1934,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedRevision" class="entity">
     <h3>
-      <a href="#qualifiedRevision"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRevision">prov:qualifiedRevision</span></a>
+      Property: <a href="#qualifiedRevision"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRevision">prov:qualifiedRevision</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedRevision</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedRevision.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Entity prov:wasRevisionOf Entity :e, then it can qualify how it was  revised using prov:qualifiedRevision [ a prov:Revision;  prov:entity :e; :foo :bar ].</p>
       </div>
@@ -1706,13 +1987,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedSource" class="entity">
     <h3>
-      <a href="#qualifiedSource"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedSource">prov:qualifiedSource</span></a>
+      Property: <a href="#qualifiedSource"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedSource">prov:qualifiedSource</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedSource</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedSource.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Entity prov:hadOriginalSource Entity :e, then it can qualify how using prov:qualifiedSource [ a prov:Source; prov:entity :e; :foo :bar ].</p>
       </div>
@@ -1753,13 +2040,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedStart" class="entity">
     <h3>
-      <a href="#qualifiedStart"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedStart">prov:qualifiedStart</span></a>
+      Property: <a href="#qualifiedStart"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedStart">prov:qualifiedStart</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedStart</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedStart.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:wasStartedBy Agent :ag, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:agent :ag; :foo :bar ].</p>
       </div>
@@ -1800,13 +2093,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedStartByActivity" class="entity">
     <h3>
-      <a href="#qualifiedStartByActivity"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedStartByActivity">prov:qualifiedStartByActivity</span></a>
+      Property: <a href="#qualifiedStartByActivity"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedStartByActivity">prov:qualifiedStartByActivity</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedStartByActivity</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedStartByActivity.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:wasStartedByActivity :a, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:activity :a; :foo :bar ].</p>
       </div>
@@ -1847,13 +2146,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedTrace" class="entity">
     <h3>
-      <a href="#qualifiedTrace"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedTrace">prov:qualifiedTrace</span></a>
+      Property: <a href="#qualifiedTrace"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedTrace">prov:qualifiedTrace</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedTrace</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedTrace.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this prov:wasAttributedTo Entity :e, then it can qualify how using prov:qualifiedTrace [ a prov:Trace;  prov:entity :e; :foo :bar ]. If this prov:wasAttributedTo Activity :a, then it can qualify how using prov:qualifiedTrace [ a prov:Trace;  prov:activity :a; :foo :bar ].</p>
       </div>
@@ -1894,13 +2199,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
 
   <div id="qualifiedUsage" class="entity">
     <h3>
-      <a href="#qualifiedUsage"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedUsage">prov:qualifiedUsage</span></a>
+      Property: <a href="#qualifiedUsage"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedUsage">prov:qualifiedUsage</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedUsage</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedUsage.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>If this Activity prov:used Entity :e, then it can qualify how it used it using prov:qualifiedUsage [ a prov:Usage; prov:entity :e; :foo :bar ].</p>
       </div>
@@ -1934,47 +2245,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <dd>
         <a title="http://www.w3.org/ns/prov#used" href="#used" class="owlproperty">prov:used</a>
       </dd>
-
-      </dl>
-    </div>
-  </div>
-
-  <div id="responsibleForActivity" class="entity">
-    <h3>
-      <a href="#responsibleForActivity"><span class="dotted" title="http://www.w3.org/ns/prov#responsibleForActivity">prov:responsibleForActivity</span></a>
-      <sup class="type-op" title="object property">op</sup>
-      <span class="backlink">
-         back to <a href="#prov-qualified-owl-properties-at-a-glance">qualified properties</a>
-      </span>
-    </h3>
-    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#responsibleForActivity</p>
-    <div class="description">
-      <div class="comment"><p>An activity for which the responsibility chain holds.</p>
-      </div>
-      <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
-
-        <dt>has domain</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Responsibility" href="#Responsibility" class="owlclass">prov:Responsibility</a>
-            </li>
-          </ul>
-        </dd>
-
-        <dt>has range</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Activity" href="#Activity" class="owlclass">prov:Activity</a>
-            </li>
-          </ul>
-        </dd>
 
       </dl>
     </div>

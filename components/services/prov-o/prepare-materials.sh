@@ -53,9 +53,10 @@ pushd includes
 
    if [ ! -e prov ]; then
       hg clone https://dvcs.w3.org/hg/prov/
+   else
       pushd prov &> /dev/null
          hg pull
+         hg update
       popd &> /dev/null
    fi
-
 popd &> /dev/null

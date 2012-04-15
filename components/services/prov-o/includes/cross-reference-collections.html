@@ -3,7 +3,7 @@
 
   <div id="Collection" class="entity">
     <h3>
-      <a href="#Collection"><span class="dotted" title="http://www.w3.org/ns/prov#Collection">prov:Collection</span></a>
+      Class: <a href="#Collection"><span class="dotted" title="http://www.w3.org/ns/prov#Collection">prov:Collection</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
@@ -11,10 +11,16 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Collection</p>
     <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</p>
     </div>
-    <dl class="description">
-    <div class="comment"><p>This concept allows for the provenance of the collection, but also of its constituents to be expressed. Such a notion of collection corresponds to a wide variety of concrete data structures, such as a maps, dictionaries, or associative arrays.</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Collection.ttl"%}{% endescape %}</pre>
     </div>
+
+    <dl class="description">
     <div class="comment"><p>A given collection forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different collection.</p>
+    </div>
+    <div class="comment"><p>This concept allows for the provenance of the collection, but also of its constituents to be expressed. Such a notion of collection corresponds to a wide variety of concrete data structures, such as a maps, dictionaries, or associative arrays.</p>
     </div>
 
       <dt>in PROV component</dt>
@@ -37,7 +43,7 @@
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#knownMembership" href="#knownMembership">prov:knownMembership</a>
+        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
 
@@ -60,12 +66,18 @@
 
   <div id="CollectionInvolvement" class="entity">
     <h3>
-      <a href="#CollectionInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#CollectionInvolvement">prov:CollectionInvolvement</span></a>
+      Class: <a href="#CollectionInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#CollectionInvolvement">prov:CollectionInvolvement</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#CollectionInvolvement</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CollectionInvolvement.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
 
       <dt>in PROV component</dt>
@@ -94,12 +106,18 @@
 
   <div id="EmptyCollection" class="entity">
     <h3>
-      <a href="#EmptyCollection"><span class="dotted" title="http://www.w3.org/ns/prov#EmptyCollection">prov:EmptyCollection</span></a>
+      Class: <a href="#EmptyCollection"><span class="dotted" title="http://www.w3.org/ns/prov#EmptyCollection">prov:EmptyCollection</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#EmptyCollection</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyCollection.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
 
       <dt>in PROV component</dt>
@@ -116,7 +134,7 @@
 
   <div id="Insertion" class="entity">
     <h3>
-      <a href="#Insertion"><span class="dotted" title="http://www.w3.org/ns/prov#Insertion">prov:Insertion</span></a>
+      Class: <a href="#Insertion"><span class="dotted" title="http://www.w3.org/ns/prov#Insertion">prov:Insertion</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
@@ -124,6 +142,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Insertion</p>
     <div class="definition"><p>Insertion is a derivation that transforms a collection into another, by insertion of one or more key-value pairs.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Insertion.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
 
       <dt>in PROV component</dt>
@@ -157,29 +181,35 @@
 
   <div id="KeyValuePair" class="entity">
     <h3>
-      <a href="#KeyValuePair"><span class="dotted" title="http://www.w3.org/ns/prov#KeyValuePair">prov:KeyValuePair</span></a>
+      Class: <a href="#KeyValuePair"><span class="dotted" title="http://www.w3.org/ns/prov#KeyValuePair">prov:KeyValuePair</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#KeyValuePair</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_KeyValuePair.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>A key-value pair. Part of a prov:Collection through prov:Membership. The key is any RDF Literal, the value is a prov:Entity.</p>
     </div>
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
         <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
+        <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
@@ -187,12 +217,18 @@
 
   <div id="Membership" class="entity">
     <h3>
-      <a href="#Membership"><span class="dotted" title="http://www.w3.org/ns/prov#Membership">prov:Membership</span></a>
+      Class: <a href="#Membership"><span class="dotted" title="http://www.w3.org/ns/prov#Membership">prov:Membership</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Membership</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Membership.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
     <div class="comment"><p>Described members of a collection, in the form of key-value pairs. The Membership resource can also be annotated with attributes.</p>
     </div>
@@ -210,20 +246,20 @@
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#knownMembership" href="#knownMembership">prov:knownMembership</a>
+        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>qualifies</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#knownMembership" href="#knownMembership" class="owlproperty">prov:knownMembership</a>
+        <a title="http://www.w3.org/ns/prov#membership" href="#membership" class="owlproperty">prov:membership</a>
       </dd>
     </dl>
   </div>
 
   <div id="Removal" class="entity">
     <h3>
-      <a href="#Removal"><span class="dotted" title="http://www.w3.org/ns/prov#Removal">prov:Removal</span></a>
+      Class: <a href="#Removal"><span class="dotted" title="http://www.w3.org/ns/prov#Removal">prov:Removal</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
@@ -231,6 +267,12 @@
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Removal</p>
     <div class="definition"><p>Removal is a derivation that transforms a collection into another, by removing one or more key-value pairs.</p>
     </div>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Removal.ttl"%}{% endescape %}</pre>
+    </div>
+
     <dl class="description">
 
       <dt>in PROV component</dt>
@@ -266,13 +308,19 @@
      class="prov-collections owl-properties crossreference">
   <div id="collection" class="entity">
     <h3>
-      <a href="#collection"><span class="dotted" title="http://www.w3.org/ns/prov#collection">prov:collection</span></a>
+      Property: <a href="#collection"><span class="dotted" title="http://www.w3.org/ns/prov#collection">prov:collection</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#collection</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_collection.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <dl>
 
@@ -280,6 +328,15 @@
       <dd class="component-collections">
         <a title="collections" href="#component-collections">collections</a>
       </dd>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a>
+            </li>
+          </ul>
+        </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -305,13 +362,19 @@
 
   <div id="derivedByInsertionFrom" class="entity">
     <h3>
-      <a href="#derivedByInsertionFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByInsertionFrom">prov:derivedByInsertionFrom</span></a>
+      Property: <a href="#derivedByInsertionFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByInsertionFrom">prov:derivedByInsertionFrom</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#derivedByInsertionFrom</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_derivedByInsertionFrom.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The collection was derived from the other by insertion. prov:qualifiedInsertion shows details of the insertion, in particular the inserted key-value pairs.</p>
       </div>
@@ -367,13 +430,19 @@
 
   <div id="derivedByRemovalFrom" class="entity">
     <h3>
-      <a href="#derivedByRemovalFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByRemovalFrom">prov:derivedByRemovalFrom</span></a>
+      Property: <a href="#derivedByRemovalFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByRemovalFrom">prov:derivedByRemovalFrom</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#derivedByRemovalFrom</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_derivedByRemovalFrom.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The collection was derived from the other by removal. prov:qualifiedRemoval shows details of the removal, in particular the removed key-value pairs.</p>
       </div>
@@ -429,13 +498,19 @@
 
   <div id="inserted" class="entity">
     <h3>
-      <a href="#inserted"><span class="dotted" title="http://www.w3.org/ns/prov#inserted">prov:inserted</span></a>
+      Property: <a href="#inserted"><span class="dotted" title="http://www.w3.org/ns/prov#inserted">prov:inserted</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#inserted</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_inserted.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <dl>
 
@@ -468,13 +543,19 @@
 
   <div id="key" class="entity">
     <h3>
-      <a href="#key"><span class="dotted" title="http://www.w3.org/ns/prov#key">prov:key</span></a>
+      Property: <a href="#key"><span class="dotted" title="http://www.w3.org/ns/prov#key">prov:key</span></a>
       <sup class="type-dp" title="data property">dp</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#key</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_key.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
@@ -506,56 +587,21 @@
     </div>
   </div>
 
-  <div id="knownMembership" class="entity">
-    <h3>
-      <a href="#knownMembership"><span class="dotted" title="http://www.w3.org/ns/prov#knownMembership">prov:knownMembership</span></a>
-      <sup class="type-op" title="object property">op</sup>
-      <span class="backlink">
-         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
-      </span>
-    </h3>
-    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#knownMembership</p>
-    <div class="description">
-      <div class="comment"><p>The collection included the specified membership of keys-values.</p>
-      </div>
-      <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
-        <dt>has domain</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
-            </li>
-          </ul>
-        </dd>
-
-        <dt>has range</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
-            </li>
-          </ul>
-        </dd>
-
-      </dl>
-    </div>
-  </div>
-
   <div id="member" class="entity">
     <h3>
-      <a href="#member"><span class="dotted" title="http://www.w3.org/ns/prov#member">prov:member</span></a>
+      Property: <a href="#member"><span class="dotted" title="http://www.w3.org/ns/prov#member">prov:member</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#member</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_member.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <div class="comment"><p>The key-value pair was part of the membership. A membership can have multiple members.</p>
       </div>
@@ -588,15 +634,68 @@
     </div>
   </div>
 
+  <div id="membership" class="entity">
+    <h3>
+      Property: <a href="#membership"><span class="dotted" title="http://www.w3.org/ns/prov#membership">prov:membership</span></a>
+      <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#membership</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_membership.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <div class="comment"><p>The collection included the specified membership of keys-values.</p>
+      </div>
+      <dl>
+
+      <dt>in PROV component</dt>
+      <dd class="component-collections">
+        <a title="collections" href="#component-collections">collections</a>
+      </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
+            </li>
+          </ul>
+        </dd>
+
+      </dl>
+    </div>
+  </div>
+
   <div id="qualifiedInsertion" class="entity">
     <h3>
-      <a href="#qualifiedInsertion"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedInsertion">prov:qualifiedInsertion</span></a>
+      Property: <a href="#qualifiedInsertion"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedInsertion">prov:qualifiedInsertion</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedInsertion</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedInsertion.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <dl>
 
@@ -634,13 +733,19 @@
 
   <div id="qualifiedRemoval" class="entity">
     <h3>
-      <a href="#qualifiedRemoval"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRemoval">prov:qualifiedRemoval</span></a>
+      Property: <a href="#qualifiedRemoval"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRemoval">prov:qualifiedRemoval</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#qualifiedRemoval</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedRemoval.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <dl>
 
@@ -678,13 +783,19 @@
 
   <div id="removedKey" class="entity">
     <h3>
-      <a href="#removedKey"><span class="dotted" title="http://www.w3.org/ns/prov#removedKey">prov:removedKey</span></a>
+      Property: <a href="#removedKey"><span class="dotted" title="http://www.w3.org/ns/prov#removedKey">prov:removedKey</span></a>
       <sup class="type-dp" title="data property">dp</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#removedKey</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_removedKey.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <dl>
 
@@ -717,13 +828,19 @@
 
   <div id="value" class="entity">
     <h3>
-      <a href="#value"><span class="dotted" title="http://www.w3.org/ns/prov#value">prov:value</span></a>
+      Property: <a href="#value"><span class="dotted" title="http://www.w3.org/ns/prov#value">prov:value</span></a>
       <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#value</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_value.ttl"%}{% endescape %}</pre>
+    </div>
+
     <div class="description">
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>

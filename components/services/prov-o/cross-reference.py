@@ -163,11 +163,13 @@ for category in categories.keys():
             cross.write('    <div class="definition"><p>'+definition+'</p>\n')
             cross.write('    </div>\n')
 
-         # TODO:
-         #    <div class="example">
-         #      <strong>Example</strong>
-         #      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/Activity.ttl"%}{% endescape %}</pre>
-         #    </div>
+         # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
+         cross.write('\n')
+         cross.write('    <div class="example">\n')
+         cross.write('      <strong>Example</strong>\n')
+         cross.write('      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
+         cross.write('    </div>\n')
+         cross.write('\n')
 
          cross.write('    <dl class="description">\n')
          # class rdfs:comment
@@ -237,6 +239,8 @@ for category in categories.keys():
 
          # class prov:unqualifiedForm ?p
          if len(owlClass.prov_unqualifiedForm) > 0:
+            #print owlClass.subject
+            #print owlClass.prov_unqualifiedForm.first
             qname = owlClass.prov_unqualifiedForm.first.subject.split('#')
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
@@ -274,6 +278,14 @@ for category in categories.keys():
 
          # property
          cross.write('    <p><strong>IRI:</strong> '+uri+'</p>\n')
+
+         # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
+         cross.write('\n')
+         cross.write('    <div class="example">\n')
+         cross.write('      <strong>Example</strong>\n')
+         cross.write('      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
+         cross.write('    </div>\n')
+         cross.write('\n')
 
          cross.write('    <div class="description">\n')
 
