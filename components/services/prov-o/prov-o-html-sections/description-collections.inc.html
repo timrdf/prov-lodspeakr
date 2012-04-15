@@ -56,44 +56,64 @@
            <pre class="example">
 @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix :        &lt;http://example.org/&gt; .
 
 :e1 a prov:Entity .
 :e2 a prov:Entity .
-:c a prov:EmptyCollection .
-:c1 a prov:Collection .
-    prov:derivedByInsertionFrom :c ;
-    prov:qualifiedInsertion [ a prov:Insertion ;  
-        prov:collection :c ;
-        prov:inserted [ a prov:KeyValuePair ;
-            prov:key "k1"^^xsd:string ;
-            prov:value :e1 ;
-          ], [ a prov:KeyValuePair ;
-            prov:key "k2"^^xsd:string ;
-            prov:value :e2 ;
-          ]
-      ] .
+:c  a prov:EmptyCollection .
+
+:c1 a prov:Collection;
+   prov:derivedByInsertionFrom :c;
+   prov:qualifiedInsertion [ 
+      a prov:Insertion;
+      prov:collection :c;
+      prov:inserted [ 
+         a prov:KeyValuePair;
+         prov:key   "k1"^^xsd:string;
+         prov:value :e1;
+      ], [ 
+         a prov:KeyValuePair;
+         prov:key   "k2"^^xsd:string;
+         prov:value :e2;
+      ];
+   ];
+.
            </pre>
        </div>
+
+
+
+
        <div class="exampleOuter">
           <p>
           The following example shows how <code>:c3</code> has been derived from
-          <code>:c2</code>, which content is not asserted. The keys
+          <code>:c2</code>, whose content is not asserted. The keys
           <code>"k1"</code> and <code>"k3"</code> and their corresponding
           values have been removed in <code>:c3</code>. 
           </p>
            <pre class="example">
 @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix :        &lt;http://example.org/&gt; .
            
 :c2 a prov:Collection .
-:c3 a prov:Collection .
-    prov:derivedByRemovalFrom :c2 ;
-    prov:qualifiedRemoval [ a prov:Removal ;
-         prov:collection :c2 ;
-         prov:removed "k1"^^xsd:string, "k3"^^xsd:string 
-      ] .  
+
+:c3 a prov:Collection;
+   prov:derivedByRemovalFrom :c2;
+   prov:qualifiedRemoval [
+      a prov:Removal;
+      prov:collection :c2;
+      prov:removed    "k1"^^xsd:string,
+                      "k3"^^xsd:string;
+   ];
+.
            </pre>
        </div>
+
+
+
+
+
     <div class="exampleOuter">
        <p>
        The next example shows how the members of
@@ -104,15 +124,22 @@
             <pre class="example">
 @prefix prov:    &lt;http://www.w3.org/ns/prov#&gt; .
 @prefix xsd:     &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix :        &lt;http://example.org/&gt; .
 
-:c1 prov:knownMembership [ a prov:Membership ;
-    prov:member [ a prov:KeyValuePair;
-        prov:key "k1"^^xsd:string ;
-        prov:value :e1
-      ] , [ a prov:KeyValuePair;
-        prov:key "k2"^^xsd:string ;
-        prov:value :e2
-      ] .
+:c1 
+   prov:knownMembership [ 
+      a prov:Membership;  
+      prov:member [ 
+         a prov:KeyValuePair;
+         prov:key   "k1"^^xsd:string;                                                                                                                
+         prov:value :e1                                                                                                                              
+      ], [ 
+         a prov:KeyValuePair;
+         prov:key   "k2"^^xsd:string;                                                                                                                
+         prov:value :e2                                                                                                   
+      ] 
+   ];
+. 
             </pre>
     </div>
     
