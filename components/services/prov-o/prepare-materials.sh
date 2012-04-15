@@ -50,4 +50,12 @@ pushd includes
       mv b $ttl
    done
    rm beforefetch
+
+   if [ ! -e prov ]; then
+      hg clone https://dvcs.w3.org/hg/prov/
+      pushd prov &> /dev/null
+         hg pull
+      popd &> /dev/null
+   fi
+
 popd &> /dev/null
