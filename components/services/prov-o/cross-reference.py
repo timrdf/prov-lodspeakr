@@ -90,7 +90,7 @@ for category in categories.keys():
       ordered = {}
       ordered['classes'] = []
       for owlClass in Classes.all():
-         if owlClass.prov_category.first == category:
+         if owlClass.prov_category.first == category and owlClass.prov_category.first.startswith('http://www.w3.org/ns/prov#'):
             ordered['classes'].append(owlClass.subject)
       ordered['classes'].sort()
 
@@ -356,7 +356,10 @@ for category in categories.keys():
             for domain in property.rdfs_domain:
                qname = domain.subject.split('#')
                cross.write('            <li>\n')
-               cross.write('              <a title="'+domain.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+               if domain.subject.startswith('http://www.w3.org/ns/prov#'):
+                  cross.write('              <a title="'+domain.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+               else:
+                  cross.write('              TODO: one of a few classes.\n')
                cross.write('            </li>\n')
             cross.write('          </ul>\n')
             cross.write('        </dd>\n')
