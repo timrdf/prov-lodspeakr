@@ -522,3 +522,23 @@ for category in categories.keys():
       quals.close()
    else:
       print '  '+glanceName + ' or ' + crossName + " already exists. Not modifying."
+
+
+inversesName = 'inverse-names.html'
+if not(os.path.exists(inversesName)):
+   inverses = open(inversesName, 'w')
+   inverses.write('<table class="inverse-names">\n')
+   inverses.write('  <caption>Names of inverses</caption>\n')
+   inverses.write('  <tr>\n')
+   inverses.write('    <th>PROV-O Property</th>\n')
+   inverses.write('    <th>Recommended inverse name</th>\n')
+   inverses.write('  </tr>\n')
+   for property in ObjectProperties.all():
+      qname = property.subject.split('#')
+      if property.prov_inverse:
+         inverses.write('  <tr>\n')
+         inverses.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+         inverses.write('    <td>prov:'+property.prov_inverse.first+'</td>\n')
+         inverses.write('  </tr>\n')
+   inverses.write('<table>\n')
+   inverses.close()
