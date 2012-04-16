@@ -15,23 +15,7 @@ that has as members the two key value pairs <code>("k1", :e1)</code>
 and <code>("k2", :e2)</code>.
 </p>
 
-<pre class="example">
-@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-:e1 a prov:Entity .
-:e2 a prov:Entity .
-:c1 a prov:Collection ;
-    prov:knownMembership [ a prov:Membership ;
-        prov:member [ a prov:KeyValuePair ;
-           prov:key "k1"^^xsd:string ;
-           prov:value :e1
-        ] , [ a prov:KeyValuePair;
-           prov:key "k2"^^xsd:string ;
-           prov:value :e2
-        ] 
-    ] .
-</pre>
+<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/start.ttl" %}{% endescape %}</pre>
 
 <p>It is worth noting that <code>:c1</code> MAY also
 have other members (i.e. <code class="repeated">prov:knownMembership</code> is
