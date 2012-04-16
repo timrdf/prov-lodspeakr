@@ -70,11 +70,11 @@
 
       <dt>has subclasses</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#Responsibility" href="#Responsibility" class="owlclass">prov:Responsibility</a>
         <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
+        <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
         <a title="http://www.w3.org/ns/prov#Association" href="#Association" class="owlclass">prov:Association</a>
         <a title="http://www.w3.org/ns/prov#Attribution" href="#Attribution" class="owlclass">prov:Attribution</a>
-        <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
+        <a title="http://www.w3.org/ns/prov#Responsibility" href="#Responsibility" class="owlclass">prov:Responsibility</a>
       </dd>
     </dl>
   </div>
@@ -246,9 +246,9 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#hadGeneration" href="#hadGeneration">prov:hadGeneration</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadUsage" href="#hadUsage">prov:hadUsage</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadGeneration" href="#hadGeneration">prov:hadGeneration</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
 
@@ -413,6 +413,8 @@
     </div>
 
     <dl class="description">
+    <div class="comment"><p>An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</p>
+    </div>
 
       <dt>in PROV component</dt>
       <dd class="component-entities-activities">
@@ -427,8 +429,8 @@
 
       <dt>has subclasses</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
         <a title="http://www.w3.org/ns/prov#Generation" href="#Generation" class="owlclass">prov:Generation</a>
+        <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
         <a title="http://www.w3.org/ns/prov#Usage" href="#Usage" class="owlclass">prov:Usage</a>
         <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
       </dd>
@@ -465,10 +467,10 @@
 
       <dt>has subclasses</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
         <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
         <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
         <a title="http://www.w3.org/ns/prov#ActivityInvolvement" href="#ActivityInvolvement" class="owlclass">prov:ActivityInvolvement</a>
+        <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
       </dd>
 
       <dt>qualifies</dt>
@@ -670,6 +672,8 @@
     </div>
 
     <dl class="description">
+    <div class="comment"><p>A Role is the function of an entity with respect to an activity, in the context of a usage, generation, association, start, and end.</p>
+    </div>
 
       <dt>in PROV component</dt>
       <dd class="component-agents-responsibility">
@@ -921,7 +925,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>The property used by an prov:ActivityInvolvement to cite the Activity that was prov:involved with either an Activity or Entity.</p>
+      <div class="comment"><p>The property used by an prov:ActivityInvolvement to cite the prov:Activity that was involved with either an Activity or Entity. It can be used to refer to the activity involved in generating an entity, informing another activity, or starting another activity.</p>
       </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
@@ -973,7 +977,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>The property used by a prov:AgentInvolvement to cite the Agent that was prov:involved with either an Activity or Entity.</p>
+      <div class="comment"><p>The property used by a prov:AgentInvolvement to cite the Agent that was prov:involved with either an Activity or Entity. It can be used to express the agent involved in being responsible for an activity, being attributed to an entity, starting or ending an activity, or being responsible for another subordinate agent in an activity.</p>
       </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
@@ -1076,7 +1080,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>The property used by an prov:EntityInvolvement to cite the Entity that was prov:involved with either an Activity or Entity.</p>
+      <div class="comment"><p>The property used by an prov:EntityInvolvement to cite the Entity that was prov:involved with either an Activity or Entity. It can be used to refer to the entity involved in deriving another entity, being quoted or revised from, being the source of another entity, or being used in an activity. </p>
       </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
@@ -1143,6 +1147,9 @@
           <ul>
             <li>
               <a title="http://www.w3.org/ns/prov#Involvement" href="#Involvement" class="owlclass">prov:Involvement</a>
+            </li>
+            <li>
+              TODO: one of a few classes.
             </li>
           </ul>
         </dd>
@@ -1381,6 +1388,9 @@
           <ul>
             <li>
               <a title="http://www.w3.org/ns/prov#Involvement" href="#Involvement" class="owlclass">prov:Involvement</a>
+            </li>
+            <li>
+              TODO: one of a few classes.
             </li>
           </ul>
         </dd>

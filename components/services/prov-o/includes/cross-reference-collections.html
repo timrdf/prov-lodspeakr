@@ -18,9 +18,9 @@
     </div>
 
     <dl class="description">
-    <div class="comment"><p>A given collection forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different collection.</p>
-    </div>
     <div class="comment"><p>This concept allows for the provenance of the collection, but also of its constituents to be expressed. Such a notion of collection corresponds to a wide variety of concrete data structures, such as a maps, dictionaries, or associative arrays.</p>
+    </div>
+    <div class="comment"><p>A given collection forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different collection.</p>
     </div>
 
       <dt>in PROV component</dt>
@@ -79,6 +79,8 @@
     </div>
 
     <dl class="description">
+    <div class="comment"><p>prov:CollectionInvolvement provides descriptions of any binary involvement between any instance and a prov:Collection.</p>
+    </div>
 
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -119,6 +121,8 @@
     </div>
 
     <dl class="description">
+    <div class="comment"><p>An empty collection.</p>
+    </div>
 
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -149,6 +153,8 @@
     </div>
 
     <dl class="description">
+    <div class="comment"><p>Insertion is a derivation that transforms a collection into another, by insertion of one or more key-value pairs.</p>
+    </div>
 
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -274,6 +280,8 @@
     </div>
 
     <dl class="description">
+    <div class="comment"><p>Removal is a derivation that transforms a collection into another, by removing one or more key-value pairs.</p>
+    </div>
 
       <dt>in PROV component</dt>
       <dd class="component-collections">
@@ -322,6 +330,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>The property used by a prov:CollectionInvolvement to cite the prov:Collection that was prov:involved in insertion or removal of elements of a collection. </p>
+      </div>
       <dl>
 
       <dt>in PROV component</dt>
@@ -512,6 +522,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>An object property to refer to the prov:KeyValuePair inserted into a prov:Collection.</p>
+      </div>
       <dl>
 
       <dt>in PROV component</dt>
@@ -557,6 +569,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>The key of a KeyValuePair, which is an element of a prov:Collection.</p>
+      </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
@@ -697,6 +711,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>If this Collection prov:derivedByInsertionFrom another Collection :e, then it can qualify how it did perform the Insertion using prov:qualifiedInsertion [ a prov:Insertion;  prov:collection :e; prov:inserted [a prov:KeyValuePair; prov:key "k1"^^xsd:string; prov:value :foo] ].</p>
+      </div>
       <dl>
 
       <dt>in PROV component</dt>
@@ -747,6 +763,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>If this Collection prov:derivedByRemovalFrom another Collection :e, then it can qualify how it did perform the Removal using prov:qualifiedRemoval [ a prov:Removal;  prov:collection :c; prov:removed "k1"^^xsd:string ].</p>
+      </div>
       <dl>
 
       <dt>in PROV component</dt>
@@ -797,6 +815,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>The key removed in a Removal.</p>
+      </div>
       <dl>
 
       <dt>in PROV component</dt>
@@ -842,6 +862,8 @@
     </div>
 
     <div class="description">
+      <div class="comment"><p>The value of a KeyValuePair.</p>
+      </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 

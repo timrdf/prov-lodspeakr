@@ -90,7 +90,7 @@ for category in categories.keys():
       ordered = {}
       ordered['classes'] = []
       for owlClass in Classes.all():
-         if owlClass.prov_category.first == category and owlClass.prov_category.first.startswith('http://www.w3.org/ns/prov#'):
+         if owlClass.prov_category.first == category and owlClass.subject.startswith('http://www.w3.org/ns/prov#'):
             ordered['classes'].append(owlClass.subject)
       ordered['classes'].sort()
 
