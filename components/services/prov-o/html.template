@@ -353,7 +353,7 @@
 
 
 
-    <section class="appendix">
+    <!--section class="appendix">
           <h2>Changes Since First Public Working Draft</h2>
           <ul>
           <li>2012-01-18: hadParticipant was replaced with wasAssociatedWith. Restyled domain/range diagrams.</li>
@@ -365,7 +365,7 @@
 	      <li>2012-01-18: Replaced wasControlledBy with wasAssociatedWith relation
 		  <li>2012-01-19: Added wasStartedBy and wasEndedBy relations
           </ul>  
-    </section>
+    </section-->
 
 <!--	<section class="appendix"> 
 	<h2>Provenance-specific Constraints</h2>

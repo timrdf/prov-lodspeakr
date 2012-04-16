@@ -70,11 +70,11 @@
 
       <dt>has subclasses</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
-        <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
-        <a title="http://www.w3.org/ns/prov#Association" href="#Association" class="owlclass">prov:Association</a>
-        <a title="http://www.w3.org/ns/prov#Attribution" href="#Attribution" class="owlclass">prov:Attribution</a>
         <a title="http://www.w3.org/ns/prov#Responsibility" href="#Responsibility" class="owlclass">prov:Responsibility</a>
+        <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
+        <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
+        <a title="http://www.w3.org/ns/prov#Attribution" href="#Attribution" class="owlclass">prov:Attribution</a>
+        <a title="http://www.w3.org/ns/prov#Association" href="#Association" class="owlclass">prov:Association</a>
       </dd>
     </dl>
   </div>
@@ -98,11 +98,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that is responsible for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualified [ a prov:Association; prov:entity :baker; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -148,11 +143,6 @@
     <div class="comment"><p>An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that is responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualified [ a prov:Attribution; prov:entity :baker; :foo :bar ].</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
@@ -190,11 +180,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Communication provides additional descriptions about the binary prov:wasInformedBy relation from an informed prov:Activity to the prov:Activity that informed it. For example, :you_jumping_off_bridge prov:wasInformedBy :everyone_else_jumping_off_bridge; prov:qualifiedCommunication [ a prov:Communication; prov:entity :everyone_else_jumping_off_bridge; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -234,11 +219,6 @@
     <div class="comment"><p>An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some prov:Entity to another prov:Entity. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualified [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ].</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
@@ -246,9 +226,9 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#hadUsage" href="#hadUsage">prov:hadUsage</a>
-        <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadGeneration" href="#hadGeneration">prov:hadGeneration</a>
+        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadUsage" href="#hadUsage">prov:hadUsage</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
 
@@ -284,11 +264,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualified [ a prov:Usage; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -340,12 +315,12 @@
 
       <dt>has subclasses</dt>
       <dd>
+        <a title="http://www.w3.org/ns/prov#Derivation" href="#Derivation" class="owlclass">prov:Derivation</a>
+        <a title="http://www.w3.org/ns/prov#Trace" href="#Trace" class="owlclass">prov:Trace</a>
         <a title="http://www.w3.org/ns/prov#Usage" href="#Usage" class="owlclass">prov:Usage</a>
         <a title="http://www.w3.org/ns/prov#Source" href="#Source" class="owlclass">prov:Source</a>
         <a title="http://www.w3.org/ns/prov#Revision" href="#Revision" class="owlclass">prov:Revision</a>
         <a title="http://www.w3.org/ns/prov#Quotation" href="#Quotation" class="owlclass">prov:Quotation</a>
-        <a title="http://www.w3.org/ns/prov#Derivation" href="#Derivation" class="owlclass">prov:Derivation</a>
-        <a title="http://www.w3.org/ns/prov#Trace" href="#Trace" class="owlclass">prov:Trace</a>
       </dd>
     </dl>
   </div>
@@ -369,11 +344,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:entity :baking; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -416,11 +386,6 @@
     <div class="comment"><p>An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
-
       <dt>in domain of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#atTime" href="#atTime">prov:atTime</a>
@@ -429,9 +394,9 @@
 
       <dt>has subclasses</dt>
       <dd>
+        <a title="http://www.w3.org/ns/prov#Usage" href="#Usage" class="owlclass">prov:Usage</a>
         <a title="http://www.w3.org/ns/prov#Generation" href="#Generation" class="owlclass">prov:Generation</a>
         <a title="http://www.w3.org/ns/prov#End" href="#End" class="owlclass">prov:End</a>
-        <a title="http://www.w3.org/ns/prov#Usage" href="#Usage" class="owlclass">prov:Usage</a>
         <a title="http://www.w3.org/ns/prov#Start" href="#Start" class="owlclass">prov:Start</a>
       </dd>
     </dl>
@@ -457,20 +422,20 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#hadRole" href="#hadRole">prov:hadRole</a>
+        <a title="http://www.w3.org/ns/prov#involvee" href="#involvee">prov:involvee</a>
         <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadActivity" href="#hadActivity">prov:hadActivity</a>
         <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#involvee" href="#involvee">prov:involvee</a>
+        <a title="http://www.w3.org/ns/prov#hadRole" href="#hadRole">prov:hadRole</a>
         <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>has subclasses</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
         <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
-        <a title="http://www.w3.org/ns/prov#ActivityInvolvement" href="#ActivityInvolvement" class="owlclass">prov:ActivityInvolvement</a>
         <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
+        <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
+        <a title="http://www.w3.org/ns/prov#ActivityInvolvement" href="#ActivityInvolvement" class="owlclass">prov:ActivityInvolvement</a>
       </dd>
 
       <dt>qualifies</dt>
@@ -499,11 +464,6 @@
     <dl class="description">
     <div class="comment"><p>There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations.</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -537,11 +497,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Quotation provides additional descriptions about the binary prov:wasQuotedFrom relation from some prov:Entity to another prov:Entity. For example, :here_is_looking_at_you_kid prov:wasQuotedFrom :casablanca_script; prov:qualified [ a prov:Quotation; prov:entity :casablanca_script; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -589,11 +544,6 @@
     <div class="comment"><p>An instance of prov:Responsibility provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualified [ a prov:Responsiblity; prov:entity :mother; :foo :bar ].</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#AgentInvolvement" href="#AgentInvolvement" class="owlclass">prov:AgentInvolvement</a>
@@ -631,11 +581,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Revision provides additional descriptions about the binary prov:wasRevisionOf relation from some prov:Entity to another prov:Entity. For example, :draft_2 prov:wasRevisionOf :draft_1; prov:qualified [ a prov:Source; prov:entity :draft_1; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -675,11 +620,6 @@
     <div class="comment"><p>A Role is the function of an entity with respect to an activity, in the context of a usage, generation, association, start, and end.</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
-
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#hadRole" href="#hadRole">prov:hadRole</a>
@@ -707,11 +647,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Source provides additional descriptions about the binary prov:hadOriginalSource relation from some prov:Entity to another prov:Entity. For example, :blog prov:hadOriginalSource :newsArticle; prov:qualified [ a prov:Source; prov:entity :newsArticle; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -750,11 +685,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Start provides additional descriptions about the binary prov:wasStartedBy relation from some started prov:Activity to an prov:Entity that started it. For example, :foot_race prov:wasStartedBy :bang; prov:qualified [ a prov:Usage; prov:entity :bang; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -795,11 +725,6 @@
     <div class="comment"><p>An instance of prov:StartedByActivity provides additional descriptions about the binary prov:wasStartedByActivity relation from some started prov:Activity to another prov:Activity started it. For example, :second_leg_of_relay prov:wasStartedByActivity :handed_baton; prov:qualified [ a prov:Usage; prov:entity :handed_baton; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#ActivityInvolvement" href="#ActivityInvolvement" class="owlclass">prov:ActivityInvolvement</a>
@@ -838,11 +763,6 @@
     <div class="comment"><p>An instance of prov:Trace provides additional descriptions about the binary prov:tracedTo relation from some prov:Entity to some other prov:Element. For example, :stomach_ache prov:tracedTo :spoon; prov:qualified [ a prov:Trace; prov:entity :spoon; :foo :bar ].</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
@@ -880,11 +800,6 @@
     <dl class="description">
     <div class="comment"><p>An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualified [ a prov:Usage; prov:entity :podium; :foo :bar ].</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -982,11 +897,6 @@
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-alternate">
-        <a title="alternate" href="#component-alternate">alternate</a>
-      </dd>
-
         <dt>has super-properties</dt>
         <dd>
           <ul>
@@ -1036,11 +946,6 @@
     <div class="description">
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1137,11 +1042,6 @@
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1188,11 +1088,6 @@
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1236,11 +1131,6 @@
       <p><strong>has characteristics</strong>  Functional , Asymmetric , Irreflexive       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1282,11 +1172,6 @@
       <div class="comment"><p>The agent who attributed to the original entity.</p>
       </div>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1330,11 +1215,6 @@
       </div>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1377,11 +1257,6 @@
       </div>
       <p><strong>has characteristics</strong> Irreflexive       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1428,11 +1303,6 @@
       </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1484,18 +1354,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#actedOnBehalfOf" href="#actedOnBehalfOf" class="owlclass">prov:actedOnBehalfOf</a>
-            </li>
-            <li>
-              <a title="http://www.w3.org/ns/prov#wasStartedByActivity" href="#wasStartedByActivity" class="owlclass">prov:wasStartedByActivity</a>
-            </li>
-            <li>
-              <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy" class="owlclass">prov:wasInformedBy</a>
-            </li>
-            <li>
-              <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo" class="owlclass">prov:tracedTo</a>
-            </li>
-            <li>
               <a title="http://www.w3.org/ns/prov#generated" href="#generated" class="owlclass">prov:generated</a>
             </li>
             <li>
@@ -1505,7 +1363,19 @@ Subproperties of prov:involved may also be asserted directly without being quali
               <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy" class="owlclass">prov:wasGeneratedBy</a>
             </li>
             <li>
+              <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo" class="owlclass">prov:tracedTo</a>
+            </li>
+            <li>
               <a title="http://www.w3.org/ns/prov#used" href="#used" class="owlclass">prov:used</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#actedOnBehalfOf" href="#actedOnBehalfOf" class="owlclass">prov:actedOnBehalfOf</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasStartedByActivity" href="#wasStartedByActivity" class="owlclass">prov:wasStartedByActivity</a>
+            </li>
+            <li>
+              <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy" class="owlclass">prov:wasInformedBy</a>
             </li>
           </ul>
         </dd>
@@ -1534,11 +1404,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1588,11 +1453,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1640,11 +1500,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1698,11 +1553,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1750,11 +1600,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1804,11 +1649,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1856,11 +1696,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -1910,11 +1745,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-agents-responsibility">
-        <a title="agents-responsibility" href="#component-agents-responsibility">agents-responsibility</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -1962,11 +1792,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -2016,11 +1841,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -2068,11 +1888,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -2122,11 +1937,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -2175,11 +1985,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-derivations">
-        <a title="derivations" href="#component-derivations">derivations</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -2227,11 +2032,6 @@ Subproperties of prov:involved may also be asserted directly without being quali
       </div>
       <p><strong>has characteristics</strong> Inverse Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-entities-activities">
-        <a title="entities-activities" href="#component-entities-activities">entities-activities</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>

@@ -23,11 +23,6 @@
     <div class="comment"><p>A given collection forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different collection.</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
@@ -82,11 +77,6 @@
     <div class="comment"><p>prov:CollectionInvolvement provides descriptions of any binary involvement between any instance and a prov:Collection.</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Involvement" href="#Involvement" class="owlclass">prov:Involvement</a>
@@ -124,11 +114,6 @@
     <div class="comment"><p>An empty collection.</p>
     </div>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
       <dt>is subclass of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
@@ -155,11 +140,6 @@
     <dl class="description">
     <div class="comment"><p>Insertion is a derivation that transforms a collection into another, by insertion of one or more key-value pairs.</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -205,10 +185,10 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
-        <sup class="type-dp" title="data property">dp</sup>
         <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
         <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
+        <sup class="type-dp" title="data property">dp</sup>
       </dd>
 
       <dt>in range of</dt>
@@ -238,11 +218,6 @@
     <dl class="description">
     <div class="comment"><p>Described members of a collection, in the form of key-value pairs. The Membership resource can also be annotated with attributes.</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
       <dt>in domain of</dt>
       <dd>
@@ -282,11 +257,6 @@
     <dl class="description">
     <div class="comment"><p>Removal is a derivation that transforms a collection into another, by removing one or more key-value pairs.</p>
     </div>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
       <dt>is subclass of</dt>
       <dd>
@@ -333,11 +303,6 @@
       <div class="comment"><p>The property used by a prov:CollectionInvolvement to cite the prov:Collection that was prov:involved in insertion or removal of elements of a collection. </p>
       </div>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
         <dt>has super-properties</dt>
         <dd>
@@ -389,11 +354,6 @@
       <div class="comment"><p>The collection was derived from the other by insertion. prov:qualifiedInsertion shows details of the insertion, in particular the inserted key-value pairs.</p>
       </div>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
         <dt>has super-properties</dt>
         <dd>
@@ -458,11 +418,6 @@
       </div>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
         <dt>has super-properties</dt>
         <dd>
           <ul>
@@ -526,11 +481,6 @@
       </div>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -574,11 +524,6 @@
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -620,11 +565,6 @@
       <div class="comment"><p>The key-value pair was part of the membership. A membership can have multiple members.</p>
       </div>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -668,11 +608,6 @@
       </div>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -714,11 +649,6 @@
       <div class="comment"><p>If this Collection prov:derivedByInsertionFrom another Collection :e, then it can qualify how it did perform the Insertion using prov:qualifiedInsertion [ a prov:Insertion;  prov:collection :e; prov:inserted [a prov:KeyValuePair; prov:key "k1"^^xsd:string; prov:value :foo] ].</p>
       </div>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -767,11 +697,6 @@
       </div>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -819,11 +744,6 @@
       </div>
       <dl>
 
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
-
         <dt>has domain</dt>
         <dd>
           <ul>
@@ -866,11 +786,6 @@
       </div>
       <p><strong>has characteristics</strong>  Functional       </p>
       <dl>
-
-      <dt>in PROV component</dt>
-      <dd class="component-collections">
-        <a title="collections" href="#component-collections">collections</a>
-      </dd>
 
         <dt>has domain</dt>
         <dd>

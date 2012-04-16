@@ -178,7 +178,7 @@ for category in categories.keys():
             cross.write('    </div>\n')
 
          # class prov:component ?component
-         if len(owlClass.prov_component) > 0:
+         if len(owlClass.prov_component) > 0 and False:
             cross.write('\n')
             cross.write('      <dt>in PROV component</dt>\n')
             cross.write('      <dd class="component-'+owlClass.prov_component.first+'">\n')
@@ -319,7 +319,7 @@ for category in categories.keys():
          cross.write('      <dl>\n')
 
          # property prov:component ?component
-         if len(property.prov_component) > 0:
+         if len(property.prov_component) > 0 and False:
             cross.write('\n')
             cross.write('      <dt>in PROV component</dt>\n')
             cross.write('      <dd class="component-'+property.prov_component.first+'">\n')
