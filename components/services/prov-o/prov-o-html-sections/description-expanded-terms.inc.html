@@ -33,49 +33,49 @@ Location??, hadLocation?, wasStartedByActivity?? specializationOf?
         </p>
 
         <div class="exampleOuter">
-           <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. Agent Dereck now publishes a post about
+           <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. Agent Derek now publishes a post about
 		   his work with the aggregated file, while Monica publishes an alternate version to reach a more casual audience.
 		   </p> 
 		   
 		   <pre class="example">
-		   {% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}
+		   {% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}{% endescape %}
 		   </pre> 
 		   
 		   <p>
-		   Agent ex:dereck, acting again in behalf of the ex:chartgenerators organization, 
-		   publishes a post about his recent changes to the aggregated file (ex:aggregatedByRegions). He also provides the location for the crime file, so everyone knows the content he has been browsing, 
-		   and records the city where the publishing took place (Madrid). Since he is the one who started and ended the publishing activity (ex:publicationActivity1123), that information
-		   is recorded as well. The post produced by ex:dereck(ex:post9821) includes a permanent link where the content of the latest version is shown
-		   (ex:more-crime-happens-in-cities) plus a snapshot of the content of the current version (ex:postContent0). Dereck also adds additional metadata of the post, like the title.
+		   Agent <code>ex:derek</code>, acting again in behalf of the <code>ex:chartgenerators</code> organization, 
+		   publishes a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>). He also provides the location for the crime file, so everyone knows the content he has been browsing, 
+		   and records the city where the publishing took place (Madrid). Since he is the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
+		   is recorded as well. The post produced by <code>ex:derek</code> (<code>ex:post9821</code>) includes a permanent link where the content of the latest version is shown
+		   (<code>ex:more-crime-happens-in-cities</code>) plus a snapshot of the content of the current version (<code>ex:postContent0</code>). Derek also adds additional metadata of the post, like the title.
 		   </p>
 		   <p>
-		   However, inmediately after having published the post, Dereck detects a typo. He doesnt' want to record the activity that led to the new version, so he just creates a new version and 
-		   summarizes the changes in a revision of the original post(ex:post9821v1). This revision is also a specialization of the original post, since it is a refined version. 
-		   Thus, the location of the new revision has the same permalink, but a different url for its snapshot (ex:postContent1).
+		   However, inmediately after having published the post, Derek detects a typo. He doesnt' want to record the activity that led to the new version, so he just creates a new version and 
+		   summarizes the changes in a revision of the original post(<code>ex:post9821v1</code>). This revision is also a specialization of the original post, since it is a refined version. 
+		   Thus, the location of the new revision has the same permalink, but a different url for its snapshot (<code>ex:postContent1</code>).
 		   </p>
 		   <p>
-		   Shortly after Dereck's post publication, ex:monica adapts the text for a wider audience in a new version (ex:post9821v2). This version is an specialization of the original post,
-		   and an alternate of the first version modified by Dereck. Since the provenance produced by Dereck and Monica is related to the same resources, the system
-		   automatically groups it in the same prov:Account (ex:accountPost).
+		   Shortly after Derek's post publication, ex:monica adapts the text for a wider audience in a new version (<code>ex:post9821v2</code>). This version is an specialization of the original post,
+		   and an alternate of the first version modified by Derek. Since the provenance produced by Derek and Monica is related to the same resources, the system
+		   automatically groups it in the same <a href="#Account" class="qname">prov:Account</a> (<code>ex:accountPost</code>).
 		   </p>
 		   <p>
 		   Some time passes by, and John writes his own conclusions quoting the previous two posts:
 		   </p> 
 		   
 		   <pre class="example">
-		   {% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}
+		   {% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}{% endescape %}
 		   </pre> 
 		   
 		   <p>
-		   Agent ex:John also names the URI of the original source (ex:aggregatedByRegions). All the provenance statements related to his post
-		   are grouped in a new prov:Account (ex:accountPost2).
+		   Agent <code>ex:John</code> also names the URI of the original source (<code>ex:aggregatedByRegions</code>). All the provenance statements related to his post
+		   are grouped in a new <span class="repeated">prov:Account</span> (<code>ex:accountPost2</code>).
 		   
-		   Finally, a web crawler (ex:boogleParser) parses the second post. The crawler acts in behalf of Boogle, an organization that want to index the posts. It also adds an 
-		   annotation on the second account (ex:accountPost2), stating at which date the parsing was made.
+		   Finally, a web crawler (<code>ex:boogleParser</code>) parses the second post. The crawler acts in behalf of Boogle, an organization that want to index the posts. It also adds an 
+		   annotation on the second account (<code>ex:accountPost2</code>), stating at which date the parsing was made.
 		   </p> 		   
 		   
 		   <pre class="example">
-		   {% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt3.ttl" %}
+		   {% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt3.ttl" %}{% endescape %}
 		   </pre>
  
         </div>
