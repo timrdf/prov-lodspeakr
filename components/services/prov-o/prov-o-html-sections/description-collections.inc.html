@@ -15,7 +15,7 @@ that has as members the two key value pairs <code>("k1", :e1)</code>
 and <code>("k2", :e2)</code>.
 </p>
 
-<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/start.ttl" %}{% endescape %}</pre>
+<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/membership.ttl" %}{% endescape %}</pre>
 
 <p>It is worth noting that <code>:c1</code> MAY also
 have other members (i.e. <code class="repeated">prov:knownMembership</code> is
@@ -38,26 +38,8 @@ the collection <code>:c1</code> was obtained from the empty collection
 :e1)</code> and <code>("k2", :e2)</code>.  
 </p>
 
-<pre class="example">
-@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/insertion.ttl" %}{% endescape %}</pre>
 
-:e1 a prov:Entity .
-:e2 a prov:Entity .
-:c  a prov:EmptyCollection .
-:c1 a prov:Collection .
-    prov:derivedByInsertionFrom :c ;
-    prov:qualifiedInsertion [ a prov:Insertion ;
-        prov:collection :c ;
-        prov:inserted [ a prov:KeyValuePair ;
-            prov:key "k1"^^xsd:string ;
-            prov:value :e1 ;
-        ], [ a prov:KeyValuePair ;
-            prov:key "k2"^^xsd:string ;
-            prov:value :e2 ;
-          ]
-    ] .
-</pre>
 
 	<p>
 	Similarly, the example below specifies that the collection
@@ -66,18 +48,8 @@ the collection <code>:c1</code> was obtained from the empty collection
 	<code>:c2</code>. Thus, <code>:c3</code> does not contain the
 	members <code>("k1", :e1)</code> and <code>("k2",
 	:e2(</code> from <code>:c2</code>.
+
+<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/removal.ttl" %}{% endescape %}</pre>
 	</p>
 
-<pre class="example">
-@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
-@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
-
-:c2 a prov:Collection .
-:c3 a prov:Collection .
-   prov:derivedByRemovalFrom :c2 ;
-   prov:qualifiedRemoval [ a prov:Removal ;
-        prov:collection :c2 ;
-        prov:removed "k1"^^xsd:string, "k3"^^xsd:string
-     ] .
-</pre>
      </section>
