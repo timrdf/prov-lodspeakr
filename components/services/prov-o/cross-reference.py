@@ -141,7 +141,9 @@ for category in categories.keys():
       # Classes # # # # # # # # # # # # # # # # #
       # cross-reference
       cross.write('<div    id="'+PREFIX+'-'+category+'-owl-classes-crossreference"\n')
-      cross.write('     class="'+PREFIX+'-'+category+' owl-classes crossreference">\n')
+      cross.write('     class="'+PREFIX+'-'+category+' owl-classes crossreference"\n')
+      cross.write('     xmlns:dcterms="http://purl.org/dc/terms/"\n')
+      cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
       for uri in ordered['classes']:
          owlClass = session.get_resource(uri,Classes)
          qname = owlClass.subject.split('#')
@@ -164,10 +166,16 @@ for category in categories.keys():
             cross.write('    </div>\n')
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
+         # <pre about="#example-for-class-Entity" typeof="prov:Entity" 
+         #      rel="prov:wasQuotedFrom"  resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl" 
+         #      property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl"%}{% endescape %}</pre>
          cross.write('\n')
-         cross.write('    <div class="example">\n')
+         cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
+         cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
          cross.write('      <strong>Example</strong>\n')
-         cross.write('      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
+         cross.write('      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_'+qname[1]+'.ttl"\n')
+         cross.write('           property="prov:value">')
+         cross.write('{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
 
@@ -256,7 +264,8 @@ for category in categories.keys():
       # Properties # # # # # # # # # # # # # # # # #
       # cross-reference
       cross.write('<div    id="'+PREFIX+'-'+category+'-owl-properties-crossreference"\n')
-      cross.write('     class="'+PREFIX+'-'+category+' owl-properties crossreference">\n')
+      cross.write('     class="'+PREFIX+'-'+category+' owl-properties crossreference"\n')
+      cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
       for uri in ordered['properties']:
          property = []
          if propertyTypes[uri] == 'datatype-property':
@@ -281,9 +290,12 @@ for category in categories.keys():
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          cross.write('\n')
-         cross.write('    <div class="example">\n')
+         cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
+         cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
          cross.write('      <strong>Example</strong>\n')
-         cross.write('      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
+         cross.write('      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_'+qname[1]+'.ttl"\n')
+         cross.write('           property="prov:value">')
+         cross.write('{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
 

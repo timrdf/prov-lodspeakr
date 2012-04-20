@@ -1,5 +1,7 @@
 <div    id="prov-starting-point-owl-classes-crossreference"
-     class="prov-starting-point owl-classes crossreference">
+     class="prov-starting-point owl-classes crossreference"
+     xmlns:dcterms="http://purl.org/dc/terms/"
+     xmlns:prov="http://www.w3.org/ns/prov#">
 
   <div id="Activity" class="entity">
     <h3>
@@ -12,9 +14,11 @@
     <div class="definition"><p>An activity is something that occurs over a period of time and acts upon or with entities. This action can take multiple forms: consuming, processing, transforming, modifying, relocating, using, generating, or being associated with entities. Activities that operate on digital entities may for example move, copy, or duplicate them.</p>
     </div>
 
-    <div class="example">
+    <div about="#example-for-class-Activity" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#Activity"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Activity.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Activity.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Activity.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
@@ -23,31 +27,31 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#wasStartedByActivity" href="#wasStartedByActivity">prov:wasStartedByActivity</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedStart" href="#qualifiedStart">prov:qualifiedStart</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedEnd" href="#qualifiedEnd">prov:qualifiedEnd</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#startedAtTime" href="#startedAtTime">prov:startedAtTime</a><sup class="type-dp" title="data property">dp</sup>
-        <a title="http://www.w3.org/ns/prov#wasEndedBy" href="#wasEndedBy">prov:wasEndedBy</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#generated" href="#generated">prov:generated</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasStartedBy" href="#wasStartedBy">prov:wasStartedBy</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedStartByActivity" href="#qualifiedStartByActivity">prov:qualifiedStartByActivity</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy">prov:wasInformedBy</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedAssociation" href="#qualifiedAssociation">prov:qualifiedAssociation</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith">prov:wasAssociatedWith</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#endedAtTime" href="#endedAtTime">prov:endedAtTime</a><sup class="type-dp" title="data property">dp</sup>
-        <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy">prov:wasInformedBy</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#generated" href="#generated">prov:generated</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedCommunication" href="#qualifiedCommunication">prov:qualifiedCommunication</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedStartByActivity" href="#qualifiedStartByActivity">prov:qualifiedStartByActivity</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedUsage" href="#qualifiedUsage">prov:qualifiedUsage</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#used" href="#used">prov:used</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasStartedByActivity" href="#wasStartedByActivity">prov:wasStartedByActivity</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#endedAtTime" href="#endedAtTime">prov:endedAtTime</a><sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedStart" href="#qualifiedStart">prov:qualifiedStart</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedEnd" href="#qualifiedEnd">prov:qualifiedEnd</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasStartedBy" href="#wasStartedBy">prov:wasStartedBy</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#startedAtTime" href="#startedAtTime">prov:startedAtTime</a><sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#wasEndedBy" href="#wasEndedBy">prov:wasEndedBy</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#wasStartedByActivity" href="#wasStartedByActivity">prov:wasStartedByActivity</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#activity" href="#activity">prov:activity</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy">prov:wasInformedBy</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasInvalidatedBy" href="#wasInvalidatedBy">prov:wasInvalidatedBy</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadActivity" href="#hadActivity">prov:hadActivity</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy">prov:wasGeneratedBy</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#activity" href="#activity">prov:activity</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasStartedByActivity" href="#wasStartedByActivity">prov:wasStartedByActivity</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasInvalidatedBy" href="#wasInvalidatedBy">prov:wasInvalidatedBy</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasInformedBy" href="#wasInformedBy">prov:wasInformedBy</a><sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
   </div>
@@ -63,9 +67,11 @@
     <div class="definition"><p>An agent is a type of entity that bears some form of responsibility for an activity taking place.</p>
     </div>
 
-    <div class="example">
+    <div about="#example-for-class-Agent" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#Agent"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Agent.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Agent.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Agent.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
@@ -80,12 +86,12 @@
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#actedOnBehalfOf" href="#actedOnBehalfOf">prov:actedOnBehalfOf</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#hadQuoter" href="#hadQuoter">prov:hadQuoter</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#agent" href="#agent">prov:agent</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasAssociatedWith" href="#wasAssociatedWith">prov:wasAssociatedWith</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasAttributedTo" href="#wasAttributedTo">prov:wasAttributedTo</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#hadQuoted" href="#hadQuoted">prov:hadQuoted</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#actedOnBehalfOf" href="#actedOnBehalfOf">prov:actedOnBehalfOf</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadQuoter" href="#hadQuoter">prov:hadQuoter</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>has subclasses</dt>
@@ -108,9 +114,11 @@
     <div class="definition"><p>An entity is a thing one wants to provide provenance for. For the purpose of this specification, things can be physical, digital, conceptual, or otherwise; things may be real or imaginary.</p>
     </div>
 
-    <div class="example">
+    <div about="#example-for-class-Entity" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#Entity"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
@@ -119,55 +127,56 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#qualifiedQuotation" href="#qualifiedQuotation">prov:qualifiedQuotation</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedGeneration" href="#qualifiedGeneration">prov:qualifiedGeneration</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedSource" href="#qualifiedSource">prov:qualifiedSource</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasInvalidatedBy" href="#wasInvalidatedBy">prov:wasInvalidatedBy</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedAttribution" href="#qualifiedAttribution">prov:qualifiedAttribution</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom">prov:wasQuotedFrom</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy">prov:wasGeneratedBy</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource">prov:hadOriginalSource</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#alternateOf" href="#alternateOf">prov:alternateOf</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf">prov:wasRevisionOf</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#invalidatedAtTime" href="#invalidatedAtTime">prov:invalidatedAtTime</a><sup class="type-dp" title="data property">dp</sup>
         <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo">prov:tracedTo</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedTrace" href="#qualifiedTrace">prov:qualifiedTrace</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#qualifiedRevision" href="#qualifiedRevision">prov:qualifiedRevision</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasAttributedTo" href="#wasAttributedTo">prov:wasAttributedTo</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom">prov:wasDerivedFrom</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#specializationOf" href="#specializationOf">prov:specializationOf</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedDerivation" href="#qualifiedDerivation">prov:qualifiedDerivation</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#generatedAtTime" href="#generatedAtTime">prov:generatedAtTime</a><sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedDerivation" href="#qualifiedDerivation">prov:qualifiedDerivation</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedGeneration" href="#qualifiedGeneration">prov:qualifiedGeneration</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#specializationOf" href="#specializationOf">prov:specializationOf</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#alternateOf" href="#alternateOf">prov:alternateOf</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedQuotation" href="#qualifiedQuotation">prov:qualifiedQuotation</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedSource" href="#qualifiedSource">prov:qualifiedSource</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasInvalidatedBy" href="#wasInvalidatedBy">prov:wasInvalidatedBy</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedAttribution" href="#qualifiedAttribution">prov:qualifiedAttribution</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom">prov:wasQuotedFrom</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasGeneratedBy" href="#wasGeneratedBy">prov:wasGeneratedBy</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource">prov:hadOriginalSource</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf">prov:wasRevisionOf</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
+        <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo">prov:tracedTo</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom">prov:wasDerivedFrom</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource">prov:hadOriginalSource</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#entity" href="#entity">prov:entity</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#specializationOf" href="#specializationOf">prov:specializationOf</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#generated" href="#generated">prov:generated</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#used" href="#used">prov:used</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#alternateOf" href="#alternateOf">prov:alternateOf</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasStartedBy" href="#wasStartedBy">prov:wasStartedBy</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom">prov:wasQuotedFrom</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource">prov:hadOriginalSource</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#generated" href="#generated">prov:generated</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf">prov:wasRevisionOf</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#tracedTo" href="#tracedTo">prov:tracedTo</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#wasEndedBy" href="#wasEndedBy">prov:wasEndedBy</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#wasDerivedFrom" href="#wasDerivedFrom">prov:wasDerivedFrom</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#entity" href="#entity">prov:entity</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#specializationOf" href="#specializationOf">prov:specializationOf</a><sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#used" href="#used">prov:used</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf">prov:wasRevisionOf</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>has subclasses</dt>
       <dd>
+        <a title="http://www.w3.org/ns/prov#Plan" href="#Plan" class="owlclass">prov:Plan</a>
         <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
         <a title="http://www.w3.org/ns/prov#Account" href="#Account" class="owlclass">prov:Account</a>
-        <a title="http://www.w3.org/ns/prov#Plan" href="#Plan" class="owlclass">prov:Plan</a>
       </dd>
     </dl>
   </div>
 </div>
 <div    id="prov-starting-point-owl-properties-crossreference"
-     class="prov-starting-point owl-properties crossreference">
+     class="prov-starting-point owl-properties crossreference"
+     xmlns:prov="http://www.w3.org/ns/prov#">
   <div id="actedOnBehalfOf" class="entity">
     <h3>
       Property: <a href="#actedOnBehalfOf"><span class="dotted" title="http://www.w3.org/ns/prov#actedOnBehalfOf">prov:actedOnBehalfOf</span></a><sup class="type-op" title="object property">op</sup>
@@ -177,9 +186,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#actedOnBehalfOf</p>
 
-    <div class="example">
+    <div about="#example-for-property-actedOnBehalfOf" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#actedOnBehalfOf"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_actedOnBehalfOf.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_actedOnBehalfOf.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_actedOnBehalfOf.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -239,9 +250,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#endedAtTime</p>
 
-    <div class="example">
+    <div about="#example-for-property-endedAtTime" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#endedAtTime"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_endedAtTime.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_endedAtTime.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_endedAtTime.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -293,9 +306,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#generatedAtTime</p>
 
-    <div class="example">
+    <div about="#example-for-property-generatedAtTime" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#generatedAtTime"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_generatedAtTime.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_generatedAtTime.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_generatedAtTime.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -346,9 +361,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#invalidatedAtTime</p>
 
-    <div class="example">
+    <div about="#example-for-property-invalidatedAtTime" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#invalidatedAtTime"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_invalidatedAtTime.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_invalidatedAtTime.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_invalidatedAtTime.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -399,9 +416,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#startedAtTime</p>
 
-    <div class="example">
+    <div about="#example-for-property-startedAtTime" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#startedAtTime"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_startedAtTime.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_startedAtTime.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_startedAtTime.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -453,9 +472,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#used</p>
 
-    <div class="example">
+    <div about="#example-for-property-used" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#used"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_used.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_used.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_used.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -516,9 +537,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasAssociatedWith</p>
 
-    <div class="example">
+    <div about="#example-for-property-wasAssociatedWith" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#wasAssociatedWith"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasAssociatedWith.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasAssociatedWith.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasAssociatedWith.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -578,9 +601,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasAttributedTo</p>
 
-    <div class="example">
+    <div about="#example-for-property-wasAttributedTo" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#wasAttributedTo"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasAttributedTo.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasAttributedTo.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasAttributedTo.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -640,9 +665,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasDerivedFrom</p>
 
-    <div class="example">
+    <div about="#example-for-property-wasDerivedFrom" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#wasDerivedFrom"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasDerivedFrom.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasDerivedFrom.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasDerivedFrom.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -685,16 +712,16 @@
               <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom" class="owlclass">prov:derivedByInsertionFrom</a>
             </li>
             <li>
-              <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom" class="owlclass">prov:wasQuotedFrom</a>
+              <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom" class="owlclass">prov:derivedByRemovalFrom</a>
             </li>
             <li>
               <a title="http://www.w3.org/ns/prov#hadOriginalSource" href="#hadOriginalSource" class="owlclass">prov:hadOriginalSource</a>
             </li>
             <li>
-              <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf" class="owlclass">prov:wasRevisionOf</a>
+              <a title="http://www.w3.org/ns/prov#wasQuotedFrom" href="#wasQuotedFrom" class="owlclass">prov:wasQuotedFrom</a>
             </li>
             <li>
-              <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom" class="owlclass">prov:derivedByRemovalFrom</a>
+              <a title="http://www.w3.org/ns/prov#wasRevisionOf" href="#wasRevisionOf" class="owlclass">prov:wasRevisionOf</a>
             </li>
           </ul>
         </dd>
@@ -724,9 +751,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasGeneratedBy</p>
 
-    <div class="example">
+    <div about="#example-for-property-wasGeneratedBy" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#wasGeneratedBy"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasGeneratedBy.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasGeneratedBy.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasGeneratedBy.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -787,9 +816,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasInformedBy</p>
 
-    <div class="example">
+    <div about="#example-for-property-wasInformedBy" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#wasInformedBy"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasInformedBy.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasInformedBy.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasInformedBy.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -849,9 +880,11 @@
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#wasStartedByActivity</p>
 
-    <div class="example">
+    <div about="#example-for-property-wasStartedByActivity" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#wasStartedByActivity"></span>
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasStartedByActivity.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasStartedByActivity.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_wasStartedByActivity.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
