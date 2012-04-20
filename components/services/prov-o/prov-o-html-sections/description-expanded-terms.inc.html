@@ -32,14 +32,13 @@ Location??, hadLocation?, wasStartedByActivity?? specializationOf?
 		
         </p>
 
-        <div class="exampleOuter">
+        <div about="#narrative-example-expanded-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
            <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. Agent Derek now publishes a post about
 		   his work with the aggregated file, while Monica publishes an alternate version to reach a more casual audience.
 		   </p> 
 		   
-		   <pre class="example">
-		   {% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}{% endescape %}
-		   </pre> 
+		   <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl"
+              class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}{% endescape %}</pre> 
 		   
 		   <p>
 		   Agent <code>ex:derek</code>, acting again in behalf of the <code>ex:chartgenerators</code> organization, 
@@ -58,13 +57,13 @@ Location??, hadLocation?, wasStartedByActivity?? specializationOf?
 		   and an alternate of the first version modified by Derek. Since the provenance produced by Derek and Monica is related to the same resources, the system
 		   automatically groups it in the same <a href="#Account" class="qname">prov:Account</a> (<code>ex:accountPost</code>).
 		   </p>
-		   <p>
-		   Some time passes by, and John writes his own conclusions quoting the previous two posts:
-		   </p> 
 		   
-		   <pre class="example">
-		   {% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}{% endescape %}
-		   </pre> 
+         <div about="#narrative-example-expanded-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <p>Some time passes by, and John writes his own conclusions quoting the previous two posts:
+            </p> 
+            <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl"
+                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}{% endescape %}</pre> 
+         </div>
 		   
 		   <p>
 		   Agent <code>ex:John</code> also names the URI of the original source (<code>ex:aggregatedByRegions</code>). All the provenance statements related to his post
@@ -74,9 +73,10 @@ Location??, hadLocation?, wasStartedByActivity?? specializationOf?
 		   annotation on the second account (<code>ex:accountPost2</code>), stating at which date the parsing was made.
 		   </p> 		   
 		   
-		   <pre class="example">
-		   {% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt3.ttl" %}{% endescape %}
-		   </pre>
+         <div about="#narrative-example-expanded-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt3.ttl"
+                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt3.ttl" %}{% endescape %}</pre>
+         </div>
  
         </div>
 	  </section>

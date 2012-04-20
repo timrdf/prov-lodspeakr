@@ -15,7 +15,10 @@ that has as members the two key value pairs <code>("k1", :e1)</code>
 and <code>("k2", :e2)</code>.
 </p>
 
-<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/membership.ttl" %}{% endescape %}</pre>
+<div about="#narrative-example-collections-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+   <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-26-provo-collections-narrative/rdf/membership.ttl"
+        class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/membership.ttl" %}{% endescape %}</pre>
+</div>
 
 <p>It is worth noting that <code>:c1</code> MAY also
 have other members (i.e. <code class="repeated">prov:knownMembership</code> is
@@ -38,7 +41,10 @@ the collection <code>:c1</code> was obtained from the empty collection
 :e1)</code> and <code>("k2", :e2)</code>.  
 </p>
 
-<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/insertion.ttl" %}{% endescape %}</pre>
+<div about="#narrative-example-collections-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+<pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-26-provo-collections-narrative/rdf/insertion.ttl"
+     class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/insertion.ttl" %}{% endescape %}</pre>
+</div>
 
 
 	<p>
@@ -48,8 +54,11 @@ the collection <code>:c1</code> was obtained from the empty collection
 	<code>:c2</code>. Thus, <code>:c3</code> does not contain the
 	members <code>("k1", :e1)</code> and <code>("k2",
 	:e2(</code> from <code>:c2</code>.
-
-<pre class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/removal.ttl" %}{% endescape %}</pre>
 	</p>
+
+<div about="#narrative-example-collections-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+   <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-26-provo-collections-narrative/rdf/removal.ttl"
+        class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/removal.ttl" %}{% endescape %}</pre>
+</div>
 
      </section>
