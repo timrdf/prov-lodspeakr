@@ -225,7 +225,7 @@
       <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information specific to different domain applications.
 	  </p>
 
-     <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">here</a>.
+     <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
 	  </p>
     </section>
    
@@ -307,6 +307,8 @@
  
 
 	<section id="cross-reference"> <!-- class='informative' -->
+      <!-- prov:tracedTo [ prov:wasGeneratedBy [ a prov:Activity; 
+           dcterms:description "python eg-24-prov-o-html-examples.py http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl" ] ] ] -->
       <h2>Cross reference for PROV-O classes and properties</h2>
       <p>This section provides details for each class and property defined by the PROV Ontology, grouped by the categories described above:
       </p>     

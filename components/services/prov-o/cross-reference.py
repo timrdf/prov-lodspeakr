@@ -203,11 +203,11 @@ for category in categories.keys():
             cross.write('      <dd>\n')
             for p in owlClass.is_rdfs_domain_of:
                pqname = p.subject.split('#')
-               cross.write('        <a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>\n')
+               cross.write('        <a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
                if ns.OWL['DatatypeProperty'] in p.rdf_type:
-                  cross.write('        <sup class="type-dp" title="data property">dp</sup>\n')
+                  cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
                else:
-                  cross.write('        <sup class="type-op" title="object property">op</sup>\n')
+                  cross.write('<sup class="type-op" title="object property">op</sup>\n')
             cross.write('      </dd>\n')
 
          # ?p rdfs:range class
@@ -217,11 +217,11 @@ for category in categories.keys():
             cross.write('      <dd>\n')
             for p in owlClass.is_rdfs_range_of:
                pqname = p.subject.split('#')
-               cross.write('        <a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>\n')
+               cross.write('        <a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
                if ns.OWL['DatatypeProperty'] in p.rdf_type:
-                  cross.write('        <sup class="type-dp" title="data property">dp</sup>\n')
+                  cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
                else:
-                  cross.write('        <sup class="type-op" title="object property">op</sup>\n')
+                  cross.write('<sup class="type-op" title="object property">op</sup>\n')
             cross.write('      </dd>\n')
 
          # ?sub rdfs:subClassOf class
@@ -266,11 +266,11 @@ for category in categories.keys():
          qname = property.subject.split('#')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
-         cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
+         cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>')
          if ns.OWL['DatatypeProperty'] in property.rdf_type:
-            cross.write('      <sup class="type-dp" title="data property">dp</sup>\n')
+            cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
          else:
-            cross.write('      <sup class="type-op" title="object property">op</sup>\n')
+            cross.write('<sup class="type-op" title="object property">op</sup>\n')
          cross.write('      <span class="backlink">\n')
          cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-properties-at-a-glance">'+category+' properties</a>\n')
          cross.write('      </span>\n')

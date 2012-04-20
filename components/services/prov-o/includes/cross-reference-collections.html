@@ -1,26 +1,26 @@
 <div    id="prov-collections-owl-classes-crossreference"
      class="prov-collections owl-classes crossreference">
 
-  <div id="Collection" class="entity">
+  <div id="Dictionary" class="entity">
     <h3>
-      Class: <a href="#Collection"><span class="dotted" title="http://www.w3.org/ns/prov#Collection">prov:Collection</span></a>
+      Class: <a href="#Dictionary"><span class="dotted" title="http://www.w3.org/ns/prov#Dictionary">prov:Dictionary</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Collection</p>
-    <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Dictionary</p>
+    <div class="definition"><p>A dictionary is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the dictionary.</p>
     </div>
 
     <div class="example">
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Collection.ttl"%}{% endescape %}</pre>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Dictionary.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
-    <div class="comment"><p>This concept allows for the provenance of the collection, but also of its constituents to be expressed. Such a notion of collection corresponds to a wide variety of concrete data structures, such as a maps, dictionaries, or associative arrays.</p>
+    <div class="comment"><p>This concept allows for the provenance of the dictionary, but also of its constituents to be expressed. Such a notion of dictionary corresponds to a wide variety of concrete data structures, such as a maps or associative arrays.</p>
     </div>
-    <div class="comment"><p>A given collection forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different collection.</p>
+    <div class="comment"><p>A given dictionary forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different dictionary.</p>
     </div>
 
       <dt>is subclass of</dt>
@@ -30,51 +30,43 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom">prov:derivedByInsertionFrom</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedRemoval" href="#qualifiedRemoval">prov:qualifiedRemoval</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom">prov:derivedByInsertionFrom</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedRemoval" href="#qualifiedRemoval">prov:qualifiedRemoval</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom">prov:derivedByInsertionFrom</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#collection" href="#collection">prov:collection</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom">prov:derivedByInsertionFrom</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#dictionary" href="#dictionary">prov:dictionary</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>has subclass</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#EmptyCollection" href="#EmptyCollection" class="owlclass">prov:EmptyCollection</a>
+        <a title="http://www.w3.org/ns/prov#EmptyDictionary" href="#EmptyDictionary" class="owlclass">prov:EmptyDictionary</a>
       </dd>
     </dl>
   </div>
 
-  <div id="CollectionInvolvement" class="entity">
+  <div id="DictionaryInvolvement" class="entity">
     <h3>
-      Class: <a href="#CollectionInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#CollectionInvolvement">prov:CollectionInvolvement</span></a>
+      Class: <a href="#DictionaryInvolvement"><span class="dotted" title="http://www.w3.org/ns/prov#DictionaryInvolvement">prov:DictionaryInvolvement</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#CollectionInvolvement</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#DictionaryInvolvement</p>
 
     <div class="example">
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CollectionInvolvement.ttl"%}{% endescape %}</pre>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_DictionaryInvolvement.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
-    <div class="comment"><p>prov:CollectionInvolvement provides descriptions of any binary involvement between any instance and a prov:Collection.</p>
+    <div class="comment"><p>prov:DictionaryInvolvement provides descriptions of any binary involvement between any instance and a prov:Dictionary.</p>
     </div>
 
       <dt>is subclass of</dt>
@@ -84,8 +76,7 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#collection" href="#collection">prov:collection</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#dictionary" href="#dictionary">prov:dictionary</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>has subclasses</dt>
@@ -96,27 +87,27 @@
     </dl>
   </div>
 
-  <div id="EmptyCollection" class="entity">
+  <div id="EmptyDictionary" class="entity">
     <h3>
-      Class: <a href="#EmptyCollection"><span class="dotted" title="http://www.w3.org/ns/prov#EmptyCollection">prov:EmptyCollection</span></a>
+      Class: <a href="#EmptyDictionary"><span class="dotted" title="http://www.w3.org/ns/prov#EmptyDictionary">prov:EmptyDictionary</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#EmptyCollection</p>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#EmptyDictionary</p>
 
     <div class="example">
       <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyCollection.ttl"%}{% endescape %}</pre>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyDictionary.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
-    <div class="comment"><p>An empty collection.</p>
+    <div class="comment"><p>An empty dictionary.</p>
     </div>
 
       <dt>is subclass of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+        <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
       </dd>
     </dl>
   </div>
@@ -129,7 +120,7 @@
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Insertion</p>
-    <div class="definition"><p>Insertion is a derivation that transforms a collection into another, by insertion of one or more key-value pairs.</p>
+    <div class="definition"><p>Insertion is a derivation that transforms a dictionary into another, by insertion of one or more key-value pairs.</p>
     </div>
 
     <div class="example">
@@ -138,24 +129,22 @@
     </div>
 
     <dl class="description">
-    <div class="comment"><p>Insertion is a derivation that transforms a collection into another, by insertion of one or more key-value pairs.</p>
+    <div class="comment"><p>Insertion is a derivation that transforms a dictionary into another, by insertion of one or more key-value pairs.</p>
     </div>
 
       <dt>is subclass of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
+        <a title="http://www.w3.org/ns/prov#DictionaryInvolvement" href="#DictionaryInvolvement" class="owlclass">prov:DictionaryInvolvement</a>
       </dd>
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>qualifies</dt>
@@ -185,18 +174,14 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a>
-        <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#value" href="#value">prov:value</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#key" href="#key">prov:key</a><sup class="type-dp" title="data property">dp</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>
-        <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a><sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
   </div>
@@ -221,14 +206,12 @@
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>qualifies</dt>
@@ -246,7 +229,7 @@
       </span>
     </h3>
     <p><strong>IRI:</strong> http://www.w3.org/ns/prov#Removal</p>
-    <div class="definition"><p>Removal is a derivation that transforms a collection into another, by removing one or more key-value pairs.</p>
+    <div class="definition"><p>Removal is a derivation that transforms a dictionary into another, by removing one or more key-value pairs.</p>
     </div>
 
     <div class="example">
@@ -255,24 +238,22 @@
     </div>
 
     <dl class="description">
-    <div class="comment"><p>Removal is a derivation that transforms a collection into another, by removing one or more key-value pairs.</p>
+    <div class="comment"><p>Removal is a derivation that transforms a dictionary into another, by removing one or more key-value pairs.</p>
     </div>
 
       <dt>is subclass of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
+        <a title="http://www.w3.org/ns/prov#DictionaryInvolvement" href="#DictionaryInvolvement" class="owlclass">prov:DictionaryInvolvement</a>
       </dd>
 
       <dt>in domain of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#removedKey" href="#removedKey">prov:removedKey</a>
-        <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#removedKey" href="#removedKey">prov:removedKey</a><sup class="type-dp" title="data property">dp</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#qualifiedRemoval" href="#qualifiedRemoval">prov:qualifiedRemoval</a>
-        <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#qualifiedRemoval" href="#qualifiedRemoval">prov:qualifiedRemoval</a><sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>qualifies</dt>
@@ -284,61 +265,9 @@
 </div>
 <div    id="prov-collections-owl-properties-crossreference"
      class="prov-collections owl-properties crossreference">
-  <div id="collection" class="entity">
-    <h3>
-      Property: <a href="#collection"><span class="dotted" title="http://www.w3.org/ns/prov#collection">prov:collection</span></a>
-      <sup class="type-op" title="object property">op</sup>
-      <span class="backlink">
-         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
-      </span>
-    </h3>
-    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#collection</p>
-
-    <div class="example">
-      <strong>Example</strong>
-      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_collection.ttl"%}{% endescape %}</pre>
-    </div>
-
-    <div class="description">
-      <div class="comment"><p>The property used by a prov:CollectionInvolvement to cite the prov:Collection that was prov:involved in insertion or removal of elements of a collection. </p>
-      </div>
-      <dl>
-
-        <dt>has super-properties</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a>
-            </li>
-          </ul>
-        </dd>
-
-        <dt>has domain</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#CollectionInvolvement" href="#CollectionInvolvement" class="owlclass">prov:CollectionInvolvement</a>
-            </li>
-          </ul>
-        </dd>
-
-        <dt>has range</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
-            </li>
-          </ul>
-        </dd>
-
-      </dl>
-    </div>
-  </div>
-
   <div id="derivedByInsertionFrom" class="entity">
     <h3>
-      Property: <a href="#derivedByInsertionFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByInsertionFrom">prov:derivedByInsertionFrom</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#derivedByInsertionFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByInsertionFrom">prov:derivedByInsertionFrom</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -351,7 +280,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>The collection was derived from the other by insertion. prov:qualifiedInsertion shows details of the insertion, in particular the inserted key-value pairs.</p>
+      <div class="comment"><p>The dictionary was derived from the other by insertion. prov:qualifiedInsertion shows details of the insertion, in particular the inserted key-value pairs.</p>
       </div>
       <dl>
 
@@ -368,7 +297,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -377,7 +306,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -400,8 +329,7 @@
 
   <div id="derivedByRemovalFrom" class="entity">
     <h3>
-      Property: <a href="#derivedByRemovalFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByRemovalFrom">prov:derivedByRemovalFrom</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#derivedByRemovalFrom"><span class="dotted" title="http://www.w3.org/ns/prov#derivedByRemovalFrom">prov:derivedByRemovalFrom</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -414,7 +342,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>The collection was derived from the other by removal. prov:qualifiedRemoval shows details of the removal, in particular the removed key-value pairs.</p>
+      <div class="comment"><p>The dictionary was derived from the other by removal. prov:qualifiedRemoval shows details of the removal, in particular the removed key-value pairs.</p>
       </div>
       <dl>
 
@@ -431,7 +359,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -440,7 +368,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -461,10 +389,59 @@
     </div>
   </div>
 
+  <div id="dictionary" class="entity">
+    <h3>
+      Property: <a href="#dictionary"><span class="dotted" title="http://www.w3.org/ns/prov#dictionary">prov:dictionary</span></a><sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#dictionary</p>
+
+    <div class="example">
+      <strong>Example</strong>
+      <pre>{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_dictionary.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <div class="comment"><p>The property used by a prov:DictionaryInvolvement to cite the prov:Dictionary that was prov:involved in insertion or removal of elements of a collection. </p>
+      </div>
+      <dl>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#DictionaryInvolvement" href="#DictionaryInvolvement" class="owlclass">prov:DictionaryInvolvement</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
+            </li>
+          </ul>
+        </dd>
+
+      </dl>
+    </div>
+  </div>
+
   <div id="inserted" class="entity">
     <h3>
-      Property: <a href="#inserted"><span class="dotted" title="http://www.w3.org/ns/prov#inserted">prov:inserted</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#inserted"><span class="dotted" title="http://www.w3.org/ns/prov#inserted">prov:inserted</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -505,8 +482,7 @@
 
   <div id="key" class="entity">
     <h3>
-      Property: <a href="#key"><span class="dotted" title="http://www.w3.org/ns/prov#key">prov:key</span></a>
-      <sup class="type-dp" title="data property">dp</sup>
+      Property: <a href="#key"><span class="dotted" title="http://www.w3.org/ns/prov#key">prov:key</span></a><sup class="type-dp" title="data property">dp</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -548,8 +524,7 @@
 
   <div id="member" class="entity">
     <h3>
-      Property: <a href="#member"><span class="dotted" title="http://www.w3.org/ns/prov#member">prov:member</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#member"><span class="dotted" title="http://www.w3.org/ns/prov#member">prov:member</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -590,8 +565,7 @@
 
   <div id="membership" class="entity">
     <h3>
-      Property: <a href="#membership"><span class="dotted" title="http://www.w3.org/ns/prov#membership">prov:membership</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#membership"><span class="dotted" title="http://www.w3.org/ns/prov#membership">prov:membership</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -612,7 +586,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -632,8 +606,7 @@
 
   <div id="qualifiedInsertion" class="entity">
     <h3>
-      Property: <a href="#qualifiedInsertion"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedInsertion">prov:qualifiedInsertion</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#qualifiedInsertion"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedInsertion">prov:qualifiedInsertion</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -646,7 +619,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>If this Collection prov:derivedByInsertionFrom another Collection :e, then it can qualify how it did perform the Insertion using prov:qualifiedInsertion [ a prov:Insertion;  prov:collection :e; prov:inserted [a prov:KeyValuePair; prov:key "k1"^^xsd:string; prov:value :foo] ].</p>
+      <div class="comment"><p>If this Dictionary prov:derivedByInsertionFrom another Dictionary :e, then it can qualify how it did perform the Insertion using prov:qualifiedInsertion [ a prov:Insertion;  prov:dictionary :e; prov:inserted [a prov:KeyValuePair; prov:key "k1"^^xsd:string; prov:value :foo] ].</p>
       </div>
       <dl>
 
@@ -654,7 +627,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -679,8 +652,7 @@
 
   <div id="qualifiedRemoval" class="entity">
     <h3>
-      Property: <a href="#qualifiedRemoval"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRemoval">prov:qualifiedRemoval</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#qualifiedRemoval"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRemoval">prov:qualifiedRemoval</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -693,7 +665,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>If this Collection prov:derivedByRemovalFrom another Collection :e, then it can qualify how it did perform the Removal using prov:qualifiedRemoval [ a prov:Removal;  prov:collection :c; prov:removed "k1"^^xsd:string ].</p>
+      <div class="comment"><p>If this Dictionary prov:derivedByRemovalFrom another Dictionary :e, then it can qualify how it did perform the Removal using prov:qualifiedRemoval [ a prov:Removal;  prov:dictionary :c; prov:removed "k1"^^xsd:string ].</p>
       </div>
       <dl>
 
@@ -701,7 +673,7 @@
         <dd>
           <ul>
             <li>
-              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
             </li>
           </ul>
         </dd>
@@ -726,8 +698,7 @@
 
   <div id="removedKey" class="entity">
     <h3>
-      Property: <a href="#removedKey"><span class="dotted" title="http://www.w3.org/ns/prov#removedKey">prov:removedKey</span></a>
-      <sup class="type-dp" title="data property">dp</sup>
+      Property: <a href="#removedKey"><span class="dotted" title="http://www.w3.org/ns/prov#removedKey">prov:removedKey</span></a><sup class="type-dp" title="data property">dp</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
@@ -768,8 +739,7 @@
 
   <div id="value" class="entity">
     <h3>
-      Property: <a href="#value"><span class="dotted" title="http://www.w3.org/ns/prov#value">prov:value</span></a>
-      <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#value"><span class="dotted" title="http://www.w3.org/ns/prov#value">prov:value</span></a><sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-properties-at-a-glance">collections properties</a>
       </span>
