@@ -515,8 +515,13 @@ for category in categories.keys():
                         objectProp = 'agent' 
                      elif ( qname[1]  == 'CollectionInvolvement' ):
                         objectProp = 'collection' 
+                     elif ( qname[1]  == 'DictionaryInvolvement' ):
+                        objectProp = 'collection' 
                else:
-                  qualProp  = qualified                           # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
+                  if "qualified" in qualified.subject:
+                     qualProp  = qualified                           # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
+                  else:
+                     qualProp = 'no' # Avoiding prov:startedAtTime, prov:atTime, prov:Start, null
             if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
                quals.write('  <tr>\n')
                qname = property.subject.split('#')
