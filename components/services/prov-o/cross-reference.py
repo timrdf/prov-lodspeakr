@@ -182,8 +182,8 @@ for category in categories.keys():
          cross.write('    <dl class="description">\n')
          # class rdfs:comment
          for comment in owlClass.rdfs_comment:
-            cross.write('    <div class="comment"><p>'+comment+'</p>\n')
-            cross.write('    </div>\n')
+            cross.write('    <dd class="comment"><p>'+comment+'</p>\n')
+            cross.write('    </dd>\n')
 
          # class prov:component ?component
          if len(owlClass.prov_component) > 0 and False:
