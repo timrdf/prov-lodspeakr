@@ -3,6 +3,33 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:prov="http://www.w3.org/ns/prov#">
 
+  <div id="CompleteMembership" class="entity">
+    <h3>
+      Class: <a href="#CompleteMembership"><span class="dotted" title="http://www.w3.org/ns/prov#CompleteMembership">prov:CompleteMembership</span></a>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-classes-at-a-glance">collections classes</a>
+      </span>
+    </h3>
+    <p><strong>IRI:</strong> http://www.w3.org/ns/prov#CompleteMembership</p>
+
+    <div about="#example-for-class-CompleteMembership" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#CompleteMembership"></span>
+      <strong>Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CompleteMembership.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CompleteMembership.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <dl class="description">
+    <div class="comment"><p>Indicates that no other member belongs to the collection, that is all the prov:member stated for this CompleteMembership constitutes all members of the collection.</p>
+    </div>
+
+      <dt>is subclass of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
+      </dd>
+    </dl>
+  </div>
+
   <div id="Dictionary" class="entity">
     <h3>
       Class: <a href="#Dictionary"><span class="dotted" title="http://www.w3.org/ns/prov#Dictionary">prov:Dictionary</span></a>
@@ -192,8 +219,8 @@
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a><sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a><sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a><sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
   </div>
@@ -226,6 +253,11 @@
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a><sup class="type-op" title="object property">op</sup>
+      </dd>
+
+      <dt>has subclass</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#CompleteMembership" href="#CompleteMembership" class="owlclass">prov:CompleteMembership</a>
       </dd>
 
       <dt>qualifies</dt>
