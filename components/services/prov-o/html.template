@@ -264,17 +264,25 @@
       <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into four categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections.
       </p>
       <p><strong>Starting Point classes and properties</strong> provide the basis for the rest of the PROV Ontology and thus it is recommended that readers become comfortable with how to apply these terms before continuing to the remaining categories. These terms are used to create simple provenance descriptions that can be elaborated using terms from other categories. The classes and properties in this category are listed below and are discussed in <a href="#description-starting-point-terms">Section 3.1</a>.</p>
+      <div id="prov-starting-point-owl-classes-at-a-glance">
       {% include "includes/at-a-glance-starting-point.html" %}
+      </div>
 
       <p><strong>Expanded classes and properties</strong> provide additional terms that can be used to relate classes in the Starting Point category. The terms in this category are applied in the same way as the terms in the Starting Point category. Many of the terms in this category are subclasses or subproperties of those in the Starting Point category. The classes and properties in this category are listed below and are discussed in <a href="#description-expanded-terms">Section 3.2</a>.</p>
+      <div    id="prov-expanded-owl-classes-at-a-glance">
       {% include "includes/at-a-glance-expanded.html" %}
+      </div>
 
       <p><strong>Qualified classes and properties</strong> provide elaborated information about binary relations asserted using Starting Point and Expanded properties. The terms in this category are applied using a pattern that differs from those in the Starting Point and Expanded categories. While the relations from the previous two categories are applied as direct, binary assertions, the terms in this category are used to provide additional attributes of the binary relations. The pattern used in this category allows users to provide elaborate details that are not available using only Starting Point and Expanded terms. The classes and properties in this category are listed below and are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
+      <div    id="prov-qualified-owl-classes-at-a-glance">
       {% include "includes/at-a-glance-qualified.html" %}
+      </div>
 
       <!-- Khalid's desired take away: Relations between the starting point classes can be specified using the starting object properties. However, in certain cases, users may want to provide elaborated information about such relations. Qualified classes and properties provides users with the means to do so. -->
       <p><strong>Collection classes and properties</strong> are specializations of the Starting Point and Qualified terms that describe the provenance of collections as key-value pairs that are inserted and removed to create new collections. The classes and properties in this category are listed below and are discussed in <a href="#description-collections">Section 3.4</a>.</p>
+      <div    id="prov-collections-owl-classes-at-a-glance">
       {% include "includes/at-a-glance-collections.html" %}
+      </div>
 
       <div>
       {% for row in models.uncategorized %}

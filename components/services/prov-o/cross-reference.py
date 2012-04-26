@@ -83,7 +83,7 @@ for category in categories.keys():
 
       # Classes # # # # # # # # # # # # # # # # #
       glance.write('\n')
-      glance.write('<div    id="'+PREFIX+'-'+category+'-owl-classes-at-a-glance"\n')
+      glance.write('<div\n') # We want to include in multiple places: id="'+PREFIX+'-'+category+'-owl-classes-at-a-glance"\n')
       glance.write('     class="'+PREFIX+'-'+category+' owl-classes at-a-glance">\n')
       glance.write('  <ul class="hlist">\n')
 
@@ -107,7 +107,7 @@ for category in categories.keys():
 
       # Properties # # # # # # # # # # # # # # # # #
       glance.write('\n')
-      glance.write('<div    id="'+PREFIX+'-'+category+'-owl-properties-at-a-glance"\n')
+      glance.write('<div\n') # We want to include in multiple places: id="'+PREFIX+'-'+category+'-owl-properties-at-a-glance"\n')
       glance.write('     class="'+PREFIX+'-'+category+' owl-properties at-a-glance">\n')
       glance.write('  <ul class="hlist">\n')
 
@@ -140,7 +140,7 @@ for category in categories.keys():
 
       # Classes # # # # # # # # # # # # # # # # #
       # cross-reference
-      cross.write('<div    id="'+PREFIX+'-'+category+'-owl-classes-crossreference"\n')
+      cross.write('<div\n') # We want to include it multiple times: id="'+PREFIX+'-'+category+'-owl-classes-crossreference"\n')
       cross.write('     class="'+PREFIX+'-'+category+' owl-classes crossreference"\n')
       cross.write('     xmlns:dcterms="http://purl.org/dc/terms/"\n')
       cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
@@ -263,7 +263,7 @@ for category in categories.keys():
 
       # Properties # # # # # # # # # # # # # # # # #
       # cross-reference
-      cross.write('<div    id="'+PREFIX+'-'+category+'-owl-properties-crossreference"\n')
+      cross.write('<div\n') # We want to include it multiple times: id="'+PREFIX+'-'+category+'-owl-properties-crossreference"\n')
       cross.write('     class="'+PREFIX+'-'+category+' owl-properties crossreference"\n')
       cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
       for uri in ordered['properties']:
