@@ -12,12 +12,13 @@ popd &> /dev/null
 if [ ! -d ../../../static/prov-o-lode ]; then
    mkdir ../../../static/prov-o-lode
 fi
-pushd ../../../static/prov-o-lode
-   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/owl.css'
-   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/Primer.css'
-   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/rec.css'
-   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/extra.css'
-popd &> /dev/null
+# Pasted these into html.template
+#pushd ../../../static/prov-o-lode
+#   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/owl.css'
+#   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/Primer.css'
+#   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/rec.css'
+#   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/extra.css'
+#popd &> /dev/null
 
 if [ ! -d prov-o-html-sections ]; then
    mkdir prov-o-html-sections
