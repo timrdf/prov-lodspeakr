@@ -6,7 +6,7 @@
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
 
     <style type="text/css">
-      /* <> prov:wasQuotedFrom <http://speronitomcat.web.cs.unibo.it:8080/LODE/owl.css> */
+      /* prov:wasQuotedFrom http://speronitomcat.web.cs.unibo.it:8080/LODE/owl.css */
       .RFC2119 {
         text-transform: lowercase;
         font-style: italic;
@@ -248,7 +248,7 @@
     </style>
 
     <style type="text/css">
-      /* <> prov:wasQuotedFrom <http://speronitomcat.web.cs.unibo.it:8080/LODE/Primer.css> . */
+      /* prov:wasQuotedFrom http://speronitomcat.web.cs.unibo.it:8080/LODE/Primer.css . */
 
       /* define a class "noprint" for sections which don't get printed */  
       .noprint { display: none; }
@@ -298,7 +298,7 @@
     </style>
 
     <style type="text/css">
-      /* <> prov:wasDerivedFrom <http://speronitomcat.web.cs.unibo.it:8080/LODE/rec.css> . */
+      /* prov:wasDerivedFrom http://speronitomcat.web.cs.unibo.it:8080/LODE/rec.css . */
 
       /* Style for a "Recommendation" */
 
@@ -388,7 +388,7 @@
     </style>
 
     <style type="text/css">
-      /* <> prov:wasQuotedFrom <http://speronitomcat.web.cs.unibo.it:8080/LODE/extra.css> . */
+      /* prov:wasQuotedFrom http://speronitomcat.web.cs.unibo.it:8080/LODE/extra.css . */
 
       body {
           text-align: justify;    
