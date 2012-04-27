@@ -865,7 +865,7 @@
          {% include "includes/cross-reference-starting-point.html" %}
       </section>
 
-      <section id="cross-reference-additional-terms">
+      <section id="cross-reference-expanded-terms">
          <h3>Expanded Terms</h3>
          <p>The additional terms used to describe relations among Starting Point classes are discussed in <a href="#description-expanded-terms">Section 3.2</a>.</p>
          {% include "includes/at-a-glance-expanded.html" %}
