@@ -809,7 +809,8 @@
       </div>
 
       <!-- Khalid's desired take away: Relations between the starting point classes can be specified using the starting object properties. However, in certain cases, users may want to provide elaborated information about such relations. Qualified classes and properties provides users with the means to do so. -->
-      <p><strong>Collection classes and properties</strong> are specializations of the Starting Point and Qualified terms that describe the provenance of collections as key-value pairs that are inserted and removed to create new collections. The classes and properties in this category are listed below and are discussed in <a href="#description-collections">Section 3.4</a>.</p>
+      <p><strong>Collection classes and properties</strong> are specializations of the Starting Point and Qualified terms that describe the provenance of collections as key-value pairs that are inserted and removed to create new collections. 
+      The classes and properties in this category are listed below and are discussed in <a href="#description-collections-terms">Section 3.4</a>.</p>
       <div    id="prov-collections-owl-terms-at-a-glance">
       {% include "includes/at-a-glance-collections.html" %}
       </div>
