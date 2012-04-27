@@ -832,7 +832,7 @@
          <li><a href="#description-starting-point-terms">Starting Point Terms</a></li>
          <li><a href="#description-expanded-terms">Expanded Terms</a></li>
          <li><a href="#description-qualified-terms">Qualified Terms</a></li>
-         <li><a href="#description-collections-terms">Collections Terms</a></li>
+         <li><a href="#description-collections-terms">Dictionary Terms</a></li>
       </ul>
 
 {% include "prov-o-html-sections/description-starting-points.inc.html" %}
@@ -854,7 +854,7 @@
          <li><a href="#cross-reference-starting-point-terms">Starting Point Terms</a></li>
          <li><a href="#cross-reference-expanded-terms">Expanded Terms</a></li>
          <li><a href="#cross-reference-qualified-terms">Qualified Terms</a></li>
-         <li><a href="#cross-reference-collection-terms">Collections Terms</a></li>
+         <li><a href="#cross-reference-collection-terms">Dictionary Terms</a></li>
       </ul>
 
       <section id="cross-reference-starting-point-terms">
@@ -879,7 +879,7 @@
       </section>
 
       <section id="cross-reference-collection-terms">
-         <h3>Collections Terms</h3>
+         <h3>Dictionary Terms</h3>
          <p>The terms used to describe the provenance of collections of key-value pairs are discussed in <a href="#description-collections">Section 3.4</a>.</p>
          {% include "includes/at-a-glance-collections.html" %}
          {% include "includes/cross-reference-collections.html" %}
