@@ -656,7 +656,7 @@
           previousMaturity:  "FPWD",
 
           // if there a publicly available Editor's Draft, this is the link
-          edDraftURI:           "http://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
+          edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2009-08-05",
@@ -732,7 +732,7 @@
       <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information specific to different domain applications.
 	  </p>
 
-     <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
+     <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
 	  </p>
     </section>
    
@@ -879,7 +879,7 @@
       </section>
 
       <section id="cross-reference-collection-terms">
-         <h3>Dictionary Terms</h3>
+         <h3>Collection Terms</h3>
          <p>The terms used to describe the provenance of collections of key-value pairs are discussed in <a href="#description-collections">Section 3.4</a>.</p>
          {% include "includes/at-a-glance-collections.html" %}
          {% include "includes/cross-reference-collections.html" %}
