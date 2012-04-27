@@ -609,9 +609,9 @@
 
 		"PROV-PAQ":
           "Graham Klyne and Paul Groth "+
-          "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\"><cite>Provenance Access and Query</cite></a>. "+
+          "<a href=\"https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\"><cite>Provenance Access and Query</cite></a>. "+
           "2011, Work in progress. "+
-          "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\">http://dvcs.w3.org/hg/prov/tip/paq/prov-aq.html</a>",
+          "URL: <a href=\"https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\">https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html</a>",
 
         "PROV-PRIMER":
           "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
@@ -792,24 +792,25 @@
 
       <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into four categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections.
       </p>
-      <p><strong>Starting Point classes and properties</strong> provide the basis for the rest of the PROV Ontology and thus it is recommended that readers become comfortable with how to apply these terms before continuing to the remaining categories. These terms are used to create simple provenance descriptions that can be elaborated using terms from other categories. The classes and properties in this category are listed below and are discussed in <a href="#description-starting-point-terms">Section 3.1</a>.</p>
-      <div id="prov-starting-point-owl-classes-at-a-glance">
-      {% include "includes/at-a-glance-starting-point.html" %}
+
+      <div id="prov-starting-point-owl-terms-at-a-glance">
+         <p><strong>Starting Point classes and properties</strong> provide the basis for the rest of the PROV Ontology and thus it is recommended that readers become comfortable with how to apply these terms before continuing to the remaining categories. These terms are used to create simple provenance descriptions that can be elaborated using terms from other categories. The classes and properties in this category are listed below and are discussed in <a href="#description-starting-point-terms">Section 3.1</a>.</p>
+         {% include "includes/at-a-glance-starting-point.html" %}
       </div>
 
-      <p><strong>Expanded classes and properties</strong> provide additional terms that can be used to relate classes in the Starting Point category. The terms in this category are applied in the same way as the terms in the Starting Point category. Many of the terms in this category are subclasses or subproperties of those in the Starting Point category. The classes and properties in this category are listed below and are discussed in <a href="#description-expanded-terms">Section 3.2</a>.</p>
-      <div    id="prov-expanded-owl-classes-at-a-glance">
-      {% include "includes/at-a-glance-expanded.html" %}
+      <div    id="prov-expanded-owl-terms-at-a-glance">
+         <p><strong>Expanded classes and properties</strong> provide additional terms that can be used to relate classes in the Starting Point category. The terms in this category are applied in the same way as the terms in the Starting Point category. Many of the terms in this category are subclasses or subproperties of those in the Starting Point category. The classes and properties in this category are listed below and are discussed in <a href="#description-expanded-terms">Section 3.2</a>.</p>
+         {% include "includes/at-a-glance-expanded.html" %}
       </div>
 
-      <p><strong>Qualified classes and properties</strong> provide elaborated information about binary relations asserted using Starting Point and Expanded properties. The terms in this category are applied using a pattern that differs from those in the Starting Point and Expanded categories. While the relations from the previous two categories are applied as direct, binary assertions, the terms in this category are used to provide additional attributes of the binary relations. The pattern used in this category allows users to provide elaborate details that are not available using only Starting Point and Expanded terms. The classes and properties in this category are listed below and are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
-      <div    id="prov-qualified-owl-classes-at-a-glance">
-      {% include "includes/at-a-glance-qualified.html" %}
+      <div    id="prov-qualified-owl-terms-at-a-glance">
+         <p><strong>Qualified classes and properties</strong> provide elaborated information about binary relations asserted using Starting Point and Expanded properties. The terms in this category are applied using a pattern that differs from those in the Starting Point and Expanded categories. While the relations from the previous two categories are applied as direct, binary assertions, the terms in this category are used to provide additional attributes of the binary relations. The pattern used in this category allows users to provide elaborate details that are not available using only Starting Point and Expanded terms. The classes and properties in this category are listed below and are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
+         {% include "includes/at-a-glance-qualified.html" %}
       </div>
 
       <!-- Khalid's desired take away: Relations between the starting point classes can be specified using the starting object properties. However, in certain cases, users may want to provide elaborated information about such relations. Qualified classes and properties provides users with the means to do so. -->
       <p><strong>Collection classes and properties</strong> are specializations of the Starting Point and Qualified terms that describe the provenance of collections as key-value pairs that are inserted and removed to create new collections. The classes and properties in this category are listed below and are discussed in <a href="#description-collections">Section 3.4</a>.</p>
-      <div    id="prov-collections-owl-classes-at-a-glance">
+      <div    id="prov-collections-owl-terms-at-a-glance">
       {% include "includes/at-a-glance-collections.html" %}
       </div>
 
@@ -866,21 +867,21 @@
 
       <section id="cross-reference-additional-terms">
          <h3>Expanded Terms</h3>
-         <p>The additional terms used to describe relations among Starting Point classes are discussed in <a href="#description-expanded">Section 3.2</a>.</p>
+         <p>The additional terms used to describe relations among Starting Point classes are discussed in <a href="#description-expanded-terms">Section 3.2</a>.</p>
          {% include "includes/at-a-glance-expanded.html" %}
          {% include "includes/cross-reference-expanded.html" %}
       </section>
 
       <section id="cross-reference-qualified-terms">
          <h3>Qualified Terms</h3>
-         <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified">Section 3.3</a>.</p>
+         <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
          {% include "includes/at-a-glance-qualified.html" %}
          {% include "includes/cross-reference-qualified.html" %}
       </section>
 
       <section id="cross-reference-collection-terms">
          <h3>Collection Terms</h3>
-         <p>The terms used to describe the provenance of collections of key-value pairs are discussed in <a href="#description-collections">Section 3.4</a>.</p>
+         <p>The terms used to describe the provenance of collections of key-value pairs are discussed in <a href="#description-collections-terms">Section 3.4</a>.</p>
          {% include "includes/at-a-glance-collections.html" %}
          {% include "includes/cross-reference-collections.html" %}
       </section>

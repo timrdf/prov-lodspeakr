@@ -153,7 +153,7 @@ for category in categories.keys():
          cross.write('      Class: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
          cross.write('      <span class="backlink">\n')
          #cross.write('         back to <a href="#toc">ToC</a> or\n')
-         cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-classes-at-a-glance">'+category+' classes</a>\n')
+         cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-terms-at-a-glance">'+category+' classes</a>\n')
          cross.write('      </span>\n')
          cross.write('    </h3>\n')
 
@@ -281,7 +281,7 @@ for category in categories.keys():
          else:
             cross.write('<sup class="type-op" title="object property">op</sup>\n')
          cross.write('      <span class="backlink">\n')
-         cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-properties-at-a-glance">'+category+' properties</a>\n')
+         cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-terms-at-a-glance">'+category+' properties</a>\n')
          cross.write('      </span>\n')
          cross.write('    </h3>\n')
 
