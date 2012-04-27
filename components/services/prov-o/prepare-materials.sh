@@ -34,9 +34,10 @@ if [ ! -d includes ]; then
    mkdir includes
 fi
 pushd includes
-   #curl -sO http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl
-   .././cross-reference.py http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl ProvenanceOntology.owl prov
+   owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl"
+   #owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl"
+   curl -sO $owlURLversion
+   .././cross-reference.py $owlURLversion ProvenanceOntology.owl prov
  
    touch beforefetch
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-9-provrdf-owl-coverage/rdf/create/rdf/eg-9-provrdf-owl-coverage.html.ttl
