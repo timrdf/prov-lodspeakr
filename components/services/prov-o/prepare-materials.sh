@@ -9,9 +9,9 @@ pushd ../../../static/prov-o-diagrams
    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Starting-points-terms.png
 popd &> /dev/null
 
-if [ ! -d ../../../static/prov-o-lode ]; then
-   mkdir ../../../static/prov-o-lode
-fi
+#if [ ! -d ../../../static/prov-o-lode ]; then
+#   mkdir ../../../static/prov-o-lode
+#fi
 # Pasted these into html.template
 #pushd ../../../static/prov-o-lode
 #   curl -sO 'http://speronitomcat.web.cs.unibo.it:8080/LODE/owl.css'
@@ -34,8 +34,17 @@ if [ ! -d includes ]; then
    mkdir includes
 fi
 pushd includes
-   owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl"
-   #owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl"
+   if [ ! -e prov ]; then
+      hg clone https://dvcs.w3.org/hg/prov/
+   else
+      pushd prov &> /dev/null
+         hg pull
+         hg update
+      popd &> /dev/null
+   fi
+
+   owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl"
+   #owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl"
    curl -sO $owlURLversion
    .././cross-reference.py $owlURLversion ProvenanceOntology.owl prov
  
@@ -53,13 +62,4 @@ pushd includes
       mv b $ttl
    done
    rm beforefetch
-
-   if [ ! -e prov ]; then
-      hg clone https://dvcs.w3.org/hg/prov/
-   else
-      pushd prov &> /dev/null
-         hg pull
-         hg update
-      popd &> /dev/null
-   fi
 popd &> /dev/null

@@ -634,7 +634,7 @@
 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "WD",
+          specStatus:           "ED",
           
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "prov-o",
@@ -1013,11 +1013,11 @@
 	</section>
 -->
 
-    <!-- TODO: revive this after release on 19 Apr 2012 section class='appendix'>
+    <section class='appendix'>
       <h2>Names of inverse properties</h2>
       <p>Defining them both may lead to split use, and both will need to be handled (doubling the effort). The opposite is true. Not defining them will make people that want them named to choose their own name. To balance these tradeoffs, we choose a preferred inverse and define it in PROV-O. The inverse is not defined, but if users wish to refer to it, they should use the following names.</p>
       {% include "includes/inverse-names.html" %}
-    </section-->
+    </section>
 
     <section class='appendix'>
       <h2>Acknowledgements</h2>
