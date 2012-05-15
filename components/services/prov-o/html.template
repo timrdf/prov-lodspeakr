@@ -590,6 +590,9 @@
       a.qname {
          font-family: monospace;
       }
+      strong {
+         padding-right: 15px;
+      }
      </style>
 
      <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove' type="text/javascript"></script>

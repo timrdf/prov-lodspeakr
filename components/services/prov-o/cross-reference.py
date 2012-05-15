@@ -158,7 +158,7 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # class
-         cross.write('    <p><strong>IRI:</strong> '+uri+'</p>\n')
+         cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
 
          # class prov:definition
          for definition in owlClass.prov_definition: # TODO: not done for properties. How to reconcile def vs comments vs editorNote?
@@ -217,6 +217,14 @@ for category in categories.keys():
                else:
                   cross.write('<sup class="type-op" title="object property">op</sup>\n')
             cross.write('      </dd>\n')
+
+         # class rdfs:subClassOf ?super . ?property rdfs:domain ?super .
+         query = select('?property').where((owlClass.subject,ns.RDFS['subClassOf'],'?super')).where(('?property',ns.RDFS['domain'],'?super'))
+         results = store.execute(query)
+         #if len(results) > 0:
+            #print owlClass.subject
+            #for p in results:
+               #print '  ' + p
 
          # ?p rdfs:range class
          if len(owlClass.is_rdfs_range_of) > 0:
@@ -286,7 +294,7 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # property
-         cross.write('    <p><strong>IRI:</strong> '+uri+'</p>\n')
+         cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          cross.write('\n')
@@ -371,7 +379,18 @@ for category in categories.keys():
                if domain.subject.startswith('http://www.w3.org/ns/prov#'):
                   cross.write('              <a title="'+domain.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
                else:
-                  cross.write('              TODO: one of a few classes.\n')
+                  # NOTE: This processes ALL [ owl:unionOf () ], so if there are more than one it will duplicate.
+                  # Part of the problem is that SuRF might be giving different bnode IDs than rdflib.
+                  print property.subject + ' has a union domain that includes:'
+                  for triple in graph.triples((property.subject, ns.RDFS['domain'], None)):
+                     for union in graph.triples((triple[2],ns.OWL['unionOf'],None)):
+                        orString = ''
+                        for classInDomain in graph.items(union[2]):
+                           qname = classInDomain.split('#')
+                           print '     ' + qname[1]
+                           cross.write('              '+orString+'<a title="'+classInDomain+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+                           orString = ' or '
+                  #cross.write('              TODO: one of a few classes.\n')
                cross.write('            </li>\n')
             cross.write('          </ul>\n')
             cross.write('        </dd>\n')
