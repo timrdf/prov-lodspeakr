@@ -158,7 +158,8 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # class
-         cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
+         #cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
+         cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
 
          # class prov:definition
          for definition in owlClass.prov_definition: # TODO: not done for properties. How to reconcile def vs comments vs editorNote?
@@ -218,13 +219,42 @@ for category in categories.keys():
                   cross.write('<sup class="type-op" title="object property">op</sup>\n')
             cross.write('      </dd>\n')
 
+         # ?property rdfs:domain ( ... class ... )
+         propertiesThatUnionMeInDomain = set()
+         for triple in graph.triples((None, ns.RDFS['domain'], None)):
+            for union in graph.triples((triple[2],ns.OWL['unionOf'],None)):
+               for classInDomain in graph.items(union[2]):
+                  if classInDomain == owlClass.subject:
+                     propertiesThatUnionMeInDomain.add(triple[0])
+         if len(propertiesThatUnionMeInDomain) > 0:
+            cross.write('\n')
+            cross.write('      <dt>a domain of</dt>\n')
+            cross.write('      <dd>\n')
+            for p in propertiesThatUnionMeInDomain:
+               pqname = p.split('#')
+               print '     ' + owlClass.subject + ' in domain of ' + pqname[1]
+               cross.write('        <a title="'+p+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
+
          # class rdfs:subClassOf ?super . ?property rdfs:domain ?super .
-         query = select('?property').where((owlClass.subject,ns.RDFS['subClassOf'],'?super')).where(('?property',ns.RDFS['domain'],'?super'))
+         query = select('?super ?property').where((owlClass.subject, ns.RDFS['subClassOf'],'?super'),
+                                                  ('?property',      ns.RDFS['domain'],    '?super'))
          results = store.execute(query)
-         #if len(results) > 0:
+         ignoreSupers = [ns.PROV['Entity'], ns.PROV['Involvement'], ns.PROV['Dictionary']]
+         if len(results) > 0:
             #print owlClass.subject
-            #for p in results:
-               #print '  ' + p
+            cross.write('\n')
+            cross.write('      <dt>parent is in domain of</dt>\n')
+            cross.write('      <dd>\n')
+            for p in results:
+               if p[0] not in ignoreSupers:
+                  #print '    ' + p[0] + '  ' + p[1]
+                  pqname = p[1].split('#')
+                  cross.write('        <a title="'+p[1]+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
+                  #if ns.OWL['DatatypeProperty'] in p.rdf_type:
+                  #   cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
+                  #else:
+                  #   cross.write('<sup class="type-op" title="object property">op</sup>\n')
+            cross.write('      </dd>\n')
 
          # ?p rdfs:range class
          if len(owlClass.is_rdfs_range_of) > 0:
@@ -294,7 +324,8 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # property
-         cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
+         #cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
+         cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          cross.write('\n')
