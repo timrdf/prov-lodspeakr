@@ -381,16 +381,15 @@ for category in categories.keys():
                else:
                   # NOTE: This processes ALL [ owl:unionOf () ], so if there are more than one it will duplicate.
                   # Part of the problem is that SuRF might be giving different bnode IDs than rdflib.
-                  print property.subject + ' has a union domain that includes:'
+                  #print property.subject + ' has a union domain that includes:'
                   for triple in graph.triples((property.subject, ns.RDFS['domain'], None)):
                      for union in graph.triples((triple[2],ns.OWL['unionOf'],None)):
                         orString = ''
                         for classInDomain in graph.items(union[2]):
                            qname = classInDomain.split('#')
-                           print '     ' + qname[1]
+                           #print '     ' + qname[1]
                            cross.write('              '+orString+'<a title="'+classInDomain+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
                            orString = ' or '
-                  #cross.write('              TODO: one of a few classes.\n')
                cross.write('            </li>\n')
             cross.write('          </ul>\n')
             cross.write('        </dd>\n')
