@@ -519,12 +519,12 @@
      -->
 
    <!-- From DM -->
-	<style type="text/css">
+   <style type="text/css">
       .note { font-size:small; margin-left:50px }
        table { text-align: center; vertical-align: middle }
    </style>
 
-	<style type="text/css">
+   <style type="text/css">
       /* This CSS written by Tim Lebo for PROV-O HTML (all other CSS was taken from elsewhere) */
       table.qualified-forms {
          width: 75%;
@@ -597,9 +597,9 @@
 
      <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove' type="text/javascript"></script>
      <script src="http://www.w3.org/2007/OWL/toggles.js" class="remove" type="text/javascript"></script>
-	
+   
     <script class='remove'>
-	var addExtraReferences = function() {
+   var addExtraReferences = function() {
           for (var k in extraReferences)
               berjon.biblio[k] = extraReferences[k];
       };
@@ -610,7 +610,7 @@
           "18 October 2011. W3C Working Draft. (Work in progress.) "+
           "URL: <a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\">http://www.w3.org/TR/2011/WD-prov-dm-20111018/</a>",
 
-		"PROV-PAQ":
+      "PROV-PAQ":
           "Graham Klyne and Paul Groth "+
           "<a href=\"https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\"><cite>Provenance Access and Query</cite></a>. "+
           "2011, Work in progress. "+
@@ -622,18 +622,18 @@
           "2011, Working Draft. "+
           "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
 
-		"PROV-Ontology-Namespace":
+      "PROV-Ontology-Namespace":
           "TBD"+
           "<a href=\"http://www.w3.org/ns/prov-o/\"><cite>PROV Ontology Namespace</cite></a>. "+
           "2011, Work in progress. "+
           "URL: <a href=\"http://www.w3.org/ns/prov-o/\">http://www.w3.org/ns/prov-o/</a>",
 
-		"PROV-BestPractices":
+      "PROV-BestPractices":
           "Stian Soiland-Reyes "+
           "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/bestpractices/BestPractices.html\"><cite>PROV Best Practices</cite></a>. "+
           "2011, Work in progress. "+
           "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/bestpractices/BestPractices.html\">http://dvcs.w3.org/hg/prov/tip/bestpracties/BestPractices.html</a>",
- 	  };
+      };
 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
@@ -671,13 +671,13 @@
           // editors, add as many as you like
           // only "name" is required
           editors:  [
-  			  { name: "Timothy Lebo",
-			        url:"http://tw.rpi.edu/instances/TimLebo",
-			       company: "Rensselaer Polytechnic Institute, USA" },
+             { name: "Timothy Lebo",
+                 url:"http://tw.rpi.edu/instances/TimLebo",
+                company: "Rensselaer Polytechnic Institute, USA" },
               { name: "Satya Sahoo", url: "http://cci.case.edu/cci/index.php/Satya_Sahoo",
                 company: "Case Western Reserve University, USA" },
-			  { name: "Deborah McGuinness", url: "http://tw.rpi.edu/instances/Deborah_L_McGuinness",
-	                company: "Rensselaer Polytechnic Institute, USA" },
+           { name: "Deborah McGuinness", url: "http://tw.rpi.edu/instances/Deborah_L_McGuinness",
+                   company: "Rensselaer Polytechnic Institute, USA" },
           ],
 
           // authors, add as many as you like. 
@@ -685,27 +685,27 @@
           // only "name" is required. Same format as editors.
 
           authors:  [
-			  { name: "(In alphabetical order)",                
+           { name: "(In alphabetical order)",                
                    },
               { name: "Khalid Belhajjame",                
                     url:"http://semanticweb.org/wiki/Khalid_Belhajjame",
-				company: "University of Manchester, UK" },
-			  { name: "James Cheney",                
-		            url:"http://homepages.inf.ed.ac.uk/jcheney/",    
-					company: "University of Edinburgh, UK" },
-			  { name: "Daniel Garijo",
-			        url:"http://www.oeg-upm.net/index.php/en/phdstudents/28-dgarijo",
-	                company: "Universidad Politécnica de Madrid, Spain" },
-	          { name: "Mike Lang, Jr.", company: "Revelytix, USA"},
-			  { name: "Stian Soiland-Reyes",
-	                url:"http://soiland-reyes.com/stian/",
-	               company: "University of Manchester, UK" },
-			  { name: "Stephan Zednik",
-		                url:"http://tw.rpi.edu/web/person/StephanZednik",
-		               company: "Rensselaer Polytechnic Institute, USA" },
-			  { name: "Jun Zhao",
-		                url:"http://users.ox.ac.uk/~zool0770/",
-		               company: "University of Oxford, UK" },
+            company: "University of Manchester, UK" },
+           { name: "James Cheney",                
+                  url:"http://homepages.inf.ed.ac.uk/jcheney/",    
+               company: "University of Edinburgh, UK" },
+           { name: "Daniel Garijo",
+                 url:"http://www.oeg-upm.net/index.php/en/phdstudents/28-dgarijo",
+                   company: "Universidad Politécnica de Madrid, Spain" },
+             { name: "Mike Lang, Jr.", company: "Revelytix, USA"},
+           { name: "Stian Soiland-Reyes",
+                   url:"http://soiland-reyes.com/stian/",
+                  company: "University of Manchester, UK" },
+           { name: "Stephan Zednik",
+                      url:"http://tw.rpi.edu/web/person/StephanZednik",
+                     company: "Rensselaer Polytechnic Institute, USA" },
+           { name: "Jun Zhao",
+                      url:"http://users.ox.ac.uk/~zool0770/",
+                     company: "University of Oxford, UK" },
           ],
           
           // name of the WG
@@ -724,7 +724,7 @@
           // Team Contact.
           wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/46974/status",
 
-		// Add extraReferences to bibliography database
+      // Add extraReferences to bibliography database
           preProcess: [addExtraReferences], 
       };
     </script>
@@ -732,13 +732,14 @@
   <body>
 
     <section id="abstract">
-      <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information specific to different domain applications.
-	  </p>
+         <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information specific to different domain applications.
+        </p>
 
-     <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
-	  </p>
+        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
+        </p>
     </section>
-   
+  
+ 
     <section id='sotd'>
       <h4>PROV Family of Specifications</h4>
       This document is part of the PROV family of specifications, a set of specifications defining various aspects that are necessary to achieve the vision of inter-operable
@@ -764,33 +765,29 @@
       </ul>
 
       <h4>PROV-O Second Working Draft</h4>
-	  <p>This specification defines the PROV Ontology as the normative representation of the PROV Data Model using the Web Ontology Language (OWL2). Following feedback, the structure of the document has been reorganized to suit a gradual introduction to the terms available in PROV-O, permitting the addition of more elaborate terms as users understand the earlier terms. A cross reference was added and is created directly from the OWL ontology. Examples throughout this document are taken directly from the working group's version control system.
-	  </p>	
+     <p>This specification defines the PROV Ontology as the normative representation of the PROV Data Model using the Web Ontology Language (OWL2). Following feedback, the structure of the document has been reorganized to suit a gradual introduction to the terms available in PROV-O, permitting the addition of more elaborate terms as users understand the earlier terms. A cross reference was added and is created directly from the OWL ontology. Examples throughout this document are taken directly from the working group's version control system.
+     </p>   
     </section>
 
 
      <section id="introduction">    
-      <h2>Introduction</h2>  
-      <p>The PROV Ontology (PROV-O) defines the normative OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange and management in domain-specific Web-based applications.
-      </p>
-	  <p>
-		PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]]. PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications.
-	  </p>
-	  <!--p>
-		Finally, this document describes the formal semantics of the PROV Ontology using the OWL2 semantics, [[!OWL2-DIRECT-SEMANTICS]], [[!OWL2-RDF-BASED-SEMANTICS]], and a set of provenance-specific inference rules. This is expected to support provenance implementations to automatically check for consistency of provenance information represented using PROV Ontology and explicitly assert implicit provenance knowledge. 
-	  </p-->
-      <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-RDF-BASED-SEMANTICS]]. 
-	  </p>
+         <h2>Introduction</h2>  
+         <p>The PROV Ontology (PROV-O) defines the normative OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange and management in domain-specific Web-based applications.
+         </p>
+        <p>
+         PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]]. PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications.
+        </p>
+         <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-RDF-BASED-SEMANTICS]]. 
+        </p>
 
-	  <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
-	  </p>
-
-	  <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
-    </section> <!-- Introduction -->
+        <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
+        </p>
+        <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
+    </section>
 
 
 
-	<section id="prov-o-at-a-glance">
+   <section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
 
       <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into four categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections.
@@ -825,12 +822,12 @@
       {% endfor %} 
       </div>
 
-	</section> <!-- PROV-O at a glance -->
+   </section> <!-- PROV-O at a glance -->
 
 
 
     <section id="description">
-      <h2>The PROV-O Ontology Description</h2>    	
+      <h2>The PROV-O Ontology Description</h2>       
       <p>This section introduces the terms in each of the following categories:
       </p>     
       <ul>
@@ -845,11 +842,11 @@
 {% include "prov-o-html-sections/description-qualified-terms.inc.html" %}
 {% include "prov-o-html-sections/description-collections.inc.html" %}
 
-	  </section>
+    </section>
 
  
 
-	<section id="cross-reference"> <!-- class='informative' -->
+   <section id="cross-reference"> <!-- class='informative' -->
       <!-- prov:tracedTo [ prov:wasGeneratedBy [ a prov:Activity; 
            dcterms:description "python eg-24-prov-o-html-examples.py http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl" ] ] ] -->
       <h2>Cross reference for PROV-O classes and properties</h2>
@@ -889,14 +886,7 @@
          {% include "includes/at-a-glance-collections.html" %}
          {% include "includes/cross-reference-collections.html" %}
       </section>
-	</section>
-
-
-
-
-
-
-
+   </section>
 
     <!--section class="appendix">
           <h2>Changes Since First Public Working Draft</h2>
@@ -907,120 +897,17 @@
           <li>2012-01-16: Added Agent subclasses Person, Organization
           and SoftwareAgent
           <li>2012-01-16: Added alternateOf and specializationOf
-	      <li>2012-01-18: Replaced wasControlledBy with wasAssociatedWith relation
-		  <li>2012-01-19: Added wasStartedBy and wasEndedBy relations
+         <li>2012-01-18: Replaced wasControlledBy with wasAssociatedWith relation
+        <li>2012-01-19: Added wasStartedBy and wasEndedBy relations
           </ul>  
     </section-->
-
-<!--	<section class="appendix"> 
-	<h2>Provenance-specific Constraints</h2>
-	<p>This section lists the provenance-specific constraints introduced by the PROV-DM [[PROV-DM]], but are still under discussion.
-	<section id="provenance-constraint-on-activity">
-	  <h4>Provenance constraint on Activity</h4>
-	  <p>The PROV-DM describes a constraint on ordering of time (or event) associated with a <a href="#activity">Activity.</a> </p>
-  	  <div class='issue'>"From a process execution expression, one can infer that the start event precedes the end event of the represented activity." This is <a href="http://www.w3.org/2011/prov/track/issues/121">ISSUE-121</a></div>
-	</section>
-   	<section id="provenance-constraint-on-wasgeneratedby-generation-affects-attributes">
-	  <h4>Provenance constraint on wasGeneratedBy (generation-affects-attributes)</h4>
-	  <p>The PROV-DM describes a constraint on wasGeneratedBy that associates the values of attributes of an Entity with the Activity that generated the Entity.</p>
-      <div class='issue'>"Given a process execution act, entity e, role r, and optional time t, if the assertion wasGeneratedBy(e,pe,r) or wasGeneratedBy(e,pe,r,t) holds, the values of some of e's attributes are determined by the activity denoted by act and the entities used by act. Only some (possibly none) of the attributes values may be determined since, in an open world, not all used entities may have been asserted." This is <a href="http://www.w3.org/2011/prov/track/issues/122">ISSUE-122 </a> and <a href="http://www.w3.org/2011/prov/track/issues/105">ISSUE-105</a></div>
-	</section>
-	<section id="provenance-constraint-on-wasgeneratedby-generation-pe-ordering">
-	  <h4>Provenance constraint on wasGeneratedBy (generation-pe-ordering)</h4>
-	  <p>The second constraint on wasGeneratedBy associates an ordering of events associated with the generation of an Entity instance and the start, end time or event of theActivityinstance.</p>
-	  	<div class='note'> Without an explicit association of <a href="#time">TemporalEntity</a> with the <a href="#entity">Entity</a> instance and <a href="#activity">PE</a> instance, it is not possible to state or enforce this constraint in the PROV Ontology schema and the corresponding RDF dataset.
-		  </div>
-	</section>
-	<section id="provenance-constraint-on-wasgeneratedby-generation-unicity">
-	  <h4>Provenance constraint on wasGeneratedBy (generation-unicity)</h4>
-	  <p>The PROV-DM describes a constraint on wasGeneratedBy that asserts that given an account, only oneActivityinstance can be associated to an Entity instance by the property wasGeneratedBy.</p>
-	<div class='issue'>"Given an entity expression denoted by e, two process execution expressions denoted by act1 and act2, and two qualifiers q1 and q2, if the expressions wasGeneratedBy(e,pe1,q1) and wasGeneratedBy(e,pe2,q2) exist in the scope of a given account, then act1=act2 and q1=q2." This is <a href="http://www.w3.org/2011/prov/track/issues/105">ISSUE-105</a></div>
-	</section>
-	<section id ="provenance-constraint-on-used-use-attributes">
-	  <h4>Provenance constraint on Used (use-attributes)</h4>
-	  <p>A constraint is defined for the Used relation in PROV-DM, that makes it necessary for an attribute-value to be true for an Entity instance linked to a Activity instance by relation Used.    
-	  </p>
-	  <div class='issue'>"Given a process execution expression identified by act, an entity expression identified by e, a qualifier q, and optional time t, if assertion used(pe,e,q) or used(pe,e,q,t) holds, then the existence of an attribute-value pair in the entity expression identified by e is a pre-condition for the termination of the activity represented by the process execution expression identified by act." This is <a href="http://www.w3.org/2011/prov/track/issues/124">ISSUE-124</a></div>
-	</section>	
-    <section id ="provenance-constraint-on-used-pe-ordering">
-	  <h4>Provenance constraint on Used (use-pe-ordering)</h4>
-	  <p>The PROV-DM describes a constraint for Used relation, which makes it necessary for an Entity instance e (linked to a Activity instance act by Used relation) to be "used" before act terminates and also the "generation" of e precedes "use" of e.
-	  </p>
-	  <div class='issue'>"Given a process execution expression identified by act, an entity expression identified by e, a qualifier q, and optional time t, if assertion used(pe,e,q) or used(pe,e,q,t) holds, then the use of the thing represented by entity expression identified by e precedes the end time contained in the process execution expression identified by act and follows its beginning. Furthermore, the generation of the thing denoted by entity expression identified by e always precedes its use." This is <a href="http://www.w3.org/2011/prov/track/issues/124">ISSUE-124</a></div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-attributes">
-	  <h4>Provenance constraint on wasDerivedFrom (derivation-attributes)</h4>
-	  <p>The PROV-DM describes a constraint for asserting wasDerivedFrom property between two Entity instances if some attributes of an Entity instance are partially or fully determined by attributes values of the other Entity instance.
-	  </p>
-	<div class='issue'>"Given a process execution expression denoted by act, entity expressions denoted by e1 and e2, qualifiers q1 and q2, the assertion wasDerivedFrom(e2,e1,pe,q2,q1) or wasDerivedFrom(e2,e1) holds if and only if the values of some attributes of the entity expression identified by e2 are partly or fully determined by the values of some attributes of the entity expression identified by e1." This is <a href="http://www.w3.org/2011/prov/track/issues/125">ISSUE-125</a></div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-use-generation-ordering">
-	  <h4>Provenance constraint on wasDerivedFrom (derivation-use-generation-ordering)</h4>
-	  <p>The PROV-DM describes a constraint that if wasDerivedFrom property is asserted between two Entity instances e1 and e2, that is wasDerivedFrom (e2, e1), then the for time instant t1 associated with aActivityinstance that "used" is less than the time instant t2 associated with "generation" of e2.
-	  </p>
-	  <div class='note'> Without an explicit association of <a href="#time">TemporalEntity</a> with the <a href="#entity">Entity</a> instance and <a href="#activity">PE</a> instance, it is not possible to state or enforce this constraint in the PROV Ontology schema and the corresponding RDF dataset.
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-events">
-	  <h4>Provenance constraint on wasDerivedFrom (derivation-events)</h4>
-	  <p>The PROV-DM describes a constraint that if wasDerivedFrom property is asserted between two Entity instances e1 and e2, that is wasDerivedFrom (e2, e1, act), then wasGeneratedBy(e2, act) and used(pe, e1) can also be asserted.
-	  </p>
-	  <div class='note'> Since the above constraint defined in PROV-DM does not define how act is linked to the derivation of e2 from e1, this constraint can be supported in the "opposite" direction in PROV-O. In other words, given e2 was generated at time instant t2 by act and act used e1 at time instant t1 and t1 is less than t2, then we can assert that wasDerivedFrom(e2, e1).
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-process-execution">
-	  <h4>Provenance constraint on wasDerivedFrom (derivation-events)</h4>
-	  <p>The PROV-DM describes a constraint that if wasDerivedFrom property is asserted between two Entity instances e1 and e2, then there exists someActivityinstance such that wasGeneratedBy(e2, act) and used(pe, e1) can also be asserted.
-	  </p>
-	  <div class='note'> This constraint is a re-statement of the generic Semantic Web "open-world assumption". Hence, it is not mapped to PROV Ontology.
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-use">
-	  <h4>Provenance constraint on wasDerivedFrom (derivation-use)</h4>
-	  <p>The PROV-DM describes a constraint that if wasDerivedFrom property is asserted between two Entity instances e1 and e2, and wasGeneratedBy(e2, act) is also asserted then Used(pe, e1) can also be asserted.
-	  </p>
-	  <div class='note'> This will be asserted as a rule.
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-generation-generation-ordering">
-	  <h4>Provenance constraint on wasEventuallyDerivedFrom (derivation-generation-generation-ordering)</h4>
-	  <p>The PROV-DM describes a constraint that if wasEventuallyDerivedFrom property is asserted between two Entity instances e1 and e2, then generation of e1 occurred before generation of e2.
-	  </p>
-	  <div class='note'> Without an explicit association of <a href="#time">TemporalEntity</a> (or event) with the <a href="#entity">Entity</a> instance and <a href="#activity">PE</a> instance, it is not possible to state or enforce this constraint in the PROV Ontology schema and the corresponding RDF dataset.
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-derivation-linked-independent">
-	  <h4>Provenance constraint on wasEventuallyDerivedFrom (derivation-linked-independent)</h4>
-	  <p>The PROV-DM describes a constraint that if wasDerivedFrom property is asserted  between two Entity instances e1 and e2, then wasEventuallyDerivedFrom property can also be asserted between the two Entity instances.
-	  </p>
-	  <div class='note'> Is this an equivalence constraint or can we assert a subPropertyOf property between wasDerivedFrom and wasEventuallyFrom?
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-complementof-necessary-cond">
-	  <h4>Provenance constraint on wasComplementOf (wasComplementOf-necessary-cond)</h4>
-	  <p>The PROV-DM describes a constraint that wasComplementOf property holds between two entities over a temporal intersection of the two entities.
-	  </p>
-	  <div class='note'> Without an explicit association of time value, this constraint cannot be stated or enforced in PROV Ontology.
-	  </div>
-	</section>
-	<section id ="provenance-constraint-on-hasParticipant-participant">
-	  <h4>Provenance constraint on wasAssociatedWith (participant)</h4>
-	  <p>The PROV-DM describes a constraint that wasAssociatedWith property holds between an instance of Entity and instance of Activity if the two instances are linked by "used" of "wasControlledBy" or "wasComplementOf".
-	  </p>
-	  <div class='issue'> "Given two identifiers act and e, respectively identifying a process execution expression and an entity expression, the expression wasAssociatedWith(pe,e) holds if and only if:
-		*used(pe,e) holds, or
-	    *wasControlledBy(pe,e) holds, or
-	    *wasComplementOf(e1,e) holds for some entity expression identified by e1, and wasAssociatedWith(pe,e1) holds some process execution expression identified by act." This is <a href="http://www.w3.org/2011/prov/track/issues/127">ISSUE-127</a>
-	  </div>
-	</section>
-	</section>
--->
 
     <section class='appendix'>
       <h2>Names of inverse properties</h2>
       <p>Defining them both may lead to split use, and both will need to be handled (doubling the effort). The opposite is true. Not defining them will make people that want them named to choose their own name. To balance these tradeoffs, we choose a preferred inverse and define it in PROV-O. The inverse is not defined, but if users wish to refer to it, they should use the following names.</p>
       {% include "includes/inverse-names.html" %}
     </section>
+
 
     <section class='appendix'>
       <h2>Acknowledgements</h2>
