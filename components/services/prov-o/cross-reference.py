@@ -347,25 +347,25 @@ for category in categories.keys():
             cross.write('      </div>\n')
 
          # Characteristics
-         characteristics = [ns.OWL['FunctionalProperty'],
-                            ns.OWL['InverseFunctionalProperty'],
-                            ns.OWL['TransitiveProperty'],
-                            ns.OWL['SymmetricProperty'],
-                            ns.OWL['AsymmetricProperty'],
-                            ns.OWL['ReflexiveProperty'],
-                            ns.OWL['IrreflexiveProperty']]
+         characteristics = {ns.OWL['FunctionalProperty']:        'http://www.w3.org/TR/owl2-syntax/#Functional_Object_Properties',
+                            ns.OWL['InverseFunctionalProperty']: 'http://www.w3.org/TR/owl2-syntax/#Inverse-Functional_Object_Properties',
+                            ns.OWL['TransitiveProperty']:        'http://www.w3.org/TR/owl2-syntax/#Transitive_Object_Properties',
+                            ns.OWL['SymmetricProperty']:         'http://www.w3.org/TR/owl2-syntax/#Symmetric_Object_Properties',
+                            ns.OWL['AsymmetricProperty']:        'http://www.w3.org/TR/owl2-syntax/#Asymmetric_Object_Properties',
+                            ns.OWL['ReflexiveProperty']:         'http://www.w3.org/TR/owl2-syntax/#Reflexive_Object_Properties',
+                            ns.OWL['IrreflexiveProperty']:       'http://www.w3.org/TR/owl2-syntax/#Irreflexive_Object_Properties'}
          has = False
-         for characteristic in characteristics:
+         for characteristic in characteristics.keys():
             if characteristic in property.rdf_type:
                has = True
          if has:
             cross.write('      <p><strong>has characteristics</strong>')
             comma = ''
-            for characteristic in characteristics:
+            for characteristic in characteristics.keys():
                if characteristic in property.rdf_type:
                   qname = characteristic.split('#')
-                  cross.write(comma+' '+qname[1].replace('Property','').replace('F',' F')+' ')
-                  comma = ','
+                  cross.write(comma+' <a href="'+characteristics[characteristic]+'">'+qname[1].replace('Property','').replace('F',' F')+'</a>')
+                  comma = ', '
             cross.write('      </p>\n')
 
          cross.write('      <dl>\n')
