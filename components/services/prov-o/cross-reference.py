@@ -201,8 +201,9 @@ for category in categories.keys():
             cross.write('      <dt>is subclass of</dt>\n')
             cross.write('      <dd>\n')
             for super in owlClass.rdfs_subClassOf:
-               qname = super.subject.split('#')
-               cross.write('        <a title="'+super.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+               if super.subject.startswith('http://www.w3.org/ns/prov#'):
+                  qname = super.subject.split('#')
+                  cross.write('        <a title="'+super.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
             cross.write('      </dd>\n')
 
          # ?p rdfs:domain class
