@@ -903,6 +903,23 @@
     </section-->
 
     <section class='appendix'>
+      <h2>PROV-O OWL Profile</h2>
+      <p>To encourage widespread adoption, PROV-O's design is intentionally minimal and lightweight. The OWL RL profile was used as a baseline for simplicity, i.e., if an OWL assertion was not RL compliant, then it would require justification to be included in the final ontology. This section enumerates those axioms that are beyond OWL RL, along with a description of why they were important enough to be included.
+      </p>
+<table>
+  <tr>
+    <td>Use of non-superclass expression in position that requires a superclass expression: ObjectUnionOf(provDerivation provResponsibility provStart) [ObjectPropertyDomain(provhadActivity ObjectUnionOf(provDerivation provResponsibility provStart)) in provhttp://www.w3.org/TR/2012/WD-prov-o-2012MMDD]</td>
+    <td>hadActivity</td>
+  </tr>
+  <tr>
+    <td>Use of non-superclass expression in position that requires a superclass expression: ObjectUnionOf(provAssociation provEnd provGeneration provStart provUsage) [ObjectPropertyDomain(provhadRole ObjectUnionOf(provAssociation provEnd provGeneration provStart provUsage)) in provhttp://www.w3.org/TR/2012/WD-prov-o-2012MMDD]</td>
+    <td>hadRole</td>
+  </tr>
+</table>
+
+    </section>
+
+    <section class='appendix'>
       <h2>Names of inverse properties</h2>
       <p>Defining them both may lead to split use, and both will need to be handled (doubling the effort). The opposite is true. Not defining them will make people that want them named to choose their own name. To balance these tradeoffs, we choose a preferred inverse and define it in PROV-O. The inverse is not defined, but if users wish to refer to it, they should use the following names.</p>
       {% include "includes/inverse-names.html" %}
