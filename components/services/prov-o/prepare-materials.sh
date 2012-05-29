@@ -66,3 +66,5 @@ pushd includes
    done
    rm beforefetch
 popd &> /dev/null
+
+cp includes/inverse-names.html ../../../static/
