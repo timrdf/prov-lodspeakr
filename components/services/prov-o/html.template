@@ -647,7 +647,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-05-03",
+          publishDate:  "2012-05-30",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -922,7 +922,7 @@
     <section class='appendix'>
       <h2>Names of inverse properties</h2>
       <p>Defining them both may lead to split use, and both will need to be handled (doubling the effort). The opposite is true. Not defining them will make people that want them named to choose their own name. To balance these tradeoffs, we choose a preferred inverse and define it in PROV-O. The inverse is not defined, but if users wish to refer to it, they should use the following names.</p>
-      {% include "includes/inverse-names.html" %}
+      <!-- include "includes/inverse-names.html" -->
     </section>
 
 
