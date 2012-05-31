@@ -689,5 +689,5 @@ if not(os.path.exists(inversesName)):
          inverses.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
          inverses.write('    <td>prov:'+property.prov_inverse.first+'</td>\n')
          inverses.write('  </tr>\n')
-   inverses.write('<table>\n')
+   inverses.write('</table>\n')
    inverses.close()
