@@ -384,6 +384,7 @@ for category in categories.keys():
          elif len(property.prov_sharesDefinitionWith) > 0:
             # If it shares a definition, use that.
             sharer = property.prov_sharesDefinitionWith.first
+            #print property.subject #+ ' ' + sharer.subject
             if len(sharer.prov_definition) > 0:
                cross.write('    <div class="definition"><p>'+sharer.prov_definition.first+'</p>\n')
             elif len(sharer.prov_editorsDefinition) > 0:
