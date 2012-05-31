@@ -715,7 +715,7 @@
           wgURI:        "http://www.w3.org/2011/prov/",
           
           // name (with the @w3c.org) of the public mailing to which comments are due
-          wgPublicList: "public-prov-wg",
+          wgPublicList: "public-prov-comments",
           
           // URI of the patent status for this WG, for Rec-track documents
           // !!!! IMPORTANT !!!!
@@ -858,6 +858,10 @@
          <li><a href="#cross-reference-qualified-terms">Qualified Terms</a></li>
          <li><a href="#cross-reference-collection-terms">Dictionary Terms</a></li>
       </ul>
+
+      <p>
+      The superscripts <sup class="type-op" title="object property">op</sup> and <sup class="type-dp" title="data property">dp</sup> denote that a property is an OWL <a href="http://www.w3.org/TR/owl2-syntax/#Object_Properties">object property</a> or <a href="http://www.w3.org/TR/owl2-syntax/#Data_Properties">data property</a>, respectively.
+      </p>
 
       <section id="cross-reference-starting-point-terms">
          <h3>Starting Point Terms</h3>

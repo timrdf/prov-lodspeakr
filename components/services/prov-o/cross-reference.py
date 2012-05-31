@@ -24,6 +24,9 @@ ont_url   = sys.argv[1] # http://dvcs.w3.org/hg/prov/raw-file/default/ontology/P
 ont_local = sys.argv[2] # ProvenanceOntology.owl
 PREFIX    = sys.argv[3] # prov
 
+EXAMPLE_BASE_URL   = 'http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/'
+EXAMPLE_BASE_LOCAL = 'includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/'
+
 ns.register(prov='http://www.w3.org/ns/prov#')
 ns.register(dcat='http://www.w3.org/ns/dcat#')
 ns.register(void='http://rdfs.org/ns/void#')
@@ -41,6 +44,7 @@ store.load_triples(source=ont_url) # From URL
 DatatypeProperties = session.get_class(ns.OWL["DatatypeProperty"])
 ObjectProperties   = session.get_class(ns.OWL["ObjectProperty"])
 Classes            = session.get_class(ns.OWL["Class"])
+Thing              = session.get_class(ns.OWL["Thing"])
 
 qualifiedFormsQ = '''
 prefix owl: <http://www.w3.org/2002/07/owl#>
@@ -114,14 +118,18 @@ for category in categories.keys():
       propertyTypes = {}
       ordered['properties'] = []
       for property in DatatypeProperties.all():
+         propertyTypes[property.subject] = "datatype-property"
          if property.prov_category.first == category:
             ordered['properties'].append(property.subject)
-            propertyTypes[property.subject] = "datatype-property"
       for property in ObjectProperties.all():
+         propertyTypes[property.subject] = "object-property"
          if property.prov_category.first == category:
             ordered['properties'].append(property.subject)
-            propertyTypes[property.subject] = "object-property"
       ordered['properties'].sort()
+
+      sup = {}
+      sup['datatype-property'] = ' <sup class="type-dp" title="data property">dp</sup>'
+      sup['object-property']   = ' <sup class="type-op" title="object property">op</sup>'
 
       # at-a-glance
       for uri in ordered['properties']:
@@ -162,7 +170,7 @@ for category in categories.keys():
          cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
 
          # class prov:definition
-         for definition in owlClass.prov_definition: # TODO: not done for properties. How to reconcile def vs comments vs editorNote?
+         for definition in owlClass.prov_definition:
             cross.write('    <div class="definition"><p>'+definition+'</p>\n')
             cross.write('    </div>\n')
 
@@ -174,13 +182,14 @@ for category in categories.keys():
          cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
          cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
          cross.write('      <strong>Example</strong>\n')
-         cross.write('      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_'+qname[1]+'.ttl"\n')
+         cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'class_'+qname[1]+'.ttl"\n')
          cross.write('           property="prov:value">')
-         cross.write('{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
+         cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
 
          cross.write('    <dl class="description">\n')
+
          # class rdfs:comment
          for comment in owlClass.rdfs_comment:
             cross.write('    <dd class="comment"><p>'+comment+'</p>\n')
@@ -200,62 +209,97 @@ for category in categories.keys():
             cross.write('\n')
             cross.write('      <dt>is subclass of</dt>\n')
             cross.write('      <dd>\n')
+            comma = ''
             for super in owlClass.rdfs_subClassOf:
                if super.subject.startswith('http://www.w3.org/ns/prov#'):
                   qname = super.subject.split('#')
-                  cross.write('        <a title="'+super.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+                  cross.write('        '+comma+'<a title="'+super.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+                  comma = ', '
             cross.write('      </dd>\n')
 
-         # ?p rdfs:domain class
-         if len(owlClass.is_rdfs_domain_of) > 0:
-            cross.write('\n')
-            cross.write('      <dt>in domain of</dt>\n')
-            cross.write('      <dd>\n')
-            for p in owlClass.is_rdfs_domain_of:
-               pqname = p.subject.split('#')
-               cross.write('        <a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
-               if ns.OWL['DatatypeProperty'] in p.rdf_type:
-                  cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
-               else:
-                  cross.write('<sup class="type-op" title="object property">op</sup>\n')
-            cross.write('      </dd>\n')
+         #
+         #
+         #
+         # The following chunks answer the question of "what properties can I use on this class?"
+         # They should be grouped such that their distinctions are not as salient.
+         #
+         #
+         #
 
-         # ?property rdfs:domain ( ... class ... )
+         # CASE 2: ?property rdfs:domain ( ... class ... )
          propertiesThatUnionMeInDomain = set()
          for triple in graph.triples((None, ns.RDFS['domain'], None)):
             for union in graph.triples((triple[2],ns.OWL['unionOf'],None)):
                for classInDomain in graph.items(union[2]):
                   if classInDomain == owlClass.subject:
                      propertiesThatUnionMeInDomain.add(triple[0])
-         if len(propertiesThatUnionMeInDomain) > 0:
-            cross.write('\n')
-            cross.write('      <dt>a domain of</dt>\n')
-            cross.write('      <dd>\n')
-            for p in propertiesThatUnionMeInDomain:
-               pqname = p.split('#')
-               print '     ' + owlClass.subject + ' in domain of ' + pqname[1]
-               cross.write('        <a title="'+p+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
-
-         # class rdfs:subClassOf ?super . ?property rdfs:domain ?super .
+         # CASE 3: class rdfs:subClassOf ?super . ?property rdfs:domain ?super .
          query = select('?super ?property').where((owlClass.subject, ns.RDFS['subClassOf'],'?super'),
                                                   ('?property',      ns.RDFS['domain'],    '?super'))
          results = store.execute(query)
          ignoreSupers = [ns.PROV['Entity'], ns.PROV['Involvement'], ns.PROV['Dictionary']]
-         if len(results) > 0:
-            #print owlClass.subject
-            cross.write('\n')
-            cross.write('      <dt>parent is in domain of</dt>\n')
-            cross.write('      <dd>\n')
-            for p in results:
-               if p[0] not in ignoreSupers:
-                  #print '    ' + p[0] + '  ' + p[1]
-                  pqname = p[1].split('#')
-                  cross.write('        <a title="'+p[1]+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
-                  #if ns.OWL['DatatypeProperty'] in p.rdf_type:
-                  #   cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
-                  #else:
-                  #   cross.write('<sup class="type-op" title="object property">op</sup>\n')
-            cross.write('      </dd>\n')
+         parentIsInDomainOf = False
+         for p in results:
+            if p[0] not in ignoreSupers:
+               parentIsInDomainOf = True
+
+         if len(owlClass.is_rdfs_domain_of) > 0 or len(propertiesThatUnionMeInDomain) > 0 or parentIsInDomainOf:
+            cross.write('      <dt>described with properties:</dt><dd></dd>\n')
+
+            # CASE 1: ?p rdfs:domain class
+            if len(owlClass.is_rdfs_domain_of) > 0:
+               cross.write('\n')
+               #cross.write('      <dt>in domain of</dt>\n')
+               cross.write('      <dt></dt>\n')
+               cross.write('      <dd>\n')
+               comma = ''
+               for p in owlClass.is_rdfs_domain_of:
+                  pqname = p.subject.split('#')
+                  cross.write('        '+comma+'<a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
+                  if ns.OWL['DatatypeProperty'] in p.rdf_type:
+                     cross.write(' <sup class="type-dp" title="data property">dp</sup>\n')
+                  else:
+                     cross.write(' <sup class="type-op" title="object property">op</sup>\n')
+                  comma = ', '
+               cross.write('      </dd>\n')
+
+            # CASE 2: ?property rdfs:domain ( ... class ... )
+            if len(propertiesThatUnionMeInDomain) > 0:
+               cross.write('\n')
+               #cross.write('      <dt>a domain of</dt>\n')
+               cross.write('      <dt></dt>\n')
+               cross.write('      <dd>\n')
+               comma = ''
+               for p in propertiesThatUnionMeInDomain:
+                  pqname = p.split('#')
+                  #print '     ' + owlClass.subject + ' in domain of ' + pqname[1]
+                  cross.write('        '+comma+'<a title="'+p+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>' + sup[propertyTypes[p]])
+                  comma = ', '
+
+            # CASE 3: class rdfs:subClassOf ?super . ?property rdfs:domain ?super .
+            if parentIsInDomainOf:
+               #print owlClass.subject
+               cross.write('\n')
+               #cross.write('      <dt>parent is in domain of</dt>\n')
+               cross.write('      <dt></dt>\n')
+               cross.write('      <dd>\n')
+               comma = ''
+               for p in results:
+                  if p[0] not in ignoreSupers:
+                     #print '    ' + p[0] + '  ' + p[1]
+                     pqname = p[1].split('#')
+                     if p[1] in propertyTypes:
+                        cross.write('        '+comma+'<a title="'+p[1]+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a> '+sup[propertyTypes[p[1]]])
+                        comma = ', '
+               cross.write('      </dd>\n')
+         #
+         #
+         #
+         # The chunks above answer the question of "Which properties can I use on this class?"
+         #
+         #
+         #
+
 
          # ?p rdfs:range class
          if len(owlClass.is_rdfs_range_of) > 0:
@@ -266,9 +310,9 @@ for category in categories.keys():
                pqname = p.subject.split('#')
                cross.write('        <a title="'+p.subject+'" href="#'+pqname[1]+'">'+PREFIX+':'+pqname[1]+'</a>')
                if ns.OWL['DatatypeProperty'] in p.rdf_type:
-                  cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
+                  cross.write(' <sup class="type-dp" title="data property">dp</sup>\n')
                else:
-                  cross.write('<sup class="type-op" title="object property">op</sup>\n')
+                  cross.write(' <sup class="type-op" title="object property">op</sup>\n')
             cross.write('      </dd>\n')
 
          # ?sub rdfs:subClassOf class
@@ -279,9 +323,11 @@ for category in categories.keys():
             cross.write('\n')
             cross.write('      <dt>has subclass'+es+'</dt>\n')
             cross.write('      <dd>\n')
+            comma = ''
             for sub in owlClass.is_rdfs_subClassOf_of:
                qname = sub.subject.split('#')
-               cross.write('        <a title="'+sub.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+               cross.write('        '+comma+'<a title="'+sub.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+               comma = ', '
             cross.write('      </dd>\n')
 
          # class prov:unqualifiedForm ?p
@@ -292,7 +338,8 @@ for category in categories.keys():
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
             cross.write('      <dd>\n')
-            cross.write('        <a title="'+owlClass.prov_unqualifiedForm.first.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a>\n')
+            cross.write('        <a title="'+owlClass.prov_unqualifiedForm.first.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a>'
+                                 +sup[propertyTypes[owlClass.prov_unqualifiedForm.first.subject]]+'\n')
             cross.write('      </dd>\n')
             
          cross.write('    </dl>\n')
@@ -316,9 +363,9 @@ for category in categories.keys():
          cross.write('    <h3>\n')
          cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>')
          if ns.OWL['DatatypeProperty'] in property.rdf_type:
-            cross.write('<sup class="type-dp" title="data property">dp</sup>\n')
+            cross.write(' <sup class="type-dp" title="data property">dp</sup>\n')
          else:
-            cross.write('<sup class="type-op" title="object property">op</sup>\n')
+            cross.write(' <sup class="type-op" title="object property">op</sup>\n')
          cross.write('      <span class="backlink">\n')
          cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-terms-at-a-glance">'+category+' properties</a>\n')
          cross.write('      </span>\n')
@@ -328,14 +375,44 @@ for category in categories.keys():
          #cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
          cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
 
+         # property prov:definition, prov:sharesDefinitionWith [ prov:definition ], 
+         # prov:qualifiedFrom [ a owl:Class, prov:definition ], prov:editorsDefinition
+         if len(property.prov_definition) > 0:
+            # If it has its own definition, use it.
+            for definition in owlClass.prov_definition:
+               cross.write('    <div class="definition"><p>'+definition+'</p>\n')
+         elif len(property.prov_sharesDefinitionWith) > 0:
+            # If it shares a definition, use that.
+            sharer = property.prov_sharesDefinitionWith.first
+            if len(sharer.prov_definition) > 0:
+               cross.write('    <div class="definition"><p>'+sharer.prov_definition.first+'</p>\n')
+            elif len(sharer.prov_editorsDefinition) > 0:
+               cross.write('    <div class="definition"><p>'+sharer.prov_editorsDefinition.first+'</p>\n')
+            else:
+               cross.write('    <div class="definition"><p>TODO property shared def missing.</p>\n')
+         elif len(property.prov_qualifiedForm) > 0:
+            found = False
+            for qualifiedForm in property.prov_qualifiedForm:
+               if ns.OWL['Class'] in qualifiedForm.rdf_type:
+                  found = True
+                  cross.write('    <div class="definition"><p>'+qualifiedForm.prov_definition.first+'</p>\n')
+            if not found:
+               cross.write('    <div class="definition"><p>TODO get property from qualified form class.</p>\n')
+         elif len(property.prov_editorsDefinition) > 0:
+            for definition in property.prov_editorsDefinition:
+               cross.write('    <div class="definition"><p>'+definition+'</p>\n')
+         else:
+            cross.write('    <div class="definition"><p>TODO Property needs a definition.</p>\n')
+         cross.write('    </div>\n')
+
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          cross.write('\n')
          cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
          cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
          cross.write('      <strong>Example</strong>\n')
-         cross.write('      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_'+qname[1]+'.ttl"\n')
+         cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'property_'+qname[1]+'.ttl"\n')
          cross.write('           property="prov:value">')
-         cross.write('{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
+         cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
 
@@ -394,7 +471,8 @@ for category in categories.keys():
                qname = super.subject.split('#')
                if qname[0] == 'http://www.w3.org/ns/prov':
                   cross.write('            <li>\n')
-                  cross.write('              <a title="'+super.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+                  cross.write('              <a title="'+super.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>'
+                                             +sup[propertyTypes[super.subject]]+'\n')
                   cross.write('            </li>\n')
             cross.write('          </ul>\n')
             cross.write('        </dd>\n')
@@ -500,12 +578,14 @@ for category in categories.keys():
             for qualified in property.prov_qualifiedForm:
                qname = qualified.subject.split('#')
                owlType=''
+               s=''
                if ns.OWL['Class'] in qualified.rdf_type:
                   owlType='class'
                else:
                   owlType='property'
+                  s = sup[propertyTypes[qualified.subject]]
                cross.write('            <li>\n')
-               cross.write('              <a title="'+qualified.subject+'" href="#'+qname[1]+'" class="owl'+owlType+'">'+PREFIX+':'+qname[1]+'</a>\n')
+               cross.write('              <a title="'+qualified.subject+'" href="#'+qname[1]+'" class="owl'+owlType+'">'+PREFIX+':'+qname[1]+'</a>'+s+'\n')
                cross.write('            </li>\n')
             cross.write('          </ul>\n') 
             cross.write('        </dd>\n')   
@@ -513,10 +593,12 @@ for category in categories.keys():
          # property prov:unqualifiedForm ?p
          if len(property.prov_unqualifiedForm) > 0:
             qname = property.prov_unqualifiedForm.first.subject.split('#')
+            print property.subject + ' '  + property.prov_unqualifiedForm.first.subject
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
             cross.write('      <dd>\n')
-            cross.write('        <a title="'+property.prov_unqualifiedForm.first.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a>\n')
+            cross.write('        <a title="'+property.prov_unqualifiedForm.first.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a>'
+                                          +sup[propertyTypes[property.prov_unqualifiedForm.first.subject]]+'\n')
             cross.write('      </dd>\n')
 
          cross.write('\n')
