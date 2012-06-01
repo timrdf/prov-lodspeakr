@@ -166,8 +166,7 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # class
-         #cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
-         cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
+         cross.write('    <p><strong class="crossreference">IRI:</strong>'+uri+'</p>\n')
 
          # class prov:definition
          for definition in owlClass.prov_definition:
@@ -181,7 +180,7 @@ for category in categories.keys():
          cross.write('\n')
          cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
          cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
-         cross.write('      <strong>Example</strong>\n')
+         cross.write('      <strong class="crossreference">Example</strong>\n')
          cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'class_'+qname[1]+'.ttl"\n')
          cross.write('           property="prov:value">')
          cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
@@ -372,8 +371,7 @@ for category in categories.keys():
          cross.write('    </h3>\n')
 
          # property
-         #cross.write('    <p><strong>IRI:</strong><a href="'+uri+'">'+uri+'</a></p>\n')
-         cross.write('    <p><strong>IRI:</strong>'+uri+'</p>\n')
+         cross.write('    <p><strong class="crossreference">IRI:</strong>'+uri+'</p>\n')
 
          # property prov:definition, prov:sharesDefinitionWith [ prov:definition ], 
          # prov:qualifiedFrom [ a owl:Class, prov:definition ], prov:editorsDefinition
@@ -410,7 +408,7 @@ for category in categories.keys():
          cross.write('\n')
          cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
          cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
-         cross.write('      <strong>Example</strong>\n')
+         cross.write('      <strong class="crossreference">Example</strong>\n')
          cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'property_'+qname[1]+'.ttl"\n')
          cross.write('           property="prov:value">')
          cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
@@ -437,7 +435,7 @@ for category in categories.keys():
             if characteristic in property.rdf_type:
                has = True
          if has:
-            cross.write('      <p><strong>has characteristics</strong>')
+            cross.write('      <p><strong class="crossreference">has characteristics</strong>')
             comma = ''
             for characteristic in characteristics.keys():
                if characteristic in property.rdf_type:

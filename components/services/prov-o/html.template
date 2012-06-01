@@ -590,7 +590,7 @@
       a.qname {
          font-family: monospace;
       }
-      strong {
+      strong.crossreference {
          padding-right: 15px;
       }
      </style>
