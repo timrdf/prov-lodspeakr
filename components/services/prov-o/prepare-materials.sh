@@ -1,3 +1,5 @@
+date > prepared-on.txt
+
 if [ ! -d ../../../static/prov-o-diagrams ]; then
    mkdir ../../../static/prov-o-diagrams
 fi
