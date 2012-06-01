@@ -610,7 +610,7 @@
           "18 October 2011. W3C Working Draft. (Work in progress.) "+
           "URL: <a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\">http://www.w3.org/TR/2011/WD-prov-dm-20111018/</a>",
 
-      "PROV-PAQ":
+        "PROV-PAQ":
           "Graham Klyne and Paul Groth "+
           "<a href=\"https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\"><cite>Provenance Access and Query</cite></a>. "+
           "2011, Work in progress. "+
@@ -622,17 +622,23 @@
           "2011, Working Draft. "+
           "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
 
-      "PROV-Ontology-Namespace":
+         "PROV-Ontology-Namespace":
           "TBD"+
           "<a href=\"http://www.w3.org/ns/prov-o/\"><cite>PROV Ontology Namespace</cite></a>. "+
           "2011, Work in progress. "+
           "URL: <a href=\"http://www.w3.org/ns/prov-o/\">http://www.w3.org/ns/prov-o/</a>",
 
-      "PROV-BestPractices":
+         "PROV-BestPractices":
           "Stian Soiland-Reyes "+
           "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/bestpractices/BestPractices.html\"><cite>PROV Best Practices</cite></a>. "+
           "2011, Work in progress. "+
           "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/bestpractices/BestPractices.html\">http://dvcs.w3.org/hg/prov/tip/bestpracties/BestPractices.html</a>",
+
+         "LD-Patterns-QR":
+          "Leigh Dodds and Ian Davis "+
+          "<a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\"><cite>Qualified Relation</cite></a>. "+
+          "modified 31 May 2012, accessed June 01 2012 "+
+          "URL: <a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\">http://patterns.dataincubator.org/book/qualified-relation.html</a>",
       };
 
       var respecConfig = {
