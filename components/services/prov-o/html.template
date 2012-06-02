@@ -741,8 +741,12 @@
          <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information specific to different domain applications.
         </p>
 
+        <p style="text-align: center;">The namespace for all PROV-O terms is <span class="repeated">http://www.w3.org/ns/prov#</span>.
+        </p>
+
         <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
         </p>
+
     </section>
   
  
@@ -931,9 +935,90 @@
 
     <section class='appendix'>
       <h2>Names of inverse properties</h2>
-      <p>Defining them both may lead to split use, and both will need to be handled (doubling the effort). The opposite is true. Not defining them will make people that want them named to choose their own name. To balance these tradeoffs, we choose a preferred inverse and define it in PROV-O. The inverse is not defined, but if users wish to refer to it, they should use the following names.</p>
-      <!-- include "includes/inverse-names.html" -->
-    </section>
+      <p>To maximize interoperability, PROV-O intentionally avoids defining too many properties' inverses. In fact, it only defines one (<a class="qname" href="#generated">prov:generated</a>). When all inverses are defined for all properties, modelers may choose from two logically equivalent properties when making each assertion. Although the two options may be logically equivalent, developers consuming the assertions must exert extra effort to handle both (either by adding an OWL reasoner, or writing code and queries to handle both cases). This extra effort must be avoided.
+      </p>
+
+     <div about="#inverse-names-example-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+        <p>For example, the first PROV-O statement (below) could just as easily be asserted as the second statement. 
+            But if a client queries using <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a> when <span class="repeated">:hadDerivation</span> was used in the assertion, there will be no results unless OWL reasoning is applied (or the size of the query is doubled).
+        </p>
+        <pre class="example">
+&lt;http://www.w3.org/TR/prov-o/&gt;  prov:wasDerivedFrom &lt;http://www.w3.org/TR/prov-dm/&gt; .
+
+   # These two statements are equivalent if prov:wasDerivedFrom is an inverse of :hadDerivation.
+   # But extra effort is required to handle both cases (if one is not already using OWL reasoning).
+   # We cannot assume that everybody is using OWL reasoning.
+   # We do not want people to write more code and query than necessary.
+
+&lt;http://www.w3.org/TR/prov-dm/&gt;     :hadDerivation  &lt;http://www.w3.org/TR/prov-o/&gt;  .
+        </pre>
+     </div>
+
+   <p>So, PROV-O avoids this situation by encouraging modelers to use one property instead of its inverse; the preferred property to use is the one defined in the PROV-O ontology. Those asserting and querying for the preferred property avoid the need for OWL reasoning, additional code, and larger queries while maintaining the same level of interoperability.
+   </p>
+
+   <p>However, the <strong>absence</strong> of defined inverses can lead to a <strong>different</strong> risk to interoperability. 
+      Because modelers are free to create their own properties to suit their needs, 
+      they may be motivated to assert the inverse of any PROV-O property defined herein.
+   </p>
+
+     <div about="#inverse-names-example-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+        <p>For example, since PROV-O does not define the inverse of <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a>, 
+         and if three developers really want to model their assertions in the opposite direction, the following set of assertions might be found in the future web of provenance. 
+         These assertions are not in an interoperable form without the use of an OWL reasoner, additional code, or larger queries.
+        </p>
+        <pre class="example">
+   # If PROV-O's properties' inverses are not defined, modelers are motivated to define their own inverse.
+   # The following three statements are equivalent if their predicates are all inverses of prov:wasDerivedFrom.
+
+&lt;http://www.w3.org/TR/prov-dm/&gt;    my:hadDerivation  &lt;http://www.w3.org/TR/prov-o/&gt;  .
+&lt;http://www.w3.org/TR/prov-dm/&gt;  your:ledTo          &lt;http://www.w3.org/TR/prov-o/&gt;  .
+&lt;http://www.w3.org/TR/prov-dm/&gt; their:derivedTo      &lt;http://www.w3.org/TR/prov-o/&gt;  .
+        </pre>
+     </div>
+
+   <p>To balance these two interoperability risks, this document provides recommendations for the local names of all PROV-O properties' inverses.
+      The local name is available as an annotation (<span class="repeated">http://www.w3.org/ns/prov#inverse</span>) on the preferred property that is defined in PROV-O.
+      Although PROV-O does not define the inverses, modelers wishing to use them may; and they should use the existing PROV-O namespace (<span class="repeated">http://www.w3.org/ns/prov#</span>).
+   </p>
+
+     <div about="#inverse-names-example-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+        <p>For example, the same three modelers above that defined <code>my:hadDerivation</code>, <code>your:ledTo</code>, and <code>their:derivedTo</code> should instead look for the <span class="repeated">http://www.w3.org/ns/prov#inverse</span> annotation on <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a> to determine that they should use the property <span class="repeated">http://www.w3.org/ns/prov#hadDerivation</span>. 
+        </p>
+        <pre class="example">
+@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
+
+# Each PROV-O property is annotated with the local name of its inverse.
+
+prov:wasDerivedFrom
+   a owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty;
+   rdfs:isDefinedBy &lt;http://www.w3.org/ns/prov#&gt;;
+   prov:inverse     "hadDerivation";
+   rdfs:domain  prov:Entity;
+   rdfs:range   prov:Entity;
+.
+
+# Instead of defining their own, modelers should use the
+# recommended inverse local name within the PROV namespace:
+
+&lt;http://www.w3.org/TR/prov-dm/&gt; prov:hadDerivation &lt;http://www.w3.org/TR/prov-o/&gt;  .
+
+# Following this recommendation avoids a proliferation of inverse definitions, 
+# while encouraging the use of one inverse over another.
+# This increases interoperability.
+        </pre>
+     </div>
+
+      <p>The following table lists the recommended inverse names that should be used if a modeler does not want to use the recommended PROV-O property. 
+      For convenience, <a href="inverses.ttl">this file</a> lists the resulting inverse properties.
+      </p>
+
+      <strong>TODO: include <a href="http://aquarius.tw.rpi.edu/prov-wg/inverse-names.html">table</a> here. See <a href="http://www.w3.org/2011/prov/wiki/PIL_OWL_Ontology#Steps_taken_for_LC">instructions</a> and contact lebot@rpi.edu if you see this.</strong>
+
+
+
+
+       </section>
 
 
     <section class='appendix'>
