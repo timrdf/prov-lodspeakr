@@ -12,6 +12,9 @@ import rdflib
 rdflib.plugin.register('sparql', rdflib.query.Processor, 'rdfextras.sparql.processor', 'Processor')
 rdflib.plugin.register('sparql', rdflib.query.Result,    'rdfextras.sparql.query',     'SPARQLQueryResult')
 
+import datetime
+import uuid
+
 if len(sys.argv) != 4:
    print "usage: cross-reference.py http://some.owl someont.owl prefix"
    print
@@ -671,11 +674,37 @@ for category in categories.keys():
    else:
       print '  '+glanceName + ' or ' + crossName + " already exists. Not modifying."
 
+# TODO: check for isDefinedBy prov:
+
+#<table about="#inverse-names"
+#       xmlns:prov="http://www.w3.org/ns/prov#"
+#       typeof="prov:Dictionary" class="inverse-names">
+#  <span rel="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>
+#  <caption>Names of inverses</caption>
+#  <tr>
+#    <th>PROV-O Property</th>
+#    <th>Recommended inverse name</th>
+#  </tr>
+#  <span rel="prov:member">
+#     <tr about="#inverse-of-derivedByInsertionFrom" typeof="prov:KeyValuePair">
+#       <td property="prov:pairKey" content="http://www.w3.org/ns/prov#derivedByInsertionFrom"><a title="http://www.w3.org/ns/prov#derivedByInsertionFrom" href="#derivedByInsertionFrom" 
+#           class="owlproperty">prov:derivedByInsertionFrom</a></td>
+#       <td property="prov:pairValue">prov:hadDerivationByInsertion</td>
+#     </tr>
+#  </span>
 
 inversesName = 'inverse-names.html'
 if not(os.path.exists(inversesName)):
+   uuid = str(uuid.uuid1())
    inverses = open(inversesName, 'w')
-   inverses.write('<table class="inverse-names">\n')
+   inverses.write('<table about="#inverse-names-'+uuid+'"\n') # TODO: add generatedAtTime
+   inverses.write('       xmlns:prov="http://www.w3.org/ns/prov#"\n')
+   inverses.write('       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n')
+   inverses.write('       xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n')
+   inverses.write('       typeof="prov:Dictionary" class="inverse-names">\n')
+   inverses.write('  <span rel="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>\n')
+   inverses.write('  <span rel="prov:specializationOf" resource="#inverse-names"><span rel="rdf:type" resource="http://www.w3.org/ns/prov#Dictionary"/></span>\n')
+   inverses.write('  <span property="prov:generatedAtTime" content="'+str(datetime.datetime.utcnow()).replace(' ','T')+'" datatype="xsd:dateTime"/>\n')
    inverses.write('  <caption>Names of inverses</caption>\n')
    inverses.write('  <tr>\n')
    inverses.write('    <th>PROV-O Property</th>\n')
@@ -684,9 +713,12 @@ if not(os.path.exists(inversesName)):
    for property in ObjectProperties.all():
       qname = property.subject.split('#')
       if property.prov_inverse:
-         inverses.write('  <tr>\n')
-         inverses.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
-         inverses.write('    <td>prov:'+property.prov_inverse.first+'</td>\n')
-         inverses.write('  </tr>\n')
+         inverses.write('  <span rel="prov:member">\n')
+         inverses.write('    <tr about="#inverse-of-'+qname[1]+'" typeof="prov:KeyValuePair">\n')
+         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+                       #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
+         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+         inverses.write('    </tr>\n')
+         inverses.write('  </span>\n')
    inverses.write('</table>\n')
    inverses.close()
