@@ -70,3 +70,4 @@ pushd includes
 popd &> /dev/null
 
 cp includes/inverse-names.html ../../../static/
+cp includes/inverses.ttl       ../../../static/

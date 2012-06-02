@@ -694,9 +694,10 @@ for category in categories.keys():
 #  </span>
 
 inversesName = 'inverse-names.html'
-if not(os.path.exists(inversesName)):
-   uuid = str(uuid.uuid1())
-   inverses = open(inversesName, 'w')
+uuid = str(uuid.uuid1())
+inverses = open(inversesName, 'w')
+rdfa = False
+if rdfa:
    inverses.write('<table about="#inverse-names-'+uuid+'"\n') # TODO: add generatedAtTime
    inverses.write('       xmlns:prov="http://www.w3.org/ns/prov#"\n')
    inverses.write('       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"\n')
@@ -724,4 +725,40 @@ if not(os.path.exists(inversesName)):
          inverses.write('    </tr>\n')
          inverses.write('  </span>\n')
    inverses.write('</table>\n')
-   inverses.close()
+else:
+   inverses.write('<table class="inverse-names">\n')
+   inverses.write(' <caption>Names of inverses</caption>\n')
+   inverses.write(' <tr>\n')
+   inverses.write(' <th>PROV-O Property</th>\n')
+   inverses.write(' <th>Recommended inverse name</th>\n')
+   inverses.write(' </tr>\n')
+   for property in ObjectProperties.all():
+      qname = property.subject.split('#')
+      if property.prov_inverse:
+         inverses.write(' <tr>\n')
+         inverses.write(' <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+         inverses.write(' <td>prov:'+property.prov_inverse.first+'</td>\n')
+         inverses.write(' </tr>\n')
+   inverses.write('</table>\n')
+inverses.close()
+
+inversesName = 'inverses.ttl'
+inverses = open(inversesName, 'w')
+inverses.write('@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n')
+inverses.write('@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n')
+inverses.write('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n')
+inverses.write('@prefix owl:  <http://www.w3.org/2002/07/owl#> .\n')
+inverses.write('@prefix prov: <http://www.w3.org/ns/prov#> .\n')
+inverses.write('\n')
+inverses.write('<> prov:wasDerivedFrom <http://www.w3.org/TR/prov-o/prov.owl>;\n')
+inverses.write('   rdfs:seeAlso        <http://www.w3.org/TR/prov-o/#names-of-inverse-properties>;\n')
+inverses.write('   owl:versionIRI      <http://www.w3.org/TR/2012/WD-prov-o-2012MMDD> .\n')
+inverses.write('\n')
+for property in ObjectProperties.all():
+   qname = property.subject.split('#')
+   if property.prov_inverse:
+      inverses.write('prov:'+qname[1]+' owl:inverseOf prov:'+property.prov_inverse.first+' .\n')
+#         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+#                       #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
+#         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+inverses.close()
