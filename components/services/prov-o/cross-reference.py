@@ -705,6 +705,7 @@ if not(os.path.exists(inversesName)):
    inverses.write('  <span rel="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>\n')
    inverses.write('  <span rel="prov:wasTracedTo"    resource="http://www.w3.org/TR/rdfa-syntax/#rdfa-attributes"/>\n')
    inverses.write('  <span rel="prov:wasTracedTo"    resource="http://data.semanticweb.org/person/alvaro-graves"/>\n')
+   inverses.write('  <span rel="prov:wasTracedTo"    resource="http://tw.rpi.edu/instances/TimLebo"/>\n')
    inverses.write('  <span rel="prov:specializationOf" resource="#inverse-names"><span rel="rdf:type" resource="http://www.w3.org/ns/prov#Dictionary"/></span>\n')
    inverses.write('  <span property="prov:generatedAtTime" content="'+str(datetime.datetime.utcnow()).replace(' ','T')+'" datatype="xsd:dateTime"/>\n')
    inverses.write('  <caption>Names of inverses</caption>\n')
