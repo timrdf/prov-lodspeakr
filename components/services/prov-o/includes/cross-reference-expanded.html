@@ -160,6 +160,11 @@
       <dt></dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#actedOnBehalfOf" href="#actedOnBehalfOf">prov:actedOnBehalfOf</a>  <sup class="type-op" title="object property">op</sup>        , <a title="http://www.w3.org/ns/prov#qualifiedDelegation" href="#qualifiedDelegation">prov:qualifiedDelegation</a>  <sup class="type-op" title="object property">op</sup>      </dd>
+
+      <dt>has subclass</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#ProvenanceService" href="#ProvenanceService" class="owlclass">prov:ProvenanceService</a>
+      </dd>
     </dl>
   </div>
 </div>
@@ -187,6 +192,7 @@
     <div class="description">
       <div class="comment"><p>An entity is alternate of another if they are both a specialization of some common entity. The common entity does not need to be identified.</p>
       </div>
+      <p><strong class="crossreference">has characteristics</strong> <a href="http://www.w3.org/TR/owl2-syntax/#Transitive_Object_Properties">Transitive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Reflexive_Object_Properties">Reflexive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Symmetric_Object_Properties">Symmetric</a>      </p>
       <dl>
 
         <dt>has domain</dt>
@@ -203,6 +209,15 @@
           <ul>
             <li>
               <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has sub-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#specializationOf" href="#specializationOf" class="owlclass">prov:specializationOf</a>
             </li>
           </ul>
         </dd>
@@ -514,7 +529,17 @@
     <div class="description">
       <div class="comment"><p>An entity is a specialization of another if they both refer to some common thing but the former is a more constrained entity than the former. The common entity does not need to be identified.</p>
       </div>
+      <p><strong class="crossreference">has characteristics</strong> <a href="http://www.w3.org/TR/owl2-syntax/#Transitive_Object_Properties">Transitive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Irreflexive_Object_Properties">Irreflexive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Asymmetric_Object_Properties">Asymmetric</a>      </p>
       <dl>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#alternateOf" href="#alternateOf" class="owlclass">prov:alternateOf</a> <sup class="type-op" title="object property">op</sup>
+            </li>
+          </ul>
+        </dd>
 
         <dt>has domain</dt>
         <dd>

@@ -334,8 +334,8 @@ for category in categories.keys():
 
          # class prov:unqualifiedForm ?p
          if len(owlClass.prov_unqualifiedForm) > 0:
-            #print owlClass.subject
-            #print owlClass.prov_unqualifiedForm.first
+            print owlClass.subject
+            print owlClass.prov_unqualifiedForm.first
             qname = owlClass.prov_unqualifiedForm.first.subject.split('#')
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')

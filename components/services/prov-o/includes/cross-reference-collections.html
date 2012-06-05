@@ -3,35 +3,41 @@
      xmlns:dcterms="http://purl.org/dc/terms/"
      xmlns:prov="http://www.w3.org/ns/prov#">
 
-  <div id="CompleteMembership" class="entity">
+  <div id="Collection" class="entity">
     <h3>
-      Class: <a href="#CompleteMembership"><span class="dotted" title="http://www.w3.org/ns/prov#CompleteMembership">prov:CompleteMembership</span></a>
+      Class: <a href="#Collection"><span class="dotted" title="http://www.w3.org/ns/prov#Collection">prov:Collection</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-terms-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#CompleteMembership</p>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#Collection</p>
+    <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</p>
+    </div>
 
-    <div about="#example-for-class-CompleteMembership" typeof="prov:Entity" class="example">
-      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#CompleteMembership"></span>
+    <div about="#example-for-class-Collection" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#Collection"></span>
       <strong class="crossreference">Example</strong>
-      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CompleteMembership.ttl"
-           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CompleteMembership.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Collection.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Collection.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
-    <dd class="comment"><p>Indicates that no other member belongs to the collection, that is all the prov:member stated for this CompleteMembership constitutes all members of the collection.</p>
-    </dd>
 
       <dt>is subclass of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
+        <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
       </dd>
       <dt>described with properties:</dt><dd></dd>
 
       <dt></dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a>  <sup class="type-op" title="object property">op</sup>      </dd>
+        <a title="http://www.w3.org/ns/prov#hadMember" href="#hadMember">prov:hadMember</a> <sup class="type-op" title="object property">op</sup>
+      </dd>
+
+      <dt>has subclass</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
+      </dd>
     </dl>
   </div>
 
@@ -43,7 +49,7 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#Dictionary</p>
-    <div class="definition"><p>A dictionary is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the dictionary.</p>
+    <div class="definition"><p>A dictionary is a collection whose members are indexed by keys.</p>
     </div>
 
     <div about="#example-for-class-Dictionary" typeof="prov:Entity" class="example">
@@ -56,12 +62,14 @@
     <dl class="description">
     <dd class="comment"><p>This concept allows for the provenance of the dictionary, but also of its constituents to be expressed. Such a notion of dictionary corresponds to a wide variety of concrete data structures, such as a maps or associative arrays.</p>
     </dd>
+    <dd class="comment"><p>PROV-DM defines a specific type of collection, a dictionary...</p>
+    </dd>
     <dd class="comment"><p>A given dictionary forms a given structure for its members. A different structure (obtained either by insertion or removal of members) constitutes a different dictionary.</p>
     </dd>
 
       <dt>is subclass of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+        <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
       </dd>
       <dt>described with properties:</dt><dd></dd>
 
@@ -71,8 +79,12 @@
         , <a title="http://www.w3.org/ns/prov#qualifiedRemoval" href="#qualifiedRemoval">prov:qualifiedRemoval</a> <sup class="type-op" title="object property">op</sup>
         , <a title="http://www.w3.org/ns/prov#qualifiedInsertion" href="#qualifiedInsertion">prov:qualifiedInsertion</a> <sup class="type-op" title="object property">op</sup>
         , <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a> <sup class="type-op" title="object property">op</sup>
-        , <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a> <sup class="type-op" title="object property">op</sup>
+        , <a title="http://www.w3.org/ns/prov#qualifiedMembership" href="#qualifiedMembership">prov:qualifiedMembership</a> <sup class="type-op" title="object property">op</sup>
       </dd>
+
+      <dt></dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#hadMember" href="#hadMember">prov:hadMember</a>  <sup class="type-op" title="object property">op</sup>      </dd>
 
       <dt>in range of</dt>
       <dd>
@@ -133,6 +145,8 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#EmptyDictionary</p>
+    <div class="definition"><p>An empty dictionary is a dictionary without member.</p>
+    </div>
 
     <div about="#example-for-class-EmptyDictionary" typeof="prov:Entity" class="example">
       <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#EmptyDictionary"></span>
@@ -220,17 +234,23 @@
     <dl class="description">
     <dd class="comment"><p>A key-value pair. Part of a prov:Dictionary through prov:Membership. The key is any RDF Literal, the value is a prov:Entity.</p>
     </dd>
+
+      <dt>is subclass of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+      </dd>
       <dt>described with properties:</dt><dd></dd>
 
       <dt></dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#pairValue" href="#pairValue">prov:pairValue</a> <sup class="type-op" title="object property">op</sup>
-        , <a title="http://www.w3.org/ns/prov#pairKey" href="#pairKey">prov:pairKey</a> <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#pairKey" href="#pairKey">prov:pairKey</a> <sup class="type-dp" title="data property">dp</sup>
+        , <a title="http://www.w3.org/ns/prov#pairValue" href="#pairValue">prov:pairValue</a> <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a> <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#pair" href="#pair">prov:pair</a> <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#removed" href="#removed">prov:removed</a> <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a> <sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
@@ -255,26 +275,30 @@
     <dl class="description">
     <dd class="comment"><p>Described members of a collection, in the form of key-value pairs. The Membership resource can also be annotated with attributes.</p>
     </dd>
+
+      <dt>is subclass of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#EntityInvolvement" href="#EntityInvolvement" class="owlclass">prov:EntityInvolvement</a>
+      </dd>
       <dt>described with properties:</dt><dd></dd>
 
       <dt></dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#member" href="#member">prov:member</a> <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#pair" href="#pair">prov:pair</a> <sup class="type-op" title="object property">op</sup>
       </dd>
+
+      <dt></dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#entity" href="#entity">prov:entity</a>  <sup class="type-op" title="object property">op</sup>      </dd>
 
       <dt>in range of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#membership" href="#membership">prov:membership</a> <sup class="type-op" title="object property">op</sup>
-      </dd>
-
-      <dt>has subclass</dt>
-      <dd>
-        <a title="http://www.w3.org/ns/prov#CompleteMembership" href="#CompleteMembership" class="owlclass">prov:CompleteMembership</a>
+        <a title="http://www.w3.org/ns/prov#qualifiedMembership" href="#qualifiedMembership">prov:qualifiedMembership</a> <sup class="type-op" title="object property">op</sup>
       </dd>
 
       <dt>qualifies</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#membership" href="#membership" class="owlproperty">prov:membership</a> <sup class="type-op" title="object property">op</sup>
+        <a title="http://www.w3.org/ns/prov#hadMember" href="#hadMember" class="owlproperty">prov:hadMember</a> <sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
   </div>
@@ -309,7 +333,8 @@
 
       <dt></dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#removedKey" href="#removedKey">prov:removedKey</a> <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#removed" href="#removed">prov:removed</a> <sup class="type-op" title="object property">op</sup>
+        , <a title="http://www.w3.org/ns/prov#removedKey" href="#removedKey">prov:removedKey</a> <sup class="type-dp" title="data property">dp</sup>
       </dd>
 
       <dt></dt>
@@ -517,6 +542,49 @@
     </div>
   </div>
 
+  <div id="hadMember" class="entity">
+    <h3>
+      Property: <a href="#hadMember"><span class="dotted" title="http://www.w3.org/ns/prov#hadMember">prov:hadMember</span></a> <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#hadMember</p>
+    <div class="definition"><p>TODO Property needs a definition.</p>
+    </div>
+
+    <div about="#example-for-property-hadMember" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#hadMember"></span>
+      <strong class="crossreference">Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadMember.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadMember.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <dl>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+      </dl>
+    </div>
+  </div>
+
   <div id="inserted" class="entity">
     <h3>
       Property: <a href="#inserted"><span class="dotted" title="http://www.w3.org/ns/prov#inserted">prov:inserted</span></a> <sup class="type-op" title="object property">op</sup>
@@ -562,28 +630,37 @@
     </div>
   </div>
 
-  <div id="member" class="entity">
+  <div id="pair" class="entity">
     <h3>
-      Property: <a href="#member"><span class="dotted" title="http://www.w3.org/ns/prov#member">prov:member</span></a> <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#pair"><span class="dotted" title="http://www.w3.org/ns/prov#pair">prov:pair</span></a> <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
       </span>
     </h3>
-    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#member</p>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#pair</p>
     <div class="definition"><p>TODO Property needs a definition.</p>
     </div>
 
-    <div about="#example-for-property-member" typeof="prov:Entity" class="example">
-      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#member"></span>
+    <div about="#example-for-property-pair" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#pair"></span>
       <strong class="crossreference">Example</strong>
-      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_member.ttl"
-           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_member.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_pair.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_pair.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
       <div class="comment"><p>The key-value pair was part of the membership. A membership can have multiple members.</p>
       </div>
       <dl>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#involvee" href="#involvee" class="owlclass">prov:involvee</a> <sup class="type-op" title="object property">op</sup>
+            </li>
+          </ul>
+        </dd>
 
         <dt>has domain</dt>
         <dd>
@@ -599,51 +676,6 @@
           <ul>
             <li>
               <a title="http://www.w3.org/ns/prov#KeyValuePair" href="#KeyValuePair" class="owlclass">prov:KeyValuePair</a>
-            </li>
-          </ul>
-        </dd>
-
-      </dl>
-    </div>
-  </div>
-
-  <div id="membership" class="entity">
-    <h3>
-      Property: <a href="#membership"><span class="dotted" title="http://www.w3.org/ns/prov#membership">prov:membership</span></a> <sup class="type-op" title="object property">op</sup>
-      <span class="backlink">
-         back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
-      </span>
-    </h3>
-    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#membership</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
-    </div>
-
-    <div about="#example-for-property-membership" typeof="prov:Entity" class="example">
-      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#membership"></span>
-      <strong class="crossreference">Example</strong>
-      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_membership.ttl"
-           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_membership.ttl"%}{% endescape %}</pre>
-    </div>
-
-    <div class="description">
-      <div class="comment"><p>The collection included the specified membership of keys-values.</p>
-      </div>
-      <dl>
-
-        <dt>has domain</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
-            </li>
-          </ul>
-        </dd>
-
-        <dt>has range</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
             </li>
           </ul>
         </dd>
@@ -794,6 +826,51 @@
     </div>
   </div>
 
+  <div id="qualifiedMembership" class="entity">
+    <h3>
+      Property: <a href="#qualifiedMembership"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedMembership">prov:qualifiedMembership</span></a> <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#qualifiedMembership</p>
+    <div class="definition"><p>TODO Property needs a definition.</p>
+    </div>
+
+    <div about="#example-for-property-qualifiedMembership" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#qualifiedMembership"></span>
+      <strong class="crossreference">Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedMembership.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_qualifiedMembership.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <div class="comment"><p>The collection included the specified membership of keys-values.</p>
+      </div>
+      <dl>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Membership" href="#Membership" class="owlclass">prov:Membership</a>
+            </li>
+          </ul>
+        </dd>
+
+      </dl>
+    </div>
+  </div>
+
   <div id="qualifiedRemoval" class="entity">
     <h3>
       Property: <a href="#qualifiedRemoval"><span class="dotted" title="http://www.w3.org/ns/prov#qualifiedRemoval">prov:qualifiedRemoval</span></a> <sup class="type-op" title="object property">op</sup>
@@ -839,6 +916,49 @@
       <dd>
         <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom" class="owlproperty">prov:derivedByRemovalFrom</a> <sup class="type-op" title="object property">op</sup>
       </dd>
+
+      </dl>
+    </div>
+  </div>
+
+  <div id="removed" class="entity">
+    <h3>
+      Property: <a href="#removed"><span class="dotted" title="http://www.w3.org/ns/prov#removed">prov:removed</span></a> <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
+      </span>
+    </h3>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#removed</p>
+    <div class="definition"><p>TODO Property needs a definition.</p>
+    </div>
+
+    <div about="#example-for-property-removed" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#removed"></span>
+      <strong class="crossreference">Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_removed.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_removed.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <dl>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#Removal" href="#Removal" class="owlclass">prov:Removal</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has range</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#KeyValuePair" href="#KeyValuePair" class="owlclass">prov:KeyValuePair</a>
+            </li>
+          </ul>
+        </dd>
 
       </dl>
     </div>
