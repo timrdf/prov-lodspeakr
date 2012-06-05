@@ -782,7 +782,9 @@ else:
 inverses.close()
 
 inversesName = 'inverses.ttl'
+termsName = 'terms.txt'
 inverses = open(inversesName, 'w')
+terms = open(termsName, 'w')
 inverses.write('@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n')
 inverses.write('@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n')
 inverses.write('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n')
@@ -795,9 +797,11 @@ inverses.write('   owl:versionIRI      <http://www.w3.org/TR/2012/WD-prov-o-2012
 inverses.write('\n')
 for property in ObjectProperties.all():
    qname = property.subject.split('#')
+   terms.write(qname[1]+'\n') 
    if property.prov_inverse:
       inverses.write('prov:'+qname[1]+' owl:inverseOf prov:'+property.prov_inverse.first+' .\n')
 #         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 #                       #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
 #         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
 inverses.close()
+terms.close()
