@@ -762,7 +762,7 @@ elif False:
    # </tr>
    # </table>
    #</div>
-
+   print 'todo: better rdfa'
 
 else:
    inverses.write('<table class="inverse-names">\n')
