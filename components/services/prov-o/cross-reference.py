@@ -726,6 +726,44 @@ if rdfa:
          inverses.write('    </tr>\n')
          inverses.write('  </span>\n')
    inverses.write('</table>\n')
+elif False:
+   
+   # Thanks to Gregg Kellogg from lod-public@w3.org
+   # The rdfa crew hangs out at public-rdfa@w3.org and #rdfa on irc.w3.org.
+
+   #<div resource="#inverse-names-592b37e4-ac61-11e1-b149-b6e4fd0676c2"
+   #     prefix="prov: http://www.w3.org/ns/prov#"
+   #     typeof="prov:Dictionary">
+   # <span property="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>
+   # <span property="prov:wasTracedTo" resource="http://www.w3.org/TR/rdfa-syntax/#rdfa-attributes"/>
+   # <span property="prov:wasTracedTo" resource="http://data.semanticweb.org/person/alvaro-graves"/>
+   # <span property="prov:wasTracedTo" resource="http://tw.rpi.edu/instances/TimLebo"/>
+   # <span property="prov:specializationOf" resource="#inverse-names">
+   # <span property="rdf:type" resource="http://www.w3.org/ns/prov#Dictionary"/>
+   # <span property="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>
+   # <span property="prov:generatedAtTime" content="2012-06-02T03:16:30.563734" datatype="xsd:dateTime"/>
+   # <table class="inverse-names">
+   # <caption>Names of inverses</caption>
+   # <tr>
+   #  <th>PROV-O Property</th>
+   #  <th>Recommended inverse name</th>
+   # </tr>
+   # <tr property="prov:member" resource="#inverse-of-member" typeof="prov:KeyValuePair">
+   #  <td property="prov:pairKey" content="http://www.w3.org/ns/prov#member">
+   #   <a title="http://www.w3.org/ns/prov#member" href="#member" class="owlproperty">
+   #    prov:member
+   #   </a>
+   #  </td>
+   #  <td property="prov:pairValue" typeof="prov:Entity">
+   #   <span property="prov:value" content="inMembership">
+   #    prov:inMembership
+   #   </span>
+   #  </td>
+   # </tr>
+   # </table>
+   #</div>
+
+
 else:
    inverses.write('<table class="inverse-names">\n')
    inverses.write(' <caption>Names of inverses</caption>\n')
