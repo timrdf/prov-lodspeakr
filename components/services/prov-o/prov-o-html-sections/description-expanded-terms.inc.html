@@ -42,7 +42,7 @@
 
         <div about="#narrative-example-expanded-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
            <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. Agent Derek now publishes a post about
-		   his work with the aggregated file, while Monica publishes an alternate version to reach a more casual audience.
+		   his work with the aggregated file:
             </p> 
 		   
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl"
@@ -51,20 +51,24 @@
 		   
 		   <p>
 		   Agent <code>ex:derek</code>, acting again in behalf of the <code>ex:chartgenerators</code> organization, 
-		   publishes a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>). Since he is the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
-		   is recorded as well. The post produced by <code>ex:derek</code> (<code>ex:post9821</code>) includes a permanent link where the content of the latest version is shown
+		   publishes a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>) using the tool <code>ex:postEditor</code>. Since he is the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
+		   is recorded as well. The post produced by <code>ex:derek</code> (<code>ex:post9821v1</code>) includes a permanent link where the content of the latest version is shown
 		   (<code>ex:more-crime-happens-in-cities</code>) plus a snapshot of the content of the current version (<code>ex:postContent0</code>). Derek also adds additional metadata of the post, like the title.
 		   </p>
 		   <p>
 		   However, inmediately after having published the post, Derek detects a typo. He does not want to record the activity that led to the new version, so he just creates a new version and 
-		   summarizes the changes in a revision of the original post(<code>ex:post9821v1</code>). This revision is also a specialization of the original post, since it is a refined version. 
+		   summarizes the changes in a revision of the original post(<code>ex:post9821v2</code>). This revision is also a specialization of the original post, since it is a refined version. 
          Thus, the permalink to the latest version (<code>ex:more-crime-happens-in-cities</code>) remains the same in the new revision, but a different URL is given for its snapshot (<code>ex:postContent1</code>).
-		   </p>
-		   <p>
-		   Shortly after Derek's post publication, ex:monica adapts the text for a wider audience in a new version (<code>ex:post9821v2</code>). This version is an specialization of the original post,
-		   and an alternate of the first version modified by Derek. Since the provenance produced by Derek and Monica is related to the same resources, the system
-		   automatically groups it in the same <a href="#Bundle" class="qname">prov:Bundle</a> (<code>ex:bundlePost</code>).
-		   </p>
+		   </p>		   
+		   
+		 <div about="#narrative-example-expanded-1-a" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+           <p>Shortly after Derek's post publication, ex:monica adapts the text for a wider audience in a new post (<code>ex:post9822</code>). This version is an specialization of the original post,
+		   and an alternate of the version modified by Derek. Since the provenance produced by the activities of Derek and Monica correspond to different user views, the system
+		   automatically publish it in different <a href="#Bundle" class="qname">prov:Bundles</a> (<code>ex:bundlePost and ex:bundlePost1</code>).
+            </p> 		   
+            <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl"
+                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl" %}{% endescape %}</pre> 
+        </div>
 		   
          <div about="#narrative-example-expanded-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
             <p>Some time passes by, and John writes his own conclusions quoting the previous two posts:
