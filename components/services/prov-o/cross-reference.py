@@ -385,7 +385,7 @@ for category in categories.keys():
          elif len(property.prov_sharesDefinitionWith) > 0:
             # If it shares a definition, use that.
             sharer = property.prov_sharesDefinitionWith.first
-            #print property.subject #+ ' ' + sharer.subject
+            #print property.subject + ' sharing definition of ' + sharer.subject
             if len(sharer.prov_definition) > 0:
                cross.write('    <div class="definition"><p>'+sharer.prov_definition.first+'</p>\n')
             elif len(sharer.prov_editorsDefinition) > 0:
@@ -594,8 +594,9 @@ for category in categories.keys():
 
          # property prov:unqualifiedForm ?p
          if len(property.prov_unqualifiedForm) > 0:
+            #print property.subject + ' has unqualifiedForm'
             qname = property.prov_unqualifiedForm.first.subject.split('#')
-            print property.subject + ' '  + property.prov_unqualifiedForm.first.subject
+            #print property.subject + ' has unqualifiedForm '  + property.prov_unqualifiedForm.first.subject
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
             cross.write('      <dd>\n')
@@ -803,5 +804,14 @@ for property in ObjectProperties.all():
 #         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 #                       #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
 #         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+   elif qname[1] is not 'topObjectProperty':
+      print 'WARNING: ' + property.subject + ' does not have an inverse'
+
+for owlClass in Classes.all():
+   if owlClass.subject.startswith('http://www.w3.org/ns/prov#'):
+      qname = owlClass.subject.split('#')
+      if qname[1] is not 'topObjectProperty':
+         terms.write(qname[1]+'\n')
+
 inverses.close()
 terms.close()
