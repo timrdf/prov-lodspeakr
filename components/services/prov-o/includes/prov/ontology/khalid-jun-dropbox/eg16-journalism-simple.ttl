@@ -1,0 +1,62 @@
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix ex:   <http://example.org#> .
+
+### in the first step, aggregate data by region, using raw dataset ex:dataSet1 and a list of regions ex:regionList1, and it genreated a new entity, ex:aggregated
+
+ex:aggregationActivity a prov:Activity ;
+	      	       prov:used           ex:dataSet1 ;
+                       prov:used           ex:regionList1 .
+
+ex:aggregate1          prov:wasGeneratedBy ex:aggregationActivity .
+
+ex:regionList1 a prov:Entity .
+ex:dataSet1    a prov:Entity .
+ex:aggregate1  a prov:Entity .
+
+### in the second step, a graphical chart was created using the aggregated data
+
+ex:illustrationActivity a prov:Activity; 
+	       		prov:used           ex:aggregate1 .
+
+ex:chart1      a prov:Entity ;
+	       prov:wasGeneratedBy ex:illustrationActivity .
+
+#### so we can say that the chart was derived from the aggregated data
+
+ex:chart1     prov:wasDerivedFrom     ex:aggregate1 .
+
+
+# ==== Agent ====
+### Derek was involved in both the aggregation and chart creation activities: 
+
+ex:aggregationActivity     prov:wasAssociatedWith ex:derek .
+ex:illustrationActivity    prov:wasAssociatedWith ex:derek .
+
+ex:derek       a    prov:Agent ;
+	       a foaf:Person ;
+	       foaf:givenName "Derek"^^xsd:string ;
+               foaf:mbox      <mailto:dererk@example.org> .
+
+# ==== actedOnBehalfOf ====
+
+### Derek works as part of an organization, Chart Generators, and so the provenance declares that he acts on their behalf. 
+
+ex:derek prov:actedOnBehalfOf ex:chartgen .
+
+ex:chartgen a prov:Agent ;
+            a prov:Organization ;
+            foaf:name "Chart Generators" .
+
+# ==== wasInformedBy ====
+### the chart creation is dependent on the aggregation activity
+
+ex:illustrationActivity     prov:wasInformedBy		ex:aggregationActivity .
+
+# ==== wasAttributedTo ====
+
+### the aggregated data and the chart should all be attributed to Derek
+
+ex:aggregate1 prov:wasAttributedTo 	ex:derek .
+ex:chart1   prov:wasAttributedTo 	ex:derek .

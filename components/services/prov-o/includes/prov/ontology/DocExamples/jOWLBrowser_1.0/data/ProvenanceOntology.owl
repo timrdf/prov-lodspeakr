@@ -1,0 +1,914 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY prov "http://www.w3.org/ns/prov#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://example.com/"
+     xml:base="http://example.com/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:prov="http://www.w3.org/ns/prov#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.w3.org/ns/prov#">
+        <rdfs:label xml:lang="en">PROV Ontology</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">0.2</rdfs:comment>
+        <rdfs:comment xml:lang="en">This document is published by the Provenance Working Group (http://www.w3.org/2011/prov/wiki/Main_Page). 
+
+If you wish to make comments regarding this document, please send them to public-prov-wg@w3.org (subscribe, archives). All feedback is welcome.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&prov;involvementClass">
+        <rdfs:comment xml:lang="en">This annotation property links a prov:involved subproperty with a prov:Involved subclass. This indicates that the property can be qualified by using prov:qualified. 
+
+Example:
+    prov:wasGeneratedBy prov:involvementClass prov:Generation .
+
+Then this unqualified assertion:
+    :entity1 prov:wasGeneratedBy :activity1 .
+
+can be qualified by adding:
+   :entity1 prov:qualified :entity1Gen .
+   :entity1Gen a prov:Generation;
+       prov:activity :activity1 ;
+       :customValue 1337 .
+
+Note how the range of the unqualified property is mirrored by the prov:activity or prov:entity on the involvement class.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&rdfs;seeAlso"/>
+    <owl:AnnotationProperty rdf:about="&prov;category"/>
+    <owl:AnnotationProperty rdf:about="&prov;involvementProperty">
+        <rdfs:subPropertyOf rdf:resource="&rdfs;seeAlso"/>
+    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#actedOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;actedOnBehalfOf">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:domain rdf:resource="&prov;Agent"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <prov:involvementClass rdf:resource="&prov;Responsibility"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#activity -->
+
+    <owl:ObjectProperty rdf:about="&prov;activity">
+        <rdfs:comment xml:lang="en">The property used by a prov:EntityInvolvement to cite the Entity that was prov:involved with either an Activity or Entity.</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment xml:lang="en">This property behaves in spirit like rdf:object; it references the object of a prov:involved triple.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting_again"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;ActivityInvolvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#adoptedPlan -->
+
+    <owl:ObjectProperty rdf:about="&prov;adoptedPlan">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment xml:lang="en">The Activity performed was described by the given plan resource. Activity specifications, as referred to by plan links, are out of scope of this           specification</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:domain rdf:resource="&prov;Association"/>
+        <rdfs:range rdf:resource="&prov;Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#alternateOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;alternateOf">
+        <rdfs:comment xml:lang="en">Another prov:Entity that characterizes the same thing as this prov:Entity, potentially in a different manner.</rdfs:comment>
+        <prov:category>core</prov:category>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#AlternateOf"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:seeAlso rdf:resource="&prov;specializationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#endedAt -->
+
+    <owl:ObjectProperty rdf:about="&prov;endedAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <prov:category>core</prov:category>
+        <rdfs:comment xml:lang="en">TODO: range should be an xsd:dateTime directly to avoid proliferation of bnodes and to keep it simple. The elaborate form should also be permitted, but more practical uses will want it directly.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;TimeInstant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#entity -->
+
+    <owl:ObjectProperty rdf:about="&prov;entity">
+        <rdfs:comment xml:lang="en">The property used by a prov:ActivityInvolvement to cite the Activity that was prov:involved with either an Activity or Entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property behaves in spirit like rdf:object; it references the object of a prov:involved triple.</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Original_Source"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;EntityInvolvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#generated -->
+
+    <owl:ObjectProperty rdf:about="&prov;generated">
+        <prov:category>core</prov:category>
+        <rdfs:comment>This inverse of prov:wasGeneratedBy is defined so that Activities being described can reference their generated outputs directly without needing to &#39;stop&#39; and start describing the Entity. This helps &#39;Activity-centric&#39; modeling as opposed to &#39;Entity-centric&#39; modeling.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+        <owl:inverseOf rdf:resource="&prov;wasGeneratedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadOriginalSource -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadOriginalSource">
+        <rdfs:comment xml:lang="en">how is this different from wasDerivedFrom?</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Original_Source"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:involvementClass rdf:resource="&prov;Source"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadQuotedAgent -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadQuotedAgent">
+        <prov:category>additional</prov:category>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Quotation"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:domain rdf:resource="&prov;Quotation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadQuoterAgent -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadQuoterAgent">
+        <prov:category>additional</prov:category>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Quotation"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:domain rdf:resource="&prov;Quotation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadRole -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadRole">
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">When an instance of prov:Involvement uses the prov:hadRole property to cite a prov:Role, it is providing a role for the instance referenced by the prov:entity or the prov:activity properties. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribute"/>
+        <rdfs:range rdf:resource="&prov;Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadSpatialExtent -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadSpatialExtent">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment>This property is not functional because the many values could be at a variety of granularies (In this room, in that chair).</rdfs:comment>
+        <rdfs:comment>DM: Location is an optional attribute of Entity and Activity.</rdfs:comment>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Location"/>
+        <rdfs:range rdf:resource="&prov;Location"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hadTemporalExtent -->
+
+    <owl:ObjectProperty rdf:about="&prov;hadTemporalExtent">
+        <prov:category>core</prov:category>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#hasAnnotation -->
+
+    <owl:ObjectProperty rdf:about="&prov;hasAnnotation">
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Annotation"/>
+        <rdfs:range rdf:resource="&prov;Note"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#involved -->
+
+    <owl:ObjectProperty rdf:about="&prov;involved">
+        <rdfs:comment xml:lang="en">Subproperties of prov:involved may be be qualified by creating instances of a corresponding prov:Involvement class. For example, the binary relation :baking prov:used :spoon can be qualified by asserting :baking prov:qualified [ a prov:Usage; prov:entity :baking; :foo :bar ]
+
+prov:involved should not be used without also using the subproperty.
+
+Subproperties of prov:involved may also be asserted directly without being qualified.</rdfs:comment>
+        <rdfs:domain rdf:resource="&prov;Element"/>
+        <rdfs:range rdf:resource="&prov;Element"/>
+        <prov:involvementClass rdf:resource="&prov;Involvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#occurredAt -->
+
+    <owl:ObjectProperty rdf:about="&prov;occurredAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:domain rdf:resource="&prov;InstantaneousEvent"/>
+        <rdfs:range rdf:resource="&prov;TimeInstant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#occurredDuring -->
+
+    <owl:ObjectProperty rdf:about="&prov;occurredDuring"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#qualified -->
+
+    <owl:ObjectProperty rdf:about="&prov;qualified">
+        <rdfs:comment>This one property is used to associate a prov:Element (prov:Entity or prov:Activity) with an instance of any subclass of prov:Involvement, which will provide additional descriptions about the binary prov:involved relation. For example, :baking prov:used :pan, :egg; prov:wasAssociatedWith :baker; prov:generated :dirty_pan; prov:qualified [ a prov:Usage; prov:entity :egg; prov:role :ingredient], [ a prov:Association; prov:entity :baker; prov:role :leader ] .</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment>The subproperties here can be deleted without concern. For example, :element prov:qualified [ a prov:Usage ] handles the case of prov:hadQualifiedUsage . http://www.w3.org/2011/prov/track/issues/255</rdfs:comment>
+        <rdfs:domain rdf:resource="&prov;Element"/>
+        <rdfs:range rdf:resource="&prov;Involvement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#specializationOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;specializationOf">
+        <prov:category>core</prov:category>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#SpecializationOf"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:seeAlso rdf:resource="&prov;alternateOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#startedAt -->
+
+    <owl:ObjectProperty rdf:about="&prov;startedAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <prov:category>core</prov:category>
+        <rdfs:comment>TODO: range should be an xsd:dateTime directly to avoid proliferation of bnodes and to keep it simple. The elaborate form should also be permitted, but more practical uses will want it directly.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;TimeInstant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#tracedTo -->
+
+    <owl:ObjectProperty rdf:about="&prov;tracedTo">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Traceability"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#imprecise-1"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#imprecise-n"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#precise-1"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:involvementClass rdf:resource="&prov;Trace"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#used -->
+
+    <owl:ObjectProperty rdf:about="&prov;used">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</rdfs:comment>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:involvementClass rdf:resource="&prov;Usage"/>
+        <rdfs:seeAlso rdf:resource="&prov;Usage"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAssociatedWith -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasAssociatedWith">
+        <prov:category>core</prov:category>
+        <rdfs:comment xml:lang="en">A prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <rdfs:seeAlso rdf:resource="&prov;Association"/>
+        <prov:involvementClass rdf:resource="&prov;Association"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasAttributedTo -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasAttributedTo">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+        <rdfs:range rdf:resource="&prov;Agent"/>
+        <prov:involvementClass rdf:resource="&prov;Attribution"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;tracedTo"/>
+    </owl:ObjectProperty>
+    <owl:Axiom>
+        <rdfs:comment>TODO: Paolo questions this subproperty axiom.</rdfs:comment>
+        <owl:annotatedProperty rdf:resource="&rdfs;subPropertyOf"/>
+        <owl:annotatedTarget rdf:resource="&prov;tracedTo"/>
+        <owl:annotatedSource rdf:resource="&prov;wasAttributedTo"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasDerivedFrom">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <prov:category>core</prov:category>
+        <rdfs:comment xml:lang="en">wasDerivedFrom links two distinct characterized entities, where &quot;some characterized entity is transformed from, created from, or affected by another characterized entity.&quot;</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#imprecise-1"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#imprecise-n"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#precise-1"/>
+        <prov:involvementClass rdf:resource="&prov;Derivation"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;tracedTo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasEndedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasEndedBy">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Ending"/>
+        <prov:involvementClass rdf:resource="&prov;End"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasAssociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasGeneratedBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <prov:category>core</prov:category>
+        <rdfs:comment xml:lang="en">wasGeneratedBy links Entitites with Activity representing that entity was generated as a result of Activity</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:involvementClass rdf:resource="&prov;Generation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasInformedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasInformedBy">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting_again"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <prov:involvementClass rdf:resource="&prov;Inform"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasQuotedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasQuotedFrom">
+        <rdfs:comment xml:lang="en">Different from wasAttributedTo?</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Quotation"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <prov:involvementClass rdf:resource="&prov;Quotation"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasRevisionOf -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasRevisionOf">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+        <rdfs:range rdf:resource="&prov;Entity"/>
+        <rdfs:domain rdf:resource="&prov;Entity"/>
+        <prov:involvementClass rdf:resource="&prov;Revision"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasStartedBy -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasStartedBy">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting"/>
+        <rdfs:range rdf:resource="&prov;Element"/>
+        <prov:involvementClass rdf:resource="&prov;Start"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;wasAssociatedWith"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#wasStartedByActivity -->
+
+    <owl:ObjectProperty rdf:about="&prov;wasStartedByActivity">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Started_by_activity"/>
+        <rdfs:range rdf:resource="&prov;Activity"/>
+        <rdfs:domain rdf:resource="&prov;Activity"/>
+        <prov:involvementClass rdf:resource="&prov;StartByActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&prov;involved"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/prov#inXSDDateTime -->
+
+    <owl:DatatypeProperty rdf:about="&prov;inXSDDateTime">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&prov;TimeInstant"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Activity -->
+
+    <owl:Class rdf:about="&prov;Activity">
+        <rdfs:subClassOf rdf:resource="&prov;Element"/>
+        <owl:disjointWith rdf:resource="&prov;Entity"/>
+        <prov:category>core</prov:category>
+        <rdfs:comment xml:lang="en">Activity is defined to be &#39;an identifiable activity, which performs a piece of work.&#39;</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#ActivityInvolvement -->
+
+    <owl:Class rdf:about="&prov;ActivityInvolvement">
+        <rdfs:subClassOf rdf:resource="&prov;Involvement"/>
+        <owl:disjointWith rdf:resource="&prov;EntityInvolvement"/>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment xml:lang="en">An instance of prov:ActivityInvolvement is used to provide additional descriptions of a binary relation from any instance to an instance of prov:Activity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Agent -->
+
+    <owl:Class rdf:about="&prov;Agent">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">An agent represents a characterized entity capable of activity.</rdfs:comment>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#AgentInvolvement -->
+
+    <owl:Class rdf:about="&prov;AgentInvolvement">
+        <rdfs:subClassOf rdf:resource="&prov;EntityInvolvement"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Association -->
+
+    <owl:Class rdf:about="&prov;Association">
+        <rdfs:subClassOf rdf:resource="&prov;AgentInvolvement"/>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment>An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from a prov:Activity to some prov:Agent that is responsible for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualified [ a prov:Association; prov:entity :baker; :foo :bar ].</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <prov:involvementProperty rdf:resource="&prov;wasAssociatedWith"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Attribution -->
+
+    <owl:Class rdf:about="&prov;Attribution">
+        <rdfs:subClassOf rdf:resource="&prov;AgentInvolvement"/>
+        <rdfs:comment>An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from a prov:Entity to some prov:Agent that is responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualified [ a prov:Attribution; prov:entity :baker; :foo :bar ].</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+        <prov:involvementProperty rdf:resource="&prov;wasAttributedTo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Bundle -->
+
+    <owl:Class rdf:about="&prov;Bundle">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <rdfs:comment xml:lang="en">A prov:Bundle is a group of PROV statements.</rdfs:comment>
+        <rdfs:comment xml:lang="en">prov:Bundles are best modeled using sd:NamedGraphs.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Bundle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Derivation -->
+
+    <owl:Class rdf:about="&prov;Derivation">
+        <rdfs:subClassOf rdf:resource="&prov;EntityInvolvement"/>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Traceability"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <prov:involvementProperty rdf:resource="&prov;wasDerivedFrom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Element -->
+
+    <owl:Class rdf:about="&prov;Element">
+        <rdfs:comment rdf:datatype="&rdfs;Literal">Element could be avoided if we could specify unions on domains and ranges.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Element is the union of Activity and Entity, which are the principal topics of PROV.
+
+(Due to OWL-RL restriction this union is not specified here)</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#End -->
+
+    <owl:Class rdf:about="&prov;End">
+        <rdfs:subClassOf rdf:resource="&prov;Association"/>
+        <rdfs:subClassOf rdf:resource="&prov;InstantaneousEvent"/>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment>An Agent ends an Activity, optionally at a particular TimeInstant.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Ending"/>
+        <prov:involvementProperty rdf:resource="&prov;wasEndedBy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Entity -->
+
+    <owl:Class rdf:about="&prov;Entity">
+        <rdfs:subClassOf rdf:resource="&prov;Element"/>
+        <rdfs:comment xml:lang="en">An identifiable characterized entity.</rdfs:comment>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#EntityInvolvement -->
+
+    <owl:Class rdf:about="&prov;EntityInvolvement">
+        <rdfs:subClassOf rdf:resource="&prov;Involvement"/>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment xml:lang="en">An instance of EntityInvolvement is used to provide additional descriptions of a binary relation from any instance to an instance of Entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Generation -->
+
+    <owl:Class rdf:about="&prov;Generation">
+        <rdfs:subClassOf rdf:resource="&prov;ActivityInvolvement"/>
+        <rdfs:subClassOf rdf:resource="&prov;InstantaneousEvent"/>
+        <rdfs:comment xml:lang="de">An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualified [ a prov:Generation; prov:entity :baking; :foo :bar ].</rdfs:comment>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <prov:involvementProperty rdf:resource="&prov;wasGeneratedBy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Inform -->
+
+    <owl:Class rdf:about="&prov;Inform">
+        <rdfs:subClassOf rdf:resource="&prov;ActivityInvolvement"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+        <prov:involvementProperty rdf:resource="&prov;wasInformedBy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#InstantaneousEvent -->
+
+    <owl:Class rdf:about="&prov;InstantaneousEvent"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Involvement -->
+
+    <owl:Class rdf:about="&prov;Involvement">
+        <rdfs:comment xml:lang="en">An instance of prov:Involvement is used to provide additional descriptions of a prov:qualifiable binary involvement. A description (via prov:Involvement) of the binary involvement implies the assertion of the binary involvement.</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <prov:involvementProperty rdf:resource="&prov;involved"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Location -->
+
+    <owl:Class rdf:about="&prov;Location">
+        <prov:category>core</prov:category>
+        <rdfs:comment>This is wgs:SpatialThing</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Location"/>
+        <rdfs:seeAlso rdf:resource="&prov;hadSpatialExtent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Note -->
+
+    <owl:Class rdf:about="&prov;Note">
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Note"/>
+        <rdfs:seeAlso rdf:resource="&prov;hadNote"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Organization -->
+
+    <owl:Class rdf:about="&prov;Organization">
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <prov:category>additional</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Organization"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Person -->
+
+    <owl:Class rdf:about="&prov;Person">
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <prov:category>additional</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Plan -->
+
+    <owl:Class rdf:about="&prov;Plan">
+        <rdfs:subClassOf rdf:resource="&prov;Entity"/>
+        <prov:category></prov:category>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Quotation -->
+
+    <owl:Class rdf:about="&prov;Quotation">
+        <rdfs:subClassOf rdf:resource="&prov;EntityInvolvement"/>
+        <rdfs:comment xml:lang="en">TODO: Shouldn&#39;t Quotation be a subtype of Derivation (and same for the binary relations?) -Tim</rdfs:comment>
+        <prov:category>additional</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Quotation"/>
+        <prov:involvementProperty rdf:resource="&prov;wasQuotedFrom"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Responsibility -->
+
+    <owl:Class rdf:about="&prov;Responsibility">
+        <rdfs:subClassOf rdf:resource="&prov;AgentInvolvement"/>
+        <rdfs:comment xml:lang="en">An instance of prov:Responsibility provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualified [ a prov:Responsiblity; prov:entity :mother; :foo :bar ].</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:comment rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <prov:involvementProperty rdf:resource="&prov;actedOnBehalfOf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Revision -->
+
+    <owl:Class rdf:about="&prov;Revision">
+        <rdfs:subClassOf rdf:resource="&prov;Source"/>
+        <prov:category>additional</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+        <prov:involvementProperty rdf:resource="&prov;wasRevisionOf"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Role -->
+
+    <owl:Class rdf:about="&prov;Role">
+        <rdfs:comment rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribute"/>
+        <rdfs:seeAlso rdf:resource="&prov;hadRole"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#SoftwareAgent -->
+
+    <owl:Class rdf:about="&prov;SoftwareAgent">
+        <rdfs:subClassOf rdf:resource="&prov;Agent"/>
+        <prov:category>additional</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#SoftwareAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Source -->
+
+    <owl:Class rdf:about="&prov;Source">
+        <rdfs:subClassOf rdf:resource="&prov;Derivation"/>
+        <prov:category>additional</prov:category>
+        <rdfs:comment rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Original_Source"/>
+        <prov:involvementProperty rdf:resource="&prov;hadOriginalSource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Start -->
+
+    <owl:Class rdf:about="&prov;Start">
+        <rdfs:subClassOf rdf:resource="&prov;Association"/>
+        <rdfs:subClassOf rdf:resource="&prov;InstantaneousEvent"/>
+        <rdfs:comment>An Agent starts an Activity, optionally at a particular TimeInstant.</rdfs:comment>
+        <prov:category>qualified</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting"/>
+        <prov:involvementProperty rdf:resource="&prov;wasStartedBy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#StartByActivity -->
+
+    <owl:Class rdf:about="&prov;StartByActivity">
+        <rdfs:subClassOf rdf:resource="&prov;ActivityInvolvement"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Started_by_activity"/>
+        <prov:involvementProperty rdf:resource="&prov;wasStartedByActivity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#TimeInstant -->
+
+    <owl:Class rdf:about="&prov;TimeInstant">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+        <rdfs:comment>deprecate in favor of InstantaneousEvent? -Tim 6 march 2012</rdfs:comment>
+        <rdfs:comment xml:lang="en">&#39;Instants are, intuitively, point-like in that they have no interior points&#39;
+reusing notion from W3C OWL-Time Working Draft (http://www.w3.org/TR/owl-time/), but not associating to it directly because it is not a Recommendation.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:comment rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:seeAlso rdf:resource="&prov;hadTemporalExtent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Trace -->
+
+    <owl:Class rdf:about="&prov;Trace">
+        <rdfs:subClassOf rdf:resource="&prov;EntityInvolvement"/>
+        <rdfs:comment xml:lang="en">A prov:Trace can be from any prov:Element to any prov:Element, so it cannot be a subclass of prov:EntityInvolvement or prov:ActivityInvolvement.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An instance of prov:Trace provides additional descriptions about the binary prov:tracedTo relation from some prov:Element (Entity or Activity) to some other prov:Element. For example, :stomach_ache prov:tracedTo :spoon; prov:qualified [ a prov:Trace; prov:entity :spoon; :foo :bar ].</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Traceability"/>
+        <prov:involvementProperty rdf:resource="&prov;tracedTo"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prov#Usage -->
+
+    <owl:Class rdf:about="&prov;Usage">
+        <rdfs:subClassOf rdf:resource="&prov;EntityInvolvement"/>
+        <rdfs:subClassOf rdf:resource="&prov;InstantaneousEvent"/>
+        <prov:category>core</prov:category>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <prov:involvementProperty rdf:resource="&prov;used"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.1.0.20069) http://owlapi.sourceforge.net -->
+

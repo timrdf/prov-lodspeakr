@@ -1,0 +1,23 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+# prov:collection references the previous collection 
+# entity in a prov:qualifiedInsertion|prov:qualifiedRemoval
+:collection-version-6
+	a prov:Dictionary;
+	prov:derivedByInsertionFrom :collection-version-5 ;
+	   prov:qualifiedInsertion [ 
+	      a prov:Insertion;
+	      prov:collection :collection-version-5 ;
+		  prov:inserted [ 
+	         a prov:KeyValuePair;
+	         prov:key   "k6"^^xsd:string ;
+	         prov:value :e6 ;
+	      ];
+	   ] .
+
+:collection-version-5 a prov:Dictionary .
+:e6 a prov:Entity .

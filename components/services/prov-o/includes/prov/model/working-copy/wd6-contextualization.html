@@ -1,0 +1,521 @@
+<!DOCTYPE html
+>
+
+<html><head> 
+    <title>PROV-DM: The PROV Data Model</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+<!-- PM -->
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+     </style>
+
+    <script src="http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js" class="remove"></script> 
+    <script src="http://www.w3.org/2007/OWL/toggles.js" class="remove"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" class="remove"></script>
+
+    <script src="../glossary.js" class="remove"></script>
+
+    <script class="remove">
+      function updateGlossaryRefs() {
+        $('.glossary-ref').each(function(index) {
+          var ref=$(this).attr('data-ref');
+          var span=$(this).attr('data-withspan')
+          $(this).removeAttr('data-withspan');
+          $(this).removeAttr('data-ref');
+
+          $('#'+ref+'.glossary').contents().clone().appendTo($(this));
+//          $(this).attr("prov:hadOriginalSource",glossary_hg);
+          if (span) {
+            $(this).children('dfn').replaceWith(function(){return $('<span>').addClass('dfn').append($(this).contents())});
+          }
+        });
+      }
+      $(document).ready(function(){
+        // if glossary is in a string:
+        $('#glossary_div').html(glossary_string)
+        updateGlossaryRefs();
+      });
+
+    </script>
+
+    <script class="remove"> 
+      var addExtraReferences = function() {
+          for (var k in extraReferences)
+              berjon.biblio[k] = extraReferences[k];
+      };
+      var extraReferences = {
+        "CLOCK":
+         "Lamport, L. "+
+         "<a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\"><cite>Time, clocks, and the ordering of events in a distributed system</cite></a>."+
+         "Communications of the ACM 21 (7): 558–565. 1978. "+
+         "URL: <a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\">http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf</a> " +
+         "DOI: doi:10.1145/359545.359563.",
+        "CSP":
+         "Hoare, C. A. R. "+
+         "<a href=\"http://www.usingcsp.com/cspbook.pdf\"><cite>Communicating Sequential Processes</cite></a>."+
+         "Prentice-Hall. 1985"+
+         "URL: <a href=\"http://www.usingcsp.com/cspbook.pdf\">http://www.usingcsp.com/cspbook.pdf</a>",
+        "Logic":
+          "W. E. Johnson"+
+          "<a href=\"http://www.ditext.com/johnson/intro-3.html\"><cite>Logic: Part III</cite></a>."+
+          "1924. "+
+          "URL: <a href=\"http://www.ditext.com/johnson/intro-3.html\">http://www.ditext.com/johnson/intro-3.html</a>",
+        "PROV-SEM":
+          "James Cheney "+
+          "<a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\"><cite>Formal Semantics Strawman</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\">http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman</a>",
+
+        "PROV-PRIMER":
+          "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-primer/\"><cite>Prov Model Primer</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
+
+        "PROV-O":
+          "Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, Daniel Garijo, Timothy Lebo, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-o/\"><cite>Provenance Formal Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-o/\">http://www.w3.org/TR/prov-o/</a>",
+
+
+        "PROV-CONSTRAINTS":
+          "James Cheney, Paolo Missier, and Luc Moreau (eds.) "+
+          "<a href=\"http://www.w3.org/TR/prov-constraints/\"><cite>Constraints of the PROV Data Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-constraints/\">http://www.w3.org/TR/prov-constraints/</a>",
+
+        "PROV-N":
+          "Luc Moreau and Paolo Missier (eds.)"+
+          "<a href=\"http://www.w3.org/TR/prov-n/\"><cite>PROV-N: The Provenance Notation</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-n/\">http://www.w3.org/TR/prov-n/</a>",
+
+        "PROV-AQ":
+          "Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles "+
+          "<a href=\"http://www.w3.org/TR/prov-aq/\"><cite>Provenance Access and Query</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-aq/\">http://www.w3.org/TR/prov-aq/</a>",
+      };
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "prov-dm",
+ 
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+      subtitle   :  "working towards WD6 (<a href=\"diff.html\">Diffs since last release</a>)",
+
+ 
+          // if you wish the publication date to be other than today, set this
+//          publishDate:  "2012-05-03",
+ 
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          copyrightStart: "2011",
+ 
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          previousPublishDate:  "2012-05-03",
+          previousMaturity:  "WD",
+ 
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html",
+ 
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+ 
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          extraCSS:             ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css", "./extra-dm.css"],
+ 
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Luc Moreau", url: "http://www.ecs.soton.ac.uk/~lavm/",
+                company: "University of Southampton" },
+              { name: "Paolo Missier", url: "http://www.cs.ncl.ac.uk/people/Paolo.Missier",
+                company: "Newcastle University" },
+          ],
+ 
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+ 
+          authors:  [
+              { name: "Khalid Belhajjame", url: "http://semanticweb.org/wiki/Khalid_Belhajjame",
+                company: "University of Manchester" },
+              { name: "Reza B'Far",
+                company: "Oracle Corporation" },
+              { name: "Stephen Cresswell",
+                company: "legislation.gov.uk"},
+              { name: "Yolanda Gil",
+                company: "Invited Expert", url:"http://www.isi.edu/~gil/"},
+              { name: "Paul Groth", url: "http://www.few.vu.nl/~pgroth/",
+                company: "VU University of Amsterdam" },
+              { name: "Graham Klyne",
+                company: "University of Oxford" },
+              { name: "Jim McCusker", url: "http://tw.rpi.edu/web/person/JamesMcCusker",
+                company: "Rensselaer Polytechnic Institute" },
+              { name: "Simon Miles", 
+                company: "Invited Expert", url:"http://www.inf.kcl.ac.uk/staff/simonm/" },
+              { name: "James Myers", url:"http://www.rpi.edu/research/ccni/",
+                company: "Rensselaer Polytechnic Institute"},
+              { name: "Satya Sahoo", url:"http://cci.case.edu/cci/index.php/Satya_Sahoo",
+                company: "Case Western Reserve University" },
+              { name: "Curt Tilmes", 
+                company: "National Aeronautics and Space Administration" },
+          ],
+          
+          // name of the WG
+          wg:           "Provenance Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/2011/prov/",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-prov-wg",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/46974/status",
+
+          // Add extraReferences to bibliography database
+          preProcess: [addExtraReferences],
+      };
+    </script> 
+  </head> 
+  <body> 
+
+    <section id="abstract">
+<p>
+PROV-DM, the PROV data model, is a data model for provenance that describes
+the entities, people and activities involved in
+producing a piece of data or thing. 
+PROV-DM distinguishes core structures, forming the essence of provenance descriptions, from
+extended structures catering for more advanced uses of provenance. 
+PROV-DM is organized in six components, respectively dealing with: 
+(1) entities and activities, and the time at which they were created, used, or ended;
+(2) agents bearing responsibility for entities that were generated and activities that happened;
+(3) derivations of entities from entities;
+(4) properties to link entities that refer to the same thing;
+(5) notion of bundle, a mechanism to support provenance of provenance;
+(6) collections forming a logical structure for its members.
+</p>
+
+<p>This document introduces the provenance concepts found in
+PROV and defines PROV-DM types and
+relations. PROV data model is domain-agnostic, but is equipped with
+extensibility points allowing domain-specific information to be included. </p>
+
+<p>Two further documents complete the specification of PROV-DM.
+First, a companion document specifies the set of constraints that
+provenance descriptions should follow.  Second, 
+a separate document describes a provenance notation for expressing 
+instances of provenance for human consumption; this notation is used in examples in
+this document. </p>
+
+    </section> 
+
+<section id="sotd">
+<h4>PROV Family of Specifications</h4>
+This document is part of the PROV family of specifications, a set of specifications defining various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.  The specifications are:
+<ul>
+<li> PROV-DM, the PROV data model for provenance (this document);</li>
+<li> PROV-CONSTRAINTS, a set of constraints applying to the PROV data model;</li>
+<li> PROV-N, a notation for provenance aimed at human consumption;</li>
+<li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF;</li>
+<li> PROV-AQ, the mechanisms for accessing and querying provenance; </li>
+<li> PROV-PRIMER, a primer for the PROV data model;</li>
+<li> PROV-SEM, a formal semantics for the PROV data model;</li>
+<li> PROV-XML, an XML schema for the PROV data model.</li>
+</ul>
+<h4>How to read the PROV Family of Specifications</h4>
+<ul>
+<li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
+<li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+<li>The XML community should focus on PROV-XML defining an XML schema for PROV. Further details can also be found in PROV-DM, PROV-CONSTRAINTS, and PROV-SEM.</li>
+<li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
+<li>Readers seeking to implement other PROV serializations
+should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+</ul>
+
+
+<h4>Fourth Public Working Draft</h4>
+<p>This is the fourth public release of the PROV-DM document. Following feedback, the Working Group has decided to reorganize this document substantially, separating the data model from its contraints and the notation used to illustrate it. The PROV-DM release is synchronized with the release of the PROV-O, PROV-PRIMER, PROV-N, and PROV-CONSTRAINTS documents. We are now clarifying the entry path to the PROV family of specifications.</p>
+</section>
+
+
+
+
+<!-- <div class="buttonpanel"> 
+<form action="#"><p> 
+<input id="hide-asn" onclick="set_display_by_class('div','withAsn','none');set_display_by_class('span','withAsn','none'); set_display_by_id('hide-asn','none'); set_display_by_id('show-asn','');" type="button"
+value="Hide ASN" /> 
+<input id="show-asn" onclick="set_display_by_class('div','withAsn',''); set_display_by_class('span','withAsn','');  set_display_by_id('hide-asn',''); set_display_by_id('show-asn','none');" style="display: none"
+type="button" value="Show ASN" /> 
+</p> 
+</form> 
+</div>     
+-->
+
+
+
+
+ <section id="component4"> 
+<h3>Component 4: Alternate Entities</h3>
+
+
+<p>The fourth component of PROV-DM is concerned with
+relations <a>specialization</a> and <a>alternate</a> between entities.
+ <a href="#figure-component4">Figure 8</a> depicts
+the fourth component with a single class and two associations.
+</p>
+
+
+<div style="text-align: center;">
+<figure>
+<!-- <img src="images/Alternates.png" alt="alternates"/> -->
+<img src="../uml/component4.svg" alt="alternates"/>
+<figcaption id="figure-component4">Figure 8: Alternates Component Overview</figcaption>
+</figure>
+</div>
+
+
+
+<p>Two provenance descriptions about the same thing may emphasize differents aspects of that thing.</p>
+<div class="anexample" id="entity-example1">
+<p>User Alice writes an article. In its provenance, she wishes to refer to the precise version of the article with a date-specific URI, as she might edit the article later. Alternatively, user Bob refers to the article in general, independently of its variants over time.</p>
+</div>
+<p>
+The PROV data model introduces relations, called specialization and alternate,
+that allow entities  to be linked together. They are defined as follows. </p>
+
+
+<section id="term-specialization">
+
+<h4>Specialization</h4>
+
+
+<span class="glossary-ref" data-ref="glossary-specialization"></span> 
+
+
+<p>
+Examples of constraints  include a time period, an abstraction, and a context associated with the entity.</p>
+
+
+
+
+<p>
+<div class="attributes" id="attributes-specialization">A <dfn title="specializationOf">specialization</dfn>  relation<span class="withPn">, written <span class="pnExpression">specializationOf(infra, supra)</span> in PROV-N,</span> has:
+
+<ul>
+<li><span class='attribute' id="specialization.specialization">specialization</span>: an identifier (<span class="name">infra</span>) of the specialized entity;</li>
+<li><span class='attribute' id="specialization.generalEntity">generalEntity</span>: an identifier (<span class="name">supra</span>) of the entity that is being specialized.</li>
+</ul>
+</div>
+
+<div class="anexample" id="anexample-specialization">
+<p>
+The BBC news home page on 2012-03-23 <span class="name">ex:bbcNews2012-03-23</span>
+is a specialization of the BBC news page in general
+ <a href="http://www.bbc.co.uk/news/">bbc:news/</a>. This can be expressed as follows.
+<pre class="codeexample">
+specializationOf(ex:bbcNews2012-03-23, bbc:news/)
+</pre>
+We have created a new qualified name,  <span class="name">ex:bbcNews2012-03-23</span>, in the namespace <span class="name">ex</span>, to identify the specific page carrying this day's news, which would otherwise be the generic  <span class="name">bbc:news/</span> page.
+</div>
+
+
+
+
+<!--
+<p>To promote take up of these relations, it is not specified whether they are transitive or symmetric.  We anticipate that applications will specialize these relations according to their needs. </p>
+-->
+
+
+
+</section>
+
+<section id="term-alternate">
+
+<h4>Alternate</h4>
+
+
+<span class="glossary-ref" data-ref="glossary-alternate"></span>
+
+
+  
+
+<p><div class="attributes" id="attributes-alternate">An <dfn title="alternateOf">alternate</dfn> relation<span class="withPn">, written <span class="pnExpression">alternateOf(e1, e2)</span> in PROV-N,</span> has:
+<ul>
+<li><span class='attribute' id="alternate.alternate1">alternate1</span>: an identifier (<span class="name">e1</span>) of the first of the two entities;</li>
+<li><span class='attribute' id="alternate.alternate2">alternate2</span>: an identifier (<span class="name">e2</span>) of the second of the two entities.</li>
+</ul>
+</div>
+
+<div class="anexample" id="anexample-alternate">
+<p>
+A given news item on the BBC News site 
+ <a href="http://www.bbc.co.uk/news/science-environment-17526723">bbc:news/science-environment-17526723</a> for desktop
+is an alternate of a 
+ <a href="http://www.bbc.co.uk/news/mobile/science-environment-17526723">bbc:news/mobile/science-environment-17526723</a> for mobile devices.</p>
+<pre class="codeexample">
+entity(bbc:news/science-environment-17526723, [ prov:type="a news item for desktop"])
+entity(bbc:news/mobile/science-environment-17526723, [ prov:type="a news item for mobile devices"])
+alternateOf(bbc:news/science-environment-17526723, bbc:news/mobile/science-environment-17526723)
+</pre>
+<p>They are both specialization of an (unspecified) entity. </p>
+</div>
+
+
+<div class="anexample" id="anexample-alternate2">
+<p>
+Considering again the two versions of the technical report <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> (second working draft) and <span class="name"><span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018">tr:WD-prov-dm-20111018</a></span></span> (first working draft). They are alternate of each other.
+<pre class="codeexample">
+entity(tr:WD-prov-dm-20111018)
+entity(tr:WD-prov-dm-20111215)
+alternateOf(tr:WD-prov-dm-20111018,tr:WD-prov-dm-20111215)
+</pre>
+<p>They are both specialization of the page <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a>.</p>
+</div>
+
+</section>
+
+
+
+
+
+
+<section id="term-contextualization">
+
+<h4>Contextualization</h4>
+
+<p><em>
+Something that is a <dfn id="concept-contextualiation">contextualization</dfn> of another presents all aspects of the latter in a given context specified by descriptions found in a bundle.
+</em></p>
+
+
+<p><div class="attributes" id="attributes-contextualization">A <dfn title="contextualizationOf">contextualization</dfn> relation<span class="withPn">, written <span class="pnExpression">contextualizationOf(i2, i1, b)</span> in PROV-N,</span> has:
+<ul>
+<li><span class='attribute' id="contextualization.contextualization2">contextualization2</span>: an identifier (<span class="name">i2</span>) for something presenting the aspects of <span class="name">i1</span> in bundle <span class="name">b</span> ;</li>
+<li><span class='attribute' id="contextualization.contextualization2">contextualization1</span>: an identifier (<span class="name">i1</span>) of something identifiable in some bundle <span class="name">b</span>;</li>
+<li><span class='attribute' id="contextualization.context">bundle</span>: an identifier (<span class="name">b</span>) for a bundle.</li>
+</ul>
+</div>
+
+
+<div class="anexample" id="anexample-contextualization1">
+<p>In the following example, two bundles <span class="name">ex:run1</span> and <span class="name">ex:run2</span> refer to an agent <span class="name">ex:Bob</span> that controlled two activities <span class="name">ex:a1</span> and <span class="name">ex:a2</span>. </p>
+
+<pre class="codeexample">
+bundle ex:run1
+    activity(ex:a1, 2011-11-16T16:00:00,2011-11-16T17:00:00)  //duration: 1hour
+    wasAssociatedWith(ex:a1,ex:Bob,[prov:role="controller"])
+endBundle
+
+bundle ex:run2
+    activity(ex:a2, 2011-11-17T10:00:00,2011-11-17T17:00:00)  //duration: 7hours
+    wasAssociatedWith(ex:a2,ex:Bob,[prov:role="controller"])
+endBundle
+</pre> 
+<p>A performance rating tool reads these bundles, and rates the performance of the agent described in these bundles. The performance rating tool creates a new bundle <span class="name">tool:analysis01</span> containing the following. A new agent <span class="name">tool:Bob1</span> is declared as a contextualization of <span class="name">ex:Bob</span> as described in context <span class="name">ex:run1</span>, and likewise for  <span class="name">tool:Bob2</span> with respect to <span class="name">ex:run2</span>. The tool then defines two specializations of these contextualized agents with an associated rating. The performance of the agent in the first bundle is judged to be good since the duration of <span class="name">ex:a1</span> is one hour, whereas it is judged to be bad in the second bundle since <span class="name">ex:a2</span>'s duration is seven hours.
+
+<pre class="codeexample">
+bundle tool:analysis01
+    agent(tool:Bob1)
+    contextualizationOf(tool:Bob1, ex:Bob, ex:run1)
+    agent(tool:ratedBob1, [perf:rating="good"])
+    specialization(tool:ratedBob1, tool:Bob1)
+
+    agent(tool:Bob2)
+    contextualizationOf(tool:Bob2, ex:Bob, ex:run2)
+    agent(tool:ratedBob2, [perf:rating="bad"])
+    specialization(tool:ratedBob2, tool:Bob2)
+endBundle
+</pre>
+</div>
+
+
+<div class="anexample" id="aexample-contextualization-viz">
+<p>Consider the following bundle of descriptions, in which derivation and generations have been identified.
+<pre class="codeexample"> 
+bundle obs:bundle7
+  entity(ex:report1, [prov:type="report", ex:version=1])
+  wasGeneratedBy(ex:g1; ex:report1,-,2012-05-24T10:00:01)
+  entity(ex:report2, [prov:type="report", ex:version=2])
+  wasGeneratedBy(ex:g2; ex:report2,-,2012-05-25T11:00:01)
+  wasDerivedFrom(ex:d; ex:report2, ex:report1)
+endBundle
+entity(obs:bundle7, [ prov:type='prov:Bundle' ])
+wasAttributedTo(obs:bundle7, ex:observer01)
+</pre>
+Bundle <span class="name">obs:bundle7</span> is rendered by a visualisation tool.  It may useful for the tool configuration for this bundle to be shared along with the provenance descriptions, so that other users can render provenance as it was originally rendered.  The original  bundle obviously cannot be changed. However, one can create a new bundle, as follows.
+<pre class="codeexample"> 
+bundle tool:bundle8
+  entity(tool:bundle8, [ prov:type='viz:Configuration', prov:type='prov:Bundle' ])
+  wasAttributedTo(tool:bundle8, viz:Visualizer)
+
+  entity(tool:report1, [viz:color="orange"])         // is it appropriate to add viz attributes to tool:report1 or should we specialize it?
+  contextualizationOf(tool:report1, obs:bundle7, ex:report1)
+
+  entity(tool:report2, [viz:color="blue"])              
+  contextualizationOf(tool:report2, obs:bundle7, ex:report2)
+
+
+  wasDerivedBy(tool:d; tool:report2, tool:report1, [viz:style="dotted"])
+  contextualizationOf(tool:d, obs:bundle7, ex:d)
+endBundle
+</pre>
+
+<p>In bundle <span class="name">tool:bundle8</span>, the prefix <span class="name">viz</span> is used for naming visualisation-specific attributes, types or values.</p>
+
+<p>Bundle <span class="name">tool:bundle8</span> is given type <span class="name">viz:Configuration</span> to indicate that it consists of descriptions that pertain to the configuration of the visualisation tool. This type attribute can be used for searching bundles containing visualization-related descriptions.
+</p>
+
+<p>The visualisation tool
+ created  new identifiers <span class="name">tool:report1</span>,
+<span class="name">tool:report2</span>, and
+<span class="name">tool:d</span>.
+They denote entities which are alternates of with <span class="name">ex:report1</span> and <span class="name">ex:report2</span>, described in bundle <span class="name">obs:bundle7</span>, with visualization attribute for the color to be used when rendering these entities.  
+Likewise, the derivation has a style attribute. </p>
+
+<p>According to their definition,
+derivations have an <a href="#derivation.id">optional identifier</a>. 
+To express an alternate for a derivation, we need to be able to reference it, by means of an identifier. Hence, it is necessary for it to have an identifier in the first place (<span class="name">ex:d</span>).</p>
+</div>
+
+
+
+</section>
+</section>
+
+
+
+
+<div id="glossary_div" class="remove">
+<!-- glossary loaded from glossary.js will be hooked up here,
+     class remove, will remove this element from the final output.
+-->
+</div>
+
+<section class="appendix"> 
+      <h2>Acknowledgements</h2> 
+      <p> 
+        WG membership to be listed here.
+      </p> 
+    </section> 
+
+ </body>
+</html>

@@ -1,0 +1,87 @@
+
+This example describes the provenance of the prov-dm (version 2)
+document http://www.w3.org/TR/2011/WD-prov-dm-20111215
+
+We can envisage three different accounts at least.
+
+1. Account 1: the W3C view
+This account contains the kind of provenance records that
+W3C could keep, for auditors to check that due processes are followed.
+
+In this account, we see that:
+- WD-prov-dm-20111215 was derived from WD-prov-dm-20111018
+- both WD-prov-dm-20111215 and WD-prov-dm-20111018 were published by the w3c agent
+- the publication activity for WD-prov-dm-20111215 used a publication request (req3)
+- the publication activity for WD-prov-dm-20111018 used another publication request (req2)
+  and a transition request (req1)
+- publications were according to the process rules (a plan).
+
+A simple visualization of Account 1 may be as follows.
+http://dvcs.w3.org/hg/prov/raw-file/default/model/examples/w3cpub/w3c-publication1.pdf
+
+
+2. Account 2: the Web master view
+This account contains the kind of provenance records that the webmaster
+could keep.
+
+In this account, we see that
+- WD-prov-dm-20111215 was derived from Overview.html in the mercurial repo
+- WD-prov-dm-20111215 is the result of copying file(s) to the remote web server
+- webmaster was involved
+- webmaster did all this on the basis of the publication request (req3)
+
+A simple visualization of this account may be as follows.
+http://dvcs.w3.org/hg/prov/raw-file/default/model/examples/w3cpub/w3c-publication2.pdf
+
+
+3. Account 3: the authors view.  
+ That's what each author could keep (for instance, to write in their CV).
+- the document WD-prov-dm-20111215 was co-edited by a set of authors, with various roles
+
+Again, visualization could as follows.
+http://dvcs.w3.org/hg/prov/raw-file/default/model/examples/w3cpub/w3c-publication3.pdf
+
+4. We can envisage other accounts.
+- The mercurial log with all edits.
+- An account where other agents claim contribution to the document (faithfully or not)
+- etc
+
+
+
+To illustrate this example, I have written the three accounts in three separate asn files:
+
+http://dvcs.w3.org/hg/prov/raw-file/default/model/examples/w3cpub/w3c-publication1.prov-asn
+http://dvcs.w3.org/hg/prov/raw-file/default/model/examples/w3cpub/w3c-publication2.prov-asn
+http://dvcs.w3.org/hg/prov/raw-file/default/model/examples/w3cpub/w3c-publication3.prov-asn
+
+
+
+In this example, each WD is identified by its URI
+http://www.w3.org/TR/2011/WD-prov-dm-20111215
+http://www.w3.org/TR/2011/WD-prov-dm-20111018
+
+
+
+The entity records in the different accounts have different attributes
+and different values. (Similarly to example of section 9 in the prov-dm document.)
+
+In account 1, the type that matters for the W3C process is that it is a Working Draft.
+entity(w3:WD-prov-dm-20111215, [ prov:type="WD" ])
+
+In account 2, the type that matters for the W3C master is that it is an html4 document.
+entity(w3:WD-prov-dm-20111215, [ prov:type="html4" ])
+Other attributes that may usefully captured include that the document
+was check to complian with pubrules, it is html4 compliant, etc
+
+In account 3, the authors know this the second version of the prov-dm report.
+Hence, the entity record has the following shape.
+entity(w3:WD-prov-dm-20111215, [ prov:type="document", ex:version="2" ])
+
+When in account 1, we write
+wasGeneratedBy(w3:WD-prov-dm-20111215, ex:pub2)
+we really mean to refer to the record of WD-prov-dm-20111215 in the same account,
+it would not make sense to say ex:pub2 generated WD-prov-dm-20111215 in account 3.
+
+In Account 2, there is a further example that uses record identifiers. In this
+derivation, we need to identify the generation and usage.
+wasDerivedFrom(w3:WD-prov-dm-20111215,hg:Overview.html, ex:rcp, rec:g, rec:u)

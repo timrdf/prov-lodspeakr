@@ -1,0 +1,433 @@
+  > General:
+  > 
+  > I probably missed some discussion about this, but the '-' placeholder
+  > for missing optional arguments is inconsistently used in the PROV-N
+  > examples.  Is it always required?  I don't really care for it in
+  > optional arguments where the argument mapping is unambiguous,
+  > particularly at the beginning or end of the argument list.
+
+Updated Section 2.6.
+
+  > 
+  > 
+  > 
+  > The examples also seem to inconsistently use the prov defined types,
+  > e.g. prov:Person, prov:Collection, etc.
+  > 
+  > For example,
+  > 
+  >    [prov:type="Collection"]
+  > 
+  >    vs.
+  > 
+  >    [prov:type="prov:Collection" %% xsd:QName]
+  > 
+  > Is there a real distinction between these we should be highlighting,
+  > or should we be using them the same way in the various examples?
+  >
+
+All of them are now:
+
+  >    [prov:type="prov:Collection" %% xsd:QName]
+
+
+It would be nice to have a notation in prov-n for qualified names, e.g:
+[prov:type = 'prov:Collection']
+
+This will be considered for the next iteration.
+
+ 
+  > 
+  > 
+  > 
+  > Abstract
+  > --------
+  > 
+  > "PROV-DM, the PROV data model, is a data model for
+  > provenance that describes the entities, people and activities involved
+  > in producing a piece of data or thing."
+  > 
+  >    Why not use the term 'agents' instead of people in the first
+  >    sentence?
+  >
+
+I think it's important to say people and not agent. 
+For us, agent is just something that bears some form of responsibility ...
+ 
+  > 
+  > "actities"
+  > 
+  >    typo
+
+OK
+  > 
+  > 
+  > "Second, to be able to provide examples of provenance, a notation is
+  > used for expressing instances of PROV-DM for human consumption; the
+  > syntactic details of this notation are also kept in a separate
+  > document."
+  > 
+  >    This seems awkwardly worded to me.  Here's a stab at a revision,
+  >    perhaps someone could reword it even better:
+  > 
+  >    Second, a separate document describes a provenance notation used for
+  >    expressing instances of provenance for human consumption. It is used
+  >    in examples in this document.
+  > 
+  > 
+
+ok, updated as follows:
+"Second, a separate document describes a provenance notation for expressing instances of provenance for human consumption; this notation is used in examples in this document."
+
+  > Status of This Document
+  > -----------------------
+  > 
+  > "...a set of specifications aiming to define the various aspects..."
+  > 
+  >    be optimistic!  we will hit our aim!
+  > 
+  >    ...a set of specifications that define various aspects...
+  > 
+  >    or even
+  > 
+  >    ...a set of specifications defining various aspects...
+  > 
+  >
+
+DONE
+  > 
+  > The specifications are as follows.
+  > 
+  >    If it is acceptable style, I would end that with a colon, as
+  >    follows:
+  > 
+  > 
+  > In the list of documents, some end with , some . and some ;  I
+  > would do them all the same way.
+  
+
+oops, intended ; except . for the last
+ 
+  > 
+  > The primer is the entry point to PROV offering a pedagogical
+  > presentation of the provenance model.
+  > 
+  >    "offering an introduction to the provenance model."
+  > 
+  > 
+  > ...separating the data model, from its contraints, and the notation
+  > used to illustrate it.
+  > 
+  >    remove commas:
+  > 
+  >    ...separating the data model from its contraints and the notation
+  >    used to illustrate it.
+  > 
+
+Yes, done.
+
+  > 
+  > The PROV-DM release is synchronized with the release of the PROV-O,
+  > PROV-PRIMER, PROV-N, PROV-DM-CONSTRAINTS documents.
+  > 
+  >    add "and" between last two
+  > 
+  > 
+
+  > We are now making clear what the entry path to the PROV family of
+  > specifications is.
+  > 
+  >    We are now clarifying the entry path to the PROV family of
+  >    specifications.
+  > 
+yes, much simpler.
+  > 
+  > 1. Introduction
+  > ---------------
+  > 
+  > ...with extra-descriptions that help...
+  > 
+  >    extraneous -?
+
+Done
+  > 
+  > 
+  > ...introduction to the PROV data model by overviewing a set of concepts...
+  > 
+  >     ...introduction to the PROV data model with an overview of concepts...
+  > 
+
+was updated.
+  > 
+  > 2.1 Entity and Activity
+  > -----------------------
+  > 
+  > ...over a triple store, and editing a file.
+  > 
+  >     change 'and' to 'or'
+  > 
+  > 
+  > 2.2 Generation, Usage, Derivation
+  > ---------------------------------
+  > 
+  > In some case, the consumption...
+  > 
+  >     some cases
+  > 
+
+yes, done
+
+  > 
+  > 2.3 Agents and Other Types of Entities
+  > --------------------------------------
+  > 
+  > Three types of agents are recognized because they are commonly
+  > encountered in applications making data and documents available on the
+  > Web: persons, software agents, and organizations.
+  > 
+  >     Should those three be bolded here?  Maybe not since we aren't
+  >     really defining them and they are just special defined types?
+  > 
+
+Was dropped from section 2.
+
+These definitions, in bold, now appear in section 4.2.1.
+
+  > 
+  > ...member of the collections.
+  > 
+  >    of the collection.
+  > 
+  > 
+  > This concept allows for the provenance of the collection, but also of
+  > its constituents to be expressed.
+  > 
+  >    This concept allows for the provenance of the collection itself to
+  >    be expressed in addition to that of the constituents.
+
+Yes, done
+
+  > 
+  > 
+  > Such a notion of collection corresponds to a wide variety of concrete
+  > data structures, such as a maps, dictionaries, or associative arrays.
+  > 
+  >    I'm not certain I would describe this is as a "wide variety" -- I
+  >    think of those as pretty much the same thing...
+  > 
+  >    Perhaps just "Such a notion of collection corresponds to concrete
+  >    data structures such as a maps, dictionaries, or associative arrays."?
+  > 
+
+TODO: need a sentence on generality of the collection structure.
+
+  > 
+  > 2.5 Simplified Overview Diagram
+  > -------------------------------
+  > 
+  > I would add a sentence somewhere in here about Agent being an Entity.
+  > 
+
+We are moving away from this. 
+We are now removing the subtype between agent and an entity in the diagram.
+
+  > Maybe here:
+  > 
+  >     ...how they relate to each other. At this stage...
+  > 
+  >     ...how they relate to each other.  Note that each agent is also an
+  >     entity, so the entity relationships can also apply to agents. At
+  >     this stage...
+  > 
+  > 
+No change, given previous comment.
+
+
+  > 2.6 PROV-N: The Provenance Notation
+  > -----------------------------------
+  > 
+  > PROV-N is a notation that is designed to write instances...
+  > 
+  >    PROV-N is a notation for writing instances...
+
+
+  > 
+  > 
+  > ...a series of arguments in bracket.
+  > 
+  >    ...a series of arguments in brackets.
+  > 
+  >    (actually, I usually call them parentheses, but either is fine.)
+  > 
+
+Yes
+  > 
+  > The bulleted list here has inconsistent spacing between bulleted
+  > items.
+  > 
+
+fixed.
+
+  > 
+  > ...which always occur in first position...
+  > 
+  >    ...which always occurs in the first position...
+  > 
+  > 
+  > ...which occur in last position...
+  > 
+  >    ...which occurs in the last position...
+  > 
+  > 
+  >    actually, I would probably just take out the 'occur' and word it
+  >    like this:
+  > 
+  >    Most expressions have an identifier in the first position, and an
+  >    optional set of attribute-value pairs in the last position,
+  >    delimited by square brackets.
+  > 
+
+All done.
+  > 
+  > 3.1 The Process View
+  > --------------------
+  > 
+  > ...some of which locating archived email messages, available to...
+  > 
+  >    ...some of which refer to archived email messages available only
+  >    to...
+  > 
+  > 
+  > ..illustrate them with the PROV-N notation, a notation for PROV-DM
+  > aimed at human consumption.
+  > 
+  >    I would eliminate the explanation and just say
+  > 
+  >    ...illustrate them with the PROV-N notation.
+  > 
+
+Ditto
+  > 
+  > 4. PROV-DM Types and Relations
+  > 
+  > 
+  > ...derivations and its derivation subtypes.
+  > 
+  >    remove 'its':
+  > 
+  >    ...derivations and derivation subtypes.
+  > 
+  > 
+  > ...somehow referring to a same thing.
+  > 
+  >    referring to the same thing.
+  > 
+
+All done.
+
+  > 
+  > 4.1 Component 1: Entities and Activities
+  > ----------------------------------------
+  > 
+  > ...and their inter-relations...
+  > 
+  >    ...and their interrelations...
+  > 
+  > 
+  > Figure figure-component1 overviews the first component, with two "UML
+  > classes" and binary associations between them.
+  > 
+  >    Figure figure-component1 uses UML to depict the first component with
+  >    two classes and binary associations between them.
+  > 
+  >    (If you reword this figure description, make the other figure
+  >    descriptions match, if not, don't 
+
+OK
+  > 
+  > 
+  > Associations are not just binary; indeed, Usage, Generation, Start,
+  > End are remarkable because they have time attributes, which are
+  > placeholders for time information related to provenance.
+  > 
+  >    Associations are not just binary; indeed, Usage, Generation, Start,
+  >    End also include time attributes.
+
+OK  
+
+> 
+  > 
+  > 4.1.3 Generation
+  > ----------------
+  > 
+  > ...state the existence of two generations (with respective times
+  > 2001-10-26T21:32:52 and 2001-10-26T10:00:00), at which new entities,
+  > identified by e1 and e2, are created by an activity, identified by a1.
+  > 
+  >    ...describe the generation of new entitities e1 and e2 by activity
+  >    a1 at respective times 2001-10-26T21:32:52 and 2001-10-26T10:00:00.
+  > 
+  > 
+  > 4.1.4 Usage
+  > -----------
+  > 
+  > ...state that the activity identified by a1 used two entities
+  > identified by e1 and e2, at times...
+  > 
+  > 
+  >     ...state that activity a1 used entities e1 and e2 at times...
+  > 
+  > 
+  > 4.3 Component 3: Derivations
+  > ----------------------------
+  > 
+  > see figure note on 4.1 above -- I don't like the verb "overviews".
+  > I also wouldn't say
+  > 
+  >    So-called "UML association classes" are used...
+  > 
+  > Just say
+  > 
+  >    UML association classes are used...
+  > 
+  > 
+
+Yes.
+  > 4.3.1 Derivation
+  > ----------------
+  > 
+  > The reason for optional information such as activity, generation, and
+  > usage to be linked to derivations is to aid analysis of provenance and
+  > to facilitate provenance-based reproducibility.
+  > 
+  >    Optional information such as activity, generation, and usage can be
+  >    linked to derivations to aid analysis of provenance and to
+  >    facilitate provenance-based reproducibility.
+  > 
+  > 
+Yes
+  > ...it was passed as, if the activity...
+  > 
+  >    replace , with 'or'
+  > 
+
+No change here.
+  > 
+  > 4.5 Component 5: Collections
+  > ----------------------------
+  > 
+  > In many applications, it is also of interest to be able to express the
+  > provenance of the collection itself...
+  > 
+  >    Many applications also need to express the provenance of the
+  >    collection itself...
+  > 
+yes
+
+  > 
+  > 4.7.4.4 prov:type
+  > -----------------
+  > 
+  > include Collection and EmptyCollection here?
+Yes indeed.
+

@@ -1,0 +1,26 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:Activity
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:qualifiedStart;
+      owl:minCardinality 0;
+   ];
+.
+
+prov:Start
+   a owl:Class;
+   rdfs:subClassOf prov:QualifiedActivityInvolvement;
+   rdfs:comment "This class is reifying the prov:wasStartedBy triple from the started Activity to the starter Activity: subClassOf onProperty rdf:predicate/owl:annotatedProperty; hasValue prov:wasStartedBy -tlebo 2011-12-02";
+.
+
+prov:qualifiedStart
+   a owl:ObjectProperty;
+   rdfs:subPropertyOf prov:qualifiedInvolvement;
+   rdfs:domain prov:Activity;
+   rdfs:range  prov:Start;
+.

@@ -1,0 +1,57 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:wasQuotedFrom
+   a owl:ObjectProperty;
+   rdfs:label "wasQuotedFrom";
+   rdfs:comment "proposed new name: wasQuotedFrom";
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#attribution>,
+                <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#quotation>,
+                <http://www.w3.org/2011/prov/track/issues/151>;
+   rdfs:domain prov:Quote;
+   rdfs:range  prov:Entity;
+. 
+
+prov:Quote
+   rdfs:subClassOf prov:Entity;
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#attribution>;
+.
+
+prov:hadQuoter
+   rdfs:comment "an agent who is doing the quoting";
+.
+
+prov:hadQuotee
+   rdfs:commetn "the agent that is quoted";
+.
+
+prov:Quotation
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:entity;
+      owl:minCardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:hadQuoter;
+      owl:minCardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:hadQuoter;
+      owl:allValuesFrom prov:Agent;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:hadQuotee;
+      owl:minCardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:hadQuotee;
+      owl:allValuesFrom prov:Agent;
+   ];
+.

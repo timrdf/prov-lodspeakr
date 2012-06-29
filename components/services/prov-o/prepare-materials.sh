@@ -71,3 +71,4 @@ popd &> /dev/null
 
 cp includes/inverse-names.html ../../../static/
 cp includes/inverses.ttl       ../../../static/
+cp includes/terms.txt       ../../../static/

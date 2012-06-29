@@ -1,0 +1,93 @@
+digraph OPMGraph { rankdir="BT"; 
+pub1 [label="pub1",shape="polygon",sides="4"]
+ann0 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">publish</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann0 -> pub1 [style="dashed",color="gray",arrowhead="none"]
+pub2 [label="pub2",shape="polygon",sides="4"]
+ann1 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">publish</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann1 -> pub2 [style="dashed",color="gray",arrowhead="none"]
+WD_prov_dm_20111018 [label="WD-prov-dm-20111018"]
+ann2 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">RecsWD</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann2 -> WD_prov_dm_20111018 [style="dashed",color="gray",arrowhead="none"]
+WD_prov_dm_20111215 [label="WD-prov-dm-20111215"]
+ann3 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">RecsWD</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann3 -> WD_prov_dm_20111215 [style="dashed",color="gray",arrowhead="none"]
+rec_advance [label="rec-advance"]
+ann4 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">Plan</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann4 -> rec_advance [style="dashed",color="gray",arrowhead="none"]
+0004 [label="0004"]
+ann5 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">transreq</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann5 -> 0004 [style="dashed",color="gray",arrowhead="none"]
+0141 [label="0141"]
+ann6 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">pubreq</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann6 -> 0141 [style="dashed",color="gray",arrowhead="none"]
+0111 [label="0111"]
+ann7 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">pubreq</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann7 -> 0111 [style="dashed",color="gray",arrowhead="none"]
+Consortium [label="Consortium",shape="polygon",sides="8"]
+ann8 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">Organization</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+ann8 -> Consortium [style="dashed",color="gray",arrowhead="none"]
+WD_prov_dm_20111215 -> WD_prov_dm_20111018 []
+WD_prov_dm_20111018 -> pub1 []
+WD_prov_dm_20111215 -> pub2 []
+pub1 -> 0004 []
+pub1 -> 0141 []
+pub2 -> 0111 []
+pub1 -> Consortium []
+pub1 -> rec_advance []
+pub2 -> Consortium []
+pub2 -> rec_advance []
+}

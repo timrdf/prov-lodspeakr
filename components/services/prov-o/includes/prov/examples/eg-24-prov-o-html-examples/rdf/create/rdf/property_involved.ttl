@@ -1,0 +1,23 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:illustrationActivity 
+   a prov:Activity;
+   prov:used              :aggregatedByRegions;
+   prov:wasAssociatedWith :derek;
+   prov:wasInformedBy     :aggregationActivity;
+.
+
+:illustrationActivity 
+   a prov:Activity;
+   prov:involved :aggregatedByRegions, # prov:involved is a superproperty of
+                 :derek,               # many of the direct binary
+                 :aggregationActivity; # PROV-O properties.
+.
+
+:aggregationActivity a prov:Activity .  
+:derek               a prov:Agent .
+:aggregatedByRegions a prov:Entity .

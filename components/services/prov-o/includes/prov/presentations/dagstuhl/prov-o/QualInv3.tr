@@ -1,0 +1,4 @@
+_:bnode160446720 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Generation>
+_:bnode160446720 <http://www.w3.org/ns/prov#activity> <http://example.org#compose>
+_:bnode160446720 <http://www.w3.org/ns/prov#hadRole> <http://example.org#composedData>
+<http://example.org#composition> <http://www.w3.org/ns/prov#qualifiedGeneration> _:bnode160446720

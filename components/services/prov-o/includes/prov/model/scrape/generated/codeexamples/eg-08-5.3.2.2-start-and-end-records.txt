@@ -1,0 +1,3 @@
+
+wasStartedBy(a,ag,[ex:mode="manual"])
+wasEndedby(a,ag,[ex:mode="manual"])

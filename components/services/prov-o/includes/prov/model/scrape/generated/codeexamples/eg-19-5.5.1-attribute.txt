@@ -1,0 +1,2 @@
+
+   wasStartedBy(a,ag, [prov:role="program-operator"])

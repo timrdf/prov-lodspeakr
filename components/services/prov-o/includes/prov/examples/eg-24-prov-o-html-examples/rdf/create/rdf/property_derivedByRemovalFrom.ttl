@@ -1,0 +1,18 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:c1 a prov:Dictionary .
+
+:c2 
+   a prov:Dictionary, prov:Entity;
+   prov:derivedByRemovalFrom :c1;
+   prov:qualifiedRemoval [
+      a prov:Removal, prov:DictionaryInvolvement;
+      prov:dictionary :c1;
+      prov:removedKey "k1"^^xsd:string, 
+                      "k2"^^xsd:string;
+   ];
+.

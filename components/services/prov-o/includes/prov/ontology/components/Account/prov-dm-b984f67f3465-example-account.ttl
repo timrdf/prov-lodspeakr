@@ -1,0 +1,8 @@
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix ex:   <http://example.org/> .
+
+ex:acc0
+   a prov:AssertionActivity, prov:Activity;
+   prov:wasAssociatedWith <http://example.org/asserter>;
+   prov:generated         <http://purl.org/twc/rdf-abstract-graph/CEb-b5-djBpjqa-a9-Z7MECf2_KXmNsjT435R-XYF6hf>;
+.

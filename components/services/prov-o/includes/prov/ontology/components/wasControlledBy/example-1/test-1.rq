@@ -1,0 +1,7 @@
+prefix prov: <http://www.w3.org/ns/prov-o/>
+
+ask
+where {
+   # This should be achieved via inference.
+   :pe_1 prov:wasControlledBy <http://data.semanticweb.org/person/khalid-belhajjame> .
+}

@@ -1,0 +1,74 @@
+@prefix rdf:      <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix frbrcore: <http://purl.org/vocab/frbr/core#> .
+@prefix muo:      <http://purl.oclc.org/NET/muo/muo#> .
+@prefix dcterms:  <http://purl.org/dc/terms/> .
+@prefix prov:     <http://www.w3.org/ns/prov-o/> .
+@prefix vehicle:  <http://localhost/example/ontology/vehicle#> .
+@prefix commerce: <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/examples/ontology-extensions/commerce/commerce.ttl#> .
+@prefix :         <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/components/EntityInRole/car-purchase.ttl#> .
+
+:e_2
+   a prov:Entity;
+   prov:viewOf :e_1;
+   vehicle:make   <http://dbpedia.org/resource/Toyota>;
+   vehicle:model  <http://dbpedia.org/resource/Toyota_Corolla>;
+   frbrcore:owner <http://data.semanticweb.org/person/tom-heath>;
+   rdfs:comment "The Corolla as owned by Tom.";
+   vehicle:vin "XYZ123";
+.
+:e_3
+   a commerce:ReceivedGoods;
+   a prov:Entity; # Since :ReceivedGoods subClassOf Entity.
+   prov:viewOf :e_1;
+   vehicle:make   <http://dbpedia.org/resource/Toyota>;
+   vehicle:model  <http://dbpedia.org/resource/Toyota_Corolla>;
+   vehicle:vin "XYZ123";
+   rdfs:comment "The Corolla as owned by Luc.";
+   frbrcore:owner <http://data.semanticweb.org/person/luc-moreau>;
+.
+
+# wasDerivedFrom(e3,e2)  (since e3 was bought by luc from tom)
+:e_3 prov:wasDerivedFrom  :e_2 .
+:e_3 prov:wasComplementOf :e_2 .
+
+:e_1
+   a prov:Entity;
+   vehicle:make   <http://dbpedia.org/resource/Toyota>;
+   vehicle:model  <http://dbpedia.org/resource/Toyota_Corolla>;
+   vehicle:vin "XYZ123";
+.
+
+:pe_4
+   a commerce:Purchase;
+   a prov:ProcessExecution; # Since :Purchase subClassOf ProcessExecution.
+   dcterms:date "2011-09-20";
+   prov:used [
+      a commerce:Seller;
+      prov:assumedBy <http://data.semanticweb.org/person/tom-heath>;
+      a prov:EntityInRole, prov:Entity; # Since :Seller subClassOf EntityInRole.
+   ];
+   prov:used [
+      a commerce:Buyer;
+      prov:assumedBy <http://data.semanticweb.org/person/luc-moreau>;
+      a prov:EntityInRole, prov:Entity; # Since :Buyer subClassOf EntityInRole.
+   ];
+   prov:used :e2;       # The car as owned by Tom becomes -----------.
+   prov:used [                                                     # |
+      a commerce:Payment, prov:Role, prov:Entity;                  # |
+      rdf:value 25000;                                             # |
+      muo:measuredIn <http://dbpedia.org/resource/Pound_sterling>; # |
+   ];                                                              # |
+   prov:generated :e_3; # The car as owned by Luc  <<----------------
+   rdfs:seeAlso <http://www.w3.org/2011/prov/track/issues/89>,
+                <http://www.w3.org/2011/prov/track/issues/110>;
+.
+
+:e_2_not_e_3
+   a owl:NegativePropertyAssertion;
+   rdfs:comment "The car as owned by Tom is not the car as owned by Luc.";
+   owl:sourceIndividual :e_2;
+   owl:assertionProperty owl:sameAs;
+   owl:targetIndividual :e_3;
+.

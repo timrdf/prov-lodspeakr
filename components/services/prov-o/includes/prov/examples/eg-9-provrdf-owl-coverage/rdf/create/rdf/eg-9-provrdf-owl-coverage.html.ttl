@@ -1,0 +1,68 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage> xhv:stylesheet <http://aquarius.tw.rpi.edu/prov-wg/css/basic.css> ;
+     prov:wasAttributedTo <http://tw.rpi.edu/instances/TimLebo>, <https://github.com/timrdf/prov-lodspeakr/tree/master/components/services/provrdf-owl-coverage> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#asn_from_provdm> a dcat:Dataset ;
+     dcterms:description "This table lists the ASN expressions mentioned in PROV-DM WD4, in the order that they appear on that page. The second column indicates whether or not the expression is mentioned in ProvRDF."@en ;
+     dcterms:modified ""^^xsd:dateTime ;
+     dcterms:subject
+         <http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-dm-constraints.html>,
+         <http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-dm.html>,
+         <http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/WD-prov-dm-20120309/prov-n.html>,
+         <http://www.w3.org/2011/prov/wiki/ProvRDF> ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provdm.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#asn_from_provrdf> a dcat:Dataset ;
+     dcterms:description "This table lists the ASN expressions mentioned in ProvRDF, in the order that they appear on that page. The first column indicates whether or not the expression is mentioned in PROV-DM."@en ;
+     dcterms:modified ""^^xsd:dateTime ;
+     dcterms:subject <http://www.w3.org/2011/prov/wiki/ProvRDF>, <http://www.w3.org/TR/2012/WD-prov-dm-20120202/> ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provrdf.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#examples_use_of_classes> a dcat:Dataset ;
+     dcterms:description "The classes used by <a href=\"http://www.w3.org/2011/prov/wiki/PROV_examples\" xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">examples/</a>, and whether or not they are defined in PROV-O."^^rdf:XMLLiteral ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/examples_use_of_classes.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#examples_use_of_properties> a dcat:Dataset ;
+     dcterms:description "The properties used by <a href=\"http://www.w3.org/2011/prov/wiki/PROV_examples\" xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">examples/</a>, and whether or not they are defined in PROV-O."^^rdf:XMLLiteral ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/examples_use_of_properties.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#modifications> a dcat:Dataset ;
+     dcterms:description "The modification or retrieval time for PROV-DM, ProvRDF, and PROV-O; newest listed first."@en ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/asn_from_provdm.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#property-properties> a dcat:Dataset ;
+     dcterms:description ""@en ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/property-properties.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#provo_instantiated_classes> a dcat:Dataset ;
+     dcterms:description "The classes defined by PROV-O, and the number of instances that occur in  <a href=\"http://www.w3.org/2011/prov/wiki/PROV_examples\" xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">examples/</a>."^^rdf:XMLLiteral ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/provo_instantiated_classes.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#provo_instantiated_properties> a dcat:Dataset ;
+     dcterms:description "The properties defined by PROV-O, and the number of instances that occur in  <a href=\"http://www.w3.org/2011/prov/wiki/PROV_examples\" xml:lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">examples/</a>."^^rdf:XMLLiteral ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/provo_instantiated_properties.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#rdf_from_provo> a dcat:Dataset ;
+     dcterms:description "This table lists the classes and properties mentioned in ProvenanceOntology.owl. The first column indicates whether or not the class/property is mentioned in the ProvRDF mappings page."@en ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/rdf_from_provo.query> . 
+
+<http://aquarius.tw.rpi.edu/prov-wg/provrdf-owl-coverage#rdf_from_provrdf> a dcat:Dataset ;
+     dcterms:description "This table lists the classes and properties mentioned in the ProvRDF mappings page. The second column indicates whether or not the class/property is mentioned in the ProvenanceOntology.owl."@en ;
+     dcterms:modified ""^^xsd:dateTime ;
+     prov:tracedTo <https://raw.github.com/timrdf/prov-lodspeakr/master/components/services/provrdf-owl-coverage/queries/rdf_from_provrdf.query> . 

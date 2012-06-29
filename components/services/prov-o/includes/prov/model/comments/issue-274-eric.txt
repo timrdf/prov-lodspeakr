@@ -1,0 +1,88 @@
+ > My apologies for being so late on providing reviewer feedback.
+ > 
+ > Overall I enjoyed the PROV-DM document, I felt that the authors have
+ > done an incredible job helping readers easily relate concepts in the
+ > data model.  Here are my comments and suggestions.
+ > 
+ > Eric
+ > 
+ > ~~~
+ > 
+ > Introduction
+ > 
+ > I agreed with the discussion thread on changes to the introduction
+ > that introduced the purpose of the data model to describe provenance
+ > in natural language.
+ > 
+ > Section 2.3 – I have mixed feelings about bringing out these concepts,
+ > they don’t tie into the example and collections isn’t mentioned again
+ > until section 5.8.  While they are important perhaps could this
+ > section be left out of section 2?
+
+This comment needs to be re-considered later. At this stage, I would
+prefer to keep these concepts there, until the model is completely
+finalized. We could reassess then.
+
+ > 
+ > Section 3 Example
+ > 
+ > Prior to the auditor example could an ultra simple example debuting an
+ > agent, process and entity something like “w3:Consortium publishes a
+ > technical report”?
+
+Added sentence, at the beginning of section 3.
+
+ > 
+ > I’m wondering if the detailed auditor provenance example could be
+ > introduced first in a human readable story format prior to the
+ > bulleted list that highlights the specific provenance related
+ > concepts.
+
+Added descriptions in section 3.1 and 3.2.
+ > 
+ > In the example  use of the somewhat cryptic working draft names
+ > “tr:WD-prov-dm-20111215” “tr:WD-prov-dm-20111018”  is a bit difficult
+ > to following because I found myself mentally parsing the document
+ > names to keep track of the different documents.   While this might be
+ > less realistic something like model-rev1.html, model-rev2.html might
+ > illustrate the same ideas.
+
+The whole point was to use real identifiers, to be close to "scruffy
+provenance".
+ 
+ > 
+ > I am wondering if it might be more intuitive if the provenance graphic
+ > illustration preceeded the PROV-ASN notation.  It provides a graphic
+ > that a person can study as they study the PROV-DM assertions in
+ > PROV-ASN notation.
+
+It was difficult to reorganize, since we needed to introduce the
+various concepts. So, instead, a sentence introduces the graphical
+notation.
+
+ > 
+ > The graphic illustration seems to capture all the examples of
+ > provenance from the bulleted list while the PROV-DM assertions in
+ > PROV-ASN seem to be either incomplete (there isn’t a one to one
+ > correspondence to follow from the example to the PROV-DM assertions.
+
+I am not sure I understand. 
+Need to get Eric to point to concrete differences.
+
+ > 
+ > 3.2  Great job bringing in the concept of viewing other perspectives
+ > on the same example.
+ > 
+ > 4.2  Activity names in the table need updating.
+ > 
+
+ which names in the table?
+
+ > 4.3.3.5  prov:location – Could we change the wording slightly to say
+ > that Location is loosely based on an ISO 19112 but can also refer to
+ > non-geographic places such as a directory or row/column?  The specific
+ > definition from ISO19112 is location:
+ > identifiable geographic place  EXAMPLE “Eiffel Tower”, “Madrid”, “California””
+ > 
+
+Updated location definition to allow for non-geographic places.

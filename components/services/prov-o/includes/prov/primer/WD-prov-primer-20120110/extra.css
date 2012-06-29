@@ -1,0 +1,75 @@
+
+/* --- EDITORIAL NOTES --- */
+.pending {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #BFEFFF;
+}
+
+.pending::before {
+    content:    "Pending Review";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.resolved {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #9BCD9B;
+}
+
+.resolved::before {
+    content:    "Resolved";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.inference {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 0px solid #f00;
+    background: #fff;
+}
+
+.inference::before {
+    content:    "Inference";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.constraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.constraint::before {
+    content:    "Constraint";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}

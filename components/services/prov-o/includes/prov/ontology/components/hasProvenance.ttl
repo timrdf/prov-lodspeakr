@@ -1,0 +1,17 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2008/05/skos#> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+prov:hasProvenance
+   a owl:ObjectProperty;
+   rdfs:seeAlso <http://dvcs.w3.org/hg/prov/raw-file/default/paq/provenance-access.html#resource-presented-as-rdf>;
+   rdfs:comment "A relation between two resources, where the object of the property is a resource that provides provenance information about the subject resource";
+   rdfs:domain rdfs:Resource;
+   rdfs:range  prov:ProvenanceInformation;
+.

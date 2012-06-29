@@ -1,0 +1,455 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY prova "http://www.w3.org/ns/prova#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://example.com/"
+     xml:base="http://example.com/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:prova="http://www.w3.org/ns/prova#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.w3.org/ns/prova#">
+        <rdfs:label xml:lang="en">PROV Ontology</rdfs:label>
+        <rdfs:comment rdf:datatype="&xsd;string">0.2</rdfs:comment>
+        <rdfs:comment xml:lang="en">This document is published by the Provenance Working Group (http://www.w3.org/2011/prov/wiki/Main_Page). 
+
+If you wish to make comments regarding this document, please send them to public-prov-wg@w3.org (subscribe, archives). All feedback is welcome.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/TR/prov-o/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:AnnotationProperty rdf:about="&rdfs;seeAlso"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;label"/>
+    <owl:AnnotationProperty rdf:about="&rdfs;comment"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="&owl;topObjectProperty"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#actedOnBehalfOf -->
+
+    <owl:ObjectProperty rdf:about="&prova;actedOnBehalfOf">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:domain rdf:resource="&prova;Agent"/>
+        <rdfs:range rdf:resource="&prova;Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#adoptedPlan -->
+
+    <owl:ObjectProperty rdf:about="&prova;adoptedPlan">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">The Activity performed was described by the given plan resource. Activity specifications, as referred to by plan links, are out of scope of this           specification</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:domain rdf:resource="&prova;Association"/>
+        <rdfs:range rdf:resource="&prova;Plan"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#alternateOf -->
+
+    <owl:ObjectProperty rdf:about="&prova;alternateOf">
+        <rdfs:comment xml:lang="en">Another prova:Entity that characterizes the same thing as this prova:Entity, potentially in a different manner.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#AlternateOf"/>
+        <rdfs:domain rdf:resource="&prova;Entity"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:seeAlso rdf:resource="&prova;specializationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#derivedEntity -->
+
+    <owl:ObjectProperty rdf:about="&prova;derivedEntity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&prova;Derivation"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#generatedEntity -->
+
+    <owl:ObjectProperty rdf:about="&prova;generatedEntity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">The property used by a prova:EntityInvolvement to cite the Entity that was prova:involved with either an Activity or Entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property behaves in spirit like rdf:object; it references the object of a prova:involved triple.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting_again"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:domain rdf:resource="&prova;Generation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#generatingActivity -->
+
+    <owl:ObjectProperty rdf:about="&prova;generatingActivity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">The property used by a prova:EntityInvolvement to cite the Entity that was prova:involved with either an Activity or Entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property behaves in spirit like rdf:object; it references the object of a prova:involved triple.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting_again"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prova;Activity"/>
+        <rdfs:domain rdf:resource="&prova;Generation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#sourceEntity -->
+
+    <owl:ObjectProperty rdf:about="&prova;sourceEntity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&prova;Derivation"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#specializationOf -->
+
+    <owl:ObjectProperty rdf:about="&prova;specializationOf">
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#SpecializationOf"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:domain rdf:resource="&prova;Entity"/>
+        <rdfs:seeAlso rdf:resource="&prova;alternateOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#startedAt -->
+
+    <owl:ObjectProperty rdf:about="&prova;startedAt">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment>TODO: range should be an xsd:dateTime directly to avoid proliferation of bnodes and to keep it simple. The elaborate form should also be permitted, but more practical uses will want it directly.</rdfs:comment>
+        <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity"/>
+        <rdfs:domain rdf:resource="&prova;Activity"/>
+        <rdfs:range rdf:resource="&prova;TimeInstant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#used -->
+
+    <owl:ObjectProperty rdf:about="&prova;used">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">A prova:Entity that was used by this prova:Activity. For example, :baking prova:used :spoon, :egg, :oven .</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:domain rdf:resource="&prova;Activity"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:seeAlso rdf:resource="&prova;Usage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#usedEntity -->
+
+    <owl:ObjectProperty rdf:about="&prova;usedEntity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">The property used by a prova:ActivityInvolvement to cite the Activity that was prova:involved with either an Activity or Entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property behaves in spirit like rdf:object; it references the object of a prova:involved triple.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Original_Source"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:domain rdf:resource="&prova;Usage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#usingActivity -->
+
+    <owl:ObjectProperty rdf:about="&prova;usingActivity">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment xml:lang="en">The property used by a prova:ActivityInvolvement to cite the Activity that was prova:involved with either an Activity or Entity.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property behaves in spirit like rdf:object; it references the object of a prova:involved triple.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Original_Source"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prova;Activity"/>
+        <rdfs:domain rdf:resource="&prova;Usage"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#wasAssociatedWith -->
+
+    <owl:ObjectProperty rdf:about="&prova;wasAssociatedWith">
+        <rdfs:comment xml:lang="en">A prova:Agent that had some (unspecified) responsibility for the occurrence of this prova:Activity.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+        <rdfs:domain rdf:resource="&prova;Activity"/>
+        <rdfs:range rdf:resource="&prova;Agent"/>
+        <rdfs:seeAlso rdf:resource="&prova;Association"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#wasDerivedFrom -->
+
+    <owl:ObjectProperty rdf:about="&prova;wasDerivedFrom">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">wasDerivedFrom links two distinct characterized entities, where &quot;some characterized entity is transformed from, created from, or affected by another characterized entity.&quot;</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#imprecise-1"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#imprecise-n"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#precise-1"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:domain rdf:resource="&prova;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#wasGeneratedBy -->
+
+    <owl:ObjectProperty rdf:about="&prova;wasGeneratedBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:comment xml:lang="en">wasGeneratedBy links Entitites with Activity representing that entity was generated as a result of Activity</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+        <rdfs:range rdf:resource="&prova;Activity"/>
+        <rdfs:domain rdf:resource="&prova;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#wasInformedBy -->
+
+    <owl:ObjectProperty rdf:about="&prova;wasInformedBy">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Starting_again"/>
+        <rdfs:range rdf:resource="&prova;Activity"/>
+        <rdfs:domain rdf:resource="&prova;Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#wasRevisionOf -->
+
+    <owl:ObjectProperty rdf:about="&prova;wasRevisionOf">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+        <rdfs:range rdf:resource="&prova;Entity"/>
+        <rdfs:domain rdf:resource="&prova;Entity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/ns/prova#inXSDDateTime -->
+
+    <owl:DatatypeProperty rdf:about="&prova;inXSDDateTime">
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+        <rdfs:domain rdf:resource="&prova;TimeInstant"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Activity -->
+
+    <owl:Class rdf:about="&prova;Activity">
+        <rdfs:comment xml:lang="en">Activity is defined to be &#39;an identifiable activity, which performs a piece of work.&#39;</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Agent -->
+
+    <owl:Class rdf:about="&prova;Agent">
+        <rdfs:subClassOf rdf:resource="&prova;Entity"/>
+        <rdfs:comment xml:lang="en">An agent represents a characterized entity capable of activity.</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Association -->
+
+    <owl:Class rdf:about="&prova;Association">
+        <rdfs:comment>An instance of prova:Association provides additional descriptions about the binary prova:wasAssociatedWith relation from a prova:Activity to some prova:Agent that is responsible for it. For example, :baking prova:wasAssociatedWith :baker; prova:qualified [ a prova:Association; prova:entity :baker; :foo :bar ].</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Agent_Association"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Attribution -->
+
+    <owl:Class rdf:about="&prova;Attribution">
+        <rdfs:comment>An instance of prova:Attribution provides additional descriptions about the binary prova:wasAttributedTo relation from a prova:Entity to some prova:Agent that is responsible for it. For example, :cake prova:wasAttributedTo :baker; prova:qualified [ a prova:Attribution; prova:entity :baker; :foo :bar ].</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Attribution"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Derivation -->
+
+    <owl:Class rdf:about="&prova;Derivation">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Traceability"/>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#not_in_DM:_consolidated_derivation_signature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Entity -->
+
+    <owl:Class rdf:about="&prova;Entity">
+        <rdfs:comment xml:lang="en">An identifiable characterized entity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Generation -->
+
+    <owl:Class rdf:about="&prova;Generation">
+        <rdfs:comment xml:lang="de">An instance of prova:Generation provides additional descriptions about the binary prova:wasGeneratedBy relation from a generated prova:Entity to the prova:Activity that generated it. For example, :cake prova:wasGeneratedBy :baking; prova:qualified [ a prova:Generation; prova:entity :baking; :foo :bar ].</rdfs:comment>
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Generation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Inform -->
+
+    <owl:Class rdf:about="&prova;Inform">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Activity_Ordering"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Plan -->
+
+    <owl:Class rdf:about="&prova;Plan"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Responsibility -->
+
+    <owl:Class rdf:about="&prova;Responsibility">
+        <rdfs:comment xml:lang="en">An instance of prova:Responsibility provides additional descriptions about the binary prova:actedOnBehalfOf relation from a performing prova:Agent to some prova:Agent for whom it was performed. For example, :mixing prova:wasAssociatedWith :toddler . :toddler prova:actedOnBehalfOf :mother; prova:qualified [ a prova:Responsiblity; prova:entity :mother; :foo :bar ].</rdfs:comment>
+        <rdfs:comment rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Responsibility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Revision -->
+
+    <owl:Class rdf:about="&prova;Revision">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Revision"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#TimeInstant -->
+
+    <owl:Class rdf:about="&prova;TimeInstant"/>
+    
+
+
+    <!-- http://www.w3.org/ns/prova#Usage -->
+
+    <owl:Class rdf:about="&prova;Usage">
+        <rdfs:seeAlso rdf:resource="http://www.w3.org/2011/prov/wiki/ProvRDF#Usage"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

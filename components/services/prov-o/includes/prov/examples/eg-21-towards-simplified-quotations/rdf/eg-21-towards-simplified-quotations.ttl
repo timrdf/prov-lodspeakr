@@ -1,0 +1,33 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix sioc:    <http://rdfs.org/sioc/ns#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-21-towards-simplified-quotations/rdf/eg-21-towards-simplified-quotations.ttl#> .
+
+:my_blog_post
+   a sioc:Post, prov:Entity;
+   dcterms:subject :a_quote_I_included;
+   prov:wasAttributedTo <http://data.semanticweb.org/person/timothy-lebo>;
+.
+
+:a_quote_I_included
+   a prov:Entity;
+   rdf:value "Four score and seven years ago";
+   prov:wasQuotedFrom <http://dbpedia.org/resource/Gettysburg_Address>;
+   prov:qualifiedQuotation [
+      prov:entity <http://dbpedia.org/resource/Gettysburg_Address>;
+      :foo :bar;
+   ];
+.
+
+<http://dbpedia.org/resource/Gettysburg_Address> 
+   a prov:Entity;
+   prov:wasAttributedTo <http://dbpedia.org/resource/Abraham_Lincoln>;
+.

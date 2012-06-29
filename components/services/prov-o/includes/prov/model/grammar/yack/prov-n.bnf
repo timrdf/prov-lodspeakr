@@ -1,0 +1,227 @@
+ 
+[2] bundle ::= "bundle" namespaceDeclarations? expression* (namedBundle namedBundle*)? "endBundle"
+
+[3] namedBundle ::= "bundle" identifier (namespaceDeclarations)? (expression)* "endBundle"
+
+[4] namespaceDeclarations ::=  (defaultNamespaceDeclaration | namespaceDeclaration) namespaceDeclaration*
+
+[5] namespaceDeclaration ::= "prefix" QUALNAME namespace
+
+[6] namespace ::= IRI_REF
+
+[7] defaultNamespaceDeclaration ::=     "default" IRI_REF
+
+[10] expression::=
+        (   
+
+           entityExpression | activityExpression | generationExpression  | usageExpression
+         | startExpression | endExpression | invalidationExpression | communicationExpression | startByActivityExpression
+        | agentExpression |  associationExpression | attributionExpression | responsibilityExpression
+        | derivationExpression | tracedToExpression | hadOriginalSourceExpression | quotationExpression | revisionExpression
+        | alternateExpression | specializationExpression
+        )
+
+
+[11] entityExpression::=	"entity" "(" identifier optionalAttributeValuePairs ")"
+
+[12] activityExpression::=	"activity" "(" identifier activityOptionals ")"
+
+
+activityOptionals ::= | "," "[" attributeValuePairs "]" | "," activityTimes ("," "[" attributeValuePairs "]")?
+activityTimes ::= timeOrMarker "," timeOrMarker
+
+
+generationExpression::=	"wasGeneratedBy" "("  identifier identifierAndTimeAndAttributeOptionals ")"
+| 	"wasGeneratedBy" "(" identifierOrMarker ";" identifier identifierAndTimeAndAttributeOptionals ")"
+
+identifierAndTimeAndAttributeOptionals ::= | "," "[" attributeValuePairs "]" | "," identifierOrMarker "," timeOrMarker ("," "[" attributeValuePairs "]")?
+
+identifierAndAttributeOptionals ::= | "," "[" attributeValuePairs "]" | "," identifierOrMarker ("," "[" attributeValuePairs "]")?
+
+threeIdentifiersAndAttributeOptionals ::= | "," "[" attributeValuePairs "]" | "," identifierOrMarker "," identifierOrMarker "," identifierOrMarker  ("," "[" attributeValuePairs "]")?
+
+timeAndAttributeOptionals ::= | "," "[" attributeValuePairs "]" | "," timeOrMarker ("," "[" attributeValuePairs "]")?
+
+
+
+
+timeOrMarker::=(timeZZ | "-")
+
+identifierOrMarker::=(identifier | "-")
+
+
+usageExpression::=	"used" "("  identifier "," identifier timeAndAttributeOptionals ")"
+| "used" "(" identifierOrMarker ";"  identifier "," identifier timeAndAttributeOptionals ")"
+
+startExpression::=	"wasStartedBy" "(" identifier identifierAndTimeAndAttributeOptionals ")"
+| "wasStartedBy" "(" identifierOrMarker ";" identifier identifierAndTimeAndAttributeOptionals ")"
+
+
+
+
+endExpression::=	"wasEndedBy" "(" identifier identifierAndTimeAndAttributeOptionals ")"
+| "wasEndedBy" "(" identifierOrMarker ";" identifier identifierAndTimeAndAttributeOptionals ")"
+
+
+invalidationExpression::=	"wasInvalidatedBy" "(" identifier identifierAndTimeAndAttributeOptionals ")"
+| "wasInvalidatedBy" "(" identifierOrMarker ";" identifier identifierAndTimeAndAttributeOptionals ")"
+
+
+
+communicationExpression::=	"wasInformedBy" "(" identifier "," identifier optionalAttributeValuePairs ")"
+| 	"wasInformedBy" "(" identifierOrMarker ";" identifier "," identifier optionalAttributeValuePairs ")"
+
+
+startByActivityExpression::=	"wasStartedByActivity" "(" identifier "," identifier optionalAttributeValuePairs ")"
+|	"wasStartedByActivity" "(" identifierOrMarker ";" identifier "," identifier optionalAttributeValuePairs ")"
+
+
+agentExpression::=	"agent" "(" identifier optionalAttributeValuePairs	")" 
+
+attributionExpression::=	"wasAttributedTo" "("  identifier "," identifier optionalAttributeValuePairs ")"
+| "wasAttributedTo" "("  identifierOrMarker ";" identifier "," identifier optionalAttributeValuePairs ")"
+
+associationExpression::=	"wasAssociatedWith" "("  identifier "," identifierOrMarker identifierAndAttributeOptionals ")"
+|"wasAssociatedWith" "("  identifierOrMarker ";" identifier "," identifierOrMarker identifierAndAttributeOptionals ")"
+
+
+responsibilityExpression::=	"actedOnBehalfOf" "("   identifier "," identifier identifierAndAttributeOptionals ")"
+| "actedOnBehalfOf" "("   identifierOrMarker ";" identifier "," identifier identifierAndAttributeOptionals ")"
+
+
+
+derivationExpression::=	"wasDerivedFrom" "(" identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+| "wasDerivedFrom" "(" identifierOrMarker ";" identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+
+
+
+revisionExpression::=	"wasRevisionOf" "("  identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+| "wasRevisionOf" "("  identifierOrMarker ";" identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+
+
+quotationExpression::=	"wasQuotedFrom" "(" identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+|	"wasQuotedFrom" "("  identifierOrMarker ";" identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+
+hadOriginalSourceExpression::=	"hadOriginalSource" "("  identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+| "hadOriginalSource" "("  identifierOrMarker ";" identifier "," identifier threeIdentifiersAndAttributeOptionals ")"
+
+
+tracedToExpression::=	"tracedTo" "("   identifier "," identifier optionalAttributeValuePairs ")"
+| "tracedTo" "("  identifierOrMarker ";" identifier "," identifier optionalAttributeValuePairs ")"
+
+alternateExpression::=	"alternateOf" "("  identifier "," identifier ")"
+
+specializationExpression::=	"specializationOf" "("  identifier "," identifier ")"
+
+
+optionalAttributeValuePairs::= ("," "[" attributeValuePairs "]")?
+
+identifier ::=QUALNAME
+attribute ::=QUALNAME
+attributeValuePairs::=      (  | attributeValuePair ( "," attributeValuePair )* )
+
+attributeValuePair::= attribute '='  literal
+
+
+timeZZ::= ISODATETIME
+
+
+
+
+
+
+
+
+
+
+
+
+
+[13] literal ::= StringLiteral | QUALNAME_LITERAL | INTLITERAL | StringLiteral "%%" datatype
+
+datatype::= IRI_REF | QUALNAME
+
+ 
+[66s] StringLiteral ::= STRING_LITERAL
+
+
+
+
+@terminals
+QUALNAME_OLD::= (PN_PREFIX ":")?  PN_LOCAL | PN_PREFIX ":"
+
+INTLITERAL::= '-'? DIGIT+
+QUALNAME::= PN_PREFIX ":"   PN_LOCAL? |   PN_LOCAL
+
+PREFX::=  PN_PREFIX
+DIGIT::=[0-9]
+ISODATETIME::=  DIGIT DIGIT DIGIT DIGIT "-" DIGIT DIGIT "-" DIGIT DIGIT "T" DIGIT DIGIT ":" DIGIT DIGIT ":" DIGIT DIGIT ("." DIGIT (DIGIT DIGIT?)?)? ("Z" | TIMEZONEOFFSET)?
+
+TIMEZONEOFFSET::= ("+" | "-") DIGIT DIGIT ":" DIGIT DIGIT;
+
+
+
+ 
+
+[70s] IRI_REF ::= "<" ( [^<>\"{}|^`\\] - [#x00-#x20] | UCHAR )* ">" 
+ 
+ 
+
+
+ 
+ 
+[149s] STRING_LITERAL ::= '"' ( ( [^#x22#x5C#xA#xD]) | ECHAR | UCHAR )* '"' 
+
+[149s] QUALNAME_LITERAL ::= '\'' QUALNAME '\'' 
+
+
+ 
+[19] UCHAR ::= ( "\\u" HEX HEX HEX HEX ) 
+ | ( "\\U" HEX HEX HEX HEX HEX HEX HEX HEX ) 
+
+[91s] ECHAR ::= "\\" [tbnrf\\\"'] 
+ 
+[92s] NIL ::= "(" (WS)* ")" 
+ 
+[93s] WS ::= " " 
+ | "\t" 
+ | "\r" 
+ | "\n" 
+[94s] ANON ::= "[" (WS)* "]" 
+ 
+[95s] PN_CHARS_BASE ::= [A-Z] 
+ | [a-z] 
+ | [#00C0-#00D6] 
+ | [#00D8-#00F6] 
+ | [#00F8-#02FF] 
+ | [#0370-#037D] 
+ | [#037F-#1FFF] 
+ | [#200C-#200D] 
+ | [#2070-#218F] 
+ | [#2C00-#2FEF] 
+ | [#3001-#D7FF] 
+ | [#F900-#FDCF] 
+ | [#FDF0-#FFFD] 
+ | [#10000-#EFFFF] 
+[96s] PN_CHARS_U ::= PN_CHARS_BASE 
+ | "_" 
+[98s] PN_CHARS ::= PN_CHARS_U 
+ | "-" 
+ | [0-9] 
+ | #00B7 
+ | [#0300-#036F] 
+ | [#203F-#2040] 
+[99s] PN_PREFIX ::= PN_CHARS_BASE ( ( PN_CHARS | "." )* PN_CHARS )? 
+ 
+[100s] PN_LOCAL ::= ( PN_CHARS_U | [0-9] | PN_CHARS_OTHERS ) ( ( PN_CHARS | '.' | PN_CHARS_OTHERS )*  ( PN_CHARS | PN_CHARS_OTHERS ) ) ?
+
+[160s] PN_CHARS_OTHERS ::= PERCENT | '/' | '@' | '~' | '&' | '+' | '?' | '#' | '$'
+
+[161s] PERCENT ::= '%' HEX HEX
+
+[162s] HEX ::= [0-9] | [A-F] | [a-f]
+
+[163s] PN_LOCAL_ESC ::= '\\' ( '_' | '~' | '.' | '-' | '!' | '$' | '&' | "'" | '(' | ')' | '*' | '+' | ',' | ';' | '=' | ':' | '/' | '?' | '#' | '@' | '%' )
+ 
+@pass ::= [ \t\r\n]+ 
+ | "#" [^\r\n]* 

@@ -1,0 +1,4 @@
+
+activity(a,aAttrs)
+wasGeneratedBy(g,e2,a,gAttrs)
+used(u,a,e1,uAttrs)

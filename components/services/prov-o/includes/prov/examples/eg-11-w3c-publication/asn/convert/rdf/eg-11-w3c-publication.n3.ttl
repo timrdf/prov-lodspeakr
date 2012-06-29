@@ -1,0 +1,45 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+<http://example.org/pub1>
+    a prov:Activity ;
+    prov:hadQualifiedAssociation [
+        a prov:Association ;
+        prov:adoptedPlan <http://www.w3.org/2005/10/Process-20051014/tr.html#rec-advance> ;
+        prov:hadQualifiedEntity <http://www.w3.org/Consortium>
+    ] ;
+    prov:used <https://lists.w3.org/Archives/Member/chairs/2011OctDec/0004>, <https://lists.w3.org/Archives/Member/w3c-archive/2011Oct/0141> .
+
+<http://example.org/pub2>
+    a prov:Activity ;
+    prov:hadQualifiedAssociation [
+        a prov:Association ;
+        prov:adoptedPlan <http://www.w3.org/2005/10/Process-20051014/tr.html#rec-advance> ;
+        prov:hadQualifiedEntity <http://www.w3.org/Consortium>
+    ] ;
+    prov:used <https://lists.w3.org/Archives/Member/w3c-archive/2011Dec/0111> .
+
+<http://www.w3.org/2005/10/Process-20051014/tr.html#rec-advance>
+    a prov:Plan .
+
+<http://www.w3.org/Consortium>
+    a prov:Agent .
+
+<http://www.w3.org/TR/2011/WD-prov-dm-20111018>
+    a prov:Entity ;
+    prov:wasGeneratedBy <http://example.org/pub1> .
+
+<http://www.w3.org/TR/2011/WD-prov-dm-20111215>
+    a prov:Entity ;
+    prov:wasDerivedFrom <http://www.w3.org/TR/2011/WD-prov-dm-20111018> ;
+    prov:wasGeneratedBy <http://example.org/pub2> .
+
+<https://lists.w3.org/Archives/Member/chairs/2011OctDec/0004>
+    a prov:Entity .
+
+<https://lists.w3.org/Archives/Member/w3c-archive/2011Dec/0111>
+    a prov:Entity .
+
+<https://lists.w3.org/Archives/Member/w3c-archive/2011Oct/0141>
+    a prov:Entity .
+

@@ -1,0 +1,4 @@
+<http://example.org#compose> <http://www.w3.org/ns/prov#qualifiedUsage> _:bnode1610217024
+_:bnode1610217024 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Usage>
+_:bnode1610217024 <http://www.w3.org/ns/prov#entity> <http://example.org#regionList>
+_:bnode1610217024 <http://www.w3.org/ns/prov#hadRole> <http://example.org#regionsToAggregateBy>

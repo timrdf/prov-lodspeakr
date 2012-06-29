@@ -1,0 +1,57 @@
+@prefix ex:   <http://www.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+
+
+<> rdfs:comment """Adapted from wasQuotedFrom section in PROV-DM"""@en ;
+    prov:wasDerivedFrom <https://dvcs.w3.org/hg/prov/raw-file/971034e4052c/model/prov-dm.html#dfn-wasquotedfrom> ;
+    rdfs:seeAlso <https://www.w3.org/2011/prov/track/issues/356> .
+
+
+#entity(wp:thoughts-from-the-dagstuhl-principles-of-provenance-workshop/)
+# (but we'll use shorter names here)
+ex:blogpost a prov:Entity .
+
+#agent(ex:Luc)
+ex:Luc a prov:Agent .
+
+#agent(ex:Paul)
+ex:Paul a prov:Agent .
+
+#wasQuotedFrom(dm:bl-dagstuhl,wp:thoughts-from-the-dagstuhl-principles-of-provenance-workshop/,ex:Luc,ex:Paul)
+ex:paragraph a prov:Entity ;
+    prov:wasQuotedFrom ex:blogpost ;
+    prov:qualifiedQuotation ex:paragraphQuotation .
+
+ex:paragraphQuotation a prov:Quotation ;
+	prov:entity ex:blogpost ;
+	prov:hadQuoter ex:Luc ;
+	prov:hadQuoted ex:Paul .
+
+# by inference quotation-implication
+ex:paragraph prov:wasDerivedFrom ex:blogpost ;
+    prov:wasAttributedTo ex:Luc .
+ex:blogpost prov:wasAttributedTo ex:Paul .
+
+
+
+# However, there might be additional agents which were not involved in the
+# quotation, but which the entities are still attributed to
+
+# The blogpost contains a photo by someone else
+ex:somePhotographer a prov:Agent ;
+    owl:differentFrom ex:Paul .
+
+ex:blogpost prov:wasAttributedTo ex:somePhotographer .
+
+# Paolo made the paragraph appear in italics
+ex:Paolo a prov:Agent .
+ex:paragraph prov:wasAttributedTo ex:Paolo .
+
+# However this does not imply
+##ex:paragraphQuotation prov:hadQuoter ex:Paolo ;
+##    prov:hadQuoted ex:somePhotographer .
+
+
+## Therefore it would be loss of information if prov:Quotation 
+## did not have prov:hadQuoter or prov:hadQuoted.

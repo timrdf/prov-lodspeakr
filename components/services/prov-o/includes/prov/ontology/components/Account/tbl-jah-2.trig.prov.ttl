@@ -1,0 +1,62 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+:process_execution
+   a prov:ProcessExecution;
+   dcterms:description "Tim copy-pasted tbl-jah.trig to tbl-jah-2.trig and added a couple triples from two foaf files on the web.";
+   time:hasBeginning [
+      a prov:Time, time:Instant;
+      time:inXSDDateTime "2011-10-02T11:42:39-04:00"^^xsd:dateTime; 
+   ];
+   prov:wasControlledBy [
+      a prov:Agent, prov:Role;
+      prov:assumedBy <http://purl.org/twc/id/person/TimLebo>;
+   ];
+   prov:used      :original, :tbl_foaf,   :jah_foaf;
+   prov:generated :result,   :provenance;
+   time:hasEnd [
+      a prov:Time, time:Instant;
+      time:inXSDDateTime "2011-10-02T17:44:04-04:00"^^xsd:dateTime; 
+   ];
+.
+
+:result prov:wasDerivedFrom :original .
+
+:original
+   a prov:Entity, :Input, :File;
+   nfo:fileUrl </Users/tlebo/Desktop/prov-wg/hg/prov/ontology/components/Account/tbl-jah.trig>,
+               <tbl-jay.trig>;  
+   nfo:fileSize 810;
+.
+:tbl_foaf
+   a prov:Entity, :Input, :URL;
+   prov:hasLocation <http://www.w3.org/People/Berners-Lee/card>;
+   nfo:fileSize 7977;
+.
+:jah_foaf
+   a prov:Entity, :Input, :URL;
+   prov:hasLocation <http://www.cs.rpi.edu/~hendler/foaf.rdf>;
+   nfo:fileSize 29158;
+.
+
+:result
+   a prov:Entity, :Output, :File;
+   nfo:fileUrl <file:///Users/tlebo/Desktop/prov-wg/hg/prov/ontology/components/Account/tbl-jah-2.trig>,
+               <tbl-jay-2.trig>; # This refers to the absolute path above (originally), but now refers to
+                                 # http://dvcs.w3.org/hg/prov/file/tip/ontology/components/Account/tbl-jah-2.trig
+                                 # and your local file on disk if you retrieved this URL.  
+   nfo:fileSize 1065;
+.
+:provenance
+   a prov:Entity, :Provenance, :File;
+   nfo:fileUrl <file:///Users/tlebo/Desktop/prov-wg/hg/prov/ontology/components/Account/tbl-jah-2.trig.prov.ttl>,
+               <tbl-jay-2.trig.prov.ttl>;  
+   rdfs:comment "This file is describing itself with this :Entity";
+   nfo:fileSize 2399;
+.

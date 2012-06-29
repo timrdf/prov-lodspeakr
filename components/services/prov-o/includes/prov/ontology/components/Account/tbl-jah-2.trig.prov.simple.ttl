@@ -1,0 +1,10 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix nfo:     <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <tbl-jah-2.trig.prov.ttl#> .
+
+:result prov:wasDerivedFrom :original .

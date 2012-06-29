@@ -1,0 +1,99 @@
+Summary:  not ready for release.  Sorry!
+
+I've read this document up to section 2.2 and, based on what I've read, I'm not 
+sure I can see any reason for this document to exist.
+
+When we set out on this path of separating the description of constrained (or 
+"strict") provenance from "scruffy" provenance, my understanding was that:
+(1) we wished to provide an easy-to-understand provenance data model that anyone 
+could use to generate and present provenance information, and
+(2) we wished to describe a strict, or constrained, use of this model that would 
+allow certain conclusions to be validly inferred.
+
+As such, the PROV-CONSTRAINTS document needs to build upon the PROV-DM document 
+in a way that doesn't seek to invalidate things that people do based on PROV-DM 
+alone (cf. Paul's use-case about making provenance statements about his blog).
+
+Yet this is not what I see when I read the PROV-CONSTRAINTS document.  What I 
+see is a document that (a) simply repeats a lot of material that is present in 
+PROV-DM (I think familiarity with the contents of PROV-DM should be assumed for 
+readers of PROV-CONSTRAINTS), and (b) introduces new definitions that seem to 
+invalidate some usage that would be valid based on a reading of PROV-DM alone 
+(e.g. the MUST constraint in section 2.1.2, para 3).  I think it is important 
+that PROV-CONSTRAINTS MUST NOT invalidate a naive use of the provenance model. 
+In this light, I find several parts of the text I have read to be contradictory 
+(e.g. section 2.1 paras 3 & 4, or the notion that "event" underpins PROV-DM when 
+it isn't even mentioned there).
+
+The goal, as I understand it, is that when provenance statements are made in a 
+way that conform to the stricter usage, then certain inferences become valid.
+
+In writing this, I realize that there is something that, to my knowledge, has 
+not been discussed in the WG.  If presented with some arbitrary provenance 
+information, how is an agent to know if it has been constructed with regard to 
+the strict constraints of PROV-CONSTRAINTS, or is simply a looser use of the 
+basic provenance model?  Without some way to answer this, I think the "scruffy" 
+and "strict" (for want of more evocative terms) approaches to expressing 
+provenance are destined to flounder.
+
+So, for this document to work as I understand it is intended to do, I think it 
+needs:
+(1) to start out with a much clearer articulation of its goal - I find the 
+present section 1 introduction tells me nothing that I actually need to know 
+about the role of PROV-CONSTRAINTS, and
+(2) we need a way to recognize when provenance statements are intended to be 
+interpreted according to the strict usage defined by PROV-CONSTRAINTS.
+
+For (1), stripping out the introductory references and repetition of PROV-DM, I 
+think something like this is needed:
+
+[[
+This specification defines a strict, or constrained, usage of the provenance 
+data model which, if followed, makes a number of conclusions commonly drawn from 
+provenance information to be logically valid inferences.  It also defines a way 
+to assert that the provenance usage conforms to this strict usage.  These 
+constraints are also reflected in the provenance formal semantics [@@ref].
+]]
+
+For (2), I don't have any definite proposal, though I can imagine some 
+approaches.  The following are intended as seeds of ideas, not definite suggestions:
+* a subproperty of prov:hasProvenance, e.g. prov:hasStrictProvenance, that 
+relates provenance to some entity.
+* a property associated with a prov:Account that indicates that the provenance 
+statements in that account can be interpreted as strict provenance
+* a property of an agent or activity associated with generation a provenance 
+account that indicates that the generation process follows strict provenance 
+constraints in generating provenance statements.
+* etc.
+
+Until these fundamental issues are addressed, I think that any further comment 
+on the content of this document would be in the league of shuffling deckchairs 
+on the Titanic.
+
+======
+
+Thinking further about my comments yesterday, it occurs to me that there are two 
+additional things that would be helpful to include:
+
+(1) in the introduction, a brief summary of the constraints introduced. 
+Offhand, I can think of two:
+- variability of an entity must be constrained so that any provenance expressed 
+is durable, or immutable.  (E.g. when we say a report was edited by X, the 
+report entity referenced must be a version that was and always will be edited by X.)
+- timing properties expressed must be consistent with common expectations; e.g. 
+that an artifact must be generated before it can be used, etc.
+I'm sure there are more, but I'm not sure that reading the document as it stands 
+would actually tell me what they are.
+
+(2) some discussion (but no more than that) of how to recast provenance that 
+does not conform the the required constraints into a form that does, and which 
+can therefore be safely combined with other provenance expressions and have 
+inferences drawn.  This discussion would help users of provenance to understand 
+that that "scruffy" provenance information can be used in a formal reasoning 
+environment if it is subjected to appropriate "conditioning".  For example, if 
+Paul says that he is author of his blog post on a given date (but on other dates 
+there may be guest posts by other people), then the URI for the blog post can be 
+replaced by one that refers to a specific date.  The exact mechanism for this 
+would not be specified, but one might point to ideas like Memento, tdb: URI 
+scheme or just bog post permalinks.  For timing constraints, one might need to 
+say something about re-casting all timestamps in terms of UTC/Zulu-time.  And so on.

@@ -1,0 +1,2852 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html lang="en" dir="ltr">
+<head> 
+    <title>PROV-DM: The PROV Data Model</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+<!-- PM -->
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+     </style>
+
+     
+     
+    
+
+    
+
+    
+
+     
+  <style type="text/css">
+/*****************************************************************
+ * ReSpec CSS
+ * Robin Berjon (robin at berjon dot com)
+ * v0.05 - 2009-07-31
+ *****************************************************************/
+
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+code {
+    color:  #ff4500;
+}
+
+
+/* --- WEB IDL --- */
+pre.idl {
+    border-top: 1px solid #90b8de;
+    border-bottom: 1px solid #90b8de;
+    padding:    1em;
+    line-height:    120%;
+}
+
+pre.idl::before {
+    content:    "WebIDL";
+    display:    block;
+    width:      150px;
+    background: #90b8de;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+.idlType {
+    color:  #ff4500;
+    font-weight:    bold;
+    text-decoration:    none;
+}
+
+/*.idlModule*/
+/*.idlModuleID*/
+/*.idlInterface*/
+.idlInterfaceID, .idlDictionaryID {
+    font-weight:    bold;
+    color:  #005a9c;
+}
+
+.idlSuperclass {
+    font-style: italic;
+    color:  #005a9c;
+}
+
+/*.idlAttribute*/
+.idlAttrType, .idlFieldType, .idlMemberType {
+    color:  #005a9c;
+}
+.idlAttrName, .idlFieldName, .idlMemberName {
+    color:  #ff4500;
+}
+.idlAttrName a, .idlFieldName a, .idlMemberName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlMethod*/
+.idlMethType {
+    color:  #005a9c;
+}
+.idlMethName {
+    color:  #ff4500;
+}
+.idlMethName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlParam*/
+.idlParamType {
+    color:  #005a9c;
+}
+.idlParamName {
+    font-style: italic;
+}
+
+.extAttr {
+    color:  #666;
+}
+
+/*.idlConst*/
+.idlConstType {
+    color:  #005a9c;
+}
+.idlConstName {
+    color:  #ff4500;
+}
+.idlConstName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlException*/
+.idlExceptionID {
+    font-weight:    bold;
+    color:  #c00;
+}
+
+.idlTypedefID, .idlTypedefType {
+    color:  #005a9c;
+}
+
+.idlRaises, .idlRaises a.idlType, .idlRaises a.idlType code, .excName a, .excName a code {
+    color:  #c00;
+    font-weight:    normal;
+}
+
+.excName a {
+    font-family:    monospace;
+}
+
+.idlRaises a.idlType, .excName a.idlType {
+    border-bottom:  1px dotted #c00;
+}
+
+.excGetSetTrue, .excGetSetFalse, .prmNullTrue, .prmNullFalse, .prmOptTrue, .prmOptFalse {
+    width:  45px;
+    text-align: center;
+}
+.excGetSetTrue, .prmNullTrue, .prmOptTrue { color:  #0c0; }
+.excGetSetFalse, .prmNullFalse, .prmOptFalse { color:  #c00; }
+
+.idlImplements a {
+    font-weight:    bold;
+}
+
+dl.attributes, dl.methods, dl.constants, dl.fields, dl.dictionary-members {
+    margin-left:    2em;
+}
+
+.attributes dt, .methods dt, .constants dt, .fields dt, .dictionary-members dt {
+    font-weight:    normal;
+}
+
+.attributes dt code, .methods dt code, .constants dt code, .fields dt code, .dictionary-members dt code {
+    font-weight:    bold;
+    color:  #000;
+    font-family:    monospace;
+}
+
+.attributes dt code, .fields dt code, .dictionary-members dt code {
+    background:  #ffffd2;
+}
+
+.attributes dt .idlAttrType code, .fields dt .idlFieldType code, .dictionary-members dt .idlMemberType code {
+    color:  #005a9c;
+    background:  transparent;
+    font-family:    inherit;
+    font-weight:    normal;
+    font-style: italic;
+}
+
+.methods dt code {
+    background:  #d9e6f8;
+}
+
+.constants dt code {
+    background:  #ddffd2;
+}
+
+.attributes dd, .methods dd, .constants dd, .fields dd, .dictionary-members dd {
+    margin-bottom:  1em;
+}
+
+table.parameters, table.exceptions {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    margin: 0.5em 0;
+    width:  100%;
+}
+table.parameters { border-bottom:  1px solid #90b8de; }
+table.exceptions { border-bottom:  1px solid #deb890; }
+
+.parameters th, .exceptions th {
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+    font-family:    initial;
+    font-weight:    normal;
+    text-shadow:    #666 1px 1px 0;
+}
+.parameters th { background: #90b8de; }
+.exceptions th { background: #deb890; }
+
+.parameters td, .exceptions td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.parameters tr:first-child td, .exceptions tr:first-child td {
+    border-top: none;
+}
+
+.parameters td.prmName, .exceptions td.excName, .exceptions td.excCodeName {
+    width:  100px;
+}
+
+.parameters td.prmType {
+    width:  120px;
+}
+
+table.exceptions table {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    width:  100%;
+}
+
+/* --- TOC --- */
+.toc a {
+    text-decoration:    none;
+}
+
+a .secno {
+    color:  #000;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+/* --- EXAMPLES --- */
+pre.example {
+    border-top: 1px solid #ff4500;
+    border-bottom: 1px solid #ff4500;
+    padding:    1em;
+    margin-top: 1em;
+}
+
+pre.example::before {
+    content:    "Example";
+    display:    block;
+    width:      150px;
+    background: #ff4500;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+/* --- EDITORIAL NOTES --- */
+.issue {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.issue::before {
+    content:    "Issue";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.note {
+    margin: 1em 0em 0em;
+    padding:    1em;
+    border: 2px solid #cff6d9;
+    background: #e2fff0;
+}
+
+.note::before {
+    content:    "Note";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #cff6d9;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+/* --- Best Practices --- */
+div.practice {
+    border: solid #bebebe 1px;
+    margin: 2em 1em 1em 2em;
+}
+
+span.practicelab {
+    margin: 1.5em 0.5em 1em 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+span.practicelab   { background: #dfffff; }
+
+span.practicelab {
+    position: relative;
+    padding: 0 0.5em;
+    top: -1.5em;
+}
+
+p.practicedesc {
+    margin: 1.5em 0.5em 1em 1em;
+}
+
+@media screen {
+    p.practicedesc {
+        position: relative;
+        top: -2em;
+        padding: 0;
+        margin: 1.5em 0.5em -1em 1em;
+    }
+}
+
+/* --- SYNTAX HIGHLIGHTING --- */
+pre.sh_sourceCode {
+  background-color: white;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
+pre.sh_sourceCode .sh_keyword { color: #005a9c; font-weight: bold; }           /* language keywords */
+pre.sh_sourceCode .sh_type { color: #666; }                            /* basic types */
+pre.sh_sourceCode .sh_usertype { color: teal; }                             /* user defined types */
+pre.sh_sourceCode .sh_string { color: red; font-family: monospace; }        /* strings and chars */
+pre.sh_sourceCode .sh_regexp { color: orange; font-family: monospace; }     /* regular expressions */
+pre.sh_sourceCode .sh_specialchar { color: 	#ffc0cb; font-family: monospace; }  /* e.g., \n, \t, \\ */
+pre.sh_sourceCode .sh_comment { color: #A52A2A; font-style: italic; }         /* comments */
+pre.sh_sourceCode .sh_number { color: purple; }                             /* literal numbers */
+pre.sh_sourceCode .sh_preproc { color: #00008B; font-weight: bold; }       /* e.g., #include, import */
+pre.sh_sourceCode .sh_symbol { color: blue; }                            /* e.g., *, + */
+pre.sh_sourceCode .sh_function { color: black; font-weight: bold; }         /* function calls and declarations */
+pre.sh_sourceCode .sh_cbracket { color: red; }                              /* block brackets (e.g., {, }) */
+pre.sh_sourceCode .sh_todo { font-weight: bold; background-color: #00FFFF; }   /* TODO and FIXME */
+
+/* Predefined variables and functions (for instance glsl) */
+pre.sh_sourceCode .sh_predef_var { color: #00008B; }
+pre.sh_sourceCode .sh_predef_func { color: #00008B; font-weight: bold; }
+
+/* for OOP */
+pre.sh_sourceCode .sh_classname { color: teal; }
+
+/* line numbers (not yet implemented) */
+pre.sh_sourceCode .sh_linenum { display: none; }
+
+/* Internet related */
+pre.sh_sourceCode .sh_url { color: blue; text-decoration: underline; font-family: monospace; }
+
+/* for ChangeLog and Log files */
+pre.sh_sourceCode .sh_date { color: blue; font-weight: bold; }
+pre.sh_sourceCode .sh_time, pre.sh_sourceCode .sh_file { color: #00008B; font-weight: bold; }
+pre.sh_sourceCode .sh_ip, pre.sh_sourceCode .sh_name { color: #006400; }
+
+/* for Prolog, Perl... */
+pre.sh_sourceCode .sh_variable { color: #006400; }
+
+/* for LaTeX */
+pre.sh_sourceCode .sh_italics { color: #006400; font-style: italic; }
+pre.sh_sourceCode .sh_bold { color: #006400; font-weight: bold; }
+pre.sh_sourceCode .sh_underline { color: #006400; text-decoration: underline; }
+pre.sh_sourceCode .sh_fixed { color: green; font-family: monospace; }
+pre.sh_sourceCode .sh_argument { color: #006400; }
+pre.sh_sourceCode .sh_optionalargument { color: purple; }
+pre.sh_sourceCode .sh_math { color: orange; }
+pre.sh_sourceCode .sh_bibtex { color: blue; }
+
+/* for diffs */
+pre.sh_sourceCode .sh_oldfile { color: orange; }
+pre.sh_sourceCode .sh_newfile { color: #006400; }
+pre.sh_sourceCode .sh_difflines { color: blue; }
+
+/* for css */
+pre.sh_sourceCode .sh_selector { color: purple; }
+pre.sh_sourceCode .sh_property { color: blue; }
+pre.sh_sourceCode .sh_value { color: #006400; font-style: italic; }
+
+/* other */
+pre.sh_sourceCode .sh_section { color: black; font-weight: bold; }
+pre.sh_sourceCode .sh_paren { color: red; }
+pre.sh_sourceCode .sh_attribute { color: #006400; }
+
+</style><link href="./extra.css" rel="stylesheet" type="text/css" charset="utf-8"><link href="http://www.w3.org/StyleSheets/TR/W3C-ED" rel="stylesheet" type="text/css" charset="utf-8"></head> 
+  <body style="display: inherit; "><div class="head"><p><a href="http://www.w3.org/"><img width="72" height="48" src="http://www.w3.org/Icons/w3c_home" alt="W3C"></a></p><h1 class="title" id="title">PROV-DM: The PROV Data Model</h1><h2 id="subtitle">WD5 for internal review</h2><h2 id="w3c-editor-s-draft-02-april-2012"><acronym title="World Wide Web Consortium">W3C</acronym> Editor's Draft 02 April 2012</h2><dl><dt>This version:</dt><dd><a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html">http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html</a></dd><dt>Latest published version:</dt><dd><a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a></dd><dt>Latest editor's draft:</dt><dd><a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html">http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html</a></dd><dt>Previous version:</dt><dd><a href="http://www.w3.org/TR/2012/WD-prov-dm-20120202/">http://www.w3.org/TR/2012/WD-prov-dm-20120202/</a></dd><dt>Editors:</dt><dd><a href="http://www.ecs.soton.ac.uk/~lavm/">Luc Moreau</a>, University of Southampton</dd>
+<dd><a href="http://www.cs.ncl.ac.uk/people/Paolo.Missier">Paolo Missier</a>, Newcastle University</dd>
+<dt>Contributors:</dt><dd><a href="http://semanticweb.org/wiki/Khalid_Belhajjame">Khalid Belhajjame</a>, University of Manchester</dd>
+<dd><span>Stephen Cresswell</span>, legislation.gov.uk</dd>
+<dd><a href="http://www.isi.edu/~gil/">Yolanda Gil</a>, Invited Expert</dd>
+<dd><span>Reza B'Far</span>, Oracle Corporation</dd>
+<dd><a href="http://www.few.vu.nl/~pgroth/">Paul Groth</a>, VU University of Amsterdam</dd>
+<dd><span>Graham Klyne</span>, University of Oxford</dd>
+<dd><a href="http://tw.rpi.edu/web/person/JamesMcCusker">Jim McCusker</a>, Rensselaer Polytechnic Institute</dd>
+<dd><a href="http://www.inf.kcl.ac.uk/staff/simonm/">Simon Miles</a>, Invited Expert</dd>
+<dd><a href="http://www.rpi.edu/research/ccni/">James Myers</a>, Rensselaer Polytechnic Institute</dd>
+<dd><a href="http://cci.case.edu/cci/index.php/Satya_Sahoo">Satya Sahoo</a>, Case Western Reserve University</dd>
+</dl><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2012 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. <acronym title="World Wide Web Consortium">W3C</acronym> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p><hr></div> 
+
+    <div id="abstract" class="introductory section"><h2>Abstract</h2>
+<p>
+PROV-DM, the PROV data model, is a data model for provenance that describes
+the entities, people and activities involved in
+producing a piece of data or thing. 
+PROV-DM is structured in six components, dealing with: 
+(1) entities and activities, and the time at which they were created, used, or ended;
+(2) agents bearing responsibility for entities that were generated and actities that happened;
+(3) derivations between entities;
+(4) properties to link entities that refer to a same thing;
+(5) collections of entities, whose provenance can itself be tracked;
+(6) a simple annotation mechanism.
+</p>
+
+<p>This document introduces the provenance concepts underpinning
+PROV-DM in natural language, and systematically defines PROV-DM types and
+relations. PROV data model is domain-agnostic, but is equipped with
+extensibility points allow domain-specific information to be included. </p>
+
+<p>Two further documents complete the specification of PROV-DM.
+First, a companion document specifies the set of constraints that
+well-structured provenance descriptions should follow; these provide
+an interpretation for provenance descriptions.  Second, to
+be able to provide examples of provenance, a notation is used for
+expressing instances of PROV-DM for human consumption; the syntactic
+details of this notation are also kept in a separate document. </p>
+
+    </div><div id="sotd" class="introductory section"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <acronym title="World Wide Web Consortium">W3C</acronym> publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><acronym title="World Wide Web Consortium">W3C</acronym> technical reports index</a> at http://www.w3.org/TR/.</em></p>
+<h4 id="prov-family-of-specifications">PROV Family of Specifications</h4>
+This document is part of the PROV family of specifications, a set of specifications aiming to define the various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.  The specifications are as follows.
+<ul>
+<li> PROV-DM, the PROV data model for provenance (this document),</li>
+<li> PROV-DM-CONSTRAINTS, a set of constraints applying to the PROV data model,</li>
+<li> PROV-N, a notation for provenance aimed at human consumption,</li>
+<li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF;</li>
+<li> PROV-AQ, the mechanisms for accessing and querying provenance; </li>
+<li> PROV-PRIMER, a primer for the PROV data model,</li>
+<li> PROV-SEM, a formal semantics for the PROV data model.</li>
+<li> PROV-XML, an XML schema for the PROV data model.</li>
+</ul>
+<h4 id="how-to-read-the-prov-family-of-specifications">How to read the PROV Family of Specifications</h4>
+<ul>
+<li>The primer is the entry point to PROV offering a pedagogical presentation of the provenance model.</li>
+<li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-DM-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+<li>The XML community should focus on PROV-XML defining an XML schema for PROV-DM. Further details can also be found in PROV-DM, PROV-DM-CONSTRAINTS, and PROV-SEM.</li>
+<li>Developers seeking to retrieve or publish provenance should focus of PROV-AQ.</li>
+<li>Readers seeking to implement other PROV serializations
+should focus on PROV-DM and PROV-DM-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+</ul>
+
+
+<h4 id="fourth-public-working-draft">Fourth Public Working Draft</h4>
+<p>This is the fourth public release of the PROV-DM document. Following feedback, the Working Group has decided to reorganize this document substantially, separating the data model, from its contraints, and the notation used to illustrate it. The PROV-DM release is synchronized with the release of the PROV-O, PROV-PRIMER, PROV-N, PROV-DM-CONSTRAINTS documents. We are now making clear what the entry path to the PROV family of specifications is.</p>
+<p>This document was published by the <a href="http://www.w3.org/2011/prov/">Provenance Working Group</a> as an Editor's Draft. If you wish to make comments regarding this document, please send them to <a href="mailto:public-prov-wg@w3.org">public-prov-wg@w3.org</a> (<a href="mailto:public-prov-wg-request@w3.org?subject=subscribe">subscribe</a>, <a href="http://lists.w3.org/Archives/Public/public-prov-wg/">archives</a>). All feedback is welcome.</p><p>Publication as an Editor's Draft does not imply endorsement by the <acronym title="World Wide Web Consortium">W3C</acronym> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p><p>This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>. <acronym title="World Wide Web Consortium">W3C</acronym> maintains a <a href="http://www.w3.org/2004/01/pp-impl/46974/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>.</p></div><div id="toc" class="section"><h2 class="introductory">Table of Contents</h2><ul class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction<br>
+</a><ul class="toc"><li class="tocline"><a href="#structure-of-this-document" class="tocxref"><span class="secno">1.1 </span>Structure of this Document</a></li><li class="tocline"><a href="#prov-dm-namespace" class="tocxref"><span class="secno">1.2 </span>PROV Namespace</a></li><li class="tocline"><a href="#conventions" class="tocxref"><span class="secno">1.3 </span>Conventions</a></li></ul></li><li class="tocline"><a href="#starting-points" class="tocxref"><span class="secno">2. </span>PROV-DM Starting Points</a><ul class="toc"><li class="tocline"><a href="#section-entity-activity" class="tocxref"><span class="secno">2.1 </span>Entity and Activity</a></li><li class="tocline"><a href="#section-generation-usage-derivation" class="tocxref"><span class="secno">2.2 </span>Generation, Usage, Derivation</a></li><li class="tocline"><a href="#section-types-entities-agents" class="tocxref"><span class="secno">2.3 </span>Agents and Other Types of Entities</a></li><li class="tocline"><a href="#section-attribution-association-responsibility" class="tocxref"><span class="secno">2.4 </span>Attribution, Association, and Responsibility</a></li><li class="tocline"><a href="#section-UML" class="tocxref"><span class="secno">2.5 </span>Simplified Overview Diagram</a></li><li class="tocline"><a href="#prov-n" class="tocxref"><span class="secno">2.6 </span>PROV-N: The Provenance Notation</a></li></ul></li><li class="tocline"><a href="#prov-dm-example" class="tocxref"><span class="secno">3. </span>Illustration of PROV-DM by an Example</a><ul class="toc"><li class="tocline"><a href="#section-example-a" class="tocxref"><span class="secno">3.1 </span>The Process View</a></li><li class="tocline"><a href="#section-example-b" class="tocxref"><span class="secno">3.2 </span>The Authors View</a></li><li class="tocline"><a href="#section-example-c" class="tocxref"><span class="secno">3.3 </span>Attribution of Provenance</a></li></ul></li><li class="tocline"><a href="#data-model-components" class="tocxref"><span class="secno">4. </span>PROV-DM Types and Relations</a><ul class="toc"><li class="tocline"><a href="#component1" class="tocxref"><span class="secno">4.1 </span>Component 1: Entities and Activities</a><ul class="toc"><li class="tocline"><a href="#term-Entity" class="tocxref"><span class="secno">4.1.1 </span>Entity</a></li><li class="tocline"><a href="#term-Activity" class="tocxref"><span class="secno">4.1.2 </span>Activity</a></li><li class="tocline"><a href="#term-Generation" class="tocxref"><span class="secno">4.1.3 </span>Generation</a></li><li class="tocline"><a href="#term-Usage" class="tocxref"><span class="secno">4.1.4 </span>Usage</a></li><li class="tocline"><a href="#term-Start" class="tocxref"><span class="secno">4.1.5 </span>Start</a></li><li class="tocline"><a href="#term-End" class="tocxref"><span class="secno">4.1.6 </span>End</a></li><li class="tocline"><a href="#term-wasInformedBy" class="tocxref"><span class="secno">4.1.7 </span>Communication</a></li><li class="tocline"><a href="#term-wasStartedByActivity" class="tocxref"><span class="secno">4.1.8 </span>Start by Activity</a></li></ul></li><li class="tocline"><a href="#component2" class="tocxref"><span class="secno">4.2 </span>Component 2: Agents and Responsibility</a><ul class="toc"><li class="tocline"><a href="#term-Agent" class="tocxref"><span class="secno">4.2.1 </span>Agent</a></li><li class="tocline"><a href="#term-attribution" class="tocxref"><span class="secno">4.2.2 </span>Attribution</a></li><li class="tocline"><a href="#term-ActivityAssociation" class="tocxref"><span class="secno">4.2.3 </span>Association</a></li><li class="tocline"><a href="#term-responsibility" class="tocxref"><span class="secno">4.2.4 </span>Responsibility</a></li></ul></li><li class="tocline"><a href="#component3" class="tocxref"><span class="secno">4.3 </span>Component 3: Derivations</a><ul class="toc"><li class="tocline"><a href="#Derivation-Relation" class="tocxref"><span class="secno">4.3.1 </span>Derivation</a></li><li class="tocline"><a href="#term-Revision" class="tocxref"><span class="secno">4.3.2 </span>Revision</a></li><li class="tocline"><a href="#term-quotation" class="tocxref"><span class="secno">4.3.3 </span>Quotation</a></li><li class="tocline"><a href="#term-original-source" class="tocxref"><span class="secno">4.3.4 </span>Original Source</a></li><li class="tocline"><a href="#term-traceability" class="tocxref"><span class="secno">4.3.5 </span>Traceability</a></li></ul></li><li class="tocline"><a href="#component4" class="tocxref"><span class="secno">4.4 </span>Component 4: Alternate Entities</a><ul class="toc"><li class="tocline"><a href="#term-specialization" class="tocxref"><span class="secno">4.4.1 </span>Specialization</a></li><li class="tocline"><a href="#term-alternate" class="tocxref"><span class="secno">4.4.2 </span>Alternate</a></li></ul></li><li class="tocline"><a href="#component5" class="tocxref"><span class="secno">4.5 </span>Component 5: Collections</a><ul class="toc"><li class="tocline"><a href="#term-collection" class="tocxref"><span class="secno">4.5.1 </span>Collection</a></li><li class="tocline"><a href="#term-collection-insertion" class="tocxref"><span class="secno">4.5.2 </span>Insertion</a></li><li class="tocline"><a href="#term-collection-removal" class="tocxref"><span class="secno">4.5.3 </span>Removal</a></li><li class="tocline"><a href="#term-collection-membership" class="tocxref"><span class="secno">4.5.4 </span>Membership</a></li></ul></li><li class="tocline"><a href="#component6" class="tocxref"><span class="secno">4.6 </span>Component 6: Annotations</a><ul class="toc"><li class="tocline"><a href="#term-note" class="tocxref"><span class="secno">4.6.1 </span>Note</a></li><li class="tocline"><a href="#term-annotation" class="tocxref"><span class="secno">4.6.2 </span>Annotation</a></li></ul></li><li class="tocline"><a href="#second-class-elements" class="tocxref"><span class="secno">4.7 </span>Further Elements of PROV-DM</a><ul class="toc"><li class="tocline"><a href="#term-NamespaceDeclaration" class="tocxref"><span class="secno">4.7.1 </span>Namespace Declaration</a></li><li class="tocline"><a href="#term-qualified-name" class="tocxref"><span class="secno">4.7.2 </span>Qualified Name</a></li><li class="tocline"><a href="#term-identifier" class="tocxref"><span class="secno">4.7.3 </span>Identifier</a></li><li class="tocline"><a href="#term-attribute" class="tocxref"><span class="secno">4.7.4 </span>Attribute</a><ul class="toc"><li class="tocline"><a href="#term-attribute-label" class="tocxref"><span class="secno">4.7.4.1 </span>prov:label</a></li><li class="tocline"><a href="#term-attribute-location" class="tocxref"><span class="secno">4.7.4.2 </span>prov:location</a></li><li class="tocline"><a href="#term-attribute-role" class="tocxref"><span class="secno">4.7.4.3 </span>prov:role</a></li><li class="tocline"><a href="#term-attribute-type" class="tocxref"><span class="secno">4.7.4.4 </span>prov:type</a></li></ul></li><li class="tocline"><a href="#term-value" class="tocxref"><span class="secno">4.7.5 </span>Value</a></li></ul></li></ul></li><li class="tocline"><a href="#extensibility-section" class="tocxref"><span class="secno">5. </span>PROV-DM Extensibility Points</a></li><li class="tocline"><a href="#FurtherConsiderations" class="tocxref"><span class="secno">6. </span>Towards a Refinement of the PROV Data Model</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">B. </span>References</a><ul class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">B.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">B.2 </span>Informative references</a></li></ul></li></ul></div> 
+
+
+
+
+
+
+<!-- <div class="buttonpanel"> 
+<form action="#"><p> 
+<input id="hide-asn" onclick="set_display_by_class('div','withAsn','none');set_display_by_class('span','withAsn','none'); set_display_by_id('hide-asn','none'); set_display_by_id('show-asn','');" type="button"
+value="Hide ASN" /> 
+<input id="show-asn" onclick="set_display_by_class('div','withAsn',''); set_display_by_class('span','withAsn','');  set_display_by_id('hide-asn',''); set_display_by_id('show-asn','none');" style="display: none"
+type="button" value="Show ASN" /> 
+</p> 
+</form> 
+</div>     
+-->
+
+
+
+
+
+    <div id="introduction" class="section"> 
+      <!--OddPage--><h2><span class="secno">1. </span>Introduction<br>
+</h2> 
+
+<p> 
+For the purpose of this specification, <dfn id="dfn-provenance">provenance</dfn> is defined as a record that describes the people,
+institutions, entities, and activities involved in producing,
+influencing, or delivering a piece of data or a thing.
+In particular, the provenance of information is crucial in deciding
+whether information is to be trusted, how it should be integrated with
+other diverse information sources, and how to give credit to its
+originators when reusing it.  In an open and inclusive environment
+such as the Web, where users find information that is often contradictory or
+questionable, provenance can help those users to make trust judgements.
+</p>
+
+
+<p>
+The idea that a single way of representing and collecting provenance could be adopted internally by all systems does not seem to be realistic today. Instead, a pragmatic approach is to
+consider a core data model for provenance that allows  domain and application specific representations of provenance to be translated into such a data model and exchanged between systems.
+Heterogeneous systems can then export their provenance into such a core data model, and applications that need to make sense of provenance in heterogeneous systems can then import it,
+process it, and reason over it.</p>
+
+<p>Thus, the vision is that different provenance-aware systems natively adopt their own model for representing their provenance, but a core provenance data model can be readily adopted as a
+provenance <em>interchange</em> model across such systems.</p>
+
+<p>A set of specifications, referred to as the PROV family of specifications, define the various aspects
+that are necessary to achieve this vision in an interoperable
+way:</p>
+<ul>
+<li>A data model for provenance, which is presented in three documents:
+<ul>
+<li> PROV-DM (part I): the provenance data model itself, expressed in natural language (this document);
+</li><li> PROV-DM-CONSTRAINTS (part II): constraints underpinning the data model [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM-CONSTRAINTS">PROV-DM-CONSTRAINTS</a></cite>];
+</li><li> PROV-N (part III): a notation to express instances of that data model for human consumption [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-N">PROV-N</a></cite>];
+</li></ul> 
+</li>
+<li>PROV-O: the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-O">PROV-O</a></cite>];</li>
+<li>PROV-AQ: the mechanisms for accessing and querying provenance [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-AQ">PROV-AQ</a></cite>];</li>
+<li>PROV-PRIMER: a primer for the PROV approach [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-PRIMER">PROV-PRIMER</a></cite>];</li>
+<li>PROV-SEM: semantics of the PROV-DM data model [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-SEM">PROV-SEM</a></cite>];</li>
+<li>PROV-XML: an XML schema for the PROV data model.</li>
+</ul>
+
+
+<p>
+  PROV-DM is a domain-agnostic model, but with clear extensibility points allowing further domain-specific and
+application-specific extensions to be defined.
+The PROV data model is structured according to six components covering various aspects of provenance:</p>
+<ol>
+<li> component 1: entities and activities, and the time at which they were created, used, or ended;
+</li><li> component 2: agents bearing responsibility for entities that were generated and actities that happened;
+</li><li> component 3: derivations between entities;
+</li><li> component 4: properties to link entities that refer to a same thing;
+</li><li> component 5: collections of entities, whose provenance can itself be tracked;
+</li><li> component 6: a simple annotation mechanism.
+</li></ol>
+
+
+<p>This specification intentionally presents the key concepts of the PROV Data Model, without drilling down into all its subtleties.  Using these key concepts, it becomes possible to write useful provenance descriptions very quickly, and publish or embed them along side the data they relate to. </p>
+
+<p>However, if data changes, then it is challenging to express its provenance precisely, like it would be for any other form of metadata. To address this challenge, a <em>refinement</em> is proposed to enrich simple provenance, with extra-descriptions that  help qualify the specific subject of provenance and provenance itself, with attributes and temporal interval, intended to satisfy a comprehensive set of constraints.  These aspects are covered in the companion specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM-CONSTRAINTS">PROV-DM-CONSTRAINTS</a></cite>].
+</p>
+
+
+    <div id="structure-of-this-document" class="section"> 
+<h3><span class="secno">1.1 </span>Structure of this Document</h3>
+
+<p><a href="#starting-points">Section 2</a> provides  starting points for the PROV Data Model, listing a set of types and  relations, which are allows users to make initial provenance descriptions.</p>
+
+<p><a href="#prov-dm-example">Section 3</a> illustrates how PROV-DM can be used
+to express the provenance of a report published on the Web.</p>
+
+<p><a href="#data-model-components">Section 4</a> provides the definition of PROV-DM concepts, structured according to six components.</p>
+
+<p><a href="#extensibility-section">Section 5</a> summarizes PROV-DM extensibility points.</p>
+
+<p><a href="#FurtherConsiderations">Section 6</a> introduces the idea that constraints can be applied to the PROV data model to refine provenance descriptions; these are covered in the companion specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM-CONSTRAINTS">PROV-DM-CONSTRAINTS</a></cite>].</p>
+
+
+    </div> 
+
+<div id="prov-dm-namespace" class="section">
+ <h3><span class="secno">1.2 </span>PROV Namespace</h3>
+
+
+<p>The PROV namespace is <span class="name">http://www.w3.org/ns/prov#</span>.</p>
+
+<p> All the concepts, reserved names and attributes introduced in this specification belong to the PROV namespace.</p>
+
+</div>
+
+
+    <div id="conventions" class="section"> 
+<h3><span class="secno">1.3 </span>Conventions</h3>
+
+
+
+<p>The key words "<em class="rfc2119" title="must">must</em>", "<em class="rfc2119" title="must not">must not</em>", "<em class="rfc2119" title="required">required</em>", "<em class="rfc2119" title="shall">shall</em>", "<em class="rfc2119" title="shall
+      not">shall
+      not</em>", "<em class="rfc2119" title="should">should</em>", "<em class="rfc2119" title="should not">should not</em>", "<em class="rfc2119" title="recommended">recommended</em>",  "<em class="rfc2119" title="may">may</em>", and
+      "<em class="rfc2119" title="optional">optional</em>" in this document are to be interpreted as described in
+      [<cite><a class="bibref" rel="biblioentry" href="#bib-RFC2119">RFC2119</a></cite>].</p>
+    </div> 
+
+</div> 
+
+
+
+<div id="starting-points" class="section"> 
+<!--OddPage--><h2><span class="secno">2. </span>PROV-DM Starting Points</h2>
+
+<p>
+This section provides an introduction to the PROV data model by
+overviewing a set of concepts underpinning provenance descriptions
+that a novice reader would write in a first instance.  In Sections 2.1
+to 2.4, these concepts are described in natural language and
+illustrated by small examples.  Since PROV-DM is a conceptual data
+model, Section 2.5 maps the concepts to various types and relations,
+which are illustrated graphically in
+a <a href="#prov-dm-overview">simplified UML diagram</a>.  Section 2.6
+then summarizes the PROV notation allowing instances of PROV-DM to be
+written down.
+</p>
+
+
+  
+    <div id="section-entity-activity" class="section"> 
+<h3><span class="secno">2.1 </span>Entity and Activity</h3>
+
+
+<p>Things we want to describe  the provenance of are called <em>entities</em> in PROV. The term "things" encompasses a broad diversity of notions, including digital objects such as a file or web page, 
+physical things such as a building or a printed book, or a car as well as abstract concepts and ideas. One can regard any Web resource as an example of Entity in this context. </p>
+
+<p>
+</p><div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+   An <span class="dfn">entity</span> is a thing one    wants to provide provenance for.  For the purpose of this    specification, things can be physical, digital, conceptual, or    otherwise; things may be real or imaginary.   </div>
+
+
+
+<div class="anexample" id="entity-example">
+<p>An entity may be the document at URI <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a>, a file in a file system, a car, or an idea.</p>
+</div>
+
+
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An <span class="dfn">activity</span>  is something that occurs over a period of time and acts upon or with entities.  This action can take multiple forms: consuming, processing, transforming, modifying, relocating, using, generating, or being associated with entities.  </span> Activities that operate on digital entities may for example move, copy, or duplicate them.
+</p>
+
+
+
+<div class="anexample" id="activity-example">
+<p>An activity may be the publishing of a document on the Web, sending a twitter message, extracting metadata embedded in a file, driving a car from Boston to Cambridge, assembling a data set based on a set of measurements, performing a statistical analysis over a data set, sorting news items according to some criteria, running a SPARQL query over a triple store, and editing a file.</p>
+</div>
+
+</div>
+
+    <div id="section-generation-usage-derivation" class="section"> 
+<h3><span class="secno">2.2 </span>Generation, Usage, Derivation</h3>
+
+<p>Activities and entities are associated with each other in two different ways: activities are consumers of entities and activities are producers of entities. The act of producing or consuming an entity may have a duration.  
+ The term 'generation' refers to the completion of the the act of producing; likewise, the term 'usage' refers to the beginning of the act of consuming entities. Thus, we define the following notions of generation and usage. </p>
+
+<p>
+</p><div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+   <span class="dfn">Generation</span> is the completion of production of a new entity by an activity.  This entity becomes available for usage after this generation. This entity did not exist before generation. </div>
+
+
+<p>
+</p><div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+   <span class="dfn">Usage</span> is the beginning of consumption of an entity by an activity. Before usage, the activity had not begun to consume or use this entity and could not have been affected by the entity. </div>
+
+
+
+
+<div class="anexample" id="generation-example">
+<p>Examples of generation are the completed creation of a file by a
+program, the completed creation of a linked data set, and the completed
+publication of a new version of a document.
+</p></div>
+
+
+
+<div class="anexample" id="usage-example">
+<p>Usage examples include a procedure beginning to consume an argument, a service starting to read a value on a port, a program beginning to read a configuration
+file, or the point at which an ingredient, such as eggs, is being added in a baking activity. Usage may entirely consume an entity (e.g. eggs are no longer available after being added to
+the mix); alternatively, a same entity may be used multiple times, possibly by different activities (e.g. a file on a file system can be read indefinitely).
+</p></div>
+
+
+<p>Activities are consumers of entities and producers of entities. In some case, the consumption of an entity influences the creation of another in some way. This notion is captured by derivations, defined as follows.</p>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <span class="dfn">derivation</span>  is a transformation of an entity into another, a construction of an entity into another, or an update of an entity, resulting in a new one.</span>
+
+
+
+</p><div class="anexample" id="derivation-example">
+<p>Examples of derivation include  the transformation of a relational table into a
+linked data set, the transformation of a canvas into a painting, the transportation of a work of art from London to New York, and a physical transformation such as the melting of ice into water.</p>
+</div>
+
+</div>
+
+<div id="section-types-entities-agents" class="section"> 
+<h3><span class="secno">2.3 </span>Agents and Other Types of Entities</h3>
+
+<p>The motivation for introducing  agents in the model is to denote the agent's responsibility for activities. </p>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+   An <span class="dfn">agent</span> is a type of entity that bears some form of responsibility for an activity taking place. </span>
+</p>
+
+
+<p>
+The definition of agent intentionally stays away from using concepts such as enabling, causing, initiating, triggering, affecting, etc, because many entities also enable, cause, initiate, and affect in some way
+the activities. Concepts such as triggers are themselves defined in relations between entities and activities.   So the notion of having some degree of responsibility is really what makes an agent.</p>
+
+
+<p>An agent is a particular type of Entity. This means that the model can be
+ used to express provenance of the agents themselves.  </p>
+
+<div class="anexample" id="agent-example">
+<p>
+Software for checking the use of grammar in a document may be defined as an agent of a document preparation activity, and at the same time one can describe its provenance, including for instance the vendor and the version history.</p>
+</div>
+
+
+
+
+<p>There are some useful types of entities and agents that are commonly encountered in applications making data and documents available on the Web; we introduce them in the rest of this section. </p>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+   A <span class="dfn">plan</span> is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.  </span>
+There exist no
+prescriptive requirement on the nature of plans, their representation, the
+actions or steps they consist of, or their intended goals.  Since plans may evolve over time,
+it may become necessary to track their provenance, so plans themselves are
+entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to  
+validate the execution as represented in the provenance record, to  
+manage expectation failures, or to provide explanations.</p> 
+
+<div class="anexample" id="plan-example">
+<p>
+A plan can be a blog post tutorial for how to set up a web server, a list of instructions for a micro-processor execution, a cook's written recipe for a chocolate cake, or a workflow for a scientific experiment.
+</p>
+</div>
+
+
+
+<p>Three types of agents are recognized because they are commonly encountered in applications making data and documents available on the Web: persons, software agents, and organizations.</p>
+
+<div class="anexample" id="types-of-agents-example">
+<p> A Web site and service selling books on the Web and the company hosting 
+them are software agents and organizations, respectively.</p>
+</div>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <span class="dfn">collection</span> is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be <span class="dfn">member of</span> the collections.  </span> This concept allows for the provenance of the collection, but also of its constituents to be expressed.  Such a notion of collection corresponds to a wide variety of  concrete data structures, such as a <em>maps</em>, <em>dictionaries</em>, or <em>associative arrays</em>.</p>
+
+<div class="anexample" id="collection-example">
+<p>
+An example of collection is an archive of documents. Each document has its own provenance, but the archive itself also has some provenance: who maintained it, which documents it contained at which point in time, how it was assembled, etc. 
+</p></div>
+
+
+<!-- alternative names: provenance record, bundle -->
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+   An <span class="dfn">account</span> is an entity that contains a bundle of provenance descriptions.  </span>Making an account an entity allows for provenance of provenance to be expressed.
+
+</p><div class="anexample" id="account-example">
+<p>
+For users to decide whether they can place their trust in
+a resource, they may want to analyze the resource's provenance, but also determine
+who its provenance is attributed to, and when it was
+generated. In other words, users need to be able to determine the provenance of provenance.
+Hence, provenance is also
+regarded as an entity (of type Account), by which provenance of provenance can then be
+expressed.
+</p>
+</div>
+
+</div>
+
+
+<div id="section-attribution-association-responsibility" class="section"> 
+<h3><span class="secno">2.4 </span>Attribution, Association, and Responsibility</h3>
+
+<p>Agents can be related to entities, activities, and other agents.</p>  
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <span class="dfn">Attribution</span> is the ascribing of an entity to an agent. </div>
+
+<div class="anexample" id="association-example">
+<p>A blog post can be attributed to an author, a mobile phone to its manufacturer.</p>
+</div>
+
+<p>
+Agents are defined as having some kind of responsibility for activities. However, one may want to be more specific about the nature of an agent's responsibility. 
+For example, a programmer and a researcher could both be
+associated with running a workflow, but it may not matter which
+programmer clicked the button to start the workflow while it would
+matter a lot which researcher told the programmer to do so.  </p>
+
+<!-- <div class="note"> to be revisited for WD5. Paolo's proposed text: "Agents are defined in sec. 2.1 as having some kind of responsibility for activities. However, one may want to be more specific regarding the degrees of an agent's responsibility. For example, ..."</div>
+-->
+
+
+<p>Furthermore, provenance reflects activities that have occurred.  In some  
+cases, those activities reflect the execution of a plan that was  
+designed in advance to guide the execution.  
+A plan may be associated to an activity, which represents what was intended to  
+happen.  </p>
+
+<!-- <div class="note">Proposal: remove the above para as it repeats from 2.3. Proposed text: "the <em>activity association</em> relation provides a way to indicate that an agent is responsible for an activity, possibly with an associated plan."[PM]</div> -->
+
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An activity <span class="dfn">association</span> is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity. </span>
+</p>
+
+<div class="anexample" id="association-example2">
+<p>Examples of association between an activity and an agent are:
+</p><ul>
+<li>creation of a web page under the guidance of a designer;</li>
+<li>various forms of participation in a panel discussion, including audience member, panelist, or panel chair;</li>
+<li>a public event, sponsored by a company, and hosted by a museum;</li>
+<li>an XSLT transform launched by a user based on an XSL style sheet (a plan).</li>
+</ul>
+</div>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">
+    <span class="dfn">Responsibility</span> is the fact that an agent is accountable for the actions of a "subordinate" agent, in the context of an activity.  </span> The nature of this relation is intended to be broad,  including delegation or contractual relation. </p>
+
+<!--<div class="note">Propose to rephrase as follows: <br/>
+A relation between two agents, denoted <dfn title="concept-responsibilityChain">actedOnBehalfOf</dfn> indicates that 
+ that a "subordinate" agent acted on behalf of a "responsible" agent, in the context of an activity.  The nature of this relation is intended to be broad,  including delegation or a contractual relation.
+  When this relation is used transitively, i.e., one agent acts on behalf of another, who also acts on behalf of another, etc., these relations form a  <dfn title="concept-responsibilityChain">responsibility chain</dfn>.
+</div>-->
+  
+
+
+
+
+<div class="anexample" id="responsibilityChain-example">
+<p>A student publishing a web page describing an academic
+department could result in both the student and the department being
+agents associated with the activity, and it may not matter which
+student published a web page but it matters a lot that the department
+told the student to put up the web page.  
+</p>
+</div>
+</div>
+
+
+
+
+
+
+    <div id="section-UML" class="section"> 
+<h3><span class="secno">2.5 </span>Simplified Overview Diagram</h3>
+
+<p>So far, we have introduced a series of concepts underpinning provenance.   PROV-DM  is a conceptual data model consisting of types and relations between these. Table <a href="#overview-types-and-relations">(Mapping of Provenance concepts to   types and relations in  PROV-DM)</a> shows how provenance concepts can be mapped to types and relations in PROV-DM: the first column lists concepts introduced in this section, the second column indicates whether a concept maps to a type or a relation, whereas the third column contains the corresponding name.  We note that names of relations have a verbal form in the past tense to express what happened in the past, as opposed to what may or will happen. 
+</p>
+
+
+<div style="text-align: left;">
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<caption id="overview-types-and-relations">Mapping of Provenance concepts to   types and relations in  PROV-DM</caption>
+<tbody><tr><td><a>Provenance Concepts</a></td><td></td><td>PROV-DM types or relations</td></tr>
+<tr>
+<td><a href="#concept-entity" class="internalDFN">Entity</a></td><td rowspan="3">Types in PROV-DM</td><td><a title="dfn-Entity" href="#dfn-dfn-entity" class="internalDFN">entity</a></td></tr>
+<tr><td><a href="#concept-activity" class="internalDFN">Activity</a></td><td><a title="dfn-Activity" href="#dfn-dfn-activity" class="internalDFN">activity</a></td></tr>
+<tr><td><a href="#concept-agent" class="internalDFN">Agent</a></td><td><a title="dfn-agent" href="#dfn-dfn-agent" class="internalDFN">agent</a></td></tr>
+<tr>
+<td><a href="#concept-generation" class="internalDFN">Generation</a></td><td rowspan="6">Relations in PROV-DM</td><td><a title="dfn-Generation" href="#dfn-dfn-generation" class="internalDFN">wasGeneratedBy</a></td></tr>
+<tr><td><a href="#concept-usage" class="internalDFN">Usage</a></td><td><a title="used" href="#dfn-used" class="internalDFN">used</a></td></tr>
+<tr><td><a href="#concept-attribution" class="internalDFN">Attribution</a></td><td><a title="wasAttributedTo" href="#dfn-wasattributedto" class="internalDFN">wasAttributedTo</a></td></tr>
+<tr><td><a href="#concept-activityAssociation" class="internalDFN">Association</a></td><td><a title="wasAssociatedWith" href="#dfn-wasassociatedwith" class="internalDFN">wasAssociatedWith</a></td></tr>
+<tr><td><a href="#concept-responsibility" class="internalDFN">Responsibility</a></td><td><a title="actedOnBehalfOf" href="#dfn-actedonbehalfof" class="internalDFN">actedOnBehalfOf</a></td></tr>
+<tr><td><a href="#concept-derivation" class="internalDFN">Derivation</a></td><td><a title="wasDerivedFrom" href="#dfn-wasderivedfrom" class="internalDFN">wasDerivedFrom</a></td></tr>
+</tbody></table>
+</div>
+
+<p>Figure <a href="#">overview-types-and-relations</a> illustrates the three types (entity, activity, and agent) and how they relate to each other.  At this stage, all relations are shown to be binary.  When examining PROV-DM in details, 
+some relations, while  involving two primary elements, are shown to be n-ary. </p>
+
+
+<div style="text-align: center; ">
+  <figure style="max-width: 70%; ">
+  <img src="images/OverviewDiagram.png" alt="Simplified  Overview of PROV-DM" style="max-width: 70%; ">
+<figcaption id="prov-dm-overview">Simplified  Overview of PROV-DM</figcaption>
+  </figure>
+</div>
+
+<p>Figure <a href="#">overview-types-and-relations</a> is not intended to be complete. It only illustrates  types and relations from Section <a href="#starting-points">starting-points</a> and exploited in the example discussed in the next section. They will then be explained in detail in Section <a href="#data-model-components">data-model-components</a>.
+The third column of Table <a href="#overview-types-and-relations">(Mapping of Provenance concepts to   types and relations in  PROV-DM)</a> lists names that are part of a textual notation to write instances of the PROV-DM data model. This notation, referred to as the PROV-N notation, is outlined in the next section. </p>
+
+<!--
+<div class="note">
+   TODO: short text required to explain the overview diagram
+<p>I have the impression that the diagram presented in Section 2.5 would 
+ > be more useful if placed at the beginning of Section 2 [KB]
+</div>
+-->
+</div>
+<div id="prov-n" class="section"> 
+<h3><span class="secno">2.6 </span>PROV-N: The Provenance Notation</h3>
+
+<p>A key goal of PROV-DM is the specification of a machine-processable data model for provenance so that applications can retrieve provenance and reason about it. As such, representations of PROV-DM are available in RDF and XML.
+</p>
+
+<p>However, it is important to provide instances of provenance for human consumption, as in this document or elsewhere.
+To this end, PROV-N is a notation that is designed to  write instances of the PROV-DM data model in a compact textual form, without the syntactic baggage and constraints coming with a markup language such as XML or a description framework such as RDF.  We outline here some of its key design principles. For full details, the reader is referred to the companion specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-N">PROV-N</a></cite>].</p>
+
+<ul>
+<li>PROV-N expressions adopt a <em>functional notation</em> consisting
+of a name and a series of arguments in bracket.</li>
+
+<li>The interpretation of PROV-N arguments is defined according to their <em>position</em> in the list of arguments. This convention allows for a compact notation. </li>
+
+<li><p>
+PROV-N <em>optional arguments</em> need not be specified. For cases where it is desirable to indicate which arguments have not been specified, PROV-N uses  the <em>syntactic marker</em> <span class="name">-</span> for unspecified arguments.</p> 
+</li>
+
+<li><p>Most expressions 
+have an identifier which always occur in <em>first position</em>,
+and an optional set of attribute-value pairs, which occur in <em>last position</em>, and delimited by square brackets. </p>
+</li>
+</ul>
+
+<div class="anexample">
+<p>
+An activity with identifier <span class="name">a1</span> and an attribute <span class="name">type</span> with value <span class="name">createFile</span>.
+</p><pre class="codeexample">activity(a1, [prov:type="createFile"])
+</pre>
+Two entities with identifiers <span class="name">e1</span> and <span class="name">e2</span>.
+<pre class="codeexample">entity(e1)
+entity(e2)
+</pre>
+The activity  <span class="name">a1</span> used  <span class="name">e1</span>, and <span class="name">e2</span> was generated by <span class="name">a1</span>.
+<pre class="codeexample">used(a1,e1)
+wasGeneratedBy(e2,a1)
+</pre>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="prov-dm-example" class="section"> 
+<!--OddPage--><h2><span class="secno">3. </span>Illustration of PROV-DM by an Example</h2>
+
+<p>Section <a href="#starting-points">starting-points</a> has introduced some provenance concepts, and how they are expressed as types or relations in the PROV data model. The purpose of this section is to put these concepts into practice in order to express the provenance of some document published on the Web.  
+With this realistic example, PROV-DM constructs are  composed together,  and a graphical illustration shows a provenance description forming a directed graph, rooted at the entity we want to explain the provenance of, and pointing to the entities, activities, and agents it depended on. This example also shows that, sometimes, multiple provenance descriptions about a same entity can co-exist, which then justifies the need for provenance of provenance.</p>
+
+
+<p>The World Wide Web Consortium publishes many technical reports. In this example, we consider a technical report, and describe its provenance. 
+Specifically, we consider the second version of the PROV-DM document 
+<a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">http://www.w3.org/TR/2011/WD-prov-dm-20111215</a>. Its provenance can be expressed from several perspectives, which we present. In the first one,  provenance is concerned with the <acronym title="World Wide Web Consortium">W3C</acronym> process, whereas in the second one, it takes the authors' viewpoint; we then provide attribution to these two provenance descriptions.</p>
+
+
+<div id="section-example-a" class="section"> 
+<h3><span class="secno">3.1 </span>The Process View</h3>
+
+
+<p style="font-style:italic; "><b>Description:</b> The World Wide Web
+Consortium publishes technical reports according to its publication
+policy.  Working drafts are published regularly to reflect the work
+accomplished by working groups. Every publication of a working draft
+must be preceded by a "publication request" to the Webmaster.  The
+very first version of a technical report must also preceded by a
+"transition request" to be approved by the <acronym title="World Wide Web Consortium">W3C</acronym> director.  All working
+drafts are made available at a unique URI.  In this scenario, we consider two successive versions of a given report, the policy according to which they were published, and the associated requests.
+</p>
+
+<p>
+
+Concretely, in this section, we describe the kind of provenance record that the <a href="http://www.w3.org/Consortium">WWW Consortium</a> could keep for auditors to check that due processes are followed. All entities involved in this example are Web resources, with well defined URIs (some of which locating archived email messages, available to <acronym title="World Wide Web Consortium">W3C</acronym> Members).</p>
+
+<ul>
+<li> Two versions of the technical report are involved: <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> (second working draft) and <span class="name"><span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018">tr:WD-prov-dm-20111018</a></span></span> (first working draft);</li>
+<li> Both <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> and <span class="name"><span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018">tr:WD-prov-dm-20111018</a></span></span> were published by the WWW Consortium  agent (<span class="name"><a href="http://www.w3.org/Consortium">w3:Consortium</a></span>); </li>
+<li> The publication activity for <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> is <span class="name">ex:act2</span>;</li>
+<li> The publication activity for <span class="name"><span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018">tr:WD-prov-dm-20111018</a></span></span> is <span class="name">ex:act1</span>;
+</li>
+
+<li> The report <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> is derived from <span class="name"><span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018">tr:WD-prov-dm-20111018</a></span></span>;</li>
+
+<li> The publication activity <span class="name">ex:act1</span> used a <a href="http://www.w3.org/2005/08/01-transitions.html#pubreq">publication request</a> (<span class="name"><a href="https://lists.w3.org/Archives/Member/w3c-archive/2011Oct/0141">ar2:0141</a></span>) and a <a href="http://www.w3.org/2005/08/01-transitions.html#transreq">transition request</a> (<span class="name"><a href="https://lists.w3.org/Archives/Member/chairs/2011OctDec/0004">ar1:0004</a></span>);</li>
+<li> The publication activity <span class="name">ex:act2</span> used a <a href="http://www.w3.org/2005/08/01-transitions.html#pubreq">publication request</a> (<span class="name"><a href="https://lists.w3.org/Archives/Member/w3c-archive/2011Dec/0111">ar3:0111</a></span>);</li>
+<li> Technical reports were published according to the process rules (<span class="name"><a href="http://www.w3.org/2005/10/Process-20051014/tr.html#rec-advance">pr:rec-advance</a></span>), a plan in PROV-DM terminology.</li>
+</ul>
+
+<p>
+We now paraphrase some PROV-DM descriptions, and illustrate them with the PROV-N notation, a notation for PROV-DM aimed at human consumption.  We then follow them with a graphical illustration. Full details of the provenance record can be found <a href="examples/w3c-publication1.pn">here</a>.
+
+</p><ul>
+<li>There is a technical report, a working draft on the recommendation track (<a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsWD">pr:RecsWD</a>), which is regarded as an entity so that we can describe its provenance. Similar descriptions exist for all entities.
+<pre>entity(tr:WD-prov-dm-20111215, [ prov:type="pr:RecsWD" %% xsd:QName ])
+</pre>
+</li>
+<li>There is a publication activity.
+<pre>activity(ex:act2,[prov:type="publish"])
+</pre>
+</li>
+
+<li>The technical report was generated by the publication activity: this is a <a title="concept-Generation">Generation</a>.
+<pre>wasGeneratedBy(tr:WD-prov-dm-20111215, ex:act2, -)
+</pre>
+</li>
+
+
+<li>The second draft of the technical report was derived from the first draft of the technical report: this is a <a title="concept-Derivation">Derivation</a>.
+<pre>wasDerivedFrom(tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018)
+</pre>
+</li>
+
+<li>The activity required a publication request: this is a <a title="concept-Usage">Usage</a>.
+<pre>used(ex:act2, ar3:0111, -)
+</pre>
+</li>
+
+<li>The activity was associated with the Consortium agent, and proceeded according to its publication policy: this is an <a title="concept-activityAssociation">Activity Association</a>.
+<pre>wasAssociatedWith(ex:act2, w3:Consortium, pr:rec-advance)
+</pre>
+</li>
+</ul>
+
+<p>
+Provenance descriptions can be <em>illustrated</em> graphically. The illustration is not intended to represent all the details of the model, but it is intended to show the essence of a set of
+provenance descriptions.  Therefore, it should not be seen as an alternate notation for expressing provenance.</p>
+
+<p>The graphical illustration takes the form of a graph. Entities, activities and agents are represented as nodes, with oval, rectangular, and pentagonal shapes, respectively.  Usage,
+Generation, Derivation, and Association are represented as directed edges.</p>
+
+<p>Entities are laid out according to the ordering of their generation.  We endeavor to show time progressing from left to right. This means that edges for Usage, Generation,
+Derivation, Association typically point leftwards</p>
+
+
+
+
+
+
+<div style="text-align: center;">
+  <figure>
+  <img src="images/w3-publication1.png" alt="Provenance of a Tech Report" style="max-width: 90%; ">
+<figcaption>Provenance of a Tech Report</figcaption>
+  </figure>
+</div>
+
+
+<p> This simple example has shown a variety of PROV-DM constructs, such as Entity, Agent, Activity, Usage, Generation, Derivation, and Association. In this example, it happens that all entities were already Web resources, with readily available URIs, which we used. We note that some of the resources are public, whereas others have restricted access: provenance statements only make use of their identifiers. If identifiers do not pre-exist, e.g. for activities, then they can be generated, for instance <span class="name">ex:act2</span>, occurring in the namespace identified by prefix <span class="name">ex</span>.  We note that the URI scheme developed by <acronym title="World Wide Web Consortium">W3C</acronym> is particularly suited for expressing provenance of these reports, since each URI denotes a specific version of a report. It then becomes very easy to relate the various versions, with PROV-DM constructs. We note that an Association is a ternary relation (represented by a multi-edge labeled wasAssociatedWith) from an activity to an agent and a plan.</p>
+
+
+</div>
+<div id="section-example-b" class="section"> 
+<h3><span class="secno">3.2 </span>The Authors View</h3>
+
+
+<p style="font-style:italic; "><b>Description:</b> A technical report
+is edited by some editor, using contributions from various
+contributors.
+</p>
+
+
+
+<p>Here, we consider another perspective on technical report
+<a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">http://www.w3.org/TR/2011/WD-prov-dm-20111215</a>. Provenance is concerned with the document editing activity, as perceived by authors.  This kind of information could be used by authors in their CV or in a narrative about this document. </p>
+
+
+
+
+<ul>
+<li> The same technical report is involved: <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span>;</li>
+<li> An editing activity for <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> is <span class="name">ex:edit1</span>;</li>
+<li> The report <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> is generated by activity <span class="name">ex:edit1</span>;</li>
+<li> Several persons are associated with activity <span class="name">ex:edit1</span>, some in an editorial role, some in a contributor's role.</li>
+</ul>
+
+<p>Again, we paraphrase some PROV-DM descriptions, and illustrate them with the PROV-N notation.
+Full details of the provenance record can be found <a href="examples/w3c-publication3.pn">here</a>.</p>
+
+<ul>
+<li>There is a technical report, which from the author's perspective is a document in its second version. 
+<pre>entity(tr:WD-prov-dm-20111215, [ prov:type="document", ex:version="2" ])
+</pre>
+<p>While this description is about the same report <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span>, its details differ from the author's perspective: it is a document and it has a version number. </p></li>
+
+<li>There is an editing activity.
+<pre>activity(ex:edit1,[prov:type="edit"])
+</pre>
+</li>
+
+<li>The technical report was generated by the editing activity: this is a <a title="concept-generation">Generation</a>.
+<pre>wasGeneratedBy(tr:WD-prov-dm-20111215, ex:edit1, -)
+</pre>
+</li>
+
+
+<li>There are some agents.
+<pre>agent(ex:Paolo, [ prov:type="Person" ])
+agent(ex:Simon, [ prov:type="Person" ])
+</pre>
+</li>
+
+<li>Agents were assigned various responsibilities in the editing activity: contributor and editor.
+<pre>wasAssociatedWith(ex:edit1, ex:Paolo, -, [prov:role="editor"])
+wasAssociatedWith(ex:edit1, ex:Simon, -, [prov:role="contributor"])
+</pre>
+</li>
+</ul>
+
+
+
+<div style="text-align: center; ">
+  <figure>
+  <img src="images/w3-publication3.png" alt="Provenance of a Tech Report (b)" style="max-width: 98%; ">
+<figcaption id="prov-tech-report">Provenance of a Tech Report (b)</figcaption>
+  </figure>
+</div>
+
+</div>
+
+<div id="section-example-c" class="section"> 
+<h3><span class="secno">3.3 </span>Attribution of Provenance</h3>
+
+<p>The two previous sections  provide  two different perspectives on the provenance of a technical report. By design, the PROV approach allows for the provenance of a subject to be provided by multiple sources. For users to decide whether they can place their trust in the technical report, they may want to analyze its provenance, but also determine
+who the provenance is attributed to, and when it was
+generated, etc. In other words, we need to be able to express the provenance of provenance.</p>
+
+<p>No new mechanism is required to support this requirement.  PROV-DM makes the assumption that provenance statements have been bundled up, and named, by some mechanism outside the scope of PROV-DM. For instance, in this case, provenance statements were put in a file and exposed on the Web, respectively at <a href="examples/w3c-publication1.pn">ex:w3c-publication1.pn</a> and <a href="examples/w3c-publication3.pn">ex:w3c-publication3.pn</a>.   To express their respective provenance, these resources must be seen as entities, and all the constructs of PROV-DM are now available to characterize their provenance. In the example below, <span class="name">ex:w3c-publication1.pn</span> is attributed to the agent <span class="name">w3:Consortium</span>, whereas <span class="name">ex:w3c-publication3.pn</span> to <span class="name">ex:Simon</span>.
+
+</p><pre>entity(ex:w3c-publication1.pn, [prov:type="prov:Account" %% xsd:QName ])
+wasAttributedTo(ex:w3c-publication1.pn, w3:Consortium)
+
+entity(ex:w3c-publication3.pn, [prov:type="prov:Account" %% xsd:QName ])
+wasAttributedTo(ex:w3c-publication3.pn, ex:Simon)
+</pre>
+
+
+
+</div>
+
+</div>
+
+
+<div id="data-model-components" class="section"> 
+
+<!--OddPage--><h2><span class="secno">4. </span>PROV-DM Types and Relations</h2>
+
+<p>PROV-DM concepts are structured according to six components that are introduced in this section.
+Components and their dependencies are illustrated in Figure <a href="#prov-dm-components">prov-dm-components</a>. A component that relies on concepts defined in another also sits above it in this figure.
+PROV-DM consists of the following components.</p>
+
+<ol>
+<li><b>Component 1: entities and activities.</b> The first component consists of entities, activities, and all concepts linking them, such as generation, usage, start, end. The first component is the only one comprising time-related concepts. </li>
+<li><b>Component 2: agents and responsibility.</b> The second component consists of agents and concepts ascribing responsibility to agents.</li>
+<li><b>Component 3: derivations.</b>  The third component is formed with derivations and its derivation subtypes.</li>
+<li><b>Component 4: alternate.</b> The fourth component consists of relations linking entities somehow referring to a same thing. </li>
+<li><b>Component 5: collections.</b> The fifth component is comprised of collections and operations related to collections. </li>
+<li><b>Component 6: annotations.</b> The sixth component is concerned with annotations to PROV-DM  concepts.</li>
+</ol>
+
+
+<div style="text-align: center;">
+<figure style="max-width: 90%; ">
+<img usemap="#componentMap" src="images/components.png" alt="PROV-DM Components" style="max-width: 90%; ">
+<map id="componentMap" name="componentMap">
+<area title="collections" href="#component5" coords="220,0,440,70" alt="collections" shape="rect">
+<area title="alternate" href="#component4" coords="450,0,510,140" alt="alternate" shape="rect">
+<area title="annotations" href="#component6" coords="530,0,590,220" alt="annotations" shape="rect">
+<area title="activities/entities" href="#component1" coords="80,150,510,220" alt="activities/entities" shape="rect">
+<area title="derivations" href="#component3" coords="80,0,210,70" alt="derivations" shape="rect">
+<area title="agents/responsibility" href="#component2" coords="0,0,70,220" alt="agents/responsibility" shape="rect">
+</map>
+<figcaption id="prov-dm-components">PROV-DM Components</figcaption>
+</figure>
+</div>
+
+<p>
+While  not all PROV-DM relations are binary, they all involve two primary elements. Hence, Table <a href="#relations-at-a-glance">relations-at-a-glance</a> indexes all relations according to their two primary elements.  The table adopts the same color scheme as Figure <a href="#prov-dm-components">prov-dm-components</a>, allowing components to be readily identified.
+Note that for simplicity, this table  does not include collection-oriented relations.
+</p>
+
+<div style="text-align: center;">
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<caption id="relations-at-a-glance">PROV-DM Relations At a Glance</caption>
+<tbody><tr><td></td><td>Entity</td><td>Activity</td><td>Agent</td><td>Note</td></tr> 
+<tr><td>Entity</td><td><div class="component3-color"><a href="#dfn-wasderivedfrom" class="internalDFN">wasDerivedFrom</a><br><a href="#dfn-wasrevisionof" class="internalDFN">wasRevisionOf</a><br><a href="#dfn-wasquotedfrom" class="internalDFN">wasQuotedFrom</a><br><a href="#dfn-hadoriginalsource" class="internalDFN">hadOriginalSource</a></div><div class="component4-color"><a href="#dfn-alternateof" class="internalDFN">alternateOf</a><br><a href="#dfn-specializationof" class="internalDFN">specializationOf</a></div></td><td class="component1-color"><a title="dfn-Generation" href="#dfn-dfn-generation" class="internalDFN">wasGeneratedBy</a></td><td class="component2-color"><a href="#dfn-wasattributedto" class="internalDFN">wasAttributedTo</a></td><td class="component6-color"><a href="#dfn-hasannotation" class="internalDFN">hasAnnotation</a></td></tr>
+<tr><td>Activity</td><td><div class="component1-color"><a href="#dfn-used" class="internalDFN">used</a><br><a href="#dfn-wasstartedby" class="internalDFN">wasStartedBy</a><br><a href="#dfn-wasendedby" class="internalDFN">wasEndedBy</a></div></td><td class="component1-color"><a href="#dfn-wasstartedbyactivity" class="internalDFN">wasStartedByActivity</a><br><a href="#dfn-wasinformedby" class="internalDFN">wasInformedBy</a></td><td class="component2-color"><a href="#dfn-wasassociatedwith" class="internalDFN">wasAssociatedWith</a></td><td class="component6-color"><a href="#dfn-hasannotation" class="internalDFN">hasAnnotation</a></td></tr>
+<tr><td>Agent</td><td>—</td><td>—</td><td class="component2-color"><a href="#dfn-actedonbehalfof" class="internalDFN">actedOnBehalfOf</a></td><td class="component6-color"><a href="#dfn-hasannotation" class="internalDFN">hasAnnotation</a></td></tr>
+<tr><td>Note</td><td>—</td><td>—</td><td>—</td><td class="component6-color"><a href="#dfn-hasannotation" class="internalDFN">hasAnnotation</a></td></tr>
+</tbody></table>
+</div>
+
+<p>Table <a href="#prov-dm-concepts-and-relations">prov-dm-concepts-and-relations</a> is a complete index of all the concepts and relations in prov-dm, color-coded according to the component they belong too.  In the first column, one finds concept names directly linking to their English definition. In the second column, we find their representation in the PROV-N notation, directly linking to the definition of their various constituents.</p>
+
+
+<div style="text-align: left;">
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<caption id="prov-dm-concepts-and-relations">PROV-DM Concepts and Relations</caption>
+<tbody><tr class="component1-color"><td><a href="#concept-entity" class="internalDFN">Entity</a></td><td><a title="dfn-Entity" href="#dfn-dfn-entity" class="internalDFN">entity(id, [ attr1=val1, ...])</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-activity" class="internalDFN">Activity</a></td><td><a title="dfn-Activity" href="#dfn-dfn-activity" class="internalDFN">activity(id, st, et, [ attr1=val1, ...])</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-generation" class="internalDFN">Generation</a></td><td><a title="dfn-Generation" href="#dfn-dfn-generation" class="internalDFN">wasGeneratedBy(id,e,a,t,attrs)</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-usage" class="internalDFN">Usage</a></td><td><a title="used" href="#dfn-used" class="internalDFN">used(id,a,e,t,attrs)</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-start" class="internalDFN">Start</a></td><td><a title="wasStartedBy" href="#dfn-wasstartedby" class="internalDFN">wasStartedBy(id,a,e,t,attrs)</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-end" class="internalDFN">End</a></td><td><a title="wasEndedBy" href="#dfn-wasendedby" class="internalDFN">wasEndedBy(id,a,e,t,attrs)</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-communication" class="internalDFN">Communication</a></td><td><a title="wasInformedBy" href="#dfn-wasinformedby" class="internalDFN">wasInformedBy(id,a2,a1,attrs)</a></td></tr>
+<tr class="component1-color"><td><a href="#concept-startByActivity" class="internalDFN">Start by Activity</a></td><td><a title="wasStartedByActivity" href="#dfn-wasstartedbyactivity" class="internalDFN">wasStartedByActivity(id, a2, a1, attrs)</a></td></tr>
+<tr class="component2-color"><td><a href="#concept-agent" class="internalDFN">Agent</a></td><td><a title="dfn-agent" href="#dfn-dfn-agent" class="internalDFN">agent(id, [ attr1=val1, ...])</a></td></tr>
+<tr class="component2-color"><td><a href="#concept-attribution" class="internalDFN">Attribution</a></td><td><a title="wasAttributedTo" href="#dfn-wasattributedto" class="internalDFN">wasAttributedTo(id,e,ag,attr)</a></td></tr>
+<tr class="component2-color"><td><a href="#concept-activityAssociation" class="internalDFN">Association</a></td><td><a title="wasAssociatedWith" href="#dfn-wasassociatedwith" class="internalDFN">wasAssociatedWith(id,a,ag,pl,attrs)</a></td></tr>
+<tr class="component2-color"><td><a href="#concept-responsibility" class="internalDFN">Responsibility</a></td><td><a title="actedOnBehalfOf" href="#dfn-actedonbehalfof" class="internalDFN">actedOnBehalfOf(id,ag2,ag1,a,attrs)</a></td></tr>
+<tr class="component3-color"><td><a href="#concept-derivation" class="internalDFN">Derivation</a></td><td><a title="wasDerivedFrom" href="#dfn-wasderivedfrom" class="internalDFN">wasDerivedFrom(id, e2, e1, a, g2, u1, attrs)</a></td></tr>
+<tr class="component3-color"><td><a href="#concept-revision" class="internalDFN">Revision</a></td><td><a title="wasRevisionOf" href="#dfn-wasrevisionof" class="internalDFN">wasRevisionOf(id,e2,e1,ag,attrs)</a></td></tr>
+<tr class="component3-color"><td><a href="#concept-quotation" class="internalDFN">Quotation</a></td><td><a title="wasQuotedFrom" href="#dfn-wasquotedfrom" class="internalDFN">wasQuotedFrom(id,e2,e1,ag2,ag1,attrs)</a></td></tr>
+<tr class="component3-color"><td><a href="#dfn-original-source-2" class="internalDFN">Original Source</a></td><td><a title="hadOriginalSource" href="#dfn-hadoriginalsource" class="internalDFN">hadOriginalSource(id,e2,e1,attrs)</a></td></tr>
+<tr class="component3-color"><td><a href="#concept-traceability" class="internalDFN">Traceability</a></td><td><a title="tracedTo" href="#dfn-tracedto" class="internalDFN">tracedTo(id,e2,e1,attrs)</a></td></tr>
+<tr class="component4-color"><td><a href="#concept-alternate" class="internalDFN">Alternate</a></td><td><a title="alternateOf" href="#dfn-alternateof" class="internalDFN">alternateOf(alt1, alt2)</a></td></tr>
+<tr class="component4-color"><td><a href="#concept-specialization" class="internalDFN">Specialization</a></td><td><a title="specializationOf" href="#dfn-specializationof" class="internalDFN">specializationOf(sub, super)</a></td></tr>
+<tr class="component5-color"><td><a href="#concept-collection" class="internalDFN">Collection</a></td><td><a href="#concept-collection" class="internalDFN">Collection</a></td></tr>
+<tr class="component5-color"><td><a href="#concept-insertion" class="internalDFN">Insertion</a></td><td><a title="derivedByInsertionFrom" href="#dfn-derivedbyinsertionfrom" class="internalDFN">derivedByInsertionFrom(id, c2, c1, {(key_1, e_1), ..., (key_n, e_n)}, attrs)</a></td></tr>
+<tr class="component5-color"><td><a href="#concept-removal" class="internalDFN">Removal</a></td><td><a title="derivedByRemovalFrom" href="#dfn-derivedbyremovalfrom" class="internalDFN">derivedByRemovalFrom(id, c2, c1, {key_1, ... key_n}, attrs)</a></td></tr>
+<tr class="component5-color"><td><a href="#concept-membership" class="internalDFN">Membership</a></td><td><a title="memberOf" href="#dfn-memberof" class="internalDFN">memberOf(c, {(key_1, e_1), ..., (key_n, e_n)})</a></td></tr>
+<tr class="component6-color"><td><a href="#dfn-note" class="internalDFN">Note</a></td><td><a title="note" href="#dfn-note" class="internalDFN">note(id, [ attr1=val1, ...])</a></td></tr>
+<tr class="component6-color"><td><a href="#concept-annotation" class="internalDFN">Annotation</a></td><td><a title="hasAnnotation" href="#dfn-hasannotation" class="internalDFN">hasAnnotation(r,n)</a></td></tr>
+</tbody></table>
+</div>
+
+<p>In the rest of the section, each concept and relation is defined, in English initially, followed by a more formal definition and some example.</p>  
+
+<div id="component1" class="section"> 
+<h3><span class="secno">4.1 </span>Component 1: Entities and Activities</h3>
+
+<p>The first component of PROV-DM is concerned with <a title="entity" href="#concept-entity" class="internalDFN">entities</a> and <a title="activity" href="#concept-activity" class="internalDFN">activities</a>, and their inter-relations: <a href="#concept-usage" class="internalDFN">Usage</a>, <a href="#concept-generation" class="internalDFN">Generation</a>, <a href="#concept-start" class="internalDFN">Start</a>, <a href="#concept-end" class="internalDFN">End</a>, <a href="#concept-communication" class="internalDFN">Communication</a>, and <a href="#concept-startByActivity" class="internalDFN">Start by Activity</a>. Figure <a href="#figure-component1">figure-component1</a> overviews the first component, with two "UML classes" and binary associations between them. Associations are not just binary; indeed, <a href="#concept-usage" class="internalDFN">Usage</a>, <a href="#concept-generation" class="internalDFN">Generation</a>, <a href="#concept-start" class="internalDFN">Start</a>, <a href="#concept-end" class="internalDFN">End</a> are remarkable because they have  <em>time</em> attributes, which are placeholders for time information related to provenance.
+</p>
+
+<div style="text-align: center;">
+<figure>
+<img src="images/Entities-Activities.png" alt="entities and activities">
+<figcaption id="figure-component1">Entities and Activities Component Overview</figcaption>
+</figure>
+</div>
+
+
+
+
+
+   <div id="term-Entity" class="section"> 
+      
+<h4><span class="secno">4.1.1 </span>Entity</h4>
+
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An <dfn id="concept-entity">entity</dfn> is a thing one    wants to provide provenance for.  For the purpose of this    specification, things can be physical, digital, conceptual, or    otherwise; things may be real or imaginary.   </div>
+
+
+<p></p><div class="attributes" id="attributes-entity">An <dfn title="dfn-Entity" id="dfn-dfn-entity">entity</dfn><span class="withPn">, written <span class="pnExpression" id="pn-entity">entity(id, [attr1=val1, ...])</span> in PROV-N, </span> contains:
+<ul>
+<li><span class="attribute" id="entity.id">id</span>: an identifier for an entity; </li>
+<li><span class="attribute" id="entity.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set of attribute-value  pairs ((<span class="name">attr1</span>, <span class="name">val1</span>), ...) representing this entity's situation in the world.</li>
+</ul></div>
+
+<div class="anexample">
+<p>
+The following expression</p>
+<pre class="codeexample">entity(tr:WD-prov-dm-20111215, [ prov:type="document", ex:version="2" ])
+</pre>
+states the existence of an entity, denoted by identifier <span class="name">tr:WD-prov-dm-20111215</span>,  with type <span class="name">document</span> and version number <span class="name">2</span>. The  attributes <span class="name">ex:version</span> is application specific, whereas the attribute <span class="name">type</span> is reserved in the PROV-DM namespace.
+<!--The following expression</p>
+<pre class="codeexample">
+entity(tr:WD-prov-dm-20111215, [ prov:type="document", ex:version="2" ])
+entity(e0, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice" ])
+</pre>
+states the existence of an entity, denoted by identifier <span class="name">e0</span>,  with type <span class="name">File</span> and path <span class="name">/shared/crime.txt</span> in the
+file system,  and creator alice. The  attributes <span class="name">path</span> and <span class="name">creator</span> are application specific, whereas the attribute <span
+class="name">type</span> is reserved in the PROV-DM namespace.-->
+</div>
+
+
+<div class="issue">The characterization interval of an entity is currently implicit. Making it explicit would allow us to define wasComplementOf more precisely. 
+Beginning and end of characterization interval could be expressed by attributes (similarly to activities). 
+How do we define the end of an entity? This is <a href="http://www.w3.org/2011/prov/track/issues/204">ISSUE-204</a>.
+</div>
+
+
+
+    </div> 
+
+    <div id="term-Activity" class="section"> 
+      
+<h4><span class="secno">4.1.2 </span>Activity</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An <dfn id="concept-activity">activity</dfn>  is something that occurs over a period of time and acts upon or with entities.  This action can take multiple forms: consuming, processing, transforming, modifying, relocating, using, generating, or being associated with entities.  </div>
+
+<p></p><div class="attributes" id="attributes-activity"> An <dfn title="dfn-Activity" id="dfn-dfn-activity">activity</dfn><span class="withPn">, written <span class="pnExpression" id="pn-activity">activity(id, st, et, [attr1=val1, ...])</span> in PROV-N,</span> contains:
+<ul>
+<li><span class="attribute" id="activity.id">id</span>: an identifier for an activity;</li>
+<li><span class="attribute" id="activity.startTime">startTime</span>: an <em class="rfc2119" title="optional">optional</em> time (<span class="name">st</span>) for the start of the activity;</li>
+<li><span class="attribute" id="activity.endTime">endTime</span>: an <em class="rfc2119" title="optional">optional</em> time (<span class="name">et</span>) for the end of the activity;</li>
+<li><span class="attribute" id="activity.attributes">attributes</span>:  an <em class="rfc2119" title="optional">optional</em> set of attribute-value pairs ((<span class="name">attr1</span>, <span class="name">val1</span>), ...) for this activity.</li>
+</ul></div>
+
+<div class="anexample">
+<p>
+The following expression</p>
+<pre class="codeexample">activity(a1,2011-11-16T16:05:00,2011-11-16T16:06:00,
+        [ex:host="server.example.org",prov:type="ex:edit" %% xsd:QName])
+</pre>
+<p>states the existence of an activity with identifier <span class="name">a1</span>, start time <span class="name">2011-11-16T16:05:00</span>, and end time <span class="name">2011-11-16T16:06:00</span>, running on host <span class="name">server.example.org</span>, and of type <span class="name">edit</span>.  The attribute <span class="name">host</span>  is application specific  (declared in some namespace with prefix <span class="name">ex</span>).  The attribute <span class="name">type</span> is a reserved attribute of PROV-DM, allowing for sub-typing to be expressed.</p>
+</div>
+
+
+
+<p>Further considerations:</p>
+<ul>
+<li>An activity is not an entity. This distinction is similar to the distinction between 
+'continuant' and 'occurrent' in logic [<cite><a class="bibref" rel="biblioentry" href="#bib-Logic">Logic</a></cite>].
+</li>
+</ul>
+
+
+</div>
+
+<div id="term-Generation" class="section">
+<h4><span class="secno">4.1.3 </span>Generation</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-generation">Generation</dfn> is the completion of production of a new entity by an activity.  This entity becomes available for usage after this generation. This entity did not exist before generation. </div>
+
+<p>
+</p><div class="attributes" id="attributes-generation"><dfn title="dfn-Generation" id="dfn-dfn-generation">Generation</dfn><span class="withPn">, written <span class="pnExpression">wasGeneratedBy(id,e,a,t,attrs)</span> in PROV-N,</span> has the following components:
+<ul>
+<li><span class="attribute" id="generation.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for a generation;</li> 
+<li><span class="attribute" id="generation.entity">entity</span>:  an identifier (<span class="name">e</span>) for a created entity; </li>
+<li><span class="attribute" id="generation.activity">activity</span>:  an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">a</span>) for the activity that creates the entity;</li>
+
+<li><span class="attribute" id="generation.time">time</span>: an <em class="rfc2119" title="optional">optional</em> "generation time" (<span class="name">t</span>), the time at which the entity was completely created;</li>
+
+<li><span class="attribute" id="generation.attributes">attributes</span>:  an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs that describes the modalities of generation of this entity by this activity.</li>
+</ul></div>
+<p>While each of the components <span class="attribute">activity</span>, <span class="attribute">time</span>, and  <span class="attribute">attributes</span> is <em class="rfc2119" title="optional">optional</em>, at least one of them <em class="rfc2119" title="must">must</em> be present.</p>
+
+
+
+
+
+<div class="anexample">
+<p>
+The following expressions</p>
+<pre class="codeexample">  wasGeneratedBy(e1,a1, 2001-10-26T21:32:52, [ex:port="p1"])
+  wasGeneratedBy(e2,a1, 2001-10-26T10:00:00, [ex:port="p2"])
+</pre>
+<p>state the existence of two generations (with respective times <span class="name">2001-10-26T21:32:52</span> and <span class="name">2001-10-26T10:00:00</span>), at which new entities,  identified by <span class="name">e1</span> and <span class="name">e2</span>, are created by an
+activity,  identified by <span class="name">a1</span>.
+The first one is available  on port p1, whereas the other is available on port p2.  The semantics of <span class="name">port</span> are application specific.
+</p>
+</div>
+
+
+<div class="anexample">
+<p>
+In some cases, we may want to record the time at which an entity was generated without having to specify the activity that generated it. To support this requirement, the activity component in generation is optional. Hence,  the following expression indicates the time at which an entity is generated, without naming the activity that did it.</p>
+<pre class="codeexample">  wasGeneratedBy(e,-,2001-10-26T21:32:52)
+</pre>
+</div>
+
+
+</div>
+
+
+<div id="term-Usage" class="section">
+<h4><span class="secno">4.1.4 </span>Usage</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-usage">Usage</dfn> is the beginning of consumption of an entity by an activity. Before usage, the activity had not begun to consume or use this entity and could not have been affected by the entity. </div>
+
+
+<p></p><div class="attributes" id="attributes-usage"><dfn title="used" id="dfn-used">Usage</dfn><span class="withPn">, written <span class="pnExpression">used(id,a,e,t,attrs)</span> in PROV-N,</span> has the following constituents:
+<ul>
+<li><span class="attribute" id="usage.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for a usage;</li> 
+<li><span class="attribute" id="usage.activity">activity</span>: an identifier (<span class="name">a</span>) for the consuming activity;</li>
+<li><span class="attribute" id="usage.entity">entity</span>: an identifier (<span class="name">e</span>) for the consumed entity;</li>
+<li><span class="attribute" id="usage.time">time</span>: an <em class="rfc2119" title="optional">optional</em> "usage time" (<span class="name">t</span>), the time at which the entity started to be used;</li>
+<li><span class="attribute" id="usage.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs that describe the modalities of usage of this entity by this activity.</li>
+</ul></div>
+
+<p>
+A reference to a given entity <em class="rfc2119" title="may">may</em> appear in multiple usages that share
+ a given activity identifier. 
+</p>
+
+
+<div class="anexample">
+<p>The following usages</p>
+<pre class="codeexample">  used(a1,e1,2011-11-16T16:00:00,[ex:parameter="p1"])
+  used(a1,e2,2011-11-16T16:00:01,[ex:parameter="p2"])
+</pre>
+<p>state that the activity identified by <span class="name">a1</span> used two entities identified by <span class="name">e1</span> and <span class="name">e2</span>, at times <span class="name">2011-11-16T16:00:00</span> and  <span class="name">2011-11-16T16:00:01</span>, respectively; the first
+one was found as the value of parameter <span class="name">p1</span>, whereas the second was found as value of parameter <span class="name">p2</span>.  The semantics of <span class="name">parameter</span> is application specific.</p>
+</div>
+
+
+
+
+
+
+</div>
+
+
+<div id="term-Start" class="section">
+<h4><span class="secno">4.1.5 </span>Start</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-start">Start</dfn> is when an activity is deemed to have started.  The activity did not exist before its start. Any usage or generation involving an activity follows its start. A start may refer to an entity, known as <dfn id="concept-start-trigger">trigger</dfn>, that initiated the activity. </div>
+
+
+<p></p><div class="attributes" id="attributes-start">An activity <dfn title="wasStartedBy" id="dfn-wasstartedby">start</dfn><span class="withPn">, written <span class="pnExpression">wasStartedBy(id,a,e,t,attrs)</span> in PROV-N,</span> contains:
+<ul>
+<li><span class="attribute" id="start.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for the activity start;</li> 
+<li><span class="attribute" id="start.activity">activity</span>: an identifier (<span class="name">a</span>) for the started activity;</li> 
+<li><span class="attribute" id="start.trigger">trigger</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">e</span>) for the entity triggering the activity;</li> 
+<li><span class="attribute" id="start.time">time</span>: the <em class="rfc2119" title="optional">optional</em> time (<span class="name">t</span>) at which the activity was started; </li> 
+<li><span class="attribute" id="start.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs describing modalities according to which the activity was started.
+</li></ul>
+</div>
+
+<div class="anexample">
+<p>
+The following example contains the description of an activity <span class="name">a1</span> (a discussion), which was started at a specific time, and was triggered by an email message <span class="name">e1</span>.</p>
+<pre class="codeexample">entity(e1,[prov:type="email message"])
+activity(a1,[prov:type="Discuss"])
+wasStartedBy(a1,e1,2011-11-16T16:05:00)
+</pre>
+Furthermore, if the activity happens to consume the message content, then the message would also be regarded as an input to the activity, which we describe as follows:
+<pre class="codeexample">used(a1,e1,-)
+</pre>
+</div>
+
+<div class="anexample">
+<p>
+In the following example, a race is started by a bang, and responsibility for this trigger is attributed to an agent 
+ <span class="name">ex:DarthVader</span>.
+</p><pre class="codeexample">activity(ex:foot_race)
+wasStartedBy(ex:foot_race,ex:bang,2012-03-09T08:05:08-05:00)
+entity(ex:bang)
+agent(ex:DarthVader)
+wasAttributedTo(ex:foot_race,ex:DarthVader)
+</pre>
+</div>
+
+
+<p>The relations wasStartedBy and used are orthogonal, and thus need to be expressed independently, according to the situation being described.</p>
+
+</div>
+
+<div id="term-End" class="section">
+<h4><span class="secno">4.1.6 </span>End</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-end">End</dfn> is when an activity is deemed to have ended.  The activity no longer exists after its end. Any usage, generation, or invalidation involving an activity precedes its end. An end may refer to an entity, known as <dfn id="concept-end-trigger">trigger</dfn>, that terminated the activity. </div>
+
+
+<p>An activity <dfn title="wasEndedBy" id="dfn-wasendedby">end</dfn><span class="withAsn">, written <span class="pnExpression">wasEndedBy(id,a,e,t,attrs)</span> in PROV-N,</span> contains:</p>
+<ul>
+<li><span class="attribute" id="end.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for the activity end;</li> 
+<li><span class="attribute" id="end.activity">activity</span>: an identifier (<span class="name">a</span>) for the ended activity;
+</li><li><span class="attribute" id="end.trigger">trigger</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">e</span>) for the entity triggering the activity ending;
+</li><li><span class="attribute" id="end.time">time</span>: the <em class="rfc2119" title="optional">optional</em> time (<span class="name">t</span>) at which the activity was ended; </li> 
+<li><span class="attribute" id="end.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs describing modalities according to which the activity was ended.
+</li></ul>
+
+<div class="anexample">
+<p>
+The following example is a description of an activity <span class="name">a1</span> (editing) that was ended following an approval document <span class="name">e1</span>.</p>
+<pre class="codeexample">entity(e1,[prov:type="approval document"])
+activity(a1,[prov:type="Editing"])
+wasEndedBy(a1,e1)
+</pre>
+</div>
+
+
+</div>
+
+<div id="term-wasInformedBy" class="section">
+<h4><span class="secno">4.1.7 </span>Communication</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-communication">Communication</dfn> is the exchange of an entity by two activities, one activity using the entity generated by the other. </div>
+
+
+<p>A communication implies that activity  <span class="name">a2</span> is dependent on another <span class="name">a1</span>, by way of some unspecified entity that is generated by <span class="name">a1</span> and used by <span class="name">a2</span>.</p>
+
+
+
+
+<p></p><div class="attributes" id="attributes-wasInformedBy">
+A <dfn title="wasInformedBy" id="dfn-wasinformedby">communication</dfn><span class="withPn">, written as 
+<span class="pnExpression">wasInformedBy(id,a2,a1,attrs)</span> in PROV-N,</span> contains: 
+<ul>
+<li><span class="attribute" id="wasInformedBy.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier  identifying the relation;</li> 
+<li><span class="attribute" id="wasInformedBy.informed">informed</span>: the identifier (<span class="name">a2</span>) of the informed activity;
+</li><li><span class="attribute" id="wasInformedBy.informant">informant</span>: the identifier (<span class="name">a1</span>) of the informant activity;
+</li><li><span class="attribute" id="wasInformedBy.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe properties of the relation.</li>
+</ul>
+</div>
+
+
+
+<div class="anexample">
+<p>
+Consider two long running services, which we represent by activities  <span class="name">s1</span> and <span class="name">s2</span>.  
+</p><pre class="codeexample">activity(s1, [prov:type="service"])
+activity(s2, [prov:type="service"])
+wasInformedBy(s2,s1)
+</pre>
+The last line indicates that some entity was generated by  <span class="name">s1</span> and used by  <span class="name">s2</span>.
+</div>
+</div>
+
+<div id="term-wasStartedByActivity" class="section">
+<h4><span class="secno">4.1.8 </span>Start by Activity</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-startByActivity">Start by Activity</dfn> is the start of an activity with an implicit trigger generated by another activity. </div>
+
+
+
+<p></p><div class="attributes" id="attributes-startByActivity">
+A <dfn title="wasStartedByActivity" id="dfn-wasstartedbyactivity">start by activity</dfn><span class="withPn">, written as 
+<span class="pnExpression">wasStartedByActivity(id, a2, a1, attrs)</span> in PROV-N,</span> contains:
+<ul>
+<li><span class="attribute" id="startByActivity.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier of the relation;</li> 
+<li><span class="attribute" id="startByActivity.started">started</span>: the identifier (<span class="name">a2</span>) of  the started activity;
+</li><li><span class="attribute" id="startByActivity.starter">starter</span>: the identifier (<span class="name">a1</span>) of the activity that started the other;</li>
+<li><span class="attribute" id="startByActivity.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+</ul>
+</div>
+
+
+
+<div class="anexample">
+<p>
+Suppose activities <span class="name">a1</span> and <span class="name">a2</span> are computer processes that are executed on different hosts, and that <span class="name">a1</span> started <span class="name">a2</span>. This can be expressed as in the following fragment:</p>
+<pre class="codeexample">activity(a1,t1,t2,[ex:host="server1.example.org",prov:type="workflow"])
+activity(a2,t3,t4,[ex:host="server2.example.org",prov:type="subworkflow"])
+wasStartedByActivity(a2,a1)
+</pre>
+</div>
+
+</div>
+
+
+</div>
+
+<div id="component2" class="section"> 
+<h3><span class="secno">4.2 </span>Component 2: Agents and Responsibility</h3>
+
+<p>The second component of PROV-DM is concerned with <a title="agent" href="#concept-agent" class="internalDFN">agents</a> and the notions of
+<a href="#concept-attribution" class="internalDFN">Attribution</a>, <a href="#concept-activityAssociation" class="internalDFN">Association</a>, <a href="#concept-responsibility" class="internalDFN">Responsibility</a>, relating agents to entities, activities, and agents, respectively.
+Figure <a href="#figure-component2">figure-component2</a> depicts the second component, with four "UML classes" (Entity, Activity,  Agent, and Plan) and associations between them. So-called "UML association classes" are used to express n-ary relations.
+</p>
+
+
+<div style="text-align: center;">
+<figure>
+<img src="images/Agents-Responsibility.png" alt="agents and responsibilities">
+<figcaption id="figure-component2">Agents and Responsibilities Component Overview</figcaption>
+</figure>
+</div>
+
+<div id="term-Agent" class="section">
+<h4><span class="secno">4.2.1 </span>Agent</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An <dfn id="concept-agent">agent</dfn> is a type of entity that bears some form of responsibility for an activity taking place. </div>
+
+
+<p></p><div class="attributes" id="attributes-agent">An <dfn title="dfn-agent" id="dfn-dfn-agent">agent</dfn><span class="withPn">, noted <span class="pnExpression" id="pn-agent">agent(id, [attr1=val1, ...])</span> in PROV-N,</span> contains:
+<ul>
+<li><span class="attribute" id="agent.id">id</span>: an identifier for an agent;</li>
+<li><span class="attribute" id="agent.attributes">attributes</span>: a set of attribute-value pairs ((<span class="name">attr1</span>, <span class="name">val1</span>), ...) representing this agent's situation in the world.
+</li>
+</ul></div>
+
+
+<p>
+
+It is useful to define some basic categories of agents from an interoperability perspective.
+There are three types of agents that are common across most anticipated domains of use:
+</p><ul>
+<li><span class="name">Person</span>: agents of type Person are people.</li> 
+<li><span class="name">Organization</span>: agents of type Organization are social institutions such as companies, societies etc.</li> 
+<li><span class="name">SoftwareAgent</span>: a software agent is running software. </li>
+</ul>
+<p>It is acknowledged that these types do not cover all kinds of agent. </p>
+
+
+
+<div class="anexample">
+<p>The following expression is about an agent identified by <span class="name">e1</span>, which is a person, named Alice, with employee number 1234.</p>
+<pre class="codeexample">agent(e1, [ex:employee="1234", ex:name="Alice", prov:type="prov:Person" %% xsd:QName])
+</pre>
+<p>It is optional to specify the type of an agent. When present, it is expressed using the <span class="name">prov:type</span> attribute.</p>
+</div>
+
+</div>
+
+<div id="term-attribution" class="section">
+<h4><span class="secno">4.2.2 </span>Attribution</h4> 
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-attribution">Attribution</dfn> is the ascribing of an entity to an agent. </div>
+
+<p>When an entity  <span class="name">e</span> is attributed to agent  <span class="name">ag</span>, entity <span class="name">e</span> was generated by some unspecified activity that in turn was associated to agent  <span class="name">ag</span>. Thus, this relation is useful when the activity is not known, or irrelevant.</p>
+
+<p> An <dfn title="wasAttributedTo" id="dfn-wasattributedto">attribution</dfn> relation<span class="withPn">, written <span class="pnExpression">wasAttributedTo(id,e,ag,attrs)</span> in PROV-N,</span> contains the following elements:</p>
+<ul>
+<li><span class="attribute" id="attribution.id">id</span>: an <em class="rfc2119" title="optional">optional</em> identifier for the relation;</li> 
+<li><span class="attribute" id="attribution.entity">entity</span>: an entity identifier (<span class="name">e</span>);</li>
+<li><span class="attribute" id="attribution.agent">agent</span>: the identifier (<span class="name">ag</span>) of the agent whom the entity is ascribed to;</li>
+<li><span class="attribute" id="attribution.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+</ul>
+
+<div class="anexample">
+<p>
+Revisiting the example of <a href="#section-example-b">Section 3.2</a>,
+we can ascribe <span class="name">tr:WD-prov-dm-20111215</span> to some agents without an explicit activity.
+</p><pre class="codeexample">agent(ex:Paolo, [ prov:type="Person" ])
+agent(ex:Simon, [ prov:type="Person" ])
+entity(tr:WD-prov-dm-20111215, [ prov:type="pr:RecsWD" %% xsd:QName ])
+wasAttributedTo(tr:WD-prov-dm-20111215, ex:Paolo, [prov:role="editor"])
+wasAttributedTo(tr:WD-prov-dm-20111215, ex:Simon, [prov:role="contributor"])
+</pre>
+</div>
+
+</div>  <!-- end attribution -->
+
+
+<div id="term-ActivityAssociation" class="section">
+<h4><span class="secno">4.2.3 </span>Association</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An activity <dfn id="concept-activityAssociation">association</dfn> is an assignment of responsibility to an agent for an activity, indicating that the agent had a role in the activity. It further allows for a plan to be specified, which is the plan intended by the agent to achieve some goals in the context of this activity. </div>
+
+
+<p></p><div class="attributes" id="attributes-activity-association">An <dfn title="wasAssociatedWith" id="dfn-wasassociatedwith">activity association</dfn><span class="withPn">, written <span class="pnExpression">wasAssociatedWith(id,a,ag,pl,attrs)</span> in PROV-N,</span> has the following
+constituents:
+<ul>
+<li><span class="attribute" id="association.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for the association between an activity and an agent;</li> 
+<li><span class="attribute" id="association.activity">activity</span>: an identifier (<span class="name">a</span>) for the activity;</li>
+<li><span class="attribute" id="association.agent">agent</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">ag</span>) for the agent associated with the activity;</li>
+<li><span class="attribute" id="association.plan">plan</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">pl</span>) for the plan adopted by the agent in the context of this activity;
+</li><li><span class="attribute" id="association.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs that describe the modalities of association of this activity with this agent.</li>
+</ul></div>
+
+<div class="anexample" id="anexample-wasAssociateWith">
+<p>In the following example, a designer and an operator agents are associated with an activity. The designer's goals are achieved by a workflow <span class="name">ex:wf</span>.   </p>
+<pre class="codeexample">activity(ex:a, [prov:type="workflow execution"])
+agent(ex:ag1, [prov:type="operator"])
+agent(ex:ag2, [prov:type="designer"])
+wasAssociatedWith(ex:a, ex:ag1, -, [prov:role="loggedInUser", ex:how="webapp"])
+wasAssociatedWith(ex:a, ex:ag2, ex:wf,[prov:role="designer", ex:context="project1"])
+entity(ex:wf, [prov:type="prov:Plan" %% xsd:QName, ex:label="Workflow 1", 
+              ex:url="http://example.org/workflow1.bpel" %% xsd:anyURI])
+</pre>
+Since the workflow <span class="name">ex:wf</span> is itself an entity, its provenance can also be expressed in PROV-DM: it can be generated by some activity and derived from other entities,
+for instance.
+</div>
+
+<div class="anexample" id="anexample-wasAssociateWith-2">
+<p>In some cases, one wants to indicate a plan was followed, without having to specify which agent was involved.</p>
+<pre class="codeexample">activity(ex:a,[prov:type="workflow execution"])
+wasAssociatedWith(ex:a,-,ex:wf)
+entity(ex:wf,[prov:type="prov:Plan"%% xsd:QName, ex:label="Workflow 1", 
+              ex:url="http://example.org/workflow1.bpel" %% xsd:anyURI])
+</pre>
+In this case, it is assumed that an agent exists, but it has not been specified.
+</div>
+
+
+
+
+</div>  <!-- end wasAssociatedWith -->
+
+<div id="term-responsibility" class="section">
+
+<h4><span class="secno">4.2.4 </span>Responsibility</h4>
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">    <dfn id="concept-responsibility">Responsibility</dfn> is the fact that an agent is accountable for the actions of a "subordinate" agent, in the context of an activity.  </div>
+
+<p>PROV-DM offers a mild version of responsibility
+in the form of a relation to represent when an agent acted on another
+agent's behalf.  So in the example of someone running a mail program,
+the program and the person are both
+agents of the activity; furthermore, the mail software
+agent is running on the person's behalf.  In another example, the
+student acted on behalf of his supervisor, who acted on behalf of the
+department chair, who acts on behalf of the university; all those
+agents are responsible in some way for the activity to take place but
+we do not say explicitly who bears responsibility and to what
+degree. </p>
+
+
+<p>
+</p><div class="attributes" id="attributes-responsibility-chain">
+A <dfn title="actedOnBehalfOf" id="dfn-actedonbehalfof">responsibility</dfn> relation<span class="withPn">, written <span class="pnExpression">actedOnBehalfOf(id,ag2,ag1,a,attrs)</span> in PROV-N,</span> has the following constituents:
+<ul>
+<li><span class="attribute" id="responsibility.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for the responsibility chain;</li> 
+<li><span class="attribute" id="responsibility.subordinate">subordinate</span>: an identifier (<span class="name">ag2</span>) for the agent associated with an activity, acting on behalf of the responsible
+agent;</li>
+<li><span class="attribute" id="responsibility.responsible">responsible</span>: an identifier (<span class="name">ag1</span>) for the agent,  on behalf of which the subordinate agent acted;</li>
+<li><span class="attribute" id="responsibility.activity">activity</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">a</span>) of an activity for which the responsibility chain holds;</li>
+<li><span class="attribute" id="responsibility.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs that describe the modalities of this relation.</li>
+</ul></div>
+
+
+<div class="anexample">
+<p>In the following example, a programmer, a researcher and a funder agents are described.  The programmer and researcher are associated with a workflow activity.  The programmer acts on behalf
+of the researcher (delegation) encoding the commands specified by the researcher; the researcher acts on behalf of the funder, who has an contractual agreement with the researcher. The terms
+'delegation' and 'contact' used in this example are domain specific.</p>
+<pre class="codeexample">activity(a,[prov:type="workflow"])
+agent(ag1,[prov:type="programmer"])
+agent(ag2,[prov:type="researcher"])
+agent(ag3,[prov:type="funder"])
+wasAssociatedWith(a,ag1,[prov:role="loggedInUser"])
+wasAssociatedWith(a,ag2)
+actedOnBehalfOf(ag1,ag2,a,[prov:type="delegation"])
+actedOnBehalfOf(ag2,ag3,a,[prov:type="contract"])
+</pre>
+</div>
+
+
+<!-- too strong, move to part 2.
+<p>Further considerations:</p>
+<ul>
+<li>If an activity is not specified, then the subordinate agent is considered to act on behalf of
+the responsible agent, in all the activities the subordinate agent is associated with.
+</li>
+</ul>
+-->
+</div>
+
+
+
+</div>
+
+<div id="component3" class="section"> 
+<h3><span class="secno">4.3 </span>Component 3: Derivations</h3>
+
+
+
+<p>The third component of PROV-DM is concerned with <a title="derivation" href="#concept-derivation" class="internalDFN">derivations</a> between <a title="entity" href="#concept-entity" class="internalDFN">entities</a>, and subtypes of derivations <a href="#concept-revision" class="internalDFN">Revision</a>, <a href="#concept-quotation" class="internalDFN">Quotation</a>, <a href="#dfn-original-source-2" class="internalDFN">Original Source</a>, and <a href="#concept-traceability" class="internalDFN">Traceability</a>.
+Figure <a href="#figure-component3">figure-component3</a> overviews the third component, with three "UML classes" (Entity, Activity, and Agent) and associations between them. So-called "UML association classes" are used to express n-ary relations.
+</p>
+
+
+<div style="text-align: center;">
+<figure>
+<img src="images/Derivation.png" alt="derivation">
+<figcaption id="figure-component3">Derivation Component Overview</figcaption>
+</figure>
+</div>
+
+<div id="Derivation-Relation" class="section">
+<h4><span class="secno">4.3.1 </span>Derivation</h4>
+
+
+
+
+
+<div class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <dfn id="concept-derivation">derivation</dfn>  is a transformation of an entity into another, a construction of an entity into another, or an update of an entity, resulting in a new one.</div>
+
+
+
+
+<p>According to <a href="#starting-points">Section Starting Points</a>, for an entity to be transformed from, created from, or resulting from an update to another, there must be some
+underpinning activities performing the necessary actions resulting in such a derivation.  
+A derivation can be described at various levels of precision. In its simplest form, derivation relates two entities. Optionally, attributes can be added to describe modalities of derivation.  If the derivation is the result of a single known activity, then this activity can also be optionally expressed. And to provide a completely accurate description of the derivation, the generation and usage of the generated and used entities, respectively, can be provided. The reason for optional information such as activity, generation, and usage to be linked to derivations is to aid analysis of provenance and to facilitate provenance-based reproducibility. </p>
+
+
+<p></p><div class="attributes" id="attributes-derivation">A <dfn title="wasDerivedFrom" id="dfn-wasderivedfrom">derivation</dfn><span class="withPn">, written <span class="pnExpression" id="pn-wasDerivedFrom">wasDerivedFrom(id, e2, e1, a, g2, u1, attrs)</span> in PROV-N,</span> contains:
+<ul>
+<li><span class="attribute" id="derivation.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier  for a derivation;</li> 
+<li><span class="attribute" id="derivation.generatedEntity">generatedEntity</span>: the identifier (<span class="name">ee</span>) of the entity generated by the derivation;</li>
+<li><span class="attribute" id="derivation.usedEntity">usedEntity</span>: the identifier (<span class="name">e1</span>) of the entity used by the derivation;</li>
+<li><span class="attribute" id="derivation.activity">activity</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">a</span>) for the activity using and generating the above entities;</li>
+<li><span class="attribute" id="derivation.generation">generation</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">g2</span>) for the generation involving the generated entity and activity;</li> 
+<li><span class="attribute" id="derivation.usage">usage</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">u1</span>) for the usage involving the used entity and activity;</li> 
+<li><span class="attribute" id="derivation.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs that describe the modalities of this derivation.</li>
+</ul>
+</div>
+
+
+
+<div class="anexample">
+<p>The following descriptions state the existence of derivations.</p>
+<pre class="codeexample">wasDerivedFrom(e2, e1)
+wasDerivedFrom(e2, e1, [prov:type="physical transform"])
+wasDerivedFrom(e2, e1, a, g2, u1)
+wasGeneratedBy(g2, e2, a, -)
+used(u1, a, e1, -)
+</pre>
+<p>
+The first and second lines are about derivations between  <span class="name">e2</span> and  <span class="name">e1</span>, but no information is provided as to the identity of the activity (and usage and generation) underpinning the derivation. In the second line, a type attribute is also provided.</p>
+<p>
+The third description expresses that activity  <span class="name">a</span>, 
+using the entity <span class="name">e1</span> according to usage <span class="name">u1</span>,
+ derived the
+entity <span class="name">e2</span> and generated it according to generation
+ <span class="name">g2</span>. It is followed by descriptions for generation <span class="name">g2</span> and usage <span class="name">u1</span>. With such a comprehensive description of derivation, a program that analyzes provenance can identify the activity underpinning the derivation, it can identify how the original entity <span class="name">e1</span> was used by  the activity (e.g. for instance, which argument it was passed as, if the activity is the result of a function invocation), and which output the derived entity <span class="name">e2</span> was obtained from (say, for a function returning multiple results).</p>
+</div>
+
+
+
+<div class="issue"> Emphasize the notion of 'affected by'   <a href="http://www.w3.org/2011/prov/track/issues/133">ISSUE-133</a>.</div>
+
+
+</div>
+
+<div id="term-Revision" class="section">
+<h4><span class="secno">4.3.2 </span>Revision</h4>
+
+<p><span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <dfn id="concept-revision">revision</dfn> is a derivation that revises an entity into a revised version. </span></p>
+
+<p> Deciding whether something is made available as a revision of something else usually involves an agent who takes responsibility for approving that the former is a due variant of the latter.
+ The agent who is responsible for the revision may optionally be specified.
+ Revision is a particular case of <a href="#concept-derivation" class="internalDFN">derivation</a> of an entity into its revised version.</p>
+
+<p> A <dfn title="wasRevisionOf" id="dfn-wasrevisionof">revision</dfn> relation<span class="withPn">, written <span class="pnExpression">wasRevisionOf(id,e2,e1,ag,attrs)</span> in PROV-N,</span> contains:</p>
+<ul>
+<li><span class="attribute" id="revision.id">id</span>: an <em class="rfc2119" title="optional">optional</em> identifier for the relation;</li> 
+<li><span class="attribute" id="revision.newer">newer</span>: the identifier (<span class="name">e2</span>) of the revised  entity;
+</li><li><span class="attribute" id="revision.older">older</span>: the identifier (<span class="name">e1</span>) of the older entity;
+</li><li><span class="attribute" id="revision.responsibility">responsibility</span>: an <em class="rfc2119" title="optional">optional</em>  identifier (<span class="name">ag</span>) for the agent who approved the newer entity as a variant of the older;
+</li><li><span class="attribute" id="revision.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of this relation.</li>
+</ul>
+
+
+
+<div class="anexample" id="anexample-revision">
+<p>
+Revisiting the example of <a href="#section-example-a">Section 3.1</a>,
+we can now state that the report 
+ <span class="name">tr:WD-prov-dm-20111215</span> is a revision of 
+ the report <span class="name">tr:WD-prov-dm-20111018</span>, approved by
+agent  <span class="name">w3:Consortium</span>.
+</p><pre class="codeexample">entity(tr:WD-prov-dm-20111215, [ prov:type="pr:RecsWD" %% xsd:QName ])
+entity(tr:WD-prov-dm-20111018, [ prov:type="pr:RecsWD" %% xsd:QName ])
+wasRevisionOf(tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, w3:Consortium)
+</pre>
+</div>
+
+
+
+</div>  <!-- end revision -->
+
+<div id="term-quotation" class="section">
+<h4><span class="secno">4.3.3 </span>Quotation</h4>
+
+<p> 
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <dfn id="concept-quotation">quotation</dfn>  is the repeat of (some or all of) an entity, such as text or image, by someone other than its original author.  </span>
+</p>
+
+<p>Quotation
+ is a particular case of  <a href="#Derivation-Relation">derivation</a> in which entity <span class="name">e2</span> is derived from an original entity <span class="name">e1</span> by copying, or "quoting", some or all of it.
+  A <dfn title="wasQuotedFrom" id="dfn-wasquotedfrom">quotation</dfn> relation<span class="withPn">, written <span class="pnExpression">wasQuotedFrom(id,e2,e1,ag2,ag1,attrs)</span> in PROV-N,</span> contains:</p>
+<ul>
+<li><span class="attribute" id="quotation.id">id</span>: an <em class="rfc2119" title="optional">optional</em> identifier for the relation;</li> 
+<li><span class="attribute" id="quotation.quote">quote</span>:  an identifier (<span class="name">e2</span>) for the entity that represents the quote (the partial copy);
+</li><li><span class="attribute" id="quotation.original">original</span>: an identifier (<span class="name">e1</span>) for the original entity being quoted;
+</li><li><span class="attribute" id="quotation.quoterAgent">quoterAgent</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">ag2</span>) for the agent who performs the quote;
+</li><li><span class="attribute" id="quotation.originalAgent">originalAgent</span>: an <em class="rfc2119" title="optional">optional</em> identifier (<span class="name">ag1</span>) for the agent to whom the original entity is attributed;
+</li><li><span class="attribute" id="quotation.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+
+</ul>
+
+<div class="anexample" id="anexample-quotation">
+<p>
+The following paragraph is a quote from one of  <a href="http://thinklinks.wordpress.com/2012/03/07/thoughts-from-the-dagstuhl-principles-of-provenance-workshop/">the author's blogs</a>.
+</p><blockquote id="bl-dagstuhl"><em>
+"During the workshop, it became clear to me that the consensus based models (which are often graphical in nature) can not only be formalized but also be directly connected to these database focused formalizations. I just needed to get over the differences in syntax.  This could imply that we could have nice way to trace provenance across systems and through databases and be able to understand the mathematical properties of this interconnection."</em>
+</blockquote>
+<p>If <a href="http://thinklinks.wordpress.com/2012/03/07/thoughts-from-the-dagstuhl-principles-of-provenance-workshop/"><span class="name">wp:thoughts-from-the-dagstuhl-principles-of-provenance-workshop/</span></a> denotes the original blog by agent <span class="name">ex:Paul</span>, and 
+ <a href="#bl-dagstuhl"><span class="name">dm:bl-dagstuhl</span></a> denotes the above paragraph, then the following descriptions express that the above paragraph is copied by agent <span class="name">ex:Luc</span> from a part of the blog, attributed to the agent <span class="name">ex:Paul</span>.</p>
+<pre class="codeexample">entity(wp:thoughts-from-the-dagstuhl-principles-of-provenance-workshop/)
+agent(ex:Luc)
+agent(ex:Paul)
+wasQuotedFrom(dm:bl-dagstuhl,wp:thoughts-from-the-dagstuhl-principles-of-provenance-workshop/,ex:Luc,ex:Paul)
+</pre>
+
+</div>
+
+
+</div>  <!-- end quotation -->
+
+
+<div id="term-original-source" class="section">
+<h4><span class="secno">4.3.4 </span>Original Source</h4>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An <dfn id="dfn-original-source">original source</dfn> refers to the source material that is closest to the person, information, period, or idea being studied. </span>
+</p>
+
+<p>An <dfn id="dfn-original-source-1">original source</dfn> relation is a particular case of <a href="#concept-derivation" class="internalDFN">derivation</a> 
+that aims to give
+credit to the source that originated some information. It is recognized that it may be
+hard to determine which entity constitutes an original source. This definition is inspired by
+<span class="name">original-source</span> as defined in
+<a href="http://googlenewsblog.blogspot.com/2010/11/credit-where-credit-is-due.html">http://googlenewsblog.blogspot.com/2010/11/credit-where-credit-is-due.html</a>.</p>
+
+
+<p> An <dfn title="hadOriginalSource" id="dfn-hadoriginalsource">original source</dfn> relation<span class="withPn">, written <span class="pnExpression">hadOriginalSource(id,e2,e1,attrs)</span>,</span> contains:</p>
+<ul>
+<li><span class="attribute" id="originalSource.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier for the relation;</li> 
+<li><span class="attribute" id="originalSource.derived">derived</span>: an identifier (<span class="name">e2</span>) for the derived entity; </li>
+<li><span class="attribute" id="originalSource.source">source</span>: an identifier (<span class="name">e1</span>) for the original source entity;</li>
+<li><span class="attribute" id="originalSource.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+</ul>
+
+<div class="anexample">
+<p>
+Let us consider the current section <a href="#term-original-source"><span class="name">dm:term-original-source</span></a>, and
+the Google page <a href="http://googlenewsblog.blogspot.com/2010/11/credit-where-credit-is-due.html"><span class="name">go:credit-where-credit-is-due.html</span></a>, where the notion was originally described.
+</p><pre class="codeexample">entity(dm:term-original-source)
+entity(go:credit-where-credit-is-due.html)
+hadOriginalSource(dm:term-original-source,go:credit-where-credit-is-due.html)
+</pre>
+</div>
+
+
+</div>  <!-- end original source -->
+
+<div id="term-traceability" class="section">
+<h4><span class="secno">4.3.5 </span>Traceability</h4>
+
+<p>
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   <dfn id="concept-traceability">Traceability</dfn> is the ability to link back an entity to another by means of derivation or responsibility relations, possibly repeatedly traversed. </span>
+</p>
+
+
+<p> A traceability relation between two entities  <span class="name">e2</span> and  <span class="name">e1</span> is a generic dependency of <span class="name">e2</span>
+on  <span class="name">e1</span> that indicates either that <span class="name">e1</span> may have been necessary for <span class="name">e2</span> to be created, or that <span class="name">e1</span> bears 
+some responsibility for  <span class="name">e2</span>'s existence.
+
+
+</p><p><dfn title="tracedTo" id="dfn-tracedto">Traceability</dfn><span class="withPn">, written <span class="pnExpression">tracedTo(id,e2,e1,attrs)</span> in PROV-N,</span> contains:</p>
+<ul>
+<li><span class="attribute" id="traceability.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier identifying the relation;</li> 
+<li><span class="attribute" id="traceability.entity">entity</span>:  an identifier (<span class="name">e2</span>) for an entity;
+</li><li><span class="attribute" id="traceability.ancestor">ancestor</span>: an identifier (<span class="name">e1</span>) for an ancestor entity that the former depends on;
+</li><li><span class="attribute" id="traceability.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe properties of the relation.</li>
+</ul>
+<p>We note that the ancestor is allowed to be an agent since agents are entities. </p>
+
+<p>
+<a href="#concept-derivation" class="internalDFN">Derivation</a> and <a href="#concept-activityAssociation" class="internalDFN">association</a> are particular cases of  traceability.
+</p>
+
+<div class="anexample">
+<p>We refer to the example of <a href="#section-example-a">Section 3.1</a>, and specifically to <a href="#prov-tech-report">Figure prov-tech-report</a>. We can see that there is a path from 
+<span class="name">tr:WD-prov-dm-20111215</span> to 
+<span class="name">w3:Consortium</span> or to
+<span class="name">pr:rec-advance</span>. This is expressed as follows.
+</p><pre class="codeexample"> tracedTo(tr:WD-prov-dm-20111215,w3:Consortium)
+ tracedTo(tr:WD-prov-dm-20111215,pr:rec-advance)
+</pre>
+</div>
+
+
+
+
+</div>
+
+</div>
+
+<div id="component4" class="section"> 
+<h3><span class="secno">4.4 </span>Component 4: Alternate Entities</h3>
+
+
+<p>The fourth component of PROV-DM is concerned with
+relations <a href="#concept-specialization" class="internalDFN">specialization</a> and <a href="#concept-alternate" class="internalDFN">alternate</a> between entities.
+Figure <a href="#figure-component4">figure-component4</a> overviews
+the component, which consists of a single "UML Class" and two associations.
+</p>
+
+
+<div style="text-align: center;">
+<figure>
+<img src="images/Alternates.png" alt="alternates">
+<figcaption id="figure-component4">Alternates Component Overview</figcaption>
+</figure>
+</div>
+
+
+
+<p>Wherever two people describe the provenance of a same thing, 
+one cannot expect them to coordinate and agree on the identifiers to use to denote that thing.</p>
+<div class="anexample" id="entity-example1">
+<p>User Alice writes an article. In its provenance, she wishes to refer to the precise version of the article with a date-specific URI, as she might edit the article later. Alternatively, user Bob refers to the article in general, indepedently of its variants over time.</p>
+</div>
+<p>
+To allow for identifiers to be chosen freely and independently by each  user, the PROV data model introduces relations
+that allow entities  to be linked together.
+The following two relations are introduced for expressing  specialized or alternate entities. </p>
+
+
+<div id="term-specialization" class="section">
+
+<h4><span class="secno">4.4.1 </span>Specialization</h4>
+
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An entity is a <dfn id="concept-specialization">specialization</dfn> of another if they refer to some common thing but the former is a more constrained entity than the latter. The common thing do not need to be identified. </span> 
+
+
+<p>
+Examples of constraints  include a time period, an abstraction, and a context associated with the entity.</p>
+
+
+
+
+<p>
+</p><div class="attributes" id="attributes-specialization">A <dfn title="specializationOf" id="dfn-specializationof">specialization</dfn>  relation<span class="withPn">, written <span class="pnExpression">specializationOf(sub, super)</span> in PROV-N,</span> has the following constituents:
+
+<ul>
+<li><span class="attribute" id="specialization.specializedEntity">specializedEntity</span>: an identifier (<span class="name">sub</span>) of the specialized entity;</li>
+<li><span class="attribute" id="specialization.generalEntity">generalEntity</span>: an identifier (<span class="name">super</span>) of the entity that is being specialized.</li>
+</ul>
+</div>
+
+<div class="anexample" id="anexample-specialization">
+<p>
+The BBC news home page on 2012-03-23 <span class="name">ex:bbcNews2012-03-23</span>
+is a specialization of the BBC news page in general
+ <a href="http://www.bbc.co.uk/news/">bbc:news/</a>. This can be expressed as follows.
+</p><pre class="codeexample">specializationOf(ex:bbcNews2012-03-23, bbc:news/)
+</pre>
+Given that the BBC news does not define a URI for this day's news page, we are creating a qualified name in the namespace <span class="name">ex</span>. 
+</div>
+
+
+
+
+<!--
+<p>To promote take up of these relations, it is not specified whether they are transitive or symmetric.  We anticipate that applications will specialize these relations according to their needs. </p>
+-->
+
+
+
+</div>
+
+<div id="term-alternate" class="section">
+
+<h4><span class="secno">4.4.2 </span>Alternate</h4>
+
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   An entity is <dfn id="concept-alternate">alternate</dfn> of another if they are both a specialization of some common entity. The common entity does not need to be identified. </span>
+
+
+  
+
+<p></p><div class="attributes" id="attributes-alternate">An <dfn title="alternateOf" id="dfn-alternateof">alternate</dfn> relation<span class="withPn">, written <span class="pnExpression">alternateOf(e1, e2)</span> in PROV-N,</span> has the following constituents:
+<ul>
+<li><span class="attribute" id="alternate.alternate1">alternate1</span>: an identifier (<span class="name">e1</span>) of the first of the two entities;</li>
+<li><span class="attribute" id="alternate.alternate2">alternate2</span>: an identifier (<span class="name">e2</span>) of the second of the two entities.</li>
+</ul>
+</div>
+
+<div class="anexample" id="anexample-alternate">
+<p>
+A given news item on the BBC News site 
+ <a href="http://www.bbc.co.uk/news/science-environment-17526723">bbc:news/science-environment-17526723</a> for desktop
+is an alternate of a 
+ <a href="http://www.bbc.co.uk/news/mobile/science-environment-17526723">bbc:news/mobile/science-environment-17526723</a> for mobile devices.</p>
+<pre class="codeexample">entity(bbc:news/science-environment-17526723, [ prov:type="a news item for desktop"])
+entity(bbc:news/mobile/science-environment-17526723, [ prov:type="a news item for mobile devices"])
+alternateOf(bbc:news/science-environment-17526723, bbc:news/mobile/science-environment-17526723)
+</pre>
+<p>They are both specialization of an (unspecified) entity. </p>
+</div>
+
+
+<div class="anexample" id="anexample-alternate2">
+<p>
+Considering again the two versions of the technical report <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span> (second working draft) and <span class="name"><span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018">tr:WD-prov-dm-20111018</a></span></span> (first working draft). They are alternate of each other.
+</p><pre class="codeexample">entity(tr:WD-prov-dm-20111018)
+entity(tr:WD-prov-dm-20111215)
+alternateOf(tr:WD-prov-dm-20111018,tr:WD-prov-dm-20111215)
+</pre>
+<p>They are both specialization of the page <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a>.</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div id="component5" class="section"> 
+<h3><span class="secno">4.5 </span>Component 5: Collections</h3>
+
+<p>The fifth component of PROV-DM is concerned with the notion of collections. 
+A collection is an entity that has some members. The members are themselves entities, and therefore their provenance can be expressed. In many applications, it is also of interest to be able to express the provenance of the collection  itself: e.g. who maintains the collection, which member it contains at which point in time, and how it was assembled. The purpose of Component 5 is to define the types and relations that are useful to express the provenance of collections. </p>
+
+<p>Figure <a href="#figure-component5">figure-component5</a> overviews
+the component, which consists of two "UML Class" and three associations.
+</p>
+
+
+<div style="text-align: center;">
+<figure>
+<img src="images/Collections.png" alt="collections">
+<figcaption id="figure-component5">Collections Component Overview</figcaption>
+</figure>
+</div>
+
+
+<p>The intent of these relations and types is to express the <em>history of changes that occurred to a collection</em>. 
+Changes to collections are about the insertion of entities to collections and the removal of members from collections.
+Indirectly, such history provides a way to reconstruct the contents of a collection.</p>
+
+<div id="term-collection" class="section">
+<h4><span class="secno">4.5.1 </span>Collection</h4>
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <dfn id="concept-collection">collection</dfn> is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be <dfn id="dfn-member-of">member of</dfn> the collections.  </span>
+
+
+<p>Conceptually, a collection has a logical structure consisting of key-entity pairs. This structure is often referred to as a <em>map</em>, and is a generic indexing mechanisms that can abstract commonly used data structures, including associative lists (also known as "dictionaries" in some programming languages), relational tables, ordered lists, and more (the specification of such specialized structures in terms of key-value pairs is out of the scope of this document).</p>
+
+<p>A given collection forms a given structure for its members.  A different structure (obtained either by insertion or removal of members) constitutes a different collection. Hence,
+ for the purpose of provenance, a collection entity is viewed as a snapshot of a structure. Insertion and removal operations result in new snapshots, each snapshot forming an identifiable collection entity.</p>
+
+
+<p>PROV-DM defines the following types related to collections:</p>
+
+<ul>
+  <li> <span class="name">prov:Collection</span>  denotes an entity of type collection, i.e. an entity that  can participate in  relations amongst collections;
+
+  </li><li><span class="name">prov:EmptyCollection</span> denotes an empty collection.
+</li></ul>
+
+
+
+
+
+<!--
+In addition, the attribute  <span class="name">prov:content</span> is introduced to allow the explicit specification of the collection's content. The example below illustrates the syntax.
+-->
+
+<div class="anexample">
+<pre class="codeexample">entity(c0, [prov:type="EmptyCollection" %% xsd:QName])  // c0 is an empty collection
+entity(c1, [prov:type="Collection"  %% xsd:QName])      // c1 is a collection, with unknown content
+</pre>
+</div>
+
+
+
+</div>  <!-- end of collection-types -->
+
+
+<div id="term-collection-insertion" class="section">
+<h4><span class="secno">4.5.2 </span>Insertion</h4>
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">  <dfn id="concept-insertion">Insertion</dfn> is a derivation that transforms a collection into another, by insertion of one or more key-entity pairs. </span>
+
+
+
+
+
+<p></p><div class="attributes" id="attributes-derivedByInsertionFrom">
+<p>A <dfn title="derivedByInsertionFrom" id="dfn-derivedbyinsertionfrom">Derivation-by-Insertion</dfn> relation<span class="withPn">, written <span class="pnExpression">derivedByInsertionFrom(id, c2, c1, {(key_1, e_1), ..., (key_n, e_n)}, attrs)</span>,</span> contains:</p>
+<ul>
+<li><span class="attribute" id="derivedByInsertionFrom.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier identifying the relation;</li>
+<li><span class="attribute" id="derivedByInsertionFrom.after">after</span>: an identifier (<span class="name">c2</span>) for the collection <em>after</em> insertion; </li>
+<li><span class="attribute" id="derivedByInsertionFrom.before">before</span>: an identifier (<span class="name">c1</span>) for the collection <em>before</em> insertion;</li>
+<li><span class="attribute" id="derivedByInsertionFrom.key-entity-set">key-entity-set</span>: the inserted key-entity pairs <span class="name">(key_1, e_1)</span>, ..., <span class="name">(key_n, e_n)</span> in which each <span class="name">key_i</span> is a <a href="#dfn-value" class="internalDFN">value</a>, and <span class="name">e_i</span> is an identifier  for the entity that has been inserted with the key;
+ each <span class="name">key_i</span> is expected to be unique for the key-entity-set;
+</li>
+<li><span class="attribute" id="derivedByInsertionFrom.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+</ul>
+</div>
+
+<p>
+A Derivation-by-Insertion relation <span class="name">derivedByInsertionFrom(id, c2, c1,  {(key_1, e_1), ..., (key_n, e_n)})</span> states that  <span class="name">c2</span> is the state of the collection
+following the insertion of pairs <span class="name">(key_1, e_1)</span>, ..., <span class="name">(key_n, e_n)</span> into collection  <span class="name">c1</span>.</p>
+
+
+
+
+
+
+<div class="anexample">
+<pre class="codeexample">entity(c0, [prov:type="EmptyCollection" %% xsd:QName])    // c0 is an empty collection
+entity(e1)
+entity(e2)
+entity(e3)
+entity(c1, [prov:type="Collection" %% xsd:QName])
+entity(c2, [prov:type="Collection" %% xsd:QName])
+
+derivedByInsertionFrom(c1, c0, {("k1", e1), ("k2", e2)})       
+derivedByInsertionFrom(c2, c1, {("k3", e3)})    
+</pre>
+From this set of descriptions, we conclude:
+<pre class="codeexample">   c0 = {  }
+   c1 = { ("k1", e1), ("k2", e2) }
+   c2 = { ("k1", e1), ("k2", e2), ("k3", e3) }
+  </pre>
+</div>
+
+<p>Insertion provides an "update semantics" for the keys that are already present in the collection, as illustrated by the following example. </p>
+
+<div class="anexample">
+<pre class="codeexample">entity(c0, [prov:type="EmptyCollection" %% xsd:QName])    // c0 is an empty collection
+entity(e1)
+entity(e2)
+entity(e3)
+entity(c1, [prov:type="Collection" %% xsd:QName])
+entity(c2, [prov:type="Collection" %% xsd:QName])
+
+derivedByInsertionFrom(c1, c0, {("k1", e1), ("k2", e2)})       
+derivedByInsertionFrom(c2, c1, {("k1", e3)})    
+</pre>
+   This is a case of <em>update</em> of <span class="name">e1</span> to <span class="name">e3</span> for the same key, <span class="name">"k1"</span>. <br>
+  From this set of descriptions, we conclude:
+  <pre class="codeexample">   c0 = {  }
+   c1 = { ("k1", e1), ("k2", e2) }
+   c2 = { ("k1", e3), ("k2", e2) }
+  </pre>
+</div>
+
+</div>  <!-- insertion -->
+
+
+<div id="term-collection-removal" class="section">
+<h4><span class="secno">4.5.3 </span>Removal</h4>
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">  <dfn id="concept-removal">Removal</dfn> is a derivation that transforms a collection into another, by removing one or more key-entity pairs. </span>
+
+
+
+
+<p>
+</p><div class="attributes" id="attributes-derivedByRemovalFrom">
+<p> A <dfn title="derivedByRemovalFrom" id="dfn-derivedbyremovalfrom">Derivation-by-Removal</dfn> relation, written <span class="pnExpression">derivedByRemovalFrom(id, c2, c1, {key_1, ... key_n}, attrs)</span>, contains:</p>
+<ul>
+<li><span class="attribute" id="derivedByRemovalFrom.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier identifying the relation;</li>
+<li><span class="attribute" id="derivedByRemovalFrom.after">after</span>: an identifier (<span class="name">c2</span>) for the collection  <em>after</em> the deletion; </li>
+<li><span class="attribute" id="derivedByRemovalFrom.before">before</span>: an identifier (<span class="name">c1</span>)  for the collection <em>before</em> the deletion;</li>
+<li><span class="attribute" id="derivedByRemovalFrom.key-set">key-set</span>: a set of deleted keys  <span class="name">key_1</span>, ..., <span class="name">key_n</span>, for which each <span class="name">key_i</span> is a <a href="#dfn-value" class="internalDFN">value</a>;</li>
+<li><span class="attribute" id="derivedByRemovalFrom.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+</ul>
+</div>
+
+<p>Derivation-by-Removal relation <span class="name">derivedByRemovalFrom(id, c2,c1, {key_1, ..., key_n})</span> states that  <span class="name">c2</span> is  the  state of the collection following the removal of the set of pairs corresponding to keys  <span class="name">key_1...key_n</span> from  <span class="name">c1</span>.
+
+</p><div class="anexample">
+<pre class="codeexample">entity(c0, [prov:type="EmptyCollection"])    // c0 is an empty collection
+entity(e1)
+entity(e2)
+entity(e3)
+entity(c1, [prov:type="Collection"])
+entity(c2, [prov:type="Collection"])
+
+derivedByInsertionFrom(c1, c0, {("k1", e1), ("k2",e2)})       
+derivedByInsertionFrom(c2, c1, {("k3", e3)})
+derivedByRemovalFrom(c3, c2, {"k1", "k3"})   
+</pre>
+From this set of descriptions, we conclude:
+  <pre class="codeexample">   c0 = {  }
+   c1 = { ("k1", e1), ("k2", e2)  }
+   c2 = { ("k1", e1), ("k2", e2), ("k3", e3) }
+   c3 = { ("k2", e2) }
+  </pre>
+
+  
+</div>
+
+</div>  <!-- removal -->
+
+
+<div id="term-collection-membership" class="section">
+<h4><span class="secno">4.5.4 </span>Membership</h4>
+
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html"> <dfn id="concept-membership">Membership</dfn> is the belonging of a key-entity pair to collection. </span>
+
+<p>
+The insertion and removal  relations make insertions and removals explicit as part of the history of a collection. This, however, requires explicit mention of the state of the collection prior to each operation. The membership relation removes this needs, allowing the state of a collection <span class="name">c</span> to be expressed without having to introduce a prior state.</p>
+
+<p>
+</p><div class="attributes" id="attributes-memberOf">
+ A <dfn title="memberOf" id="dfn-memberof">membership</dfn> relation, written <span class="pnExpression">memberOf(id, c, {(key_1, e_1), ..., (key_n, e_n)}, attrs)</span>, contains:
+<ul>
+<li><span class="attribute" id="memberOf.id">id</span>:  an <em class="rfc2119" title="optional">optional</em> identifier identifying the relation;</li>
+<li><span class="attribute" id="memberOf.after">after</span>: an identifier (<span class="name">c</span>) for the collection whose members are asserted; </li>
+<li><span class="attribute" id="memberOf.key-entity-set">key-entity-set</span>: a set of key-entity pairs <span class="name">(key_1, e_1)</span>, ..., <span class="name">(key_n, e_n)</span> that are members of the collection;</li>
+<li><span class="attribute" id="memberOf.attributes">attributes</span>: an <em class="rfc2119" title="optional">optional</em> set (<span class="name">attrs</span>) of attribute-value pairs to further describe the properties of the relation.</li>
+</ul>
+</div>
+
+<p>The description <span class="name">memberOf(c, {(key_1, e_1), ..., (key_n, e_n)})</span> states that  <span class="name">c</span> is known to include <span class="name">(key_1, e_1)</span>, ..., <span class="name">(key_n, e_n)}</span>, without having to introduce a previous state. </p>
+
+<div class="anexample">
+<pre class="codeexample">entity(c, [prov:type="prov:Collection"  %% xsd:QName])    // c is a collection, with unknown content
+activity(a)
+wasGeneratedBy(c,a)   // a produced c
+
+entity(e1)
+entity(e2)
+memberOf(c, {("k1", e1), ("k2", e2)} )  
+
+entity(e3)
+entity(c1, [prov:type="prov:Collection"  %% xsd:QName])
+
+derivedByInsertionFrom(c1, c, {("k3", e3)})     
+</pre>
+  From this set of assertions, we conclude:
+  <pre class="codeexample">   c  contains   ("k1", e1), ("k2", e2) 
+   c1 contains   ("k1", e1), ("k2", e2), ("k3", v3) 
+  </pre>
+ Note that the state of <span class="name">c1</span> with these relations is only partially known, because the state of <span class="name">c</span> is unknown.
+</div>
+
+<!-- To go to part 2
+
+
+  Note that the following one cannot have at the same time an empty collection and membership relations for it, i.e., the following example is invalid:
+<pre class="codeexample">
+  <span class="name"> entity(c, [prov:type="EmptyCollection"])</span>
+   memberOf(c, {("k1", e1), ("k2", v2)} )  
+  </pre>
+
+
+-->
+
+</div>  <!-- Membership -->
+
+
+
+<p>Further considerations: </p>
+
+<ul>
+
+<li>The state of a collection (i.e., the set of key-entity pairs it contains) at a given point in a sequence of operations is never stated explicitly. Rather, it can be obtained by querying the chain of derivations involving insertions and removals. Entity type <span class="name">emptyCollection</span> can be used in this context as it marks the start of a sequence of collection operations.</li>
+
+
+<li>The representation of a collection through these relations makes no assumption regarding the underlying data structure used to store and manage collections. In particular, no assumptions are needed regarding the mutability of a data structure that is subject to updates. Entities, however, are immutable and this applies  to those entities that represent collections. This is reflected in the constraints listed in Part II.  </li>
+</ul>
+
+  
+</div>   <!-- end collections-->
+
+
+<div id="component6" class="section"> 
+<h3><span class="secno">4.6 </span>Component 6: Annotations</h3>
+
+<p>The sixth component of PROV-DM is concerned with <a title="note" href="#dfn-note" class="internalDFN">notes</a> and <a title="annotation" href="#concept-annotation" class="internalDFN">annotations</a>.
+</p>
+
+<p>As provenance descriptions are exchanged between systems, it may be useful to add extra-information to what they are describing. For instance, a "trust service" may add value-judgements about the
+trustworthiness of some of the entities or agents involved. Likewise, an interactive visualization component may want to enrich a set of provenance descriptions with information helping reproduce their
+visual representation. To help with interoperability, PROV-DM introduces a simple annotation mechanism allowing anything that is identifiable to be associated with notes.
+For this, a type and and a relation are introduced.</p>
+
+
+<p>The annotation mechanism (with note and annotation) forms a key aspect of the extensibility mechanism of PROV-DM (see <a href="#extensibility-section">extensibility section</a>).</p>
+   <div id="term-note" class="section"> 
+      
+<h4><span class="secno">4.6.1 </span>Note</h4>
+
+
+<p></p><div class="attributes" id="attributes-note">A <dfn id="dfn-note">note</dfn><span class="withPn">, noted <span class="pnExpression">note(id, [attr1=val1, ...])</span> in PROV-N,</span> contains:
+<ul>
+<li><span class="attribute" id="note.id">id</span>: an identifier for a note;</li>
+<li><span class="attribute" id="note.attributes">attributes</span>: a set of attribute-value pairs ((<span class="name">attr1</span>, <span class="name">val1</span>), ...), whose meaning is application specific.</li>
+</ul></div>
+
+
+
+
+<div class="anexample" id="anexample-note1">
+<p>
+The following note consists of a set of application-specific attribute-value pairs, intended
+to help the rendering of what it is associated with, by
+specifying its color and its position on the screen.</p>
+<pre class="codeexample">note(ex2:n1,[ex2:color="blue", ex2:screenX=20, ex2:screenY=30])
+hasAnnotation(tr:WD-prov-dm-20111215,ex2:n1)
+</pre>
+<p>The note is associated with the entity <span class="name">tr:WD-prov-dm-20111215</span>.
+Relation <a title="annotation" href="#concept-annotation" class="internalDFN">hasAnnotation</a> is 
+discussed in the  <a href="#term-annotation">next section</a>.  The note's identifier and attributes are declared in a separate namespace denoted by prefix <span class="name">ex2</span>.
+</p>
+</div>
+
+<div class="anexample" id="anexample-note2">
+<p>Alternatively, a reputation service may enrich a provenance record with notes providing reputation ratings about agents. In the following fragment, both agents <span class="name">ex:Simon</span> and <span class="name">ex:Paolo</span> are rated "excellent".</p>
+<pre class="codeexample">note(ex3:n2,[ex3:reputation="excellent"])
+hasAnnotation(ex:Simon,ex3:n2)
+hasAnnotation(ex:Paolo,ex3:n2)
+</pre>
+<p>The note's identifier and attributes are declared in a separate namespace denoted by prefix <span class="name">ex3</span>.</p>
+
+</div>
+
+
+   </div> 
+
+<div id="term-annotation" class="section">
+<h4><span class="secno">4.6.2 </span>Annotation</h4>
+
+
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html"> An <dfn id="concept-annotation">annotation</dfn> is a link between something that is identifiable and a note referred to by its identifier.</span>
+
+<p>Multiple notes can
+be associated with a given identified object; symmetrically, multiple objects can be associated with a given note.  Since notes have identifiers,  they can also be
+annotated. </p>
+
+<p></p><div class="attributes" id="attributes-annotation">An <dfn title="hasAnnotation" id="dfn-hasannotation">annotation relation</dfn><span class="withPn">, written <span class="pnExpression">hasAnnotation(r,n)</span> in PROV-N,</span> has the following constituents:
+<ul>
+<li><span class="attribute" id="annotation.id">something</span>: the identifier (<span class="name">r</span>) of something being annotated;</li>
+<li><span class="attribute" id="annotation.note">note</span>: an identifier (<span class="name">n</span>) of a note.</li>
+</ul>
+</div>
+
+<div class="anexample">
+<p>
+The following expressions</p>
+<pre class="codexample">entity(e1,[prov:type="document"])
+entity(e2,[prov:type="document"])
+activity(a,t1,t2)
+used(u1,a,e1,[ex:file="stdin"])
+wasGeneratedBy(e2, a, [ex:file="stdout"])
+
+note(n1,[ex:icon="doc.png"])
+hasAnnotation(e1,n1)
+hasAnnotation(e2,n1)
+
+note(n2,[ex:style="dotted"])
+hasAnnotation(u1,n2)
+</pre>
+<p>describe two  documents (attribute-value pair: <span class="name">prov:type="document"</span>) identified by <span class="name">e1</span> and <span class="name">e2</span>, and their annotation with a note indicating that the icon (an application specific way of rendering provenance) is <span class="name">doc.png</span>. The example also
+includes an activity, its usage of the first entity, and its generation of the second entity. The <a title="dfn-usage">usage</a> is annotated with a style (an application specific way
+of rendering this edge graphically). To be able to express this annotation, the usage was provided with an identifier <span class="name">u1</span>, which was then referred to in <span class="name">hasAnnotation(u1,n2)</span>.
+</p>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+<div id="second-class-elements" class="section">
+<h3><span class="secno">4.7 </span>Further Elements of PROV-DM</h3>
+
+This section introduces further elements of PROV-DM.
+
+<div id="term-NamespaceDeclaration" class="section">
+<h4><span class="secno">4.7.1 </span>Namespace Declaration</h4>
+
+<p>A PROV-DM <dfn id="dfn-namespace">namespace</dfn> is identified by an IRI [<cite><a class="bibref" rel="biblioentry" href="#bib-IRI">IRI</a></cite>]. In PROV-DM, attributes, identifiers, and values with <a title="qualified name" href="#concept-qualifiedName" class="internalDFN">qualified names</a> as data type can be placed in a namespace using the mechanisms described in this specification. </p>
+
+
+<p>A <dfn id="dfn-namespaceDeclaration">namespace declaration</dfn> consists of a binding between a prefix and a namespace. Every qualified name with this prefix in the scope of this
+declaration refers to this namespace. 
+A <dfn id="dfn-defaultNamespaceDeclaration">default namespace declaration</dfn> consists of a namespace. Every un-prefixed qualified name in the scope of this default namespace declaration
+refers to this namespace.</p>
+
+<p>The PROV-DM namespace is <span class="name">http://www.w3.org/ns/prov#</span>.</p>
+
+</div>
+
+<div id="term-qualified-name" class="section">
+<h4><span class="secno">4.7.2 </span>Qualified Name</h4>
+
+
+<span class="glossary-ref" prov:hadoriginalsource="http://dvcs.w3.org/hg/prov/file/6f7293364b17/model/glossary.html">   A <dfn id="concept-qualifiedName">qualified name</dfn> is a name subject to <a href="#dfn-namespace" class="internalDFN">namespace</a> interpretation. It consists of a <a href="#dfn-namespace" class="internalDFN">namespace</a>, denoted by an optional prefix, and a local name.<p></p> </span>
+
+<p>PROV-DM stipulates that a qualified name can be mapped into an IRI
+ by concatenating the IRI associated with the prefix and the local part.</p>
+
+<p>A qualified name's prefix is <em class="rfc2119" title="optional">optional</em>. If a prefix occurs in a
+ qualified name, it refers to a <a href="#dfn-namespace" class="internalDFN">namespace</a> declared in a namespace declaration.  In the absence of prefix, the qualified name 
+ refers to the <a title="default namespace declaration" href="#dfn-defaultNamespaceDeclaration" class="internalDFN">default namespace</a>.</p>
+
+</div>
+
+
+
+<div id="term-identifier" class="section">
+<h4><span class="secno">4.7.3 </span>Identifier</h4>
+
+<p>
+An <dfn id="dfn-identifier">identifier</dfn> is a <a href="#concept-qualifiedName" class="internalDFN">qualified
+ name</a>. 
+</p>
+
+</div>
+
+<div id="term-attribute" class="section">
+<h4><span class="secno">4.7.4 </span>Attribute</h4>
+
+<p>An <dfn title="dfn-attribute" id="dfn-dfn-attribute">attribute</dfn> is a <a href="#concept-qualifiedName" class="internalDFN">qualified name</a>. 
+
+
+</p><p>The PROV data model introduces a pre-defined set of attributes in the <a href="#prov-dm-namespace">PROV-DM namespace</a>, which we define below. 
+The interpretation of any attribute declared in another namespace is out of scope.</p>
+
+
+<div id="term-attribute-label" class="section">
+<h5><span class="secno">4.7.4.1 </span>prov:label</h5>
+
+<p> The attribute <dfn title="dfn-label" id="dfn-dfn-label"><span class="name">prov:label</span></dfn> provides a human-readable representation of a PROV-DM element or relation.  The value associated with the attribute <span class="name">prov:label</span> <em class="rfc2119" title="must">must</em> be a string.</p>
+
+<div class="anexample">
+<p>The following entity is provided with a label attribute.</p>
+<pre class="codeexample"> entity(ex:e1, [prov:label="This is a label"])
+</pre>
+</div>
+
+
+</div>
+
+
+<div id="term-attribute-location" class="section">
+<h5><span class="secno">4.7.4.2 </span>prov:location</h5>
+
+<p>A <dfn title="dfn-Location" id="dfn-dfn-location">location</dfn> can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate,
+address, landmark, and so forth. This  document does not specify how to concretely express  locations, but instead provide a mechanism to introduce locations, by means of a reserved attribute. </p> 
+
+
+<p>
+The attribute <dfn title="dfn-location" id="dfn-dfn-location-1"><span class="name">prov:location</span></dfn> is an <em class="rfc2119" title="optional">optional</em> attribute of entity and activity.  The value associated with the  attribute <span class="name">prov:location</span> <em class="rfc2119" title="must">must</em> be a PROV-DM <a title="value" href="#dfn-value" class="internalDFN">Value</a>, expected to denote a location.
+</p>
+
+<div class="anexample">
+<p>The following expression describes entity Mona Lisa, a painting, with a location attribute. </p>
+<pre class="codeexample"> entity(ex:MonaLisa, [prov:location="Le Louvres, Paris", prov:type="StillImage"])
+</pre>
+</div>
+</div>
+
+
+<div id="term-attribute-role" class="section">
+<h5><span class="secno">4.7.4.3 </span>prov:role</h5>
+
+<p>The attribute <dfn title="dfn-role" id="dfn-dfn-role"><span class="name">prov:role</span></dfn>  denotes the function of an entity with respect to an activity, in the context of a usage, generation,
+ association,  start, and  end. The attribute <span class="name">prov:role</span> is allowed to occur multiple times in a list of attribute-value pairs. The value associated with a <span class="name">prov:role</span> attribute <em class="rfc2119" title="must">must</em> be a PROV-DM <a title="value" href="#dfn-value" class="internalDFN">Value</a>.</p>
+
+<div class="anexample">
+<p>The following activity start describes the role of the agent identified by <span class="name">ag</span> in this start relation with activity <span class="name">a</span>. </p>
+<pre class="codeexample">   wasStartedBy(a,ag, [prov:role="program-operator"])
+</pre>
+</div>
+</div>
+
+<div id="term-attribute-type" class="section">
+<h5><span class="secno">4.7.4.4 </span>prov:type</h5>
+
+<p>The attribute <dfn title="dfn-type" id="dfn-dfn-type"><span class="name">prov:type</span></dfn>  provides further typing information for an element or relation. PROV-DM liberally
+defines a type as a category of things having common characteristics. PROV-DM is agnostic about the representation of types, and only states that
+the value associated with a <span class="name">prov:type</span> attribute <em class="rfc2119" title="must">must</em> be a PROV-DM <a title="value" href="#dfn-value" class="internalDFN">Value.</a> The attribute <span class="name">prov:type</span>
+is allowed to occur multiple times.</p>
+
+<div class="anexample">
+<p>The following describes an agent of type software agent.</p>
+<pre class="codeexample">   agent(ag, [prov:type="prov:SoftwareAgent" %% xsd:QName])
+</pre>
+</div>
+
+<p>The following types are pre-defined in PROV, and are valid values for the <span class="name">prov:type</span> attribute.</p>
+<ul>
+<li>prov:Plan</li>
+<li>prov:Account</li>
+<li>prov:SoftwareAgent</li>
+<li>prov:Organization</li>
+<li>prov:Person</li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<div id="term-value" class="section">
+<h4><span class="secno">4.7.5 </span>Value</h4>
+
+<p>
+By means of attribute-value pairs, the PROV data model can refer to <dfn title="value" id="dfn-value">values</dfn> such as strings, numbers, time, qualified names, and IRIs.  
+The interpretation of such values is outside the scope of PROV-DM.</p>
+<p>Each kind of such values is called a <em>datatype</em>. The datatypes are taken from 
+the set of XML Schema Datatypes, version 1.1 [<cite><a class="bibref" rel="biblioentry" href="#bib-XMLSCHEMA-2">XMLSCHEMA-2</a></cite>] and the RDF specification [<cite><a class="bibref" rel="biblioentry" href="#bib-RDF-CONCEPTS">RDF-CONCEPTS</a></cite>]. The normative definitions of these datatypes are provided by the respective specifications. 
+Each datatype is identified by its XML <a href="http://www.w3.org/TR/xmlschema-2/#QName">xsd:QName</a>.</p>
+
+<p>
+</p>
+
+<p>We note that PROV-DM <dfn title="dfn-time" id="dfn-dfn-time">time instants</dfn> are defined according to xsd:dateTime [<cite><a class="bibref" rel="biblioentry" href="#bib-XMLSCHEMA-2">XMLSCHEMA-2</a></cite>].</p> 
+
+
+
+<table border="1" style="margin-left: auto; margin-right: auto;">
+<caption>PROV-DM Data Types</caption>
+<tbody><tr><td><a href="http://www.w3.org/TR/xmlschema-2/#decimal">xsd:decimal</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#double">xsd:double</a></td>  <td><a href="http://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#integer">xsd:integer</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#float">xsd:float</a></td>  </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#nonNegativeInteger">xsd:nonNegativeInteger</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#string">xsd:string</a></td> <td><a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210/#section-XMLLiteral">rdf:XMLLiteral</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#nonPositiveInteger">xsd:nonPositiveInteger</a></td><td><a href="http://www.w3.org/TR/xmlschema-2/#normalizedString">xsd:normalizedString</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#positiveInteger">xsd:positiveInteger</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#token">xsd:token</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#negativeInteger">xsd:negativeInteger</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#language">xsd:language</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#long">xsd:long</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#Name">xsd:Name</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#int">xsd:int</a></td>  <td><a href="http://www.w3.org/TR/xmlschema-2/#NCName">xsd:NCName</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#short">xsd:short</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#NMTOKEN">xsd:NMTOKEN</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#byte">xsd:byte</a></td>  <td><a href="http://www.w3.org/TR/xmlschema-2/#boolean">xsd:boolean</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#unsignedLong">xsd:unsignedLong</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#hexBinary">xsd:hexBinary</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#unsignedInt">xsd:unsignedInt</a></td>  <td><a href="http://www.w3.org/TR/xmlschema-2/#base64Binary">xsd:base64Binary</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#unsignedShort">xsd:unsignedShort</a></td><td><a href="http://www.w3.org/TR/xmlschema-2/#anyURI">xsd:anyURI</a></td> </tr>
+<tr><td><a href="http://www.w3.org/TR/xmlschema-2/#unsignedByte">xsd:unsignedByte</a></td> <td><a href="http://www.w3.org/TR/xmlschema-2/#QName">xsd:QName</a></td></tr>
+</tbody></table>
+
+
+
+
+
+
+<div class="anexample" id="anexample-value">
+<p>
+The following examples respectively are the string "abc", the string "abc", the integer number 1, and the IRI "http://example.org/foo".
+</p><pre class="codeexample">  "abc"
+  1
+  "http://example.org/foo" %% xsd:anyURI
+</pre>
+<p>The following example shows a value of type <span class="name">xsd:QName</span> (see
+<a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/#QName">QName</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-XMLSCHEMA-2">XMLSCHEMA-2</a></cite>]).
+The prefix <span class="name">ex</span>  <em class="rfc2119" title="must">must</em> be bound to a <a href="#dfn-namespace" class="internalDFN">namespace</a> declared in a <a href="#dfn-namespaceDeclaration" class="internalDFN">namespace declaration</a>.</p>
+<pre class="codeexample"> 
+  "ex:value" %% xsd:QName
+</pre>
+</div>
+
+
+
+<div class="anexample" id="anexample-time">
+<p>
+In the following example, the generation time of entity <span class="name">e1</span> is expressed according to 
+<a href="http://www.w3.org/TR/xmlschema-2/#dateTime">xsd:dateTime</a>  [<cite><a class="bibref" rel="biblioentry" href="#bib-XMLSCHEMA-2">XMLSCHEMA-2</a></cite>].</p>
+<pre class="codeexample"> 
+  wasGeneratedBy(e1,a1, 2001-10-26T21:32:52)
+</pre>
+</div>
+
+<div class="note">
+We need to check that we are including all xsd types that are accept in the lastest version of RDF.
+</div>
+</div>
+</div>
+ 
+
+
+</div>
+
+
+<!-- end sec. 5 -->
+
+    <div id="extensibility-section" class="section"> 
+<!--OddPage--><h2><span class="secno">5. </span>PROV-DM Extensibility Points</h2>
+
+
+<p>The PROV data model provides several extensibility points that allow designers to specialize it to specific applications or domains. We summarize these extensibility points here:
+
+</p><ul>
+<li> Attributes occur in all elements and relations of the data model.  Applications are free to introduce 
+application-specific attributes, according to their perspective on the world.  Attributes for a given application can be distinguished by qualifying them with a prefix denoting a namespace
+declared in a namespace declaration.
+
+<p>The <a href="#prov-dm-namespace">PROV-DM namespace</a> declares a set of reserved attributes catering for extensibility: <span class="name">type</span>, <span class="name">role</span>, <span class="name">location</span>.</p></li>
+
+
+
+
+<li>Notes allow arbitrary metadata to be associated with anything identifiable in PROV-DM. Notes consist of attribute-value pairs.  Attributes are qualified by a
+namespace.</li>
+
+
+<li>Namespaces allow attributes and names to be qualified. </li>
+
+<li>Sub-typing of elements and relations is allowed by means of the reserved attribute <span class="name">type</span>.</li>
+
+<li>Domain specific values can be expressed by means of typed literals. </li>
+</ul>
+
+<p>The PROV data model is designed to be application and technology independent, but specializations of PROV-DM are welcome and encouraged.  To ensure interoperability, specializations of
+the PROV data model that exploit the extensibility points summarized in this section <em class="rfc2119" title="must">must</em> preserve the semantics specified in the PROV-DM documents (part 1 to 3). </p>
+
+
+
+    </div> 
+
+
+
+<div id="FurtherConsiderations" class="section">
+<!--OddPage--><h2><span class="secno">6. </span>Towards a Refinement of the PROV Data Model</h2>
+
+
+<ul>
+
+<li>This specification defines PROV-DM, a data model that allows 
+descriptions of the people, institutions, entities, and activities,
+involved in producing, influencing, or delivering a piece of data or a
+thing to be expressed.  However, with this data model, it is also possible to compose
+descriptions that would not make sense: for instance, one could
+express that an entity was used before it was generated, or that the
+activity that generated an entity began its existence after the entity
+generation.  A set of consistency constraints have been defined for PROV-DM and
+can be found in a companion specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM-CONSTRAINTS">PROV-DM-CONSTRAINTS</a></cite>].
+They can be used by asserters as a guideline for composing provenance descriptions that are consistent, and
+by implementers of reasoning engines. </li>
+
+
+
+<li>
+<p> The example of <a href="#prov-dm-example">section 3</a> contains identifiers such as <span class="name"><a href="http://www.w3.org/TR/2011/WD-prov-dm-20111215">tr:WD-prov-dm-20111215</a></span>, which denotes a specific version of a technical report.  On the other hand, a URI such as <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a> points to the latest version of a document. One needs to ensure that provenance descriptions for the latter document remain valid as denoted resources change. </p>
+
+<p>To this end, PROV-DM allows asserters to describe "<em>partial states</em>" of entities by means of attributes and associated values. Some further constraints apply to the use of these attributes, since the values associated with them are expected to remain unchanged for some period of time. The constraints associated to attributes allow provenance descriptions to be refined, they can also be found in the companion specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM-CONSTRAINTS">PROV-DM-CONSTRAINTS</a></cite>].</p>
+
+
+</li>
+
+
+<li>The existence of some mechanism(s)  by which a set of provenance descriptions can be bundled up and named is assumed.  No such mechanism is considered as mature for standardization, and therefore such mechanisms remain outside the scope of PROV-DM.   Various ways of achieving this functionality exist, for instance, by:
+<ul>
+<li> bundling up a set of descriptions in a file and exposing it as a Web resource;</li>
+<li> relying on specific serializations to name bundles of descriptions;</li>
+<li> using the idea of a service that is capable of associating provenance descriptions to whom they are attributed to.</li>
+</ul>
+<p>Even though a mechanism for blundling up provenance descriptions and naming them is not part of PROV-DM, the idea of a bundle of descriptions is crucial to the PROV approach. Indeed, it allows multiple provenance perspectives to be provided for a given entity. It is also the mechanism by which provenance of provenance can be expressed. Such a named bundle is being referred to as an <dfn id="dfn-account">account</dfn> and is regarded as an <a title="concept-account">Account</a> so that its provenance can be expressed.   The notion of account is specified in the companion specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM-CONSTRAINTS">PROV-DM-CONSTRAINTS</a></cite>], as well as constraint that  <dfn id="dfn-structurally-well-formed">structurally well-formed</dfn> descriptions are expected to satisfy.</p>
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+
+<div class="appendix section" id="acknowledgements"> 
+      <!--OddPage--><h2><span class="secno">A. </span>Acknowledgements</h2> 
+      <p> 
+        WG membership to be listed here.
+      </p> 
+    </div> 
+
+ 
+
+<div id="references" class="appendix section"><!--OddPage--><h2><span class="secno">B. </span>References</h2><div id="normative-references" class="section"><h3><span class="secno">B.1 </span>Normative references</h3><dl class="bibliography"><dt id="bib-IRI">[IRI]</dt><dd>M. Duerst, M. Suignard. <a href="http://www.ietf.org/rfc/rfc3987.txt"><cite>Internationalized Resource Identifiers (IRI).</cite></a> January 2005. Internet RFC 3987. URL: <a href="http://www.ietf.org/rfc/rfc3986.txt">http://www.ietf.org/rfc/rfc3987.txt</a> 
+</dd><dt id="bib-RDF-CONCEPTS">[RDF-CONCEPTS]</dt><dd>Graham Klyne; Jeremy J. Carroll. <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210"><cite>Resource Description Framework (RDF): Concepts and Abstract Syntax.</cite></a> 10 February 2004. W3C Recommendation. URL: <a href="http://www.w3.org/TR/2004/REC-rdf-concepts-20040210">http://www.w3.org/TR/2004/REC-rdf-concepts-20040210</a> 
+</dd><dt id="bib-RFC2119">[RFC2119]</dt><dd>S. Bradner. <a href="http://www.ietf.org/rfc/rfc2119.txt"><cite>Key words for use in RFCs to Indicate Requirement Levels.</cite></a> March 1997. Internet RFC 2119.  URL: <a href="http://www.ietf.org/rfc/rfc2119.txt">http://www.ietf.org/rfc/rfc2119.txt</a> 
+</dd><dt id="bib-XMLSCHEMA-2">[XMLSCHEMA-2]</dt><dd>Paul V. Biron; Ashok Malhotra. <a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/"><cite>XML Schema Part 2: Datatypes Second Edition.</cite></a> 28 October 2004. W3C Recommendation. URL: <a href="http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/">http://www.w3.org/TR/2004/REC-xmlschema-2-20041028/</a> 
+</dd></dl></div><div id="informative-references" class="section"><h3><span class="secno">B.2 </span>Informative references</h3><dl class="bibliography"><dt id="bib-Logic">[Logic]</dt><dd>W. E. Johnson<a href="http://www.ditext.com/johnson/intro-3.html"><cite>Logic: Part III</cite></a>.1924. URL: <a href="http://www.ditext.com/johnson/intro-3.html">http://www.ditext.com/johnson/intro-3.html</a>
+</dd><dt id="bib-PROV-AQ">[PROV-AQ]</dt><dd>Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles <a href="http://www.w3.org/TR/prov-aq/"><cite>Provenance Access and Query</cite></a>. 2011, Working Draft. URL: <a href="http://www.w3.org/TR/prov-aq/">http://www.w3.org/TR/prov-aq/</a>
+</dd><dt id="bib-PROV-DM-CONSTRAINTS">[PROV-DM-CONSTRAINTS]</dt><dd>Luc Moreau and Paolo Missier (eds.) ... <a href="http://www.w3.org/TR/prov-dm-constraints/"><cite>PROV-DM Constraints</cite></a>. 2011, Working Draft. URL: <a href="http://www.w3.org/TR/prov-dm-constraints/">http://www.w3.org/TR/prov-dm-constraints/</a>
+</dd><dt id="bib-PROV-N">[PROV-N]</dt><dd>Luc Moreau and Paolo Missier (eds.) ... <a href="http://www.w3.org/TR/prov-n/"><cite>PROV-N ....</cite></a>. 2011, Working Draft. URL: <a href="http://www.w3.org/TR/prov-n/">http://www.w3.org/TR/prov-n/</a>
+</dd><dt id="bib-PROV-O">[PROV-O]</dt><dd>Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, Daniel Garijo, Timothy Lebo, Stian Soiland-Reyes, and Stephan Zednik <a href="http://www.w3.org/TR/prov-o/"><cite>Provenance Formal Model</cite></a>. 2011, Working Draft. URL: <a href="http://www.w3.org/TR/prov-o/">http://www.w3.org/TR/prov-o/</a>
+</dd><dt id="bib-PROV-PRIMER">[PROV-PRIMER]</dt><dd>Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik <a href="http://www.w3.org/TR/prov-primer/"><cite>Prov Model Primer</cite></a>. 2011, Working Draft. URL: <a href="http://www.w3.org/TR/prov-primer/">http://www.w3.org/TR/prov-primer/</a>
+</dd><dt id="bib-PROV-SEM">[PROV-SEM]</dt><dd>James Cheney <a href="http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman"><cite>Formal Semantics Strawman</cite></a>. 2011, Work in progress. URL: <a href="http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman">http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman</a>
+</dd></dl></div></div></body></html>

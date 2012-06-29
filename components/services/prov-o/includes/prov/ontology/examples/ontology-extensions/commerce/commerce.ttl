@@ -1,0 +1,41 @@
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix prov:     <http://www.w3.org/ns/prov-o/> .
+@prefix commerce: <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/examples/ontology-extensions/commerce/commerce.ttl#> .
+
+commerce:Seller
+   rdfs:subClassOf prov:EntityInRole;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:assumedRole;
+      owl:hasValue   commerce:Seller;
+   ];
+.
+commerce:Buyer
+   rdfs:subClassOf prov:EntityInRole;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:assumedRole;
+      owl:hasValue   commerce:Buyer;
+   ];
+.
+commerce:Payment
+   rdfs:subClassOf prov:EntityInRole;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:assumedRole;
+      owl:hasValue   commerce:Payment;
+   ];
+.
+commerce:ReceivedGoods
+   rdfs:subClassOf prov:EntityInRole;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:assumedRole;
+      owl:hasValue   commerce:RecievedGoods;
+   ];
+.
+commerce:Purchase
+   rdfs:subClassOf prov:ProcessExecution;
+   rdfs:comment "A Buyer giving a Seller a Payment for RecievedGoods";
+.

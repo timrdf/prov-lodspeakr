@@ -1,0 +1,691 @@
+<table border="0">
+<tbody><tr><td colspan="4" class="grammarSection"><h3><a id="productions" name="productions">Productions</a>:</h3></td></tr></tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-bundle" name="prod-prov_n-bundle"></a>[<span class="prodNo">1</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">bundle</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"bundle" (<span class="prod"><a class="grammarRef" href="#prod-prov_n-namespaceDeclarations">namespaceDeclarations</a></span>)? (<span class="prod"><a class="grammarRef" href="#prod-prov_n-expression">expression</a></span>)* (( <span class="prod"><a class="grammarRef" href="#prod-prov_n-namedBundle">namedBundle</a></span> (<span class="prod"><a class="grammarRef" href="#prod-prov_n-namedBundle">namedBundle</a></span>)* ))? "endBundle"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-namedBundle" name="prod-prov_n-namedBundle"></a>[<span class="prodNo">2</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">namedBundle</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"bundle" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> (<span class="prod"><a class="grammarRef" href="#prod-prov_n-namespaceDeclarations">namespaceDeclarations</a></span>)? (<span class="prod"><a class="grammarRef" href="#prod-prov_n-expression">expression</a></span>)* "endBundle"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-namespaceDeclarations" name="prod-prov_n-namespaceDeclarations"></a>[<span class="prodNo">3</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">namespaceDeclarations</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( <span class="prod"><a class="grammarRef" href="#prod-prov_n-defaultNamespaceDeclaration">defaultNamespaceDeclaration</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-namespaceDeclaration">namespaceDeclaration</a></span> ) (<span class="prod"><a class="grammarRef" href="#prod-prov_n-namespaceDeclaration">namespaceDeclaration</a></span>)*</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-namespaceDeclaration" name="prod-prov_n-namespaceDeclaration"></a>[<span class="prodNo">4</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">namespaceDeclaration</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"prefix" <span class="prod"><a class="grammarRef" href="#prod-prov_n-QUALNAME">QUALNAME</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-namespace">namespace</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-namespace" name="prod-prov_n-namespace"></a>[<span class="prodNo">5</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">namespace</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-IRI_REF">IRI_REF</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-defaultNamespaceDeclaration" name="prod-prov_n-defaultNamespaceDeclaration"></a>[<span class="prodNo">6</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">defaultNamespaceDeclaration</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"default" <span class="prod"><a class="grammarRef" href="#prod-prov_n-IRI_REF">IRI_REF</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-expression" name="prod-prov_n-expression"></a>[<span class="prodNo">7</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">expression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( <span class="prod"><a class="grammarRef" href="#prod-prov_n-entityExpression">entityExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-activityExpression">activityExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-generationExpression">generationExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-usageExpression">usageExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-startExpression">startExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-endExpression">endExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-invalidationExpression">invalidationExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-communicationExpression">communicationExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-startByActivityExpression">startByActivityExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-agentExpression">agentExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-associationExpression">associationExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributionExpression">attributionExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-responsibilityExpression">responsibilityExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-derivationExpression">derivationExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-tracedToExpression">tracedToExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-hadOriginalSourceExpression">hadOriginalSourceExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-quotationExpression">quotationExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-revisionExpression">revisionExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-alternateExpression">alternateExpression</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-specializationExpression">specializationExpression</a></span> )</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-entityExpression" name="prod-prov_n-entityExpression"></a>[<span class="prodNo">8</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">entityExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"entity" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-activityExpression" name="prod-prov_n-activityExpression"></a>[<span class="prodNo">9</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">activityExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"activity" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-activityOptionals">activityOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-activityOptionals" name="prod-prov_n-activityOptionals"></a>[<span class="prodNo">10</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">activityOptionals</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><br/>
+| "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]"<br/>
+| "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-activityTimes">activityTimes</a></span> (( "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]" ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-activityTimes" name="prod-prov_n-activityTimes"></a>[<span class="prodNo">11</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">activityTimes</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-timeOrMarker">timeOrMarker</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-timeOrMarker">timeOrMarker</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-generationExpression" name="prod-prov_n-generationExpression"></a>[<span class="prodNo">12</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">generationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasGeneratedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"<br/>
+| "wasGeneratedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-identifierAndTimeAndAttributeOptionals" name="prod-prov_n-identifierAndTimeAndAttributeOptionals"></a>[<span class="prodNo">13</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">identifierAndTimeAndAttributeOptionals</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><br/>
+| "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]"<br/>
+| "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-timeOrMarker">timeOrMarker</a></span> (( "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]" ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-identifierAndAttributeOptionals" name="prod-prov_n-identifierAndAttributeOptionals"></a>[<span class="prodNo">14</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">identifierAndAttributeOptionals</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><br/>
+| "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]"<br/>
+| "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> (( "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]" ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-threeIdentifiersAndAttributeOptionals" name="prod-prov_n-threeIdentifiersAndAttributeOptionals"></a>[<span class="prodNo">15</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">threeIdentifiersAndAttributeOptionals</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><br/>
+| "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]"<br/>
+| "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> (( "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]" ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-timeAndAttributeOptionals" name="prod-prov_n-timeAndAttributeOptionals"></a>[<span class="prodNo">16</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">timeAndAttributeOptionals</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><br/>
+| "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]"<br/>
+| "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-timeOrMarker">timeOrMarker</a></span> (( "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]" ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-timeOrMarker" name="prod-prov_n-timeOrMarker"></a>[<span class="prodNo">17</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">timeOrMarker</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( <span class="prod"><a class="grammarRef" href="#prod-prov_n-timeZZ">timeZZ</a></span> | "-" )</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-identifierOrMarker" name="prod-prov_n-identifierOrMarker"></a>[<span class="prodNo">18</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">identifierOrMarker</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> | "-" )</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-usageExpression" name="prod-prov_n-usageExpression"></a>[<span class="prodNo">19</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">usageExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"used" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-timeAndAttributeOptionals">timeAndAttributeOptionals</a></span> ")"<br/>
+| "used" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-timeAndAttributeOptionals">timeAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-startExpression" name="prod-prov_n-startExpression"></a>[<span class="prodNo">20</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">startExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasStartedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"<br/>
+| "wasStartedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-endExpression" name="prod-prov_n-endExpression"></a>[<span class="prodNo">21</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">endExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasEndedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"<br/>
+| "wasEndedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-invalidationExpression" name="prod-prov_n-invalidationExpression"></a>[<span class="prodNo">22</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">invalidationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasInvalidatedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"<br/>
+| "wasInvalidatedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndTimeAndAttributeOptionals">identifierAndTimeAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-communicationExpression" name="prod-prov_n-communicationExpression"></a>[<span class="prodNo">23</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">communicationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasInformedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"<br/>
+| "wasInformedBy" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-startByActivityExpression" name="prod-prov_n-startByActivityExpression"></a>[<span class="prodNo">24</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">startByActivityExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasStartedByActivity" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"<br/>
+| "wasStartedByActivity" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-agentExpression" name="prod-prov_n-agentExpression"></a>[<span class="prodNo">25</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">agentExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"agent" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-attributionExpression" name="prod-prov_n-attributionExpression"></a>[<span class="prodNo">26</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">attributionExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasAttributedTo" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"<br/>
+| "wasAttributedTo" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-associationExpression" name="prod-prov_n-associationExpression"></a>[<span class="prodNo">27</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">associationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasAssociatedWith" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndAttributeOptionals">identifierAndAttributeOptionals</a></span> ")"<br/>
+| "wasAssociatedWith" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndAttributeOptionals">identifierAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-responsibilityExpression" name="prod-prov_n-responsibilityExpression"></a>[<span class="prodNo">28</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">responsibilityExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"actedOnBehalfOf" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndAttributeOptionals">identifierAndAttributeOptionals</a></span> ")"<br/>
+| "actedOnBehalfOf" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierAndAttributeOptionals">identifierAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-derivationExpression" name="prod-prov_n-derivationExpression"></a>[<span class="prodNo">29</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">derivationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasDerivedFrom" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"<br/>
+| "wasDerivedFrom" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-revisionExpression" name="prod-prov_n-revisionExpression"></a>[<span class="prodNo">30</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">revisionExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasRevisionOf" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"<br/>
+| "wasRevisionOf" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-quotationExpression" name="prod-prov_n-quotationExpression"></a>[<span class="prodNo">31</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">quotationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"wasQuotedFrom" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"<br/>
+| "wasQuotedFrom" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-hadOriginalSourceExpression" name="prod-prov_n-hadOriginalSourceExpression"></a>[<span class="prodNo">32</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">hadOriginalSourceExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"hadOriginalSource" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"<br/>
+| "hadOriginalSource" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-threeIdentifiersAndAttributeOptionals">threeIdentifiersAndAttributeOptionals</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-tracedToExpression" name="prod-prov_n-tracedToExpression"></a>[<span class="prodNo">33</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">tracedToExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"tracedTo" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"<br/>
+| "tracedTo" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifierOrMarker">identifierOrMarker</a></span> ";" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-optionalAttributeValuePairs">optionalAttributeValuePairs</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-alternateExpression" name="prod-prov_n-alternateExpression"></a>[<span class="prodNo">34</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">alternateExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"alternateOf" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-specializationExpression" name="prod-prov_n-specializationExpression"></a>[<span class="prodNo">35</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">specializationExpression</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"specializationOf" "(" <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-identifier">identifier</a></span> ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-optionalAttributeValuePairs" name="prod-prov_n-optionalAttributeValuePairs"></a>[<span class="prodNo">36</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">optionalAttributeValuePairs</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">(( "," "[" <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePairs">attributeValuePairs</a></span> "]" ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-identifier" name="prod-prov_n-identifier"></a>[<span class="prodNo">37</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">identifier</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-QUALNAME">QUALNAME</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-attribute" name="prod-prov_n-attribute"></a>[<span class="prodNo">38</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">attribute</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-QUALNAME">QUALNAME</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-attributeValuePairs" name="prod-prov_n-attributeValuePairs"></a>[<span class="prodNo">39</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">attributeValuePairs</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">(  | <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePair">attributeValuePair</a></span> (( "," <span class="prod"><a class="grammarRef" href="#prod-prov_n-attributeValuePair">attributeValuePair</a></span> ))* )</code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-attributeValuePair" name="prod-prov_n-attributeValuePair"></a>[<span class="prodNo">40</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">attributeValuePair</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-attribute">attribute</a></span> "=" <span class="prod"><a class="grammarRef" href="#prod-prov_n-literal">literal</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-timeZZ" name="prod-prov_n-timeZZ"></a>[<span class="prodNo">41</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">timeZZ</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-ISODATETIME">ISODATETIME</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-literal" name="prod-prov_n-literal"></a>[<span class="prodNo">42</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">literal</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-StringLiteral">StringLiteral</a></span><br/>
+| <span class="prod"><a class="grammarRef" href="#prod-prov_n-QUALNAME_LITERAL">QUALNAME_LITERAL</a></span><br/>
+| <span class="prod"><a class="grammarRef" href="#prod-prov_n-INTLITERAL">INTLITERAL</a></span><br/>
+| <span class="prod"><a class="grammarRef" href="#prod-prov_n-StringLiteral">StringLiteral</a></span> "%%" <span class="prod"><a class="grammarRef" href="#prod-prov_n-datatype">datatype</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-datatype" name="prod-prov_n-datatype"></a>[<span class="prodNo">43</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">datatype</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-IRI_REF">IRI_REF</a></span><br/>
+| <span class="prod"><a class="grammarRef" href="#prod-prov_n-QUALNAME">QUALNAME</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="prod">
+<tr valign="baseline">
+<td><a id="prod-prov_n-StringLiteral" name="prod-prov_n-StringLiteral"></a>[<span class="prodNo">44</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production prod">StringLiteral</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-STRING_LITERAL">STRING_LITERAL</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-QUALNAME_OLD" name="term-prov_n-QUALNAME_OLD"></a>[<span class="prodNo">45</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">QUALNAME_OLD</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">(( <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_PREFIX">PN_PREFIX</a></span> ":" ))? <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_LOCAL">PN_LOCAL</a></span><br/>
+| <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_PREFIX">PN_PREFIX</a></span> ":"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-INTLITERAL" name="term-prov_n-INTLITERAL"></a>[<span class="prodNo">46</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">INTLITERAL</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">("-")? (<span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span>)+</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-QUALNAME" name="term-prov_n-QUALNAME"></a>[<span class="prodNo">47</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">QUALNAME</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_PREFIX">PN_PREFIX</a></span> ":" (<span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_LOCAL">PN_LOCAL</a></span>)?<br/>
+| <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_LOCAL">PN_LOCAL</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PREFX" name="term-prov_n-PREFX"></a>[<span class="prodNo">48</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PREFX</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_PREFIX">PN_PREFIX</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-DIGIT" name="term-prov_n-DIGIT"></a>[<span class="prodNo">49</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">DIGIT</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">[0-9]</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-ISODATETIME" name="term-prov_n-ISODATETIME"></a>[<span class="prodNo">50</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">ISODATETIME</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> "-" <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> "-" <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> "T" <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> ":" <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> ":" <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> (( "." <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> (( <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> (<span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span>)? ))? ))? (( "Z" | <span class="prod"><a class="grammarRef" href="#prod-prov_n-TIMEZONEOFFSET">TIMEZONEOFFSET</a></span> ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-TIMEZONEOFFSET" name="term-prov_n-TIMEZONEOFFSET"></a>[<span class="prodNo">51</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">TIMEZONEOFFSET</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( "+" | "-" ) <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> ":" <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-DIGIT">DIGIT</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-IRI_REF" name="term-prov_n-IRI_REF"></a>[<span class="prodNo">52</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">IRI_REF</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"&lt;" (( [^&lt;&gt;\"{}|^`\\] - [#0000- ] | <span class="prod"><a class="grammarRef" href="#prod-prov_n-UCHAR">UCHAR</a></span> ))* "&gt;"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-STRING_LITERAL" name="term-prov_n-STRING_LITERAL"></a>[<span class="prodNo">53</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">STRING_LITERAL</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">'"' (( ( [^\"\\\n\r] ) | <span class="prod"><a class="grammarRef" href="#prod-prov_n-ECHAR">ECHAR</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-UCHAR">UCHAR</a></span> ))* '"'</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-QUALNAME_LITERAL" name="term-prov_n-QUALNAME_LITERAL"></a>[<span class="prodNo">54</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">QUALNAME_LITERAL</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"'" <span class="prod"><a class="grammarRef" href="#prod-prov_n-QUALNAME">QUALNAME</a></span> "'"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-UCHAR" name="term-prov_n-UCHAR"></a>[<span class="prodNo">55</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">UCHAR</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( "\\u" <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> )<br/>
+| ( "\\U" <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> )</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-ECHAR" name="term-prov_n-ECHAR"></a>[<span class="prodNo">56</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">ECHAR</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"\\" [tbnrf\\\"']</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-NIL" name="term-prov_n-NIL"></a>[<span class="prodNo">57</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">NIL</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"(" (( <span class="prod"><a class="grammarRef" href="#prod-prov_n-WS">WS</a></span> ))* ")"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-WS" name="term-prov_n-WS"></a>[<span class="prodNo">58</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">WS</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">" "<br/>
+| "\t"<br/>
+| "\r"<br/>
+| "\n"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-ANON" name="term-prov_n-ANON"></a>[<span class="prodNo">59</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">ANON</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"[" (( <span class="prod"><a class="grammarRef" href="#prod-prov_n-WS">WS</a></span> ))* "]"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_CHARS_BASE" name="term-prov_n-PN_CHARS_BASE"></a>[<span class="prodNo">60</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_CHARS_BASE</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">[A-Z]<br/>
+| [a-z]<br/>
+| [#00C0-#00D6]<br/>
+| [#00D8-#00F6]<br/>
+| [#00F8-#02FF]<br/>
+| [#0370-#037D]<br/>
+| [#037F-#1FFF]<br/>
+| [#200C-#200D]<br/>
+| [#2070-#218F]<br/>
+| [#2C00-#2FEF]<br/>
+| [#3001-#D7FF]<br/>
+| [#F900-#FDCF]<br/>
+| [#FDF0-#FFFD]<br/>
+| [#10000-#EFFFF]</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_CHARS_U" name="term-prov_n-PN_CHARS_U"></a>[<span class="prodNo">61</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_CHARS_U</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_BASE">PN_CHARS_BASE</a></span><br/>
+| "_"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_CHARS" name="term-prov_n-PN_CHARS"></a>[<span class="prodNo">62</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_CHARS</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_U">PN_CHARS_U</a></span><br/>
+| "-"<br/>
+| [0-9]<br/>
+| <br/>
+| [#0300-#036F]<br/>
+| [#203F-#2040]</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_PREFIX" name="term-prov_n-PN_PREFIX"></a>[<span class="prodNo">63</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_PREFIX</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_BASE">PN_CHARS_BASE</a></span> (( (( <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS">PN_CHARS</a></span> | "." ))* <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS">PN_CHARS</a></span> ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_LOCAL" name="term-prov_n-PN_LOCAL"></a>[<span class="prodNo">64</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_LOCAL</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">( <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_U">PN_CHARS_U</a></span> | [0-9] | <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_OTHERS">PN_CHARS_OTHERS</a></span> ) (( (( <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS">PN_CHARS</a></span> | "." | <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_OTHERS">PN_CHARS_OTHERS</a></span> ))* ( <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS">PN_CHARS</a></span> | <span class="prod"><a class="grammarRef" href="#prod-prov_n-PN_CHARS_OTHERS">PN_CHARS_OTHERS</a></span> ) ))?</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_CHARS_OTHERS" name="term-prov_n-PN_CHARS_OTHERS"></a>[<span class="prodNo">65</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_CHARS_OTHERS</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content"><span class="prod"><a class="grammarRef" href="#prod-prov_n-PERCENT">PERCENT</a></span><br/>
+| "/"<br/>
+| "@"<br/>
+| "~"<br/>
+| "&amp;"<br/>
+| "+"<br/>
+| "?"<br/>
+| "#"<br/>
+| "$"</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PERCENT" name="term-prov_n-PERCENT"></a>[<span class="prodNo">66</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PERCENT</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"%" <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span> <span class="prod"><a class="grammarRef" href="#prod-prov_n-HEX">HEX</a></span></code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-HEX" name="term-prov_n-HEX"></a>[<span class="prodNo">67</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">HEX</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">[0-9]<br/>
+| [A-F]<br/>
+| [a-f]</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PN_LOCAL_ESC" name="term-prov_n-PN_LOCAL_ESC"></a>[<span class="prodNo">68</span>]&nbsp;&nbsp;&nbsp;</td>
+<td>&lt;<code class="production term">PN_LOCAL_ESC</code>&gt;</td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">"\\" ( "_" | "~" | "." | "-" | "!" | "$" | "&amp;" | "'" | "(" | ")" | "*" | "+" | "," | ";" | "=" | ":" | "/" | "?" | "#" | "@" | "%" )</code></td>
+</tr>
+</tbody>
+
+<tbody class="term">
+<tr valign="baseline">
+<td><a id="term-prov_n-PASSED_TOKENS" name="term-prov_n-PASSED_TOKENS"></a>[<span class="prodNo">69</span>]&nbsp;&nbsp;&nbsp;</td>
+<td><code class="production directive">PASSED TOKENS</code></td>
+<td>&nbsp;&nbsp;&nbsp;::=&nbsp;&nbsp;&nbsp;</td>
+<td><code class="content">([ \t\r\n])+<br/>
+| "#" ([^\r\n])*</code></td>
+</tr>
+</tbody>
+
+</table>
+

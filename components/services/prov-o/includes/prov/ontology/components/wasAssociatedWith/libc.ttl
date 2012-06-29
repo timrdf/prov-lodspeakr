@@ -1,0 +1,47 @@
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+
+<> rdfs:label "Example: Execution of a C program" ;
+
+    rdfs:comment """
+The C program prov:uses some text files and a
+connection to a web server. On a lower granularity perhaps,
+/lib/libc.so.6 (the C standard library) is prov:associatedWith with
+the programme. The asserter does not feel that *his* C program is
+*using* libc - that is merely an side-effect of the compiler and
+operating system.  It is not an agent, it is not like a Python
+interpreter responsible for running a script, it is just there for
+those boring system calls. However the asserter wants to link this
+stronger than just as some custom attribute on the plan-entity for the
+C-program-activity.
+
+The reason is that a concurrent system upgrade overwrites the
+/lib/libc.so.6 file (and this is captured by provenance) , and causes
+the C programme to crash.  """ ;
+    rdfs:seeAlso
+    <http://lists.w3.org/Archives/Public/public-prov-wg/2012Feb/0073.html> .
+
+:libc a prov:Entity, :CLibrary ;
+ prov:location "/lib/libc.so.6" .
+
+:myProgramme a prov:Entity, :ProgramBinary ;
+ prov:location "/usr/local/bin/my" ;
+ rdfs:comment """
+I did not specify any prov:SoftwareAgent up here, because agents are
+currently disjoint from activities, and so the active :exec can't be
+an agent - while the dormant entity :myProgramme can.
+""" .
+
+:exec a prov:Activity, :ProgramExecution;
+ prov:hadPlan :myProgramme ;
+ rdfs:comment """The :libc is associated with :exec - but in a passive way""" ;
+ prov:wasAssociatedWith :libc .
+
+:segmentationFault a prov:Entity, :ProgramError ;
+ prov:wasGeneratedBy :exec .
+
+:upgrade a prov:Activity, :ProgramExecution ;
+ prov:used :libc .
+
+

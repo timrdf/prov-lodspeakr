@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcterms="http://purl.org/dc/terms/" xmlns:ex="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#ex" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prov="http://www.w3.org/ns/prov-o/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2008/05/skos#" xmlns:time="http://www.w3.org/2006/time#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#" xmlns="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#">
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <dcterms:description>entity(e0, [ prov:type='File', ex:path='/shared/crime.txt', ex:creator='Alice' ])</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov-o/Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <rdf:type rdf:resource="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#File"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <expath>/shared/crime.txt</expath>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <excreator rdf:resource="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#Alice"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e2">
+    <dcterms:description>wasDerivedFrom(e2,e1)</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e2">
+    <prov:wasDerivedFrom rdf:resource="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e1"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#a0">
+    <dcterms:description>activity(a0,t,,[prov:type='createFile'])</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#a0">
+    <rdf:type rdf:resource="http://www.w3.org/ns/prov-o/Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#a0">
+    <rdf:type rdf:resource="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#CreateFile"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <dcterms:description>wasGeneratedBy(e0,a0)</dcterms:description>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#e0">
+    <prov:wasGeneratedBy rdf:resource="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#a0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#a4">
+    <dcterms:description>wasAssociatedWith(a4, ag5, [prov:role='communicator'])</dcterms:description>
+  </rdf:Description>
+</rdf:RDF>

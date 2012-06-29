@@ -1,0 +1,7 @@
+Line ::= Word* 'end'
+Word ::= 'word' WORD
+       | 'num' NUM
+@terminals
+WORD ::= [a-zA-Z]+ | [#x00C9-#x00D6]+
+HEX ::= [0-9a-fA-F]
+NUM ::= "0" [xX] HEX+ | ([0-9])+

@@ -1,0 +1,310 @@
+  > --------------
+  > 
+  > - Can the document be released as a next public working draft? If no, 
+  > what are the blocking issues?
+  > 
+  > yes, it can. I see no obvious blockers.
+  > 
+  > - Is the structure of the document approved?
+  > Yes.
+  > 
+  > - Can the short name of the document be confirmed (in particular, for 
+  > prov-n, prov-dm-constraints, since request needs to be sent for 
+  > publication)?
+  > 
+  > Yes, the names work for me.
+  > 
+  > - If a reviewer raised some issues (closed pending review), can they 
+  > be closed?	
+  > N/A. I see no open issues from my regarding DM.
+  > 
+  > - Can all concept definitions be confirmed? Specifically,
+  > consider ISSUE-337 on agents
+  > consider ISSUE-223 on entities
+  > 
+  > The new definitions work for me.
+  > 
+  > 
+  > 
+  > 
+  > 
+  > -------------------------
+  > Additional minor comments
+  > -------------------------
+  > 
+  > Status of Documents
+  > -------------------------
+  > 1. Developers seeking to retrieve or publish provenance should focus of 
+  > PROV-AQ.
+  > 
+  > of -> on
+  > 
+
+Done
+
+  > 
+  > 
+  > 
+  > 1.1. Structure of this document
+  > ----------------------------------------
+  > 
+  > 2. Section 6 introduces the idea that constraints can be applied to the 
+  > PROV data model to refine provenance descriptions; these are covered in 
+  > the companion specification [PROV-DM-CONSTRAINTS].
+  > 
+  > -> there are *further* covered in ...?
+  > 
+
+NO ACTION
+
+  > 
+  > 
+  > 
+  > 
+  > 
+  > 2.2 Generation, Usage, Derivation
+  > --------------------------------------------
+  > 
+  > 1. At the beginning of section 2.2., we have the sentence:Activities and 
+  > entities are associated with each other in two different ways: 
+  > activities are consumers of entities and activities are producers of 
+  > entities.
+  > 
+  > would it be better to say:
+  > 
+  > ... in two different ways: activities can be consumers of entities or 
+  > producers.
+  > 
+
+This text was updated following Khalid comments, and problem solved.
+  > 
+  > 
+  > 
+  > 2.3 Agents and other types of entities
+  > --------------------------------------------
+  > 
+  > 1. There exist no prescriptive requirement -> There exist no 
+  > prescriptive requirement*s*
+
+NO ACTION
+
+  > 
+  > 2. In section 2.3, maybe the sub-types of Agents could also be given in 
+  > bold, italic font when they were introduced at the first time, like what 
+  > you did with other concepts?
+  > 
+  > 
+
+Added glossary definitions to section 4.2.1.
+
+Note: I removed the three types of agents from section 2.3.
+
+
+  > 
+  > 
+  > 
+  > 2.4 Attribution, Association, and Responsibility
+  > --------------------------------------------
+  > 
+  > 
+  > Reading section 2.4, I felt the word "Responsibility" is becoming a bit 
+  > overloaded.
+  > 
+  > At the beginning of section 2.3. it says: The motivation for introducing 
+  > agents in the model is to denote the agent's "responsibility" for 
+  > activities. But then in the last part of this section, responsibility is 
+  > used to refer to a relationship between an agent and a subordinate agent.
+  > 
+  > I don't how to fix this and I don't know how important this is. But I 
+  > didn't know that wasInformedBy actually reflects a kind of 
+  > responsibility until I read this section and related sections in the 
+  > rest of the document.
+  > 
+
+TODO: Action on Jun to suggest alternatives
+
+  > 
+  > 
+  > 
+  > 
+  > 2.5 Simplified Overview Diagram
+  > --------------------------------------------
+  > 
+  > In section 2.5, the sentence above the table says: We note that names of 
+  > relations have a verbal form in the past tense to express what happened 
+  > in the past, as opposed to what may or will happen.
+  > 
+  > But not all the definitions of the DM concepts expressed a description 
+  > of a past event, such as the definition of the activity or agent. Is 
+  > this on purpose?
+
+You are right, not all concepts.
+Only the *relations* have a past tense form.  
+
+  > 
+  > Furthermore, descriptions about the examples given in section 3 were not 
+  > expressed in past tense either, where they could have been.
+  > 
+  > I feel fixing this and making it consistent might be a good example to 
+  > the readers, emphasizing provenance as descriptions of a past event.
+  > 
+
+It's true that tense was not consistently used.
+Fixed, hopefully, now, all in past tense.
+
+
+  > 
+  > 
+  > 3.3. Attribution of Provenance
+  > --------------------------------------------
+  > Attribution of Provenance -> Attribution to Provenance?
+  > 
+  > IMO, they mean different things, and I felt you meant the latter.
+  > 
+  > 
+
+I feel we mean 'of'
+
+  > 
+  > 
+  > 4.1.3 Generation
+  > --------------------------------------------
+  > In section 4.1.3. it says that the activity in a generation is optional 
+  > and the last example shows how to express the time of a generation 
+  > without naming the activity. I wonder how this is supported in Prov-o.
+  > 
+  > 
+
+This is a prov-o question.
+
+  > 
+  > 
+  > 4.3.1 Derivation
+  > ---------------------
+  > 
+  > What does "modality" mean? (... added to describe modalities of derivation)
+  > 
+  > 
+
+Done. Removed all of these, and adopted GK suggested phrasing.
+
+  > 
+  > 
+  > 4.5 Component 5: Collections
+  > ------------------------------------------
+  > 
+  > In the first paragraph, it says the collection component can express 
+  > "which member it contains at which point in time....". I am not sure 
+  > this is clearly explained or illustrated so far in the document. None of 
+  > the derivation by insertion or by deletion is associated with any time 
+  > information; and none of the examples in this section include any time 
+  > information with the collection. I think this time information is quite 
+  > indirectly available rather than directly supported by the collection 
+  > component.
+
+  > 
+  > 
+
+We need to remove this reference to time.
+
+---> "which members it contains as it evolves"
+
+
+
+  > 
+  > 
+  > 4.5.4 Membership
+  > ------------------------------------------
+  > 
+  > For the property memberOf, I was expecting to find it defined as 
+  > elements entities being member of a collections, such as memberOf(id, 
+  > {(key_1, e_1), ..., (key_n, e_n)}, c, attrcs). This seems to be a 
+  > consistent pattern used for all the properties in DM, but I didn't do a 
+  > thorough check.
+  > 
+
+Effect first, cause second. 
+That's the order that is followed consistently in the document.
+
+TODO: should we consider renaming memberOf to fit subject first, object second?
+
+
+  > 
+  > The example given in this section used the following assertion:
+  > 
+  > c  contains   ("k1", e1), ("k2", e2)
+  > 
+  > But "contains" is not something defined in the DM. If it is merely a 
+  > description, then it might be expressed using a different font rather 
+  > then typeset?
+
+contains -> "has the following pairs has members".
+
+Also fixed the font issue.
+
+  > 
+  > 
+  > In the last paragraph of this section, it mentioned the immutability of 
+  > entities. And reading the specification of collections, I understand 
+  > this is the pillar of this component. However, if I understand right, 
+  > the immutable nature of entities is not something emphasized in the 
+  > first part of DM. I wonder whether this might create any confusion for 
+  > readers. I don't have a good suggestion to this, but this section does 
+  > read as specifying stronger semantics than many of the rest sections.
+  > 
+
+Good point. Don't know how to address it. We can also drop this paragraph
+from the main DM and leave this to part 2. It would consistent with the rest.
+
+TODO: mutability of collections
+
+  > 
+  > 
+  > 
+  > 4.6 Component 6: Annotations
+  > ------------------------------------------
+  > 
+  > Did I miss something? The relationship between Note, Annotation and 
+  > Entities seems to be the only relationship that is not specified in the 
+  > components sections. Is this on purpose?
+
+TODO: Jun: I don't understand. Can you clarify?
+
+
+  > 
+  > 
+  > 
+  > 4.7.4 Attribute
+  > ------------------------------------------
+  > 1. A brief discussion about the difference between prov:label and 
+  > prov:note? Is it a special type of Note?
+  > 
+  > 
+
+I added definition for note:
+
+A note is an identified set of application-specific attribute-value pairs.
+
+The attribute prov:label provides a human-readable representation of a PROV-DM element or relation. The value associated with the attribute prov:label must be a string.
+
+Isn't the difference clear?
+
+  > 
+  > 6. Towards a Refinement of the PROV Data Model
+  > ------------------------------------------------------------------------------------
+  > 
+  > 
+  > Can we have a brief explaination of "partial state"?
+  > 
+  > I don't quite understand this sentence: "The notion of account is 
+  > specified in the companion specification [PROV-DM-CONSTRAINTS], as well 
+  > as constraint that structurally well-formed descriptions are expected to 
+  > satisfy." What does it trying to say?
+
+TODO: To update once PROV-DM-CONSTRAINTS becomes more stable
+
+  > 
+  > "blundling up" -> bundling up?
+  > 
+Done
+  > 

@@ -1,0 +1,41 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2008/05/skos#> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+:e2
+   rdfs:seeAlso <http://dvcs.w3.org/hg/prov/raw-file/2703d00ba10b/model/ProvenanceModel.html#quotation-record>;
+   dcterms:description "wasQuotedFrom(e2,e1,ag2,ag1,attrs)";
+   dcterms:description "an identifier e2, identifying an entity record that represents the quote;";
+   prov:wasQuotedFrom  :e1;
+   rdf:value "Four score and seven years ago...";
+.
+
+:e1
+   a prov:Entity;
+   dcterms:description "an identifier e1, identifying an entity record representing what is being quoted;";
+.
+
+:ag2
+   dcterms:description "an optional identifier ag2 of the agent who is doing the quoting;";
+   a prov:Agent;
+.
+
+:ag1
+   dcterms:description "an optional identifier ag1 of the agent that is quoted;";
+   a prov:Agent;
+.
+
+:quotivity
+   a prov:Quotivity;
+   dcterms:description "an optional set attrs of attribute-value pairs to further describe this record.";
+   prov:hadQuoter :ag2;
+   prov:hadQuotee :ag1;
+   prov:used      :e1;
+   :third_party :attributes;
+.

@@ -1,0 +1,2 @@
+
+entity(e0, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice" ])

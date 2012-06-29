@@ -1,0 +1,78 @@
+%{
+#define YY_ClassnameParser_STYPE yy_ClassnameParser_stype
+%}
+%name ClassnameParser
+%define LSP_NEEDED
+%define ERROR_BODY =0
+%define LEX_BODY =0
+%header{
+#include <iostream>
+#include <string>
+  using namespace std;
+#define YY_DECL int yyFlexLexer::yylex(YY_ClassnameParser_STYPE *val)
+#ifndef FLEXFIX
+#define FLEXFIX YY_ClassnameParser_STYPE *val
+#define FLEXFIX2 val
+#endif
+
+#include <iostream>
+#include <sstream>
+#include <cstdarg>
+
+struct Buf {
+  char* data;
+  int len;
+}
+Buf makeBuf0 () {
+    len = 0;
+    data = 0;
+  }
+Buf makeBuf1 (char *str) {
+    len = strlen(str);
+    data = (char*) malloc(len+1);
+    strncpy(data, str, len);
+    data[len] = 0;
+  }
+  // Build a space-separated concatonation of bufs.
+Buf makeBuf (int count, ...) {
+    va_list bufs;
+    const Buf *src;
+
+    // This is inefficient for a single buf as the created buf could
+    // just steal the other buf's data pointer and delete it.
+
+    // Walk args to find the total len.
+    len = -1;
+    va_start(bufs, count);
+    for (int i = 0; i < count; i++) {
+      src = va_arg(bufs, Buf*);
+      len += src->len+1;
+    }
+    va_end(bufs);
+
+    data = (char*) malloc(len+1);
+
+    // Walk args to fill the data buffer.
+    len = -1;
+    va_start(bufs, count);
+    for (int i = 0; i < count; i++) {
+      src = va_arg(bufs, Buf*);
+      strncpy(data + len+1, src->data, src->len);
+      len += src->len+1;
+      data[len] = ' ';
+      destroyBuf(src);
+      src = 0;
+    }
+    va_end(bufs);
+    data[len] = 0;
+  }
+void destroyBuf () {
+    if (data) free(data);
+  }
+char *str() {return data;}
+%}
+
+%union {
+  Buf *buf;
+}
+

@@ -1,0 +1,41 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix : <#> .
+
+
+# start/end
+:pe1 a prov:ProcessExecution ;
+    prov:startedAt :tA ;
+    prov:endedAt :tB .
+:tA a prov:Time .
+:tB a prov:Time .
+
+
+# generation time
+:e1 a prov:Entity ;
+    prov:wasGeneratedBy :pe1 ;
+    prov:wasGeneratedAt :tC .
+:tC a prov:Time .
+
+
+# used time
+:pe2 a prov:ProcessExecution ;
+    prov:used [ 
+        a prov:EntityInRole;
+        prov:wasAssumedBy :e1;
+        prov:assumedRoleAt :tD
+    ] .
+:tD a prov:Time .
+
+
+# controlled time
+:a1 a prov:Agent .
+:tE a prov:Time .
+:pe2 prov:wasControlledBy [
+        a prov:EntityInRole, prov:Agent;
+        prov:wasAssumedBy :a1;
+        prov:assumedRoleAt :tE;
+    ] .
+
+

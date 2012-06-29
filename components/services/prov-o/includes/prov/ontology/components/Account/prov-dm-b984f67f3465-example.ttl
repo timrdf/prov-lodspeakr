@@ -1,0 +1,38 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2008/05/skos#> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix ex:      <http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#ex> .
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/898c71190fd5/ontology/components/Account/prov-dm-b984f67f3465-example.ttl#> .
+
+:e0
+   dcterms:description "entity(e0, [ prov:type='File', ex:path='/shared/crime.txt', ex:creator='Alice' ])";
+   a prov:Entity;
+   a :File;
+   ex:path "/shared/crime.txt";
+   ex:creator :Alice;
+.
+
+:e2
+   dcterms:description "wasDerivedFrom(e2,e1)";
+   prov:wasDerivedFrom :e1;
+.
+
+:a0
+   dcterms:description "activity(a0,t,,[prov:type='createFile'])";
+   a prov:Activity;
+   a :CreateFile;
+.
+
+:e0
+   dcterms:description "wasGeneratedBy(e0,a0)";
+   prov:wasGeneratedBy :a0;
+.
+
+:a4
+   dcterms:description "wasAssociatedWith(a4, ag5, [prov:role='communicator'])";
+.

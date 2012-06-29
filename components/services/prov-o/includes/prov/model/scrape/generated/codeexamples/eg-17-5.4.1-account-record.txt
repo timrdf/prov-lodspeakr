@@ -1,0 +1,12 @@
+
+account(ex:acc3,
+        http://example.org/asserter1, 
+          entity(e0, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice" ])
+          activity(a0,create-file,t)
+          wasGeneratedBy(e0,a0,[])  
+          account(ex:acc4,
+                  http://example.org/asserter2,
+                    entity(e1, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice", ex:content="" ])
+                    activity(a0,copy-file,t)
+                    wasGeneratedBy(e1,a0,[ex:fct="create"])
+                    wasComplementOf(e1,e0)))

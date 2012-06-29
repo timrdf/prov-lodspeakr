@@ -1,0 +1,5 @@
+
+agent(ag,[prov:type="QualityController"])
+entity(e1,[prov:type="document"])
+entity(e2,[prov:type="document"])
+wasRevisionOf(e2,e1,ag)

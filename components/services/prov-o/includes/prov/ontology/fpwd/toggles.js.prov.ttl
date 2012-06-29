@@ -1,0 +1,85 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix http: <http://www.w3.org/2011/http#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix prov: <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/ProvenanceOntology.owl#> .
+
+<filed://7b766131c1f04bf3b59758a4e58feedc2377f8897e7c57ee2a3db95c0408a37b/SHA256-6c5854e6e626314e2780f57fd2d7df97865087a8ed712e6b667f55524037fb32/toggles.js> a <http://purl.org/vocab/frbr/core#Item>;
+    prov:wasGeneratedBy <http://code.google.com/p/surfrdf/6c97fc1c-93ed-4f6b-9076-15bfd3c66a51>;
+    dc:date "2011-12-12T23:07:46.034679"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    dc:modified "2011-12-12T18:07:46"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    frbr:exemplarOf <hash:Manifestation/SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382>;
+    frbr:reproductionOf <hash:Item/SHA256-da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31-http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash>;
+    nfo:fileUrl <file:////Users/lebot/afrl/phd/prov-wg/hg/prov/ontology/fpwd/toggles.js>,
+        <toggles.js>;
+    nfo:hasHash <hash:SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382> .
+
+<hash:Expression/SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382> a <http://purl.org/vocab/frbr/core#Expression>;
+    frbr:realizationOf <http://dvcs.w3.org/hg/prov/raw-file/dbc7398ffeec/model/releases/WD-prov-dm-20111215/toggles.js>;
+    nfo:hasHash <hash:SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382> .
+
+<hash:SHA256-da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash>;
+    nfo:hashAlgorithm "SHA256";
+    nfo:hashValue "da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31" .
+
+<http://code.google.com/p/surfrdf/236f1e62-3e1f-4c54-9093-9023cd39c927> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "date";
+    http:fieldValue "Mon, 12 Dec 2011 23:07:43 GMT";
+    http:hdrName <http://www.w3.org/2011/http-headers#date> .
+
+<http://code.google.com/p/surfrdf/3858dbc3-7154-47dd-a556-0b7e3cd68c24> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "content-length";
+    http:fieldValue "1599";
+    http:hdrName <http://www.w3.org/2011/http-headers#content-length> .
+
+<http://code.google.com/p/surfrdf/6c97fc1c-93ed-4f6b-9076-15bfd3c66a51> a <http://www.w3.org/2011/http#Request>;
+    prov:hadRecipe <http://www.w3.org/2011/http-methods#GET>;
+    prov:used <hash:Item/SHA256-da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31-http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash>;
+    prov:wasControlledBy <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+    dc:date "2011-12-12T23:07:46.034679"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    http:methd <http://www.w3.org/2011/http-methods#GET>;
+    http:requestURI "http://dvcs.w3.org/hg/prov/raw-file/dbc7398ffeec/model/releases/WD-prov-dm-20111215/toggles.js";
+    http:resp <hash:Item/SHA256-da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31-http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash> .
+
+<http://code.google.com/p/surfrdf/a819e0d4-a989-442c-a1e1-e2ac1b1d65c1> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "vary";
+    http:fieldValue "Accept-Encoding";
+    http:hdrName <http://www.w3.org/2011/http-headers#vary> .
+
+<http://code.google.com/p/surfrdf/c07977c2-618c-416d-abae-ed3cb8b79983> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "content-type";
+    http:fieldValue "application/javascript";
+    http:hdrName <http://www.w3.org/2011/http-headers#content-type> .
+
+<http://code.google.com/p/surfrdf/e5939bac-a9ae-46ad-8cfc-d80b4afc5369> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "server";
+    http:fieldValue "Apache/2.2.16 (Debian)";
+    http:hdrName <http://www.w3.org/2011/http-headers#server> .
+
+<http://code.google.com/p/surfrdf/f6fabf53-2677-4c19-b700-c320054bd475> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "content-disposition";
+    http:fieldValue "inline; filename=\"toggles.js\"";
+    http:hdrName <http://www.w3.org/2011/http-headers#content-disposition> .
+
+<http://dvcs.w3.org/hg/prov/raw-file/dbc7398ffeec/model/releases/WD-prov-dm-20111215/toggles.js> a <http://purl.org/vocab/frbr/core#Work> .
+
+<hash:Manifestation/SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382> a <http://purl.org/vocab/frbr/core#Manifestation>;
+    frbr:embodimentOf <hash:Expression/SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382>;
+    nfo:hasHash <hash:SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382> .
+
+<hash:Item/SHA256-da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31-http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash> a <http://www.w3.org/2011/http#Response>;
+    dc:date "2011-12-12T23:07:43+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    frbr:exemplarOf <hash:Manifestation/SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382>;
+    nfo:hasHash <hash:SHA256-da09eebed83731f98aa833238f71c4876a87bd62deb9ef2cc63d9aec916d0e31>;
+    http:headers <http://code.google.com/p/surfrdf/236f1e62-3e1f-4c54-9093-9023cd39c927>,
+        <http://code.google.com/p/surfrdf/3858dbc3-7154-47dd-a556-0b7e3cd68c24>,
+        <http://code.google.com/p/surfrdf/a819e0d4-a989-442c-a1e1-e2ac1b1d65c1>,
+        <http://code.google.com/p/surfrdf/c07977c2-618c-416d-abae-ed3cb8b79983>,
+        <http://code.google.com/p/surfrdf/e5939bac-a9ae-46ad-8cfc-d80b4afc5369>,
+        <http://code.google.com/p/surfrdf/f6fabf53-2677-4c19-b700-c320054bd475>;
+    http:httpVersion "1.1" .
+
+<hash:SHA256-63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash>;
+    nfo:hashAlgorithm "SHA256";
+    nfo:hashValue "63823aa544613fb0ea916ac9a4bcd8e50cb3b1418669d66237df0a3f6346e382" .
+

@@ -1,0 +1,152 @@
+  > 
+  > - In the beginning of the working draft "How to read the PROV Family",
+  >   it is said that "Developers seeking to retrieve or publish
+  >   provenance should focus *on* PROv-AQ". Given the discussion that we
+  >   had few weeks ago on using a SPARQL end point to query provenance
+  >   that is encoded using provo. I would add PROVO as well to that
+  >   sentence.
+
+Do we use sparql to *retrieve* provenance? To query it, yes. 
+
+  > 
+  > - Fourth public working draft -> Fifth working draft
+  > 
+
+it's still the fourth *public* WD.
+
+
+  > - 1.1 Structure of the document. "... which are allows users" -> "which allow users"
+
+Done.
+
+  > 
+  > - 2.2 Generation, Usage, Derivation In the definition of Usage it is
+  > said that "Before usage, the activity had not begun to consume or use
+  > this entity and could not have been affected by the entity". I note
+  > that this sentence assumes that an entity can be used only once by an
+  > activity. In practice, the same activity can use the same entity, for
+  > example with different roles.
+
+Is this implied by consumption? Then, yes, it was not the intent.
+
+Replaced consumption by utilization
+
+  > 
+  > - The usage example states situations in which the usage implies that
+  >   the activity consumes the entity, and others in which the entity
+  >   remains intact. Will is be useful to distinguich these two kinds of
+  >   usage explicitly, by specializing the usage relation? In particular,
+  >   I note that the notion of consumption entails interesting properties
+  >   such as the invalidation of an entity and the fact that an entity
+  >   can be consumed by at most one activity.
+
+This is ISSUE=23:
+http://www.w3.org/2011/prov/track/issues/23
+
+
+  > 
+  > - 3.1 Illustration of PROV-DM by an example.  I find this section hard
+  > to read, and this is not the first time I read it. I think its
+  > readability can be improved if the following comments are
+  > considered. - In the text, the first and second working draft are
+  > referred using identifiers that are not intuitive,
+  > tr:WD-prov-dm-201.... I am not suggesting not to use them, but to
+  > specify whether they represent the first or the second working draft,
+  > whenever they are used in the text. - The figure given at the end of
+  > Sectio 3.1 can be more helpful in guiding the reader if it placed
+
+Examples was trimmed down, and reorganized.  Thoughts?
+
+
+  > earlier in that section. - Talkiing about the figure the fact there
+  > are two arrows that link an arrow to a class, I understand their
+  > meaning, by I am not sure the reader will. - Section 3.2 giving
+
+I don't understand what is being referred to.
+
+  > information about the provenance form the author point of view seems
+  > to be simpler, and I think it would be better to start by the
+  > provenance from the author point of view before presenting the
+  > provenance from the process point of view.
+  > 
+
+
+Done: we now start with the author view.
+
+
+  > - 4: PROV-DM Types and Relations I am not sure the notion of component
+  > helps in the readability of the document. Refering to component1,
+  > component 2, etc. in the text is not helpful. I guess the only
+  > justification of using the term component is Figure PROV-DM component,
+  > which shows dependencies between those component. That said, I don't
+  > think that figure is helpful. It simply used to specify that one
+  > concept or a relation in a component depends on one concept or
+  > relation in another component. I note also that the term component is
+  > used in the text to refers to the definition elements in PROV-N. I
+
+Removed a confusing occurrence of component, and also constituent.
+
+
+  > would therefore suggest not ti use the notion of component, and rather
+  > use directly heading such as "Entity, Activity and their Relations",
+  > "Agent and their Responsibility", etc.
+
+It's useful to have groupings of concepts, to give some structure to the dm.
+The term component is reasonable for this.
+
+
+
+  > 
+  > - One of the consequence of trying to structure the model into
+  >   component, is the fact that the reader will have to read the details
+  >   of communication and start by activity, before reaching the
+  >   definition of agent, responsibility and derivation, which are far
+  >   more important for the ordinary reader. That said, I think the
+  >   starting point which are in the beginning of the document already
+  >   introduced the main concepts and relations.
+
+'far more important' is a very relative concepts. Some may not want
+to express derivation, some may not want to express responsibility.
+
+Having thought about it a lot, it is not clear what other logical
+order to follow.
+
+
+  > 
+  > - 4.1.8 Start by Activity In the example given it is not explained why
+  > a2 was started by a1. There is an assumption that the reader will
+  > understand that a sub-workflow will be started by the parent
+  > workflow. I think this should explicitly stated.
+
+Added: "It is assumed that the activities <span class="name">a1</span> and <span class="name">a2</span> are of type "workflow" and "subworkflow", respectively; the latter was started by the former."
+
+  > 
+  > - 4.4.1 Specialization In the first paragraph: "common entity" ->
+  > "common thing"
+
+I don't see this. 
+
+  > 
+  > -4.5 Component 5: Collections I think that there is a need for
+  > defining collection here.  Although it is stated that a collection is
+  > an entity. I feel there is a need for specifying what the members of a
+  > collection are as part of the collection specification, even when the
+  > specification of those members is optional.  The membership relation
+  > fulfills the above requirements only partly, it is meant to specify a
+  > subset of the members that belong to a collection, not necessarily all
+  > of them.  Therefore, I would suggest using a dedicated chracterizing
+  > attribute "members" for entities that happen to be collections.
+  > 
+  > For example, we can define a collection c1 as
+  > entity (c1, [prov:type="Collection", prov:members = {<k1,v1>,...,<kn,vn>}]
+  > 
+
+It goes against the convention we adopted in prov-dm that all
+relations between entities that matter from a provenance viewpoint are
+expressed by means of prov-dm relations, and not by means of
+attributes.
+
+
+We have added an optional attribute complete to the relation membship
+to address this specific point.
+

@@ -1,0 +1,197 @@
+  > High-level comments:
+  > 
+  > * I feel that the PROV-DM document takes a long time to get to the
+  >   point.  We do not see any concrete examples of PROV notation (in
+  >   PROV-N or PROV-O) until the end of section 2.  Moreover, the
+  >   discussionfocuses on explaining the concepts in isolation rather
+  >   than describing the high-level modeling problems they work together
+  >   to solve.
+  > 
+  > Suggestion: Move the PROV-N section to the beginning of sec. 2 and
+  > illustrate the concepts through examples.  Or, arguably this is
+  > redundant given that the primer does more or less the same thing:
+  > perhaps, simply drop section 2 and proceed to the specification.
+
+
+We received suggestions
+- to move prov-n section earlier (james)
+- to move it later (gk)
+- that the structure is right.
+
+It feels that it's about right! 
+
+Examples can optionally be hidden. There is now just one page of concept
+definitions, before getting to the class diagram.
+
+
+  > 
+  > * The main examples (sec 3.1, 3.2, 4.6) are too "meta" - why not
+  >   restate them in more generic terms.  These examples about describing
+  >   the WG's own activities sound a little self-centered.
+
+The point was to have a *real* example with real urls.
+Furthermore, nothing in the provenance descriptions is really specific
+to the prov-wg, in the sense that all Recs go through the same kind
+of transition.
+
+  > 
+  > Given that both the primer and ontology use extended examples, why not
+  > align with one or both of them?
+
+As a WG, I would hope we can come up with more than one examples.
+
+  > 
+  > * I feel that the document doesn't lay things out in a logical order.
+  >   I think it would be helpful to list the basic or standard
+  >   constituents first: they are currently in sections 4.3 and higher.
+  >   In particular, the fact that some attribute names are reserved is
+  >   left implicit in several descriptions of examples, and not
+  >   explicitly discussed in the corresponding section.
+
+
+I am worried about the reference to section 4.3 which refers to an old version of the document
+WD4? pre-component?
+
+I think it's more important to explain the various concepts first, before
+some of the building blocks, e.g. namespace, identifiers, attributes.
+
+Added forwarding links for prov:type in entity/activity examples.
+
+  > 
+  > * PLEASE say somewhere prominently what the convention(s) are for
+  >   optional arguments.  Some are simply omitted (e.g. initial
+  >   identifiers, attribute lists) while others are replaced by "-".
+  >   Please make sure that all of the examples make sense with respect to
+  >   whichever convention is in use.
+
+Updated section 2.6 clarifying some of these issues.
+
+  > 
+  > * Reading the document, I wondered why generation and use have time
+  >   instants rather than intervals.  Why couldn't an activity use
+  >   something over an interval, or generate something during an
+  >   interval?  We should say why we only care about the end of
+  >   generation and beginning of use.
+
+We had voted definitions for generation/usage. I am just reusing them.
+
+  > 
+  > * There are a LOT of parenthetical examples, which I think stand
+  >   little chance of making sense to a reader who hasn't been following
+  >   the mailing list.
+
+
+Which ones? Can you list them? Alternative suggestions are welcome!
+
+  > 
+  > 
+  > Detailed comments:  (Quotes with starred substrings represent suggested edits.)
+  > 
+  > Why "people" and not "agents"?
+
+Same commennt as Curt.  I think it's important to talk about people
+here. Our agents only mean "bearer of responsibility".
+
+  > 
+  > Why do we say that the various aspects of the standards are necessary,
+  > rather than just appropriate?  There may be other ways of dong this.
+  > 
+  > Sec 1.  "very quickly" -> "quickly"
+  > "extra-descriptions" -> "extra descriptions"
+  > "interval " -> "intervals"
+  > 
+
+Done
+
+  > Section 4 provides the *definitions* of PROV-DM concepts, structured
+  > according to six components.
+  > 
+
+Done.
+
+  > 
+  > 2.2: "A same entity" -> "The same entity" - this happens many times
+
+Fixed it twice.
+
+  > 
+  > 2.6.  The activity in the example has the wrong number of arguments
+  > (the times are omitted, but I believe should be replaced with "-").
+  > Also, the convention about missing arguments being written "-" is very
+  > important and should be explained somewhere prominently, with
+  > examples.  This happens many more times.
+
+Updated section 2.6.
+
+  > 
+  > 3.1.  "(some of which *locate* archived email messages, available to W3C Members)."
+
+used 'refer'
+
+  > 
+  > 4.1.2.  The reserved attribute "type" is mentioned here.  Where is hte
+  > list of all reserved attributes?  Why not list them up front as part
+  > of the preliminaries?
+
+In section 4, for the first occurrences of prov:type and prov:role, I have
+added link to their respective sections.
+
+  > 
+  > 4.1.3.  The first example in Generation: p1 and p2 should be in code font.
+
+Done
+  > 
+  > 4.2.3.  The missing id arguments to wasAssociatedWith in the examples
+  > are not marked as "-".  Happens again in 4.2.4, 4.1.5, 4.1.6, etc.
+  > Also, many missing attribute lists are omitted without being replaced
+  > by "-".  This is a sensible convention but is not stated anywhere.
+
+Updated bullet 3 in section 2.6.
+
+  > 
+  > 4.2.4.  The examples discussed in the second paragraph are not
+  > mentioned anywhere else.  So say "For example" instead of "In the
+  > example".
+
+Yes.
+  > 
+  > 4.2.4.  Here and elsewhere, the term "modalities of ..." is used to
+  > describe what the attributes are for.
+
+Replaced everywhere according to GK's suggestion
+
+  > 
+  > 4.2.4. "a funder agents" - case mismatch
+
+Repharsed:
+
+"The following fragment describes three agents: a programmer, a researcher, and a funder."
+  > 
+  > 4.3.1 " And to provide a completely accurate description of the
+  > derivation" -> "To provide a more accurate ..."
+  > 
+  > 4.6. "extra-information" -> "extra information"
+  > 
+Done
+
+  > 4.6.  Concerning annotations, why would I want to do this instead of
+  > directly putting the x and y positions on the entity?
+
+The assertions of entity and note occur at moments.
+
+  > 
+  > 
+  > 4.7.4.[3,4]: Why are role and type attributes allowd to occur multiple
+  > times?  Ordinary attributes aren't (I thought).  If we want to allow
+  > multiple occurrences of attribute names, why stop with these two?
+  > 
+
+TODO: We could  allow prov:label and prov:location to have multiple occurrences?
+Does this make sense for prov:location?
+
+  > 
+  > 4.7.5 "the string "abc", the string "abc" " - repeated text
+  > 
+  >
+
+Yes

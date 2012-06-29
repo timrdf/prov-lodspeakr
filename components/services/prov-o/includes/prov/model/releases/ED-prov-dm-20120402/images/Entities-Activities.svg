@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="348"
+   version="1.1"
+   width="777"
+   id="svg2"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="Entities-Activities.svg"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438">
+  <metadata
+     id="metadata88">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs86">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 174 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="777 : 174 : 1"
+       inkscape:persp3d-origin="388.5 : 116 : 1"
+       id="perspective90" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1280"
+     inkscape:window-height="978"
+     id="namedview84"
+     showgrid="false"
+     inkscape:zoom="0.67816092"
+     inkscape:cx="200.49153"
+     inkscape:cy="171.05085"
+     inkscape:window-x="1280"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <rect
+     fill="#ffffff"
+     height="138"
+     stroke="#ffffff"
+     stroke-width="1"
+     width="106"
+     x="454"
+     y="71"
+     id="rect4"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <rect
+     fill="none"
+     height="138"
+     stroke="#000000"
+     stroke-width="1"
+     width="106"
+     x="454"
+     y="71"
+     id="rect6"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-family="Lucida Grande"
+     font-size="13"
+     x="483"
+     y="85"
+     id="text8"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">
+Activity</text>
+  <rect
+     fill="#000000"
+     height="1"
+     stroke="#000000"
+     stroke-width="1"
+     width="106"
+     x="454"
+     y="95"
+     id="rect10"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-family="Lucida Grande"
+     font-size="13"
+     x="458"
+     y="110"
+     id="text12"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">
+id</text>
+  <text
+     font-size="13"
+     x="458"
+     y="127"
+     id="text14"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">startTime</text>
+  <text
+     font-size="13"
+     x="458"
+     y="144"
+     id="text16"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">endTime</text>
+  <text
+     font-size="13"
+     x="458"
+     y="161"
+     id="text18"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">attributes</text>
+  <rect
+     fill="#000000"
+     height="1"
+     stroke="#000000"
+     stroke-width="1"
+     width="106"
+     x="454"
+     y="179"
+     id="rect20"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <polyline
+     fill="none"
+     points="560,167 630,167 630,263 558,263 558,209"
+     stroke="#000000"
+     stroke-width="1"
+     id="polyline22"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="565"
+     x2="558"
+     y1="221"
+     y2="209"
+     id="line24"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="551"
+     x2="558"
+     y1="221"
+     y2="209"
+     id="line26"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-family="Lucida Grande"
+     font-size="13"
+     x="632"
+     y="183"
+     id="text28"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">
+wasStartedByActivity</text>
+  <rect
+     fill="#ffffff"
+     height="144"
+     stroke="#ffffff"
+     stroke-width="1"
+     width="96"
+     x="14"
+     y="63"
+     id="rect30"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <rect
+     fill="none"
+     height="144"
+     stroke="#000000"
+     stroke-width="1"
+     width="96"
+     x="14"
+     y="63"
+     id="rect32"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-family="Lucida Grande"
+     font-size="13"
+     x="44"
+     y="77"
+     id="text34"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">
+Entity</text>
+  <rect
+     fill="#000000"
+     height="1"
+     stroke="#000000"
+     stroke-width="1"
+     width="96"
+     x="14"
+     y="87"
+     id="rect36"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-family="Lucida Grande"
+     font-size="13"
+     x="18"
+     y="102"
+     id="text38"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">
+id</text>
+  <text
+     font-size="13"
+     x="18"
+     y="119"
+     id="text40"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">attributes</text>
+  <rect
+     fill="#000000"
+     height="1"
+     stroke="#000000"
+     stroke-width="1"
+     width="96"
+     x="14"
+     y="157"
+     id="rect42"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <polyline
+     points="454,87 110,87"
+     id="polyline44"
+     transform="translate(0,-2)"
+     style="fill:none;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="122"
+     x2="110"
+     y1="80"
+     y2="87"
+     id="line46"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="122"
+     x2="110"
+     y1="94"
+     y2="87"
+     id="line48"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-size="13"
+     x="262.13574"
+     y="103"
+     id="text50"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">used(t)</text>
+  <polyline
+     fill="none"
+     points="454,111 110,111"
+     stroke="#000000"
+     stroke-width="1"
+     id="polyline52"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="442"
+     x2="454"
+     y1="118"
+     y2="111"
+     id="line54"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="442"
+     x2="454"
+     y1="104"
+     y2="111"
+     id="line56"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-size="13"
+     x="222.55176"
+     y="127"
+     id="text58"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">wasGeneratedBy(t)</text>
+  <polyline
+     fill="none"
+     points="558,71 558,15 630,15 630,103 560,103"
+     stroke="#000000"
+     stroke-width="1"
+     id="polyline60"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="572"
+     x2="560"
+     y1="96"
+     y2="103"
+     id="line62"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     fill="#000000"
+     stroke="#000000"
+     stroke-width="1"
+     x1="572"
+     x2="560"
+     y1="110"
+     y2="103"
+     id="line64"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-family="Lucida Grande"
+     font-size="13"
+     x="633"
+     y="28"
+     id="text66"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">
+wasInformedBy</text>
+  <polyline
+     points="454,207 110,207"
+     id="polyline68"
+     transform="translate(0,-34)"
+     style="fill:none;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     x1="122"
+     x2="110"
+     y1="166"
+     y2="173"
+     id="line70"
+     style="fill:#000000;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     x1="122"
+     x2="110"
+     y1="180"
+     y2="173"
+     id="line72"
+     style="fill:#000000;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-size="13"
+     x="233"
+     y="188"
+     id="text74"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">wasStartedBy(t)</text>
+  <polyline
+     points="454,159 110,159"
+     id="polyline76"
+     transform="translate(0,-18)"
+     style="fill:none;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     x1="122"
+     x2="110"
+     y1="134"
+     y2="141"
+     id="line78"
+     style="fill:#000000;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <line
+     x1="122"
+     x2="110"
+     y1="148"
+     y2="141"
+     id="line80"
+     style="fill:#000000;stroke:#000000;stroke-width:1"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438" />
+  <text
+     font-size="13"
+     x="236.56738"
+     y="156"
+     id="text82"
+     style="font-size:13px;font-family:Lucida Grande"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/Entities-Activities.png"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-ydpi="79.550438">wasEndedBy(t)</text>
+</svg>

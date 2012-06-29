@@ -1,0 +1,31 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix :        <http://example.com/> .
+
+:newsArticle
+   a prov:Entity;
+   dcterms:title "Review of the last presidents of the United States of America"^^xsd:string;
+   prov:tracedTo       :president_obama;
+   prov:qualifiedTrace :trace1;
+.
+   
+:trace1 
+   a prov:Trace;
+   prov:entity        :president_obama;
+   prov:hasAnnotation :noteFromTheAuthor;
+.
+     
+:president_obama 
+   a prov:Entity, prov:Agent;
+.
+
+:noteFromTheAuthor {
+   :noteFromTheAuthor a prov:Note .
+   :trace1 
+      rdfs:comment "The main motivation for the article was the latest president"^^xsd:string;
+      :annotatedAtTime "2011-07-16T01:52:02Z"^^xsd:dateTime;
+   .
+}

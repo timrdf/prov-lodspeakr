@@ -1,0 +1,165 @@
+/* --- Override ReSpec.css --- */
+
+code {
+    color:  #224433;
+}
+
+
+/* --- PATTERNS --- */
+pre.pattern {
+    border-top: 1px solid #224433;
+    border-bottom: 1px solid #224433;
+    color:  #224433;
+    padding:    1em;
+    margin-top: 1em;
+}
+
+pre.code {
+    color:  #224433;
+}
+
+/*
+pre.pattern::before {
+    content:    "";
+    display:    block;
+    width:      150px;
+    background: #224433;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+*/
+
+
+/* --- EDITORIAL NOTES (from model doc) --- */
+
+.issue {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.issue:before {
+    content:    "Issue";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.TODO {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.TODO:before {
+    content:    "TODO";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.pending {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #BFEFFF;
+}
+
+.pending:before {
+    content:    "Pending Review";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.resolved {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #9BCD9B;
+}
+
+.resolved:before {
+    content:    "Resolved";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.inference {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 0px solid #f00;
+    background: #fff;
+}
+
+.inference:before {
+    content:    "Inference";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+/* --- Labelled value layout --- */
+
+div.label-value {
+    display: block;
+    position: relative;
+    left: 1em;
+    height: auto;
+}
+
+span.label {
+    display: inline-block;
+    vertical-align: top;
+    font-style: italic;
+    min-width: 20%;
+}
+
+span.value {
+    display: inline-block;
+    vertical-align: top;
+    width: 80%;
+    height: auto;
+}
+
+span.code {
+    font-family: monospace;
+}
+
+
+/* "Macro" for provns namespace */
+
+provns:before {
+    content:    "http://www.w3.org/ns/prov#";
+    display:    inline;
+    font-family: monospace;
+}
+

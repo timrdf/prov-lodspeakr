@@ -1,0 +1,1653 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.47 r22583"
+   width="1007.5"
+   height="1340"
+   xml:space="preserve"
+   sodipodi:docname="w3-publication1.svg"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs6"><marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"><path
+         id="path4788"
+         style="font-size:12.0;fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" /></marker><marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;"><path
+         id="path4770"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;marker-start:none;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" /></marker><inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       id="perspective10" /><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask22"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmkAAAD3CAAAAABj6ZwUAAAAAXNCSVQI5gpbmQAABVFJREFUeJzt2stu4zgQRuEqkpKdGI15/wft2CbFqllEsbsbmEVDwR9McD5AgG8LLg6KutgMAAD8Hf/jtf/XD4G/k/uxe5TlbsXNnNbwGdIsLTMt99r2rty9eCnuTmj4HBkWERkWZvZRmnsppdZavRit4bi0zIiYc0ZkmJk1MzPzUlpdllprZarhE2RmxNy24dOmp+2luZfWltO6ttq8UBoOy4yYY/TiZjafpZVSl9PL+bQurVRKw2GZc9t6v7mZhXs+ds/aTi+Xy+vptDRKw3EZc/T7tbllzOd5mpe6rufLP5fX86nV8rVrxHeQMfr9upaMudX5MdPcS63r6fXy4/J6Whql4bCco18Xn73393O1xxVBrcvp9fLj9by2+rVrxHcQc9yaR7+2Vv1ZmnmpbT2dX14vL+tCaThszt5KjNOy1Frc7TnTSq3LejqfX87MNBwXWysxbmvbO3vMNPNS27Kup/O6UhoOm63kWJbWain2y+5pXkqttS1LY/fEJ6hbtGVptfge2kdpZmZeipdSSuHiEweFlff/azyfbRYzc7f9I3d3JzQctVfm/myLrKBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgQWnQoDRoUBo0KA0alAYNSoMGpUGD0qBBadCgNGhQGjQoDRqUBg1KgwalQYPSoEFp0KA0aFAaNCgNGpQGDUqDBqVBg9KgUcws0zIzzSwzM+Or14T/vciHj7ba89uMyIgIJzUcFRF7bR+f7KVlxJxzG2PrRmg4bM5tG2ObkWHvsb2XlpYxt9H7vVrUr1whvofY+r2PsW0z9tSamVlmxJyj32/V50JpOGzOfr/d7n2bkb/NtJhbv9/WZnNtlIbDYo7b9e12H2PurX3MtDnH/a3a7EvjxgcOyzn69e3n9b5tMx+7Z2bM2e9vi81+apXScFjG6Pfrz7dbHzN+OU+L2WutNq6npVX/2jXiO8iYe2pjzl/up+Xc7mbzvi6tUBqOy5zb1vvtev9jpvkcZnO02rxQGg7LjJhj9N7HzN+uCDbLnL3W6k5pOCwzI+a2jW3O+ZxplmFbxFarF6M0HJeWGRFzPu7c7lm5e/FSnImGz5JhEZGxP958hOVuxc3cSA2fIN/nWtrHM/Zfu/I/3gMH5H4AwDf0Lxinqnls5Cc6AAAAAElFTkSuQmCC"
+         id="image24" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask30"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,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"
+         id="image32" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask38"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,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"
+         id="image40" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask46"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,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"
+         id="image48" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask54"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA8CAAAAAAY1Vi7AAAAAXNCSVQI5gpbmQAAAmRJREFUSIntl8tyozAQRfslYUgy//+jNkjqxywAG1IVlMVspsrNxlW2ju9t0+Y2wLuOhYdX6/WLiu36xkAEQkJA7FIiAsIjIuLEQCRkJiTsQiIC3N3cHRwAAGRHEIswcxcS4OFuampoGAcGMUvKkoSIOowIN9NWERXswAAkyfk2ZBHuMCDMrLVCABGIsTOQWFIepykPSZg6Oky1LjPD2tgnA0nSbfr6HG9Dkg7DrdXySOjuduopcRrGzz8f4y0nvrQCZnWZBU1V1fDFIGLJw/jxNY1D4ut+WKtZ0JYkTHDQAcQieRynz2nI+1s/eLFWGL0MSRjppQMRiSXn2zhNty6jMnjdEAcvgEjMKQ/DbewxlNHakBLTbnq/T5GIOUnKOcs1g9FbEmEmODEAEJCZmJlFOgPjwsxEr5nY+4GIgEhERHj54zoiEq7DiQgYAJe6f1lvxpvxZrwZb8Y/ZMQargIOIeunCoDYPrieeT1fACDCI9zdLilh5uHhh++S/Xy4m2prgp3nnKo2VfOXZHkiTFurJVHYdYaxWkptqvbUuzFgDVmLsGs3OyzLUmpT882QrAh301qWhNFSj6FlfsylqtlmZvfi1uqcyTXnXpbSujzuc2lqRx3gZq0ud/JasvTzWF3u97k0++alERN5GXLiDmN1/XgsVU+50I0aQbQ5JenlZDDTVsq8VD3piDDACE3CxNf7R4CbWau16FlHOEANV2ai64gLEB5u1rSZOxx6GuEAYUrHiPQTI1aK2X6jPvcXIGQk6KnYKOG+p/XDLobrDoXQXce2AYfn1J0O/AKwUaDzD/Hf1l8x8qg8IVS+bAAAAABJRU5ErkJggg=="
+         id="image56" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask62"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA8CAAAAAAY1Vi7AAAAAXNCSVQI5gpbmQAAAmRJREFUSIntl8tyozAQRfslYUgy//+jNkjqxywAG1IVlMVspsrNxlW2ju9t0+Y2wLuOhYdX6/WLiu36xkAEQkJA7FIiAsIjIuLEQCRkJiTsQiIC3N3cHRwAAGRHEIswcxcS4OFuampoGAcGMUvKkoSIOowIN9NWERXswAAkyfk2ZBHuMCDMrLVCABGIsTOQWFIepykPSZg6Oky1LjPD2tgnA0nSbfr6HG9Dkg7DrdXySOjuduopcRrGzz8f4y0nvrQCZnWZBU1V1fDFIGLJw/jxNY1D4ut+WKtZ0JYkTHDQAcQieRynz2nI+1s/eLFWGL0MSRjppQMRiSXn2zhNty6jMnjdEAcvgEjMKQ/DbewxlNHakBLTbnq/T5GIOUnKOcs1g9FbEmEmODEAEJCZmJlFOgPjwsxEr5nY+4GIgEhERHj54zoiEq7DiQgYAJe6f1lvxpvxZrwZb8Y/ZMQargIOIeunCoDYPrieeT1fACDCI9zdLilh5uHhh++S/Xy4m2prgp3nnKo2VfOXZHkiTFurJVHYdYaxWkptqvbUuzFgDVmLsGs3OyzLUmpT882QrAh301qWhNFSj6FlfsylqtlmZvfi1uqcyTXnXpbSujzuc2lqRx3gZq0ud/JasvTzWF3u97k0++alERN5GXLiDmN1/XgsVU+50I0aQbQ5JenlZDDTVsq8VD3piDDACE3CxNf7R4CbWau16FlHOEANV2ai64gLEB5u1rSZOxx6GuEAYUrHiPQTI1aK2X6jPvcXIGQk6KnYKOG+p/XDLobrDoXQXce2AYfn1J0O/AKwUaDzD/Hf1l8x8qg8IVS+bAAAAABJRU5ErkJggg=="
+         id="image64" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask70"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF8AAABFCAAAAAAJamXUAAAAAXNCSVQI5gpbmQAABLpJREFUWIXtmNtyKjkMRXWxZTck8/8/OrRvkubB3dDhJCccqKmpmooeKKBgbXlbtlsG+In/MvDPf+7/Dh8REBDB3QH8UZFH+YhISDj55uYPKjzERwQiYiJCBHczUzN7aBAP8BGRiJgDMxGCm+lQVbNHBvEtH5GQmTmEEAMTgtsYY3Qdaur2ncLv+dN15hBDlBhDYAK10UdvbYyh39v0Oz4iEjFzCDFKikliDAQ2emuttdb7GOM7m77mE2zGxBglSU45yc4vtdTaWht9qOrvbPqCj4iETCFMesppyTmJMINqa6WupdTSWuujD9WvC/ZTPiISEweOQURSSnlZck5JIhOY9lZLKWUttbTaWx+znD5V+JW/FTtzDBJFUk55yUvOWSTu8zsFylpKabX1vtsEdk8Ln6ROtM2pJFkmPS2SYoxMBGZj9LYrrLXUVnufg3C8HwTe0QmnMTGKpJTzpOckEmPgWf+qo7fWar0qzLnWoaZ3NuERDlvqQeRIT5M+8QDmqnMJ1LqZVEptrbfR9X5J4I0+jYksMSaZ8LyknEQkxm132PY3Ux2j995qK6WsZa2l1DqXhKq6XhXwit9dj5LSjS4iUUIITERIAAgOYG6mqn303lotdY5hbWUuiTHM9hWBO54phDgzTzkvOeclJRGREJmZCQmvyTi4uekcRGttKqx1raXV1kbTYToFwo5njpIk57QsE5+ySIwxcCBiRDxMFQKwE6sFjdp7X2qdCtuioAYDFPzGJ+KY8rIsy3JalpzzPqcHYwAACABsKiCgs0WNY/TUayt1Leu6rpe4IgIMO/ABOUg+nd9O5/NyytP2GDjQB2Noe90UCMicOajISD23U13Xy0UkEJgZ6dUfJOaYlre/3t7ezqecRSSGcK2YD/Sbws0mi0N6bq0u65JEGMzczdB3PlKQtLy9//X+fjrlFEMMd3N6g+8fDzYZB5UuPdckITDYGDqI7OA/h7Sc397f389LjlvqX9I/s0nDkL7tUK3UFjpc8wckDlHy6fR2Pi8SJx1+R7+zCYwtaIjM4NqWiwQi0g/5B5kFlCV8l/onNhGQMTOCjpZTZGbE2/wiEnGMKUkSifzZnH4tcZtrRPCeksQYGAkQbvWJxBzDVvGHYn8gjjb5iDHEuWjgmv9+YF03gj+gbz81AEAnZCaedQ03f6b6fP7DP6Z/HATSgfLr+fUM+/qvX07HjYVTEeGo/FQgXnGT9Fyuj8cP/4f/w//h/1/5AQDA3d0dfL75bBt/LHz2Fr4HfDhfzM3MVJ8/AdxVVdX91mBsfDdX0zF6D2RPe+Y+Rh86VO/47mCzLy9g/DzftNXa+pjt6pGvOkZvJaArv+JPK+taWlczv+Xv4KajlTWgjfg8H0x7vayltrH3kWEf2Oh1jWi9hhf4rr2Wy2WdAtf8wUx7KxeylmPgp/HgNlpdL3+XNo79l4OOXgi15BjCK0tOtfdSLmttWw1t+aN2BB8Sw/7g+1z+rtp7raX2YXbL310B3EcIzPhC/u5m8/Jg6LG/cwMA9x6I6ZUHOIfZFnfdC3SvfwM3o3kD+Ur47O3NZvrXppmA9gvUVwR8v369ux+A7eH2+M2TAlMD7u43jp9eqJ/D6088Ev8ADyxgGctUYFYAAAAASUVORK5CYII="
+         id="image72" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask78"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABCCAAAAAA6KnT+AAAAAXNCSVQI5gpbmQAABWZJREFUWIXtmNmS4zYMRbGQ1Ob2/P9njmwtXADkgZJsddvTk9TkKWGVylUScQjBBHghgP/H3xn43WOsPwYAYPXnH7AQAQkQ9ylmZmZgb3nvWIhIQMiIWGlmZmpqWom/zUIEQiYiJiIkQAQzUBMTFTUxfUl7wUIERiZmx8xMhIQAYGoq+1B9RfvKQiRidttgYkJEMDMVLZIll1KkvKJ9ZiEisXMueO+Dc94xMxIAqIlILrmknHLJRUQ/x819RjE5Dj40ITRN8N47ZiIAU9VSck4pphRTyrmI6HmPnFmExM6H0DZt27ZNE4J3zIRoYCqSc0pxjcsa1xRzQpETzJ1RzD6Etu26vuvatgneOaYt9iKSc4zrusxLWDlSAlDT1yxCdj60Xdf3Q993bRuCq24BGKiJ5JLSuizdPM3OEWIuivaKRcjON13XD5fLMPRt2wTnHNG2v7aIpbQuXRuCc0QIUEDtKwuRnW+77nL5+Bgufdc2YQs8AdZtX2Ft2zYh+MqC8khS90ARu6brLx/Xj+tlOFCIVCccsKYJwXvHhGgGBvKVReybtrtcr9cfl0vfNcE5ZiREQEADMDBT9ZJD8N45JkRQADUDPbMQ2fmmHz6uP35cL0PXBM9c0wehXlYTyZWaD4SmaiJme/zdJ7c+rj+u16FrQ436c14gALAhETMTEZqZSBFVkxMLkZ0P3XC5Xq8fQ9+Fuq0qqQZMK44NCQkJzFSylCKim2PucMv5th8ul4/L0HfBM9GJBEAHDWuyq9TcFCE7sZh903TDZej7rg3e7U7tpCeaETg0MykppRhTZpWnd0QidqHt+mHo24r6QjpoCATgTUtNgpjy5ph7Clfb9V3XNqH+3y9QAEAKAEjAXkru1n5uV+cyoh3Tkcj50HRd1/watd8kYh9C07Vt4z0zPR7V+heaJmxFpk5/haoWCETsQhOaJnxeG5HY+9A0wTs+9sKbQZsBOxdCE46q9PCL2dUquq3yxqsnG+Zayl09ER5+1XUq6RsUANUThthxPV2e4gWIhLSdYN+jtoG0pdN+HG9GCISIWO9/j6nxPwzw6d0BAGFTDu93w1dYfaVDwexWBlCPOwMA0Ff2z0P3mWB26J+9aILWKvxWeLxAHQb2cBbAdrWg22H8rWNQj9/dxB45ZGYqUoocJ/svYQpgpqpSpBRRUX34ZaYiUnLOG+3XMK02IqWknHPZ1z/eUXJOMaZcRL+RkrqvXkpKMZUiqo/Ym6mUkmJMKVXNAQD6xrMad1UpKaYYUyrbm+x+qZac4rIsMT6evYTVm6qSU4rLusact8W3WmgmJad1mWt9JqzFXr/u2cOrnOK6LPOyplK2tblOqSeVc47Z7YmEAGbnhFI7UHGd7uM43qZlTSInFhAiM7NzTESPxHim6SbyVUuJcZpu48/xPi8py8mvrVQQMRES0JaZz7SdZCqlxHWabuP4836fD7cOFgIiIdKu521D7dLeDpKK5LjM020cx9ttXlIRPbOqIQHuBdrANpeOvmNTrTnFZZrG2/hzvM1zzGUXOvyM2m2qI2oGarZRTU1VpOSY1rnGarxPc8z5EOcPv/bVDdRMt2H1kprGpZQU4zJP0ziO43ibpiVlPTb1ob8MVDIgVsGc0lddCFJ1YVyX6X6/3+7TvKYsh5R70phmAls65ZRifK9X52W6T/d5WtaYy1P78aR9lQQArGbauvxCR8/zNM/LEtMJddLkSmJW06myzvpey0PfL+sSY87yVt+DkpbaX8T1N/oOETkV9HMPo2i1yKW0hiY0Wz+E+KYfOp8Nv9+nqX7Xp/2b/SP80b4W/mS/fcTtj3wHOLzDJ+Xxz79PHI//xneT/8L4C+CHknaJvj28AAAAAElFTkSuQmCC"
+         id="image80" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask86"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABCCAAAAAA6KnT+AAAAAXNCSVQI5gpbmQAABWZJREFUWIXtmNmS4zYMRbGQ1Ob2/P9njmwtXADkgZJsddvTk9TkKWGVylUScQjBBHghgP/H3xn43WOsPwYAYPXnH7AQAQkQ9ylmZmZgb3nvWIhIQMiIWGlmZmpqWom/zUIEQiYiJiIkQAQzUBMTFTUxfUl7wUIERiZmx8xMhIQAYGoq+1B9RfvKQiRidttgYkJEMDMVLZIll1KkvKJ9ZiEisXMueO+Dc94xMxIAqIlILrmknHLJRUQ/x819RjE5Dj40ITRN8N47ZiIAU9VSck4pphRTyrmI6HmPnFmExM6H0DZt27ZNE4J3zIRoYCqSc0pxjcsa1xRzQpETzJ1RzD6Etu26vuvatgneOaYt9iKSc4zrusxLWDlSAlDT1yxCdj60Xdf3Q993bRuCq24BGKiJ5JLSuizdPM3OEWIuivaKRcjON13XD5fLMPRt2wTnHNG2v7aIpbQuXRuCc0QIUEDtKwuRnW+77nL5+Bgufdc2YQs8AdZtX2Ft2zYh+MqC8khS90ARu6brLx/Xj+tlOFCIVCccsKYJwXvHhGgGBvKVReybtrtcr9cfl0vfNcE5ZiREQEADMDBT9ZJD8N45JkRQADUDPbMQ2fmmHz6uP35cL0PXBM9c0wehXlYTyZWaD4SmaiJme/zdJ7c+rj+u16FrQ436c14gALAhETMTEZqZSBFVkxMLkZ0P3XC5Xq8fQ9+Fuq0qqQZMK44NCQkJzFSylCKim2PucMv5th8ul4/L0HfBM9GJBEAHDWuyq9TcFCE7sZh903TDZej7rg3e7U7tpCeaETg0MykppRhTZpWnd0QidqHt+mHo24r6QjpoCATgTUtNgpjy5ph7Clfb9V3XNqH+3y9QAEAKAEjAXkru1n5uV+cyoh3Tkcj50HRd1/watd8kYh9C07Vt4z0zPR7V+heaJmxFpk5/haoWCETsQhOaJnxeG5HY+9A0wTs+9sKbQZsBOxdCE46q9PCL2dUquq3yxqsnG+Zayl09ER5+1XUq6RsUANUThthxPV2e4gWIhLSdYN+jtoG0pdN+HG9GCISIWO9/j6nxPwzw6d0BAGFTDu93w1dYfaVDwexWBlCPOwMA0Ff2z0P3mWB26J+9aILWKvxWeLxAHQb2cBbAdrWg22H8rWNQj9/dxB45ZGYqUoocJ/svYQpgpqpSpBRRUX34ZaYiUnLOG+3XMK02IqWknHPZ1z/eUXJOMaZcRL+RkrqvXkpKMZUiqo/Ym6mUkmJMKVXNAQD6xrMad1UpKaYYUyrbm+x+qZac4rIsMT6evYTVm6qSU4rLusact8W3WmgmJad1mWt9JqzFXr/u2cOrnOK6LPOyplK2tblOqSeVc47Z7YmEAGbnhFI7UHGd7uM43qZlTSInFhAiM7NzTESPxHim6SbyVUuJcZpu48/xPi8py8mvrVQQMRES0JaZz7SdZCqlxHWabuP4836fD7cOFgIiIdKu521D7dLeDpKK5LjM020cx9ttXlIRPbOqIQHuBdrANpeOvmNTrTnFZZrG2/hzvM1zzGUXOvyM2m2qI2oGarZRTU1VpOSY1rnGarxPc8z5EOcPv/bVDdRMt2H1kprGpZQU4zJP0ziO43ibpiVlPTb1ob8MVDIgVsGc0lddCFJ1YVyX6X6/3+7TvKYsh5R70phmAls65ZRifK9X52W6T/d5WtaYy1P78aR9lQQArGbauvxCR8/zNM/LEtMJddLkSmJW06myzvpey0PfL+sSY87yVt+DkpbaX8T1N/oOETkV9HMPo2i1yKW0hiY0Wz+E+KYfOp8Nv9+nqX7Xp/2b/SP80b4W/mS/fcTtj3wHOLzDJ+Xxz79PHI//xneT/8L4C+CHknaJvj28AAAAAElFTkSuQmCC"
+         id="image88" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask94"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,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"
+         id="image96" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask102"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,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"
+         id="image104" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask110"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEMAAAA8CAAAAAAY1Vi7AAAAAXNCSVQI5gpbmQAAAmRJREFUSIntl8tyozAQRfslYUgy//+jNkjqxywAG1IVlMVspsrNxlW2ju9t0+Y2wLuOhYdX6/WLiu36xkAEQkJA7FIiAsIjIuLEQCRkJiTsQiIC3N3cHRwAAGRHEIswcxcS4OFuampoGAcGMUvKkoSIOowIN9NWERXswAAkyfk2ZBHuMCDMrLVCABGIsTOQWFIepykPSZg6Oky1LjPD2tgnA0nSbfr6HG9Dkg7DrdXySOjuduopcRrGzz8f4y0nvrQCZnWZBU1V1fDFIGLJw/jxNY1D4ut+WKtZ0JYkTHDQAcQieRynz2nI+1s/eLFWGL0MSRjppQMRiSXn2zhNty6jMnjdEAcvgEjMKQ/DbewxlNHakBLTbnq/T5GIOUnKOcs1g9FbEmEmODEAEJCZmJlFOgPjwsxEr5nY+4GIgEhERHj54zoiEq7DiQgYAJe6f1lvxpvxZrwZb8Y/ZMQargIOIeunCoDYPrieeT1fACDCI9zdLilh5uHhh++S/Xy4m2prgp3nnKo2VfOXZHkiTFurJVHYdYaxWkptqvbUuzFgDVmLsGs3OyzLUmpT882QrAh301qWhNFSj6FlfsylqtlmZvfi1uqcyTXnXpbSujzuc2lqRx3gZq0ud/JasvTzWF3u97k0++alERN5GXLiDmN1/XgsVU+50I0aQbQ5JenlZDDTVsq8VD3piDDACE3CxNf7R4CbWau16FlHOEANV2ai64gLEB5u1rSZOxx6GuEAYUrHiPQTI1aK2X6jPvcXIGQk6KnYKOG+p/XDLobrDoXQXce2AYfn1J0O/AKwUaDzD/Hf1l8x8qg8IVS+bAAAAABJRU5ErkJggg=="
+         id="image112" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask118"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAABARJREFUWIXt18mS4zgOAFBsBEmrsv7/R9PcgT5Ilu1cKt0xc+ooXHyw+AhQ3ATwN/7/gfjSUz/+j7vkDu7/i4WIiISI4O7m9mfuTxYiEhExIYK7LTMz/4P2vYWIxHsQgttaa671J+07C5GQmSVIYGZyX2uOOdZa61vtawuRiFhEVEMIwgg+5xh9jDHXWm5fal9ZBETEEiRojBqDMrvN0Vvrvfc5vtM+WwSMzCIhaIwpxRSVCWz2Vmtttfcx5lxmn7UPFt6qC6oxxpxzSlGZYc1eay2l1nbLzQzsqbF8kniXNKWULjmnpCoEa45WS72WWmrr7cgNniacfJaCqMaYU8455xxTCIxga/RWay6llFpb66OvOelpiuCjxCQcgmqMB5RTUg3C6G5j9NZqKeV6aH3MuZats1I8qX2YgsabdEkpaQxBmMjd5uq9t1ZKKfVay/4a5tin72ONuE9M1RTTmVOMUSUI0zHvtY/UUq615FJKia32zh0XGPjdQmRm1ZhSypcdyjGqBgnMRIDgsGzJHJpSq5dLKddyLVorUx8A9mgRsWrOecvb5XLJKSaNQUWEiGgfB3Q2kTA1ppZyySVfr+9BENzd0R9qZNG8bduvbdsuOWmMIQRhJiQ8xpSAjFhW0K4x51pyihoYfY+bhcgcNG+/395+bVuOSYN8kAAQgMnYZIqOHlNKMQYhX2ZmdtaIRKIp/fr9++1tu6So++bwkJPdNEdiWSFojBoCE6w515yIfh8vFs2X7dfb25aTCjMz4r06IAB70Fi0B2ECW621LnM9jj1L0Jwv27blKEzP0vF7akS8WAh9jZ40COGHvEQ155RTVCEk+CA9aYjEi9DXbCnqPgHP8QIkkqCqUYMG+lJ61gDQp2rUfWTv1rGsRYLI2ctn6VFzBpawN8Dj+LxbTMzMREhf5/RB8/2I2hs8WgAIQEiItz6+k+7acXreX9LzXng++1MQ2BcHBd07AIR7Xj9rZ1qIxzXh5xxej7/WX+tL69ixHW4790vh9wB/ODv2/8zdzNZLmvtx47x3LmcfZmvOMQTlpbrd5n6zs7MWOak1x+gtkK+XVqT7bK33PtZ6vgM4rLXGaFXYJr+Y1+qltD7mMnuwHMzW7K0G9BFetHz1ei2l9TOxW422Ri9KNlX5FQrAV+/lvdQ+5pNla41e38l6U3nZGqOW92s9E7vVOIiJrEUN/Kplc/RW3kvry57yokHgo4Qg9OLO6mZz9lZrG3PH9rzcF6D7DMLEP367HZabzTF763M9zQkD6G6T+bxu/Ry2fyP1dZsU53sE8DWJ6NXD41grtqbZccc8GiICISPBy1kd5ZiZ374ZHu7kcBybL+cF+85yru6nhv8Cumnw8hb134h/ADhwpbfjvCOcAAAAAElFTkSuQmCC"
+         id="image120" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask126"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAA8CAAAAAALAhhPAAAAAXNCSVQI5gpbmQAABARJREFUWIXt18mS4zgOAFBsBEmrsv7/R9PcgT5Ilu1cKt0xc+ooXHyw+AhQ3ATwN/7/gfjSUz/+j7vkDu7/i4WIiISI4O7m9mfuTxYiEhExIYK7LTMz/4P2vYWIxHsQgttaa671J+07C5GQmSVIYGZyX2uOOdZa61vtawuRiFhEVEMIwgg+5xh9jDHXWm5fal9ZBETEEiRojBqDMrvN0Vvrvfc5vtM+WwSMzCIhaIwpxRSVCWz2Vmtttfcx5lxmn7UPFt6qC6oxxpxzSlGZYc1eay2l1nbLzQzsqbF8kniXNKWULjmnpCoEa45WS72WWmrr7cgNniacfJaCqMaYU8455xxTCIxga/RWay6llFpb66OvOelpiuCjxCQcgmqMB5RTUg3C6G5j9NZqKeV6aH3MuZats1I8qX2YgsabdEkpaQxBmMjd5uq9t1ZKKfVay/4a5tin72ONuE9M1RTTmVOMUSUI0zHvtY/UUq615FJKia32zh0XGPjdQmRm1ZhSypcdyjGqBgnMRIDgsGzJHJpSq5dLKddyLVorUx8A9mgRsWrOecvb5XLJKSaNQUWEiGgfB3Q2kTA1ppZyySVfr+9BENzd0R9qZNG8bduvbdsuOWmMIQRhJiQ8xpSAjFhW0K4x51pyihoYfY+bhcgcNG+/395+bVuOSYN8kAAQgMnYZIqOHlNKMQYhX2ZmdtaIRKIp/fr9++1tu6So++bwkJPdNEdiWSFojBoCE6w515yIfh8vFs2X7dfb25aTCjMz4r06IAB70Fi0B2ECW621LnM9jj1L0Jwv27blKEzP0vF7akS8WAh9jZ40COGHvEQ155RTVCEk+CA9aYjEi9DXbCnqPgHP8QIkkqCqUYMG+lJ61gDQp2rUfWTv1rGsRYLI2ctn6VFzBpawN8Dj+LxbTMzMREhf5/RB8/2I2hs8WgAIQEiItz6+k+7acXreX9LzXng++1MQ2BcHBd07AIR7Xj9rZ1qIxzXh5xxej7/WX+tL69ixHW4790vh9wB/ODv2/8zdzNZLmvtx47x3LmcfZmvOMQTlpbrd5n6zs7MWOak1x+gtkK+XVqT7bK33PtZ6vgM4rLXGaFXYJr+Y1+qltD7mMnuwHMzW7K0G9BFetHz1ei2l9TOxW422Ri9KNlX5FQrAV+/lvdQ+5pNla41e38l6U3nZGqOW92s9E7vVOIiJrEUN/Kplc/RW3kvry57yokHgo4Qg9OLO6mZz9lZrG3PH9rzcF6D7DMLEP367HZabzTF763M9zQkD6G6T+bxu/Ry2fyP1dZsU53sE8DWJ6NXD41grtqbZccc8GiICISPBy1kd5ZiZ374ZHu7kcBybL+cF+85yru6nhv8Cumnw8hb134h/ADhwpbfjvCOcAAAAAElFTkSuQmCC"
+         id="image128" /></mask><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask134"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABCCAAAAAA6KnT+AAAAAXNCSVQI5gpbmQAABWZJREFUWIXtmNmS4zYMRbGQ1Ob2/P9njmwtXADkgZJsddvTk9TkKWGVylUScQjBBHghgP/H3xn43WOsPwYAYPXnH7AQAQkQ9ylmZmZgb3nvWIhIQMiIWGlmZmpqWom/zUIEQiYiJiIkQAQzUBMTFTUxfUl7wUIERiZmx8xMhIQAYGoq+1B9RfvKQiRidttgYkJEMDMVLZIll1KkvKJ9ZiEisXMueO+Dc94xMxIAqIlILrmknHLJRUQ/x819RjE5Dj40ITRN8N47ZiIAU9VSck4pphRTyrmI6HmPnFmExM6H0DZt27ZNE4J3zIRoYCqSc0pxjcsa1xRzQpETzJ1RzD6Etu26vuvatgneOaYt9iKSc4zrusxLWDlSAlDT1yxCdj60Xdf3Q993bRuCq24BGKiJ5JLSuizdPM3OEWIuivaKRcjON13XD5fLMPRt2wTnHNG2v7aIpbQuXRuCc0QIUEDtKwuRnW+77nL5+Bgufdc2YQs8AdZtX2Ft2zYh+MqC8khS90ARu6brLx/Xj+tlOFCIVCccsKYJwXvHhGgGBvKVReybtrtcr9cfl0vfNcE5ZiREQEADMDBT9ZJD8N45JkRQADUDPbMQ2fmmHz6uP35cL0PXBM9c0wehXlYTyZWaD4SmaiJme/zdJ7c+rj+u16FrQ436c14gALAhETMTEZqZSBFVkxMLkZ0P3XC5Xq8fQ9+Fuq0qqQZMK44NCQkJzFSylCKim2PucMv5th8ul4/L0HfBM9GJBEAHDWuyq9TcFCE7sZh903TDZej7rg3e7U7tpCeaETg0MykppRhTZpWnd0QidqHt+mHo24r6QjpoCATgTUtNgpjy5ph7Clfb9V3XNqH+3y9QAEAKAEjAXkru1n5uV+cyoh3Tkcj50HRd1/watd8kYh9C07Vt4z0zPR7V+heaJmxFpk5/haoWCETsQhOaJnxeG5HY+9A0wTs+9sKbQZsBOxdCE46q9PCL2dUquq3yxqsnG+Zayl09ER5+1XUq6RsUANUThthxPV2e4gWIhLSdYN+jtoG0pdN+HG9GCISIWO9/j6nxPwzw6d0BAGFTDu93w1dYfaVDwexWBlCPOwMA0Ff2z0P3mWB26J+9aILWKvxWeLxAHQb2cBbAdrWg22H8rWNQj9/dxB45ZGYqUoocJ/svYQpgpqpSpBRRUX34ZaYiUnLOG+3XMK02IqWknHPZ1z/eUXJOMaZcRL+RkrqvXkpKMZUiqo/Ym6mUkmJMKVXNAQD6xrMad1UpKaYYUyrbm+x+qZac4rIsMT6evYTVm6qSU4rLusact8W3WmgmJad1mWt9JqzFXr/u2cOrnOK6LPOyplK2tblOqSeVc47Z7YmEAGbnhFI7UHGd7uM43qZlTSInFhAiM7NzTESPxHim6SbyVUuJcZpu48/xPi8py8mvrVQQMRES0JaZz7SdZCqlxHWabuP4836fD7cOFgIiIdKu521D7dLeDpKK5LjM020cx9ttXlIRPbOqIQHuBdrANpeOvmNTrTnFZZrG2/hzvM1zzGUXOvyM2m2qI2pgarZRTU1VpOSY1rnGarxPc8z5EOcPv/bVDdRMt2H1kprGpZQU4zJP0ziO43ibpiVlPTb1ob8MVDIgVsGc0lddCFJ1YVyX6X6/3+7TvKYsh5R70phmAls65ZRifK9X52W6T/d5WtaYy1P78aR9lQQArGbauvxCR8/zNM/LEtMJddLkSmJW06myzvpey0PfL+sSY87yVt+DkpbaX8T1N/oOETkV9HMPo2i1yKW0hiY0Wz+E+KYfOp8Nv9+nqX7Xp/2b/SP80b4W/mS/fcTtj3wHOLzDJ+Xxz79PHI//xneT/8L4C9+IknahvjnDAAAAAElFTkSuQmCC"
+         id="image136" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath156"><path
+         d="m 621.8051,847.0563 c 22.2599,-8.5915 22.2599,-22.5211 0,-31.1126 -22.2599,-8.5916 -58.3503,-8.5916 -80.6102,0 -22.2599,8.5915 -22.2599,22.5211 0,31.1126 22.2599,8.5916 58.3503,8.5916 80.6102,0"
+         id="path158" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask162"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAAAsCAAAAACcMrMmAAAAAXNCSVQI5gpbmQAAAC9JREFUWIXtzQEJAAAIAzC1f2dtcRC2AuuttImPSqVSqVQqlUqlUqlUKpVK5ePyACoKAVctaJcIAAAAAElFTkSuQmCC"
+         id="image164" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath202"><path
+         d="m 724.743,738.0563 c 20.5027,-8.5915 20.5027,-22.5211 0,-31.1126 -20.5025,-8.5916 -53.7435,-8.5916 -74.2461,0 -20.5026,8.5915 -20.5026,22.5211 0,31.1126 20.5026,8.5916 53.7436,8.5916 74.2461,0"
+         id="path204" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask208"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAAsCAAAAABDfMk5AAAAAXNCSVQI5gpbmQAAAC1JREFUWIXtzTERAAAIBCC1f2ct4f0EBeitkElFJpPJZDKZTCaTyWQymUymBwdZ3AFX7PzxIgAAAABJRU5ErkJggg=="
+         id="image210" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath248"><path
+         d="m 355.203,812.75 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z"
+         id="path250" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask254"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAmCAAAAAB1tk2FAAAAAXNCSVQI5gpbmQAAAB9JREFUOI1j/M9AAmAiRfGo6lHVo6pHVY+qHlVNV9UA1uIBSzzom1gAAAAASUVORK5CYII="
+         id="image256" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath276"><path
+         d="m 477.324,703.75 44.17642,0 0,37.5 -44.17642,0 0,-37.5 z"
+         id="path278" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask282"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAmCAAAAAB1tk2FAAAAAXNCSVQI5gpbmQAAAB9JREFUOI1j/M9AAmAiRfGo6lHVo6pHVY+qHlVNV9UA1uIBSzzom1gAAAAASUVORK5CYII="
+         id="image284" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath304"><path
+         d="m 175.5,738.1684 0,30.9031 36.456,15.4285 36.456,-15.4285 0,-30.9031 -72.912,0 z"
+         id="path306" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask310"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAvCAAAAACKtbhHAAAAAXNCSVQI5gpbmQAAAClJREFUSIntzEEBAAAEBDD070yJ+9kCrLdCJhWZTCaTyWQymUwm06PpABR7AV0tFPwjAAAAAElFTkSuQmCC"
+         id="image312" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath386"><path
+         d="m 239.1758,847.0563 c 10.3144,-8.5915 10.3144,-22.5211 0,-31.1126 -10.3145,-8.5916 -27.0375,-8.5916 -37.3519,0 -10.3145,8.5915 -10.3145,22.5211 0,31.1126 10.3144,8.5916 27.0374,8.5916 37.3519,0"
+         id="path388" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask392"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAsCAAAAADgVK//AAAAAXNCSVQI5gpbmQAAACRJREFUSIlj/M9ABmAiR9OorlFdo7pGdY3qGtU1qmtU17DSBQDf9wFXr+w+HAAAAABJRU5ErkJggg=="
+         id="image394" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath428"><path
+         d="m 225.1248,635.3933 c 10.3144,-8.5915 10.3144,-22.5211 0,-31.1127 -10.3145,-8.5915 -27.0375,-8.5915 -37.3519,0 -10.3145,8.5916 -10.3145,22.5212 0,31.1127 10.3144,8.5916 27.0374,8.5916 37.3519,0"
+         id="path430" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask434"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAsCAAAAADgVK//AAAAAXNCSVQI5gpbmQAAACRJREFUSIlj/M9ABmAiR9OorlFdo7pGdY3qGtU1qmtU17DSBQDf9wFXr+w+HAAAAABJRU5ErkJggg=="
+         id="image436" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath522"><path
+         d="m 232.2273,706.3829 c 14.237,-9.0468 14.237,-23.7146 0,-32.7614 -14.237,-9.0468 -37.3196,-9.0468 -51.5566,0 -14.237,9.0468 -14.237,23.7146 0,32.7614 14.237,9.0468 37.3196,9.0468 51.5566,0"
+         id="path524" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask528"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAvCAAAAACKtbhHAAAAAXNCSVQI5gpbmQAAAClJREFUSIntzEEBAAAEBDD070yJ+9kCrLdCJhWZTCaTyWQymUwm06PpABR7AV0tFPwjAAAAAElFTkSuQmCC"
+         id="image530" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath664"><path
+         d="m 730.5649,459.4833 c 18.9748,-8.5915 18.9748,-22.5211 0,-31.1126 -18.9748,-8.5916 -49.739,-8.5916 -68.7138,0 -18.9748,8.5915 -18.9748,22.5211 0,31.1126 18.9748,8.5916 49.739,8.5916 68.7138,0"
+         id="path666" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask670"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGIAAAAsCAAAAAC7nDLOAAAAAXNCSVQI5gpbmQAAACxJREFUWIXtzTEBAAAIAyC1f2eN4LUPCtBbaRMfFAqFQqFQKBQKhUKhUCgeB/DOAVfzYY5mAAAAAElFTkSuQmCC"
+         id="image672" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath710"><path
+         d="m 497.352,425.177 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z"
+         id="path712" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask716"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAmCAAAAAB1tk2FAAAAAXNCSVQI5gpbmQAAAB9JREFUOI1j/M9AAmAiRfGo6lHVo6pHVY+qHlVNV9UA1uIBSzzom1gAAAAASUVORK5CYII="
+         id="image718" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath738"><path
+         d="m 303.852,383.314 0,25.0125 26.4118,12.4875 26.4118,-12.4875 0,-25.0125 -52.8236,0 z"
+         id="path740" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask744"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAmCAAAAABBz4yZAAAAAXNCSVQI5gpbmQAAACJJREFUSIlj/M9ABmAiR9OorlFdo7pGdY3qGtU1qmsQ6QIANCABS3/l32wAAAAASUVORK5CYII="
+         id="image746" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath846"><path
+         d="m 303.852,475.839 0,25.0125 26.4118,12.4875 26.4118,-12.4875 0,-25.0125 -52.8236,0 z"
+         id="path848" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask852"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAmCAAAAABBz4yZAAAAAXNCSVQI5gpbmQAAACJJREFUSIlj/M9ABmAiR9OorlFdo7pGdY3qGtU1qmsQ6QIANCABS3/l32wAAAAASUVORK5CYII="
+         id="image854" /></mask><clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath922"><path
+         d="m 239.1758,916.0563 c 10.3144,-8.5915 10.3144,-22.5211 0,-31.1126 -10.3145,-8.5916 -27.0375,-8.5916 -37.3519,0 -10.3145,8.5915 -10.3145,22.5211 0,31.1126 10.3144,8.5916 27.0374,8.5916 37.3519,0"
+         id="path924" /></clipPath><mask
+       maskUnits="userSpaceOnUse"
+       x="0"
+       y="0"
+       width="1"
+       height="1"
+       id="mask928"><image
+         width="1"
+         height="1"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAsCAAAAADgVK//AAAAAXNCSVQI5gpbmQAAACRJREFUSIlj/M9ABmAiR9OorlFdo7pGdY3qGtU1qmtU17DSBQDf9wFXr+w+HAAAAABJRU5ErkJggg=="
+         id="image930" /></mask><inkscape:perspective
+       id="perspective5598"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /><inkscape:perspective
+       id="perspective5712"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /><inkscape:perspective
+       id="perspective5744"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /><inkscape:perspective
+       id="perspective5432"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /><inkscape:perspective
+       id="perspective3176"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /><inkscape:perspective
+       id="perspective3206"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /><inkscape:perspective
+       id="perspective3237"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" /></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1272"
+     inkscape:window-height="907"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.87538929"
+     inkscape:cx="472.26252"
+     inkscape:cy="945.64121"
+     inkscape:window-x="37"
+     inkscape:window-y="14"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g12" /><g
+     id="g12"
+     inkscape:groupmode="layer"
+     inkscape:label="example-graphical"
+     transform="matrix(1.25,0,0,-1.25,0,1340)"><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g636"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path638"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 169.493,381.4978 -60.993,-4e-4" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g568"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path570"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 102.5,451.6631 77.037,-10e-5" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g572"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path574"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g982"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path984"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 118.676,171.0001 193.588,171" /></g><g
+   id="g14"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   id="g152"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g154"
+     clip-path="url(#clipPath156)"><g
+       id="g160"
+       transform="matrix(115,0,0,45,524,809)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHIAAAAsCAYAAAC5Wez6AAAABHNCSVQICAgIfAhkiAAAAL5JREFUeJzt3FEKgzAURFFThu5/r1Js1Tb++l0ePLjcs4KBYZKA4PjNORf9ZXQHuMnZnUAlcnQnUAmLhLBICO9IiBy+WRE8WiEsEsIiISwSwiIhLBIie3cClXCREBYJYZEQ3pEQLhLCRUK4SIjsfsZC8GiFsEgIi4TwsQORT3cClfBohXCREBYJ4dEK4SIh8u5OoBIWCZGtO4FKuEiIvLoTqETW7gQqMZ5f/+pBMBaLRHh0B1ANi4SwSAiLhLgAtdcws0MqiloAAAAASUVORK5CYII="
+         mask="url(#mask162)"
+         id="image166" /></g></g></g><g
+   id="g168"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g170"
+     transform="matrix(1,0,0,-1,0.5,1071.5)"><path
+       d="m 621.3051,224.4437 c 22.2599,8.5915 22.2599,22.5211 0,31.1126 -22.2599,8.5916 -58.3503,8.5916 -80.6102,0 -22.2599,-8.5915 -22.2599,-22.5211 0,-31.1126 22.2599,-8.5916 58.3503,-8.5916 80.6102,0"
+       style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none"
+       id="path172" /></g><g
+     id="g174"
+     transform="matrix(1,0,0,-1,581,832)"><text
+   transform="translate(-23.52539,-2)"
+   id="text176"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 10.3818 18.326 21.989 28.1072 31.7702 37.8884 43.3884"
+     y="0"
+     sodipodi:role="line"
+     id="tspan178">WD-prov-</tspan></text>
+
+
+
+
+
+</g><g
+     id="g180"
+     transform="matrix(1,0,0,-1,581,832)"><text
+   transform="translate(-33.12622,10)"
+   id="text182"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 6.1182 15.2812 18.9442 25.0624 31.1806"
+     y="0"
+     sodipodi:role="line"
+     id="tspan184">dm-201</tspan></text>
+
+
+
+
+
+</g><g
+     id="g186"
+     transform="matrix(1,0,0,-1,581,832)"><text
+   transform="translate(3.354248,10)"
+   id="text188"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     id="tspan190">1</tspan></text>
+
+
+
+
+
+</g><g
+     id="g192"
+     transform="matrix(1,0,0,-1,581,832)"><text
+   transform="translate(8.655518,10)"
+   id="text194"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 6.1182 12.2364 18.3546"
+     y="0"
+     sodipodi:role="line"
+     id="tspan196">1018</tspan></text>
+
+
+
+
+
+</g></g><g
+   id="g198"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g200"
+     clip-path="url(#clipPath202)"><g
+       id="g206"
+       transform="matrix(106,0,0,45,634.62,700)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAAAsCAYAAABmF5blAAAABHNCSVQICAgIfAhkiAAAALxJREFUeJzt21EKwjAQBuFGfnr/u4poWzUeYX3bDMx3gS4MmwZKx3fOuak0Gp+dd+PD9Z9c3ROoZCQAIwH4TgLI5d1ueR53AEYCMBKAkQCMBGAkgJzdE6jkJgEYCcBIAL6TANwkADcJwE0CyOmniuV53AEYCcBIAF4cAHJ0T6CSxx2AmwRgJACPOwA3CSCv7glUMhJAnt0TqOQmAeTRPYFKuXdPoNLYP/59vrqxGWl5t+4BVDMSgJEAjATwA3lCMLNfVdo/AAAAAElFTkSuQmCC"
+         mask="url(#mask208)"
+         id="image212" /></g></g></g><g
+   id="g214"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g216"
+     transform="matrix(1,0,0,-1,0.5,1071.5)"><path
+       d="m 724.243,333.4437 c 20.5027,8.5915 20.5027,22.5211 0,31.1126 -20.5025,8.5916 -53.7435,8.5916 -74.2461,0 -20.5026,-8.5915 -20.5026,-22.5211 0,-31.1126 20.5026,-8.5916 53.7436,-8.5916 74.2461,0"
+       style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none"
+       id="path218" /></g><g
+     id="g220"
+     transform="matrix(1,0,0,-1,687.12,723)"><text
+   transform="translate(-23.52539,-2)"
+   id="text222"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 10.3818 18.326 21.989 28.1072 31.7702 37.8884 43.3884"
+     y="0"
+     sodipodi:role="line"
+     id="tspan224">WD-prov-</tspan></text>
+
+
+
+
+
+</g><g
+     id="g226"
+     transform="matrix(1,0,0,-1,687.12,723)"><text
+   transform="translate(-33.12622,10)"
+   id="text228"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 6.1182 15.2812 18.9442 25.0624 31.1806"
+     y="0"
+     sodipodi:role="line"
+     id="tspan230">dm-201</tspan></text>
+
+
+
+
+
+</g><g
+     id="g232"
+     transform="matrix(1,0,0,-1,687.12,723)"><text
+   transform="translate(3.354248,10)"
+   id="text234"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     id="tspan236">1</tspan></text>
+
+
+
+
+
+</g><g
+     id="g238"
+     transform="matrix(1,0,0,-1,687.12,723)"><text
+   transform="translate(8.655518,10)"
+   id="text240"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:11;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 6.1182 12.2364 18.3546"
+     y="0"
+     sodipodi:role="line"
+     id="tspan242">1215</tspan></text>
+
+
+
+
+
+</g></g><g
+   id="g244"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g246"
+     clip-path="url(#clipPath248)"><g
+       id="g252"
+       transform="matrix(45.1764,0,0,38.5,354.703,812.25)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAmCAYAAABQ3RJZAAAABHNCSVQICAgIfAhkiAAAAIdJREFUWIXt1ssJwDAMBFEZ1H+xOeRrr1ODLhIDmgoeixwytrSN1Bjmpq+aEc5tIdFvtSFcn0dWfR5ZQZdudE5901lB0SKiJxHNXPqpNoSjfvKISzPRxPMQcWnm14OIZj5EJPquNoSD/poyl76qDeGoSxPRIp7HPKsN4dwWEa2j2hDObfIe4g96HE0rMdW0cQAAAABJRU5ErkJggg=="
+         mask="url(#mask254)"
+         id="image258" /></g></g></g><g
+   id="g260"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g262"
+     transform="matrix(1,0,0,-1,0.5,1071.5)"><path
+       d="m 354.703,221.25 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z"
+       style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none"
+       id="path264" /></g><g
+     id="g266"
+     transform="matrix(1,0,0,-1,376.7912,832)"><text
+   transform="translate(-13.23096,5)"
+   id="text268"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 7.7868 14.7868 18.676"
+     y="0"
+     sodipodi:role="line"
+     id="tspan270">act1</tspan></text>
+
+
+
+
+
+</g></g><g
+   id="g272"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g274"
+     clip-path="url(#clipPath276)"><g
+       id="g280"
+       transform="matrix(45.1764,0,0,38.5,476.824,703.25)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAmCAYAAABQ3RJZAAAABHNCSVQICAgIfAhkiAAAAIdJREFUWIXt1ssJwDAMBFEZ1H+xOeRrr1ODLhIDmgoeixwytrSN1Bjmpq+aEc5tIdFvtSFcn0dWfR5ZQZdudE5901lB0SKiJxHNXPqpNoSjfvKISzPRxPMQcWnm14OIZj5EJPquNoSD/poyl76qDeGoSxPRIp7HPKsN4dwWEa2j2hDObfIe4g96HE0rMdW0cQAAAABJRU5ErkJggg=="
+         mask="url(#mask282)"
+         id="image286" /></g></g></g><g
+   id="g288"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g290"
+     transform="matrix(1,0,0,-1,0.5,1071.5)"><path
+       d="m 476.824,330.25 44.17642,0 0,37.5 -44.17642,0 0,-37.5 z"
+       style="fill:none;stroke:#000000;stroke-opacity:1;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:none"
+       id="path292" /></g><g
+     id="g294"
+     transform="matrix(1,0,0,-1,498.9122,723)"><text
+   transform="translate(-13.23096,5)"
+   id="text296"><tspan
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;font-variant:normal;font-weight:normal;font-size:14;writing-mode:lr;-inkscape-font-specification:ArialMT"
+     x="0 7.7868 14.7868 18.676"
+     y="0"
+     sodipodi:role="line"
+     id="tspan298">act2</tspan></text>
+
+
+
+
+
+</g></g><g
+   id="g300"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><g
+     id="g302"
+     clip-path="url(#clipPath304)"><g
+       id="g308"
+       transform="matrix(73.912,0,0,47.3316,175,737.6685)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAvCAYAAACv3uebAAAABHNCSVQICAgIfAhkiAAAAJVJREFUaIHt1rENgDAQBEGQ3H/JbzrAm0EwUwE67QvfM7MvXq29bXSyZubrb/g9IwXOLTBS4NwCJQVKCpQUGClwboGSAiUFRgqcW2CkwLkFSgqUFBgpWJdrO1qzlXTi3AJ/t0BJgZICJQVKCpQUGCnw4g68uAPnFhgp8AQIlBQoKVBSoKRASYGRAucWGClwboGRAiMFD1CXieHydhSJAAAAAElFTkSuQmCC"
+         mask="url(#mask310)"
+         id="image314" /></g></g></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g318"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path320"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 175,333.3316 0,-30.9031 36.456,-15.4285 36.456,15.4285 0,30.9031 -72.912,0 z" /></g><g
+   transform="matrix(1,0,0,-1,190.656,757.0342)"
+   id="g322"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text324"
+   transform="translate(-12.33691,4.691071)"><tspan
+     sodipodi:role="line"
+     x="0"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     y="0"
+     id="tspan3162">Consortium</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,470.12,838.95)"
+   id="g334"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text336"
+   transform="translate(-46.02539,4)"><tspan
+     id="tspan338"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 30.6744 37.348801 44.023201 50.697601 54.6936 61.368 64.701599 71.375999 78.0504 86.054398"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasGeneratedBy</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g340"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path342"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 408.7794,240 524,240" /></g><path
+   id="path344"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 401.2794,831.5 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g346"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path348"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 400.7794,240 8,3 0,-6 -8,3 z" /></g><g
+   transform="matrix(1,0,0,-1,584.62,734.75)"
+   id="g350"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text352"
+   transform="translate(-46.02539,4)"><tspan
+     id="tspan354"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 30.6744 37.348801 44.023201 50.697601 54.6936 61.368 64.701599 71.375999 78.0504 86.054398"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasGeneratedBy</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g356"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path358"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 530.9004,349 634.62,349" /></g><path
+   id="path360"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 523.4004,722.5 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g362"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path364"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 522.9004,349 8,3 0,-6 -8,3 z" /></g><path
+   d="m 687.62,744.5 -97.6778,59.829"
+   style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1.0;stroke-dasharray:none"
+   id="path368"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><path
+   id="path370"
+   style="fill:#ff2600;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 583.1202,808.5076 5.255,-6.7368 3.134,5.1165 -8.389,1.6203 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g372"
+   style="stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1.0"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path374"
+     style="fill:#000000;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1.0"
+     d="m 582.6202,262.9924 5.255,6.7368 3.134,-5.1165 -8.389,-1.6203 z" /></g><g
+   transform="matrix(0.86096021,-0.50867231,-0.50867231,-0.86096021,641.22919,780.22425)"
+   id="g376"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text378"
+   transform="translate(-45.34277,4)"><tspan
+     id="tspan380"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 30.0072 36.681599 40.677601 43.344002 49.344002 56.018398 62.692799 70.0224 74.018402 80.692802"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasDerivedFrom</tspan></text>
+
+
+
+
+
+</g><g
+   id="g382"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   transform="matrix(1.6055207,0,0,1,-149.51009,0)"><g
+     id="g384"
+     clip-path="url(#clipPath386)"><g
+       id="g390"
+       transform="matrix(53.8236,0,0,45,193.588,809)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAsCAYAAADFP/AjAAAABHNCSVQICAgIfAhkiAAAAJhJREFUaIHt2UsKgDAQA1BHBu9/VxG1fuoFuo1DQt7SVcJMC8V4e+8TsRh8y/v3GHh5VScAcCkWomeK+u4b01w/lyLhUiw0S7XqBACak3IpEj5TLDwpFtkUnx6S6+dSJDQvirM6AYDm+klOSrKU149EHtUJADRL7dUJADQntVUnAMi1OgFALA/33/mRmARLzdUBEFyKhWSpDzeQMLO3hyenAAAAAElFTkSuQmCC"
+         mask="url(#mask392)"
+         id="image396" /></g></g></g><g
+   transform="matrix(1.6112498,0,0,-1,-150.42466,1071.5)"
+   id="g400"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path402"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,224.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0" /></g><g
+   id="g424"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   transform="matrix(1.4498154,0,0,1,-104.74428,0)"><g
+     id="g426"
+     clip-path="url(#clipPath428)"><g
+       id="g432"
+       transform="matrix(53.8236,0,0,45,179.537,597.337)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAsCAYAAADFP/AjAAAABHNCSVQICAgIfAhkiAAAAJhJREFUaIHt2UsKgDAQA1BHBu9/VxG1fuoFuo1DQt7SVcJMC8V4e+8TsRh8y/v3GHh5VScAcCkWomeK+u4b01w/lyLhUiw0S7XqBACak3IpEj5TLDwpFtkUnx6S6+dSJDQvirM6AYDm+klOSrKU149EHtUJADRL7dUJADQntVUnAMi1OgFALA/33/mRmARLzdUBEFyKhWSpDzeQMLO3hyenAAAAAElFTkSuQmCC"
+         mask="url(#mask434)"
+         id="image438" /></g></g></g><g
+   transform="matrix(1.4584373,0,0,-1,-106.25199,1071.5)"
+   id="g442"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path444"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 224.6248,436.1067 c 10.3144,8.5915 10.3144,22.5211 0,31.1127 -10.3145,8.5915 -27.0375,8.5915 -37.3519,0 -10.3145,-8.5916 -10.3145,-22.5212 0,-31.1127 10.3144,-8.5916 27.0374,-8.5916 37.3519,0" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g476"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path478"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 476.824,349 241.4884,447.8298" /></g><path
+   id="path480"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 234.6124,620.5726 8.5376,0.3316 -2.3232,5.532 -6.2144,-5.8636 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g482"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path484"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 234.1124,450.9274 8.5376,-0.3316 -2.3232,-5.532 -6.2144,5.8636 z" /></g><g
+   transform="matrix(0.81444052,-0.58024705,-0.58024705,-0.81444052,293.61722,882.29873)"
+   id="g486"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text488"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan490"
+     sodipodi:role="line"
+     y="0"
+     x="0 6.6743999 12.6744 19.348801"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">used</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(0.92853512,0.37124457,0.37124457,-0.92853512,314.18707,664.00058)"
+   id="g492"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text494"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan496"
+     sodipodi:role="line"
+     y="0"
+     x="0 6.6743999 12.6744 19.348801"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">used</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g498"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path500"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,240 -98.3914,0" /></g><path
+   id="path502"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 248.8116,831.5 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g504"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path506"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 248.3116,240 8,3 0,-6 -8,3 z" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g508"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path510"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 257.6725,311.8217 476.824,349" /></g><path
+   id="path512"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 250.2852,761.0164 7.3855,-4.2958 1.0036,5.9155 -8.3891,-1.6197 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g514"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path516"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 249.7852,310.4836 7.3855,4.2958 1.0036,-5.9155 -8.3891,1.6197 z" /></g><g
+   id="g518"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   style="stroke:#000000;stroke-opacity:1"
+   transform="matrix(1.1514951,0,0,0.9984068,-36.759277,1.0993102)"><g
+     id="g520"
+     clip-path="url(#clipPath522)"
+     style="stroke:#000000;stroke-opacity:1"><g
+       id="g526"
+       transform="matrix(73.912,0,0,47.3316,169.493,666.3364)"
+       style="stroke:#000000;stroke-opacity:1"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAAvCAYAAACv3uebAAAABHNCSVQICAgIfAhkiAAAALZJREFUaIHt2ksKw0AMBFFP6JXvf9MskvjD5Aae2glBvROIpqUB43HPOTc9ylk9QQO5qidowCYBhgS4bkBO37YlmwR4kwBDAlw3wCYBhgQYEuBNAnJUT9CATQK8SYDrBrhugE0CvElADr8nLdkkwJAADzdgk4D8qidowCYBNgnwcAOuG5Bv9QQNuG6ATQJ83YB8qidowHUDbBKQd/UEDYz99j/ulbEZ0tKreoAODAkwJMCQAEMC/soiMsAmc50XAAAAAElFTkSuQmCC"
+         mask="url(#mask528)"
+         id="image532"
+         style="stroke:#000000;stroke-opacity:1" /></g></g></g><g
+   transform="matrix(1,0,0,-1,175.549,684.1022)"
+   id="g544"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546"
+   transform="translate(-7.640396,-2)"><tspan
+     id="tspan548"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.6630001 9.7812004"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">rec-advance</tspan></text>
+
+
+
+
+
+</g><path
+   id="path556"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 108.5,837.7159 c 0,3.359 -1.0287,3.7746 -8.54307,7.0987 l -0.07938,0.0345 c -7.55406,3.3589 -7.63263,3.3589 -15.38514,3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,-35.4582 81,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g558"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path560"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,67.5,830.9789)"
+   id="g562"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text564"
+   transform="translate(-33.52734,4)"><tspan
+     id="tspan566"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 36.364799 43.0392 49.7136 53.709599 60.383999"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=pubreq</tspan></text>
+
+
+
+
+
+</g><path
+   id="path576"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 108.5,768.5709 c 0,3.359 -1.0287,3.7746 -8.54307,7.0988 l -0.07938,0.0343 c -7.55406,3.359 -7.63263,3.359 -15.38514,3.359 -10.32264,0 -56.99241,0 -56.99241,0 l 0,-35.4582 81,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g578"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path580"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,302.9291 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0988 l -0.07938,-0.0343 c -7.55406,-3.359 -7.63263,-3.359 -15.38514,-3.359 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0794,-3.1859 -16.25508,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,67.5,761.8339)"
+   id="g582"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text584"
+   x="-37.916595"
+   y="-2.3999999"><tspan
+     id="tspan586"
+     sodipodi:role="line"
+     x="-37.916595 -34.583 -28.583002 -21.908604 -15.234201"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica"
+     y="-2.3999999">type=</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g588"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path590"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 108.5,310.166 66.5,-2e-4" /></g><path
+   id="path592"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 628,908.0079 c 0,3.359 -1.1811,3.7746 -9.8087,7.0988 l -0.0911,0.0344 c -8.6733,3.3589 -8.7634,3.3589 -17.6645,3.3589 -11.8519,0 -65.4357,0 -65.4357,0 l 0,-35.4582 93,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g594"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path596"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 627.5,163.4921 c 0,-3.359 -1.1811,-3.7746 -9.8087,-7.0988 l -0.0911,-0.0344 C 608.9269,153 608.8368,153 599.9357,153 588.0838,153 534.5,153 534.5,153 l 0,35.4582 93,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0911,-3.1859 -18.6632,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -8.3561,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,581,901.2709)"
+   id="g598"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text600"
+   transform="translate(-36.5127,4)"><tspan
+     id="tspan602"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 33.686401 40.360802 47.035198 53.035198 64.360802"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=reqsWD</tspan></text>
+
+
+
+
+
+</g><path
+   id="path604"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 734.12,661.7369 c 0,3.359 -1.1811,3.7746 -9.8087,7.0988 l -0.0911,0.0344 c -8.6733,3.3589 -8.7634,3.3589 -17.6645,3.3589 -11.8519,0 -65.4357,0 -65.4357,0 l 0,-35.4582 93,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g606"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path608"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 733.62,409.7631 c 0,-3.359 -1.1811,-3.7746 -9.8087,-7.0988 l -0.0911,-0.0344 c -8.6733,-3.3589 -8.7634,-3.3589 -17.6645,-3.3589 -11.8519,0 -65.4357,0 -65.4357,0 l 0,35.4582 93,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0911,-3.1859 -18.6632,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -8.3561,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,687.12,654.9999)"
+   id="g610"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text612"
+   transform="translate(-36.5127,4)"><tspan
+     id="tspan614"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 33.686401 40.360802 47.035198 53.035198 64.360802"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=reqsWD</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g616"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path618"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 581,218 0,-29.0418" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g620"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path622"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 687.12,371 0,27.771" /></g><path
+   id="path624"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 108.5,697.2399 c 0,3.359 -1.1811,3.7745 -9.80872,7.0987 l -0.09113,0.0344 c -8.67318,3.359 -8.76339,3.359 -17.66442,3.359 -11.85192,0 -65.43573,0 -65.43573,0 l 0,-35.4582 93,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g626"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path628"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,374.2601 c 0,-3.359 -1.1811,-3.7745 -9.80872,-7.0987 l -0.09113,-0.0344 c -8.67318,-3.359 -8.76339,-3.359 -17.66442,-3.359 -11.85192,0 -65.43573,0 -65.43573,0 l 0,35.4582 93,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0911,-3.1859 -18.66324,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -8.35605,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,61.5,690.5029)"
+   id="g630"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text632"
+   transform="translate(-26.18848,4)"><tspan
+     id="tspan634"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 36.364799 39.0312 45.705601"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=plan</tspan></text>
+
+
+
+
+
+</g><path
+   id="path640"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 423.791,904.7579 c 0,3.359 -1.1811,3.7746 -9.8087,7.0988 l -0.0912,0.0344 c -8.6731,3.3589 -8.7634,3.3589 -17.6644,3.3589 -11.8519,0 -65.4357,0 -65.4357,0 l 0,-35.4582 93,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g642"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path644"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 423.291,166.7421 c 0,-3.359 -1.1811,-3.7746 -9.8087,-7.0988 l -0.0912,-0.0344 c -8.6731,-3.3589 -8.7634,-3.3589 -17.6644,-3.3589 -11.8519,0 -65.4357,0 -65.4357,0 l 0,35.4582 93,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0912,-3.1859 -18.6633,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -8.356,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,376.791,898.0209)"
+   id="g646"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text648"
+   transform="translate(-33.8584,4)"><tspan
+     id="tspan650"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 36.364799 43.0392 49.7136 52.380001 55.046398 61.046398"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=publish</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g652"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path654"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 376.791,192.2082 10e-5,28.5418" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g656"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path658"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="m 498.9122,367.75 -2e-4,33.75" /></g><g
+   transform="matrix(0.94874897,0.31603068,0.31603068,-0.94874897,303.56697,791.73213)"
+   id="g902"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text904"
+   transform="translate(-52.5,-3)"><tspan
+     id="tspan906"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 29.344801 35.344799 41.344799 48.019199 54.019199 56.6856 63.360001 66.693604 73.367996 80.042397 91.367996 94.034401 97.367996"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasAssociatedWith</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g908"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path910"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 251.4115,377.3876 354.703,330.25" /></g><path
+   id="path912"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 244.6335,690.791 8.5235,0.5921 -2.491,5.4585 -6.0325,-6.0506 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g914"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path916"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 244.1335,380.709 8.5235,-0.5921 -2.491,-5.4585 -6.0325,6.0506 z" /></g><g
+   id="g918"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   transform="matrix(1.5882201,0,0,1,-145.23837,0)"><g
+     id="g920"
+     clip-path="url(#clipPath922)"><g
+       id="g926"
+       transform="matrix(53.8236,0,0,45,193.588,878)"><image
+         width="1"
+         height="1"
+         transform="matrix(1,0,0,-1,0,1)"
+         xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAsCAYAAADFP/AjAAAABHNCSVQICAgIfAhkiAAAAJhJREFUaIHt2UsKgDAQA1BHBu9/VxG1fuoFuo1DQt7SVcJMC8V4e+8TsRh8y/v3GHh5VScAcCkWomeK+u4b01w/lyLhUiw0S7XqBACak3IpEj5TLDwpFtkUnx6S6+dSJDQvirM6AYDm+klOSrKU149EHtUJADRL7dUJADQntVUnAMi1OgFALA/33/mRmARLzdUBEFyKhWSpDzeQMLO3hyenAAAAAElFTkSuQmCC"
+         mask="url(#mask928)"
+         id="image932" /></g></g></g><g
+   transform="matrix(1.5948969,0,0,-1,-146.37008,1071.5)"
+   id="g936"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0" /></g><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g960"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path962"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 354.703,240 254.7608,176.3198" /></g><path
+   id="path964"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 248.514,899.479 5.1347,-6.8289 3.2242,5.0601 -8.3589,1.7688 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g966"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path968"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 248.014,172.021 5.1347,6.8289 3.2242,-5.0601 -8.3589,-1.7688 z" /></g><path
+   id="path970"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 118.676,907.7369 c 0,3.359 -1.2341,3.7746 -10.2492,7.0988 l -0.0952,0.0344 c -9.06262,3.3589 -9.15688,3.3589 -18.45759,3.3589 -12.38412,0 -68.37401,0 -68.37401,0 l 0,-35.4582 97.176,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g972"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path974"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 118.176,163.7631 c 0,-3.359 -1.2341,-3.7746 -10.2492,-7.0988 l -0.0952,-0.0344 c -9.06262,-3.3589 -9.15688,-3.3589 -18.45759,-3.3589 -12.38412,0 -68.37401,0 -68.37401,0 l 0,35.4582 97.176,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0952,-3.1859 -19.50128,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -8.73127,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,69.588,900.9999)"
+   id="g976"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text978"
+   transform="translate(-39.19043,4)"><tspan
+     id="tspan980"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 33.023998 37.02 43.694401 50.368801 56.368801 65.035202 71.709602"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=transReq</tspan></text>
+
+
+
+
+
+</g><path
+   id="path986"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 545.912,659.0079 c 0,3.359 -1.1811,3.7746 -9.8087,7.0988 l -0.0912,0.0344 c -8.6732,3.3589 -8.7633,3.3589 -17.6644,3.3589 -11.8519,0 -65.4357,0 -65.4357,0 l 0,-35.4582 93,0 0,24.9661 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g988"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path990"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 545.412,412.4921 c 0,-3.359 -1.1811,-3.7746 -9.8087,-7.0988 l -0.0912,-0.0344 C 526.8389,402 526.7488,402 517.8477,402 c -11.8519,0 -65.4357,0 -65.4357,0 l 0,35.4582 93,0 0,-24.9661 z m 0,-0.1731 c 0,-3.1859 -0.0911,-3.1859 -18.6632,-3.1859 l 0,0 c 0,-7.0984 0,-7.1331 -8.3561,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,498.912,652.2709)"
+   id="g992"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text994"
+   transform="translate(-33.8584,4)"><tspan
+     id="tspan996"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 36.364799 43.0392 49.7136 52.380001 55.046398 61.046398"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=publish</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,281.07766,839.66125)"
+   id="g998"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text1000"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan1002"
+     sodipodi:role="line"
+     y="0"
+     x="0 6.6743999 12.6744 19.348801"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">used</tspan></text>
+
+
+
+
+
+</g><path
+   id="path1004"
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 102.5,627.074 c 0,3.3589 -1.0287,3.7744 -8.54307,7.0987 l -0.07938,0.0343 c -7.55406,3.359 -7.63263,3.359 -15.38514,3.359 -10.32264,0 -56.99241,0 -56.99241,0 l 0,-35.4582 81,0 0,24.9662 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g1006"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path1008"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 102,444.426 c 0,-3.3589 -1.0287,-3.7744 -8.54307,-7.0987 l -0.07938,-0.0343 c -7.55406,-3.359 -7.63263,-3.359 -15.38514,-3.359 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9662 z m 0,-0.1729 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,61.5,620.3369)"
+   id="g1010"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text1012"
+   transform="translate(-33.52734,4)"><tspan
+     id="tspan1014"
+     sodipodi:role="line"
+     y="0"
+     x="0 3.3336 9.3336 16.007999 22.6824 29.690399 36.364799 43.0392 49.7136 53.709599 60.383999"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">type=pubreq</tspan></text>
+
+
+
+
+
+</g><g
+   transform="matrix(0.98458015,-0.17493406,-0.17493406,-0.98458015,396.18065,740.52876)"
+   id="g1026"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text1028"
+   transform="translate(-52.5,-3)"><tspan
+     id="tspan1030"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 29.344801 35.344799 41.344799 48.019199 54.019199 56.6856 63.360001 66.693604 73.367996 80.042397 91.367996 94.034401 97.367996"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasAssociatedWith</tspan></text>
+
+
+
+
+
+</g><path
+   id="path1036"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 244.3349,691.2534 7.9962,3.0102 -3.951,4.5155 -4.0452,-7.5257 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1,0,0,-1,0.5,1071.5)"
+   id="g1038"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path1040"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 243.8349,380.2466 7.9962,-3.0102 -3.951,-4.5155 -4.0452,7.5257 z" /></g><path
+   style="fill:none;stroke:#000000;stroke-width:1.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#Arrow2Lend);stroke-miterlimit:4;stroke-dasharray:none"
+   d="M 461.90098,325.47891 C 315.60039,376.58828 315.60039,376.58828 315.60039,376.58828"
+   id="path3990"
+   transform="matrix(0.8,0,0,-0.8,0,1072)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><path
+   style="fill:none;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+   d="M 409.51387,344.64492 C 311.76719,469.86289 311.12832,470.50176 311.12832,470.50176"
+   id="path5586"
+   transform="matrix(0.8,0,0,-0.8,0,1072)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><path
+   sodipodi:type="arc"
+   style="fill:#151b23;fill-opacity:0.97916667;stroke:#000000;stroke-width:1.20000005;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+   id="path5588"
+   sodipodi:cx="409.51385"
+   sodipodi:cy="345.28378"
+   sodipodi:rx="4.4720702"
+   sodipodi:ry="4.4720702"
+   d="m 413.98593,345.28378 c 0,2.46986 -2.00222,4.47207 -4.47208,4.47207 -2.46985,0 -4.47207,-2.00221 -4.47207,-4.47207 0,-2.46985 2.00222,-4.47207 4.47207,-4.47207 2.46986,0 4.47208,2.00222 4.47208,4.47207 z"
+   transform="matrix(0.8,0,0,-0.8,0,1073.6)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><path
+   sodipodi:type="arc"
+   style="fill:#151b23;fill-opacity:0.97916667;stroke:#000000;stroke-width:1.20000005;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+   id="path5588-7"
+   sodipodi:cx="409.51385"
+   sodipodi:cy="345.28378"
+   sodipodi:rx="4.4720702"
+   sodipodi:ry="4.4720702"
+   d="m 413.98593,345.28378 c 0,2.46986 -2.00222,4.47207 -4.47208,4.47207 -2.46985,0 -4.47207,-2.00221 -4.47207,-4.47207 0,-2.46985 2.00222,-4.47207 4.47207,-4.47207 2.46986,0 4.47208,2.00222 4.47208,4.47207 z"
+   transform="matrix(0.8,0,0,-0.8,28.110166,1019.3573)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><text
+   style="font-size:12px"
+   id="text584-3"
+   x="4.3189263"
+   y="-750.99054"
+   transform="scale(1,-1)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><tspan
+     id="tspan586-5"
+     sodipodi:role="line"
+     x="34.00935 40.683754 44.679756"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Helvetica;-inkscape-font-specification:Helvetica">organization</tspan></text>
+
+
+
+
+
+<g
+   transform="matrix(1.586094,0,0,-1.0353026,-126.32268,1157.6871)"
+   id="g442-7"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path444-6"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 224.6248,436.1067 c 10.3144,8.5915 10.3144,22.5211 0,31.1127 -10.3145,8.5915 -27.0375,8.5915 -37.3519,0 -10.3145,-8.5916 -10.3145,-22.5212 0,-31.1127 10.3144,-8.5916 27.0374,-8.5916 37.3519,0" /></g><g
+   transform="matrix(1,0,0,-1,175.2429,901.11014)"
+   id="g544-9"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3"
+   transform="translate(-7.640396,-2)"><tspan
+     id="tspan548-6"
+     sodipodi:role="line"
+     y="0"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">2011OctDec/</tspan><tspan
+     sodipodi:role="line"
+     y="13.75"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196">0004</tspan></text>
+
+</g><g
+   transform="matrix(1,0,0,-1,212.71986,832.80966)"
+   id="g544-9-7"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-9"
+   x="-31.640398"
+   y="-2"><tspan
+     id="tspan548-6-0"
+     sodipodi:role="line"
+     y="-2"
+     x="-31.640398"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">2011Oct/</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-31.640398"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-3">0141</tspan></text>
+
+</g><g
+   transform="matrix(1,0,0,-1,199.2262,622.53357)"
+   id="g544-9-7-7"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-9-9"
+   x="-30.0404"
+   y="-0.40000001"><tspan
+     id="tspan548-6-0-3"
+     sodipodi:role="line"
+     y="-0.40000001"
+     x="-30.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">2011Dec/</tspan><tspan
+     sodipodi:role="line"
+     y="13.35"
+     x="-30.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-3-9">0111</tspan></text>
+
+</g></g></svg>

@@ -1,0 +1,21 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix pmlj: <http://inference-web.org/2.0/pml-justification.owl#> .
+@prefix pmlj: <http://inference-web.org/2.0/pml-justification.owl#> .
+@prefix pmlt: <http://inference-web.org/2.0/pml-trust.owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:illustrating 
+   a pmlj:InferenceStep;
+   pmlj:hasInferenceEngine :steve;
+   pmlj:hasInferenceRule :style-guide;
+   prov:qualifiedAssociation :steve-checking-style-guide;
+   rdfs:comment "Steve followed the publisher's style guide"@en;
+.
+
+:style-guide
+   a pmlj:InferenceRule, pmlp:Information;
+   rdfs:comment "Use blue graphs for positive spin, red for negative"@en;
+.

@@ -1,0 +1,249 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/eg-24-prov-o-html-examples.ttl#> .
+
+<> 
+   a prov:Bundle;
+   prov:wasDerivedFrom  <http://en.wikipedia.org/wiki/List_of_Justices_of_the_Supreme_Court_of_the_United_States_by_court_composition>,
+                        <http://en.wikipedia.org/wiki/List_of_Justices_of_the_Supreme_Court_of_the_United_States_by_seat>,
+                        <http://www.w3.org/2011/prov/track/issues/374>;
+   prov:wasAttributedTo <http://tw.rpi.edu/instances/TimLebo>;
+.
+
+:todays-us-supreme-court-as-collection
+   a prov:Collection;
+   prov:hadMember
+      <http://dbpedia.org/resource/John_Glover_Roberts,_Jr.>,
+      <http://dbpedia.org/resource/Antonin_Scalia>, 
+      <http://dbpedia.org/resource/Anthony_Kennedy>, 
+      <http://dbpedia.org/resource/Clarence_Thomas>, 
+      <http://dbpedia.org/resource/Ruth_Bader_Ginsburg>,
+      <http://dbpedia.org/resource/Stephen_Breyer>,     
+      <http://dbpedia.org/resource/Samuel_Alito>,      
+      <http://dbpedia.org/resource/Sonia_Sotomayor>,  
+      <http://dbpedia.org/resource/Elena_Kagan>;     
+.
+
+:todays-us-supreme-court-as-dictionary
+   a prov:Dictionary, :RobertsCourt;
+   dcterms:description [
+      a prov:Entity;
+      prov:value "2010–present: A. Scalia A. Kennedy C. Thomas R.B. Ginsburg S. Breyer S. Alito S. Sotomayor E. Kagan";
+      prov:wasQuotedFrom :page-by-composition;
+   ];
+   prov:qualifiedGeneration [
+      a prov:Generation;
+      dcterms:date "2012"^^xsd:gYear; # Since we need to be imprecise, we can't use prov:generatedAtTime or prov:atTime
+   ];
+
+   prov:wasDerivedFrom :the-first-us-supreme-court;
+
+   prov:hadMember [                   # Using a prov:Dictionary is a second step of complexity beyond prov:Collection.
+      a prov:KeyValuePair;
+      prov:pairKey   "chief";
+      prov:pairValue <http://dbpedia.org/resource/John_Glover_Roberts,_Jr.>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 9";
+      prov:pairValue <http://dbpedia.org/resource/Antonin_Scalia>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 4";
+      prov:pairValue <http://dbpedia.org/resource/Anthony_Kennedy>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 10";
+      prov:pairValue <http://dbpedia.org/resource/Clarence_Thomas>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 6";
+      prov:pairValue <http://dbpedia.org/resource/Ruth_Bader_Ginsburg>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 2";
+      prov:pairValue <http://dbpedia.org/resource/Stephen_Breyer>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 8";
+      prov:pairValue <http://dbpedia.org/resource/Samuel_Alito>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 1";
+      prov:pairValue <http://dbpedia.org/resource/Sonia_Sotomayor>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 3";
+      prov:pairValue <http://dbpedia.org/resource/Elena_Kagan>;
+   ];
+
+   #
+   # We can go a third step and qualify the members' memberships.
+   #
+
+   prov:qualifiedMembership [ # We can qualify a KeyValuePair's membership in this Dictionary.
+      a prov:Membership;
+      prov:pair [            
+         a prov:KeyValuePair;
+         prov:pairKey   "chief";
+         prov:pairValue <http://dbpedia.org/resource/John_Glover_Roberts,_Jr.>;
+      ];
+      
+      prov:hadRole :chief-justice;     # Here is my little addition about Chief Roberts.
+   ];
+   prov:qualifiedMembership [ # We can also qualify many KeyValuePairs' memberships in this Dictionary.
+      a prov:Membership;
+
+      prov:hadRole :associate-justice; # Here is my little addition about the rest of the Chiefs.
+
+      prov:pair [ # The same property is used to point to one or many KeyValuePairs.
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 9";
+         prov:pairValue <http://dbpedia.org/resource/Antonin_Scalia>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 4";
+         prov:pairValue <http://dbpedia.org/resource/Anthony_Kennedy>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 10";
+         prov:pairValue <http://dbpedia.org/resource/Clarence_Thomas>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 6";
+         prov:pairValue <http://dbpedia.org/resource/Ruth_Bader_Ginsburg>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 2";
+         prov:pairValue <http://dbpedia.org/resource/Stephen_Breyer>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 8";
+         prov:pairValue <http://dbpedia.org/resource/Samuel_Alito>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 1";
+         prov:pairValue <http://dbpedia.org/resource/Sonia_Sotomayor>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 3";
+         prov:pairValue <http://dbpedia.org/resource/Elena_Kagan>;
+      ];
+   ]; # <- the prov:Membership
+.
+
+:the-first-us-supreme-court-as-dictionary
+   a prov:Collection;
+   prov:hadMember                                    # These are asserted on a simple (first step)
+      <http://dbpedia.org/resource/John_Jay>,        # prov:Collection.
+      <http://dbpedia.org/resource/John_Rutledge>,   #
+      <http://dbpedia.org/resource/William_Cushing>, #
+      <http://dbpedia.org/resource/James_Wilson>,    #
+      <http://dbpedia.org/resource/John_Blair,_Jr.>, #
+      <http://dbpedia.org/resource/James_Iredell>;   #
+.
+
+:the-first-us-supreme-court-as-dictionary
+   a prov:Dictionary, :JayCourt;
+   dcterms:description [
+      a prov:Entity;
+      prov:value "1789–1792: J. Rutledge Wm. Cushing J. Wilson J. Blair J. Iredell";
+      prov:wasQuotedFrom :page-by-composition;
+   ];
+   prov:qualifiedGeneration [
+      a prov:Generation;
+      dcterms:date "1789"^^xsd:gYear;
+   ];
+   prov:qualifiedInvalidation [
+      a prov:Invalidation;
+      dcterms:date "1792"^^xsd:gYear;
+   ];
+   prov:hadMember [                                 # Using a prov:Dictionary is a second step of complexity beyond prov:Collection.
+      a prov:KeyValuePair;
+      prov:pairKey   "chief";
+      prov:pairValue <http://dbpedia.org/resource/John_Jay>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 4";
+      prov:pairValue <http://dbpedia.org/resource/John_Rutledge>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 2";
+      prov:pairValue <http://dbpedia.org/resource/William_Cushing>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 1";
+      prov:pairValue <http://dbpedia.org/resource/James_Wilson>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 3";
+      prov:pairValue <http://dbpedia.org/resource/John_Blair,_Jr.>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 5";
+      prov:wasDerivedFrom :page-by-seat; # Yes, I'm making a KeyValuePair an Entity here.
+      prov:pairValue <http://dbpedia.org/resource/James_Iredell>;
+   ];
+
+   #
+   # We can go a third step and qualify the members' memberships.
+   #
+
+   prov:qualifiedMembership [ # We can qualify a KeyValuePair's membership in this Dictionary.
+      a prov:Membership;
+      prov:pair [
+         a prov:KeyValuePair;
+         prov:pairKey   "chief";
+         prov:pairValue <http://dbpedia.org/resource/John_Jay>;
+      ];
+
+      prov:hadRole :chief-justice;     # Here is my little addition about Chief Jay.
+   ];
+   prov:qualifiedMembership [ # We can also qualify many KeyValuePairs' memberships in this Dictionary.
+      a prov:Membership;
+
+      prov:hadRole :associate-justice; # Here is my little addition about the rest of the Chiefs.
+
+      prov:pair [ # The same property is used to point to one or many KeyValuePairs.
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 4";
+         prov:pairValue <http://dbpedia.org/resource/John_Rutledge>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 2";
+         prov:pairValue <http://dbpedia.org/resource/William_Cushing>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 1";
+         prov:pairValue <http://dbpedia.org/resource/James_Wilson>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 3";
+         prov:pairValue <http://dbpedia.org/resource/John_Blair,_Jr.>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 5";
+         prov:wasDerivedFrom :page-by-seat; # Yes, I'm making a KeyValuePair an Entity here.
+         prov:pairValue <http://dbpedia.org/resource/James_Iredell>;
+      ];
+   ]; # <- the prov:Membership
+.
+
+:page-by-seat
+   a prov:Entity, :WikipediaPage;
+   prov:specializationOf <http://en.wikipedia.org/wiki/List_of_Justices_of_the_Supreme_Court_of_the_United_States_by_seat>;
+   prov:wasGeneratedAtTime "2011-08-31T12:51"^^xsd:dateTime;
+.
+
+:page-by-composition
+   a prov:Entity, :WikipediaPage;
+   prov:specializationOf <http://en.wikipedia.org/wiki/List_of_Justices_of_the_Supreme_Court_of_the_United_States_by_court_composition>;
+   prov:wasGeneratedAtTime "2012-05-16T14:33"^^xsd:dateTime;
+.

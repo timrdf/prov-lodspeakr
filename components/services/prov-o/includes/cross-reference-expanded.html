@@ -263,6 +263,49 @@
     </div>
   </div>
 
+  <div id="contextualized" class="entity">
+    <h3>
+      Property: <a href="#contextualized"><span class="dotted" title="http://www.w3.org/ns/prov#contextualized">prov:contextualized</span></a> <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-expanded-owl-terms-at-a-glance">expanded properties</a>
+      </span>
+    </h3>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#contextualized</p>
+    <div class="definition"><p>An entity that is a contextualization of another entity presents all aspects of the latter as per the latter's description in another bundle (referred to as remote bundle), and therefore constitutes a particular case of specialization of the latter entity.</p>
+    </div>
+
+    <div about="#example-for-property-contextualized" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#contextualized"></span>
+      <strong class="crossreference">Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_contextualized.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_contextualized.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <dl>
+
+        <dt>has super-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#specializationOf" href="#specializationOf" class="owlclass">prov:specializationOf</a> <sup class="type-op" title="object property">op</sup>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#ContextualizedEntity" href="#ContextualizedEntity" class="owlclass">prov:ContextualizedEntity</a>
+            </li>
+          </ul>
+        </dd>
+
+      </dl>
+    </div>
+  </div>
+
   <div id="generated" class="entity">
     <h3>
       Property: <a href="#generated"><span class="dotted" title="http://www.w3.org/ns/prov#generated">prov:generated</span></a> <sup class="type-op" title="object property">op</sup>
@@ -384,22 +427,22 @@
     </div>
   </div>
 
-  <div id="hadOriginalSource" class="entity">
+  <div id="hadPrimarySource" class="entity">
     <h3>
-      Property: <a href="#hadOriginalSource"><span class="dotted" title="http://www.w3.org/ns/prov#hadOriginalSource">prov:hadOriginalSource</span></a> <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#hadPrimarySource"><span class="dotted" title="http://www.w3.org/ns/prov#hadPrimarySource">prov:hadPrimarySource</span></a> <sup class="type-op" title="object property">op</sup>
       <span class="backlink">
          back to <a href="#prov-expanded-owl-terms-at-a-glance">expanded properties</a>
       </span>
     </h3>
-    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#hadOriginalSource</p>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#hadPrimarySource</p>
     <div class="definition"><p>An original source refers to the source material that is closest to the person, information, period, or idea being studied.</p>
     </div>
 
-    <div about="#example-for-property-hadOriginalSource" typeof="prov:Entity" class="example">
-      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#hadOriginalSource"></span>
+    <div about="#example-for-property-hadPrimarySource" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#hadPrimarySource"></span>
       <strong class="crossreference">Example</strong>
-      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadOriginalSource.ttl"
-           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadOriginalSource.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadPrimarySource.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_hadPrimarySource.ttl"%}{% endescape %}</pre>
     </div>
 
     <div class="description">
@@ -442,6 +485,40 @@
             </li>
             <li>
               <a title="http://www.w3.org/ns/prov#qualifiedSource" href="#qualifiedSource" class="owlproperty">prov:qualifiedSource</a> <sup class="type-op" title="object property">op</sup>
+            </li>
+          </ul>
+        </dd>
+
+      </dl>
+    </div>
+  </div>
+
+  <div id="inContext" class="entity">
+    <h3>
+      Property: <a href="#inContext"><span class="dotted" title="http://www.w3.org/ns/prov#inContext">prov:inContext</span></a> <sup class="type-op" title="object property">op</sup>
+      <span class="backlink">
+         back to <a href="#prov-expanded-owl-terms-at-a-glance">expanded properties</a>
+      </span>
+    </h3>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#inContext</p>
+    <div class="definition"><p>An entity that is a contextualization of another entity presents all aspects of the latter as per the latter's description in another bundle (referred to as remote bundle), and therefore constitutes a particular case of specialization of the latter entity.</p>
+    </div>
+
+    <div about="#example-for-property-inContext" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#inContext"></span>
+      <strong class="crossreference">Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_inContext.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_inContext.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <div class="description">
+      <dl>
+
+        <dt>has domain</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#ContextualizedEntity" href="#ContextualizedEntity" class="owlclass">prov:ContextualizedEntity</a>
             </li>
           </ul>
         </dd>
@@ -529,7 +606,7 @@
     <div class="description">
       <div class="comment"><p>An entity is a specialization of another if they both refer to some common thing but the former is a more constrained entity than the former. The common entity does not need to be identified.</p>
       </div>
-      <p><strong class="crossreference">has characteristics</strong> <a href="http://www.w3.org/TR/owl2-syntax/#Transitive_Object_Properties">Transitive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Irreflexive_Object_Properties">Irreflexive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Asymmetric_Object_Properties">Asymmetric</a>      </p>
+      <p><strong class="crossreference">has characteristics</strong> <a href="http://www.w3.org/TR/owl2-syntax/#Irreflexive_Object_Properties">Irreflexive</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Asymmetric_Object_Properties">Asymmetric</a>,  <a href="http://www.w3.org/TR/owl2-syntax/#Transitive_Object_Properties">Transitive</a>      </p>
       <dl>
 
         <dt>has super-properties</dt>
@@ -555,6 +632,15 @@
           <ul>
             <li>
               <a title="http://www.w3.org/ns/prov#Entity" href="#Entity" class="owlclass">prov:Entity</a>
+            </li>
+          </ul>
+        </dd>
+
+        <dt>has sub-properties</dt>
+        <dd>
+          <ul>
+            <li>
+              <a title="http://www.w3.org/ns/prov#contextualized" href="#contextualized" class="owlclass">prov:contextualized</a>
             </li>
           </ul>
         </dd>

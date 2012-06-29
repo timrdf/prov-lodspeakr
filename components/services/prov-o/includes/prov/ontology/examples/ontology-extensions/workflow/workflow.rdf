@@ -1,0 +1,152 @@
+
+<!-- Processed by Id: cwm.py,v 1.197 2007/12/13 15:38:39 syosi Exp -->
+<!--     using base file:///home/stain/stuff/src/provenance-wg/prov/ontology/examples/ontology-extensions/workflow/workflow.ttl-->
+
+
+<rdf:RDF xmlns="http://www.example.com/scientific-workflow#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:prov="http://www.w3.org/ns/prov-o/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:time="http://www.w3.org/2006/time#"
+    xmlns:wf="http://www.example.com/scientific-workflow#">
+
+    <Process rdf:about="#workflowRun">
+        <ranInWorkflowEngine>
+            <WorkflowEngine rdf:about="#workflowEngine" />
+        </ranInWorkflowEngine>
+        <wasDefinedBy rdf:resource="http://www.example.com/workflow1#workflow"/>
+        <wasLaunchedBy>
+            <prov:Agent rdf:about="#aUser">
+                <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                <foaf:name>Stian Soiland-Reyes</foaf:name>
+            </prov:Agent>
+        </wasLaunchedBy>
+        <prov:startedAt rdf:parseType="Resource">
+            <time:inDateTimeXSD>2011-10-21T09:20:15Z</time:inDateTimeXSD>
+        </prov:startedAt>
+        <prov:endedAt rdf:parseType="Resource">
+            <time:inDateTimeXSD>2011-10-21T09:23:32Z</time:inDateTimeXSD>
+        </prov:endedAt>
+        <wf:usedValue>
+            <prov:Usage>
+                <sawValue>
+                    <Value rdf:about="#input">
+                        <value>Steve</value>
+                        <wasReadFrom>
+                            <FileValue rdf:about="#inputFile">
+                                <file>/tmp/myinput.txt</file>
+                                <value>Steve</value>
+                            </FileValue>
+                        </wasReadFrom>
+                    </Value>
+                </sawValue>    
+                <seenAtPort rdf:resource="http://www.example.com/workflow1#inName"/>
+                <prov:hadTemporalValue rdf:parseType="Resource">
+                    <time:inDateTimeXSD>2011-10-21T09:21:31Z</time:inDateTimeXSD>
+                </prov:hadTemporalValue>
+            </prov:Usage>
+        </wf:usedValue>
+        <wf:generatedValue>
+            <prov:Generation>
+                <sawValue>
+                    <Value rdf:about="#sha1FromWorkflow">
+                        <value>a33d1fb1658d4fbf017de59ab67437a3eb5ff50d</value>
+                        <wf:sameValueAs rdf:resource="#sha1"/>
+                    </Value>
+                </sawValue>    
+                <wasSeenAt rdf:resource="http://www.example.com/workflow1#sha1"/>
+            </prov:Generation>
+        </wf:generatedValue>
+    </Process>
+
+    <Process rdf:about="#constant">
+        <wasDefinedBy rdf:resource="http://www.example.com/workflow1#String_Constant"/>
+        <wasSubProcessExecutionOf rdf:resource="#workflowRun"/>
+        <prov:startedAt>
+            <time:Instant rdf:about="#t0">
+                <time:inDateTimeXSD>2011-10-21T09:20:15Z</time:inDateTimeXSD>
+            </time:Instant>
+        </prov:startedAt>
+
+        <prov:endedAt rdf:resource="#t0"/>
+        <wf:generatedValue>
+            <prov:Generation>
+                <sawValue rdf:resource="http://www.example.com/workflow1#String_Constant_value"/>
+                <prov:hadQualifiedEntity>
+                    <Value rdf:about="#hello">
+                        <value>Hello, </value>
+                    </Value>
+                </prov:hadQualifiedEntity>
+                <prov:hadTemporalValue rdf:resource="#t0"/>
+            </prov:Generation>
+        </wf:generatedValue>
+    </Process>
+
+    <Process rdf:about="#combine">
+        <wasDefinedBy rdf:resource="http://www.example.com/workflow1#cat"/>
+        <wasSubProcessExecutionOf rdf:resource="#workflowRun"/>
+        <prov:startedAt rdf:parseType="Resource">
+            <time:inDateTimeXSD>2011-10-21T09:20:20Z</time:inDateTimeXSD>
+        </prov:startedAt>
+        <prov:endedAt rdf:parseType="Resource">
+            <time:inDateTimeXSD>2011-10-21T09:20:25Z</time:inDateTimeXSD>
+        </prov:endedAt>
+        <wf:usedValue>
+            <prov:Usage>
+                <seenAtPort rdf:resource="http://www.example.com/workflow1#catIn1"/>
+                <prov:hadQualifiedEntity rdf:resource="#hello"/>
+                <prov:hadTemporalValue rdf:parseType="Resource">
+                    <time:inDateTimeXSD>2011-10-21T09:20:21Z</time:inDateTimeXSD>
+                </prov:hadTemporalValue>
+            </prov:Usage>
+        </wf:usedValue>
+        <wf:usedValue>
+            <prov:Usage>
+                <sawValue rdf:resource="#input"/>
+                <seenAtPort rdf:resource="http://www.example.com/workflow1#catIn2"/>
+                <prov:hadTemporalValue rdf:parseType="Resource">
+                    <time:inDateTimeXSD>2011-10-21T09:20:23Z</time:inDateTimeXSD>
+                </prov:hadTemporalValue>
+            </prov:Usage>
+        </wf:usedValue>
+        <wf:generatedValue>
+            <prov:Generation>
+                <sawValue>
+                    <Value rdf:about="#combined">
+                        <value>Hello, Steve</value>
+                    </Value>
+                </sawValue>    
+                <seenAtPort rdf:resource="http://www.example.com/workflow1#catOut"/>
+            </prov:Generation>
+        </wf:generatedValue>
+    </Process>
+
+
+
+
+
+
+
+
+    <Process rdf:about="#shasum">
+        <wasDefinedBy rdf:resource="http://www.example.com/workflow1#shasum"/>
+        <wasSubProcessExecutionOf rdf:resource="#workflowRun"/>
+        <prov:startedAt rdf:parseType="Resource">
+            <time:inDateTimeXSD>2011-10-21T09:20:30Z</time:inDateTimeXSD>
+        </prov:startedAt>
+        <prov:endedAt rdf:parseType="Resource">
+            <time:inDateTimeXSD>2011-10-21T09:21:00Z</time:inDateTimeXSD>
+        </prov:endedAt>
+        <wf:generatedValue>
+            <prov:Generation>
+                <sawValue>
+                    <Value rdf:about="#sha1">
+                        <value>a33d1fb1658d4fbf017de59ab67437a3eb5ff50d</value>
+                    </Value>
+                </sawValue>
+                <wasSeenAt rdf:resource="http://www.example.com/workflow1#shaOut"/>
+            </prov:Generation>
+        </wf:generatedValue>
+    </Process>
+
+</rdf:RDF>

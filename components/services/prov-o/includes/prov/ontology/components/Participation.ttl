@@ -1,0 +1,30 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:Activity
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:qualifiedParticipation;
+      owl:minCardinality 0;
+   ];
+.
+
+prov:Participation
+   a owl:Class;
+   rdfs:subClassOf prov:QualifiedEntityInvolvement;
+   rdfs:comment "This class is reifying the prov:hadParticipant triple from the Activity to the Entity: subClassOf onProperty rdf:predicate/owl:annotatedProperty; hasValue prov:hadParticipant -tlebo 2011-11-06";
+
+   rdfs:seeAlso <http://www.w3.org/mid/EMEW3|bc6e7291f546f832aef15409cf6d3330nAY8cG08L.Moreau|ecs.soton.ac.uk|4ED5EB74.3060509@ecs.soton.ac.uk>;
+   rdfs:comment "Participation is now superseded by the Traceability Record
+http://dvcs.w3.org/hg/prov/raw-file/default/model/ProvenanceModel.html#record-traceability";
+.
+
+prov:qualifiedParticipation
+   a owl:ObjectProperty;
+   rdfs:subPropertyOf prov:qualifiedInvolvement;
+   rdfs:domain prov:Activity;
+   rdfs:range  prov:Participation;
+.

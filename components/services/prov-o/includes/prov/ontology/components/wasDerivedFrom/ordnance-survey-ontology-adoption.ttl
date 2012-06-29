@@ -1,0 +1,13 @@
+@prefix nfo:  <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix :     <#> .
+
+:result
+   a prov:Entity;
+   nfo:fileURL <http://minas.cs.utep.edu/visko/ontology/esip-data.owl>;
+   prov:wasDerivedFrom :input;
+.
+:input
+   a prov:Entity;
+   nfo:fileURL <http://wiki.esipfed.org/images/d/da/Datatype.txt>;
+.

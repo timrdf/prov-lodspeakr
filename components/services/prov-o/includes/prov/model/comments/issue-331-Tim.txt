@@ -1,0 +1,920 @@
+  > DM editors,
+  > 
+  > Please find here:
+  > 
+  > * Response to your specific questions, then 
+  > * Comments that follow the document.
+  > 
+  > Regards,
+  > Tim
+  > 
+  > ===================
+  > 
+  > Editor's questions:
+  > 
+  >     *  Can the document be released as a next public working draft? If no, what are the blocking issues? 
+  > 
+  > Yes-ish. Releasing the draft with the current state of
+  > specializationOf concerns me. I would be willing to let the draft go
+  > public, but would much prefer another pass here.
+  > 
+  >     * Is the structure of the document approved? 
+  > 
+  > Yes. It flows naturally.
+  > 
+  >     * Can the short name of the document be confirmed (in particular,
+  >       for prov-n, prov-dm-constraints, since request needs to be sent
+  >       for publication)?
+  > 
+  > yes.
+  > 
+  > 
+  > 
+  >     * If a reviewer raised some issues (closed pending review), can they be closed? 
+  > 
+  > If the traditional request mechanism is used and provides the raiser
+  > one more check, yes.
+  > 
+  > 
+  > 
+  > 
+  >     * Can all concept definitions be confirmed? Specifically,
+  >           o consider ISSUE-337 on agents
+  > 
+  > (yes) The treatment of agent is fine. The fact that it is an entity
+  > seems unnatural, given that it is one of the principal concepts it
+  > should not be stuck under Entity. One can make an agent an entity at
+  > any time, so we are not losing anything by keeping Agent, Entity, and
+  > Activity at the top level.
+  > 
+  >     *
+  > 
+  > 
+  >           o consider ISSUE-223 on entities 
+  > 
+  > (yes) "An entity is a thing one wants to provide provenance for. For
+  > the purpose of this specification, things can be physical, digital,
+  > conceptual, or otherwise; things may be real or imaginary." is
+  > fine. In particular "wants to provide provenance for" is
+  > important. The breadth of entity is conveyed by the end of the
+  > definition. Entities contrast with Activities, which is another
+  > important aspect.
+  > 
+  > 
+  > NO, specializationOf needs help. It is NOT owl:sameAs, but seems to
+  > always drift back to something TOO close to it. "Things and Refer"
+  > should not appear in the definition. I wish the WG would stop fighting
+  > over competing detailed definitions and leave it in its abstract form
+  > for general use (and extension).
+  > 
+  > 
+  > 
+  > 
+  > 
+  > 
+  > 
+  > 
+  > ==========================
+  > <> dcterms:subject <http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html> .
+  > 
+  > General comments:
+  > 
+  > 1)
+  > "actities" typo
+
+Done
+  > 
+  > 
+  > 2)
+  > The summary "component 4: properties to link entities that refer to a same thing;" seems misleading.
+  > (Though, with the flurry of recent discussions on this, it's not clear what a better summary is)
+  > 
+  > 3)
+  > odd phrasing: "which are allows users"
+
+Fixed
+  > 
+  > 4)
+  > typo: "completion of the the act of producing"
+  > 
+
+Fixed
+
+  > 5)
+  > Generation defintiion seems odd when split over two sentences:
+  > "This entity becomes available for usage after this generation. This entity did not exist before generation."
+  > ->
+  > "This entity did not exist before generation and becomes available for usage after this generation."
+  > 
+
+Done
+
+  > 6)
+  > The following could benefit from a rephrasing:
+  > "A Web site and service selling books on the Web and the company hosting them are software agents and organizations, respectively."
+
+Updated: A site selling books on the Web, the services involved in the processing of orders, and the companies hosting them are also agents.
+
+
+  > 
+  > 7)
+  > Section 2.4 seems to be asymmetric.
+  > Attribution has one definition and example. (thus does not get as much or adequate attention compared to association)
+  > Association has two leading paragraphs (which at first reading
+  >     seem like they should be supporting "attribution" and not
+  >     introducing the subsequent "attribution")
+
+Section was restructured and text trimmed.
+
+  > 
+  > 8)
+  > Should tables and figures be numbered?
+  > "Table (Mapping of Provenance concepts to types and relations in PROV-DM)"
+  > 
+
+Yes, all cross-reference to section should use their number. Will do
+this at the next round, when hopefully structure is stable.
+
+  > 9)
+  > The following seems to be out of place, or does not link to the fulfillment of its promise:
+  > "When examining PROV-DM in details, some relations, while involving two primary elements, are shown to be nary."
+  > * Is it "in detail"?
+  > * suggest to add link to where these "detail" and "nary" are discussed later in the document.
+
+Updated text. Added reference to section 4.
+
+  > 
+  > 10)
+  > It seems asymmetric that "wasInformedBy" is not part of the diagram
+  > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html#
+  > 
+  > The diagram answers how entities can relate to entities, and agents to
+  > agents, but activities seem less primary without having their own
+  > intra-relation.  (This, noting that the diagram "is not intended to be
+  > complete.")  Communication occurs throughout the publication example,
+  > so it could be added.
+  > 
+
+We made a selection of constructs to appear in section 2 (and used in 3). 
+We only represent those here.  
+
+Adding more concepts to section 2 would make it even longer. We have
+some comments that it may be too long already.
+
+  > 
+  > 11)
+  > The final paragraph in section 2.5 tries to tie things together, but it does not do so clearly.
+  > """
+  > 
+  > Figure overview-types-and-relations is not intended to be complete. It
+  > only illustrates types and relations from Section starting-points and
+  > exploited in the example discussed in the next section. They will then
+  > be explained in detail in Section data-model-components. The third
+  > column of Table (Mapping of Provenance concepts to types and relations
+  > in PROV-DM) lists names that are part of a textual notation to write
+  > instances of the PROV-DM data model. This notation, referred to as the
+  > PROV-N notation, is outlined in the next section.  """
+  > 
+  > * for the intended purpose, "Section starting-points" is _this_ section (and not some other that needs to be hunted down).
+
+Yes done.
+
+  > * "example discussed in the next section" provides a relative reference that could be more informative. Perhaps "following section" can help.
+  > * "They will then be explained" -> "The starting points will be explained"
+  > * Not having numbers on the sections makes it difficult to infer the organization.
+  > * The point about the third column in the table means nothing to me. Why do I care? Is this useful in PROV-N land? It's not mentioned explicitly until the following sentence (which is where it is re-introduced unnecessarily).
+
+
+Whole paragraph rewritten as follows:
+
+Figure 1 is not intended to be complete: it only illustrates types and relations introduced in this section (Section 2), exploited in the example discussed in Section 3, and explained in detail in Section 4. Names of relations depicted in Figure 1 are listed in the third column of Table 2. These names are part of a textual notation to write instances of the PROV-DM data model, which we introduce in the next section.
+
+
+
+
+  > 
+  > 12)
+  > Expressions are not identified, but the following could be interpreted as such:
+  > "Most expressions have an identifier which always occur in first position"
+  > * suggest to rephrase so that the expression mentions (not has) an identifier.
+  > 
+
+No action here.
+Paolo?
+
+  >  
+  > 13)
+  > Not sure semicolon is appropriate here:
+  > "; we then provide attribution"
+  > 
+  > 
+Updated sentence:
+
+"Its provenance can be expressed from several perspectives: first, provenance is concerned with the W3C process; second, it takes the authors' viewpoint. Then, attribution of these two provenance descriptions is provided."
+
+  > 14)
+  > "must also preceded by" missing a "be"?
+  > 
+
+yes
+  > 15)
+  > Odd phrasing: "(some of which locating archived email messages"
+  >
+fixed
+ 
+  > 16)
+  > suggest removing "agent" from "were published by the WWW Consortium agent"
+  > -- it sounds like some software did it.
+  > 
+
+Done
+  > 
+  > 17)
+  > Collective confusion in example
+  > * What is prefix "ar2" and "ar3" and "ar1"?
+  > * All of the numbers in the names make it hard to keep track of things (e.g. ar1:0004?)
+  > * 404: "Full details of the provenance record can be found here." -> http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/examples/w3c-publication1.pn
+  > * more unrecognizable prefixes: pr:RecsWD
+  > * "it happens that all entities were already Web resources, with
+  >   readily available URIs, which we used" - this seems only to be true
+  >   for the two reports and nothing else.
+  > 
+  > * 404: "Full details of the provenance record can be found here" ->
+  >   http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/examples/w3c-publication3.pn
+  > 
+404 was unfortunate.
+
+I Asked Tim on how to deal with this, given that URIs already exist out there!
+
+  > 18)
+  > This phrase seems to have the opposite affect of its intent:
+  > "its details differ from the author's perspective" 
+  > * Perhaps "its details differ according to the asserting author"
+
+Rewrote as:
+From the author's perspective, the description states: it is a document and it has a version number.
+
+  > 
+  > 19)
+  > Perhaps switch the two accounts in the example section. The second one is much smaller (and actually happens first).
+  > This could help readability.
+
+Yes, this was suggested by Khalid.
+Done.
+
+  > 
+  > 20)
+  > Before section 4, the distinction between concepts and types/relations was made (to the extend of showing their mapping).
+  > Yet section 4 (titled types and relations) says "PROV-DM concepts are structured according to six components that are introduced in this section"
+  > * suggest to replace "concepts" with types and relations.
+  > * suggest to be precise about the relation between "concepts" and "types and relations" and to use then consistently.
+  > 
+
+Yes, more care needs to be taken. So:
+
+"Provenance concepts, expressed as PROV-DM types and relations, are structured according to ... "
+
+  > 
+  > 21)
+  > Beginning of section 4:
+  > "operations related to collections."
+  > * suggest to rephrase this with examples like in component 1; mentioning insertion and removal.
+  > 
+
+Updated.
+
+  > 
+  > 22)
+  > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html#prov-dm-concepts-and-relations
+  > * suggest adding a textual indicator for the component (to readability, and to avoid potential accessibility issues for visually impaired).
+
+I am not sure how or what, suggestion?
+
+  > * Also, the color code does not exist on the same page (one must scroll up to see it).
+
+I don't understand.
+
+  > 
+  > 23)
+  > Second column for Collection seems odd in 
+  > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html#prov-dm-concepts-and-relations
+
+UPdate.
+
+  > 
+  > 24)
+  > "The attributes ex:version is" -> "The attribute ex:version is"
+
+Done
+  > 
+  > 
+  > 25)
+  > Why is:
+  > """
+  > 
+  >   wasGeneratedBy(e1,a1, 2001-10-26T21:32:52, [ex:port="p1"])
+  >   wasGeneratedBy(e2,a1, 2001-10-26T10:00:00, [ex:port="p2"])
+  > 
+  > """
+  > not:
+  > 
+  >   wasGeneratedBy(-,e1,a1, 2001-10-26T21:32:52, [ex:port="p1"])
+  >   wasGeneratedBy(-,e2,a1, 2001-10-26T10:00:00, [ex:port="p2"])
+  > 
+  > Is there an exception to the "- rule"?
+
+Nullet 4 in section 2.6
+Prov-N optional arguments need not be specified. For cases where it is desirable to indicate which arguments have not been specified, PROV-N uses the syntactic marker - for unspecified arguments.
+
+  > 
+  > 
+  > 26)
+  > 
+  > What started in this phrase: "Any usage or generation involving an activity follows its start."
+  > 
+  > * suggest rephrasing to make it clear that the activity is the thing starting.
+  > 
+  > * perhaps "Any usage or generation by an activity must follow the activity's start"
+  > 
+  > * similar comment for definition of End
+
+Done.
+  > 
+  > 
+  > 27)
+  > 
+  > For Start's example:
+  > 
+  > "if the activity happens to consume the message content" could safely be removed for clarity. (the "regarded as an input" covers it more clearly)
+
+
+updated: 
+"Furthermore, if the message is also an input to the activity, this can be described as follows:"
+
+
+  > 
+  > 28)
+  > 
+  > Should  "wasAttributedTo(ex:foot_race,ex:DarthVader)" be "wasAttributedTo(ex:bang,ex:DarthVader)" ?
+
+Yes, that will teach to copy examples from untrusted sources ;-) 
+
+  > 
+  > 
+  > 29)
+  > 
+  > Regarding: "Consider two long running services, which we represent by activities  s1 and s2."
+  > 
+  > It seems odd that services are considered activities. Should they not be agents that perform more granular activities?
+  > 
+
+
+
+
+  > * perhaps this example could be replaced to avoid yet another computer
+  >   example: the "fine paying; check writing; mailing" activity was
+  >   informed by the "traffic stop" activity. The implicit entity is a
+  >   traffic ticket that had a notice of fine, amount, and payment
+  >   mailing address.
+
+
+done.
+
+  > 
+  > 30)
+  > 
+  > Start by Activity continues to be an outlier in this model. It's just a simple case of communication. 
+  > 
+  > Recommend to drop start by activity.
+  > 
+  > https://www.w3.org/2011/prov/track/issues/340
+  > 
+  > 
+
+See my response there. It's not a communication.
+
+  > 
+  > 31)
+  > 
+  > Is http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html#figure-component2
+  > 
+  >
+  > 
+  >  legitimate UML that can be interpreted by anybody outside of DM? Why
+  >  isn't wasAssociatedWith class relating to Activity and Agent (like an
+  >  ERD would do)?
+
+Primary binary relation is between activity and agent, and explicitly represented.
+Plan is a further attribute of wasAssociatedWith.
+
+
+  > 
+  > 
+  > 
+  > 32)
+  > 
+  > "are responsible in some way for the activity to take place"
+  > 
+  > -> "are responsible in some way for the activity that took take place"
+  > 
+
+yes
+
+  > 
+  > 
+  > 33)
+  > 
+  > The "length > 1" connotation here concerns me:
+  > 
+  > "id:  an optional identifier for the responsibility chain;"
+  > 
+  > It seems to suggest that multiple one-step responsibilities should point to their aggregation, which I don't believe is the case.
+  > 
+  > * suggest to rephrase to "responsibility link [between subordinate and responsible]"
+  > 
+
+chain -> link
+
+  > 
+  > 
+  > 
+  > 34)
+  > 
+  > suggest "attribute-value pairs that describe the modalities of this relation." 
+  > 
+  > -> "attribute-value pairs that describe the modalities of this responsibility link." 
+  > 
+
+Done
+
+  > 
+  > 35)
+  > 
+  > "and a funder agents" -> "and a funder agent"
+
+"The following fragment describes three agents: a programmer, a researcher, and a funder."
+  > 
+  > "has an contractual agreement" -> "has a contractual agreement"
+  > 
+  > 
+
+Done
+
+  > 36)
+  > 
+  > should responsibility example include:
+  > 
+  > wasAssociatedWith(a,ag3) ?
+  > 
+
+I've added it. Maybe we should be able to infer this?
+ > 
+  > 
+  > 
+  > 37)
+  > 
+  > section 4.3:
+  > 
+  > "and subtypes of derivations" -> "subtypes of derivations"
+  > 
+  > 
+
+"The third component of PROV-DM is concerned with derivations of entities from others, and derivation subtypes Revision, Quotation, Original Source, and Traceability. "
+
+  > 
+  > 
+  > 36)
+  > 
+  > Similar to previous, is the binary augmentation shown in
+  > 
+  > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html#figure-component3
+  > 
+  > a convention known by anybody? It is very difficult to interpret.
+  > 
+
+As above.
+
+  > 
+  > 
+  > 37) 4.3.1
+  > 
+  > The "build up" discussed for adding details about derivation is very nice.
+  > 
+  > 
+
+... we're getting there, at last!
+
+  > 
+  > 38)
+  > 
+  > It is difficult to follow 
+  > 
+  > wasDerivedFrom(e2, e1, a, g2, u1)
+  > wasGeneratedBy(g2, e2, a, -)
+  > used(u1, a, e1, -)
+  > 
+  > 
+  > and the paragraph. Perhaps a simple diagram would help follow. (but then this would be inconsistent with other definitions…)
+  > 
+
+We could add a figure, but, as said, it would be inconsistent.
+We have reorganized the example. Hopefully, it is now more readable.
+
+  > 
+  > 
+  > 
+  > 
+  > 39)
+  > 4.3.2
+  > "responsibility: an optional identifier (ag) for the agent who approved the newer entity as a variant of the older;"
+  > 
+  > ^^^ this seems more appropriately modeled as an account, not stuck as part of the underlying model.
+  > 
+  > Revision should "just be", and if one wants to know who says "it just is", we should use accounts to answer.
+  > 
+
+It's not who said it, it's who is responsible for it. 
+
+"The agent who is responsible for the revision may optionally be specified."
+
+
+
+  > 
+  > The same experience that we used to remove "agent asserting an account" from "account" should be reapplied to this parameter as well.
+  > 
+  > https://www.w3.org/2011/prov/track/issues/341
+  > 
+
+
+We may want to say that we want responsibility to stay out of the derivation component.
+This would be a good refactoring I believe: we would remove agents from quotation and revision.
+We would keep derivation/responsibility well distinct.
+
+But we shouldn't conflate responsibility and accounts.
+
+
+  > 
+  > 
+  > 
+  > 40)
+  > 
+  > Glad to see the "all" in "A quotation  is the repeat of (some or all of) an entity"
+  > 
+
+Good suggestion from someone ;-)
+
+  > 
+  > 
+  > 
+  > 41)  
+  > 
+  > The phrases:
+  > 
+  > "Quotation is a particular case of  derivation in which"
+  > 
+  > and
+  > 
+  > "An original source relation is a particular case of derivation 
+  > that"
+  > 
+  >  are very instructive.
+  > 
+  > 
+  > but this is not done for Revision.
+  > 
+  > * recommend to add this kind of phrase to revision section.
+
+
+Revision is a particular case of derivation of an entity into its revised version.
+
+  > 
+  > 
+  > 
+  > 42) (Thanks for all the fish…)
+  > 
+
+  > "Let us consider the current section dm:term-original-source,"
+  >     seems to describe the concrete form, when in fact you're talking
+  >     about the notions described by the section.
+  > 
+  > * suggest to rephrase to something like "Let us consider the concept described in the current section"
+  > 
+
+You're right, it's better to have the concept original source as subject.
+
+
+
+  > 
+  > 
+  > 43)
+  > 
+  > "and the Google page go:credit-where-credit-is-due.html, where the notion was originally described."
+  > 
+  > suggest to += "(to the knowledge of the authors)"
+  > 
+  > 
+
+Done
+
+  > 
+  > 44)
+  > 
+  > should "Derivation and association are particular cases of  traceability."
+  > 
+  > be "Derivation and _attribution_ are particular cases of  traceability." ?
+  > 
+  > 
+
+yes
+
+  > 
+  > 45)
+  > 
+  > "w3:Consortium or to
+  > pr:rec-advance." -" w3:Consortium _and_ to pr:rec-advance."
+  > 
+  > 
+
+yes
+
+  > 
+  > 46)
+  > 
+  > "Wherever two people describe the provenance of a same thing, 
+  > one cannot expect them to coordinate and agree on the identifiers to use to denote that thing."
+  > 
+  > * we are nose diving back to owl:sameAs with this ^^
+
+TODO. How to fix?
+
+  > 
+  > * The example is reasonable (date-specific URI versus non)
+  > 
+  > 
+  > 
+  > 47)
+  > 
+  > "To allow for identifiers to be chosen freely and independently by each  user, the PROV data model introduces relations
+  > that allow entities  to be linked together.
+  > The following two relations are introduced for expressing  specialized or alternate entities."
+  > 
+
+  > ^^ this does not convey the "levels of detail" aspect well enough
+  >     - it emphasizes too much on the "choose your own URI" wild west of
+  >     the web.
+  > 
+
+TODO: suggestions please.
+  > 
+  > 
+  > 48)
+  > 
+  > References and Things should not be involved in defining
+  > specialization. We've just pushed the "Thing vs. Entity" argument into
+  > specialization.
+  > 
+  > "An entity is a specialization
+  >  of another if they refer to some common thing but the former is a more 
+  > constrained entity than the latter. The common thing do not need to be 
+  > identified. "
+  > 
+
+Currently in discussion.
+  > 
+  > 
+  > 49)
+  > 
+  > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-dm.html#figure-component5
+  > 
+  > has old naming "derivation-by-removal" which was renamed to simpler "removal"
+  > 
+  > (or, if it's not "old", I recommend renaming it)
+  > 
+  > Though, I may just be confused on this (qualified vs. unqualified). Perhaps disregard this comment.
+  > 
+
+Yes, derivation-by-removal and derivation-by-insertion are now just removal and insertion, respectively.
+  > 
+  > 
+  > 
+  > 50)
+  > 
+  > "and is a generic indexing mechanisms" -> "and is a generic indexing mechanism"
+  > 
+  > 
+done
+  > 
+  > 
+  > 51)
+  > 
+  > "and more (the specification of such specialized structures in terms of key-value pairs is out of the scope of this document)"
+  > 
+  > -> "and more. The specification of such specialized structures in terms of key-value pairs is out of the scope of this document."
+  > 
+  > 
+
+OK
+
+  > 
+  > 52)
+  > 
+  > suggest mentioning the word "replacement" in the sentence:
+  > 
+  > "Insertion provides an "update semantics" for the keys that are already 
+  > 
+  > present in the collection, as illustrated by the following example. "
+  > 
+  > 
+
+--> Insertion provides an "update semantics" for the keys that are already present in a collection, since a new pair replaces an existing pair with the same key in the new collection. This is illustrated by the following example.
+
+  > 
+  > 53)
+  > "This is reflected in the constraints listed in Part II." seems to warrant a link.
+  > 
+  > 
+  > 
+
+added citation.
+
+  > 
+  > 54)
+  > first example in annotations
+  > 
+  > "The note's identifier and attributes are declared in a separate namespace denoted by prefix ex2."
+  > 
+  > ^^^ This seems to be insinuating some best practice without explaining
+  >  why they are in different namespaces. It can lead to questions that
+  >  each requires a can of worms.
+  > 
+  > The namespace of the attributes should NOT be in the same namespace as the instance.
+  > 
+
+I think it should. It's the rendering application that creates the note. Text changed as follows:
+
+
+The note is linked to the entity tr:WD-prov-dm-20111215, with relation hasAnnotation discussed in Section 4.6.2. The note's identifier and attributes are declared in the namespace denoted by prefix ex to illustrate that the rendering application may differ from the application involving entity tr:WD-prov-dm-20111215.
+
+  > 
+  > 
+  > 55)
+  > second example in annotations
+  > 
+  > ex3:n2 should NOT be in same namespace as ex3:reputation
+  > 
+
+I think it should. It's the reputation service that adds the note.
+  > 
+  > 
+  > 56)
+  > 
+  >  I'll point out _again_ that Notes are a bad way to model
+  >     derivations of provenance; that is what accounts are for. If you
+  >     want to use this shortcut in your design - fine. But don't
+  >     advocate the impoverished design in the recommendation itself --
+  >     snuck in via an example.
+  > 
+
+It is not forgotten. It's ISSUE-260.
+
+Simply I had no time to work on it. 
+To address your point, we need an agreed notion of account.
+
+It is unclear to me whether this is equivalent to a derivation of provenance.
+
+
+  > 
+  > 
+  > 
+  > 57)
+  > 
+  > "The interpretation of any attribute declared in another namespace is out of scope."
+  > 
+  > ^^ does this refer to attributes mentioned in this document? 
+  > 
+
+Yes. 
+
+  > 
+  > 
+  > 
+  > 58)
+  > please add links to the appropriate sections for the contexts mentioned in:
+  > 
+
+  > "The attribute prov:role denotes the function of an entity with
+  >     respect to an activity, in the context of a usage, generation,
+  >     association, start, and end"
+  > 
+
+
+TODO. Tim: I don't understand: linking what to what?
+  > 
+  > 
+  > 
+  > 59)
+  > Please add links to the appropriate sections for the attributes in:
+  > "The PROV-DM namespace declares a set of reserved attributes catering for extensibility: type, role, location."
+  > 
+  > 
+
+  > 
+  > 
+  > 60)
+  > Please explicitly cite the parts in:
+  > "must preserve the semantics specified in the PROV-DM documents (part 1 to 3)."
+  > 
+
+updated and added citation.
+  > 
+  > 
+  > 
+  > 61)
+
+  > 
+  > 
+  > This is inaccurate from the AWWW perspective: "One needs to ensure
+  > that provenance descriptions for the latter document remain valid as
+  > denoted resources change."  What may change is the representation
+  > returned when the resource's denotation (i.e., URI) is requested.
+  > This, in turn, may mislead consumers to a referent distinct from that
+  > originally intended by the author of the denotation.  The resource
+  > didn't change, one's interpretation of what was written changes.
+  > 
+  > 
+
+Text is rephrased as
+
+"one needs to ensure that provenance descriptions for the latter resource remain valid as the resource state changes."
+
+
+
+  > 
+  > 62) typo: "mechanism for blundling up provenance"
+  > 
+  > 
+  > 
+  > 
+  > 63)
+  > awkward wording: "as well as constraint that structurally well-formed descriptions are expected to satisfy."
+  > 
+  > 
+
+constraintS
+
+
+WAW! extensive review, thanks!
+
+
+  > 
+  > 
+  > On Mar 29, 2012, at 9:36 AM, Provenance Working Group Issue Tracker wrote:
+  > 
+  > > PROV-ISSUE-331 (review-dm-wd5): issue to collect feedback on prov-dm wd5 [prov-dm]
+  > >
+  > > http://www.w3.org/2011/prov/track/issues/331
+  > >
+  > > Raised by: Luc Moreau
+  > > On product: prov-dm
+  > >
+  > > When sending feedback, please send it under this issue or individual new issues.
+  > >
+  > >
+  > >
+  > >
+  > 
+----------------------------------------------------------------------
+DM editors,
+
+
+On Apr 10, 2012, at 6:26 PM, Timothy Lebo wrote:
+
+> DM editors,
+>
+> Please find here:
+>
+> * Response to your specific questions, then 
+> * Comments that follow the document.
+>
+> Regards,
+> Tim
+>
+> ===================
+>
+> Editor's questions:
+>
+>     *  Can the document be released as a next public working draft? If no, what are the blocking issues? 
+>
+> Yes-ish. Releasing the draft with the current state of specializationOf concerns me. I would be willing to let the draft go public, but would much prefer another pass here.
+
+
+If the definition of specialization changes to the following, I can change my response to a resounding "YES, RELEASE !".
+4.4.1 Specialization
+"An entity is a specialization of another if they describe some common thing but the former is a more constrained entity than the latter. The common thing does not need to be identified."
+
+-Tim
+
+
+
+
+

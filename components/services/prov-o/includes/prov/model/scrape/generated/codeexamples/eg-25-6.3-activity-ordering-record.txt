@@ -1,0 +1,4 @@
+
+activity(a1,workflow,t1,t2,[ex:host="server1.example.org"])
+activity(a2,sub-workflow,t3,t4,[ex:host="server2.example.org"])
+wasStartedBy(a2,a1)

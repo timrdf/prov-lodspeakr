@@ -1,0 +1,32 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix sd:   <http://www.w3.org/ns/sparql-service-description#> .
+
+prov:RecordContainer
+   a owl:Class;
+   rdfs:seeAlso <http://dvcs.w3.org/hg/prov/raw-file/default/model/ProvenanceModel.html#RecordContainer>;
+   rdfs:comment "RecordContainer cannot be asserted by an Agent; this is left to Account.";
+   rdfs:comment "A provenance container is not an expression, but can be exploited to return all the provenance assertions in response to a request for the provenance of something.";
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:hasAsserter;
+      owl:maxCardinality 0;
+   ];
+.
+
+prov:JavaObjectInstance
+   rdfs:subClassOf prov:RecordContainer;
+.
+
+prov:WebService
+   rdfs:subClassOf prov:RecordContainer;
+.
+
+prov:File
+   rdfs:subClassOf prov:RecordContainer;
+.
+
+prov:NamedGraph
+   rdfs:subClassOf prov:RecordContainer;
+.

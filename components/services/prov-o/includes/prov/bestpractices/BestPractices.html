@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PROV Best Practices</title>
+    <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+    <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove'></script>
+	<script src="http://www.w3.org/2007/OWL/toggles.js" class="remove"></script>
+	
+    <script class='remove'>
+        var addExtraReferences = function() {
+          for (var k in extraReferences)
+              berjon.biblio[k] = extraReferences[k];
+      };
+      var extraReferences = {
+        "PROV-DM":
+          "Luc Moreau, Paolo Missier "+
+          "<a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\"><cite>The PROV Data Model and Abstract Syntax Notation</cite></a>. "+
+          "18 October 2011. W3C Working Draft. (Work in progress.) "+
+          "URL: <a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\">http://www.w3.org/TR/2011/WD-prov-dm-20111018/</a>",
+
+		"PROV-PAQ":
+          "Graham Klyne and Paul Groth "+
+          "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/paq/provenance-access.html\"><cite>Provenance Access and Query</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/paq/provenance-access.html\">http://dvcs.w3.org/hg/prov/tip/paq/provenance-access.html</a>",
+        "PROV-O":
+          "Satya Sahoo, Deborah McGuinness "+
+          "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceFormalModel.html\"><cite>PROV Ontology Model</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceFormalModel.html/\">http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceFormalModel.html</a>",
+
+        "PROV-Primer":
+          "Yolanda Gil, Simon Miles "+
+          "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/default/primer/Primer.html\"><cite>PROV Model Primer</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/default/primer/Primer.html/\">http://dvcs.w3.org/hg/prov/raw-file/default/primer/Primer.html</a>",
+          
+          } ;
+    var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "FPWD",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "prov-bestpractices",
+
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          //subtitle   :  "",
+
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2009-08-06",
+
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          // previousPublishDate:  "1977-03-15",
+          // previousMaturity:  "WD",
+
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI: "http://www.w3.org/TR/2011/WD-prov-bestpractices-20111125/", // http://www.w3.org/2011/prov/wiki/D1--NOT-YET-AVAILABLE",
+
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          extraCSS: ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css", "./extra.css"],
+
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+			  { name: "Stian Soiland-Reyes",
+	                url:"http://soiland-reyes.com/stian/",
+	               company: "University of Manchester, UK" },
+			  { name: "Satya Sahoo", url: "http://cci.case.edu/cci/index.php/Satya_Sahoo",
+	                company: "Case Western Reserve University, USA" },
+          ],
+
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          authors:  [
+			  { name: "(In alphabetical order)",                
+                   },
+              { name: "Khalid Belhajjame",                
+                    url:"http://semanticweb.org/wiki/Khalid_Belhajjame",
+				company: "University of Manchester, UK" },
+			  { name: "James Cheney",                
+		            url:"http://homepages.inf.ed.ac.uk/jcheney/",    
+					company: "University of Edinburgh, UK" },
+			  { name: "Daniel Garijo",
+			        url:"http://www.oeg-upm.net/index.php/en/phdstudents/28-dgarijo",
+	                company: "Universidad Politécnica de Madrid, Spain" },
+  			  { name: "Timothy Lebo",
+			        url:"http://tw.rpi.edu/instances/TimLebo",
+			       company: "Rensselaer Polytechnic Institute, USA" },              
+          ],
+          
+          // name of the WG
+          wg:           "Provenance Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/2011/prov/wiki/Main_Page",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-prov-wg",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "",
+
+		// Add extraReferences to bibliography database
+          preProcess: [addExtraReferences], 
+        
+        } ;
+    </script>
+  </head>
+  <body>
+
+    <section id="abstract">
+<p>This document describes the Best Practices for working with the
+[[!PROV-DM]] model and in particular usage of the [[!PROV-O]] ontology.
+This document is non-normative and informational only.  For an
+introduction to PROV, see the [[!PROV-Primer]].
+</p>
+
+   </section>
+   
+<section id='sotd'>
+</section>
+
+<div class="buttonpanel"> 
+<form action="#"><p> 
+<input id="hide-examples" onclick="set_display_by_class('div','anexample rdfxml','none'); set_display_by_id('hide-examples','none'); set_display_by_id('show-examples','');" type="button" value="Hide Example RDF/XML" /> 
+<input id="show-examples" onclick="set_display_by_class('div','anexample rdfxml',''); set_display_by_id('hide-examples',''); set_display_by_id('show-examples','none');" style="display: none" type="button" value="Show Example RDF/XML" /> 
+<input id="hide-examples-ttl" onclick="set_display_by_class('div','anexample turtle','none'); set_display_by_id('hide-examples-ttl','none');  set_display_by_id('show-examples-ttl','');" type="button" value="Hide Example Turtle" /> 
+<input id="show-examples-ttl" onclick="set_display_by_class('div','anexample turtle',''); set_display_by_id('hide-examples-ttl','');  set_display_by_id('show-examples-ttl','none');" style="display: none" type="button" value="Show Example Turtle" /> 
+</p> 
+</form> 
+</div> 
+
+    <section id="serialization">
+       <h2>Serialization of provenance accounts</h2>
+       <p>
+        A representation of a [[PROV-DM]] Account SHOULD be in RDF
+        [[RDF-CONCEPTS]] using the [[PROV-O]] ontology in OWL2
+        [[OWL2-PRIMER]], serialised as Turtle [[TURTLE]] 
+        or any W3C-standardized RDF serialization such as RDF/XML
+        [[RDF-SYNTAX]].
+        </p>
+        <p>
+        <h3>Accounts</h3>
+        <p>
+        Each PROV Account SHOULD be a separate RDF resource, unless the
+        representation allows multiple, named RDF graphs. 
+        </p>
+        <div class="note">TODO: How to express the asserter? Within or
+        outside the account graph?</div>
+        <h3>Media type</h3>
+        <p>
+        No dedicated media type has been allocated for PROV accounts.
+        Resources should use the media types assigned for the 
+        particular RDF representation used, for instance 
+        <code>application/rdf+xml</code> for RDF/XML and
+        <code>text/turtle</code> for Turtle.
+        </p>
+        <div class="note">TODO: Links for media type</div>
+        <p>
+        A resource can be identified as a <code>prov:Account</code> if
+        it assert itself as such. In most cases this can be done using a
+        relative URI reference to the requested resource.  For instance,
+        dereferencing a URI over HTTP with content negotiation:</p>
+        <pre class="example">
+            GET http://www.example.com/prov-account1 HTTP/1.1
+            Accept: text/turtle, application/rdf+xml
+
+            200 OK
+            Content-Type: text/turtle
+
+            @prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+            &lt;&gt; a prov:Account .
+            # ...
+        </pre>
+        <p>
+        In the above example,
+        <code>&lt;/home/stain/src/provenance-wg/prov&gt;</code> is asserted to
+        be a PROV Account. Applications should take care to process HTTP
+        redirections and HTTP headers like <code>Content-Location</code> to
+        relate the URI for the provenance resource with 
+        relative URIs in RDF representations, such as using
+        <code>xml:base</code> and <code>@base</code>.
+        </p>
+
+        <div class="recommendation">
+        PROV resources SHOULD in their RDF representation(s)
+        assert that they are an instance of prov:Account. This MAY be
+        a relative URI reference
+        </div>
+
+        <div class="note">
+        TODO: Add <code>prov:Account</code> to PROV-O for this purpose.
+        </div>
+       </p>
+    </section>
+
+    <section id="existing-vocabularies">
+        <h2>Relation to existing vocabularies (DC, OpenID, Creative Commons, FOAF)</h2>
+        <div class="note">
+        To be written by Kai, Daniel, Simon, Graham.
+        </div>
+        <section id="dublincore">
+            <h3>Dublin core</h3>
+        </section>
+    </section>
+
+    <section id="collections">
+        <h2>Collections</h2>
+        <div class="note">
+        To be written by Paolo and Stian.
+        </div>
+    </section>
+
+	<section id="specializing-provenance-ontology-for-domain-specific-provenance-applications">
+      <h2>Specializing the PROV Ontology for Domain-specific Provenance Applications</h2>
+	    <p>The PROV Ontology [[PROV-O]] is the normative representation of the PROV Data Model (PROV-DM) [[PROV-DM]] using the Web Ontology Language (OWL2) [[!OWL2-PRIMER]]. The PROV Ontology is conceived as a reference ontology that can be extended by various domain-specific applications to model the required set of provenance terms. The PROV Ontology classes and properties can be specialized using the following two RDFS properties:</p>
+   		<ul>
+            <li>rdfs:subClassOf: The property rdfs:subClassOf is an instance of rdf:Property that is used to state that all the instances of one class are instances of another [[!RDF-SCHEMA]]</li>
+            <li>rdfs:subPropertyOf: "A rdfs:subPropertyOf axiom defines that the property is a subproperty of some other property" [[!RDF-SCHEMA]]</li>
+         </ul>
+		<p>To illustrate the specialization mechanism, the PROV Ontology is extended to create an ontology schema for the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a> describing the creation of the crime statistics file. </p>
+
+
+
+	  <section id="moeling-the-crime-file-scenario">
+		<h3>Modeling the Crime File Scenario</h3>
+		<p>The example scenario can be encoded as a <a href = "http://www.w3.org/TR/rdf-primer/"> Resource Description Framework (RDF)</a>. For example,</p>
+		<ul>
+		  <li>specialization of <a href="#agent">Agent</a> to define a class called Journalist, which has individuals such as alice, bob, and edith </li>
+		  <li><a href="#activity">Activity</a>, e.g. FileCreation, FileAppending, and FileEditing </li>
+		  <li>specialization of <a href="#entity">Entity</a> to define a class called CrimeFile, which has individuals such as e1, e2, and e3 </li>
+		</ul>
+		<div class="anexample rdfxml">
+		<p>Example given below describes the provenance of <a href="#entity">Entity</a> e2 using RDF/XML syntax</p>
+		<div class="exampleOuter">
+				<pre class="example">
+                &lt;?xml version="1.0"?&gt;
+                &lt;rdf:RDF
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+                    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+                    xmlns:time="http://www.w3.org/2006/time#" 
+                    xmlns:prov="http://www.w3.org/ns/prov-o/"
+                    xmlns:cf="http://www.example.com/crime#"&gt; 
+
+                    &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#e2"&gt;
+                      &lt;rdf:type rdf:resource="http://www.w3.org/ns/prov-o/Entity"/&gt;
+                      &lt;rdf:type rdf:resource="http://www.example.com/crime#CrimeFile"/&gt;
+                      &lt;prov:wasGeneratedBy&gt;
+                      &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#pe1"&gt;
+                          &lt;rdf:type rdf:resource="http://www.w3.org/ns/prov-o/Activity"/&gt;
+                          &lt;rdf:type rdf:resource="http://www.example.com/crime#FileAppending"/&gt;
+                          &lt;prov:wasControlledBy&gt;
+                            &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#Bob"&gt;
+                                &lt;rdf:type rdf:resource="http://www.example.com/crime#Journalist"/&gt;
+                            &lt;/rdf:Description&gt;
+                          &lt;/prov:wasControlledBy&gt;                        
+                          &lt;prov:startedAt&gt;
+                            &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#t1"&gt;
+                              &lt;rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/&gt;
+                              &lt;time:inXSDDateTime&gt;2011-10-20T16:26:45Z&lt;/time:inXSDDateTime&gt;
+                            &lt;/rdf:Description&gt;
+                          &lt;/prov:startedAt&gt;
+                          &lt;prov:endedAt&gt;
+                            &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#t3"&gt;
+                              &lt;rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/&gt;
+                              &lt;time:inXSDDateTime&gt;2011-11-21T18:36:52Z&lt;/time:inXSDDateTime&gt;
+                            &lt;/rdf:Description&gt;
+                          &lt;/prov:endedAt&gt;
+                      &lt;/rdf:Description&gt;
+                      &lt;/prov:wasGeneratedBy&gt;
+                      &lt;prov:wasGeneratedAt&gt;
+                        &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#t2"&gt;
+                          &lt;rdf:type rdf:resource="http://www.w3.org/2006/time#Instant"/&gt;
+                          &lt;time:inXSDDateTime&gt;2011-10-20T17:14:12Z&lt;/time:inXSDDateTime&gt;
+                        &lt;/rdf:Description&gt;	
+                      &lt;/prov:wasGeneratedAt&gt;
+                      &lt;prov:wasDerivedFrom rdf:resource="http://www.example.com/crimeFile#e1"/&gt;
+                      &lt;cf:hasLocation&gt;
+                          &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#sharedDirectoryLocation1"&gt;
+                              &lt;rdf:type rdf:resource="http://www.w3.org/ns/prov-o/Location"/&gt;
+                              &lt;cf:hasFilePath rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;/share/crime.txt&lt;/cf:hasFilePath&gt;
+                          &lt;/rdf:Description&gt;
+                      &lt;/cf:hasLocation&gt; 
+                      &lt;cf:hasFileContent rdf:datatype="http://www.w3.org/2001/XMLSchema#string"&gt;There 
+                        was a lot of crime in London last month.&lt;/cf:hasFileContent&gt;                 
+                     &lt;/rdf:Description&gt;
+                     &lt;rdf:Description rdf:about="http://www.example.com/crimeFile#pe2"&gt;
+                         &lt;rdf:type rdf:resource="http://www.w3.org/ns/prov-o/Activity"/&gt;
+                         &lt;prov:used rdf:resource="http://www.example.com/crimeFile#e2"/&gt;
+                     &lt;/rdf:Description&gt;
+                  &lt;/rdf:RDF&gt;
+			</pre>
+			</div>
+		</div>
+		<div class="anexample turtle">
+			<div class="exampleOuter">
+				<pre class="example">
+@prefix rdf:  &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix xsd:  &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix time: &lt;http://www.w3.org/2006/time#&gt; .
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+
+@prefix cf:   &lt;http://www.example.com/crime#&gt; .
+@prefix :     &lt;http://www.example.com/crimeFile#&gt; .
+
+:Bob
+    a cf:Journalist .
+
+:e2
+    a cf:CrimeFile, prov:Entity ;
+    cf:hasFileContent "There was a lot of crime in London last month."^^xsd:string ;
+    cf:hasLocation      :sharedDirectoryLocation1 ;
+    prov:wasDerivedFrom :e1 ;
+    prov:wasGeneratedAt :t2 ;
+    prov:wasGeneratedBy :pe1 .
+
+:pe1
+    a cf:FileAppending, prov:Activity ;
+    prov:endedAt         :t3 ;
+    prov:startedAt       :t1 ;
+    prov:wasControlledBy :Bob .
+
+:pe2
+    a prov:Activity ;
+    prov:used :e2 .
+
+:sharedDirectoryLocation1
+    a prov:Location;
+    cf:hasFilePath "/share/crime.txt"^^xsd:string .
+
+:t1
+    a time:Instant ;
+    time:inXSDDateTime "2011-10-20T16:26:45Z" .
+
+:t2
+    a time:Instant ;
+    time:inXSDDateTime "2011-10-20T17:14:12Z" .
+
+:t3
+    a time:Instant ;
+    time:inXSDDateTime "2011-11-21T18:36:52Z" .
+				</pre>
+			</div>
+		</div>
+	  <section id="specialization-of-prov-ontology-classes"> 
+		<h4>Specialization of PROV Ontology Classes</h4>
+		<p> The following new classes were created in the CrimeFile Ontology by extending the PROV ontology classes:</p>
+		<section id="cf-journalist">
+		<h5>cf:Journalist</h5>
+		<p>The cf:Journalist is a specialization of the PROV ontology <a href="#agent">Agent</a> class and models all individuals that participate in creating, editing, and sharing the crime file.The following RDF/XML code illustrates how cf:Journalist is asserted to be a specialization of <a href="#agent">prov:Agent.</a></p>
+		<div class="anexample rdfxml">
+			<div class="exampleOuter">
+				<pre class="example">
+				  &lt;rdf:Description rdf:about="http://www.example.com/crime#Journalist"&gt;
+					&lt;rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov-o/Agent"/&gt;
+				  &lt;/rdf:Description&gt;
+				</pre>
+			</div>
+		</div>
+		<div class="anexample turtle">
+			<div class="exampleOuter">
+				<pre class="example">
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+
+&lt;http://www.example.com/crime#Journalist&gt; 
+   rdfs:subClassOf prov:Agent
+.
+				</pre>
+			</div>
+		</div>
+		</section>
+		<section id="cf-crimefile">
+		<h5>cf:CrimeFile</h5>
+		<p> The cf:CrimeFile is a specialization of the PROV ontology <a href="#entity">Entity</a> class and it models the the file describing the crime statistics in the <a href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance scenario</a>, including the multiple versions of the file. The following RDF/XML code illustrates how cf:Journalist is asserted to be a specialization of <a href="#entity">prov:Entity</a>.
+		</p>
+		<div class="anexample rdfxml">
+			<div class="exampleOuter">
+				<pre class="example">
+				  &lt;rdf:Description rdf:about="http://www.example.com/crime#CrimeFile"&gt;
+					&lt;rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov-o/Entity"/&gt;
+				  &lt;/rdf:Description&gt;
+				</pre>
+			</div>
+		</div>
+		<div class="anexample turtle">
+			<div class="exampleOuter">
+				<pre class="example">
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+
+&lt;http://www.example.com/crime#CrimeFile&gt;
+   rdfs:subClassOf prov:Entity
+.
+				</pre>
+			</div>
+		</div>
+		</section>			
+		<section id="cf-filecreation">
+		<h5>cf:FileCreation, cf:FileEditing, cf:FileAppending, cf:Emailing, cf:SpellChecking</h5>	 
+		<p>The classes cf:FileCreation, cf:FileEditing,
+        cf:FileAppending, cf:Emailing, cf:SpellChecking are
+        specialization of the PROV ontology <a
+        href="#activity">Activity</a> and model the
+        different activities in the <a
+        href="http://www.w3.org/TR/2011/WD-prov-dm-20111018/#a-file-scenario">provenance
+        scenario</a>. The following RDF/XML code illustrates the
+        specialization of the <a href="#activity">prov:Activity</a> to define class cf:FileCreation (other classes can be similarly defined by using the subClassOf property).</p>
+		<div class="anexample rdfxml">
+			<div class="exampleOuter">
+				<pre class="example">
+				  &lt;rdf:Description rdf:about="http://www.example.com/crime#FileCreation"&gt;
+					&lt;rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov-o/Activity"/&gt;
+				  &lt;/rdf:Description&gt;
+				</pre>
+			</div>
+		</div>
+		<div class="anexample turtle">
+			<div class="exampleOuter">
+				<pre class="example">
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+
+&lt;http://www.example.com/crime#FileCreation&gt;
+   rdfs:subClassOf prov:Activity
+.
+				</pre>
+			</div>
+		</div>
+		<p>The following diagram illustrates the above class specializations: </p>
+<!--
+         <img src="http://www.w3.org/2011/prov/wiki/images/5/5d/AlternativeSchema.png" alt="New classes (cf:SpellChecking, cf:FileEditing, cf:FileCreation, cf:FileAppending, cf:Emailing, cf:Journalist) extend the classes in the PROV Ontology (Entity, Agent, Activity)."/>
+         <a href="https://dvcs.w3.org/hg/prov/raw-file/631b9ae346a0/ontology/examples/ontology-extensions/crime-file/diagrams/2011-10-04-tlebo/crime.owl.classes.pdf"><img src="https://dvcs.w3.org/hg/prov/raw-file/631b9ae346a0/ontology/examples/ontology-extensions/crime-file/diagrams/2011-10-04-tlebo/crime.owl.classes.png" alt="New classes (cf:SpellChecking, cf:FileEditing, cf:FileCreation, cf:FileAppending, cf:Emailing, cf:Journalist) extend the classes in the PROV Ontology (Entity, Agent, Activity)."/></a>
+		  <img src="examples/ontology-extensions/crime-file/diagrams/2011-10-13-ssoiland/crime.owl.png "
+          style="min-width: 45em; width: 55em; max-width: 95%" 
+          alt="New classes (:SpellChecking, :FileEditing, :FileCreation, :FileAppending, :Emailing, :Journalist) extend the classes in the PROV Ontology (prov:Entity, prov:Agent, prov:Activity). "/>
+-->
+		  <img src="examples/ontology-extensions/crime-file/diagrams/2011-10-13-ssoiland/crime.owl.classes.png "
+          style="min-width: 35em; width: 45em; max-width: 95%" 
+          alt="New classes (:SpellChecking, :FileEditing, :FileCreation, :FileAppending, :Emailing, :Journalist) extend the classes in the PROV Ontology (prov:Entity, prov:Agent, prov:Activity). "/>
+         <br>         
+         <em>Example extension of PROV ontology in order to describe the crime file scenario</em>
+		</section>
+	  </section>
+	  <section id="specialization-of-prov-ontology-properties"> 
+		<h4>Specialization of PROV Ontology Properties</h4>
+		<p> The following new object property was created in the CrimeFile Ontology by extending the PROV ontology object property:</p>
+		<section id="cf-hadfilepath">		
+		<h5>cf:hadFilePath</h5>
+		<p>The property cf:hadFilePath is a specialization of the PROV ontology hadLocation object property and links the class CrimeFile to the FileDirectory class. The following RDF/XML code illustrates the use of rdfs:subPropertyOf to create hadFilePath property.</p>
+		<div class="anexample rdfxml">
+			<div class="exampleOuter">
+			  <pre class="example">
+				  &lt;rdf:Description rdf:about="http://www.example.com/crime#hadFilePath"&gt;
+					&lt;rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov-o/hadLocation"/&gt;
+				  &lt;/rdf:Description&gt;
+			  </pre>
+			</div>
+		</div>
+		<div class="anexample turtle">
+			<div class="exampleOuter">
+				<pre class="example">
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+
+&lt;http://www.example.com/crime#hadFilePath&gt;
+   rdfs:subPropertyOf prov:hadLocation
+.
+				</pre>
+			</div>
+		</div>
+		</section>
+		<p>The following diagram illustrates the above property specialization: </p>
+<!--
+         <a href="https://dvcs.w3.org/hg/prov/raw-file/631b9ae346a0/ontology/examples/ontology-extensions/crime-file/diagrams/2011-10-04-tlebo/crime.owl.properties.pdf">
+            <img src="https://dvcs.w3.org/hg/prov/raw-file/631b9ae346a0/ontology/examples/ontology-extensions/crime-file/diagrams/2011-10-04-tlebo/crime.owl.properties.png"
+                 alt="ext:FileCreation, ext:FileAppending, ext:FileEditing, ext:Emailing, extSpellChecking extend prov:Activity; ext:Journalist extends prov:Agent; ext:CrimeFile extends prov:Entity; ext:hadFilePath extends prov:hadLocation and has range prov:Location."/>
+         </a>
+-->
+		  <img src="examples/ontology-extensions/crime-file/diagrams/2011-10-13-ssoiland/crime.owl.properties.png "
+          style="min-width: 30em; width: 40em; max-width: 95%" 
+                 alt="ext:FileCreation, ext:FileAppending, ext:FileEditing, ext:Emailing, extSpellChecking extend prov:Activity; ext:Journalist extends prov:Agent; ext:CrimeFile extends prov:Entity; ext:hadFilePath extends prov:hadLocation and has range prov:Location."/>
+         <br>         
+         <em>Example extension of PROV ontology in order to describe the crime file scenario</em>
+	  </section>
+	</section>
+	<section id="modeling-an-example-scientific-workflow-scenario"> 
+		<h3>Modeling an Example Scientific Workflow Scenario</h3>
+        <p>This section describes an example of extending the PROV
+        ontology to create a provenance ontology for scientific
+        workflows.</p>
+
+        <p>Scientific workflow systems allow the specification of a
+        pipeline of processes which are linked from outputs to inputs. 
+        Such workflow definitions are typically created in a graphical
+        user interface or interactive web application, and can then be
+        <em>enacted</em> using particular inputs or parameters.
+        Scientists in fields like bioinformatics, chemistry and 
+        physics use such workflows to perform repeated analysis by
+        connecting together disparate set of domain-specific tools and
+        services.  
+        </p>
+        <p>
+          Capturing the provenance of executions in such a workflow
+          system will typically include details of each of the process
+          executions, such as its inputs and outputs, start and stop
+          time, and should ultimately be able to describe the complete
+          data lineage through the workflow for any returned output data.
+          </p>
+        <p>
+        This example is not attempting to be a complete or general
+        ontology for asserting workflow provenance, but highlights how
+        a particular application like a workflow system can express its 
+        domain specific attributes based on the PROV ontology.
+        </p>  
+        <p>
+        <img
+          src="examples/ontology-extensions/workflow/workflowOntology.png"
+          style="width: 60%; min-width: 20em; max-width: 40em"
+          alt="New classes wf:WorkFlowEngine, wf:Process,
+          wf:ValueAtPort, wf:FileValue, and wf:Value extend prov:Agent,
+          prov:Activity.  New properties wf:wasLaunchedBy, wf:ranInWorkflowEngine, wf:wasSubActivityOf, wf:wasReadFrom, wf:sawValue extend prov:wasControlledBy, prov:wasDerivedFrom." />
+          <br>
+          <em>Example extension of PROV ontology in order to describe
+          workflow provenance. This OWL ontology can be downloaded as 
+            <a
+            href="examples/ontology-extensions/workflow/workflowOntology.rdf">RDF/XML</a>
+            and
+            <a
+            href="examples/ontology-extensions/workflow/workflowOntology.ttl">Turtle</a>
+            </em>
+        </p>
+        <section id="workflow-extensions-to-prov-classes">
+            <h4>Workflow extensions to PROV classes</h4>
+            <p>
+                In order to describe workflow executions following the
+                model above, the PROV ontology is extended with
+                workflow-specific subclasses described below:
+            </p>
+            <dl>
+                <dt>wf:Process</dt>
+                <dd>
+                    A subclass of <i>prov:Activity</i> to
+                    signify an execution of a process which
+                    <i>wf:wasDefinedBy</i> a
+                     a <i>wf:ProcessDefinition</i>, e.g. a workflow or a
+                     process in a workflow. A workflow process can also
+                     act as an <i>prov:Agent</i> when controlling nested
+                     process executions.
+                </dd>
+                <dt>wf:WorkflowEngine</dt>
+                <dd>
+                    A subclass of <i>prov:Agent</i> to indicate that a
+                    workflow process was controlled by a workflow
+                    engine. 
+                </dd>
+                <dt>wf:Value</dt>
+                <dd>
+                    A subclass of <i>prov:Entity</i>, representing a
+                    value appearing in the workflow execution, it will
+                    typically be <i>used</i> or <i>generated</i> by
+                    <i>wf:Process</i> executions. The actual value can
+                    be provided as a literal with a <i>wf:value</i> property.
+                </dd>
+                <dt>wf:FileValue</dt>
+                <dd>
+                    A <i>wf:Value</i> which has been read from a file.
+                    As an <i>prov:Entity</i> this represents 
+                    an entity with both attributes <i>wf:value</i> and
+                    <i>wf:file</i> fixed, that is the entity describes
+                    the point when the given file contained the 
+                    content. As the file might be read a while before
+                    the <i>wf:Value</i> is used by a <i>wf:Process</i>, 
+                    at which point the file content might have changed,
+                    those values are declared as being derived from 
+                    this file value using the <i>wf:wasReadFrom</i>
+                    property.
+                </dd>
+                <dt>wf:ValueAtPort</dt>
+                <dd>
+                    A subclass of <i>prov:QualifiedInvolvement</i>, representing a
+                    value (given by <i>wf:sawValue</i>) observed at a
+                    given port in the workflow (given by
+                    <i>wf:seenAtPort</i>. This description is the range
+                    of <i>wf:generatedValue</i> and <i>wf:usedValue</i>
+                    on a <i>wf:Process</i>.
+                </dd>
+            </dl>
+        </section>
+        <section id="workflow-extensions-to-prov-properties">
+            <h4>Workflow extensions to PROV properties</h4>
+            <p>
+                While for most cases subclassing will provide the
+                additional expressionality the application needs, this
+                example ontology also expands on the PROV ontology
+                with more specific subproperties.
+            </p>
+            <dl>
+                <dt>wf:wasDefinedBy</dt>
+                <dd>
+                   This sub-property of <i>prov:hadRecipe</i> 
+                   links a
+                   <i>wf:Process</i> to the defining
+                   <i>wf:ProcessDefinition</i>. Thus, if there are
+                   multiple executions of the same workflow definition,
+                   each of the separate <i>wf:Process</i>es will link to
+                   the same definition.  
+                </dd>
+                <dt>wf:ranInWorkflowEngine</dt>
+                <dd>
+                 This subproperty of <i>prov:wasControlledBy</i> links a
+                 <i>wf:Process</i> to the <i>wf:WorkflowEngine</i> it
+                 was executed in. The engine instance might contain
+                 additional details such as which version of the
+                 workflow system was used. 
+                </dd>
+                <dt>wf:wasLaunchedBy</dt>
+                <dd>
+                 This second subproperty of <i>prov:wasControlledBy</i> links a
+                 <i>wf:Process</i> to a <i>prov:Agent</i>, indicating 
+                 which person asked to execute the given
+                 wf:ProcessDefinition in the specified
+                 <i>wf:WorkflowEngine</i>.
+                </dd>
+                <dt>wf:wasSubActivityOf</dt>
+                <dd>
+                 This subproperty of <i>prov:wasControlledBy</i> links a
+                 <i>wf:Process</i> to another <i>prov:Process</i>, indicating 
+                 this is a child execution 
+                  <div class='issue'>Should there be a general way to state subprocesses? -Stian</div>
+                </dd>
+                <dt>wf:wasReadFrom</dt>
+                <dd>
+                    <p>
+                     This subproperty of <i>prov:wasDerivedFrom</i> links a
+                     <i>wf:Value</i> to the <i>wf:FileValue</i> it was read
+                     from, typically when used as a workflow input. 
+                     As described for <i>wf:FileValue</i> this distinction
+                     is done because at the time the workflow input is used
+                     in the workflow, the file input might be different and
+                     thus should not be described as an attribute of that
+                     <i>wf:Value</i>. 
+                     </p>
+                     <p>
+                      This property hints of an undescribed "Read file"
+                      process execution which is not described. This is
+                      therefore an example of how the provenance asserter 
+                      is limiting the scope of its provenance. The engine
+                      knows that the file was read, but is not able or
+                      willing to provide any deeper assertions, because its
+                      primary scope is at the level of executing workflow
+                      definitions.
+                     </p>
+                 </dd>
+                 <dt>wf:sawValue</dt>
+                 <dd>
+                    A subproperty of <i>prov:hadQualifiedEntity</i> which
+                    indicates that an <i>wf:Value</i> was
+                    <i>wf:seenAtPort</i> within an
+                    <i>wf:ValueAtPort</i>. 
+                 </dd>
+
+                 <dt>wf:seenAtPort</dt>
+                 <dd>
+                    A subproperty of <i>prov:hadRole</i> 
+                    indicating which <i>wf:Port</i> (in the workflow
+                    definition) a <i>wf:ValueAtPort</i> was seen at. Thus one can see
+                    at which output port a value was generated, or at
+                    which input port(s) it was used. 
+                </dd>
+                 <dt>wf:generatedValue</dt>
+                 <dd>
+                    A subproperty of <i>prov:hadQualifiedGeneration</i>,
+                    specifying which port we <i>wf:sawValue</i> and
+                    where it <i>wf:wasSeenAtPort</i> as it was
+                    generated. The domain of this
+                    property is <i>wf:Process</i>, the range
+                    <i>wf:ValueAtPort</i> (and implied
+                    <i>prov:Generation</i>)
+                </dd>
+                 <dt>wf:usedValue</dt>
+                 <dd>
+                    A subproperty of <i>prov:hadQualifiedUsage</i>,
+                    specifying which port we <i>wf:sawValue</i> and
+                    where it <i>wf:wasSeenAtPort</i> as it was
+                    used. The domain of this
+                    property is <i>wf:Process</i>, the range
+                    <i>wf:ValueAtPort</i> (and implied
+                    <i>prov:Usage</i>)
+                </dd>
+                <dt>wf:sameValueAs</dt>
+                 <dd>
+                    A subproperty of <i>prov:wasComplementOf</i> and
+                    <i>prov:wasDerivedFrom</i>,
+                    specifying that an <i>wf:Value</i> was the same as
+                    another <i>wf:Value</i>. This is used to indicate
+                    that a value at an workflow output port is the same
+                    as the value at a processor output port, although
+                    they have different history of generation, they both
+                    represent the same <i>wf:value</i> and are the same
+                    "thing".
+                </dd>
+
+            </dl>
+        </section>
+        <!--
+        <section id="workflow-structure">
+            <h4>Workflow structure</h4>
+            <p>
+             This ontology includes a simple definition language for
+             describing the overall workflow structure. This is not
+             meant as a general workflow definition language, but allows
+             us to describe <i>process executions</i>, <i>use</i> and 
+             <i>generation</i> with relation to particular sections of
+             the workflow definition. 
+            </p>
+            <dl>
+              <dt>wf:ProcessDefinition</dt>
+              <dd>A definition of how to execute a process. It will
+              typically refer to a command or service which will be
+              called. Each process definition also 
+              <i>wf:definesInput</i>s and <i>wf:definesOutput</i>s.
+              </dd>
+              <dt>wf:Port</dt>
+              <dd>
+              A port can be considered as a parameter or return value
+              for a process. These are typically given names which are
+              unique within a process definition. A value is either
+              provided to an input port before execution, or produced
+              from an output port after execution. 
+              </dd>
+              <dt>wf:linksTo</dt>
+              <dd>
+              Ports are connected using links. A link from an output
+              port to an input port means that the value received on
+              that output will be forwarded to the input of the next
+              process.  Note that in this simplified ontology links can
+              also go from Input to Input and Output to Output, these
+              are used to connect workflow ports to processor ports.
+              </dd>
+              <dt>wf:Input</dt>
+              <dd>
+              An input port for a process will receive a value which
+              will be <i>used</i> by the execution. In a dataflow driven
+              workflow model, a process will execute as soon as all its
+              defined input ports have been provided with values. 
+              </dd>
+              <dt>wf:Output</dt>
+              <dd>
+              A process execution might return multiple outputs, for
+              instance a table and a diagram. Each of these are declared
+              as an output port for that process definition.
+              </dd>
+              <dt>wf:definesSubProcess</dt>
+              <dd>
+              <p>
+              Scientific workflows can be composed of nested workflows
+              which can be shared and reused as components. Some
+              workflow systems also allow various execution settings
+              on the nested workflow, like looping or parallelisation. 
+              </p>
+              <p>
+              In this case a process definition will use
+              <i>wf:definesSubProcess</i> to indicate its consistent
+              parts, and there will be additional <i>wf:linksTo</i> from
+              the input ports of this process definition to the input
+              ports of some of its nested sub processes, and vice versa
+              for the outputs. The top-level workflow is always such a
+              process definition. 
+              </p>
+              </dd>
+            </dl>
+        </section>
+        -->
+        <section id="example-workflow">
+            <h4>Example workflow</h4>
+            <img src="examples/ontology-extensions/workflow/Concatsha1.png"
+                 alt="An example workflow with input, three processes, and two outputs." />
+            <p>This is an example workflow which defines a workflow
+            input <i>input</i>, three processes <i>String_constant</i>,
+            <i>Concatenate_two_strings</i> and <i>sha1</i>, and finally
+            two workflow outputs <i>combined</i> and <i>sha1</i>. When
+            executed, it will execute from top to bottom, first
+            concatenating the provided input with the string constant,
+            which is returned on the <i>combined</i> output, but also
+            provided to the <i>sha1</i> process, which output is given
+            to the other workflow port.
+            </p>
+            <p>
+            An example of abstract definition of this workflow can be
+            seen as 
+            <a
+            href="examples/ontology-extensions/workflow/workflowDefinition.rdf">RDF/XML</a>
+            and
+            <a
+            href="examples/ontology-extensions/workflow/workflowDefinition.ttl">Turtle</a>
+            </p>
+        </section>		
+        <section id="example-workflow-run">
+            <h4>Example workflow run</h4>
+            <p>
+              This example shows how using the workflow extensions
+              together with PROV can provide the provenance of executing
+              the workflow defined above.
+            </p>
+			<div class="anexample rdfxml"><pre class="example">
+&lt;rdf:RDF xmlns="http://www.example.com/scientific-workflow#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:prov="http://www.w3.org/ns/prov-o/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:time="http://www.w3.org/2006/time#"
+    xmlns:wf="http://www.example.com/scientific-workflow#"&gt;
+
+    &lt;Process rdf:about="#workflowRun"&gt;
+        &lt;ranInWorkflowEngine&gt;
+            &lt;WorkflowEngine rdf:about="#workflowEngine" /&gt;
+        &lt;/ranInWorkflowEngine&gt;
+        &lt;wasDefinedBy rdf:resource="http://www.example.com/workflow1#workflow"/&gt;
+        &lt;wasLaunchedBy&gt;
+            &lt;prov:Agent rdf:about="#aUser"&gt;
+                &lt;rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/&gt;
+                &lt;foaf:name&gt;Stian Soiland-Reyes&lt;/foaf:name&gt;
+            &lt;/prov:Agent&gt;
+        &lt;/wasLaunchedBy&gt;
+        &lt;prov:startedAt rdf:parseType="Resource"&gt;
+            &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:15Z&lt;/time:inDateTimeXSD&gt;
+        &lt;/prov:startedAt&gt;
+        &lt;prov:endedAt rdf:parseType="Resource"&gt;
+            &lt;time:inDateTimeXSD&gt;2011-10-21T09:23:32Z&lt;/time:inDateTimeXSD&gt;
+        &lt;/prov:endedAt&gt;
+        &lt;wf:usedValue&gt;
+            &lt;prov:Usage&gt;
+                &lt;sawValue&gt;
+                    &lt;Value rdf:about="#input"&gt;
+                        &lt;value&gt;Steve&lt;/value&gt;
+                        &lt;wasReadFrom&gt;
+                            &lt;FileValue rdf:about="#inputFile"&gt;
+                                &lt;file&gt;/tmp/myinput.txt&lt;/file&gt;
+                                &lt;value&gt;Steve&lt;/value&gt;
+                            &lt;/FileValue&gt;
+                        &lt;/wasReadFrom&gt;
+                    &lt;/Value&gt;
+                &lt;/sawValue&gt;    
+                &lt;seenAtPort rdf:resource="http://www.example.com/workflow1#inName"/&gt;
+                &lt;prov:hadTemporalValue rdf:parseType="Resource"&gt;
+                    &lt;time:inDateTimeXSD&gt;2011-10-21T09:21:31Z&lt;/time:inDateTimeXSD&gt;
+                &lt;/prov:hadTemporalValue&gt;
+            &lt;/prov:Usage&gt;
+        &lt;/wf:usedValue&gt;
+        &lt;wf:generatedValue&gt;
+            &lt;prov:Generation&gt;
+                &lt;sawValue&gt;
+                    &lt;Value rdf:about="#sha1FromWorkflow"&gt;
+                        &lt;value&gt;a33d1fb1658d4fbf017de59ab67437a3eb5ff50d&lt;/value&gt;
+                        &lt;wf:sameValueAs rdf:resource="#sha1"/&gt;
+                    &lt;/Value&gt;
+                &lt;/sawValue&gt;    
+                &lt;wasSeenAt rdf:resource="http://www.example.com/workflow1#sha1"/&gt;
+            &lt;/prov:Generation&gt;
+        &lt;/wf:generatedValue&gt;
+    &lt;/Process&gt;
+
+    &lt;Process rdf:about="#constant"&gt;
+        &lt;wasDefinedBy rdf:resource="http://www.example.com/workflow1#String_Constant"/&gt;
+        &lt;wasSubActivityOf rdf:resource="#workflowRun"/&gt;
+        &lt;prov:startedAt&gt;
+            &lt;time:Instant rdf:about="#t0"&gt;
+                &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:15Z&lt;/time:inDateTimeXSD&gt;
+            &lt;/time:Instant&gt;
+        &lt;/prov:startedAt&gt;
+
+        &lt;prov:endedAt rdf:resource="#t0"/&gt;
+        &lt;wf:generatedValue&gt;
+            &lt;prov:Generation&gt;
+                &lt;sawValue rdf:resource="http://www.example.com/workflow1#String_Constant_value"/&gt;
+                &lt;prov:hadQualifiedEntity&gt;
+                    &lt;Value rdf:about="#hello"&gt;
+                        &lt;value&gt;Hello, &lt;/value&gt;
+                    &lt;/Value&gt;
+                &lt;/prov:hadQualifiedEntity&gt;
+                &lt;prov:hadTemporalValue rdf:resource="#t0"/&gt;
+            &lt;/prov:Generation&gt;
+        &lt;/wf:generatedValue&gt;
+    &lt;/Process&gt;
+
+    &lt;Process rdf:about="#combine"&gt;
+        &lt;wasDefinedBy rdf:resource="http://www.example.com/workflow1#cat"/&gt;
+        &lt;wasSubActivityOf rdf:resource="#workflowRun"/&gt;
+        &lt;prov:startedAt rdf:parseType="Resource"&gt;
+            &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:20Z&lt;/time:inDateTimeXSD&gt;
+        &lt;/prov:startedAt&gt;
+        &lt;prov:endedAt rdf:parseType="Resource"&gt;
+            &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:25Z&lt;/time:inDateTimeXSD&gt;
+        &lt;/prov:endedAt&gt;
+        &lt;wf:usedValue&gt;
+            &lt;prov:Usage&gt;
+                &lt;seenAtPort rdf:resource="http://www.example.com/workflow1#catIn1"/&gt;
+                &lt;prov:hadQualifiedEntity rdf:resource="#hello"/&gt;
+                &lt;prov:hadTemporalValue rdf:parseType="Resource"&gt;
+                    &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:21Z&lt;/time:inDateTimeXSD&gt;
+                &lt;/prov:hadTemporalValue&gt;
+            &lt;/prov:Usage&gt;
+        &lt;/wf:usedValue&gt;
+        &lt;wf:usedValue&gt;
+            &lt;prov:Usage&gt;
+                &lt;sawValue rdf:resource="#input"/&gt;
+                &lt;seenAtPort rdf:resource="http://www.example.com/workflow1#catIn2"/&gt;
+                &lt;prov:hadTemporalValue rdf:parseType="Resource"&gt;
+                    &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:23Z&lt;/time:inDateTimeXSD&gt;
+                &lt;/prov:hadTemporalValue&gt;
+            &lt;/prov:Usage&gt;
+        &lt;/wf:usedValue&gt;
+        &lt;wf:generatedValue&gt;
+            &lt;prov:Generation&gt;
+                &lt;sawValue&gt;
+                    &lt;Value rdf:about="#combined"&gt;
+                        &lt;value&gt;Hello, Steve&lt;/value&gt;
+                    &lt;/Value&gt;
+                &lt;/sawValue&gt;    
+                &lt;seenAtPort rdf:resource="http://www.example.com/workflow1#catOut"/&gt;
+            &lt;/prov:Generation&gt;
+        &lt;/wf:generatedValue&gt;
+    &lt;/Process&gt;
+    &lt;Process rdf:about="#shasum"&gt;
+        &lt;wasDefinedBy rdf:resource="http://www.example.com/workflow1#shasum"/&gt;
+        &lt;wasSubActivityOf rdf:resource="#workflowRun"/&gt;
+        &lt;prov:startedAt rdf:parseType="Resource"&gt;
+            &lt;time:inDateTimeXSD&gt;2011-10-21T09:20:30Z&lt;/time:inDateTimeXSD&gt;
+        &lt;/prov:startedAt&gt;
+        &lt;prov:endedAt rdf:parseType="Resource"&gt;
+            &lt;time:inDateTimeXSD&gt;2011-10-21T09:21:00Z&lt;/time:inDateTimeXSD&gt;
+        &lt;/prov:endedAt&gt;
+        &lt;wf:generatedValue&gt;
+            &lt;prov:Generation&gt;
+                &lt;sawValue&gt;
+                    &lt;Value rdf:about="#sha1"&gt;
+                        &lt;value&gt;a33d1fb1658d4fbf017de59ab67437a3eb5ff50d&lt;/value&gt;
+                    &lt;/Value&gt;
+                &lt;/sawValue&gt;
+                &lt;wasSeenAt rdf:resource="http://www.example.com/workflow1#shaOut"/&gt;
+            &lt;/prov:Generation&gt;
+        &lt;/wf:generatedValue&gt;
+    &lt;/Process&gt;
+&lt;/rdf:RDF&gt;
+            </pre>
+            <em>Example available as 
+            <a
+            href="examples/ontology-extensions/workflow/workflow.rdf">RDF/XML</a>
+            and
+            <a href="examples/ontology-extensions/workflow/workflow.ttl">Turtle</a>
+            </em>
+            </div>			
+		<div class="anexample turtle">
+			<div class="exampleOuter">
+				<pre class="example">
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+@prefix time: &lt;http://www.w3.org/2006/time#&gt; .
+@prefix foaf: &lt;http://xmlns.com/foaf/0.1/&gt; .
+
+@prefix wf:   &lt;http://www.example.com/scientific-workflow#&gt; .
+@prefix run:  &lt;http://www.example.com/run1#&gt; .
+@prefix :     &lt;http://example.com/aWorkflow&gt; .
+
+:workflowRun
+    a wf:Process ;
+    wf:wasDefinedBy &lt;http://www.example.com/workflow1#workflow&gt; ;
+    wf:usedValue [
+        a prov:Usage ;
+        wf:sawValue   :input ;
+        wf:seenAtPort &lt;http://www.example.com/workflow1#inName&gt; ;
+        prov:hadTemporalValue [
+            time:inDateTimeXSD "2011-10-21T09:21:31Z"
+        ]
+    ] ;
+    wf:generatedValue [
+        a prov:Generation
+        wf:sawValue :sha1FromWorkflow ;
+        wf:wasSeenAt &lt;http://www.example.com/workflow1#sha1&gt; ;
+    ] ;
+    wf:ranInWorkflowEngine :workflowEngine ;
+    wf:wasLaunchedBy :aUser ;
+    prov:endedAt [
+        time:inDateTimeXSD "2011-10-21T09:23:32Z"
+    ] ;
+    prov:startedAt [
+        time:inDateTimeXSD "2011-10-21T09:20:15Z"
+    ] .
+
+:aUser
+    a prov:Agent, foaf:Person ;
+    foaf:name "Stian Soiland-Reyes" .
+
+:combine
+    a wf:Process ;
+    wf:generatedValue [
+        a prov:Generation
+        wf:sawValue :combined ;
+        wf:seenAtPort &lt;http://www.example.com/workflow1#catOut&gt; ;
+    ] ;
+    wf:usedValue [
+        a prov:Usage ;
+        wf:seenAtPort &lt;http://www.example.com/workflow1#catIn1&gt; ;
+        prov:hadQualifiedEntity :hello ;
+        prov:hadTemporalValue [
+            time:inDateTimeXSD "2011-10-21T09:20:21Z"
+        ]
+    ], [
+        a prov:Usage ;
+        wf:sawValue   :input ;
+        wf:seenAtPort &lt;http://www.example.com/workflow1#catIn2&gt; ;
+        prov:hadTemporalValue [
+            time:inDateTimeXSD "2011-10-21T09:20:23Z"
+        ]
+    ] ;
+    wf:wasDefinedBy &lt;http://www.example.com/workflow1#cat&gt; ;
+    wf:wasSubProcessExecutionOf :workflowRun ;
+    prov:endedAt [
+        time:inDateTimeXSD "2011-10-21T09:20:25Z"
+    ] ;
+    prov:startedAt [
+        time:inDateTimeXSD "2011-10-21T09:20:20Z"
+    ] .
+
+:combined
+    wf:value "Hello, Steve" ;
+    a wf:Value .
+
+:constant
+    wf:generatedValue [
+        a prov:Generation ;
+        wf:sawValue &lt;http://www.example.com/workflow1#String_Constant_value&gt; ;
+        prov:hadQualifiedEntity :hello ;
+        prov:hadTemporalValue   :t0
+    ] ;
+    wf:wasDefinedBy &lt;http://www.example.com/workflow1#String_Constant&gt; ;
+    wf:wasSubProcessExecutionOf :workflowRun ;
+    a wf:Process ;
+    prov:endedAt   :t0 ;
+    prov:startedAt :t0 .
+
+:hello
+    wf:value "Hello, " ;
+    a wf:Value .
+
+:input
+    wf:value "Steve" ;
+    wf:wasReadFrom :inputFile ;
+    a wf:Value .
+
+:inputFile
+    wf:file "/tmp/myinput.txt" ;
+    wf:value "Steve" ;
+    a wf:FileValue .
+
+:sha1
+    wf:value "a33d1fb1658d4fbf017de59ab67437a3eb5ff50d" ;
+    a wf:Value .
+
+:sha1FromWorkflow
+    wf:sameValueAs :sha1 ;
+    wf:value "a33d1fb1658d4fbf017de59ab67437a3eb5ff50d" ;
+    a wf:Value .
+
+:shasum
+    a wf:Process ;
+    wf:generatedValue [
+        wf:sawValue :sha1 ;
+        wf:wasSeenAt &lt;http://www.example.com/workflow1#shaOut&gt; ;
+        a prov:Generation
+    ] ;
+    wf:wasDefinedBy &lt;http://www.example.com/workflow1#shasum&gt; ;
+    wf:wasSubProcessExecutionOf :workflowRun ;
+    prov:endedAt [
+        time:inDateTimeXSD "2011-10-21T09:21:00Z"
+    ] ;
+    prov:startedAt [
+        time:inDateTimeXSD "2011-10-21T09:20:30Z"
+    ] .
+
+:t0
+    a time:Instant ;
+    time:inDateTimeXSD "2011-10-21T09:20:15Z" .
+
+:workflowEngine
+    a wf:WorkflowEngine .
+				</pre>
+			</div>
+		</div>
+
+            <p> Note that for brevity, the example above does not show the inferred classes
+    and properties from the PROV ontology. For interoperability, applications
+    should also expressed such inferred statements in its
+    serialisations, so that the provenance can be read without using
+    OWL2 inferencing and the customized ontologies.</p>
+
+    <p>See the <a
+    href="examples/ontology-extensions/workflow/workflow-inferred.rdf">workflow-inferred.rdf</a>
+    for the complete example showing both domain-specific and PROV ontology terms
+      used side by side.
+            </p>
+        </section>
+	  </section>	    			
+	</section>
+
+   <section>
+      <h2>Using strings</h2>
+      Issues <a href="http://www.w3.org/2011/prov/track/issues/248">248</a> and <a href="http://www.w3.org/2011/prov/track/issues/222">222</a>.
+      prov:used is defined as an objectproperty. If the parameter to a program is a string, and we want to say that the invocation used the string, how do we model that?
+
+      This is only a concern if you want to be DL compliant. If you don't care about being DL compliant, then just do it.
+      Another concern is that tools will expect a resource instead of a string and will not handle it correctly.
+
+      <a href="http://www.w3.org/TR/Content-in-RDF10/">Content in RDF</a> can be used to model string values while maintaining the datatype/objectproperty distinction and complying with PROV-O.
+      Also,  resource can use the rdf:value property to store the string value. We recommend NOT using a blank node, but to derive the URI from the string itself (using a hash) or just a UUID.
+      Note that altough the "extra resource" may appear to be an undesirable level of indirection, it allows for the arbitrary contextualization that is central to PROV. When describing this strings provenance, we're not talking about that string as it appears anywhere, but as it appeared to the activty using it at the time we're describing.
+   
+   <pre>
+@prefix cnt: &lt;http://www.w3.org/2008/content#&gt; .
+
+:activity a prov:Activity;
+ prov:used [ # dont' use a blank node!
+ a prov:Entity, cnt:ContentAsText ;
+ cnt:chars "The magic string" ;
+]  .
+
+:activity a prov:Activity;
+ prov:used :theMagicString .
+
+:magicString
+ a prov:Entity, cnt:ContentAsText ;
+ cnt:chars "The magic string" .
+</pre>
+
+
+(there's also cnt:ContentAsBase64 and cnt:bytes for verbose binaries,
+and cnt:ContentAsXML for literal XMLs)
+
+   </section>
+
+    <section class='appendix'>
+      <h2>Acknowledgements</h2>
+      <p>
+        The Provenance Working Group Members.
+      </p>
+    </section>
+
+  </body>
+</html>

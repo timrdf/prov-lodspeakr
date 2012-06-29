@@ -1,0 +1,3011 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html lang="en" dir="ltr">
+<head> 
+    <title>Constraints of the Provenance Data Model</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+<!-- PM -->
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+     </style>
+
+     
+     
+
+     
+  <style type="text/css">
+/*****************************************************************
+ * ReSpec CSS
+ * Robin Berjon (robin at berjon dot com)
+ * v0.05 - 2009-07-31
+ *****************************************************************/
+
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+code {
+    color:  #ff4500;
+}
+
+
+/* --- WEB IDL --- */
+pre.idl {
+    border-top: 1px solid #90b8de;
+    border-bottom: 1px solid #90b8de;
+    padding:    1em;
+    line-height:    120%;
+}
+
+pre.idl::before {
+    content:    "WebIDL";
+    display:    block;
+    width:      150px;
+    background: #90b8de;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+.idlType {
+    color:  #ff4500;
+    font-weight:    bold;
+    text-decoration:    none;
+}
+
+/*.idlModule*/
+/*.idlModuleID*/
+/*.idlInterface*/
+.idlInterfaceID, .idlDictionaryID {
+    font-weight:    bold;
+    color:  #005a9c;
+}
+
+.idlSuperclass {
+    font-style: italic;
+    color:  #005a9c;
+}
+
+/*.idlAttribute*/
+.idlAttrType, .idlFieldType, .idlMemberType {
+    color:  #005a9c;
+}
+.idlAttrName, .idlFieldName, .idlMemberName {
+    color:  #ff4500;
+}
+.idlAttrName a, .idlFieldName a, .idlMemberName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlMethod*/
+.idlMethType {
+    color:  #005a9c;
+}
+.idlMethName {
+    color:  #ff4500;
+}
+.idlMethName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlParam*/
+.idlParamType {
+    color:  #005a9c;
+}
+.idlParamName {
+    font-style: italic;
+}
+
+.extAttr {
+    color:  #666;
+}
+
+/*.idlConst*/
+.idlConstType {
+    color:  #005a9c;
+}
+.idlConstName {
+    color:  #ff4500;
+}
+.idlConstName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlException*/
+.idlExceptionID {
+    font-weight:    bold;
+    color:  #c00;
+}
+
+.idlTypedefID, .idlTypedefType {
+    color:  #005a9c;
+}
+
+.idlRaises, .idlRaises a.idlType, .idlRaises a.idlType code, .excName a, .excName a code {
+    color:  #c00;
+    font-weight:    normal;
+}
+
+.excName a {
+    font-family:    monospace;
+}
+
+.idlRaises a.idlType, .excName a.idlType {
+    border-bottom:  1px dotted #c00;
+}
+
+.excGetSetTrue, .excGetSetFalse, .prmNullTrue, .prmNullFalse, .prmOptTrue, .prmOptFalse {
+    width:  45px;
+    text-align: center;
+}
+.excGetSetTrue, .prmNullTrue, .prmOptTrue { color:  #0c0; }
+.excGetSetFalse, .prmNullFalse, .prmOptFalse { color:  #c00; }
+
+.idlImplements a {
+    font-weight:    bold;
+}
+
+dl.attributes, dl.methods, dl.constants, dl.fields, dl.dictionary-members {
+    margin-left:    2em;
+}
+
+.attributes dt, .methods dt, .constants dt, .fields dt, .dictionary-members dt {
+    font-weight:    normal;
+}
+
+.attributes dt code, .methods dt code, .constants dt code, .fields dt code, .dictionary-members dt code {
+    font-weight:    bold;
+    color:  #000;
+    font-family:    monospace;
+}
+
+.attributes dt code, .fields dt code, .dictionary-members dt code {
+    background:  #ffffd2;
+}
+
+.attributes dt .idlAttrType code, .fields dt .idlFieldType code, .dictionary-members dt .idlMemberType code {
+    color:  #005a9c;
+    background:  transparent;
+    font-family:    inherit;
+    font-weight:    normal;
+    font-style: italic;
+}
+
+.methods dt code {
+    background:  #d9e6f8;
+}
+
+.constants dt code {
+    background:  #ddffd2;
+}
+
+.attributes dd, .methods dd, .constants dd, .fields dd, .dictionary-members dd {
+    margin-bottom:  1em;
+}
+
+table.parameters, table.exceptions {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    margin: 0.5em 0;
+    width:  100%;
+}
+table.parameters { border-bottom:  1px solid #90b8de; }
+table.exceptions { border-bottom:  1px solid #deb890; }
+
+.parameters th, .exceptions th {
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+    font-family:    initial;
+    font-weight:    normal;
+    text-shadow:    #666 1px 1px 0;
+}
+.parameters th { background: #90b8de; }
+.exceptions th { background: #deb890; }
+
+.parameters td, .exceptions td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.parameters tr:first-child td, .exceptions tr:first-child td {
+    border-top: none;
+}
+
+.parameters td.prmName, .exceptions td.excName, .exceptions td.excCodeName {
+    width:  100px;
+}
+
+.parameters td.prmType {
+    width:  120px;
+}
+
+table.exceptions table {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    width:  100%;
+}
+
+/* --- TOC --- */
+.toc a {
+    text-decoration:    none;
+}
+
+a .secno {
+    color:  #000;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+/* --- EXAMPLES --- */
+pre.example {
+    border-top: 1px solid #ff4500;
+    border-bottom: 1px solid #ff4500;
+    padding:    1em;
+    margin-top: 1em;
+}
+
+pre.example::before {
+    content:    "Example";
+    display:    block;
+    width:      150px;
+    background: #ff4500;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+/* --- EDITORIAL NOTES --- */
+.issue {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.issue::before {
+    content:    "Issue";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.note {
+    margin: 1em 0em 0em;
+    padding:    1em;
+    border: 2px solid #cff6d9;
+    background: #e2fff0;
+}
+
+.note::before {
+    content:    "Note";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #cff6d9;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+/* --- Best Practices --- */
+div.practice {
+    border: solid #bebebe 1px;
+    margin: 2em 1em 1em 2em;
+}
+
+span.practicelab {
+    margin: 1.5em 0.5em 1em 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+span.practicelab   { background: #dfffff; }
+
+span.practicelab {
+    position: relative;
+    padding: 0 0.5em;
+    top: -1.5em;
+}
+
+p.practicedesc {
+    margin: 1.5em 0.5em 1em 1em;
+}
+
+@media screen {
+    p.practicedesc {
+        position: relative;
+        top: -2em;
+        padding: 0;
+        margin: 1.5em 0.5em -1em 1em;
+    }
+}
+
+/* --- SYNTAX HIGHLIGHTING --- */
+pre.sh_sourceCode {
+  background-color: white;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
+pre.sh_sourceCode .sh_keyword { color: #005a9c; font-weight: bold; }           /* language keywords */
+pre.sh_sourceCode .sh_type { color: #666; }                            /* basic types */
+pre.sh_sourceCode .sh_usertype { color: teal; }                             /* user defined types */
+pre.sh_sourceCode .sh_string { color: red; font-family: monospace; }        /* strings and chars */
+pre.sh_sourceCode .sh_regexp { color: orange; font-family: monospace; }     /* regular expressions */
+pre.sh_sourceCode .sh_specialchar { color: 	#ffc0cb; font-family: monospace; }  /* e.g., \n, \t, \\ */
+pre.sh_sourceCode .sh_comment { color: #A52A2A; font-style: italic; }         /* comments */
+pre.sh_sourceCode .sh_number { color: purple; }                             /* literal numbers */
+pre.sh_sourceCode .sh_preproc { color: #00008B; font-weight: bold; }       /* e.g., #include, import */
+pre.sh_sourceCode .sh_symbol { color: blue; }                            /* e.g., *, + */
+pre.sh_sourceCode .sh_function { color: black; font-weight: bold; }         /* function calls and declarations */
+pre.sh_sourceCode .sh_cbracket { color: red; }                              /* block brackets (e.g., {, }) */
+pre.sh_sourceCode .sh_todo { font-weight: bold; background-color: #00FFFF; }   /* TODO and FIXME */
+
+/* Predefined variables and functions (for instance glsl) */
+pre.sh_sourceCode .sh_predef_var { color: #00008B; }
+pre.sh_sourceCode .sh_predef_func { color: #00008B; font-weight: bold; }
+
+/* for OOP */
+pre.sh_sourceCode .sh_classname { color: teal; }
+
+/* line numbers (not yet implemented) */
+pre.sh_sourceCode .sh_linenum { display: none; }
+
+/* Internet related */
+pre.sh_sourceCode .sh_url { color: blue; text-decoration: underline; font-family: monospace; }
+
+/* for ChangeLog and Log files */
+pre.sh_sourceCode .sh_date { color: blue; font-weight: bold; }
+pre.sh_sourceCode .sh_time, pre.sh_sourceCode .sh_file { color: #00008B; font-weight: bold; }
+pre.sh_sourceCode .sh_ip, pre.sh_sourceCode .sh_name { color: #006400; }
+
+/* for Prolog, Perl... */
+pre.sh_sourceCode .sh_variable { color: #006400; }
+
+/* for LaTeX */
+pre.sh_sourceCode .sh_italics { color: #006400; font-style: italic; }
+pre.sh_sourceCode .sh_bold { color: #006400; font-weight: bold; }
+pre.sh_sourceCode .sh_underline { color: #006400; text-decoration: underline; }
+pre.sh_sourceCode .sh_fixed { color: green; font-family: monospace; }
+pre.sh_sourceCode .sh_argument { color: #006400; }
+pre.sh_sourceCode .sh_optionalargument { color: purple; }
+pre.sh_sourceCode .sh_math { color: orange; }
+pre.sh_sourceCode .sh_bibtex { color: blue; }
+
+/* for diffs */
+pre.sh_sourceCode .sh_oldfile { color: orange; }
+pre.sh_sourceCode .sh_newfile { color: #006400; }
+pre.sh_sourceCode .sh_difflines { color: blue; }
+
+/* for css */
+pre.sh_sourceCode .sh_selector { color: purple; }
+pre.sh_sourceCode .sh_property { color: blue; }
+pre.sh_sourceCode .sh_value { color: #006400; font-style: italic; }
+
+/* other */
+pre.sh_sourceCode .sh_section { color: black; font-weight: bold; }
+pre.sh_sourceCode .sh_paren { color: red; }
+pre.sh_sourceCode .sh_attribute { color: #006400; }
+
+</style><style type="text/css">
+/* --- EDITORIAL NOTES --- */
+.pending {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #BFEFFF;
+}
+
+.pending::before {
+    content:    "Pending Review";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.resolved {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #9BCD9B;
+}
+
+.resolved::before {
+    content:    "Resolved";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.inference {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.inference[id]::before {
+    content:    "Inference: " attr(id);
+    width:  380px;  /* How can we compute the length of "Constraint: " attr(id) */
+}
+
+
+.inference::before {
+    content:    "Inference";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.syntax {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.syntax[id]::before {
+    content:    "Syntax: " attr(id);
+    width:  380px;  /* How can we compute the length of "Constraint: " attr(id) */
+}
+
+
+.syntax::before {
+    content:    "Syntax";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.unamedconstraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+
+.unamedconstraint::before {
+    content:    "Constraint";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+
+.constraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.constraint[id]::before {
+    content:    "Constraint: " attr(id);
+    width:  380px;  /* How can we compute the length of "Constraint: " attr(id) */
+}
+
+
+.constraint::before {
+    content:    "Constraint";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+
+.interpretation {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.interpretation[id]::before {
+    content:    "Interpretation: " attr(id);
+    width:  380px;  /* How can we compute the length of "Interpretation: " attr(id) */
+}
+
+
+.interpretation::before {
+    content:    "Interpretation";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.definition {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #777;
+    background: #fff;
+}
+
+.definition[id]::before {
+    content:    "Definition: " attr(id);
+    width:  380px; 
+}
+
+
+.definition::before {
+    content:    "Definition";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #000;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.deprecatedconstraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.deprecatedconstraint[id]::before {
+    content:    "Deprecated: " attr(id);
+    width:  380px;  /* How can we compute the length of "Deprecatedconstraint: " attr(id) */
+}
+
+
+.deprecatedconstraint::before {
+    content:    "Deprecated";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.glossary-ref {
+    font-style:    italic;
+}
+
+.dfn {
+    font-weight:    bold;
+}
+
+
+.attribute {
+    font-style: italic;
+}
+
+
+.conditional {
+    color: blue;
+}
+
+.grammar {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    padding-top: 1ex;
+    padding-bottom: 0.6ex;
+    border: 1px dashed #2f6fab;
+    font-size: 80%;
+}
+.nonterminal {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 95%;
+}
+
+.name {
+    font-family: monospace;
+}
+
+
+.xmpl {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.xmpl::before {
+    content:    "Example";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.anexample:before {
+    content: "Example:";
+    font-family: sans-serif;
+    font-size: 1.6ex;
+    font-weight: bold;
+}
+.anexample {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    padding-top: 1ex;
+    padding-bottom: 0.6ex;
+    border: 1px dashed #2f6fab;
+    background-color: #f9f9f9;
+}
+.anexample table {
+    background-color: #f9f9f9;
+}
+
+.conceptexample:before {
+    content: "Example:";
+    font-family: sans-serif;
+    font-size: 1.6ex;
+    font-weight: bold;
+}
+.conceptexample {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    padding-top: 1ex;
+    padding-bottom: 0.6ex;
+    border: 1px dashed #2f6fab;
+    background-color: #f9f9f9;
+}
+
+.pnExpression {
+    font-weight: normal;
+    font-size:120%;
+    font-family: monospace;
+}
+
+
+div[class="grammar"] span[class="name"]:before {
+    content: "'";
+}
+
+div[class="grammar"] span[class="name"]:after {
+    content: "'";
+}
+
+
+div[class="grammar"] span[class="optional"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="optional"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")?";
+}
+
+
+div[class="grammar"] span[class="plus"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="plus"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")+";
+}
+
+
+div[class="grammar"] span[class="star"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="star"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")*";
+}
+
+div[class="grammar"] span[class="choice"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="choice"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")";
+}
+
+div[class="grammar"] span[class="group"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="group"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")";
+}
+
+table {
+    background-color: #f9f9f9;
+}
+
+.component1-color {
+ background-color: rgba(255,42,42,0.2);
+}
+
+.component2-color {
+ background-color: rgba(0,68,170,0.2);
+}
+
+.component3-color {
+ background-color: rgba(0,170,0,0.2);
+}
+.component4-color {
+ background-color: rgba(204,255,0,0.2);
+}
+
+.component5-color {
+ background-color: rgba(11,40,40,0.2);
+}
+
+.component6-color {
+ background-color: rgba(244,105,14,0.2);
+}
+
+.interpretation-forward::before {
+    content:    "Interpretation: ";
+    font-weight:    bold;
+}
+
+.structural-forward::before {
+    content:    "Structural constraint: ";
+    font-weight:    bold;
+}
+</style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css" charset="utf-8"></head> 
+  <body style="display: inherit; "><div class="head"><p><a href="http://www.w3.org/"><img width="72" height="48" src="http://www.w3.org/Icons/w3c_home" alt="W3C"></a></p><h1 class="title" id="title">Constraints of the Provenance Data Model</h1><h2 id="w3c-working-draft-03-may-2012"><acronym title="World Wide Web Consortium">W3C</acronym> Working Draft 03 May 2012</h2><dl><dt>This version:</dt><dd><a href="http://www.w3.org/TR/2012/WD-prov-constraints-20120503/">http://www.w3.org/TR/2012/WD-prov-constraints-20120503/</a></dd><dt>Latest published version:</dt><dd><a href="http://www.w3.org/TR/prov-constraints/">http://www.w3.org/TR/prov-constraints/</a></dd><dt>Latest editor's draft:</dt><dd><a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-constraints.html">http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-constraints.html</a></dd><dt>Editors:</dt><dd><a href="http://homepages.inf.ed.ac.uk/jcheney">James Cheney</a>, University of Edinburgh</dd>
+<dd><a href="http://www.cs.ncl.ac.uk/people/Paolo.Missier">Paolo Missier</a>, Newcastle University</dd>
+<dd><a href="http://www.ecs.soton.ac.uk/~lavm/">Luc Moreau</a>, University of Southampton</dd>
+</dl><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2012-2012 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. <acronym title="World Wide Web Consortium">W3C</acronym> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p><hr></div> 
+
+    <div id="abstract" class="introductory section"><h2>Abstract</h2>
+<p>
+PROV-DM, the PROV data model, is a data model for provenance that describes
+the entities, people and activities involved in
+producing a piece of data or thing. 
+PROV-DM is structured in six components, dealing with: 
+(1) entities and activities, and the time at which they were created, used, or ended;
+(2) agents bearing responsibility for entities that were generated and activities that happened;
+(3) derivations of entities from entities;
+(4) properties to link entities that refer to a same thing;
+(5) collections forming a logical structure for its members;
+(6) a simple annotation mechanism.
+</p>
+
+
+<p> This document introduces a further set of concepts useful for
+  understanding the PROV data model and defines <i>inferences</i>
+  that are allowed on provenance statements and <i>validity
+  constraints</i> that PROV instances should
+  follow. These inferences and constraints are useful for readers who
+  develop applications that generate provenance or reason over
+  provenance.
+</p>
+</div><div id="sotd" class="introductory section"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <acronym title="World Wide Web Consortium">W3C</acronym> publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><acronym title="World Wide Web Consortium">W3C</acronym> technical reports index</a> at http://www.w3.org/TR/.</em></p>
+<h4 id="prov-family-of-specifications">PROV Family of Specifications</h4>
+This document is part of the PROV family of specifications, a set of specifications defining various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.  The specifications are:
+<ul>
+<li> PROV-DM, the PROV data model for provenance;</li>
+<li> PROV-CONSTRAINTS, a set of constraints applying to the PROV data model  (this document);</li>
+<li> PROV-N, a notation for provenance aimed at human consumption;</li>
+<li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF;</li>
+<li> PROV-AQ, the mechanisms for accessing and querying provenance; </li>
+<li> PROV-PRIMER, a primer for the PROV data model;</li>
+<li> PROV-SEM, a formal semantics for the PROV data model;</li>
+<li> PROV-XML, an XML schema for the PROV data model.</li>
+</ul>
+<h4 id="how-to-read-the-prov-family-of-specifications">How to read the PROV Family of Specifications</h4>
+<ul>
+<li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
+<li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+<li>The XML community should focus on PROV-XML defining an XML schema for PROV-DM. Further details can also be found in PROV-DM, PROV-CONSTRAINTS, and PROV-SEM.</li>
+<li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
+<li>Readers seeking to implement other PROV serializations
+should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+</ul>
+
+<h4 id="first-public-working-draft">First Public Working Draft</h4>
+ <p>This is the first public release of the PROV-CONSTRAINTS
+document. Following feedback, the Working Group has decided to
+reorganize the PROV-DM document substantially, separating the data model,
+from its constraints, and the notation used to illustrate it. The
+PROV-CONSTRAINTS release is synchronized with the release of the PROV-DM, PROV-O,
+PROV-PRIMER, and PROV-N documents.
+</p>
+<p>This document was published by the <a href="http://www.w3.org/2011/prov/">Provenance Working Group</a> as a First Public Working Draft. This document is intended to become a <acronym title="World Wide Web Consortium">W3C</acronym> Recommendation. If you wish to make comments regarding this document, please send them to <a href="mailto:public-prov-wg@w3.org">public-prov-wg@w3.org</a> (<a href="mailto:public-prov-wg-request@w3.org?subject=subscribe">subscribe</a>, <a href="http://lists.w3.org/Archives/Public/public-prov-wg/">archives</a>). All feedback is welcome.</p><p>Publication as a Working Draft does not imply endorsement by the <acronym title="World Wide Web Consortium">W3C</acronym> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p><p>This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>. <acronym title="World Wide Web Consortium">W3C</acronym> maintains a <a href="http://www.w3.org/2004/01/pp-impl/46974/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>.</p></div><div id="toc" class="section"><h2 class="introductory">Table of Contents</h2><ul class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction<br>
+</a><ul class="toc"><li class="tocline"><a href="#conventions" class="tocxref"><span class="secno">1.1 </span>Conventions</a></li><li class="tocline"><a href="#purpose" class="tocxref"><span class="secno">1.2 </span>Purpose of this document</a></li><li class="tocline"><a href="#audience" class="tocxref"><span class="secno">1.3 </span> Audience </a></li></ul></li><li class="tocline"><a href="#compliance" class="tocxref"><span class="secno">2. </span>Compliance with this document</a></li><li class="tocline"><a href="#inferences" class="tocxref"><span class="secno">3. </span>Inferences and Definitions</a><ul class="toc"><li class="tocline"><a href="#component-1--entities-and-activities" class="tocxref"><span class="secno">3.1 </span>Component 1: Entities and Activities</a></li><li class="tocline"><a href="#component-2--agents" class="tocxref"><span class="secno">3.2 </span>Component 2: Agents</a></li><li class="tocline"><a href="#component-3--derivations" class="tocxref"><span class="secno">3.3 </span>Component 3: Derivations</a></li><li class="tocline"><a href="#component-4--alternate-entities" class="tocxref"><span class="secno">3.4 </span>Component 4: Alternate Entities</a><ul class="toc"><li class="tocline"><a href="#term-Specialization" class="tocxref"><span class="secno">3.4.1 </span>Specialization</a></li><li class="tocline"><a href="#term-Alternate" class="tocxref"><span class="secno">3.4.2 </span>Alternate</a></li></ul></li></ul></li><li class="tocline"><a href="#equivalence" class="tocxref"><span class="secno">4. </span>Equivalence</a><ul class="toc"><li class="tocline"><a href="#optional-attributes" class="tocxref"><span class="secno">4.1 </span>Optional Attributes</a></li><li class="tocline"><a href="#normalization" class="tocxref"><span class="secno">4.2 </span>Normalization</a></li></ul></li><li class="tocline"><a href="#constraints" class="tocxref"><span class="secno">5. </span>Validity Constraints</a><ul class="toc"><li class="tocline"><a href="#structural-constraints" class="tocxref"><span class="secno">5.1 </span>Uniqueness Constraints</a></li><li class="tocline"><a href="#event-ordering-constraints" class="tocxref"><span class="secno">5.2 </span>Event Ordering Constraints</a><ul class="toc"><li class="tocline"><a href="#activity-constraints" class="tocxref"><span class="secno">5.2.1 </span>Activity constraints</a></li><li class="tocline"><a href="#entity-constraints" class="tocxref"><span class="secno">5.2.2 </span> Entity constraints</a></li><li class="tocline"><a href="#agent-constraints" class="tocxref"><span class="secno">5.2.3 </span> Agent constraints</a></li></ul></li></ul></li><li class="tocline"><a href="#collection-constraints" class="tocxref"><span class="secno">6. </span>Collection Constraints</a><ul class="toc"><li class="tocline"><a href="#collection-branching" class="tocxref"><span class="secno">6.1 </span>Collection branching</a></li><li class="tocline"><a href="#collections-and-derivation" class="tocxref"><span class="secno">6.2 </span>Collections and Weaker Derivation Relation</a></li></ul></li><li class="tocline"><a href="#account-constraints" class="tocxref"><span class="secno">7. </span>Account Constraints</a></li><li class="tocline"><a href="#rationale" class="tocxref"><span class="secno">8. </span>Rationale for inferences and constraints</a><ul class="toc"><li class="tocline"><a href="#section-attributes" class="tocxref"><span class="secno">8.1 </span>Entities and Attributes</a></li><li class="tocline"><a href="#activities" class="tocxref"><span class="secno">8.2 </span>Activities</a></li><li class="tocline"><a href="#representation-term-assertion-inference" class="tocxref"><span class="secno">8.3 </span>Description, Assertion, and Inference</a></li><li class="tocline"><a href="#section-event-time" class="tocxref"><span class="secno">8.4 </span>Events and Time</a><ul class="toc"><li class="tocline"><a href="#event-ordering" class="tocxref"><span class="secno">8.4.1 </span>Event Ordering</a></li><li class="tocline"><a href="#types-of-events" class="tocxref"><span class="secno">8.4.2 </span>Types of Events</a></li></ul></li><li class="tocline"><a href="#account-section" class="tocxref"><span class="secno">8.5 </span>Account</a></li></ul></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a></li><li class="tocline"><a href="#glossary" class="tocxref"><span class="secno">B. </span>Glossary</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ul class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ul></li></ul></div>
+
+
+
+
+
+
+    <div id="introduction" class="section"> 
+      <!--OddPage--><h2><span class="secno">1. </span>Introduction<br>
+</h2> 
+
+<p> Provenance is a record that describes the people, institutions,
+  entities, and activities, involved in producing, influencing, or
+  delivering a piece of data or a thing.  This document complements
+  the PROV-DM specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>] that defines a data model for
+  provenance on the Web.  </p>
+
+
+
+    <div id="conventions" class="section"> 
+<h3><span class="secno">1.1 </span>Conventions</h3>
+
+
+
+<p>The key words "<em class="rfc2119" title="must">must</em>", "<em class="rfc2119" title="must not">must not</em>", "<em class="rfc2119" title="required">required</em>", "<em class="rfc2119" title="shall">shall</em>", "<em class="rfc2119" title="shall
+      not">shall
+      not</em>", "<em class="rfc2119" title="should">should</em>", "<em class="rfc2119" title="should not">should not</em>", "<em class="rfc2119" title="recommended">recommended</em>",  "<em class="rfc2119" title="may">may</em>", and
+      "<em class="rfc2119" title="optional">optional</em>" in this document are to be interpreted as described in
+      [<cite><a class="bibref" rel="biblioentry" href="#bib-RFC2119">RFC2119</a></cite>].</p>
+    </div> 
+
+
+<div id="purpose" class="section">
+
+<h3><span class="secno">1.2 </span>Purpose of this document</h3>
+
+<p> PROV-DM is a conceptual data model for provenance (realizable
+using different serializations such as PROV-N, PROV-O, or PROV-XML).
+However, nothing in the PROV-DM specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>] forces sets
+of PROV
+statements (or <a>instances</a>) to be meaningful, that is, to correspond to a consistent
+history of objects and interactions.  Furthermore, nothing in the
+PROV-DM specification enables applications to perform inferences over
+PROV <a>instances</a>.  </p>
+
+<p> This document specifies <em>inferences</em> over PROV instances that
+applications <em class="rfc2119" title="may">may</em> employ, including definitions of some provenance
+statements in terms of others, and also defines a class of <em>valid</em>
+PROV instances by specifying <em>constraints</em> that valid PROV instances must
+satisfy. Applications <em class="rfc2119" title="should">should</em> produce valid provenance and
+<em class="rfc2119" title="may">may</em> reject provenance that is not valid in order to increase
+the usefulness of provenance and reliability of applications that
+process it.  <a href="#compliance" class="sectionRef">section 2. Compliance with this document</a>
+summarizes the requirements for compliance with this document, which
+are specified in detail in the rest of the document.
+</p>
+
+<p> This specification lists inferences and definitions together in one
+section (<a href="#inferences" class="sectionRef">section 3. Inferences and Definitions</a>), defines the
+induced notion of <a>equivalence</a> (<a href="#equivalence" class="sectionRef">section 4. Equivalence</a>), and then
+considers two kinds of validity constraints (<a href="#constraints" class="sectionRef">section 5. Validity Constraints</a>): <em>structural constraints</em> that
+prescribe properties of PROV instances that can be checked directly
+by inspecting the syntax, and <em>event ordering</em> constraints that
+require that the records in a PROV <a>instance</a> are consistent with a
+sensible ordering of events relating the activities, entities and
+agents involved.  In separate sections we consider additional
+constraints specific to collections and accounts (<a href="#collection-constraints" class="sectionRef">section 6. Collection Constraints</a> and <a href="#account-constraints" class="sectionRef">section 7. Account Constraints</a>).  </p>
+
+
+<p>
+Finally, the specification includes a section (<a href="#rationale" class="sectionRef">section 8. Rationale for inferences and constraints</a>) describing the rationale
+for the inferences and constraints in greater detail, particularly
+background on events, attributes, the role of inference, and
+accounts. A formal mathematical model that further justifies the
+constraints and inferences is found in [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-SEM">PROV-SEM</a></cite>].
+</p>
+
+</div>
+<div id="audience" class="section">
+<h3><span class="secno">1.3 </span> Audience </h3>
+
+<p> The audience for this document is the same as for [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>]: developers
+and users who wish to create, process, share or integrate provenance
+records on the (Semantic) Web.  Not all PROV-compliant applications
+need to check validity when processing provenance, but many
+applications could benefit from the inference rules specified here.
+Conversely, applications that create or transform provenance should
+try to produce valid provenance, to make it more useful to other
+applications.
+</p>
+
+<p>This document assumes familiarity with [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>].
+</p>
+</div>
+
+</div> 
+
+<div id="compliance" class="section">
+<!--OddPage--><h2><span class="secno">2. </span>Compliance with this document</h2>
+
+<div class="note">
+TODO: Add collection and account constraint sections to the compliance
+  list as appropriate.
+  </div>
+  For the purpose of compliance, the normative sections of this document
+  are <a href="#compliance" class="sectionRef">section 2. Compliance with this document</a>, <a href="#inferences" class="sectionRef">section 3. Inferences and Definitions</a>, <a href="#equivalence" class="sectionRef">section 4. Equivalence</a>, and <a href="#constraints" class="sectionRef">section 5. Validity Constraints</a>.
+ To be compliant:
+  <ol><li>When processing provenance, an
+    application <em class="rfc2119" title="may">may</em> apply the inferences and definitions in <a href="#inferences" class="sectionRef">section 3. Inferences and Definitions</a>.</li>
+    <li>When determining whether two PROV instances are
+  <a href="#dfn-equivalent" class="internalDFN">equivalent</a>, an application <em class="rfc2119" title="must">must</em> determine whether their
+  normal forms are equal, as specified in <a href="#equivalence" class="sectionRef">section 4. Equivalence</a>.
+    </li><li>When determining whether a PROV instance is <a href="#dfn-valid" class="internalDFN">valid</a>, an
+    application <em class="rfc2119" title="must">must</em> check that all of the
+    constraints of <a href="#constraints" class="sectionRef">section 5. Validity Constraints</a> are
+  satisfied  on the <a href="#dfn-normal-form" class="internalDFN">normal form</a> of the instance.</li>
+    <li> When producing provenance meant for other applications to
+    use, the application <em class="rfc2119" title="should">should</em> produce <a href="#dfn-valid" class="internalDFN">valid</a> provenance. </li>
+  </ol>
+  <div class="note">
+    Should we specify a way for PROV instances to say whether they
+    are meant to be validated or not?  Seems outside the scope of this
+    document, may require changes to PROV-N.
+  </div>
+  
+</div>
+
+
+
+<div id="inferences" class="section">
+<!--OddPage--><h2><span class="secno">3. </span>Inferences and Definitions</h2>
+
+<p>
+In this section, we describe <a title="inference" href="#inference" class="internalDFN">inferences</a> and <a title="definition" href="#definition" class="internalDFN">definitions</a> that <em class="rfc2119" title="may">may</em> be used on
+  provenance data, and a notion of <a title="equivalence">equivalence</a> on PROV instances.  
+An  <dfn id="inference">inference</dfn> is a rule that can be applied
+  to PROV instances to add new PROV statements.  A <dfn id="definition">definition</dfn> is a rule that states that a
+  provenance expression is equivalent to some other expressions; thus,
+  defined provenance expressions can be replaced by their definitions,
+and vice versa.
+</p>
+
+<p> Inferences have the following general form:</p>
+<div class="inference" id="inference-example">
+  <span class="conditional">IF</span> <span class="name">hyp_1</span> and ... and
+<span class="name">hyp_k</span> <span class="conditional">THEN</span>
+  there exists <span class="name">a_1</span> and ... and <span class="name">a_m</span> such that <span class="name">conclusion_1</span> and ... and <span class="name">conclusion_n</span>.
+  </div>
+ 
+<p>
+  This means that if all of the provenance expressions matching <span class="name">hyp_1</span>... <span class="name">hyp_k</span>
+  can be found in a PROV instance, we can add all of the expressions
+  <span class="name">concl_1</span> ... <span class="name">concl_n</span> to the instance, possibly after generating fresh
+  identifiers <span class="name">a_1</span>,...,<span class="name">a_m</span> for unknown objects.  These fresh
+  identifiers might later be found to be equal to known identifiers;
+  these fresh identifiers play a similar role in PROV constraints to existential variables in logic.
+</p>
+<div class="note">
+  TODO: Is this re-inventing blank nodes in PROV-DM, and do we want to
+  do this?  A lot of the inferences have existentially quantified
+  conclusions (and there is some theory that supports this).
+
+  TODO: Make sure conjunctive reading of conclusion is clear.
+  </div>
+
+<p> Definitions have the following general form:</p>
+
+<div class="definition" id="definition-example">
+  <span class="name">defined_exp</span> holds <span class="conditional">IF AND ONLY IF </span>
+  there exists <span class="name">a_1</span>,..., <span class="name">a_m</span> such that <span class="name">defining_exp_1</span> and  ... and <span class="name">defining_exp_n</span>.
+  </div>
+ 
+  <p>
+  This means that a provenance expression defined_exp is defined in
+  terms of other expressions.  This can be viewed as a two-way
+  inference:  If <span class="name">defined_exp</span>
+  can be found in a PROV instance, we can add all of the expressions
+<span class="name">defining_exp_1</span> ... <span class="name">defining_exp_n</span> to the instance, possibly after generating fresh
+  identifiers <span class="name">a_1</span>,...,<span class="name">a_m</span> for unknown objects.  Conversely, if there
+  exist identifiers <span class="name">a_1</span>...<span class="name">a_m</span> such that <span class="name">defining_exp_1</span>
+  and ... and <span class="name">defining_exp_n</span> hold in the instance, we can add the defined
+  expression <span class="name">def_exp</span>.  When an expression is defined in terms of
+  others, it is in a sense redundant; it is safe to replace it with
+  its definition.
+</p>
+  
+
+
+<div id="component-1--entities-and-activities" class="section">
+  <h3><span class="secno">3.1 </span>Component 1: Entities and Activities</h3>
+  
+
+<p>Communication between activities is <a title="definition" href="#definition" class="internalDFN">defined</a> in terms
+as the existence of an underlying entity generated by one activity and used by the
+other.</p>
+
+<div class="definition" id="wasInformedBy-definition">Given two activities identified by <span class="name">a1</span> and <span class="name">a2</span>, 
+<span class="name">wasInformedBy(a2,a1)</span>
+holds <span class="conditional">IF AND ONLY IF</span>
+ there is an entity  with some identifier <span class="name">e</span> and some sets of attribute-value pairs <span class="name">attrs1</span> and <span class="name">attrs2</span>,
+such that <span class="name">wasGeneratedBy(-,e,a1,-,attrs1)</span> and <span class="name">used(-,a2,e,-,attrs2)</span> hold.
+</div>
+
+<p>The relationship <span class="name">wasInformedBy</span> is not
+transitive. Indeed, consider the following statements.</p>
+<pre class="codeexample">wasInformedBy(a2,a1)
+wasInformedBy(a3,a2)
+</pre>
+<p> We cannot infer <span class="name">wasInformedBy(a3,a1)</span> from these expressions. Indeed, 
+from 
+<span class="name">wasInformedBy(a2,a1)</span>, we know that there exists <span class="name">e1</span> such that <span class="name">e1</span> was generated by <span class="name">a1</span>
+and used by <span class="name">a2</span>. Likewise, from <span class="name">wasInformedBy(a3,a2)</span>, we know that there exists  <span class="name">e2</span> such that <span class="name">e2</span> was generated by <span class="name">a2</span> and used by <span class="name">a3</span>. The following illustration shows a case for which transitivity cannot hold. The
+horizontal axis represents the event line. We see that <span class="name">e1</span> was generated after <span class="name">e2</span> was used. Furthermore, the illustration also shows that
+<span class="name">a3</span> completes before <span class="name">a1</span>.  So it is impossible for <span class="name">a3</span> to have used an entity generated by <span class="name">a1</span>.</p>
+
+<div style="text-align: center;">
+<div class="figure" >
+<img src="images/informedByNonTransitive.png" alt="non transitivity of wasInformedBy">
+<div class="figcaption" >Counter-example for transitivity of wasInformedBy</div>
+</div>
+</div>
+
+
+<p>Start of <span class="name">a2</span> by activity <span class="name">a1</span> is <a title="definition" href="#definition" class="internalDFN">defined</a> as follows.</p>
+
+<div class="definition" id="wasStartedByActivity-definition">Given two activities with identifiers <span class="name">a1</span> and <span class="name">a2</span>, 
+ <span class="name">wasStartedByActivity(a2,a1)</span>
+holds <span class="conditional">IF AND ONLY IF</span>
+ there exists an entity <span class="name">e</span> 
+such that
+ <span class="name">wasGeneratedBy(-,e,a1,-,-)</span> 
+ and <span class="name">wasStartedBy(-,a2,e,-,-)</span> hold.
+</div>
+
+
+
+
+</div>
+
+<div id="component-2--agents" class="section">
+<h3><span class="secno">3.2 </span>Component 2: Agents</h3>
+
+Attribution identifies an agent as responsible for an entity.  An
+agent can only be responsible for an entity if it was associated with
+an activity that generated the entity.  If the activity, generation
+and association events are not explicit in the instance, they can
+be inferred.
+<div class="inference" id="attribution-implication">
+<span class="conditional">IF</span>
+<span class="name">wasAttributedTo(e,ag)</span> holds for some identifiers
+<span class="name">e</span> and <span class="name">ag</span>,  
+<span class="conditional">THEN</span> there exists an activity with some identifier <span class="name">a</span> such that the following statements hold:
+<pre>activity(a, -, -,-)
+wasGeneratedBy(-,e, a, -,_)
+wasAssociatedWith(-,a, ag, -, -)
+</pre>
+</div>
+
+<p> Responsibility relates agents where one agent acts on behalf of
+another, in the context of some activity.  The supervising agent
+delegates some responsibility for part of the activity to the
+subordinate agent, while retaining some responsibility for the overall
+activity.  </p>
+
+
+<div class="note">
+  @@TODO: Could this be an inference? Does it imply that
+  a1 is associated with all activities a2 is associated with?
+  </div>
+
+
+</div>
+
+ <div id="component-3--derivations" class="section"> 
+<h3><span class="secno">3.3 </span>Component 3: Derivations</h3>
+
+
+ <p>Derivations with an explicit activity and no usage admit the
+  following inference: </p>
+<div class="inference" id="derivation-use">
+<p>Given an activity <span class="name">a</span>, entities  denoted by <span class="name">e1</span> and <span class="name">e2</span>, 
+<span class="conditional">IF</span> <span class="name">wasDerivedFrom(-,e2,e1, a, -)</span> and <span class="name">wasGeneratedBy(-,e2,a,-,-)</span> hold, <span class="conditional">THEN</span> <span class="name">used(-,a,e1,-,-)</span> also holds.
+</p></div>
+<p>This inference is justified by the fact that the entity denoted by <span class="name">e2</span> is generated by at most one activity in a given account
+(see <a href="#generation-uniqueness">generation-uniqueness</a>). Hence,  this activity is also the one referred to by the usage of <span class="name">e1</span>. 
+</p>
+
+<div class="note">
+  There is some redundancy in the following discussion.
+  </div>
+
+<p>The converse inference does not hold.
+From <span class="name">wasDerivedFrom(e2,e1)</span> and <span class="name">used(a,e1,-)</span>, one cannot
+derive <span class="name">wasGeneratedBy(e2,a,-)</span> because identifier <span class="name">e1</span> may occur in usages performed by many activities, which may have not generated the entity denoted by <span class="name">e2</span>.</p>
+
+  <p>
+Note that derivation cannot in general be inferred from the existence
+of related usage and generation events. Indeed, when a generation <span class="name">wasGeneratedBy(g, e2, a, -, attrs2)</span>
+<a href="#dfn-precedes" class="internalDFN">precedes</a> <span class="name">used(u, a, e1, -, attrs1)</span>, for
+some <span class="name">e1</span>, <span class="name">e2</span>, <span class="name">attrs1</span>, <span class="name">attrs2</span>, and <span class="name">a</span>, one
+cannot infer derivation <span class="name">wasDerivedFrom(e2, e1, a, g, u)</span>
+or <span class="name">wasDerivedFrom(e2,e1)</span> since 
+ <span class="name">e2</span> cannot possibly be derived from
+ <span class="name">e1</span>, given the creation of <span class="name">e2</span> <a href="#dfn-precedes" class="internalDFN">precedes</a> the use
+of <span class="name">e1</span>.  That is, if <span class="name">e1</span> is generated
+by an activity before <span class="name">e2</span> is used, then
+obviously  <span class="name">e2</span> cannot have been derived from
+<span class="name">e1</span>.  However, even if  <span class="name">e2</span> happens used before   <span class="name">e1</span>
+is generated, it is not safe to assume that  <span class="name">e2</span> was derived from  <span class="name">e1</span>.
+</p>
+
+<p> Derivation is not defined to be transitive. Domain-specific specializations of derivation may be defined in such a way that the transitivity property
+holds.</p>
+
+  
+
+
+
+<p>A revision admits the following inference, linking the two entities
+  by a derivation, and stating them to be alternates.</p>
+
+<div class="inference" id="wasRevision">
+Given two identifiers <span class="name">e1</span> and <span class="name">e2</span> identifying two entities, and an identifier <span class="name">ag</span> identifying an agent,
+<span class="conditional">IF</span> <span class="name">wasRevisionOf(-,e2,e1,ag)</span> holds, <span class="conditional">THEN</span> the following 
+hold:
+<pre>wasDerivedFrom(-,e2,e1,-)
+alternateOf(e1,e2)
+wasAttributedTo(e2,ag)
+</pre>
+</div>
+
+<div class="note">
+  The following doesn't make sense because wasRevisionOf and
+  wasDerivedFrom have different types.
+  </div>
+<p><span class="name">wasRevisionOf</span> is a strict sub-relation
+ of <span class="name">wasDerivedFrom</span> since two entities <span class="name">e2</span> and <span class="name">e1</span>
+ may satisfy <span class="name">wasDerivedFrom(e2,e1)</span> without being a variant of
+ each other.
+</p>
+
+
+  <div class="note">
+  Motivation for quotation inference
+  </div>
+<div class="inference" id="quotation-implication">
+<span class="conditional">IF</span>
+<span class="name">wasQuotedFrom(e2,e1,ag2,ag1,attrs)</span> holds for some identifiers
+<span class="name">e2</span>, <span class="name">e1</span>, <span class="name">ag2</span>, <span class="name">ag1</span>, 
+<span class="conditional">THEN</span> the following hold:
+<pre>wasDerivedFrom(e2,e1)
+wasAttributedTo(e2,ag2)
+wasAttributedTo(e1,ag1)
+</pre>
+</div>
+
+<p>
+
+
+
+</p><p>Traceability allows an entity to be transitively linked to another entity it is derived from, to an agent it is attributed to, or another agent having some responsibility, or a trigger of an activity that generated it.</p>
+
+<p>Traceability can be inferred from existing statements, or can be asserted stating that a dependency path exists without its individual steps being expressed. This is captured 
+by the following inferences:
+
+</p><div class="inference" id="traceability-inference">
+Given two identifiers <span class="name">e2</span> and  <span class="name">e1</span> for entities, 
+the following statements hold:
+
+<ol> 
+<li><span class="conditional">IF</span>  <span class="name">wasDerivedFrom(e2,e1,a,g2,u1)</span> holds, for some <span class="name">a</span>, <span class="name">g2</span>, <span class="name">u1</span>, <span class="conditional">THEN</span>  <span class="name">tracedTo(e2,e1)</span> also holds.</li>
+<li><span class="conditional">IF</span>  <span class="name">wasDerivedFrom(e2,e1)</span> holds, <span class="conditional">THEN</span>  <span class="name">tracedTo(e2,e1)</span> also
+holds.</li>
+<li><span class="conditional">IF</span>  <span class="name">wasAttributedTo(e2,ag1,aAttr)</span> holds, <span class="conditional">THEN</span>  <span class="name">tracedTo(e2,ag1)</span> also holds.
+</li>
+<li>
+<span class="conditional">IF</span>  <span class="name">wasAttributedTo(e2,ag2,aAttr)</span>, <span class="name">wasGeneratedBy(-,e2,a,-,gAttr)</span>,  and <span class="name">actedOnBehalfOf(ag2,ag1,a,rAttr)</span> hold, for some  <span class="name">a</span>, <span class="name">ag2</span>, <span class="name">ag1</span>, <span class="name">aAttr</span>,  <span class="name">gAttr</span>, and <span class="name">rAttr</span>, <span class="conditional">THEN</span>  <span class="name">tracedTo(e2,ag1)</span> also holds.</li>
+
+<li><span class="conditional">IF</span> <span class="name">wasGeneratedBy(e2,a,gAttr)</span> and <span class="name">wasStartedBy(a,e1,sAttr)</span> hold, for some  <span class="name">a</span>, <span class="name">gAttr</span> , <span class="name">sAttr</span>  then <span class="name">tracedTo(e2,e1)</span> holds.</li>
+<li><span class="conditional">IF</span>  <span class="name">tracedTo(e2,e)</span> and  <span class="name">tracedTo(e,e1)</span> hold for some  <span class="name">e</span>, <span class="conditional">THEN</span>  <span class="name">tracedTo(e2,e1)</span> also holds.</li>
+</ol>
+</div>
+
+<p>We note that the inference rule <a href="#traceability-inference">traceability-inference</a> does not
+allow us to infer anything about the attributes of the related
+entities, agents or events.
+</p>
+
+
+</div>
+
+
+ <div id="component-4--alternate-entities" class="section"> 
+<h3><span class="secno">3.4 </span>Component 4: Alternate Entities</h3>
+<div class="note">TODO: There is currently no consensus what inferences on
+  alternate or specialization should be assumed.  The following
+  section lists possible inferences that may or may not be adopted. Section is under review, pending ISSUE-29.
+</div>
+
+
+  <p>The relation <span class="name">alternateOf</span> is an equivalence relation: <a href="#dfn-reflexive" class="internalDFN">reflexive</a>,
+  <a href="#dfn-transitive" class="internalDFN">transitive</a> and <a href="#dfn-symmetric" class="internalDFN">symmetric</a>.</p>
+  
+  <div class="inference" id="alternate-reflexive">
+    For any entity <span class="name">e</span>, we have <span class="name">alternateOf(e,e)</span>.
+    </div>
+
+
+       <div class="inference" id="alternate-transitive">
+    For any entities <span class="name">e1</span>, <span class="name">e2</span>, <span class="name">e3</span>, <span class="conditional">IF</span> <span class="name">alternateOf(e1,e2)</span> and
+   <span class="name">alternateOf(e2,e3)</span> <span class="conditional">THEN</span> <span class="name">alternateOf(e1,e3)</span>.
+    </div>
+   <div class="inference" id="alternate-symmetric">
+    For any entity <span class="name">e1</span>, <span class="name">e2</span>, <span class="conditional">IF</span>  <span class="name">alternateOf(e1,e2)</span> <span class="conditional">THEN</span> <span class="name">alternateOf(e2,e1)</span>.
+    </div>
+
+<p>Similarly, specialization is a strict partial order: it is <a>irreflexive</a>,
+    <a href="#dfn-anti-symmetric" class="internalDFN">anti-symmetric</a> and
+    <a href="#dfn-transitive" class="internalDFN">transitive</a>.</p>
+
+        <div class="inference" id="specialization-irreflexive">
+    For any entity <span class="name">e</span>, it is not the case that
+    have <span class="name">specializationOf(e,e)</span>.
+    </div>
+
+<div class="inference" id="specialization-antisymmetric">
+  For any
+    entities <span class="name">e1</span>, <span class="name">e2</span>,
+it is not the case that 
+  <span class="name">specializationOf(e1,e2)</span>
+    and
+	 <span class="name">specializationOf(e2,e1)</span>.
+</div> 
+       <div class="inference" id="specialization-transitive">
+    For any
+    entities <span class="name">e1</span>, <span class="name">e2</span>, <span class="name">e3</span>, <span class="conditional">IF</span> <span class="name">specializationOf(e1,e2)</span>
+    and
+	 <span class="name">specializationOf(e2,e3)</span> <span class="conditional">THEN</span> <span class="name">specializationOf(e1,e3)</span>.
+    </div> 
+
+
+
+    <p>Finally, if one entity specializes another, then they are also
+    alternates:</p>
+    
+       <div class="inference" id="specialization-alternate">
+    For any entities  <span class="name">e1</span>, <span class="name">e2</span>, <span class="conditional">IF</span> <span class="name">specializationOf(e1,e2)</span> <span class="conditional">THEN</span> <span class="name">alternateOf(e1,e2)</span>.
+    </div> 
+
+
+   <div class="note">TODO: Possible inferences about attributes,
+  generation, invalidation?
+  </div>
+
+
+  <div class="note">
+    The following sections are retained from an older version, and are
+    not consistent with the above constraints.  This will be revised
+    once the consensus on ISSUE-29 is clearer.
+    </div>
+    
+  <div id="term-Specialization" class="section">
+<h4><span class="secno">3.4.1 </span>Specialization</h4>
+
+
+<p>Specialization is <em>neither symmetric nor anti-symmetric</em>.
+</p>
+
+<div class="anexample" id="anexample-not-symmetric">
+"Alice's toyota car on fifth Avenue" is a specialization of "Alice's toyota car", but the converse does not hold.
+</div>
+
+<div class="anexample" id="anexample-specialization-not-anti-symmetric">
+anti-symmetric counter-example???
+</div>
+
+
+<p>Specialization is <em>transitive</em>. Indeed if <span class="name">specializationOf(e1,e2)</span> holds, then there is some
+common thing, say <span class="name">T1-2</span> they both refer to,
+and  <span class="name">e1</span> is a more specific aspect of this
+thing than <span class="name">e2</span>. Likewise, if <span class="name">specializationOf(e2,e3)</span> holds, then there is some
+common thing, say <span class="name">T2-3</span> they both refer to, and  <span class="name">e2</span> is a more specific aspect of this
+thing than <span class="name">e3</span>.  The things <span class="name">T1-2</span> and <span class="name">T2-3</span> are the
+same since <span class="name">e2</span> is an aspect of both of them,
+so <span class="name">specializationOf(e1,e3)</span> follows since <span class="name">e1</span> and <span class="name">e3</span>
+are aspects fo the same thing and <span class="name">e1</span> is more specific than <span class="name">e3</span>. </p>
+
+
+<div class="anexample" id="anexample-specialization-is-transitive">
+A specialization of "this  email message" would be, for example, the "printed version on my desk", which is a specialization of "my thoughts on this email thread".  So, the "printed version on my desk" is also a specialization   "my thoughts on this email thread".
+</div>
+
+
+</div> 
+
+<div id="term-Alternate" class="section">
+<h4><span class="secno">3.4.2 </span>Alternate</h4>
+</div> 
+
+
+<p>Alternate not is <em>reflexive</em>. Indeed, <span class="name">alternate(e,e)</span> does not hold for any arbitrary entity <span class="name">e</span> since  <span class="name">e</span> may not be a specialization of another entity.</p>
+
+
+<p>Alternate is <em>symmetric</em>. Indeed, if <span class="name">alternate(e1,e2)</span> holds,
+then there exists an unspecified entity <span class="name">e</span>, such that
+both <span class="name">e1</span> and <span class="name">e2</span> are specialization of <span class="name">e</span>.
+Therefore, <span class="name">alternate(e2,e1)</span> also holds.
+</p>
+
+
+
+<p>Alternate is <em>not transitive</em>. Indeed, if <span class="name">alternate(e1,e2)</span> holds,
+then there exists an unspecified entity <span class="name">e1-2</span>, such that
+both <span class="name">e1</span> and <span class="name">e2</span> are specialization of <span class="name">e1-2</span>.
+Likewise, if <span class="name">alternate(e2,e3)</span> holds,
+then there exists an unspecified entity <span class="name">e2-3</span>, such that
+both <span class="name">e2</span> and <span class="name">e3</span> are specialization of <span class="name">e2-3</span>.
+It does not imply that there is a common entity <span class="name">e1-3</span>
+that both  <span class="name">e1</span> and <span class="name">e3</span> specialize.
+</p>
+
+
+<div class="anexample" id="anexample-alternate-not-transitive1">
+<p>At 6pm, the customer in a chair is a woman in a red dress, who happens to be Alice. After she leaves, another customer arrives at 7pm, a man with glasses, who happens to be Bob.  Transitivity does not hold since the <span class="name">womanInRedDress\</span> is not alternate of <span class="name">customerInChairAt7pm</span>.
+</p><pre>alternate(womanInRedDress,customerInChairAt6pm)
+specialization(customerInChairAt6pm,Alice)
+specialization(womanInRedDress,Alice)
+
+alternate(manWithGlasses,customerInChairAt7pm)
+specialization(customerInChairAt7pm,Bob)
+specialization(manWithGlasses,Bob)
+
+alternate(customerInChairAt6pm, customerInChairAt7pm)
+specialization(customerInChairAt6pm, customerInChair)
+specialization(customerInChairAt7pm, customerInChair)
+</pre>
+</div>
+
+<p>The above example shows that  <span class="name">customerInChairAt6pm</span> and <span class="name">customerInChairAt7pm</span> are two alternate entities that have no overlap, while <span class="name">womanInRedDress</span> and <span class="name">customerInChairAt6pm</span> do overlap.
+The following example   illustrates another case of non-overlapping alternate entities.
+</p>
+
+<div class="anexample">Two copies of the same book, where copy A was destroyed before copy B was made.</div>
+
+
+</div>
+
+</div>
+
+
+
+  <div id="equivalence" class="section">
+<!--OddPage--><h2><span class="secno">4. </span>Equivalence</h2>
+
+
+  For the purpose of checking inferences and constraints, we define a
+notion of <a>equivalence</a> of PROV s.  Equivalence has the following characteristics:
+
+
+<ul>
+  <li>Missing attributes that are interpreted as omitted values are
+  handled by generating a fresh
+  identifier for the omitted value.
+  </li>
+  <li> Redundant expressions are merged according to uniqueness
+  constraints. </li>
+  <li>
+  The order of provenance expressions is irrelevant to the meaning of
+  a PROV instance.  That is, a
+  PROV instance is equivalent to any other instance obtained by
+  permuting its expressions.
+  </li>
+  <li>
+  Inference rules and definitions preserve equivalence.  That is, a <a>PROV
+  instance</a> is equivalent to the instance obtained by applying any
+  inference rule.
+  </li>
+  <li>Equivalence is reflexive, symmetric, and transitive.</li>
+</ul>
+
+  <div id="optional-attributes" class="section">
+  <h3><span class="secno">4.1 </span>Optional Attributes</h3>
+  
+<div class="note">
+  TODO: Clarify how optional attributes are handled; clarify merging.  The following is
+  not very explicit about the difference between "not present" and
+  "omitted but inferred".
+  </div>
+<div id="optional-attributes1">PROV-DM allows for some attributes to
+  be optionally expressed. Unless otherwise specified, when an
+  optional attribute is not present in a statement, some value
+  <em class="rfc2119" title="should">should</em> be assumed to exist for this attribute, though it is not
+  known which.
+
+  The only exceptions are:
+  <ul>
+   <li><span id="optional-attributes2">Activities also allow for an
+  optional start time attribute.  If both are specified, they <em class="rfc2119" title="must">must</em> be
+  the same, as expressed by the following constraint.</span></li>
+    <li><span id="optional-attributes3">Activities also allow for an optional end time attribute.  If both are specified, they <em class="rfc2119" title="must">must</em> be the same, as expressed by the following constraint.</span></li>
+    <li>
+    <div id="optional-attributes6">In a quotation of the form <span class="name">wasQuotedFrom(e2,e1,-,-,attrs)</span>, the absence of an agent means: either no agent exists, or an agent exists but it is not identified.</div>
+</li>
+<li><div id="optional-attributes4">In an association of the form
+  <span class="name">wasAssociatedWith(a, ag, -, attr)</span>, the
+  absence of a plan means: either no plan exists, or a plan exists but
+  it is not identified.</div></li>
+  <li><div id="optional-attributes5">
+In an association of the form <span class="name">wasAssociatedWith(a, -, pl, attr)</span>, an agent exists but it is not identified.</div>
+</li>
+<li><div id="optional-activity">
+In a a delegation of the form <span class="name">actedOnBehalfOf(a,
+  ag2, ag1, -, attr)</span>, the absence of an activity means that
+  <span class="name">a2</span> acts on behalf of <span class="name">a1</span> for all activities with which <span class="name">a2</span> is
+  associated.
+</div></li>
+   </ul>
+</div>
+
+</div>
+
+<div id="normalization" class="section">
+<h3><span class="secno">4.2 </span>Normalization</h3>
+
+
+<p>
+We define the <dfn id="dfn-normal-form">normal form</dfn> of a PROV instance as the set
+of provenance expressions resulting from merging all of the overlapping
+expressions in the instance and applying all possible inference rules
+to this set.  Formally, we say that two PROV  instances are
+<dfn id="dfn-equivalent">equivalent</dfn> if they have the same normal form (that is,
+after applying all possible inference rules, the two instances produce
+the same set of PROV-DM expressions.)
+</p>
+
+<div class="note">
+  We should check that normal forms exist, i.e. that applying rules
+  and definitions eventually terminates.  More clarity is needed about
+  enforcing uniqueness via merging vs. constraint checking.
+  </div>
+
+<p> An application that processes PROV-DM data <em class="rfc2119" title="should">should</em> handle
+equivalent instances in the same way. (Common exceptions to this rule
+include, for example, pretty printers that seek to preserve the
+original order of statements in a file and avoid expanding
+inferences.)  </p>
+
+</div>
+  
+</div> <!-- inferences -->
+
+<div id="constraints" class="section">
+<!--OddPage--><h2><span class="secno">5. </span>Validity Constraints</h2>
+
+
+
+
+<p>
+This section defines a collection of constraints on PROV instances.  A PROV instance is <dfn id="dfn-valid">valid</dfn>
+  if, after applying all possible inference and definition rules from
+  <a href="#inferences">Section 2</a>, the resulting instance
+  satisfies all of the constraints specified in this section.
+ </p>
+
+  <p> There are two kinds of constraints:
+  </p><ul><li><em>uniqueness constraints</em> that say that a <a>PROV
+  instance</a> can contain at most one expression or that multiple
+  expressions about the same objects need to have the same values (for
+  example, if we describe the same generation event twice, then the
+  two expressions should have the same times);
+    </li>
+    <li> and <em>event ordering constraints</em> that say that it
+  should be possible to arrange the 
+  events (generation, usage, invalidation, start, end) described in a
+  PROV instance into a partial order that corresponds to a sensible
+  "history" (for example, an entity should not be generated after it
+  is used).
+    </li>
+    </ul>
+
+<p>The PROV data model is implicitly based on a notion of <dfn id="dfn-event">instantaneous event</dfn>s (or just <a title="instantaneous event" href="#dfn-event" class="internalDFN">event</a>s), that mark
+transitions in the world.  Events include generation, usage, or
+invalidation of entities, as well as starting or ending of activities.  This
+notion of event is not first-class in the data model, but it is useful
+for explaining its other concepts and its semantics [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-SEM">PROV-SEM</a></cite>].
+Thus, events help justify  <i>inferences</i> on provenance as well as
+<i>validity</i> constraints indicating when provenance is self-consistent. In <a href="#section-event-time" class="sectionRef">section 8.4 Events and Time</a> we
+discuss the motivation for <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a>
+and their relationship to time in greater detail.</p>
+
+<p>  PROV-DM
+identifies five kinds of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a>, namely <a href="#dfn-generation-event" class="internalDFN">entity generation
+event</a>, <a href="#dfn-usage-event" class="internalDFN">entity usage event</a>, <a href="#dfn-invalidation-event" class="internalDFN">entity invalidation event</a>, <a href="#dfn-start-event" class="internalDFN">activity start event</a>
+and <a href="#dfn-end-event" class="internalDFN">activity end event</a>.  PROV-DM adopts Lamport's clock
+assumptions [<cite><a class="bibref" rel="biblioentry" href="#bib-CLOCK">CLOCK</a></cite>] in the form of a reflexive, transitive partial order <a href="#dfn-follows" class="internalDFN">follows</a>
+(and its inverse <a href="#dfn-precedes" class="internalDFN">precedes</a>) between <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a>.  Furthermore,
+PROV-DM assumes the existence of a mapping from <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a> to time clocks,
+though the actual mapping is not in scope of this specification.</p>
+
+    
+<div class="note">
+  TODO: More about what it means for constraints to be satisfied;
+  constraint template(s)
+  </div>
+  
+    <div id="structural-constraints" class="section">
+<h3><span class="secno">5.1 </span>Uniqueness Constraints</h3>
+
+<div class="note">
+Attribute uniqueness constraints?
+</div>
+
+  <p> We assume that the various identified objects of PROV-DM have
+  unique statements describing them within a PROV instance.
+  </p>
+  <div class="constraint" id="entity-unique">
+<p>Given an entity identifier <span class="name">e</span>, there is at
+  most one expression 
+<span class="name">entity(e,attrs)</span>, where <span class="name">attrs</span> is some set of attribute-values.</p>
+    </div>
+  <div class="constraint" id="activity-unique">
+<p>Given an activity identifier <span class="name">a</span>, there is
+  at most one expression 
+<span class="name">activity(a,t1,t2,attrs)</span>, where <span class="name">attrs</span> is some set of attribute-values.</p>
+    </div>
+    <div class="note">TODO: Same goes for all other objects:
+  agent, note, generation, usage, invalidation, start, end,
+  communication, start by, attribution, association, responsibility, 
+  derivation, revision, quotation.  We should find a
+  way of saying this once concisely.
+      </div>
+  
+<p>We assume that an entity has exactly one generation and
+invalidation event (either or both may, however, be left implicit).
+So, PROV-DM allows for two distinct <a>generations</a>  <span class="name">g1</span> and <span class="name">g2</span> referencing the same entity provided they occur
+<em>simultaneously</em>. 
+This implies that the two generation events are actually the same and
+caused by the same <em>activity</em>, though  provenance may contain
+several  statements for the same world activity. 
+</p>
+
+
+<div class="constraint" id="generation-uniqueness">Given an entity denoted by <span class="name">e</span>, two activities denoted by <span class="name">a1</span> and <span class="name">a2</span>, two time instants  <span class="name">t1</span> and <span class="name">t2</span>, and two sets of attribute-value pairs <span class="name">attrs1</span> and <span class="name">attrs2</span>,
+<span class="conditional">IF</span> <span class="name">wasGeneratedBy(id1, e, a1, t1, attrs1)</span> and <span class="name">wasGeneratedBy(id2, e, a2, t2, attrs2)</span> exist,
+<span class="conditional">THEN</span> <span class="name">id1</span>=<span class="name">id2</span>, <span class="name">a1</span>=<span class="name">a2</span>, <span class="name">t1</span>=<span class="name">t2</span>  and <span class="name">attrs1</span>=<span class="name">attrs2</span>.
+</div> 
+
+<div class="note">
+Wouldn't the above constraint violate uniqueness?
+</div>
+
+<div class="note">
+Invalidation uniqueness?
+</div>
+
+<p>A generation can be used to indicate a generation time without having to specify the involved activity.  A generation time is unique, as specified by the following constraint.</p><p> 
+</p><div class="note">
+Seems redundant given generation-uniqueness
+</div>
+<div class="constraint" id="unique-generation-time">
+Given an entity denoted by <span class="name">e</span> and 
+two time instants  <span class="name">t1</span> and <span class="name">t2</span>,
+<span class="conditional">IF</span> <span class="name">wasGeneratedBy(e, -, t1)</span> and <span class="name">wasGeneratedBy(e, -, t2)</span> hold, <span class="conditional">THEN</span> <span class="name">t1</span>=<span class="name">t2</span>.
+</div> 
+
+<p>An <a href="#dfn-start-event" class="internalDFN">activity start event</a> is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that marks the instant an activity starts. It allows for an optional time attribute.  <span id="optional-start-time">Activities also allow for an optional start time attribute.  If both are specified, they <em class="rfc2119" title="must">must</em> be the same, as expressed by the following constraint.</span>
+</p>
+
+<div class="constraint" id="unique-startTime">
+<span class="conditional">IF</span> <span class="name">activity(a,t1,t2,-)</span> and <span class="name">wasStartedBy(id,a,e,t,-)</span>,  <span class="conditional">THEN</span> <span class="name">t</span>=<span class="name">t1</span>.
+</div> 
+
+<p>An <a href="#dfn-end-event" class="internalDFN">activity end event</a> is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that marks the instant an activity ends. It allows for an optional time attribute.  <span id="optional-end-time">Activities also allow for an optional end time attribute.  If both are specified, they <em class="rfc2119" title="must">must</em> be the same, as expressed by the following constraint.</span>
+</p>
+
+<div class="constraint" id="unique-endTime">
+<span class="conditional">IF</span> <span class="name">activity(a,t1,t2,-)</span> and <span class="name">wasEndedBy(id,a,e,t,-)</span>,  <span class="conditional">THEN</span> <span class="name">t</span> = <span class="name">t2</span>.
+</div> 
+
+
+
+
+</div> <!-- uniqueness-constraints--> 
+
+<div id="event-ordering-constraints" class="section">
+<h3><span class="secno">5.2 </span>Event Ordering Constraints</h3>
+
+
+<p>Given that provenance consists of a description of past entities
+and activities, <a href="#dfn-valid" class="internalDFN">valid</a> provenance instances <em class="rfc2119" title="must">must</em>
+satisfy <em>ordering constraints</em> between instantaneous events, which we introduce in
+this section.  For instance, an entity can only be used after it was
+generated; hence, we say that an entity's <a title="entity generation
+event" href="#dfn-generation-event" class="internalDFN">generation event</a> precedes any of this
+entity's <a title="entity usage event" href="#dfn-usage-event" class="internalDFN">usage events</a>.  Should this
+ordering constraint be violated, the associated generation and
+usage could not be credible.  The rest of this section defines
+the <dfn id="dfn-temporal-interpretation">temporal interpretation</dfn> of provenance instances as a
+set of instantaneous event ordering constraints. </p>
+
+
+<p>To allow for minimalistic clock assumptions, like Lamport
+[<cite><a class="bibref" rel="biblioentry" href="#bib-CLOCK">CLOCK</a></cite>], PROV-DM relies on a notion of relative ordering of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a>,
+without using physical clocks. This specification assumes that a partial order exists between <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a>.
+</p>
+
+
+<p>Specifically, <dfn id="dfn-precedes">precedes</dfn> is a partial
+order between <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a>.  When we say
+<span class="name">e1</span> precedes <span class="name">e2</span>,
+this means that either the two events are equal or <span class="name">e1</span> happened before <span class="name">e2</span>.
+For symmetry, <dfn id="dfn-follows">follows</dfn> is defined as the
+inverse of <a title="precedes" href="#dfn-precedes" class="internalDFN">precedes</a>; that is, when we say
+<span class="name">e1</span> follows <span class="name">e2</span>,
+this means that either the two events are equal or <span class="name">e1</span> happened after <span class="name">e2</span>. Both relations are partial orders, meaning
+that they are reflexive, transitive, and antisymmetric.</p>
+
+<div class="note"> Do we want to allow an event to
+  "precede" itself?  Perhaps precedes should be strict.
+</div>
+
+<div class="note">
+  The following discussion is unclear: what is being said here, and why?
+  </div>
+
+<p>PROV-DM also allows for time observations to be inserted in
+specific provenance statements, for each of the five kinds
+of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a> introduced in this specification.  The
+presence of a time observation for a given <a href="#dfn-event" class="internalDFN">instantaneous event</a> fixes the
+mapping of this <a href="#dfn-event" class="internalDFN">instantaneous event</a> to the timeline. The presence of time
+information in a provenance statement instantiates the ordering constraint with
+that time information. It is expected that such instantiated
+constraints can help corroborate provenance information. We anticipate
+that verification algorithms could be developed, though this
+verification is outside the scope of this specification.
+</p>
+
+<p>The following figure summarizes the ordering constraints in a
+graphical manner. For each subfigure, an event time line points to the
+right. Activities are represented by rectangles, whereas entities are
+represented by circles. Usage, generation and derivation are
+represented by the corresponding edges between entities and
+activities.  The five kinds of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a> are represented by vertical
+dotted lines (adjacent to the vertical sides of an activity's
+rectangle, or intersecting usage and generation edges).  The ordering
+constraints are represented by triangles: an occurrence of a triangle between two <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> vertical dotted lines represents that the event denoted by the left
+line precedes the event denoted by the right line.</p>
+
+
+  
+<div style="text-align: center;">
+<div class="figure" >
+<div class="figcaption"  id="ordering-activity-fig">Summary of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> ordering constraints for activities</div>
+<img src="images/ordering-activity.png" alt="constraints between events">
+</div>
+</div>
+
+<!-- Constraint template: 
+<span class="conditional">IF</span>
+<span class="name">blah</span> 
+and
+<span class="name">blah</span> 
+<span class="conditional">THEN</span>
+<span class="name">XX</span> 
+<a>precedes</a>
+<span class="name">YY</span>.
+-->
+
+<div id="activity-constraints" class="section">
+<h4><span class="secno">5.2.1 </span>Activity constraints</h4>
+
+<p>
+In this section we discuss constraints from the perspective of
+the <a href="#lifetime" class="internalDFN">lifetime</a> of an activity.  An activity starts, then during
+its lifetime uses, generates entities and communicates with  or starts
+other
+activities, and finally ends.  The following constraints amount to
+checking that all of the events associated with an activity take place
+within the activity's lifetime, and the start and end events mark the
+start and endpoints of its lifetime.
+</p>
+
+<hr>
+
+<p>The existence of an activity implies that the <a href="#dfn-start-event" class="internalDFN">activity start event</a> always <a href="#dfn-precedes" class="internalDFN">precedes</a> the corresponding <a href="#dfn-end-event" class="internalDFN">activity end
+event</a>.  This is
+illustrated by Subfigure <a href="#ordering-activity-fig">ordering-activity-fig</a> (a) and  expressed by constraint <a href="#start-precedes-end">start-precedes-end</a>.</p> 
+<div class="constraint" id="start-precedes-end">
+<span class="conditional">IF</span>
+<span class="name">wasStartedBy(start,a,-,-)</span> 
+and
+<span class="name">wasEndedBy(end,a,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">end</span>.
+</div>
+
+<hr>
+
+<p>A usage implies ordering of <a title="instantaneous event" href="#dfn-event" class="internalDFN">events</a>, since the <a title="entity usage event" href="#dfn-usage-event" class="internalDFN">usage event</a> had to occur during the associated activity. This is
+illustrated by Subfigure <a href="#ordering-activity-fig">ordering-activity-fig</a> (b) and  expressed by constraint <a href="#usage-within-activity">usage-within-activity</a>.</p>
+
+<div class="constraint" id="usage-within-activity">
+<ol>
+    <li>
+  <span class="conditional">IF</span>
+<span class="name">used(use,a,e,-,-)</span> 
+and
+<span class="name">wasStartedBy(start,a,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">use</span>.
+  </li>
+  <li>
+  <span class="conditional">IF</span>
+<span class="name">used(use,a,e,-,-)</span> 
+and
+<span class="name">wasEndedBy(end,a,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">use</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">end</span>.
+  </li>
+  </ol>
+</div>
+
+<hr>
+
+
+<p>A generation implies ordering of <a title="instantaneous event" href="#dfn-event" class="internalDFN">events</a>, since the <a title="entity generation event" href="#dfn-generation-event" class="internalDFN">generation event</a> had to occur during the associated activity. This is
+illustrated by Subfigure <a href="#ordering-activity-fig">ordering-activity-fig</a> (c) and  expressed by constraint <a href="#generation-within-activity">generation-within-activity</a>.</p> 
+
+<div class="constraint" id="generation-within-activity">
+   <ol>
+    <li>
+  <span class="conditional">IF</span>
+<span class="name">wasGeneratedBy(gen,a,e,-,-)</span> 
+and
+<span class="name">wasStartedBy(start,a,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">gen</span>.
+  </li>
+  <li>
+  <span class="conditional">IF</span>
+<span class="name">wasGeneratedBy(gen,a,e,-,-)</span> 
+and
+<span class="name">wasEndedBy(end,a,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">end</span>.
+  </li>
+  </ol>
+</div> 
+
+<hr>
+
+<p>Communication between two activities <span class="name">a1</span> and <span class="name">a2</span> also implies ordering of <a title="instantaneous event" href="#dfn-event" class="internalDFN">events</a>, since some entity must have been generated by the former and used by the latter, which implies that the start event of  <span class="name">a1</span>
+cannot follow the end event of  <span class="name">a2</span>. This is
+illustrated by Subfigure <a href="#ordering-activity-fig">ordering-activity-fig</a> (d) and  expressed by constraint <a href="#wasInformedBy-ordering">wasInformedBy-ordering</a>.</p>
+
+<div class="constraint" id="wasInformedBy-ordering">
+ <span class="conditional">IF</span>
+<span class="name">wasInformedBy(a2,a1)</span> 
+and
+<span class="name">wasStartedBy(start,a1,-,-)</span> 
+and
+<span class="name">wasEndedBy(end,a2,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">end</span>.
+
+</div>
+
+<hr>
+
+<p>Start of <span class="name">a2</span> by activity <span class="name">a1</span> also implies ordering of <a title="instantaneous event" href="#dfn-event" class="internalDFN">events</a>, since  <span class="name">a1</span> must have been active before   <span class="name">a2</span> started. This is
+illustrated by Subfigure <a href="#ordering-activity-fig">ordering-activity-fig</a> (e) and  expressed by constraint <a href="#wasStartedByActivity-ordering">wasStartedByActivity-ordering</a>.</p>
+
+
+<div class="constraint" id="wasStartedByActivity-ordering">
+   <span class="conditional">IF</span>
+<span class="name">wasStartedByActivity(a2,a1)</span> 
+and
+<span class="name">wasStartedBy(start1,a1,-,-)</span> 
+and
+<span class="name">wasStartedBy(start2,a2,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start1</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">start2</span>.
+
+</div>
+
+</div>
+
+<div id="entity-constraints" class="section">
+<h4><span class="secno">5.2.2 </span> Entity constraints</h4>
+
+<p>
+As with activities, entities have lifetimes: they are generated, then
+can be used, revised, or other entities can be derived from them, and
+finally are invalidated.
+</p>
+
+
+  
+<div style="text-align: center;">
+<div class="figure" >
+<div class="figcaption"  id="ordering-entity-fig">Summary of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> ordering constraints for entities</div>
+<img src="images/ordering-entity.png" alt="ordering constraints for entities">
+</div>
+</div>
+
+
+<hr>
+
+<p>Generation of an entity precedes its invalidation. (This
+follows from other constraints if the entity is used, but we state it
+explicitly to cover the case of an entity that is generated and
+invalidated without being used.)</p>
+
+<div class="constraint" id="generation-precedes-invalidation">
+ <span class="conditional">IF</span>
+<span class="name">wasGeneratedBy(gen,e,_,_)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,e,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>. 
+</div>
+<hr>
+
+<p> A usage and a generation for a given entity implies ordering of <a title="instantaneous event" href="#dfn-event" class="internalDFN">events</a>, since the <a title="entity generation
+event" href="#dfn-generation-event" class="internalDFN">generation event</a> had to precede the <a title="entity usage event" href="#dfn-usage-event" class="internalDFN">usage event</a>. This is
+illustrated by Subfigure <a href="#ordering-entity-fig">ordering-entity-fig</a> (a) and  expressed by constraint <a href="#generation-precedes-usage">generation-precedes-usage</a>.</p>
+
+<div class="constraint" id="generation-precedes-usage">
+  <span class="conditional">IF</span>
+<span class="name">wasGeneratedBy(gen,e,_,_)</span> 
+and
+<span class="name">used(use,_,e,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">use</span>.  
+</div>
+
+<hr>
+
+<p>All usages of an entity precede its invalidation, which is captured by constraint <a href="#usage-precedes-invalidation">usage-precedes-invalidation</a> (without any explicit graphical representation).</p> 
+
+<div class="constraint" id="usage-precedes-invalidation">
+    <span class="conditional">IF</span>
+<span class="name">used(use,_,e,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,e,_,_)</span> 
+<span class="conditional">THEN</span>
+<span class="name">use</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.  
+</div>
+
+
+
+<hr>
+
+
+
+
+
+
+<p>If there is a derivation between <span class="name">e2</span> and <span class="name">e1</span>, then 
+this means that the entity <span class="name">e1</span> had some form of influence on the entity <span class="name">e2</span>; for this to be possible, some event ordering must be satisfied.
+First, we consider derivations, where the activity and usage are known. In that case, the <a title="entity usage event" href="#dfn-usage-event" class="internalDFN">usage</a> of <span class="name">e1</span> has to precede the <a title="entity generation
+event" href="#dfn-generation-event" class="internalDFN">generation</a> of <span class="name">e2</span>.
+This is
+illustrated by Subfigure <a href="#ordering-entity-fig">ordering-entity-fig</a> (b) and  expressed by constraint <a href="#derivation-usage-generation-ordering">derivation-usage-generation-ordering</a>.</p>
+
+
+<div class="constraint" id="derivation-usage-generation-ordering">
+      <span class="conditional">IF</span>
+<span class="name">wasDerivedFrom(d,e2,e1,a,g2,u1,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">u1</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">g2</span>.  
+
+</div>
+<hr>
+
+<p>When the usage is unknown, a similar constraint exists, except that the constraint refers to its
+generation event, as
+illustrated by Subfigure <a href="#ordering-entity-fig">ordering-entity-fig</a> (c) and  expressed by constraint <a href="#derivation-generation-generation-ordering">derivation-generation-generation-ordering</a>.</p>
+
+<div class="constraint" id="derivation-generation-generation-ordering">
+ <span class="conditional">IF</span>
+<span class="name">wasDerivedFrom(e2,e1,attrs)</span>
+  and
+<span class="name">wasGeneratedBy(gen1,e1,_,_)</span>
+  and
+<span class="name">wasGeneratedBy(gen2,e2,_,_)</span>
+<span class="conditional">THEN</span>
+<span class="name">gen1</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">gen2</span>.  
+  </div>
+
+<p>Note that event ordering is between generations of <span class="name">e1</span>
+and <span class="name">e2</span>, as opposed to derivation where usage is known,
+which implies ordering ordering between the usage of <span class="name">e1</span> and
+generation of <span class="name">e2</span>.  </p>
+
+<hr>
+
+<p>The entity that triggered the start of an activity must exist before the activity starts.
+This is
+illustrated by Subfigure <a href="#ordering-entity-trigger-fig">ordering-entity-trigger-fig</a> (a) and  expressed by constraint <a href="#wasStartedBy-ordering">wasStartedBy-ordering</a>.</p>
+
+
+<div class="constraint" id="wasStartedBy-ordering">
+ <ol>
+    <li>
+    <span class="conditional">IF</span>
+<span class="name">wasStartedBy(start,a,e,-)</span> 
+and
+<span class="name">wasGeneratedBy(gen,e,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">start</span>.
+  </li><li>
+    <span class="conditional">IF</span>
+<span class="name">wasStartedBy(start,a,e,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,e,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.
+  </li>
+  </ol>
+</div>
+<hr>
+
+<p> Similarly,  the entity that triggered the end of an activity must exist before the activity ends, as illustrated by Subfigure <a href="#ordering-entity-trigger-fig">ordering-entity-trigger-fig</a> (b).</p> 
+
+
+<div class="constraint" id="wasEndedBy-ordering">
+ <ol>
+      <li>
+    <span class="conditional">IF</span>
+<span class="name">wasEndedBy(end,a,e,-)</span> 
+and
+<span class="name">wasGeneratedBy(gen,e,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">end</span>.
+  </li><li>
+    <span class="conditional">IF</span>
+<span class="name">wasEndedBy(end,a,e,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,e,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">end</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.
+  </li>
+  </ol>
+</div>
+
+<div style="text-align: center;">
+<div class="figure" >
+<div class="figcaption"  id="ordering-entity-trigger-fig">Summary of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> ordering constraints for trigger entities</div>
+<img src="images/ordering-entity-trigger.png" alt="ordering constraints for trigger entities">
+</div>
+</div>
+
+
+</div>
+
+<div id="agent-constraints" class="section">
+<h4><span class="secno">5.2.3 </span> Agent constraints</h4>
+
+<p>
+Like entities and activities, agents have lifetimes that follow a
+familiar pattern: an agent is generated, can participate in
+interactions such as starting, ending or association with an
+activity, attribution, or delegation, and finally the agent is invalidated.
+</p>
+<p>Further constraints associated with agents appear in Figure <a href="#ordering-agents">ordering-agents</a> and are discussed below.</p>
+
+<div style="text-align: center;">
+<div class="figure" >
+<div class="figcaption"  id="ordering-agents">Summary of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> ordering constraints (continued)</div>
+<img src="images/ordering-agents.png" alt="ordering constraints for agents">
+</div>
+</div>
+
+<hr>
+
+
+<p>An activity that was associated with an agent must have some overlap with the agent. The agent may be generated, or may only become associated with the activity, after the activity start: so, the agent is required to exist before the activity end. Likewise, the agent may be destructed, or may terminate its association with the activity, before the activity end: hence, the agent invalidation is required to happen after the activity start.
+This is
+illustrated by Subfigure <a href="#ordering-agents">ordering-agents</a> (a) and  expressed by constraint <a href="#wasAssociatedWith-ordering">wasAssociatedWith-ordering</a>.</p>
+
+
+<div class="constraint" id="wasAssociatedWith-ordering">
+  <ol>    <li>
+    <span class="conditional">IF</span>
+<span class="name">wasAssociatedWith(a,ag)</span> 
+and
+<span class="name">wasStartedBy(start,a,-,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,ag,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">start</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.
+  </li><li>
+    <span class="conditional">IF</span>
+<span class="name">wasAssociatedWith(a,ag)</span> 
+and
+<span class="name">wasGeneratedBy(gen,ag,-,-)</span> 
+and
+<span class="name">wasEndedBy(end,a,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">end</span>.
+  </li>
+  </ol>
+</div>
+
+<hr>
+
+<p>An entity that was attributed to an agent must have some overlap
+with the agent. The agent is required to exist before the entity
+invalidation. Likewise, the entity generation must precede the agent destruction.
+This is
+illustrated by Subfigure <a href="#ordering-agents">ordering-agents</a> (b) and  expressed by constraint <a href="#wasAttributedTo-ordering">wasAttributedTo-ordering</a>.</p>
+
+
+
+ 
+<div class="constraint" id="wasAttributedTo-ordering">
+      <ol> <li>
+    <span class="conditional">IF</span>
+<span class="name">wasAttributedTo(e,ag)</span> 
+and
+<span class="name">wasGeneratedBy(gen,e,-,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,ag,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.
+  </li><li>
+    <span class="conditional">IF</span>
+<span class="name">wasAttributedTo(e,ag)</span> 
+and
+<span class="name">wasGeneratedBy(gen,ag,-,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,e,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.
+  </li>
+  </ol>
+</div>
+
+<hr>
+
+<p>For responsibility, two agents need to have some overlap in their lifetime.</p>
+
+
+<div class="constraint" id="actedOnBehalfOf-ordering">
+  <span class="conditional">IF</span>
+<span class="name">actedOnBehalfOf(ag2,ag1)</span> 
+and
+<span class="name">wasGeneratedBy(gen,ag1,-,-)</span> 
+and
+<span class="name">wasInvalidatedBy(inv,ag2,-,-)</span> 
+<span class="conditional">THEN</span>
+<span class="name">gen</span> 
+<a href="#dfn-precedes" class="internalDFN">precedes</a>
+<span class="name">inv</span>.
+
+</div>
+
+</div>
+
+</div> <!--event-ordering-constraints--> 
+
+</div> <!-- constraints -->
+
+<div id="collection-constraints" class="section">
+<!--OddPage--><h2><span class="secno">6. </span>Collection Constraints</h2>
+<div class="note">
+  Work on collections and on these constraints is deferred until after
+  the next working draft, so this section may not be stable.
+  </div>
+  
+<p>Membership is a convenience notation, since it can be expressed in terms of an insertion into some collection. The membership definition is formalized by constraint <a href="#membership-as-insertion">membership-as-insertion</a>.</p>
+
+<div class="definition" id="membership-as-insertion">
+ <span class="name">memberOf(c, {(k1, v1), ...})</span> holds
+<span class="conditional">IF AND ONLY IF</span> there exists a collection <span class="name">c0</span>, such that
+<span class="name">derivedByInsertionFrom(c, c0, {(k1, v1), ...})</span>.
+</div>
+
+<p>A collection may be obtained by insertion or removal, or said to satisfy the membership relation.
+To provide an interpretation of collections, PROV-DM 
+ restricts one collection to be involved in a single derivation by insertion or removal, or to one membership relation.
+PROV-DM does not provide an interpretation for statements that consist of two (or more) insertion, removal, membership relations that result in the same collection.</p>
+
+
+
+<p>The following constraint ensures unique derivation.</p>
+
+
+<div class="note"> The following constraint is unclear.</div>
+<div class="constraint" id="collection-unique-derivation">
+A collection <em class="rfc2119" title="must not">must not</em> be derived through multiple insertions, removal,
+  or membership relations. 
+</div>
+
+<div class="anexample">
+Consider the following statements about three collections.
+  <pre class="codeexample">entity(c1, [prov:type="prov:Collection"  %% xsd:QName])
+entity(c2, [prov:type="prov:Collection"  %% xsd:QName])
+entity(c3, [prov:type="prov:Collection"  %% xsd:QName])
+
+
+derivedByInsertionFrom(c3, c1, {("k1", e1), ("k2", e2)})
+derivedByInsertionFrom(c3, c2, {("k3", e3)})
+</pre>
+<p>There is no interpretation for such statements since <span class="name">c3</span> is derived multiple times by insertion.</p>
+</div>
+
+
+<div class="anexample">
+<p>As a particular case, collection <span class="name">c</span> is derived multiple times from the same <span class="name">c1</span>. </p>
+<pre class="codeexample">derivedByInsertionFrom(id1, c, c1, {("k1", e1), ("k2", e2)})
+derivedByInsertionFrom(id2, c, c1, {("k3", e3), ("k4", e4)})
+</pre>
+<p>The interpretation of such statements is also unspecified. </p>
+<p>To describe the insertion of the 4 key-entity pairs, one would instead write:</p>
+<pre class="codeexample">derivedByInsertionFrom(id1, c, c1, {("k1", e1), ("k2", e2), ("k3", e3), ("k4", e4)})
+</pre>  
+</div>
+
+The same is true for any combination of insertions, removals, and membership relations:
+<div class="anexample">
+<p>The following statements</p>
+<pre class="codeexample">derivedByInsertionFrom(c, c1, {("k1", e1)})
+derivedByRemovalFrom(c, c2, {"k2"})
+</pre>
+have no interpretation.
+Nor have the following:
+<pre class="codeexample">derivedByInsertionFrom(c, c1, {("k1", e1)})
+memberOf(c, {"k2"}).
+</pre>
+</div>
+
+
+
+<div id="collection-branching" class="section">
+<h3><span class="secno">6.1 </span>Collection branching</h3>
+
+It is allowed to have multiple derivations from a single root collection, as long as the resulting entities are distinct, as shown in the following example.
+
+<div class="anexample">
+<pre class="codeexample">entity(c0, [prov:type="prov:EmptyCollection" %% xsd:QName])    // c0 is an empty collection
+entity(c1, [prov:type="prov:Collection" %% xsd:QName])
+entity(c2, [prov:type="prov:Collection" %% xsd:QName])
+entity(c3, [prov:type="prov:Collection" %% xsd:QName])
+entity(e1)
+entity(e2)
+entity(e3)
+
+derivedByInsertionFrom(c1, c0, {("k1", e1)})      
+derivedByInsertionFrom(c2, c0, {("k2", e2)})       
+derivedByInsertionFrom(c3, c1, {("k3", e3)})       
+</pre>
+From this set of statements, we conclude:
+<pre class="codeexample">  c1 = { ("k1", e1) }
+  c2 = { ("k2", e2) }
+  c3 = { ("k1", e1), ("k3", e3)}
+</pre>
+</div>
+
+</div>
+
+  
+
+<div id="collections-and-derivation" class="section">
+
+  
+<h3><span class="secno">6.2 </span>Collections and Weaker Derivation Relation</h3>
+
+<p>The state of a collection is only known to the extent that a chain
+of derivations starting from an empty collection can be found. Since a
+set of statements regarding a collection's evolution may be
+incomplete, so is the reconstructed state obtained by querying those
+statements. In general, all statements reflect partial knowledge regarding a sequence of data transformation events. In the particular case of collection evolution, in which some of the state changes may have been missed, the more generic  derivation relation should be used to signal that some updates may have occurred, which cannot be expressed as insertions or removals. The following  example illustrates this.</p>
+
+
+ 
+ <div class="anexample">
+In the example, the state of <span class="name">c2</span> is only partially known because the collection is constructed from partially known other collections.
+ <pre class="codeexample">entity(c0, [prov:type="prov:EmptyCollection" %% xsd:QName])    // c0 is an empty collection
+entity(c1, [prov:type="prov:Collection" %% xsd:QName])    
+entity(c2, [prov:type="prov:Collection" %% xsd:QName])    
+entity(c3, [prov:type="prov:Collection" %% xsd:QName])    
+entity(e1)
+entity(e2)
+
+derivedByInsertionFrom(c1, c0, {("k1", e1)})       
+wasDerivedFrom(c2, c1)                       
+derivedByInsertionFrom(c3, c2, {("k2", e2)})       
+ </pre>
+From this set of statements, we conclude:
+<ul>
+<li>    <span class="name">c1 = { ("k1", e1) }</span>
+</li><li>    <span class="name">c2</span> is somehow derived from <span class="name">c1</span>, but the precise sequence of updates is unknown
+</li><li>    <span class="name">c3</span>  includes  <span class="name">("k2", e2)</span> but the earlier "gap" leaves uncertainty regarding  <span class="name">("k1", e1)</span>  (it may have been removed) or any other pair that may have been added as part of the derivation activities.
+</li></ul>
+ </div>
+
+</div>
+
+
+<div class="note">
+  Do the insertion/removal derivation steps imply wasDerivedFrom,
+  wasVersionOf, alternateOf?
+  </div>
+ 
+</div> <!-- collection-constraints -->
+
+<div id="account-constraints" class="section">
+<!--OddPage--><h2><span class="secno">7. </span>Account Constraints</h2>
+
+<div class="note">
+Work on accounts has been deferred until after the next working draft,
+so this section is very unstable
+</div>
+
+<p>PROV-DM allows for multiple descriptions of entities (and in general any identifiable object) to be expressed. </p>
+
+<div class="anexample" id="example-two-entities-one-id">
+<p>Let us consider two statements about the same entity, which we have taken from two different contexts. A working draft published by the <span class="name">w3:Consortium</span>:</p>
+<pre class="codeexample">entity(tr:WD-prov-dm-20111215, [ prov:type="pr:RecsWD" %% xsd:QName ])
+</pre>
+The second version of a document edited by some authors:
+<pre class="codeexample">entity(tr:WD-prov-dm-20111215, [ prov:type="document", ex:version="2" ])
+</pre>
+<p>Both statements are about the same entity identified  by
+<span class="name">tr:WD-prov-dm-20111215</span>, but they contain different attributes, describing the situation or partial state of the these entities according to the context in which they occur.
+</p>
+</div>
+
+
+
+<p>Two different statements about the same entity cannot co-exist in PROV instance
+ as formalized in <a href="#entity-unique">entity-unique</a>.</p>
+
+<!-- Moved to uniqueness constraints section
+<div class='constraint' id='entity-unique'>
+<p>Given an entity identifier <span class="name">e</span>, there is at most one statement 
+<span class="name">entity(e,attrs)</span> occurring in a given
+  account, where <span class="name">attrs</span> is some set of
+  attribute-values. Other statements concerning the same entity can exist in different accounts.</p>
+
+<p>This constraint similarly applies to all other types and relations,
+  with explicit identity.</p>
+</div>
+-->
+
+
+
+<p>In some cases, there may be a requirement  for two different
+  statements concerning the same entity to be included in the same account. To satisfy the constraint <a href="#entity-unique">entity-unique</a>, we can adopt a different identifier for one of them, and relate the two statements with the <span class="name">alternateOf</span> relation. </p>
+
+<div class="anexample" id="merge-with-rename">
+<p>We now reconsider the same two statements of a same entity, but we change the identifier for one of them:</p>
+<pre class="codeexample">entity(tr:WD-prov-dm-20111215, [ prov:type="pr:RecsWD" %% xsd:QName ])
+entity(ex:alternate-20111215, [ prov:type="document", ex:version="2" ])
+alternateOf(tr:WD-prov-dm-20111215,ex:alternate-20111215)
+</pre>
+</div>
+
+
+<div class="note">
+  Since we are not specifying ways to take the union of two accounts,
+  we may drop this discussion
+  </div>
+<p> Taking the union of two accounts is another account, 
+formed by the union of the statements they respectively contain.  We note that the resulting union may or may not invalidate some constraints:
+</p><ul>
+<li> Two entity statements with the same identifier but different sets of attributes exist in each PROV instance may invalidate <a href="#entity-unique">entity-unique</a> in the union, unless some form of statement merging or renaming (as per <a href="#merge-with-rename">Example</a>) occurs.
+</li><li> Structurally well-formed
+accounts are not
+closed under union because the
+constraint <a href="#generation-uniqueness">generation-uniqueness</a> may no
+longer be satisfied in the resulting union.  </li>
+</ul>
+<p>How to reconcile such accounts is beyond the scope of this specification.</p>
+
+
+<div class="note">
+  Material transplanted from old structural well-formedness constraints section.
+  
+  This example isn't very clear, since the sub-workflow-ness isn't
+  represented in the data.  According to what was written above, we
+  should conclude that a0 and a2 are equal!
+  </div>
+<div class="anexample">
+<p>
+In the following statements, a workflow execution  <span class="name">a0</span> consists of two sub-workflow executions  <span class="name">a1</span> and <span class="name">a2</span>.
+Sub-workflow execution <span class="name">a2</span> generates entity <span class="name">e</span>, so does <span class="name">a0</span>.</p>
+<pre class="codeexample">activity(a0, [prov:type="workflow execution"])
+activity(a1, [prov:type="workflow execution"])
+activity(a2, [prov:type="workflow execution"])
+wasInformedBy(a2,a1)
+
+wasGeneratedBy(e,a0)
+wasGeneratedBy(e,a2)
+</pre>
+<p>So, we have two different <a title="generation">generations</a> for entity <span class="name">e</span>.  Such an example is permitted in PROV-DM if the two activities denoted by <span class="name">a0</span> and <span class="name">a2</span> are a single thing happening  in the world
+but described from different perspectives.</p>
+</div>
+
+<p>While this example is permitted in PROV-DM, it does not make the inter-relation between activities explicit, and  it mixes statements expressed from different perspectives together. 
+While this may acceptable in some specific applications, it becomes challenging for inter-operability. Indeed, PROV-DM does not offer any relation describing the structure of activities.
+  Such instances are said not to be structurally well-formed.</p>
+
+<p>Structurally well-formed provenance can be obtained by partitioning the generations into different accounts. This makes it clear that these generations provide alternative
+descriptions of the same real-world generation event, rather than describing two distinct generation events for the same entity. When accounts are used, the example can be encoded as follows.</p>
+
+
+<div class="anexample">
+<p>
+The same example is now revisited, with the following statements that are structurally well-formed. Two accounts are introduced, and there is a single generation for entity <span class="name">e</span> per account.</p>
+
+<p>In a first account, entitled "summary", we find:</p>
+<pre class="codeexample">activity(a0,t1,t2,[prov:type="workflow execution"])
+wasGeneratedBy(e,a0,-)
+</pre>
+<p>In a second account, entitled "detail", we find:</p>
+<pre class="codeexample">activity(a1,t1,t3,[prov:type="workflow execution"])
+activity(a2,t3,t2,[prov:type="workflow execution"])
+wasInformedBy(a2,a1)
+wasGeneratedBy(e,a2,-)
+</pre>
+</div>
+
+
+ 
+<p>Structurally well-formed provenance satisfies some constraints, which force the structure of statements to be exposed by means of accounts. With these constraints satisfied, further
+inferences can be made about structurally well-formed statements.
+The uniqueness of generations in accounts is formulated as follows.
+</p>
+
+
+
+  
+</div> <!-- account-constraints-->
+
+
+
+
+
+
+
+
+  <div id="rationale" class="informative section">
+<!--OddPage--><h2><span class="secno">8. </span>Rationale for inferences and constraints</h2><p><em>This section is non-normative.</em></p>
+
+<div class="note"> This section collects all of the explanatory
+  material that I was not certain how to interpret as an unambiguous
+  inference or constraint.  Some of these observations may need to be folded
+  into the explanatory text in respective sections (for example for
+  events, 
+  accounts or collections).
+
+  Editing is also needed to decrease redundancy.
+  </div>
+
+    <div id="section-attributes" class="section"> 
+<h3><span class="secno">8.1 </span>Entities and Attributes</h3>
+
+<p>When we talk about things in the world in natural language and even when we assign identifiers, we are often imprecise in ways that make it difficult to clearly and unambiguously report
+provenance: a resource with a URL may be understood as referring to a report available at that URL, the version of the report available there today, the report independent of where it is
+hosted over time, etc.
+However, to write precise descriptions of the provenance of things
+that change over time, we need ways of disambiguating which versions
+of things we are talking about.  
+</p>
+
+<p>
+To describe the provenance of things that can change over
+time, PROV-DM uses the concept of <i>entities</i> with fixed
+attributes.  From a provenance viewpoint, it is important to identify
+a partial state of something, i.e. something with some aspects that
+have been fixed, so that it becomes possible to express its provenance
+(i.e. what caused the thing with these specific aspects).  An entity
+encompasses a part of a thing's history during which some of the
+attributes are fixed.  An entity can thus be thought of as a part of a
+thing with some associated partial state.
+Attributes in PROV-DM are used to fix certain aspects of entities.</p>
+
+
+<p>
+An <dfn id="dfn-entity">entity</dfn> is a thing one wants to provide provenance for
+and whose situation in the world is described by some fixed
+attributes. An entity has a <dfn id="dfn-characterization-interval">characterization interval</dfn>,
+or <dfn id="lifetime">lifetime</dfn>,
+defined as the period
+between its <a title="entity generation event" href="#dfn-generation-event" class="internalDFN">generation event</a>
+and its <a title="entity invalidation event" href="#dfn-invalidation-event" class="internalDFN">invalidation event</a>.
+An entity's attributes are established when the entity is
+created and describe the entity's situation and (partial) state
+during an entity's lifetime.</p>
+
+<p>
+A different entity (perhaps representing a different user or
+system perspective) may fix other aspects of the same thing, and its provenance
+may be different.  Different entities that are aspects of the same
+thing are called <em>alternate</em>, and the PROV-DM relations of
+specialization and alternate can be used to link such entities.</p>
+
+
+
+
+
+
+<div class="anexample" id="a-report-example">
+Different users may take different perspectives on a resource with
+a URL. A provenance record might use one (or more)  different
+  entities to talk about different perspectives, such as:
+<ul>
+<li>a report available at a URL: fixes the nature of the thing, i.e. a document, and its location; </li>
+<li>the version of the report available there today: fixes its version number, contents, and its date;</li>
+<li>the report independent of where it is hosted and of its content over time: fixes the nature of the thing as a conceptual artifact.</li></ul>
+The provenance of these three entities may differ, and may be along the following lines: 
+<ul>
+<li>the provenance of a report available at a URL may include: the act of publishing it and making it available at a given location, possibly under some license and access control;</li>
+<li>the provenance of the version of the report available there today may include: the authorship of the specific content, and reference to imported content;</li>
+<li>the provenance of the report independent of where it is hosted over time may include: the motivation for writing the report, the overall methodology for producing it, and the broad team
+involved in it.</li>
+</ul>
+<p>We do not assume that any entity is a better or worse description of
+reality than any other.  That is, we do not assume an absolute ground truth with
+respect to which we can judge correctness or completeness of
+descriptions.  In fact, it is possible to describe the processing that occurred for the report to be commissioned, for
+individual versions to be created, for those versions to be published at the given URL, etc., each via a different entity with attribute-value pairs that fix some aspects of the report appropriately.</p>
+</div>
+
+
+<p>Besides entities, a variety of other PROV-DM objects have
+attributes, including activity, generation, usage, start, end,
+communication, attribution, association, responsibility, and
+derivation. Each object has an associated duration interval (which may
+be a single time point), and attribute-value pairs for a given object
+are expected to be descriptions that hold for the object's duration.
+</p>
+<p>
+However, the attributes of entities have special meaning because they
+are considered to be fixed aspects
+of underlying, changing things.  This motivates constraints on
+<span class="name">alternateOf</span> and <span class="name">specializationOf</span> relating the attribute values of
+different entities.
+</p>
+<div class="note">
+  TODO:
+Constraints on alternateOf/specializationOf for this?
+  </div>
+
+  <div class="note">
+TODO: Further discussion of entities moved from the old "Definitional
+    constraints" section.  Should merge with the surrounding
+    discussion to avoid repetition.
+    </div>
+<p>
+An <dfn id="dfn-entity-1">entity</dfn> is a thing one wants to provide provenance for
+and whose situation in the world is described by some attribute-value
+pairs. An entity's attribute-value pairs are established as part of
+the entity statement and their values remain unchanged for the
+lifetime of the entity. An entity's attribute-value pairs are expected
+to describe the entity's situation and (partial) state  during an
+entity's <a title="characterization interval" href="#dfn-characterization-interval" class="internalDFN">characterization interval</a>.</p>
+
+<p>If an entity's situation or state changes, this may result in its statement being invalid, because one or more attribute-value pairs no longer hold.  In that case, from the PROV viewpoint, there exists a new entity, which needs to be given a distinct identifier, and associated with the attribute-value pairs that reflect its new situation or state.</p>
+
+
+
+Further considerations:
+<ul>
+<li>In order to describe the provenance of something during an  interval over which
+  relevant attributes of the thing are not fixed, it is required to
+  create multiple entities, each with its own identifier, <a title="characterization interval" href="#dfn-characterization-interval" class="internalDFN">characterization interval</a>, and
+  fixed attributes, and express 
+  dependencies between the various entities using events.
+  For example, if we want to describe the provenance of several
+  versions of a document, involving attributes such as authorship that
+  change over time, we need different entities for the versions linked
+  by appropriate generation, usage, revision, and invalidation events.
+</li>
+
+<li>There is no assumption that the set of attributes is complete, nor
+that the attributes are independent or orthogonal of each other.</li>
+<li>There is no assumption that the attributes of an entity uniquely
+identify it.  Two different entities that are aspects of different
+things can have the same attributes.</li>
+<li>A <a title="characterization interval" href="#dfn-characterization-interval" class="internalDFN">characterization interval</a> may collapse into a single instant.</li>
+</ul>
+  
+</div>
+
+<div id="activities" class="section">
+<h3><span class="secno">8.2 </span>Activities</h3>
+
+<div class="note">
+  TODO: Further discussion of activities moved from old "Definitional
+  constraints and inferences" section.  Edit to avoid repeating information.
+</div>
+  
+
+<p>An activity is delimited by its <a title="activity start event" href="#dfn-start-event" class="internalDFN">start</a> and its <a title="activity end event" href="#dfn-end-event" class="internalDFN">end</a> events; hence, it occurs over
+an interval delimited by two <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous
+events</a>. However, an activity record need not mention start or end time information, because they may not be known.
+An activity's attribute-value pairs are expected to describe the activity's situation during its interval, i.e. an interval between two instantaneous events, namely its <a title="activity start event" href="#dfn-start-event" class="internalDFN">start</a> event and its <a title="activity end event" href="#dfn-end-event" class="internalDFN">end</a> event.
+</p>
+
+
+<p>Further considerations:</p>
+<ul>
+<li>An activity is not an entity.
+Indeed,  an entity exists in full at
+any point in its lifetime, persists during this
+interval, and preserves the characteristics that makes it
+identifiable.  In contrast, an activity is something that occurs, happens,
+unfolds, or develops through time, but is typically not identifiable by
+the characteristics it exhibits at any point during its duration. 
+This distinction is similar to the distinction between 
+'continuant' and 'occurrent' in logic [<cite><a class="bibref" rel="biblioentry" href="#bib-Logic">Logic</a></cite>].</li>
+</ul>
+
+
+
+</div>
+
+
+    <div id="representation-term-assertion-inference" class="section"> 
+<h3><span class="secno">8.3 </span>Description, Assertion, and Inference</h3>
+
+<p>
+PROV-DM is a provenance data model designed to express <em>descriptions</em> of the world. 
+</p>
+
+<div class="anexample">
+A file at some point during its lifecycle, which includes multiple edits by multiple people, can be described by its type, its location in the file system, a creator, and content.  
+</div>
+
+
+<p>The data model is designed to capture activities that happened in the past, as opposed to activities
+that may or will happen. 
+However, this distinction is not formally enforced.
+Therefore, PROV-DM descriptions are intended to be interpreted as what
+has happened, as opposed to what may or will happen.</p>
+
+
+
+<p> 
+This specification does not prescribe the means by which descriptions can be arrived at; for example, descriptions can be composed on the basis of observations, reasoning, or any other means. 
+</p>
+
+
+<p>
+Sometimes, inferences about the world can be made from descriptions
+conformant to the PROV-DM data model. This
+specification defines some such inferences, allowing new descriptions
+to be inferred from existing ones. Hence, descriptions of the world
+can result either from direct assertion or from inference 
+by application of inference rules defined by this specification.
+</p>
+
+
+</div>
+
+
+
+
+
+    <div id="section-event-time" class="section"> 
+<h3><span class="secno">8.4 </span>Events and Time</h3>
+
+  
+
+
+<p>Time is critical in the context of provenance, since it can help corroborate provenance claims. For instance, if an entity is claimed to be obtained by transforming another, then the
+latter must have existed before the former. If it is not the case, then there is something wrong with such a provenance claim. </p>
+
+<p> Although time is critical, we should also recognize that
+provenance can be used in many different contexts within individual
+systems and across the Web. Different systems may use different clocks
+which may not be precisely synchronized, so when provenance records
+are combined by different systems, we may not be able to align the
+times involved to a single global timeline.  Hence, PROV-DM is
+designed to minimize assumptions about time.  </p>
+
+
+
+<p>Hence, to talk about the constraints on valid PROV-DM data, we
+refer to <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a> that correspond to interactions
+between activities and entities.  
+The term "event" is commonly used in process algebra with a similar meaning. For instance, in CSP [<cite><a class="bibref" rel="biblioentry" href="#bib-CSP">CSP</a></cite>], events represent communications or interactions; they are assumed to be atomic and
+instantaneous.</p>
+
+
+
+
+
+<div id="event-ordering" class="section">
+<h4><span class="secno">8.4.1 </span>Event Ordering</h4>
+
+
+
+<div class="note">
+ The following paragraphs are unclear and need to be revised, to
+ address review concerns: if
+ we aren't saying anything about how events and time relate, and time
+ is the only concrete information about event ordering in PROV-DM,
+ then how can implementations check that event ordering constraints
+ are satisfied?
+  </div>  
+<p> How the <a href="#dfn-precedes" class="internalDFN">precedes</a> partial order is implemented in practice is beyond the scope
+of this specification.  This specification only assumes that
+each <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> can be mapped to an instant in some form of
+timeline. The actual mapping is not in scope of this
+specification. Likewise, whether this timeline is formed of a single
+global timeline or whether it consists of multiple Lamport-style
+clocks is also beyond this specification.  The <a href="#dfn-follows" class="internalDFN">follows</a> and
+<a href="#dfn-precedes" class="internalDFN">precedes</a> orderings of events should be consistent with the
+ordering of their associated times
+over these timelines.
+</p>
+
+
+<p>This specification defines <i>event ordering constraints</i>
+between  <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a> associated with 
+provenance descriptions.  PROV-DM data <em class="rfc2119" title="must">must</em> satisfy such constraints.  </p>
+
+<p>PROV-DM also allows for time observations to be inserted in
+specific statements, for each recognized <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> introduced in this
+specification.  The presence of a time observation for a given <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> fixes the mapping of this <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> to the timeline. It can also
+help with the verification of associated ordering constraints (though,
+again, this verification is outside the scope of this specification).
+</p>
+
+
+
+</div>
+
+<div id="types-of-events" class="section">
+<h4><span class="secno">8.4.2 </span>Types of Events</h4>
+<p>Five kinds of <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous events</a> are used
+for the PROV-DM data model. The <strong>activity start</strong> and
+<strong>activity end</strong> events delimit the beginning and the end
+of activities, respectively. The <strong>entity usage</strong>,
+<strong>entity generation</strong>, and <strong>entity
+invalidation</strong> events apply to entities, and the generation and
+invalidation events delimit the <a title="characterization interval" href="#dfn-characterization-interval" class="internalDFN">characterization interval</a> of
+an entity. More specifically:
+
+</p>
+
+<p>An <dfn id="dfn-start-event">activity start event</dfn> is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that marks the instant an activity starts.</p>
+
+<p>An <dfn id="dfn-end-event">activity end event</dfn> is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that marks the instant an activity ends.</p>
+
+<p>An <dfn id="dfn-usage-event">entity usage event</dfn> is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that marks the first instant of
+an entity's consumption timespan by an activity.  Before this instant
+the entity had not begun to be used by the activity.</p>
+
+<p>An <dfn id="dfn-generation-event">entity generation event</dfn> is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that marks the  final instant of an entity's creation timespan, after which
+it is available for use.  The entity did not exist before this event.</p>
+
+<p>An <dfn id="dfn-invalidation-event">entity invalidation event</dfn>
+is the <a title="instantaneous event" href="#dfn-event" class="internalDFN">instantaneous event</a> that
+marks the  initial instant of the destruction, invalidation, or
+cessation of an entity, after which the entity is  no longer available
+for use.  The entity no longer exists after this event.</p>
+
+</div>
+
+
+</div>
+
+
+    <div id="account-section" class="section">
+      <h3><span class="secno">8.5 </span>Account</h3>
+
+<div class="note">
+  Some of this discussion may belong in the account constraint section
+  as motivation, or as formal constraints/inferences.  In particular,
+  the <em class="rfc2119" title="must">must</em>, <em class="rfc2119" title="may">may</em>, <em class="rfc2119" title="should">should</em> statements should be clarified and put into
+  the normative section.
+  </div>
+
+<p>It is common for multiple provenance records to co-exist. For
+instance, when emailing a file, there could be a provenance record
+kept by the mail client, and another by the mail server. Such
+provenance records may provide different explanations about something
+happening in the world, because they are created by different parties
+or observed by different witnesses. A given party could also create
+multiple provenance records about an execution, to capture different
+levels of details, targeted at different end-users: the programmer of
+an experiment may be interested in a detailed log of execution, while
+the scientists may focus more on the scientific-level description.
+Given that multiple provenance records can co-exist, it is important
+to have details about their origin, who they are attributed to, how
+they were generated, etc.  In other words, an important requirement is
+to be able to express the provenance of provenance. </p>
+
+<div class="note">
+  See ISSUE-343.  
+  </div>
+<p>
+  <span class="glossary" id="glossary-account">
+An <dfn id="dfn-account">account</dfn> is an entity that contains an instance, or set
+  of PROV statements.
+</span>  PROV-DM does not provide an actual mechanism for creating accounts, i.e. for bundling up provenance descriptions and naming them.  Accounts <em class="rfc2119" title="must">must</em> satisfy some properties:
+</p><ul>
+<li>An account is a bundle of provenance descriptions whose content <em class="rfc2119" title="may">may</em> change over time.</li>
+<li>If an account's  set of statements changes over time, it <em class="rfc2119" title="should">should</em> increase monotonically with time. </li>
+<li>A given description of e.g. an entity in a given account, in terms of its identifier and attribute-value pairs, does not change over time. </li>
+</ul>
+
+<div class="note">
+The last point is important. It indicates that within an account:
+<ul>
+<li>It is always possible to add new provenance statements, e.g. stating that a given entity was used by an activity, or derived from another.  This is very much an open world assumption.
+</li><li>It is not permitted to add new attributes to a given entity (a
+  form of closed world assumption from the attributes point of view),
+  though it is always permitted to create a new statement describing
+  an entity, which is a "copy" of the original statement extended with novel attributes  (cf Example <a href="#merge-with-rename">merge-with-rename</a>).
+</li></ul>
+</div>
+
+<p>
+There is no construct in PROV-DM to create such bundles of
+statements. Instead, it is assumed that some mechanism, outside
+PROV-DM can create them.  However, from a provenance viewpoint, such
+accounts are things whose provenance we may want to describe. In order to be able to do so, we need to see accounts as entities, whose origin can be described using PROV-DM vocabulary. Thus, PROV-DM introduces the reserved type <span class="name">Account</span>.
+</p>
+
+    </div>
+</div>
+
+
+
+
+
+
+<div class="appendix section" id="acknowledgements"> 
+      <!--OddPage--><h2><span class="secno">A. </span>Acknowledgements</h2> 
+      <p> 
+        WG membership to be listed here.
+      </p> 
+    </div> 
+
+<div class="glossary section" id="glossary"> 
+      <!--OddPage--><h2><span class="secno">B. </span>Glossary</h2> 
+      <ul> 
+       <li> <dfn id="dfn-anti-symmetric">anti-symmetric</dfn>: A relation R over X is <a href="#dfn-anti-symmetric" class="internalDFN">anti-symmetric</a> if
+      for any elements x, y of X, if x R y and y R x then x = y.
+      Alternatively, for a strict partial order anti-symmetry usually
+      means that for any elements x, y of X, it is impossible that
+      both x R
+      y and y R x hold.</li>
+        <li> <dfn id="dfn-reflexive">reflexive</dfn>: A relation R over X is <a href="#dfn-reflexive" class="internalDFN">reflexive</a> if
+      for any element x of X, we have x R x.</li>
+       <li> <dfn id="dfn-symmetric">symmetric</dfn>: A relation R over X is <a href="#dfn-symmetric" class="internalDFN">symmetric</a> if
+      for any elements x, y of X, if x R y then y R x.</li>
+        <li> <dfn id="dfn-transitive">transitive</dfn>: A relation R over X is <a href="#dfn-transitive" class="internalDFN">transitive</a> if
+      for any elements x, y, z of X, if x R y and y R z then x R z.</li>
+     
+     
+      </ul> 
+    </div> 
+
+
+ 
+
+<!--  LocalWords:  px DM RL RDF AQ SEM SOTD Definitional wasInformedBy attrs ag
+ -->
+<!--  LocalWords:  wasGeneratedBy wasStartedBy gAttr sAttr wasAttributedTo attr
+ -->
+<!--  LocalWords:  wasAssociatedWith dAttrs gAttrs wasDerivedFrom uAttrs eAttrs
+ -->
+<!--  LocalWords:  wasRevisionOf specializationOf wasQuotedFrom Traceability WD
+ -->
+<!--  LocalWords:  tracedTo aAttr actedOnBehalfOf rAttr traceability TODO xsd
+ -->
+<!--  LocalWords:  alternateOf wasEndedBy Lamport's timeline subfigure memberOf
+ -->
+<!--  LocalWords:  wasStartedByAgent wasAttributedWith derivedByInsertionFrom
+ -->
+<!--  LocalWords:  QName derivedByRemovalFrom EmptyCollection wasVersionOf dm
+ -->
+<!--  LocalWords:  RecsWD formedness workflow ness operability CSP versa hyp YY
+ -->
+<!--  LocalWords:  disambiguating lifecycle conformant minimalistic Lamport fo
+ -->
+<!--  LocalWords:  reflexivity antisymmetry timelines timespan WG concl inv
+ -->
+<!--  LocalWords:  continuant occurrent modalities toyota womanInRedDress
+ -->
+<!--  LocalWords:  customerInChairAt manWithGlasses customerInChair irreflexive
+ -->
+<!--  LocalWords:  wasStartedByActivity antisymmetric wasInvalidatedBy
+ -->
+<div id="references" class="appendix section"><!--OddPage--><h2><span class="secno">C. </span>References</h2><div id="normative-references" class="section"><h3><span class="secno">C.1 </span>Normative references</h3><dl class="bibliography"><dt id="bib-RFC2119">[RFC2119]</dt><dd>S. Bradner. <a href="http://www.ietf.org/rfc/rfc2119.txt"><cite>Key words for use in RFCs to Indicate Requirement Levels.</cite></a> March 1997. Internet RFC 2119.  URL: <a href="http://www.ietf.org/rfc/rfc2119.txt">http://www.ietf.org/rfc/rfc2119.txt</a> 
+</dd></dl></div><div id="informative-references" class="section"><h3><span class="secno">C.2 </span>Informative references</h3><dl class="bibliography"><dt id="bib-CLOCK">[CLOCK]</dt><dd>Lamport, L. <a href="http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf"><cite>Time, clocks, and the ordering of events in a distributed system</cite></a>.Communications of the ACM 21 (7): 558–565. 1978. URL: <a href="http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf">http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf</a> DOI: doi:10.1145/359545.359563.
+</dd><dt id="bib-CSP">[CSP]</dt><dd>Hoare, C. A. R. <a href="http://www.usingcsp.com/cspbook.pdf"><cite>Communicating Sequential Processes</cite></a>.Prentice-Hall. 1985URL: <a href="http://www.usingcsp.com/cspbook.pdf">http://www.usingcsp.com/cspbook.pdf</a>
+</dd><dt id="bib-Logic">[Logic]</dt><dd>W. E. Johnson<a href="http://www.ditext.com/johnson/intro-3.html"><cite>Logic: Part III</cite></a>.1924. URL: <a href="http://www.ditext.com/johnson/intro-3.html">http://www.ditext.com/johnson/intro-3.html</a>
+</dd><dt id="bib-PROV-DM">[PROV-DM]</dt><dd>Luc Moreau and Paolo Missier (eds.) Khalid Belhajjame, Reza B'Far, Stephen Cresswell, Yolanda Gil, Paul Groth, Graham Klyne, Jim McCusker, Simon Miles, James Myers, Satya Sahoo, and Curt Tilmes<a href="http://www.w3.org/TR/prov-dm/"><cite>PROV-DM: The PROV Data Model</cite></a>. 2012, Working Draft. URL: <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a>
+</dd><dt id="bib-PROV-SEM">[PROV-SEM]</dt><dd>James Cheney <a href="http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman"><cite>Formal Semantics Strawman</cite></a>. 2011, Work in progress. URL: <a href="http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman">http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman</a>
+</dd></dl></div></div></body></html>

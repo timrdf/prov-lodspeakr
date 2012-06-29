@@ -1,0 +1,43 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos:    <http://www.w3.org/2008/05/skos#> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <http://lists.w3.org/Archives/Public/public-prov-wg/2011Nov/0170.html#> .
+
+<unqualified> {
+   :blogpost
+      rdfs:seeAlso <http://lists.w3.org/Archives/Public/public-prov-wg/2011Nov/0170.html>;
+      dcterms:description "blogpost wasDerivedFrom Report at 10am Thursday"; 
+      a prov:Entity;
+      prov:wasDerivedFrom :report;
+   .
+   :report
+      a prov:Entity;
+   .
+}
+
+<full_qualification> {
+   <full_qualification> rdfs:comment "fully expanded notion of derivation: wasDerivedFrom(e2,e1,pe,q2,q1)";
+   .
+   :pe
+      a prov:ProcessExecution;
+      prov:used :report;
+      prov:qualifiedUsage [
+         a prov:Usage;
+         a prov:time "2011-11-24T14:00:00-05:00"^^xsd:dateTime;
+      ];
+   .
+}
+
+<lazy_qualification> {
+   <lazy_qualification> dcterms:description
+"""Sure there is some process there, there may be an interval. But I just don't want to assert all that information.
+
+Again, my fundamental thing is that I want to assert derivation chains without (knowingly) asserting anything about process.""";
+}
+
+

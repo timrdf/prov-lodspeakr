@@ -1,0 +1,37 @@
+// -------------------------------------- START
+#include <stdio.h>
+#include "ClassnameParser.h"
+extern "C++" {
+
+struct yy_buffer_state;
+typedef int yy_state_type;
+
+// -------------------------------------- END
+
+#include <stdio.h>
+
+struct Classname
+{
+private:
+  yyFlexLexer theScanner;
+};
+
+int yylex()
+{
+ return theScanner.yylex(&yylval);
+}
+
+void yyerror(char *m)
+{
+  fprintf(stderr,"%d: %s at token '%s'\n",yylloc.first_line, m,yylloc.text);
+}
+
+int main(int argc,char **argv)
+{
+ Classname aCompiler;
+
+ int result=yyparse();
+ printf("Parsing result: %s.\n", result?"Error":"OK");
+ return result;
+};
+

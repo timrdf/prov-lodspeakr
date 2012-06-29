@@ -1,0 +1,245 @@
+[1] bundle ::= "bundle" namespaceDeclarations? expression* namedBundle* "endBundle"
+
+
+
+
+
+[2] expression::=
+        (   
+
+           entityExpression | activityExpression | generationExpression  | usageExpression
+         | startExpression | endExpression | invalidationExpression | communicationExpression 
+        | agentExpression |  associationExpression | attributionExpression | delegationExpression
+        | derivationExpression | tracedToExpression
+        | alternateExpression | specializationExpression | contextualizationExpression
+        | insertionExpression | removalExpression | membershipExpression
+        )
+
+
+[3] entityExpression::=	"entity" "(" identifier optionalAttributeValuePairs ")"
+
+[4]optionalAttributeValuePairs::= ("," "[" attributeValuePairs "]")?
+[5]attributeValuePairs::=      (  | attributeValuePair ( "," attributeValuePair )* )
+[6]attributeValuePair::= attribute '='  literal
+
+
+[7] activityExpression::=	"activity" "(" identifier ("," timeOrMarker "," timeOrMarker)? optionalAttributeValuePairs ")"
+
+[8]timeOrMarker::=(timeZZ | "-")
+
+
+[9]generationExpression::=	"wasGeneratedBy" "(" optionalIdentifier eIdentifier ("," aIdentifierOrMarker "," timeOrMarker)? optionalAttributeValuePairs ")"
+
+[10]optionalIdentifier::=(identifierOrMarker ";")?
+
+[11] identifierOrMarker::=(identifier | "-")
+
+
+[12] usageExpression::=	"used" "(" optionalIdentifier  aIdentifier "," ("," eIdentifierOrMarker "," timeOrMarker)? optionalAttributeValuePairs ")"
+
+[13] startExpression::=	"wasStartedBy" "(" optionalIdentifier aIdentifier ("," eIdentifierOrMarker "," aIdentifierOrMarker "," timeOrMarker)? optionalAttributeValuePairs ")"
+
+
+
+
+[14] endExpression::=	"wasEndedBy" "(" optionalIdentifier aIdentifier ("," eIdentifierOrMarker "," aIdentifierOrMarker "," timeOrMarker)? optionalAttributeValuePairs ")"
+
+
+[15] invalidationExpression::=	"wasInvalidatedBy" "(" optionalIdentifier eIdentifier ("," aIdentifierOrMarker "," timeOrMarker)? optionalAttributeValuePairs ")"
+
+
+
+[16] communicationExpression::=	"wasInformedBy" "(" optionalIdentifier aIdentifier "," aIdentifier optionalAttributeValuePairs ")"
+
+
+[17] agentExpression::=	"agent" "(" identifier optionalAttributeValuePairs	")" 
+
+[18] attributionExpression::=	"wasAttributedTo" "("  optionalIdentifier eIdentifier "," agIdentifier optionalAttributeValuePairs ")"
+
+[19] associationExpression::=	"wasAssociatedWith" "("  optionalIdentifier aIdentifier "," agIdentifierOrMarker ("," eIdentifierOrMarker)? optionalAttributeValuePairs ")"
+
+
+[20] delegationExpression::=	"actedOnBehalfOf" "("   optionalIdentifier agIdentifier "," agIdentifier (","  aIdentifierOrMarker)? optionalAttributeValuePairs ")"
+
+
+
+[21] derivationExpression::=	"wasDerivedFrom" "(" optionalIdentifier eIdentifier "," eIdentifier ("," aIdentifierOrMarker "," gIdentifierOrMarker "," uIdentifierOrMarker )?	optionalAttributeValuePairs ")"
+
+
+
+
+
+
+[25] tracedToExpression::=	"tracedTo" "("  optionalIdentifier eIdentifier "," eIdentifier optionalAttributeValuePairs ')'
+
+[26] alternateExpression::=	"alternateOf" "("  eIdentifier "," eIdentifier ")"
+
+[27] specializationExpression::=	"specializationOf" "("  eIdentifier "," eIdentifier ")"
+
+[33] contextualizationExpression::=	"contextualizationOf" "(" identifier "," identifier "," bIdentifier ")" 
+
+
+
+[28] insertionExpression::=	"derivedByInsertionFrom" "("  optionalIdentifier dIdentifier "," dIdentifier "," keyEntitySet optionalAttributeValuePairs ")"
+
+
+[29]keyEntitySet::= "{"  "(" literal "," identifier  ")" ( ","  "(" literal "," identifier  ")" )* "}"
+
+[29]entitySet::= "{"   eIdentifier *  "}"
+
+[30] removalExpression::=	"derivedByRemovalFrom" "("  optionalIdentifier dIdentifier "," dIdentifier "," keySet optionalAttributeValuePairs ")"
+
+[30a] keySet::= "{" literal ("," literal)* "}"
+
+[31] membershipExpression::=	"memberOf" "("  optionalIdentifier  dIdentifier "," keyEntitySet complete  optionalAttributeValuePairs ")"
+| 	"memberOf" "("  optionalIdentifier  cIdentifier "," entitySet complete  optionalAttributeValuePairs ")"
+
+[31b] complete::= ("," ("true" | "false" | "-"))?
+
+[32] namedBundle ::= "bundle" identifier namespaceDeclarations? expression* "endBundle"
+
+
+
+
+
+[28] eIdentifier ::=identifier
+aIdentifier ::=identifier
+agIdentifier ::=identifier
+gIdentifier ::=identifier
+uIdentifier ::=identifier
+dIdentifier ::=identifier
+cIdentifier ::=identifier
+bIdentifier ::=identifier
+
+
+eIdentifierOrMarker::=(eIdentifier | "-")
+aIdentifierOrMarker::=(aIdentifier | "-")
+agIdentifierOrMarker::=(agIdentifier | "-")
+gIdentifierOrMarker::=(gIdentifier | "-")
+uIdentifierOrMarker::=(uIdentifier | "-")
+
+identifier ::=QUALIFIED_NAME
+
+attribute ::=QUALIFIED_NAME
+
+
+
+
+
+timeZZ::= ISODATETIME
+
+
+
+
+
+
+
+
+
+
+
+
+
+[13] literal ::=  typedLiteral | convenienceNotation
+typedLiteral ::= STRING_LITERAL "%%" datatype
+datatype::= QUALIFIED_NAME
+
+
+convenienceNotation ::= STRING_LITERAL | INT_LITERAL | QUALIFIED_NAME_LITERAL
+
+
+
+
+
+ 
+
+
+
+[4] namespaceDeclarations ::=  (defaultNamespaceDeclaration | namespaceDeclaration) namespaceDeclaration*
+[5] namespaceDeclaration ::= "prefix" QUALIFIED_NAME namespace
+[7] defaultNamespaceDeclaration ::=     "default" IRI_REF
+[6] namespace ::= IRI_REF
+
+
+
+@terminals
+QUALIFIED_NAME::= (PN_PREFIX ":")? PN_LOCAL | PN_PREFIX ":"
+
+PREFX::=  PN_PREFIX
+DIGIT::=[0-9]
+ISODATETIME::=  DIGIT DIGIT DIGIT DIGIT "-" DIGIT DIGIT "-" DIGIT DIGIT "T" DIGIT DIGIT ":" DIGIT DIGIT ":" DIGIT DIGIT ("." DIGIT (DIGIT DIGIT?)?)? ("Z" | TIMEZONEOFFSET)?
+
+TIMEZONEOFFSET::= ("+" | "-") DIGIT DIGIT ":" DIGIT DIGIT;
+
+
+
+ 
+
+[70s] IRI_REF ::= "<" ( [^<>\"{}|^`\\] - [#x00-#x20] | UCHAR )* ">" 
+ 
+[149s] STRING_LITERAL ::= STRING_LITERAL2
+[149s] STRING_LITERAL2 ::= '"' ( ( [^#x22#x5C#xA#xD]) | ECHAR | UCHAR )* '"' 
+
+INT_LITERAL::= '-'? DIGIT+
+
+
+[149s] QUALIFIED_NAME_LITERAL ::= '\'' QUALIFIED_NAME '\'' 
+
+
+ 
+[19] UCHAR ::= ( "\\u" HEX HEX HEX HEX ) 
+ | ( "\\U" HEX HEX HEX HEX HEX HEX HEX HEX ) 
+
+[91s] ECHAR ::= "\\" [tbnrf\\\"'] 
+ 
+[92s] NIL ::= "(" (WS)* ")" 
+ 
+[93s] WS ::= " " 
+ | "\t" 
+ | "\r" 
+ | "\n" 
+[94s] ANON ::= "[" (WS)* "]" 
+ 
+[95s] PN_CHARS_BASE ::= [A-Z] 
+ | [a-z] 
+ | [#00C0-#00D6] 
+ | [#00D8-#00F6] 
+ | [#00F8-#02FF] 
+ | [#0370-#037D] 
+ | [#037F-#1FFF] 
+ | [#200C-#200D] 
+ | [#2070-#218F] 
+ | [#2C00-#2FEF] 
+ | [#3001-#D7FF] 
+ | [#F900-#FDCF] 
+ | [#FDF0-#FFFD] 
+ | [#10000-#EFFFF] 
+[96s] PN_CHARS_U ::= PN_CHARS_BASE 
+ | "_" 
+[98s] PN_CHARS ::= PN_CHARS_U 
+ | "-" 
+ | [0-9] 
+ | #00B7 
+ | [#0300-#036F] 
+ | [#203F-#2040] 
+[99s] PN_PREFIX ::= PN_CHARS_BASE ( ( PN_CHARS | "." )* PN_CHARS )? 
+ 
+[100s] PN_LOCAL ::= ( PN_CHARS_U | [0-9] | PN_CHARS_OTHERS ) ( ( PN_CHARS | '.' | PN_CHARS_OTHERS )*  ( PN_CHARS | PN_CHARS_OTHERS ) ) ?
+
+[160s] PN_CHARS_OTHERS ::= PERCENT | '/' | '@' | '~' | '&' | '+' | '?' | '#' | '$'
+
+[161s] PERCENT ::= '%' HEX HEX
+
+[162s] HEX ::= [0-9] | [A-F] | [a-f]
+
+
+
+
+
+
+
+
+
+ 
+@pass ::= [ \t\r\n]+ 
+ | "#" [^\r\n]* 

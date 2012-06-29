@@ -1,0 +1,93 @@
+digraph OPMGraph { rankdir="BT"; 
+nact1 [label="act1",shape="polygon",sides="4"]
+nann0 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">publish</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann0 -> nact1 [style="dashed",color="gray",arrowhead="none"]
+nact2 [label="act2",shape="polygon",sides="4"]
+nann1 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">publish</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann1 -> nact2 [style="dashed",color="gray",arrowhead="none"]
+nWD_prov_dm_20111018 [label="WD-prov-dm-20111018"]
+nann2 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">RecsWD</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann2 -> nWD_prov_dm_20111018 [style="dashed",color="gray",arrowhead="none"]
+nWD_prov_dm_20111215 [label="WD-prov-dm-20111215"]
+nann3 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">RecsWD</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann3 -> nWD_prov_dm_20111215 [style="dashed",color="gray",arrowhead="none"]
+nrec_advance [label="rec-advance"]
+nann4 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">Plan</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann4 -> nrec_advance [style="dashed",color="gray",arrowhead="none"]
+n2011OctDec_0004 [label="2011OctDec/0004"]
+nann5 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">transreq</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann5 -> n2011OctDec_0004 [style="dashed",color="gray",arrowhead="none"]
+n2011Oct_0141 [label="2011Oct/0141"]
+nann6 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">pubreq</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann6 -> n2011Oct_0141 [style="dashed",color="gray",arrowhead="none"]
+n2011Dec_0111 [label="2011Dec/0111"]
+nann7 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">pubreq</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann7 -> n2011Dec_0111 [style="dashed",color="gray",arrowhead="none"]
+nConsortium [label="Consortium",shape="polygon",sides="8"]
+nann8 [color="gray",fontcolor="black",label=<<TABLE cellpadding="0" border="0">
+	<TR>
+	    <TD align="left">type:</TD>
+	    <TD align="left">Organization</TD>
+	</TR>
+    </TABLE>>
+,shape="note"]
+nann8 -> nConsortium [style="dashed",color="gray",arrowhead="none"]
+nWD_prov_dm_20111215 -> nWD_prov_dm_20111018 []
+nWD_prov_dm_20111018 -> nact1 []
+nWD_prov_dm_20111215 -> nact2 []
+nact1 -> n2011OctDec_0004 []
+nact1 -> n2011Oct_0141 []
+nact2 -> n2011Dec_0111 []
+nact1 -> nConsortium []
+nact1 -> nrec_advance []
+nact2 -> nConsortium []
+nact2 -> nrec_advance []
+}

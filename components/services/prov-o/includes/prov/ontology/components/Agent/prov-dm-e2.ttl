@@ -1,0 +1,25 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix app: <http://www.w3.org/TR/2011/WD-prov-dm-20111018/app#> .
+@prefix :    <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#> .
+:e2
+   a prov:Entity;
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-Agent>;
+   dcterms:description "entity(e2)";
+.
+
+:pe
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-Agent>;
+   dcterms:description "wasControlledBy(pe,e2,qualifier(role='author'))";
+   prov:wasControlledBy :e2;
+   prov:qualifiedControl [
+      a prov:Control;
+      prov:entity :e2;
+      prov:role :author;
+   ];
+.

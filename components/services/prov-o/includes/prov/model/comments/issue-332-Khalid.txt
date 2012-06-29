@@ -1,0 +1,33 @@
+
+I read PROV-N document. It is well structured and easy to follow. Before starting reading PROV-N, I was skeptical about its usefulness since the PROV-N expressions are already used in PROV-DM part1 and prov-DM constraints.
+After reading it, I changed my mind. It actually gives a complete account of the concepts and relations on the DM in a relatively small number of pages.
+Also, I believe that for people who are familiar with existing provenance models, PROV-N may be the best entry point.
+
+I have only few minor comments on the document:
+
+2- Design Rationale for PROV-N
+* The number of examples that are given to illustrate the notation can be reduced. For example, 2 examples are used to illustrate PROV-N optional arguments. I think that at this stage, the reader does not know yet PROV-N expression, and therefore, it would be better to use one kind of expression, e.g., derivation, and use small number of examples.
+
+
+* The term expression, and expression identifier is used in this section, but it is actually introduced in the section that follows.
+
+PM fixed.
+
+* "While not all PROV-DM relations are not binary, they involve two primary elements". I find the use of the term primary element a bit vague, specially when presenting a notation. Instead, I would use something in the following lines. "While most of PROV-DM relations are binary, such relations can be characterized (or qualified) using attributes."
+
+PM. edited.
+
+4 PROV-N Productions per Component
+* For several expressions, e.g. generation and start by activity, it is specified that certain allowed expressions are not valid. Take the example of generation, the text specify that when the expression contain information only about the entity generated, i.e., without mentioning the activity or the generation time, then the expression is not valid. Instead of doing so, and given that this document is only on annotation, I think we can reformulate the definition of expression to exclude invalid cases. To illustrate this, consider the case of generation. The definition of generation in the PROV-N document is as follows:
+
+
+generationExpression ::= 'wasGeneratedBy' '('( ( identifier | '-' ) ',')?  eIdentifier ',' ( aIdentifier | '-' ) ',' ( time | '-' ) optional-attribute-values ')'
+
+To avoid invalid cases, the above definition can be reformulated as follows:
+
+
+generationExpression ::= 'wasGeneratedBy' '('
+                                         ( ( ( identifier | '-' ) ',')?  eIdentifier ',' aIdentifier  ',' ( time | '-' ) optional-attribute-values
+                                         |
+                                         ( ( ( identifier | '-' ) ',')?  eIdentifier ',' ( aIdentifier | '-' ) ',' time  optional-attribute-values)
+                                          ')'

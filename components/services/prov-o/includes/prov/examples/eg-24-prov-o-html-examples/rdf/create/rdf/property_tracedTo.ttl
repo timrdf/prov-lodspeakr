@@ -1,0 +1,19 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix :        <http://example.com/> .
+
+# An up-to-date web page listing the presidents of the United States
+# is traced to all of those who have held the office.
+
+<http://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States>
+   a prov:Entity;
+   dcterms:title "List of Presidents of the United States"^^xsd:string;
+   prov:tracedTo <http://dbpedia.org/resource/Barack_Obama>;
+.
+
+<http://dbpedia.org/resource/Barack_Obama>
+   a prov:Entity, prov:Person;
+.

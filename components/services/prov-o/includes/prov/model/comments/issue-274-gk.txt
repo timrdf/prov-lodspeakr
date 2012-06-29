@@ -1,0 +1,430 @@
+ > Summary: I think the content is generally a big improvement, but there
+ > are some possible further removals, and I think there remain a number
+ > of document quality issues to be addressed before getting to last
+ > call.  Hopefully, these can be considered in DM5
+ > 
+ > When the content stabilizes, I may offer some alternate drafting
+ > suggestions, but I think it's in too much flux right now for that to
+ > be worthwhile.
+ > 
+ > ...
+ > 
+ > Re: http://dvcs.w3.org/hg/prov/raw-file/f52c0bb53dd4/model/prov-dm.html
+ > (Retrieved 2012-30-08)
+ > 
+ > I'd wish to see all references to "things in the world" expunged: it's
+ > an ugly expression that begs more questions than it answers, and IMO
+ > runs the risk of confusing readers.
+
+
+OK, no longer talk about "thing in the world" but "thing".
+
+
+ > 
+ > Section 1 intro: rewording in 1st 3 paras.
+ > 
+ > Suggest that the provenance notation be a part 1 appendix, not a
+ > separate part/document.  Drop references to ASN - it's *not* an
+ > *abstract* syntax notion; indeed, I think that very expression is an
+ > oxymoron.
+
+We now call it PROV-N.
+
+Having gone through the process of writing productions fully, there
+are some grammatical syntactic details that have no place in the PROV-DM document.
+Also, PROV-N  provides examples of instances to explain the grammar.
+This has no place in the PROV-DM document either.
+
+Furthermore, past experience has shown that readers confuse prov-dm and prov-n.
+
+So, the editor's recommendation is to keep the documents separate.
+ > 
+ > Part 2 is *not* an upgrade path. Please don't say this.  (It's a
+ > refinement of use that allows provenance information from different
+ > sources to be combined in meaningful ways.)
+
+
+Replaced 'upgrade path' by 'refinement'
+
+
+ > 
+ > More text refinement in section 1.
+ > 
+ > 
+ > Section 2.1
+ > 
+ > Saying "Activity is anything ..." is confusing.  It suggests a
+ > continuant rather than an occurrent.
+
+Rephrased as follows:
+
+An activity is something that occurs and acts upon or with entities.
+
+
+ > 
+ > Sub-editing would improve this.
+ > 
+ > 
+ > Section 2.2
+ > 
+ > I think it would be clearer if generation and usage were introduced as
+ > events associated with activities.  (Discussion of them being
+ > instantaneous can come in Part 2)
+
+It was agreed at F2F2 that we shouldn't introduce event in part 1.
+We followed this guidance.  The term event is only defined in part 2.
+
+
+ > 
+ > Introducing generation as "completed production" reads really
+ > strangely to me, and sounds as if it could be a produced artifact.  I
+ > think a form like "completion of production" is clearer.  Similarly
+ > for usage, something like "starting to consume".
+ > 
+
+Updated definitions as follows:
+
+Generation is the completion of production of a new entity by an activity.
+
+Usage is the beginning of consumption of a new entity by an activity.
+
+
+ > Sub-editing would improve this.
+ > 
+ > 
+ > Section 2.3:
+ > 
+ > "AccountEntity" - why not just "Account".  Also, I understood this was
+ > to *be* a bundle, not a container for a bundle.
+
+To be addressed, once other editing work for WD5 is completed.
+
+The two notions (container vs bundle) are useful, for different purposes.
+To be investigated.
+
+
+ > 
+ > The example given has no clear relationship to the description.  I
+ > understood the key use-case here was to express provenance of
+ > procenance, and that is why we have accounts.  I think that should be
+ > stated clearly; e.g.
+
+This is made clearer, following definition and in example.
+
+ > 
+ > "An account is a bundle of provenance statements treated as an entity
+ > which may itself have some associated provenance."
+ > 
+
+Subtle difference again: "... treated as an entity ..." vs " ... is an entity ..."
+
+We can definitely add "... which may itself have some associated provenance "
+
+
+ > 
+ > Agents.  I think the notion of responsibility here is so loose as to
+ > be of no practical value.  When we say a text editor is "responsible
+ > for" crashing a computer, that's a kind of anthropomorphism, not a
+ > literal claim of responsibility.  What we really mean is that the text
+ > editor caused the crash. The notion of responsibility is generally
+ > associated with duty, authority and/or accountability
+ > (cf. http://oxforddictionaries.com/definition/responsibility?view=uk).
+ > This is why persons and organizations are distinct from software
+ > agents.  I suggest that the text here should "stick to the knitting":
+ > just state that these are commonly encountered kinds of agent, and
+ > leave it at that.
+
+
+The example about software agent was simplified. Indeed no need to mention responsibility here.
+This is left to section 2.4.
+
+ > 
+ > 
+ > Section 2.4
+ > 
+ > This continues the muddle about "responsibility", until the definition
+ > of agent responsibility realtion which seems about right to me (note
+ > the phrase "accountable for" here).
+ > 
+ > The use of responsibility in the description of association seems
+ > completely wrong to me.
+
+What would you suggest?
+
+ > 
+ > The discussion of activity association is surreal.  A plan is defined
+ > previously as an "Entity", but association relates an *agent* to an
+ > activity.
+
+It's a ternary relation.
+This was discussed at length in ISSUE-203, which is now closed.
+
+I am not proposing to reopen it, unless new information is brought forward.
+
+ > 
+ > I think this section needs re-drafting.
+ > 
+ > 
+ > Section 2.5
+ > 
+ > I think the intent and content of the diagram is generally good, but
+ > that its visual presentation could usefully be improved.  I think it
+ > should appear as part of the introduction to section 2, not at the
+ > end.
+ > 
+
+We are now generating a PNG, so hopefully its better.
+
+After careful consideration, we felt it was better to leave it in section 2.5, in part,
+because we need to map the concepts (expressed in natural language) to prov-dm types/relations.
+
+
+
+ > 
+ > Generally in section 2, I think the examples are mostly well-chosen,
+ > but their presentation breaks up the flow of the overview; I woukd
+ > prefer that the examples were more succinct, maybe fewer, and
+ > introduced inline in the descriptive overview text.  Ideally the whole
+ > overview would fit on just one or two pages (i.e. about half its
+ > current length on a printed page).  The key purpose here, IMO, is to
+ > give a quick overview of how the various concepts are used together.
+ > 
+ > 
+
+Usual trade-off. Now that concepts seem clearer, than we don't need examples.
+
+I think that examples are clearly delimited and can be skipped if the reader wants.
+
+
+
+ > Section 3:
+ > 
+ > I don't find this example at all helpful.  It requires too much effort
+ > to understand, and I find the process view vs author view is
+ > confusing.  What is this section actually trying to tell the reader?
+ > I can't tell.
+
+Publishing of documents and their provenance on the Web. 
+It seems that it is a primary use case for this specification.
+
+ > 
+ > I think a comprehensive example like this would be better sited as an
+ > appendix, rather than an interruption to the main flow of the
+ > document.
+
+We received positive feedback about the example, and in particular that
+it deals with attribution of provenance.
+
+ > 
+ > 
+ > Section 4.1:
+ > 
+ > I find the sub-heading "Element" is confusing/unhelpful.
+ > 
+
+Gone with the new component structure.
+
+
+ > 
+ > Section 4.1.1 - verbatim repetition of text defining "Entity" already
+ > present in section - this is unhelpful.
+
+Section 4 contains the systematic presentation of all types and relations.
+Given that many had not been (and should not be) introduced in the
+"starting point section", it is better to have *all* terms defined in section 4.
+
+
+ > 
+ > The description of the provenance notation expressions should use the
+ > same terms as are used in the template presented; i.e.. *not* "[
+ > attr=val1, ... ]" and "attributes".
+ > 
+
+The template shows instances of arguments, where as the descriptions
+provide names for attributes.
+
+ > Don't need to say anything about disjointness of entities and
+ > activities in Part 1.
+ > 
+
+This seems in conflict with the next comment.  Or is it just about the
+English (avoiding disjoint term)?
+
+ > 
+ > Secftion 4.1.2
+ > 
+ > Similar comments to section 4.1.1
+ > 
+ > (But I think the simple statement "An activity is not an entity ..."
+ > is good.)
+ > 
+ > 
+ > Section 4.1.3
+ > 
+ > Similar comments to section 4.1.1
+ > 
+ > Don't need to say why sub-categories of agent are introduced.
+
+why not?  In particular, this was introduced in response to feedback
+from the working group.
+
+ > 
+ > I would probably avoid making the mutual exclusivity claim (legally,
+ > it may be or become a debatable point).
+ > 
+
+OK
+
+ > 
+ > Section 4.1.4
+ > 
+ > I don't see that notes are an essential part of the provenance
+ > structure.  I'd prefer to drop them, as I don't see them adding any
+ > expressive capability.
+
+This is ISSUE-260, potentially related to account. We will tackle
+this once we have some bandwidth.
+
+To me, it's crucial to be able to annotate provenance, and to do so in
+an inter-operable way, whatever the serialization.
+
+The questioni is whether the mechanism presented here is the right
+one, or, as Tim suggests, Accounts take care of that.
+
+
+ > 
+ > 
+ > Section 4.2
+ > 
+ > The table of different relation domain and range combinations is fair
+ > enough, but I'm not convinced the additional level of document
+ > structure reflecting this is useful.
+
+Table was kept as a form of index.
+Structure changed to components.
+
+ > 
+ > Ideally, I think the relations would all appear at the same document
+ > level as the concepts, so they have a similar "visual signature" when
+ > scanning the document.
+
+All done.
+
+ > 
+ > Most or all subsections have repetition of text from section 2 similar
+ > to that noted for section 4.1.1
+
+Some are repeat, some are new, as indicated above. 
+
+ > 
+ > Also, most sections seem to suffer from a similar mismatch between the
+ > provenance notation template given and the accompanying description of
+ > the constituent elements.
+
+The template shows instances of arguments, where as the descriptions
+provide names for attributes.
+
+ > 
+ > I think generation and usage should be described as events (not
+ > necxessarily to introduce a formal notion of events, just make it
+ > clear that they are events corresponding to some change in the
+ > relationship between an entity and an activity)
+ > 
+
+See comment above.
+
+ > 
+ > Section 4.2.2.1
+ > 
+ > "Responsibility" again.
+ > 
+ > There are two things going on here that I feel are very muddled:
+ > 
+ > (a) this rather odd notion of responsibility, and
+ > 
+ > (b) associating a plan with an activity.
+ > 
+ > At the very least, I think these aspects should be separated, not just
+ > lumped into an single overloaded element.
+
+This was discussed at length in ISSUE-203, which is now closed. see above.
+
+ > 
+ > I'm not sure why some expression components are explicit and possibly
+ > optional parameters, while athewrs are attributes.  What's the
+ > intended difference here?
+
+For rationale see:
+
+http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-n.html#positional-vs-named-attributes
+
+ > 
+ > 
+ > Section 4.2.3.1
+ > 
+ > Responsibility again.  In this case, I think there may be some
+ > justification for talking about responsibility, but earlier treatment
+ > of this idea makes it hard for me to know what is really being
+ > expressed.  I think it is the notion that some actions of one agent
+ > are authorized or controlled by another agent in the context of a
+ > given activity, hence any accountability for the outcome may propagate
+ > back to the controlling or authorizing agent.  But that's not entirely
+ > clear to me from the text.
+ > 
+ > Also, I can't tell if the structures here would accommodate different
+ > agents having different responsibilities.  E.g. a manager authorizes
+ > an engineer to purchase a component, but is then instructed by the
+ > engineer in its deployment/installation...  when the component fails
+ > to achieve some required outcome, who is accountable?  The manager for
+ > not authorizing enough funds, or the engineer for not properly
+ > explaining how to use the component?
+ > 
+ > 
+
+PROV-DM allows you to express the relations.
+If I understood correctly, we have:
+
+wasGeneratedBy(component,purchase)
+actedOnBehalfOf(engineer,manager,purchase, [role="line management"])
+actedOnBehalfOf(manager,engineer,deployment, [role="technical guidance"])
+
+PROV-DM does not say how to reason about responsibility.
+What is the answer to your question?
+
+This said, did you mean
+ actedOnBehalfOf(manager,engineer,deployment, [role="technical guidance"])
+or  did you mean:
+ wasInformedBy(manager,engineer)
+
+
+ > Section 4.2.3.2
+ > 
+ > Skipped - I understand this is due to be replaced.  (Despite my
+ > reservations expressed elsewhere, the replacement looks like a
+ > significant improvement.)
+ > 
+ > 
+ > Section 4.2.3.3
+ > 
+ > Do we still need Alternate and Specialization in the provenance
+ > notation?
+
+
+Do you mean in PROV-DM?
+
+Yes, I think these are relations of the data model. They need
+to be introduced in this document.
+
+
+
+ > 
+ > ...
+ > 
+ > I'm running out of time, so I'll stop here.
+ > 
+
+
+Thanks,
+ > 
+ > 
+ > 

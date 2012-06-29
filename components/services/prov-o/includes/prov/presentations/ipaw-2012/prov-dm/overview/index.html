@@ -1,0 +1,1468 @@
+
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	
+	<title>The W3C PROV Provenance Model</title>
+	
+	<meta name="description" content="An Presentation at the Dagstuhl seminar on provenance"/>
+	<meta name="author" content="Luc Moreau"/>
+	<meta name="viewport" content="width=1024, user-scalable=no"/>
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="extra.css"/>
+	<link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/core/deck.core.css"/>
+	<link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/extensions/goto/deck.goto.css"/>
+	<link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/extensions/menu/deck.menu.css"/>
+	<link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/extensions/navigation/deck.navigation.css"/>
+	<link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/extensions/status/deck.status.css"/>
+	<link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/extensions/hash/deck.hash.css"/>
+
+    <link rel="stylesheet" href="../deckjs/imakewebthings-deck.js-bb4870a/extensions/notes/deck.notes.css"/>
+	
+	<!-- Theme CSS files (menu swaps these out) -->
+	<link rel="stylesheet" id="style-theme-link" href="../deckjs/imakewebthings-deck.js-bb4870a/themes/style/web-2.0.css"/>
+
+<!--
+	<link rel="stylesheet" id="transition-theme-link" href="../deckjs/imakewebthings-deck.js-bb4870a/themes/transition/horizontal-slide.css">
+-->
+	
+	<!-- Custom CSS just for this page -->
+	<link rel="stylesheet" href="introduction.css"/>
+	
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+
+table.thinborder {
+	border-width: 1px;
+	border-spacing: 0px;
+	border-style: none;
+	border-color: gray;
+	border-collapse: collapse;
+}
+table.thinborder th {
+	border-width: 1px;
+	padding: 0px;
+	border-style: solid;
+	border-color: gray;
+	-moz-border-radius: ;
+}
+table.thinborder td {
+	border-width: 1px;
+	padding: 2px;
+	border-style: solid;
+	border-color: gray;
+	-moz-border-radius: ;
+}
+.essential {
+    font-weight: bold;
+}
+
+</style>
+
+	<script src="../deckjs/imakewebthings-deck.js-bb4870a/modernizr.custom.js"></script>
+<script type="text/javascript">
+//<!--
+function set_media_clip(media_id, edl, debug_id)
+{
+	var cur_interval = -1;
+	var media = document.getElementById(media_id);
+	var debug = document.getElementById(debug_id);
+var onetime=1;
+
+	function jump_to(new_interval)
+	{
+		if (new_interval >= edl.length) {
+			media.pause();
+			cur_interval = -1;
+		} else {
+			cur_interval = new_interval;
+			media.currentTime = edl[cur_interval][0];
+		}
+	}
+
+	media.addEventListener("loadedmetadata", function(){
+		// cue media to start of first interval
+		jump_to(0);
+	}, false);
+
+	media.addEventListener("play", function(e) {
+		// restart the selected clips when play is clicked again
+		if (cur_interval==-1) {
+			jump_to(0);
+		}
+	}, false);
+
+	media.addEventListener("timeupdate", function(e){
+		var ct = media.currentTime;
+		if (cur_interval==-1) {
+			if (!media.paused) { jump_to(0); }
+		} else
+		if (ct > edl[cur_interval][1]) {
+			jump_to(cur_interval+1);
+			}
+	}, false);
+}
+//-->
+</script>
+    <script src="../jquery/jquery.min.js" class="remove"></script> <!-- http://ajax.googleapis.com/ajax/libs/jquery/1.7.1 -->
+
+
+    <script src="../../../../model/glossary.js" class="remove"></script>
+    <script src="../../../../model/all-divs.js" class="remove"></script>
+    <script class="remove">
+      function updateGlossaryRefs() {
+        $('.glossary-ref').each(function(index) {
+          var ref=$(this).attr('ref');
+          var span=$(this).attr('withspan')
+          $('#'+ref+'.glossary').contents().clone().appendTo($(this));
+          $(this).attr('prov:hadOriginalSource',glossary_hg);
+          if (span) {
+            $(this).children('dfn').replaceWith(function(){return $('<span>').addClass('dfn').append($(this).contents())});
+          }
+        });
+      }
+
+      function updateOtherRefs() {
+        $('.element-ref').each(function(index) {
+          var ref=$(this).attr('ref');
+          //var span=$(this).attr('withspan')
+          $('#'+ref).clone().appendTo($(this));
+          $(this).attr('prov:hadOriginalSource',divs_hg);
+          //if (span) {
+          //  $(this).children('dfn').replaceWith(function(){return $('<span>').addClass('dfn').append($(this).contents())});
+          //}
+        });
+      }
+      $(document).ready(function(){
+        // if glossary is in a string:
+        $('#glossary_div').html(glossary_string)
+        $('#divs_div').html(divs_string)
+        updateGlossaryRefs();
+        updateOtherRefs();
+      });
+
+    </script>
+
+</head>
+
+<body class="deck-container">
+
+
+
+<div class="slide" id="title-slide">
+	<h2><p></p><p>The W3C PROV Provenance Model</p>
+        <p></p></h2>
+    <h3>
+<p>&nbsp</p>
+<p><a href="http://www.ecs.soton.ac.uk/~lavm/">Luc Moreau</a></p>
+<p><a href="http://www.ecs.soton.ac.uk/~lavm/">Co-chair of W3C Provenance Working Group</a></p>
+</h3>
+
+<p>&nbsp</p>
+<p style="color:red; ">Warning: everything in this presentation is a DRAFT.</p>
+
+<p>&nbsp</p>
+<p>Thanks to Paul Groth, Paolo Missier, James Cheney,  and the  entire W3C Provenance Working Group</p>
+
+<a href="http://dvcs.w3.org/hg/prov/raw-file/default/presentations/ipaw-2012/prov-dm/overview/index.html">http://dvcs.w3.org/hg/prov/raw-file/default/presentations/ipaw-2012/prov-dm/overview/index.html (latest)</a>
+
+
+
+
+
+</div>
+
+
+<div class="slide" id="title-slide">
+	<h2><p></p><p>Talk Outline</p>
+        <p></p></h2>
+
+<h4>
+<ul>
+<li> The W3C Working Group on Provenance
+<li> An example of Provenance
+<li> The PROV Data Model
+<li> PROV-N, PROV-O, PROV-Constraints
+</ul>
+</h4>
+
+
+
+
+</div>
+
+<div class="slide" id="charter">
+
+	<h2>Working Group Charter</h2>
+
+
+  <img src="images/wg-charter.png" alt="charter" style="max-width: 100%; "  />
+
+ <a href="http://lists.w3.org/Archives/Public/public-prov-wg/">http://lists.w3.org/Archives/Public/public-prov-wg/</a>
+
+</div>
+
+
+<div class="slide" id="participants">
+
+	<h2>Participants</h2>
+
+
+
+<table>
+<tr valign="top">
+<td>
+<ul>
+<li>DERI Galway
+<li>European Broadcasting Union
+<li>FORTH
+<li>Financial Services Technology Consortium
+<li>DFKI
+<li>IBBT
+<li>IBM
+<li>Library of Congress
+<li>NASA
+<li>National Cancer Institute
+<li>Open Geospatial Consortium
+<li>OpenLink Software
+<li>Oracle
+</ul>
+</td>
+<td>
+<ul>
+<li>Pacific Northwest National Laboratory
+<li>Rensselaer Polytechnic Institute
+<li>Revelytix, Inc
+<li>Newcastle University
+<li>The National Archives
+<li>TopQuadrant
+<li>Universidad Politecnica de Madrid
+<li>University of Edinburgh
+<li>University of Manchester
+<li>University of Oxford
+<li>University of Southampton
+<li>VU University Amsterdam
+<li>Wright State University
+</ul>
+</vr>
+</table>
+
+</div>
+
+<div class="slide" id="provenance-definition">
+
+	<h2>A Definition of Provenance</h2>
+
+
+<p></p>
+<p></p>
+
+<p style="font-size: 150;  ">
+<div class="glossary-ref" ref="glossary-provenance" style="font-size: 150%;  ">
+</div>
+</p>
+
+
+
+</div>
+
+
+
+<div class="slide" id="interchange">
+
+	<h2>Interchange</h2>
+
+
+<p>
+The idea that a single way of representing and collecting provenance could be adopted internally by all systems does not seem to be realistic today. </p>
+
+<p>Instead, a pragmatic approach is to
+consider a core data model for provenance that allows  domain and application specific representations of provenance to be translated into such a data model and exchanged between systems. </p>
+
+<p>
+Heterogeneous systems can then export their provenance into such a core data model, and applications that need to make sense of provenance in heterogeneous systems can then import it,
+process it, and reason over it.</p>
+
+<p>Thus, the vision is that different provenance-aware systems natively adopt their own model for representing their provenance, but a core provenance data model can be readily adopted as a
+provenance <em>interchange</em> model across such systems.</p>
+
+
+</div>
+
+
+
+
+<div class="slide" id="layered1">
+
+	<h2>Layered Model</h2>
+
+
+  <img src="images/prov-family1.png" alt="layered model" style="max-width: 100%; "  />
+
+</div>
+
+
+<div class="slide" id="layered1">
+
+	<h2>Layered Model</h2>
+
+
+  <img src="images/prov-family2.png" alt="layered model" style="max-width: 100%; "  />
+
+</div>
+
+
+<div class="slide" id="example1">
+
+	<h2>Example</h2>
+
+
+  <img src="images/tr.png" alt="Example" style="max-width: 99%; "  />
+
+</div>
+
+
+<div class="slide" id="example1">
+
+	<h2>Example</h2>
+
+
+  <img src="../../../../model/examples/w3c-publication1.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+
+</div>
+
+
+<div class="slide" id="example2">
+
+	<h2>Example (reports)</h2>
+
+
+  <img src="images/w3c-publication-reports.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+
+<span class="pnExpression">entity(tr:WD-prov-dm-20111018, [ prov:type='process:RecsWD' ])</span><br>
+<span class="pnExpression">entity(tr:WD-prov-dm-20111215, [ prov:type='process:RecsWD' ])</span>
+
+</div>
+
+
+
+
+<div class="slide" id="example-activity">
+
+	<h2>Example (activities)</h2>
+
+
+  <img src="images/w3c-publication-activities.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+
+<span class="pnExpression">activity(ex:pub1,[prov:type="publish"])</span><br>
+<span class="pnExpression">activity(ex:pub2,[prov:type="publish"])</span>
+
+</div>
+
+<div class="slide" id="agent">
+
+	<h2>Example (agent)</h2>
+
+
+  <img src="images/w3c-publication-agent.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+
+<span class="pnExpression">agent(w3:Consortium, [ prov:type='prov:Organization' ])</span><br>
+
+</div>
+
+
+
+<div class="slide" id="example-plan">
+
+	<h2>Example (plan)</h2>
+
+
+  <img src="images/w3c-publication-plan.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+
+<span class="pnExpression">entity(process:rec-advance,    [ prov:type='prov:Plan' ])</span><br>
+
+</div>
+
+
+<div class="slide" id="example-request">
+
+	<h2>Example (requests)</h2>
+
+
+  <img src="images/w3c-publication-requests.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+<span class="pnExpression">entity(0004, [ prov:type='trans:transreq'  ])</span><br>
+<span class="pnExpression">entity(0141, [ prov:type='trans:pubreq' ])</span><br>
+<span class="pnExpression">entity(0111, [ prov:type='trans:pubreq' ])</span>
+
+
+</div>
+
+
+<div class="slide" id="example-usage">
+
+	<h2>Example (usage)</h2>
+
+
+  <img src="images/w3c-publication-usage.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+<span class="pnExpression">used(ex:pub1,ar1:0004)</span><br>
+<span class="pnExpression">used(ex:pub1,ar2:0141)</span><br>
+<span class="pnExpression">used(ex:pub2,ar3:0111)</span>
+
+
+</div>
+
+
+<div class="slide" id="example-generation">
+
+	<h2>Example (generation)</h2>
+
+
+  <img src="images/w3c-publication-generation.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+<span class="pnExpression">wasGeneratedBy(tr:WD-prov-dm-20111018, ex:pub1)</span><br>
+<span class="pnExpression">wasGeneratedBy(tr:WD-prov-dm-20111215, ex:pub2)</span>
+
+
+</div>
+
+
+<div class="slide" id="example-derivation">
+
+	<h2>Example (derivation)</h2>
+
+
+  <img src="images/w3c-publication-derivation.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+<span class="pnExpression">wasDerivedFrom(tr:WD-prov-dm-20111215,tr:WD-prov-dm-20111018)</span><br>
+
+
+
+</div>
+
+
+<div class="slide" id="example-association">
+
+	<h2>Example (association)</h2>
+
+
+  <img src="images/w3c-publication-association.svg" alt="PROV-DM overview" style="max-width: 99%; "  />
+<span class="pnExpression">wasAssociatedWith(ex:pub2, w3:Consortium, pr:rec-advance)</span><br>
+
+
+
+</div>
+
+
+
+
+<div class="slide" id="components">
+
+	<h2>PROV Data Model Components</h2>
+
+  <img src="images/components-dependencies.png" alt="PROV-DM components" style="max-width: 100%; "  />
+
+  <div class="element-ref" ref="prov-dm-components-ul"></div>
+
+
+</div>
+
+<div class="slide" id="overview-diagram">
+
+	<h2>PROV Data Model Structure</h2>
+
+  <img src="uml/essentials.png" alt="PROV-DM overview" style="max-width: 150%; width: 80%; "  />
+
+</div>
+
+
+
+<div class="slide" id="at-a-glance">
+
+	<h2>Relations at a Glance</h2>
+
+  <div class="element-ref" ref="relations-at-a-glance-div"></div>
+
+
+</div>
+
+
+
+<div class="slide" id="prov-types-relations">
+
+	<h2>PROV-DM Types and Relations</h2>
+
+  <div class="element-ref" ref="prov-dm-types-and-relations-fig"></div>
+
+
+</div>
+
+
+
+
+
+<div class="slide" id="coponent1">
+
+	<h2>Component 1: Entities and Activities</h2>
+
+  <img src="uml/component1.png" alt="PROV-DM overview" style="max-width: 100%; "  />
+
+
+</div>
+
+
+<!-- PART II Entity -->
+
+<div class="slide" id="entity">
+
+
+	<h2>Entity</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-entity">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="entity-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-entity">
+</div>
+</p>
+
+
+<div class="note" id="entity.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+<!-- PART II Activity -->
+
+<div class="slide" id="activity">
+
+	<h2>Activity</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-activity">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="activity-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-activity">
+</div>
+</p>
+
+
+<div class="note" id="activity.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+
+
+<!-- PART II  Generation -->
+
+<div class="slide" id="generation">
+
+
+	<h2>Generation</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-generation">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="generation-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-generation">
+</div>
+</p>
+
+
+
+
+<div class="note" id="generation.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+<!-- PART II  Usage -->
+
+<div class="slide" id="usage">
+
+
+	<h2>Usage</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-usage">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="usage-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-usage">
+</div>
+</p>
+
+
+
+
+
+<div class="note" id="usage.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+<!-- PART II  Derivation -->
+
+<div class="slide" id="component2">
+
+	<h2>Component 2: Derivations</h2>
+
+  <img src="uml/component2.png" alt="Derivations" style="max-width: 100%; "  />
+
+
+</div>
+
+
+<div class="slide" id="derivation">
+
+
+	<h2>Derivation</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-derivation">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="derivation-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-derivation">
+</div>
+</p>
+
+
+
+
+<div class="note" id="derivation.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+<div class="slide" id="component3">
+
+	<h2>Component 3: Agents and Responsibility</h2>
+
+  <img src="uml/component3.png" alt="Agents-Responsibility" style="max-width: 100%; "  />
+
+
+</div>
+
+<!-- PART II  -->
+
+<div class="slide" id="agent">
+
+
+	<h2>Agent</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-agent">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="agent-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-agent">
+</div>
+</p>
+
+
+<p>
+<div class="glossary-ref" ref="glossary-person">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-organization">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-software-agent">
+</div>
+</p>
+
+
+
+
+<div class="note" id="agent.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+<!-- PART II  Attribution -->
+
+<div class="slide" id="attribution">
+
+
+	<h2>Attribution</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-attribution">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="attribution-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-attribution">
+</div>
+</p>
+
+
+
+
+<div class="note" id="attribution.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+<!-- PART II  Association -->
+
+<div class="slide" id="activityAssociation">
+
+
+	<h2>Association</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-activityAssociation">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="association-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-activity-association">
+</div>
+</p>
+
+
+
+
+<div class="note" id="association.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+<!-- PART II  Responsibility -->
+
+<div class="slide" id="delegation">
+
+
+	<h2>Delegation</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-delegation">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="delegation-example">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-delegation">
+</div>
+</p>
+
+
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+<!-- PART II  Alternates -->
+
+<div class="slide" id="component4">
+
+	<h2>Component 4: Bundles</h2>
+
+
+  <img src="uml/component4.png" alt="Bundles" style="max-width: 100%; "  />
+
+</div>
+
+
+<div class="slide" id="bundle">
+
+
+	<h2>Bundle</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-bundle">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-bundle">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="anexample-provenance-of-provenance">
+</div>
+</p>
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+
+
+
+<!-- PART II  Alternates -->
+
+<div class="slide" id="component5">
+
+	<h2>Component 5: Alternates</h2>
+
+
+  <img src="uml/component5.png" alt="Alternates" style="max-width: 100%; "  />
+
+
+</div>
+
+
+<div class="slide" id="alternate">
+
+
+	<h2>Alternate</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-alternate">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="attributes-alternate">
+</div>
+</p>
+
+
+
+<p>
+<div class="element-ref" ref="anexample-alternate">
+</div>
+</p>
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+<div class="slide" id="specialization">
+
+
+	<h2>Specialization</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-specialization">
+</div>
+</p>
+
+<p>
+<div class="element-ref" ref="attributes-specialization">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="anexample-specialization">
+</div>
+</p>
+
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+<div class="slide" id="contextualization">
+
+
+	<h2>Contextualization</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-contextualization">
+</div>
+</p>
+
+<p>
+<div class="element-ref" ref="attributes-contextualization">
+</div>
+</p>
+
+
+<p>
+<div class="element-ref" ref="anexample-contextualization1">
+</div>
+</p>
+
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+
+<!-- PART II  Alternates -->
+
+<div class="slide" id="component6">
+
+	<h2>Component 6: Collections</h2>
+
+
+  <img src="uml/component6.png" alt="collections" style="max-width: 100%; "  />
+
+
+</div>
+
+
+
+<!-- PART II  Alternates -->
+
+<div class="slide" id="specifications-as-collections">
+
+	<h2>Component 6: Collections Example</h2>
+
+
+  <img src="images/collections-prov.png" alt="prov-family" style="max-width: 120%; "  />
+
+
+</div>
+
+
+
+
+<div class="slide" id="component6-definitions">
+
+	<h2>Component 6: Collections</h2>
+
+
+<p>
+<div class="glossary-ref" ref="glossary-collection"></div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-dictionary"></div>
+</p>
+
+
+<p>
+<div class="glossary-ref" ref="glossary-insertion"></div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-removal"></div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-membership"></div>
+</p>
+
+</div>
+
+
+<div class="slide" id="layered1-2">
+
+	<h2>The PROV Family: The PROV Notation</h2>
+
+
+  <img src="images/prov-family2.png" alt="layered model" style="max-width: 100%; "  />
+
+</div>
+
+<!--  ---------------------------------------------------------------------- -->
+
+<div class="slide" id="prov-n">
+
+	<h2>PROV-N: The PROV Notation</h2>
+
+<ul>
+<li>A notation aimed at Human Consumption
+<pre>
+entity(tr:WD-prov-dm-20111215, [ prov:type='pr:RecsWD' ])
+</pre>
+<li> Used in mapping data model to RDF (and XML)
+<img src="images/ProvRdf.png" alt="charter" style="max-width: 100%; "  />
+<li> Used in providing semantics to data model
+</ul>
+</div>
+
+
+<div class="slide" id="prov-n2">
+
+	<h2>Example in PROV-N</h2>
+
+<div  style="font-size:small; max-width: 105%; ">
+<pre>
+
+entity(tr:WD-prov-dm-20111018, [ prov:type='pr:RecsWD' ])
+entity(tr:WD-prov-dm-20111215, [ prov:type='pr:RecsWD' ])
+entity(pr:rec-advance,         [ prov:type='prov:Plan' ])
+
+
+entity(ar1:0004, [ prov:type="http://www.w3.org/2005/08/01-transitions.html#transreq" %% xsd:anyURI ])
+entity(ar2:0141, [ prov:type="http://www.w3.org/2005/08/01-transitions.html#pubreq" %% xsd:anyURI ])
+entity(ar3:0111, [ prov:type="http://www.w3.org/2005/08/01-transitions.html#pubreq" %% xsd:anyURI ])
+
+
+wasDerivedFrom(tr:WD-prov-dm-20111215,tr:WD-prov-dm-20111018)
+
+
+activity(ex:pub1,,,[prov:type="publish"])
+activity(ex:pub2,,,[prov:type="publish"])
+
+
+wasGeneratedBy(tr:WD-prov-dm-20111018, ex:pub1)
+wasGeneratedBy(tr:WD-prov-dm-20111215, ex:pub2)
+
+used(ex:pub1,ar1:0004)
+used(ex:pub1,ar2:0141)
+used(ex:pub2,ar3:0111)
+
+agent(w3:Consortium, [ prov:type="Organization" ])
+
+wasAssociatedWith(ex:pub1, w3:Consortium  @ pr:rec-advance)
+wasAssociatedWith(ex:pub2, w3:Consortium  @ pr:rec-advance)
+</pre>
+</div>
+</div>
+
+
+<div class="slide" id="layered1-2bis">
+
+	<h2>The PROV Family: PROV-O</h2>
+
+
+  <img src="images/prov-family2.png" alt="layered model" style="max-width: 100%; "  />
+
+</div>
+
+<div class="slide" id="prov-o">
+
+	<h2>PROV-O: An OWL2 Ontology for PROV </h2>
+
+  <img src="images/provo.png" alt="PROV-O overview"  />
+
+
+</div>
+
+
+<div class="slide" id="prov-aq">
+
+	<h2>PROV-AQ: Provenance Access and Query </h2>
+
+  <img src="images/prov-family2.png" alt="layered model" style="max-width: 100%; "  />
+
+
+</div>
+
+
+
+<div class="slide" id="layered1-4">
+
+	<h2>The PROV Family: PROV Constraints</h2>
+
+
+  <img src="images/prov-family2.png" alt="layered model" style="max-width: 100%; "  />
+
+</div>
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+<div class="slide" id="time">
+
+
+	<h2>Time</h2>
+
+<ul>
+<li>Time is critical in the context of provenance</li>
+<li>Time can help corroborate provenance claims</li>
+<li> For instance, if an entity is claimed to be obtained by transforming another, then the
+latter must have existed before the former. If it is not the case, then there is something wrong with such a provenance claim </li>
+<li>Minimal time assumptions since provenance can be used in many contexts (standalone system, web, space)</li>
+</ul>
+
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+
+<div class="slide" id="events">
+
+
+	<h2>Events</h2>
+
+<p>
+<div class="glossary-ref" ref="glossary-event">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-generation-event">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-usage-event">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-destruction-event">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-start-event">
+</div>
+</p>
+
+<p>
+<div class="glossary-ref" ref="glossary-end-event">
+</div>
+</p>
+
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+<div class="slide" id="partial States">
+
+
+	<h2>Partial States</h2>
+
+<ul>
+<li>From a provenance viewpoint, it is important to identify a "<em>partial state</em>" of something, i.e. something with some aspects that have been fixed, so that it becomes possible to express its provenance, and what causes that thing, with these specific aspects to be as such. </li>
+
+<li> Attributes in PROV-DM help fix some aspect of entities.</li>
+<li> Entities are things in the world one wants to provide provenance for;
+   attribute-values describe entities' "partial states"</li>
+</ul>
+
+<div class="anexample">
+<pre>
+entity(tr:WD-prov-dm-20111215, [ prov:type='pr:RecsWD' ])
+</pre>
+
+<pre>
+entity(tr:WD-prov-dm-20111215, [ prov:type="document", ex:version="2" ])
+</pre>
+</div>
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+<div class="slide" id="constraints">
+
+
+	<h2>Constraints</h2>
+
+<p>
+  <img src="images/path6912.png" alt="constraints" style="max-width: 99%; "  />
+</p>
+
+
+<p>&nbsp</p>
+
+<p>
+<div class="element-ref" ref="start-precedes-end"></div>
+</p>
+
+<p>&nbsp</p>
+
+<p>
+<div class="element-ref" ref="generation-precedes-usage"></div>
+</p>
+
+
+<div class="note" id="responsibility.note">
+<p>some note here</p>
+</div>
+
+</div>
+
+
+
+<div class="slide" id="constraints2">
+
+	<h2>Constraints (2)</h2>
+
+<p>
+  <img src="images/g3271.png" alt="constraints" style="max-width: 99%; "  />
+</p>
+
+
+<p>&nbsp</p>
+
+
+<p>
+<div class="element-ref" ref="usage-within-activity"></div>
+</p>
+
+
+<p>&nbsp</p>
+
+
+<p>
+<div class="element-ref" ref="generation-within-activity"></div>
+</p>
+
+
+</div>
+
+
+
+<div class="slide" id="Conclusion">
+
+	<h2>Conclusion: Specifications</h2>
+
+<table border="1" style="margin-left: auto; margin-right: auto;">
+
+
+<tr><td>prov-primer</td>
+   <td><a href="http://www.w3.org/TR/prov-primer/">http://www.w3.org/TR/prov-primer/</a></td></tr>
+
+<tr><td>prov-o</td>
+   <td><a href="http://www.w3.org/TR/prov-o/">http://www.w3.org/TR/prov-o/</a></td></tr>
+
+
+<tr><td>prov-dm</td>
+   <td><a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a></td></tr>
+
+<tr><td>prov-dm-constraints</td>
+   <td><a href="http://www.w3.org/TR/prov-dm-constraints/">http://www.w3.org/TR/prov-dm-constraints/</a></td></tr>
+
+<tr><td>prov-n</td>
+   <td><a href="http://www.w3.org/TR/prov-n/">http://www.w3.org/TR/prov-n/</a></td></tr>
+
+<tr><td>prov-aq</td>
+   <td><a href="http://www.w3.org/TR/prov-aq/">http://www.w3.org/TR/prov-aq/</a></td></tr>
+
+<tr><td>prov-sem</td>
+   <td>Work in progress</td></tr>
+
+<tr><td>prov-xml</td>
+   <td>work in progress</td></tr>
+
+<tr><td>best practice</td>
+   <td>work in progress</td></tr>
+
+<tr><td>best practice</td>
+   <td>PROV-DC mapping. work in progress</td></tr>
+
+<tr><td>-</td></tr>
+
+<tr><td>prov-json</td>
+   <td>Southampton contribution</td></tr>
+
+<tr><td>prov-datalog</td>
+   <td>Paolo Missier</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+
+
+
+<!-- ---------------------------------------------------------------------- -->
+
+
+
+<div id="glossary_div" class="remove">
+<!-- glossary loaded from glossary.js will be hooked up here,
+     class remove, will remove this element from the final output.
+-->
+</div>
+
+<div id="divs_div" class="remove">
+<!-- divs loaded from all-divs.js will be hooked up here,
+     class remove, will remove this element from the final output.
+-->
+</div>
+
+
+
+
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="number" name="slidenum" id="goto-slide"></input>
+	<input type="submit" value="Go"></input>
+</form>
+
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+
+<!-- <script>window.jQuery || document.write('<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js">\x3C/script>')</script>-->
+
+<script>window.jQuery</script>
+
+<!-- Deck Core and extensions -->
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/core/deck.core.js"></script>
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/extensions/menu/deck.menu.js"></script>
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/extensions/goto/deck.goto.js"></script>
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/extensions/status/deck.status.js"></script>
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/extensions/navigation/deck.navigation.js"></script>
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/extensions/hash/deck.hash.js"></script>
+<script src="../deckjs/imakewebthings-deck.js-bb4870a/extensions/notes/deck.notes.js"></script>
+
+
+<!-- Place the following snippet at the bottom of the deck container. -->
+<div class="deck-notes" style="display: none; ">
+  <a href="#" class="deck-hide-notes deck-note-button">Hide</a>
+  <div class="deck-note-container">my sub note 4</div>  <!--  style="display: none; " -->
+</div>
+
+<div class="deck-show-notes">
+  <a href="#" class="deck-note-button">Show Speaker Notes</a>
+</div>
+
+<!-- Specific to this page -->
+<script src="introduction.js">
+</script>
+
+<script>
+
+$(function() {
+    $(document).bind('deck.change', function(event, from, to) {
+        $.deck('getSlide', from).children('video, audio').map(
+            function(){ this.pause(); }
+        );
+    });
+});
+
+</script>
+</body>
+</html>

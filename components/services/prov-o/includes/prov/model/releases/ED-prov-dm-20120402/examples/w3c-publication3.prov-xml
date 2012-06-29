@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<prov:container xmlns:prov="http://openprovenance.org/prov-xml#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ex="http://example.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rec="http://example.org/record" xmlns:w3="http://www.w3.org/TR/2011/">
+    <prov:records>
+        <prov:activity prov:id="ex:edit1">
+            <prov:type xsi:type="xsd:string">edit</prov:type>
+        </prov:activity>
+        <prov:entity prov:id="w3:WD-prov-dm-20111215">
+            <prov:type xsi:type="xsd:string">document</prov:type>
+            <ex:version xsi:type="xsd:string">2</ex:version>
+        </prov:entity>
+        <prov:agent prov:id="ex:Luc">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Paolo">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Khalid">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Stephen">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Yolanda">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Ryan">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Paul">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Graham">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Jim">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Simon">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:James">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:agent prov:id="ex:Satya">
+            <prov:type xsi:type="xsd:string">Person</prov:type>
+        </prov:agent>
+        <prov:dependencies>
+            <prov:wasGeneratedBy>
+                <prov:entity prov:ref="w3:WD-prov-dm-20111215"/>
+                <prov:activity prov:ref="ex:edit1"/>
+            </prov:wasGeneratedBy>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Luc"/>
+                <prov:role xsi:type="xsd:string">editor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Paolo"/>
+                <prov:role xsi:type="xsd:string">editor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Khalid"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Stephen"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Yolanda"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Ryan"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Paul"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Graham"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Jim"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Simon"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:James"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+            <prov:wasAssociatedWith>
+                <prov:activity prov:ref="ex:edit1"/>
+                <prov:agent prov:ref="ex:Satya"/>
+                <prov:role xsi:type="xsd:string">contributor</prov:role>
+            </prov:wasAssociatedWith>
+        </prov:dependencies>
+    </prov:records>
+</prov:container>

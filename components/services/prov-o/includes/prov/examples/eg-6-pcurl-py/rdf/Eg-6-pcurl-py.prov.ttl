@@ -1,0 +1,126 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix http: <http://www.w3.org/2011/http#> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<tag:tw.rpi.edu,2011:filed:DyW75k3hLEREtUoMNQccezkYoEiZzkNTrm9LPIKig6s=/sha-256-8VHP7JawVMSULOWegrfYl_vWlAkjRzdKUGHUL0Ihd20=/Eg-6-pcurl-py> a <http://purl.org/vocab/frbr/core#Item>;
+    prov:wasGeneratedBy <http://code.google.com/p/surfrdf/5b221dfe-d117-47c0-8ff0-15d35f5fb180>;
+    dc:date "2012-03-02T02:35:36.090627"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    dc:modified "2012-03-01T21:35:36"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    frbr:exemplarOf <tag:tw.rpi.edu,2011:manifestation:sha-256-zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=>;
+    frbr:reproductionOf <tag:tw.rpi.edu,2011:item:sha-256-iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=>;
+    nfo:fileUrl <Eg-6-pcurl-py>;
+    nfo:hasHash <di:sha-256;zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=> .
+
+<di:sha-256;iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash>;
+    nfo:hashAlgorithm "sha-256";
+    nfo:hashValue "iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=" .
+
+<http://code.google.com/p/surfrdf/2b559974-e961-443b-992c-5502a81c1aba> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "vary";
+    http:fieldValue "Accept-Encoding,Cookie";
+    http:hdrName <http://www.w3.org/2011/http-headers#vary> .
+
+<http://code.google.com/p/surfrdf/2bc8a257-fee1-40c3-b300-ace0aec01e23> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "expires";
+    http:fieldValue "Thu, 01 Jan 1970 00:00:00 GMT";
+    http:hdrName <http://www.w3.org/2011/http-headers#expires> .
+
+<http://code.google.com/p/surfrdf/53b06eaf-250c-4513-b902-4835c8b8b341> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "connection";
+    http:fieldValue "close";
+    http:hdrName <http://www.w3.org/2011/http-headers#connection> .
+
+<http://code.google.com/p/surfrdf/5b221dfe-d117-47c0-8ff0-15d35f5fb180> a <http://www.w3.org/2011/http#Request>;
+    prov:hadRecipe <http://www.w3.org/2011/http-methods#GET>;
+    prov:used <tag:tw.rpi.edu,2011:item:sha-256-iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=>;
+    prov:wasControlledBy <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+    dc:date "2012-03-02T02:35:36.090627"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    http:methd <http://www.w3.org/2011/http-methods#GET>;
+    http:requestURI "http://www.w3.org/2011/prov/wiki/Eg-6-pcurl-py";
+    http:resp <tag:tw.rpi.edu,2011:item:sha-256-iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=> .
+
+<http://code.google.com/p/surfrdf/5c77db61-f8ad-4a72-8a90-ae6de0272d70> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "content-language";
+    http:fieldValue "en";
+    http:hdrName <http://www.w3.org/2011/http-headers#content-language> .
+
+<http://code.google.com/p/surfrdf/8110d1df-d0c9-40cd-b565-2e1214c22844> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "p3p";
+    http:fieldValue "policyref=\"http://www.w3.org/2001/05/P3P/p3p.xml\"";
+    http:hdrName <http://www.w3.org/2011/http-headers#p3p> .
+
+<http://code.google.com/p/surfrdf/81f99bfc-4359-4200-9edb-00c933efce4a> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "server";
+    http:fieldValue "Apache/2";
+    http:hdrName <http://www.w3.org/2011/http-headers#server> .
+
+<http://code.google.com/p/surfrdf/8341b114-c927-4bd8-9050-bdd874b138c1> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "cache-control";
+    http:fieldValue "private, must-revalidate, max-age=0";
+    http:hdrName <http://www.w3.org/2011/http-headers#cache-control> .
+
+<http://code.google.com/p/surfrdf/8f5961b7-9e8d-4e5c-99d3-bd9d8836abda> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "content-type";
+    http:fieldValue "text/html; charset=UTF-8";
+    http:hdrName <http://www.w3.org/2011/http-headers#content-type> .
+
+<http://code.google.com/p/surfrdf/a366f706-38e8-47d7-91f2-91fff61bb114> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "last-modified";
+    http:fieldValue "Fri, 02 Mar 2012 02:35:17 GMT";
+    http:hdrName <http://www.w3.org/2011/http-headers#last-modified> .
+
+<http://code.google.com/p/surfrdf/b12f56be-72a5-450e-88bc-a9852d8712e5> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "x-powered-by";
+    http:fieldValue "PHP/5.2.6-1+lenny16";
+    http:hdrName <http://www.w3.org/2011/http-headers#x-powered-by> .
+
+<http://code.google.com/p/surfrdf/c4d9e0a5-5bb7-474d-a27e-a71e5a5e8112> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "x-vary-options";
+    http:fieldValue "Accept-Encoding;list-contains=gzip,Cookie;string-contains=wikidb_provwg_Token;string-contains=wikidb_provwg_LoggedOut;string-contains=wikidb_provwg__session";
+    http:hdrName <http://www.w3.org/2011/http-headers#x-vary-options> .
+
+<http://code.google.com/p/surfrdf/ebeb90ba-e5fb-406f-986e-b715869fc9d9> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "transfer-encoding";
+    http:fieldValue "chunked";
+    http:hdrName <http://www.w3.org/2011/http-headers#transfer-encoding> .
+
+<http://code.google.com/p/surfrdf/fcb46054-e0b3-4f1e-b3d7-21544f8c241c> a <http://www.w3.org/2011/http#ResponseHeader>;
+    http:fieldName "date";
+    http:fieldValue "Fri, 02 Mar 2012 02:35:35 GMT";
+    http:hdrName <http://www.w3.org/2011/http-headers#date> .
+
+<http://www.w3.org/2011/prov/wiki/Eg-6-pcurl-py> a <http://purl.org/vocab/frbr/core#Work> .
+
+<tag:tw.rpi.edu,2011:expression:sha-256-zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=> a <http://purl.org/vocab/frbr/core#Expression>;
+    frbr:realizationOf <http://www.w3.org/2011/prov/wiki/Eg-6-pcurl-py>;
+    nfo:hasHash <di:sha-256;zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=> .
+
+<tag:tw.rpi.edu,2011:manifestation:sha-256-zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=> a <http://purl.org/vocab/frbr/core#Manifestation>;
+    frbr:embodimentOf <tag:tw.rpi.edu,2011:expression:sha-256-zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=>;
+    nfo:hasHash <di:sha-256;zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=> .
+
+<di:sha-256;zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=> a <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#FileHash>;
+    nfo:hashAlgorithm "sha-256";
+    nfo:hashValue "zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=" .
+
+<tag:tw.rpi.edu,2011:item:sha-256-iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=> a <http://www.w3.org/2011/http#Response>;
+    dc:date "2012-03-02T02:35:35+00:00"^^<http://www.w3.org/2001/XMLSchema#dateTime>;
+    frbr:exemplarOf <tag:tw.rpi.edu,2011:manifestation:sha-256-zAqXkBcBoHek15657R8OibGSsC2448XCpl_lpmJPg8U=>;
+    nfo:hasHash <di:sha-256;iL68EDd3DQOL0XpeMP2G5wiBXOcLaK7UF-OzG9VAv28=>;
+    http:headers <http://code.google.com/p/surfrdf/2b559974-e961-443b-992c-5502a81c1aba>,
+        <http://code.google.com/p/surfrdf/2bc8a257-fee1-40c3-b300-ace0aec01e23>,
+        <http://code.google.com/p/surfrdf/53b06eaf-250c-4513-b902-4835c8b8b341>,
+        <http://code.google.com/p/surfrdf/5c77db61-f8ad-4a72-8a90-ae6de0272d70>,
+        <http://code.google.com/p/surfrdf/8110d1df-d0c9-40cd-b565-2e1214c22844>,
+        <http://code.google.com/p/surfrdf/81f99bfc-4359-4200-9edb-00c933efce4a>,
+        <http://code.google.com/p/surfrdf/8341b114-c927-4bd8-9050-bdd874b138c1>,
+        <http://code.google.com/p/surfrdf/8f5961b7-9e8d-4e5c-99d3-bd9d8836abda>,
+        <http://code.google.com/p/surfrdf/a366f706-38e8-47d7-91f2-91fff61bb114>,
+        <http://code.google.com/p/surfrdf/b12f56be-72a5-450e-88bc-a9852d8712e5>,
+        <http://code.google.com/p/surfrdf/c4d9e0a5-5bb7-474d-a27e-a71e5a5e8112>,
+        <http://code.google.com/p/surfrdf/ebeb90ba-e5fb-406f-986e-b715869fc9d9>,
+        <http://code.google.com/p/surfrdf/fcb46054-e0b3-4f1e-b3d7-21544f8c241c>;
+    http:httpVersion "1.1" .
+

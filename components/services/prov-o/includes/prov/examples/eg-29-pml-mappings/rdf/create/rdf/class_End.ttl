@@ -1,0 +1,22 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix pmlj: <http://inference-web.org/2.0/pml-justification.owl#> .
+@prefix pmlt: <http://inference-web.org/2.0/pml-trust.owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+# End can be used to qualify wasEndedBy with time and location information
+
+:experiment 
+   a pmlj:InferenceStep;
+   pmlj:hasInferenceEngine :inconsistentResult; # LOST: a result is an pmlp:Agent...
+   :lost [
+      a :NoSuchPMLEquivalent;
+   #         prov:entity     :inconsistentResult;
+      :lost "2011-07-16T01:52:02Z"^^xsd:dateTime;
+      :lost :scienceLab_003;
+   #];
+.
+   
+:inconsistentResult a pmlp:Information, pmlj:NodeSet . # The conclusion of :experiment?

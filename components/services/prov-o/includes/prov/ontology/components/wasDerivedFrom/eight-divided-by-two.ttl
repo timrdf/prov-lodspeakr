@@ -1,0 +1,52 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix math: <#math> .
+@prefix :    <#> .
+
+# Unqualified derivation
+
+:four prov:wasDerivedFrom :two ;
+      prov:wasDerivedFrom :eight .
+
+# Qualified derivation (by making implied PE explicit):
+
+:four prov:wasGeneratedBy :algebraic_operation . 
+
+:algebraic_operation
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#pe-linked-derivationExpression>,
+                <http://www.w3.org/2011/prov/wiki/PIL_OWL_Ontology_Meeting_2011-11-08#Modeling_an_algebraic_division_with_qualified_wasDerivedFrom>,
+                <http://www.w3.org/2011/prov/wiki/Qualifed_Involvements_in_PROV-O>;
+   dcterms:description "wasDerivedFrom(e5,e3,algebraic_operation,qualifier(role='numerator'),qualifier(role='result'))", 
+                       "4 (when playing role of result) wasDerivedFrom 8 (when playing role of numerator)";
+   a prov:ProcessExecution, math:DivisionProcessExecution;
+
+   prov:used :two;
+   prov:qualifedUsage [
+      a prov:Usage;
+      prov:entity :two;
+      prov:role math:denominator;
+   ];
+   
+   prov:used :eight;
+   prov:qualifedUsage [
+      a prov:Usage;
+      prov:entity :eight; 
+      prov:role math:numerator;
+   ];
+
+   prov:generated :four;
+   prov:qualifedGeneration [
+      a prov:Generation;
+      prov:entity :four; 
+      prov:role math:answer;
+   ];
+.
+:two   rdf:value 2 .
+:four  rdf:value 4 .
+:eight rdf:value 8 .

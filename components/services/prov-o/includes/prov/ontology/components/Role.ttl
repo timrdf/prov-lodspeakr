@@ -1,0 +1,30 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:hadRole
+   a owl:ObjectProperty;
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#extensibility-section>;
+   rdfs:comment "The PROV-DM namespace declares a reserved qualifier: role.";
+   rdfs:domain prov:QualifiedInvolvement;
+   rdfs:range  prov:Role;
+. 
+
+prov:Role
+   a owl:Class;
+   rdfs:label "Role";
+.
+
+prov:controller  
+   a prov:Role;
+   rdfs:label "controller";
+   rdfs:comment "The role of controlling a ProcessExecution. This is an implied role when asserting wasControlledBy and qualifedControl.";
+.
+
+prov:participant 
+   a prov:Role;
+   rdfs:label "participant";
+   rdfs:comment "The role of participating in a ProcessExecution. This is an implied role when asserting hadParticipant and qualifiedParticipation..";
+.

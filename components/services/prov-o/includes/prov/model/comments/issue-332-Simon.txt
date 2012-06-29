@@ -1,0 +1,35 @@
+1. Section 1.2: I suggest you also identify the "prov" namespace prefix here, as it is used in the examples in the document.
+
+2. There is apparent inconsistency of brackets. The collections expressions use curly braces {} for unordered sets, while the rest of PROV-N uses square brackets [], e.g. for attribute sets. I suggest the curly braces are more standard.
+
+PM: I do agree but this is a rather pervasive change as all examples everywhere use []
+
+
+3. I find the form of sentence "An X's text matches the Y production" unintuitive. I think it is clear what you mean from the context, but is "text" the right word? Maybe something like "An X is expressed in PROV-N using the Y production" would be clearer?
+
+4. Some grammar errors in Section 2:
+ - Bullet 1: "consisting a name"
+ - Bullet 1: "in bracket"
+ - Bullet 4: "identifier always occur"
+ - Bullet 4: "with optional identifier"
+
+PM done.
+
+5. I notice that PROV-N has no plan(...) construct, while PROV-O has a Plan class (also raised in my review of PROV-O). Might this cause issues translating between them?
+
+PM this is rather a PROV-O issue
+
+6. Considering the document as a whole, its real purpose seems a little unclear to me. Is it meant to be (a) the grammar of PROV-N, or (b) an explanation of the grammar of PROV-N? The document seems maybe too heavyweight for (a) and too minimal for (b).
+
+In more detail, if it is just intended to be a grammar for a language whose meaning is explained elsewhere (the DM spec), then why include examples, subsections, introductory boilerplate, and design rationale? That is, why not just have a file containing the EBNF?
+
+If it is supposed to explain the grammar, so helping those constructing PROV-N or reading PROV-N others have constructed, then I find it too light. To take an example from the document, if a user reads "actedOnBehalfOf(r, ag2, ag3, a, [prov:type="contract"])" in some PROV-N data, then looks up the expression in Section 4.2.4 of the PROV-N document, they will not understand what it means, and will not know which agent is acting on behalf of which other (as all the parameter names are opaque with regard to their role). They could understand from looking in the DM spec, but then the PROV-N document is not needed for explanation after all.
+
+PM the plan here is to blend the DM descriptions for each relation in as part of the production descriptions, in a way that can be shown/hidden on demand. This has not been achieved yet.
+
+There is one piece of explanation of expressions' meaning at the end of Section 2, that the subject of the relation precedes its object, but this seems inadequate for understanding most expressions and inconsistent with the lack of explanation of meaning elsewhere in the document.
+
+PM that is a general consideration, I have tried to explain it better, see also my  comment to the previous point.
+
+I'm not sure what to suggest to resolve this point, except to consider whether the content of the document really fits its intended use, as it wasn't entirely clear to me that this is the case now.
+

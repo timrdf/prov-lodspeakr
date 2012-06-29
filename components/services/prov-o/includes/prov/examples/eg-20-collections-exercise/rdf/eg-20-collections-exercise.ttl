@@ -1,0 +1,179 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix ex:      <http://example.com/>
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-20-collections-exercise/rdf/eg-20-collections-exercise.ttl#> .
+
+### already in prov, added to test OWL profile ###
+
+prov:Entity a owl:Class .
+
+prov:Involvement a owl:Class .
+
+prov:Membership a owl:Class .
+
+prov:qualifiedForm a owl:AnnotationProperty .
+
+prov:wasDerivedFrom a owl:ObjectProperty .
+
+prov:Membership a owl:Class .
+
+### classes ###
+
+prov:Collection a owl:Class ;
+   rdfs:subClassOf prov:Entity .
+
+prov:EmptyCollection a owl:Class ;
+   rdfs:subClassOf prov:Collection .
+
+prov:CollectionInvolvement a owl:Class ;
+    # To avoid confusion we don't make it a subclass of
+    # EntityInvolvement. See prov:AgentInvolvement argument
+    rdfs:subClassOf prov:Involvement .
+
+prov:Insertion a owl:Class ;
+   rdfs:subClassOf prov:CollectionInvolvement .
+
+prov:Removal a owl:Class ;
+   rdfs:subClassOf prov:CollectionInvolvement .
+
+prov:KeyValuePair a owl:Class .
+
+
+### object properties ###
+
+prov:collection a owl:ObjectProperty ;
+    rdfs:domain prov:CollectionInvolvement ;
+    rdfs:range prov:Collection .
+
+prov:inserted a owl:ObjectProperty ;
+    rdfs:domain prov:Insertion ;
+    rdfs:range prov:KeyValuePair .
+
+prov:value a owl:ObjectProperty, owl:FunctionalProperty ;
+    rdfs:domain prov:KeyValuePair ;
+    rdfs:range prov:Entity .
+
+prov:knownMembership a owl:ObjectProperty ;
+	rdfs:domain prov:Collection ;
+	rdfs:range prov:Membership .
+
+prov:member a owl:ObjectProperty ;
+	rdfs:domain prov:Membership ;
+	rdfs:range prov:KeyValuePair .
+
+prov:derivedByInsertionFrom a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    rdfs:domain prov:Collection ;    
+    rdfs:range prov:Collection ;
+    prov:qualifiedForm prov:qualifiedInsertion .
+
+prov:derivedByRemovalFrom a owl:ObjectProperty ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    rdfs:domain prov:Collection ;    
+    rdfs:range prov:Collection ;
+    prov:qualifiedForm prov:qualifiedRemoval .
+
+prov:qualifiedInsertion a owl:ObjectProperty ;
+    rdfs:domain prov:Collection ;    
+    rdfs:range prov:Insertion .
+
+prov:qualifiedRemoval a owl:ObjectProperty ;
+    rdfs:domain prov:Collection ;    
+    rdfs:range prov:Removal .
+
+### datatype properties ###
+
+prov:key a owl:DatatypeProperty, owl:FunctionalProperty ;
+   rdfs:domain prov:KeyValuePair . 
+
+prov:removedKey a owl:DatatypeProperty ;
+    rdfs:domain prov:Removal .
+
+### examples ###
+
+
+## Insertion ##
+
+#entity(c, [prov:type="prov:EmptyCollection"])
+:c a prov:EmptyCollection .
+
+#entity(e1)
+:e1 a prov:Entity .
+
+#entity(e2)
+:e2 a prov:Entity .
+
+#entity(e3)
+:e3 a prov:Entity .
+
+#entity(c1, [prov:type="prov:Collection"])
+:c1 a prov:Collection .
+
+#entity(c2, [prov:type="prov:Collection"])
+:c2 a prov:Collection .
+  
+#derivedByInsertionFrom(c1, c,  {("k1", e1), ("k2", e2)})
+:c1 prov:derivedByInsertionFrom :c ;
+    prov:qualifiedInsertion 
+   [ a prov:Insertion ;  
+     # Just keep it simple and stay closer to PROV-DM than to formal
+     # collection semantics stuff. Readable RDF wins.
+     prov:collection :c ;
+     prov:inserted [ a prov:KeyValuePair;
+           prov:key "k1"^^xsd:string ;
+           prov:value :e1 ;
+         ], [ a prov:KeyValuePair ;
+           prov:key "k2"^^xsd:string ;
+           prov:value :e2 ;
+         ]
+   ] .
+
+   
+#derivedByInsertionFrom(c2, c1, {("k3", e3)})
+:c2 prov:derivedByInsertionFrom :c1 ;
+    prov:qualifiedInsertion 
+   [ a prov:Insertion ;  
+     prov:collection :c ;
+     prov:inserted [ a prov:KeyValuePair;
+           prov:key "k3"^^xsd:string ;
+           prov:value :e3 ;
+         ]
+   ] .
+
+## Removal ##
+
+
+#entity(c3, [prov:type="prov:Collection"])
+:c3 a prov:Collection .
+
+#derivedByRemovalFrom(c3, c2, {k1, k3})
+:c3 prov:derivedByRemovalFrom :c2 ;
+    prov:qualifiedRemoval 
+   [ a prov:Removal ;
+     prov:collection :c2 ;
+     prov:removedKey "k1"^^xsd:string, "k3"^^xsd:string 
+   ] .  
+
+
+## Membership ##
+
+
+# memberOf(c1, {("k1", e1), ("k2", e2)} )  
+:c1 prov:knownMembership [ a prov:Membership ;
+    prov:member [ a prov:KeyValuePair;
+        prov:key "k1"^^xsd:string ;
+        prov:value :e1
+      ] , [ a prov:KeyValuePair;
+        prov:key "k2"^^xsd:string ;
+        prov:value :e2
+      ] .
+
+

@@ -1,0 +1,30 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix sd:   <http://www.w3.org/ns/sparql-service-description#> .
+
+prov:NamedGraph
+   a owl:Class;
+   rdfs:subClassOf sd:NamedGraph, prov:Account;
+   rdfs:seeAlso <http://www.w3.org/TR/sparql11-service-description/>,
+                <https://github.com/timrdf/csv2rdf4lod-automation/raw/master/doc/ontology-diagrams/sparql-service-description-2010-10-31.pdf>,
+                <http://www.w3.org/2011/prov/wiki/Using_named_graphs_to_model_Accounts>,
+                <https://github.com/timrdf/csv2rdf4lod-automation/wiki/Naming-sparql-service-description%27s-sd:NamedGraph>;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty sd:name;
+      owl:cardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:hasLocation;
+      owl:cardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:lastModified;
+      owl:cardinality 1;
+   ];
+   owl:hasKey ( sd:name prov:hasLocation prov:lastModified );
+   rdfs:seeAlso <http://www.w3.org/TR/2009/REC-owl2-rdf-based-semantics-20091027/#Semantic_Conditions_for_Keys>;
+.

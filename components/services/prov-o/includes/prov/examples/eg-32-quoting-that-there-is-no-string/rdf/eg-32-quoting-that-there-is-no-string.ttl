@@ -1,0 +1,55 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-32-quoting-that-there-is-no-string/rdf/eg-32-quoting-that-there-is-no-string.ttl#> .
+
+:quote
+   a prov:Entity;
+   prov:wasQuotedFrom <http://dvcs.w3.org/hg/prov/raw-file/d1f329cc7581/examples/eg-31-there-is-no-string-mentioned/rdf/eg-31-there-is-no-string-mentioned.ttl>;
+   prov:generatedAtTime "2012-06-01T08:11:40-04:00"^^xsd:dateTime; 
+   prov:value """@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-31-there-is-no-string-mentioned/rdf/eg-31-there-is-no-string-mentioned.ttl#> .
+
+:activity
+   a prov:Activity;
+   prov:wasStartedBy [
+       a prov:Entity;
+       prov:specializationOf <http://www.w3.org/mid/CAJCyKRob7wC8-otA3LfMjkuVcFckh+bF7N5VyOrmpG8=mDJqiA@mail.gmail.com>;
+       prov:wasAttributedTo <http://data.semanticweb.org/person/paul-groth>;
+       prov:atLocation <http://purl.org/twc/id/machine/lebot/MacBookPro6_2>;
+   ];
+
+   prov:used <http://www.w3.org/TR/prov-o/>;
+   prov:generated [ prov:value "0" ];
+
+   prov:qualifiedAssociation [
+      a prov:Association;
+      prov:agent <http://tw.rpi.edu/instances/TimLebo>;
+      prov:hadPlan [
+           a prov:Plan;
+           prov:value "curl -s http://www.w3.org/TR/prov-o/prov.owl | grep 'example.org' | wc -l";
+           prov:wasDerivedFrom [
+               prov:value "http://www.w3.org/TR/prov-o/prov.owl";
+               prov:wasQuotedFrom <http://www.w3.org/TR/prov-o/>;
+           ];
+      ];
+   ];
+.
+""";
+.   

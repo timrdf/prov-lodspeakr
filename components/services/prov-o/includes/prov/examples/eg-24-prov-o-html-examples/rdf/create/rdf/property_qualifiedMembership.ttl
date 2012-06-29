@@ -1,0 +1,59 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:todays-us-supreme-court-as-dictionary
+   a prov:Dictionary, :RobertsCourt;
+
+   prov:qualifiedMembership [ # We can qualify a KeyValuePair's membership in this Dictionary.
+      a prov:Membership;
+      prov:pair [            
+         a prov:KeyValuePair;
+         prov:pairKey   "chief";
+         prov:pairValue <http://dbpedia.org/resource/John_Glover_Roberts,_Jr.>;
+      ];
+      
+      :hadRole :chief-justice;     # Here is my little addition about Chief Roberts. (note, we can't use prov:hadRole)
+   ];
+   prov:qualifiedMembership [ # We can also qualify many KeyValuePairs' memberships in this Dictionary.
+      a prov:Membership;
+
+      :hadRole :associate-justice; # Here is my little addition about the rest of the Chiefs. (note, we can't use prov:hadRole)
+
+      prov:pair [ # The same property is used to point to one or many KeyValuePairs.
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 9";
+         prov:pairValue <http://dbpedia.org/resource/Antonin_Scalia>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 4";
+         prov:pairValue <http://dbpedia.org/resource/Anthony_Kennedy>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 10";
+         prov:pairValue <http://dbpedia.org/resource/Clarence_Thomas>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 6";
+         prov:pairValue <http://dbpedia.org/resource/Ruth_Bader_Ginsburg>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 2";
+         prov:pairValue <http://dbpedia.org/resource/Stephen_Breyer>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 8";
+         prov:pairValue <http://dbpedia.org/resource/Samuel_Alito>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 1";
+         prov:pairValue <http://dbpedia.org/resource/Sonia_Sotomayor>;
+      ], [
+         a prov:KeyValuePair;
+         prov:pairKey   "seat 3";
+         prov:pairValue <http://dbpedia.org/resource/Elena_Kagan>;
+      ];
+   ]; # <- the prov:Membership
+.

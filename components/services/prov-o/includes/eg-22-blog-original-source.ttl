@@ -1,0 +1,17 @@
+@prefix ex:   &lt;http://www.example.org/&gt;
+@prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt;
+
+# Example taken from: 
+# http://www.w3.org/blog/SW/2011/10/23/5-simple-provenance-statements
+# A post is attributed to an agent.
+# The post extracted the information from another post
+
+ex:oldPost a prov:Entity.
+
+ex:post 
+   a prov:Entity;
+   prov:hadOriginalSource ex:oldPost;
+   prov:wasAttributedTo   ex:Paul;
+.
+
+ex:Paul a prov:Person.

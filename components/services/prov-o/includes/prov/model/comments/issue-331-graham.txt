@@ -1,0 +1,647 @@
+  > While this has many improvements over previous documents, I still feel that
+  > there are several respects in which the document does not really serve its
+  > intended purpose.
+  > 
+  > Generally, I found the tone and phrasing were more akin to academic rhetoric,
+  > whose purpose is to persuade a peer of the truth of some proposition, than a
+  > technical standard whose aim should be to *specify*, *inform* and where
+  > necessary to *explain*.  Especially for developers who will have to use this
+  > material as a reference source.  Thus, I found much of what I read, particularly
+  > in the introductory section, had far to much justification (some of which was
+  > obvious, other aspects of which were just "noise") which didn't help to to
+  > understand what was being presented, or how to use it.
+
+Are they all listed below?
+
+  > 
+  > I also still have problems with the overall organization.  In particular, I
+  > (still) find the example in section 3 breaks the hoped-for flow between the
+  > section 2 overview (which I also now think is mis-titled) and the provenance
+  > expression details in section 4.  I also don't think the final two subsections
+  > of section 2 belong there, as they deal with provenance expression details, not
+  > concepts.
+
+Comment noted. Supportive comments from other reviewers also noted.
+
+  > 
+  > Finally, I found many examples of unusual or awkward phrasing which I found to
+  > be unhelpful, confusing or in some cases just plain wrong.
+
+Are they all listed below?
+
+  > 
+  > To summarize: if we expect the next public working draft to be nearly ready for
+  > last, then I don't think this document is ready for release.
+  > 
+  > Details follow.
+  > 
+  > ...
+  > 
+  > 
+  > == Abstract ==
+  > 
+  > The phrase "derivations between entities" is strange and confusing.  I think you
+  > mean something like "derivation of entities from other entities".
+  > 
+Done
+
+  > "Properties that link entities that refer to a same thing".  I think this is
+  > just wrong:  I don't believe that entities *refer*.  I think you mean something
+  > like "Properties that link entities that are based on the same thing".
+
+This questions the definition of specialization that was agreed over email.
+See ISSUE-29 discussion.
+
+TODO: when definition of specialization agreed.
+
+  > 
+  > "collections of entities, whose provenance itself can be tracked" - this feels
+  > vaguely ungrammatical, and I'm not quite sure what this is trying to express.
+
+Rephrased as:
+ collections forming a logical structure for its members;
+
+
+  > In any case, I'll argue later that I don;t see why this is necessary as part of
+  > the provenance core model.  (What I'm not seeing here is anything I can
+  > recognize as the notion of accounts, which allow for provenance of provenance to
+  > be expressed.)
+
+It was agreed we would not address it for WD5, unless all other issues are solved.
+
+  > 
+  > Here, and later in the document, there are references to "natural language".  I
+  > believe this is a term of art that is meaningful only to those who have exposure
+  > to formal languages, as a way of distinguishing, and may be confusing to some
+  > readers.  In the abstract, I'd suggest just dropping this - the rest of the
+  > sentence carries the intended meaning.
+
+Updated to: "This document introduces the provenance concepts underpinning
+  PROV-DM, and defines PROV-DM types and relations"
+
+  > 
+  > I'm not sure what you mean by "systematically defines".  Just "defines" would
+  > do, I think.
+  > 
+
+Done.
+
+  > == Status of this document ==
+  > 
+  > The heading "how to read this document" is, I think, both patronizing and
+  > inaccurate.  And the following comments seem to significantly replicate the
+  > content of the preceding text.  I'd suggest moving descriptive material about
+  > the documents into the preceding text, and drop the stuff that tries to tell
+  > people what to read.
+ 
+
+This heading is also in prov-aq.
+
+We received very clear feedback, from Ivan in particular, that we need
+to be clear about the order in which readers should approach our
+documents.
+
+It is the Chairs' intent to have a PROV-overview document. In the
+meantime, this kind of information is placed in the SOTD paragram.
+
+
+ > 
+  > "Fourth public working draft".  Really!!  Are we really up to 4 with this?  I
+  > lose count.
+  > 
+
+yes. 4 public + 1 internal
+
+  > == Introduction ==
+  > 
+  > "how it should be integrated with other diverse information sources".  I find
+  > this phrase to be vague and unclear, and hence unhelpful.  I'd suggest dropping
+  > this, and changing "... help those users to make trust judgements" in the next
+  > sentence to read:
+  > 
+  > "... help those users to decide which information to include in their analyses,
+  > and which to exclude."
+
+This text comes from the incubator final report.
+It's crucial to me to keep the term trust. 
+
+No action.
+
+  > 
+  > "The idea that ... a pragmatiuc approach is to consider ..." add's no useful
+  > value.  I suggest replacing all of this with "We consider ...".
+
+Can be dropped.  Was in the charter.
+
+  > 
+  > "the vision is that" is pure noise.  Suggest deleting this.  This whole
+  > paragraph seems to be an unnecessary repetition of what the previous says.
+  > While I sometimes think that a repeated summary can be useful, in this case I
+  > think it would be more helpful to simplify the preceding paragraph.
+
+Updated paragraph.
+
+  > 
+  > The material that starts with "A set of specifications, ..." seems to be pure
+  > repetition of material contained in the "status of this document" - is it really
+  > necessary to repeat it here?
+
+Given that ultimately the SOTD paragraph will belong to a separate document yes.
+It's worth keeping this here.
+
+  > 
+  > The listing of "components!" seems to be greatly redundant.  Each component is
+  > both numbered (N) and introduced as "component N".  I think a simple numbered
+  > list without the "component N" tags would suffice.
+
+OK
+
+  > 
+  > Two paragraphs starting with "This specification intentionally presents..." -
+  > these paragraphs are loaded with unnecessary self-justification.  I think a
+  > simpler statement along the lines of:
+  > 
+  > "This specification presents the key concepts of the PROV data model and
+  > provenance expressions, without specific concern for how they are applied.  A
+  > companion document [PROV-DM-CONSTRAINTS] discusses some possible constraints on
+  > the application of this model, and corresponding useful inferences that may be
+  > available when those constraints are known to be satisfied."
+  > 
+
+Some of it adopted.
+
+  > [[The next comment is rendered moot if the previous one is accepted...]]
+  > Paragraph: "However, if data changes...".  To an uninitiated reader, it is not
+  > at all clear what is meant by "data" here.  I'd suggest something like "If a
+  > thing about which provenance is expressed is subject to change, it is
+  > challenging to express its provenance precisely (e.g. the data from which a
+  > daily weather report is derived will change from day to day)."  Drop the
+  > reference to other metadata here - it adds nothing of value.
+  > 
+
+Done.
+
+  > @@(note to self) raise a separate issue about how to describe this "refinement".
+  >   I know I have argued for "refinement" over the idea of an "updated" or
+  > "modified" provenance model, but the term is still a bit vague.  I find myself
+  > leaning toward a notion of a "strict" interpretation of provenance that in turn
+  > allows certain inferences to be drawn if the supplied provenance satisfies
+  > certain strictness criteria (constraints).
+
+Nothing TODO.
+
+  > 
+  > == 1.2 PROV namespace ==
+  > 
+  > This section glibly introduces the notion of a "namespace" without explaining
+  > (or citing) what it means.
+  > 
+  > "The PROV namespace is http://www.w3.org/prov#".  This is WRONG.
+  > http://www.w3.org/prov# is a URI, not a namespace (or, more precisely, it's a
+  > string that conforms to URI syntax).
+  > 
+  > What should be said is something like: "The names for concepts, attributes and
+  > other reserved names introduced by this document belong to a namespace
+  > identified by the URI http://www.w3.org/prov#".
+
+Merged section 1.2 and 1.3 in a single section "notational conventions"
+
+This section lists prefixes and namespace uris used in this document.
+The purpose of the PROV namespace is discussed in 4.7.1
+
+
+  > And: what is the consequence of these names belonging to a namespace?  I think
+  > it would be appropriate to cite the corresponding XML and RDF documents that
+  > deal with namespace issues [1] [2].
+  > 
+  > [1] http://www.w3.org/TR/REC-xml-names/
+  > 
+  > [2] http://www.w3.org/TR/REC-rdf-syntax/ (sections 6.1.2, 6.1.4, etc.  These
+  > define how RDF/XML forms a URI-reference by appending a local name to a
+  > namespace URI.)
+
+We discuss namespace in 4.7.1.   This discussion of forming URIs by concatenating
+namespace URI and  local name is already part of 4.7.2.
+
+  > 
+  > == Section 2, PROV-DM staring points ==
+  > 
+  > I think this section is mis-titled.
+  > 
+  > I think it should be: "2. Introduction to provenance concepts", since that is
+  > what most of the section is about.
+  > 
+  > In light of this, the final two sub-sections seem mis-placed, and I suggest they
+  > should be part of the early material in section 4.
+  > 
+
+I think section 3 is at the right place. 
+Section 2 structure does not need to be changed.
+
+
+  > "... that a novice reader would write in a first instance".  Yuk!  How
+  > patronizing!  Also, a reference here to "natural language" (see previous).  I
+  > would phrase this whole paragraph thus:
+  > 
+  > "This section introduces provenance concepts with informal descriptions and
+  > illustrative examples.  Later (section @@ref), we describe how these concepts
+  > are described using PROV-DM types and relations."
+
+Adopted some of these changes. I kept forwarding pointer to 2.5 and 2.6.
+
+  > 
+  > (where @@ref should be in another section that actually deals with PROV-DM terms.)
+  > 
+  > == 2.1 Entity and Activity ==
+  > 
+  > "The term things encompasses..." - I find this phrasing awkward and potentially
+  > confusing - are we talking here about things or entities?  I suggest simply
+  > "These encompass ..."
+
+OK
+  > 
+  > The final sentence is mostly noise.  Why not just "Any Web resource may be an
+  > entity."?
+
+
+I removed this sentence. The example already mentions document at URI.
+
+The recent changes in PROV-AQ also indicate that web resource can also
+be activity or anything identifiable in the model.
+
+  > 
+  > "For the purpose of this specification..." is just noise.  Also, confusing
+  > reference to "entities" and "things".  Suggest for this para:  "An entity is a
+  > thing one wants to provide provenance for, which may be physical, digital,
+  > conceptual, or otherwise; entities may be real or imaginary."
+
+Adopt Simon's definition here.
+
+An entity is a physical, digital, conceptual, or other kind of thing; entities may be real or imaginary.
+
+  > 
+  > "This action can take multiple forms: ..." - this is confusing; are we talking
+  > about a single activity having multiple forms, or different activities having
+  > different forms.  I think you mean the latter, hence I suggest: "An activity is
+  > something that occurs over a period of time and acts upon or with entities. They
+  > may include consuming, processing, transforming, modifying, relocating, using,
+  > generating, or other associations with entities."
+
+Updated as follows: 
+
+An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, generating, or being associated with entities. 
+
+
+  > 
+  > 
+  > == 2.2, et seq. ==
+  > 
+  > I find similar issues with the wording of subsequent sections, but I haven't
+  > gone through every one for lack of time.  But I hope you get the general thrust
+  > from the above.
+
+Please provide explicit comments.
+
+  > 
+  > 
+  > == 2.3 Agents and other types of entities ==
+  > 
+  > I think this exhibits poor organization of the material.  I think Agents and
+  > Plans are related, and suggest a sub-section for them.  Collections and accounts
+  > don't have any obvious relationship, and IMO should be separated.
+
+All are types of entities, from this point of view it's logical.
+We can instead take the 'component 2 approach' in which we
+merge agent, plan, attribution, association, responsibility.
+
+
+
+  > 
+  > Concerning collections, it is not at all clear to me that these need to be in
+  > the core PROV-DM.  By including them here, you impose a particular view of
+  > collections that may not be appropriate  (somewhere, though I can't immediately
+  > find where, there is mention of a collection being a key-value map).  Domains
+  > that deal with collections have their own models for these, so why not let this
+  > be an aspect for domain-specific extension?
+  > 
+
+
+prov:Collection is similar to RDF container
+http://www.w3.org/TR/rdf-schema/#ch_containermembershipproperty
+
+Except that "keys" are not restricted to be rdf:_1, rdf:_2, ... but
+allowed to be prov-dm values.
+
+
+prov:Collection can also describe car (rdf:first), cdr (rdf:rest) for list.
+
+This kind of usage should into the "collection primer", to be written.
+
+So, given this, we don't think that we are imposing a particular view
+on collections that may not be appropriate.
+
+
+  > 
+  > I think accounts should have a section of their own, since they underpin the key
+  > feature of supporting provenance0-of-provenance.
+
+TODO: To be addressed later: account.
+
+  > 
+  > However, I have a problem with the description "An account is an entity that
+  > contains a bundle of provenance descriptions."  I think that this should be "An
+  > account *is* an entity that is a bundle of provenance descriptions."  That is, I
+  > don't think the core DM needs to or should expose the notion of containment,
+  > since that begs more questions.
+
+TODO:  To be addressed later.  bundle vs account.
+
+  > 
+  > == 2.4 Attribution, association and responsibility ==
+  > 
+  > I find the expression of these ideas to be hopelessly muddled, and incoherent.
+  > In particular, it seems to be self-contradictory with respect to the notion of
+  > "responsibility" (also with section 2.3):
+  > 
+  > "An agent is a type of entity that bears some form of responsibility for an
+  > activity taking place."
+  > "Software for checking the use of grammar in a document may be defined as an agent"
+  > "Agents are defined as having some kind of responsibility for activities."
+  > "[an association may be] an XSLT transform launched by a user ..."
+  > "An activity association is an assignment of responsibility to an agent for an
+  > activity"
+  > "Responsibility is the fact that an agent is accountable for ..."
+  > 
+  > At heart, I think the problem here is the notion that agents are "responsible".
+  >   Especially when "responsibility" is later defined in terms of accountability -
+  > I can't see a software agent as being accountable.  I don't know how to make
+  > sense of this, so it's hard for me to suggest alternatives.
+  > 
+
+TODO: last teleconference ask Graham to raise issue and make suggestions
+
+Does renaming the relation "Responsibility/actedOnBehalfOf" help?
+And also remove the word accountable?
+
+Should we go for responsi
+          Main Entry:	delegation  [del-i-gey-shuhn] Show IPA
+          Part of Speech:	noun
+          Definition:	assignment of responsibility
+          Synonyms:	 appointment, apportioning, authorization, charge, commissioning, committal, consigning, consignment, conveyance, conveying, deputation, deputization, deputizing, devolution, entrustment, giving over, installation, investiture, mandate, nomination, ordination, reference, referring, relegation, sending away, submittal, submitting, transferal, transference, transferring, trust
+          Notes:	a delegation  differs from a legation  in that the members of a delegation are usually not charged with a specific mission but merely with the overall task of representing the interests of a body of people, often at a conference during an assembly's regular session; a legate  usually acts alone while a delegate  acts as part of a group
+          Antonyms:	 keeping
+
+
+  > == Section 2.5, Simplified overview diagram ==
+  > == Section 2.6, PROV-N ... ==
+  > 
+  > See earlier comments.  These is about PROV-DM terms, not provenance concepts, so
+  > I don't really think they belong here.
+  > 
+  > I'd move them to start start of section 4.
+
+Will be an Editor's decision.
+
+
+  > 
+  > == Section 3, Illustration... ==
+  > 
+  > I *still* think the positioning of this example disrupts the logical flow from
+  > concepts (section 2) to PROV-DM expressions (section 4).
+  > 
+  > (I haven't reviewed the content of this section.)
+  > 
+  > 
+  > == 4. PROV-DM types and relations ==
+  > 
+  > The enumeration of components seems to be repetitive.  Numbered items *and*
+  > component numbers?  (See earlier comment.)
+
+<ul> instead of <ol>
+
+  > 
+  > "In the first column, one finds concept names directly linking to their English
+  > definition. In the second column, ...".  Why not just use column headings in the
+  > table?  The reference to "English" description seems redundant.
+  > 
+
+Yes, to do.
+
+<hr><td>Concept or Relation Name </td><td>representation in the PROV-N notation</td></hr>
+
+  > "In the rest of the section, each concept and relation is defined, in English
+  > initially, followed by a more formal definition and some example."  Similar
+  > comment.  Suggest:
+  > "In the rest of the section, each type and relation is defined informally,
+  > followed by a summary of the information used to represent the concept, and
+  > illustrated with PROV-N examples."
+
+Good, in particular, it's type not concept.
+
+  > 
+  > == 4.1.1 Entity ==
+  > 
+  > "An entity is a thing one wants to provide provenance for. For the purpose of
+  > this specification, things can be physical, digital, conceptual, or otherwise;
+  > things may be real or imaginary."  confuses entities and things again.  Suggest:
+  > "An entity is a thing one wants to provide provenance for. It can be physical,
+  > digital, conceptual, or otherwise, and may be real or imaginary."
+  > 
+
+We used Simon's definition. See above.
+
+  > "An entity, written entity(id, [attr1=val1, ...]) in PROV-N, contains:" - I
+  > think this is wrong - an entity does not (in general) *contain*.  Suggest:
+  > "An entity, written entity(id, [attr1=val1, ...]) in PROV-N, has:"
+  > 
+
+OK, updated for all.
+
+  > "id: an identifier for an entity;" - this is redundant and potentially
+  > confusing.  Suggest "id: an identifier".
+
+It was agreed a long time ago that the identifier identifies the entity as opposed to the record. So, we don't see what is redundant or confusing here.
+
+Could you raise an issue and/or clarify your comment?
+
+  > 
+  > "attributes: an optional set of attribute-value pairs ((attr1, val1), ...)
+  > representing this entity's situation in the world." - I find this phrasing
+  > awkward and unclear.  Suggest:
+  > "attributes: an optional set of attribute-value pairs ((attr1, val1), ...)
+  > representing additional nformation about this entity."
+  > 
+
+
+OK, still legacy. Updated attributes everywhere.
+
+
+  > == 4.1.2, et seq ==
+  > 
+  > (Similar editorial comments to those for 4.1.1 Entity.  I'm not repeating them
+  > all now for lack of time.)
+  > 
+  > 
+  > == Section 4.1.5 Start ==
+  > 
+  > I find this whole section is confusing.  Starting with:
+  > 
+  > "trigger: an optional identifier (e) for the entity triggering the activity;" -
+  > do you really mean to allow *any* entity here, rather than just agents?
+  > 
+
+Yes:
+This was recently agreed: http://www.w3.org/2011/prov/meeting/2012-03-15#resolution_3
+
+  > Looking forward to the example, I find the idea that an email (qua entity) can
+  > "trigger" an activity is incoherent.  Suppose the email is drafted and never
+  > sent.  It still exists as an entity, but can't be said to actually *trigger*
+  > anything.  For me, it is the act of actually sending (or receiving) an email
+  > that may trigger something, not the email as a passive entity.
+  > 
+
+This may be expressed by start by activity, instead.
+
+  > 
+  > == Section 4.1.6, End ==
+  > 
+  > (Similar comments to those above.)
+  > 
+
+See again:
+http://www.w3.org/2011/prov/meeting/2012-03-15#resolution_3
+
+  > 
+  > == Section 4.1.7, Communication ==
+  > 
+  > It seems strange to me, given the pattern used for other concepts/expressions,
+  > that the communicated entity cannot be optionally named.  I find myself
+  > wondering if I've understood the definition properly.
+  > 
+
+In that case, one would just write. 
+wasGeneratedBy(e,a1)
+used(a2,e)
+One would not need a new construct.
+
+  > 
+  > == Section 4.2.1, Agent ==
+  > 
+  > Continues the muddle about responsibility.  I don't know what it all means
+  > (especially when the agent is running software).  See previous comments.
+  > 
+  > Awkward and unnecessary phrase "situation in the world" again.  See earlier for
+  > suggested phrasing.
+
+Removed all occurrences of "situation in the world".
+
+  > 
+  > 
+  > == Section 4.3.1 Derivation ==
+  > 
+  > "A derivation is a transformation of an entity into another, a construction of
+  > an entity into another, or an update of an entity, resulting in a new one."
+  > seems ungrammatical.  Suggest:
+  > "A derivation is a transformation of an entity into another, a construction of
+  > an entity *from* another, or an update of an entity, resulting in a new one."
+
+TODO: yes, to look into. It would be nice to keep the same directionality for all of them.
+
+
+  > 
+  > 
+  > == Section 4.5 Collections ==
+  > 
+  > I'm not understanding why this needs to be part of the core PROV-DM, and cannot
+  > be habdled by domain specific notions of aggregation.
+  > 
+  > The stated goal is that "it is also of interest to be able to express the
+  > provenance of the collection itself" - this could be done equally well with a
+  > domain-specific collection notion, AFAICT.
+  > 
+  > See also earlier comments.
+  > 
+
+See earlier answer.
+
+  > 
+  > == Section 4.6, Annotations ==
+  > 
+  > I'm still not seeing why these are needed as part of the core DM. There's no
+  > associated inference that I am aware of, and additional information can be added
+  > via attributes, so I'm not seeing what useful additional expressive capability
+  > this affords.
+
+I don't think it can be added with attributes, that's the whole point, since
+attributes and annotations can be added at different moments!
+
+This ISSUE-260.
+
+
+  > 
+  > 
+  > == Section 4.7.4 Attribute ==
+  > 
+  > Is an attribute really just a qualified name, or is it a pair consisting of a
+  > qualified name and a value?
+
+yes, a qualifed name.
+
+  > 
+  > 
+  > == Section 5, Extensibility points ==
+  > 
+  > This section makes little sense to me.  The obvious extensibility points of
+  > sub-typing and sub-properties of defined PROV-DM terms isn't mentioned.
+
+It's item 4.
+
+  > 
+  > The use of new attributes seems reasonable, though it's not entirely clear how
+  > they act as extension points, and the mention of "perspective on the world"
+  > doesn't mean anything to me.
+  > 
+  > I cannot see how notes, which are defined to be pretty much semantics-free, can
+  > be described as an extensibility point - they don't actually add any expressive
+  > power that I can see.
+
+non prov-attributes are also semantics free (from a PROV perspective).
+
+  > 
+  > The remaining points I just don't get.
+  > 
+  > I think this whole notion of extensibility needs to be treated more carefully
+  > and comprehensively if it is to be taken seriously.  Otherwise expect developers
+  > to ignore this and just use extensibility options in the representation
+  > substrate (e.g. RDF) used.
+
+Section was updated.
+TODO: do we need more?
+
+
+  > 
+  > == Section 6 ==
+  > 
+  > I think this section is completely redundant and out-of-place, and could be
+  > removed without any loss.
+
+TODO: I think there is some value in stating there is an other document to
+look at, and outline what it tackles.
+
+Section was renamed, and trimmed down.
+
+
+
+  > 
+  > 
+  > =================
+  > Yes, it's largely a document/text quality thing - I feel it doesn't entirely lay
+  > things out clearly enough for its target audience, and in some cases is actively
+  > confusing.  This may be "editorial", but I think it's important enough to need
+  > addressing to move forwards towards LC.  There are a few points of substance
+  > (mainly stuff that feels superfluous to me), but I wouldn't be surprised to be
+  > lone voice on that.
+  > 
+  > I've indicated a number of specific points points in the "details" part of my
+  > email, with suggested alternative phrasing, though there are many more (similar
+  > to those I detail) that I've skipped over in passing.

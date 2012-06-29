@@ -1,0 +1,46 @@
+# TriG
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns> .
+@prefix rdfg: <http://www.w3.org/2004/03/trix/rdfg-1> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix provaq: <http://www.example.com/TODO/PROV-PAQ> .
+
+
+# Provenance of provenance
+
+<http://www.example.com/provenance-account> {
+    :entity1 a prov:Entity;
+        prov:wasGeneratedBy :activity1 .
+    :agent a prov:Agent;
+        prov:wasAssociatedWith :activity1 .
+    <http://www.example.com/provenance-account> a prov:Account;
+        provaq:hasProvenance <http://www.example.com/metaprovenance-account> .
+}
+
+<http://www.example.com/metaprovenance-account> {
+    :activity1Observation a prov:Activity .
+    :agentObservation a prov:Activity .
+    :provenanceGeneration a prov:Activity .
+
+   <http://www.example.cJom/provenance-account> a prov:Entity,
+   rdfg:Graph, provaq:Provenance, prov:Account, rdf:Bag ;
+        prov:wasGeneratedBy :provenanceGeneration ;
+        # TODO: How to assert that :assertion1 and 2 
+        # is part of the graph? prov:collection* ?
+        rdf:_1 :assertion1 ;
+        rdf:_2 :assertion2 . 
+
+
+    :assertion1 a prov:Entity, rdf:Statement;
+        rdf:subject :entity1;
+        rdf:predicate prov:wasGeneratedBy;
+        rdf:object :activity1.
+        prov:wasGeneratedBy :activity1Observation .    
+    
+    :assertion2 a prov:Entity ;    
+        rdf:subject :agent;
+        rdf:predicate prov:wasAssociatedWith;
+        rdf:object :activity1;
+        prov:wasGeneratedBy :agentObservation .
+}
+

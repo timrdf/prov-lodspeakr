@@ -1,0 +1,210 @@
+PROV-N editors,
+
+I think the draft is acceptable for public release.
+Please see my general comments below.
+
+Regards,
+Tim
+
+http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120402/prov-n.html
+
+
+==================
+General comments
+
+1)
+Perhaps "RDF's reliance on triples" should be "RDF's insistence on triples" :-)
+
+PM: text has been changed 
+
+2) 
+the intro to syntactic marker - shows assertions with a missing marker for the id (the first position)
+
+wasDerivedFrom(e2, e1, a, g2, u1)
+wasDerivedFrom(e2, e1, a, -, -)
+wasDerivedFrom(e2, e1, -, -, -)
+
+should be
+
+wasDerivedFrom(-, e2, e1, a, g2, u1)
+wasDerivedFrom(-, e2, e1, a, -, -)
+wasDerivedFrom(-, e2, e1, -, -, -)
+
+
+apparently the marker is optional. Why is it optional?
+
+PM because the grammar is smarter than it looks... it does allow the id to disappear completely. This is not intuitive and Luc and I had a discussion about this, which led to the conclusion that this is convenient but the parser only works because of some other peculiarity of the grammar. So it may be wise to revisit the grammar at a later stage.
+
+That the ID can disappear is now made clear in the text, sec. 2.4:
+"Additionally, the grammar rules are defined in such a way that the optional identifier can be omitted altogether with no ambiguity arising."
+
+
+
+3)
+I'm not sure what to take away from this:
+"""
+ PROV-N exposes attributes that PROV-DM provides an interpretation for [PROV-DM-CONSTRAINTS] directly as positional arguments of expressions, whereas those for which PROV-DM provides no interpretation are expressed among the optional attribute-value pairs. This latter category of attributes includes prov:label, prov:location, prov:role, and prov:type.
+"""
+* suggest adding an example of the two (start time is positional, foo=bar and prov:role are latter category)
+
+PM: text has changed now, entire sentence gone
+
+
+
+4)
+I was a bit surprised that DM and -constraints says that "it is assumed that containers exist", but then PROV-N does it.   
+I guess it makes sense.
+
+PM: the DM should perhaps point to the PROV-N entry where this is defined (sec. 4).
+
+
+
+5)
+entityExpression ::= entity ( identifier optional-attribute-values )
+
+but "identifier" is not defined anywhere within view.
+* recommend adding a link to the productions that are not defined within view.
+
+PM we are considering this. good suggestion, quite a bit of additional work involved :-)
+
+
+6)
+expression
+ ::=
+entityExpression | activityExpression | generationExpression | usageExpression
+  | startExpression | endExpression | communicationExpression | startByActivityExpression
+  | agentExpression | attributionExpression | associationExpression | responsibilityExpression
+  | derivationExpression | revisionExpression | quotationExpression
+  | hadOriginalSourceExpression | traceabilityExpression
+  | alternateExpression | specializationExpression
+  | noteExpression | annotationExpression
+
+* recommend adding these as links to their production (and in general, anywhere one is mentioned it should be a link)
+
+PM: see earlier comment
+
+
+
+7)
+Why are the identifiers not in a prefix?
+e.g.
+
+ "i" in wasInformedBy(i, ex:a1, ex:a2)
+
+This occurs throughout.
+And the places like "
+wasAttributedTo(e, ag)
+" don't have prefixes on other arguments.
+
+PM: because the syntax for identifiers allows this, unlike that for RDF/Turtle where you need either a prefix or just a :
+
+see 3.7.2:
+A qualified name's prefix is optional. If a prefix occurs in a qualified name, it refers to a namespace declared in a namespace declaration. In the absence of prefix, the qualified name refers to the default namespace
+
+
+
+
+8)
+Ensuring spaces follow commas in the examples would help readability.
+
+PM: this is now mostly the case everywhere -- we may have missed a few?
+
+9)
+Looks like we hit the RDF vs XML xsd namespace problem again:
+"xsd denotes the XML Schema namespace http://www.w3.org/2001/XMLSchema." 
+
+PM: not sure how to deal with this. More insight, please?
+
+
+
+
+10)
+(My Turtle bias showing)
+When I define the default namespace, do I use NO colon or JUST a colon?
+I.e., is the error on the first or second entity in:
+
+container
+  default <http://example.org/0/>
+
+  entity(isThisOK)
+
+  entity(:orIsThis)
+
+end
+
+Or, another way, "Is the colon part of the prefix?" In Turtle it is not, the XML side would say it is.
+This is touched on in section 4.7.2 Identifier
+
+Can I have:
+ 
+container
+
+  prefix : <http://example.org/99/>
+
+  entity(:isThisOK)
+
+end
+
+PM: NO colon is my understanding from 3.7.2. Luc please confirm?
+
+
+
+11)
+Getting rid of %% QName would be nice 
+
+"prov:type="ex:Programmer" %% xsd:QName"
+
+(per note "Wouldn't it be useful to introduce a literal for a qualified name? Currenlty, we have to write:")
+
+PM: agreed. no proposed solution yet but aware of the problem
+
+
+
+12)
+
+Why is  prov:AccountEntity not just prov:Account?
+Should we rename prov:Plan to prov:PlanEntity and prov:EmptyCollection to prov:EmptyCollectionEntity ? (please, no.)
+
+PM: edited into prov:Account. Luc please check as you may have used AccountEntity deliberately?
+
+
+13)
+In the example:
+
+container
+  prefix ex <http://example.org/>
+
+  entity(e2,
+
+…
+What is the namespace for e2?
+(Yes, my RDF bias shows here, sorry.)
+
+PM: the default namespace?  I guess here the prefix is just not used.
+
+
+
+14)
+why distinguish containers and accounts?
+Why not use the container as the account, and let the container be named or unnamed?
+Is it because XML needs a root element :-)
+
+PM: I let Luc answer this one
+
+
+On Mar 29, 2012, at 9:38 AM, Provenance Working Group Issue Tracker wrote:
+
+> PROV-ISSUE-332 (review-prov-n-wd5): issue to collect feedback on prov-n wd5 [prov-n]
+>
+> http://www.w3.org/2011/prov/track/issues/332
+>
+> Raised by: Luc Moreau
+> On product: prov-n
+>
+> When sending feedback on prov-n document wd5, please send it under this issue or individual new issues.
+>
+>
+>
+>
+>
+

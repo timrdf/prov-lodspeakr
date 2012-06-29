@@ -1,0 +1,19 @@
+@prefix prov: &lt;http://www.w3.org/ns/prov#&gt; .
+@prefix ex:   &lt;http://example.org#&gt; .
+
+ex:illustrationActivity             
+   a prov:Activity;                  ## (Using Starting Point terms)
+   prov:wasAssociatedWith ex:derek;  ## Derek was responsible for the chart making in some way.
+.
+
+ex:derek a prov:Agent .
+
+ex:illustrationActivity
+   prov:qualifiedAssociation [       ## Qualification: What plan (or recipe, instructions) 
+      a prov:Association;            ## did Derek follow when creating the graphical chart?
+      prov:agent   ex:derek
+      prov:hadPlan ex:tutorial_blog;
+   ];
+.
+
+ex:tutorial_blog a prov:Plan, prov:Entity .

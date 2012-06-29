@@ -1,0 +1,53 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:the-first-us-supreme-court
+   a prov:Collection, prov:CompleteCollection, :JayCourt;
+   dcterms:description [
+      a prov:Entity;
+      prov:value "1789–1792: J. Rutledge Wm. Cushing J. Wilson J. Blair J. Iredell";
+      prov:wasQuotedFrom :page-by-composition;
+   ];
+   prov:qualifiedGeneration [
+      a prov:Generation;
+      dcterms:date "1789"^^xsd:gYear;
+   ];
+   prov:qualifiedInvalidation [
+      a prov:Invalidation;
+      dcterms:date "1792"^^xsd:gYear;
+   ];
+   prov:hadMember [
+      a prov:KeyValuePair;
+      prov:pairKey   "chief";
+      prov:pairValue <http://dbpedia.org/resource/John_Jay>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 4";
+      prov:pairValue <http://dbpedia.org/resource/John_Rutledge>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 2";
+      prov:pairValue <http://dbpedia.org/resource/William_Cushing>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 1";
+      prov:pairValue <http://dbpedia.org/resource/James_Wilson>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 3";
+      prov:pairValue <http://dbpedia.org/resource/John_Blair,_Jr.>;
+   ], [
+      a prov:KeyValuePair;
+      prov:pairKey   "seat 5";
+      prov:pairValue <http://dbpedia.org/resource/James_Iredell>;
+   ];
+.
+
+:page-by-composition
+   a prov:Entity, :WikipediaPage;
+   prov:specializationOf <http://en.wikipedia.org/wiki/List_of_Justices_of_the_Supreme_Court_of_the_United_States_by_court_composition>;
+   prov:wasGeneratedAtTime "2012-05-16T14:33"^^xsd:dateTime;
+.

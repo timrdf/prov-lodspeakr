@@ -1,0 +1,72 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix app: <http://www.w3.org/TR/2011/WD-prov-dm-20111018/app#> .
+@prefix :    <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#> .
+
+:a1
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-OrderingOfProcessExecutions>;
+   dcterms:description "activity(a1,long-workflow,t1,t2,[host='server1.example.org'])";
+   a prov:ProcessExecution;
+   prov:hadRecipe :long-workflow;
+   time:hasBeginning [ a prov:Time; rdf:value 1 ];
+   time:hasEnd       [ a prov:Time; rdf:value 2 ];
+   :host <http://server.example.org>;
+
+   dcterms:description "wasControlledBy(a1,e1,qualifier(role='end'))";
+   prov:wasControlledBy :e1;
+   prov:qualifedControl [
+      a prov:Control;
+      prov:entity :e1;
+      prov:role :end;
+   ];
+.
+:long-workflow
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-OrderingOfProcessExecutions>;
+   a prov:Recipe;
+.
+:end a prov:Role .
+
+:a2
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-OrderingOfProcessExecutions>;
+   dcterms:description "activity(a2,long-workflow,t3,t4,[host='server2.example.org'])";
+   a prov:ProcessExecution;
+   prov:hadRecipe :long-workflow;
+   time:hasBeginning [ a prov:Time; rdf:value 3 ];
+   time:hasEnd       [ a prov:Time; rdf:value 4 ];
+   :host <http://server2.example.org>;
+
+   dcterms:description "wasControlledBy(a2,e2,qualifier(role='start'))";
+   prov:wasControlledBy :e2;
+   prov:qualifedControl [
+      a prov:Control;
+      prov:entity :e2;
+      prov:role :start;
+   ];
+
+   dcterms:description "wasScheduledAfter(a2,a1)";
+   prov:wasScheduledAfter :a1;
+.
+:e1
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-OrderingOfProcessExecutions>;
+   dcterms:description "entity(e1,[type='scheduler',state=1])";
+   a prov:Entity;
+   a :Scheduler;
+   :state 1;
+.
+:e2
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-OrderingOfProcessExecutions>;
+   dcterms:description "entity(e2,[type='scheduler',state=2])";
+   a prov:Entity;
+   a :Scheduler;
+   :state 2;
+
+   dcterms:description "wasDerivedFrom(e2,e1)";
+   prov:wasDerivedFrom :e1;
+.
+:start a prov:Role .

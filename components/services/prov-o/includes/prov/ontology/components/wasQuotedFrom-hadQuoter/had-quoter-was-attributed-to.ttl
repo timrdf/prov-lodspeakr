@@ -1,0 +1,55 @@
+@prefix ex:   <http://www.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<> rdfs:comment """Variant of eg-25-had-quoter.ttl without
+    prov:hadQuoter/prov:hadQuoted"""@en ;
+    prov:wasDerivedFrom <had-quoter.ttl> .
+
+
+#entity(ex:blogpost)
+ex:blogpost a prov:Entity .
+
+#agent(ex:Luc)
+ex:Luc a prov:Agent .
+
+#agent(ex:Paul)
+ex:Paul a prov:Agent .
+
+#wasQuotedFrom(ex:paragraph, ex:blogpost,ex:Luc,ex:Paul)
+ex:paragraph a prov:Entity ;
+    prov:wasQuotedFrom ex:blogpost ;
+    prov:wasAttributedTo ex:Luc .
+
+ex:blogpost prov:wasAttributedTo ex:Paul .
+
+# by inference quotation-implication
+ex:paragraph prov:wasDerivedFrom ex:blogpost .
+
+
+
+# However, there might be additional agents which were not responsible for the
+# quotation, but which the entities are attributed to as well
+
+# The blogpost contains a photo by someone else
+ex:somePhotographer a prov:Agent ;
+    owl:differentFrom ex:Paul .
+
+ex:blogpost prov:wasAttributedTo ex:somePhotographer .
+
+# Paolo made the paragraph appear in italics
+ex:Paolo a prov:Agent .
+ex:paragraph prov:wasAttributedTo ex:Paolo .
+
+
+# Here we can't go fully back to wasQuotedFrom in PROV-N as we don't know which
+# agent performed the quotation or was attributed to the (part of) the entity
+# that we quoted. So we can only say:
+
+# wasQuotedFrom(ex:paragraph, ex:blogpost)
+
+# From this argument, wasQuotedFrom should not have the agent parameters in
+# PROV-DM.  However, saying that *you* quoted *someone* saying *something*
+# are common attributes of quotation in everyday use.
+

@@ -1,0 +1,52 @@
+@prefix rdfs:     <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:      <http://www.w3.org/2002/07/owl#> .
+@prefix frbrcore: <http://purl.org/vocab/frbr/core#> .
+@prefix prov:     <http://www.w3.org/ns/prov-o/> .
+@prefix vehicle:  <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/examples/ontology-extensions/vehicle/vehicle.ttl#> .
+
+<>
+   rdfs:seeAlso <http://www.w3.org/2011/prov/track/issues/89>;
+.
+
+vehicle:Vehicle
+   rdfs:label "Vehicle";
+   rdfs:subClassOf prov:Entity;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty vehicle:make;
+      owl:cardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty vehicle:model;
+      owl:cardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty vehicle:vin;
+      owl:cardinality 1;
+   ];
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty frbrcore:owner;
+      owl:cardinality 1;
+   ];
+.
+
+vehicle:make
+   a owl:ObjectProperty;
+   rdfs:label "make";
+   rdfs:comment "e.g. :Toyota";
+.
+
+vehicle:model
+   a owl:ObjectProperty;
+   rdfs:label "model";
+   rdfs:comment "e.g. :Corolla";
+.
+
+vehicle:vin
+   a owl:DatatypeProperty;
+   rdfs:label "VIN";
+   rdfs:comment "Vehicle Identification Number";
+.

@@ -1,0 +1,26 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:our-old-baseball-team-field-positions
+   a prov:Dictionary, 
+         :FieldPositions;
+   prov:membership [ 
+      a prov:Membership;
+      prov:member [
+         a prov:KeyValuePair;
+         prov:key "first-baseman"^^xsd:string;
+         prov:value :george;
+      ];
+      prov:member [
+         a prov:KeyValuePair;
+         prov:key "pitcher"^^xsd:string;
+         prov:value :carl;
+      ]
+   ];
+.
+
+:george a prov:Entity .
+:carl   a prov:Entity . 

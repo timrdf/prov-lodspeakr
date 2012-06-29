@@ -1,0 +1,304 @@
+ > All,
+ > 
+ > I went over the PROV-DM and the PROV-O documents, and have some comments.
+ > 
+ 
+ >  My first comment is that overall the documents read reasonably well,
+ >  orders of magnitude better than the version that was released a
+ >  couple of months ago.
+ > 
+ > I have some suggestions, a few that could be easily and immediately
+ > done, others that should probably wait for the next round of
+ > revisions.  Some easy edits that I think would improve the readability
+ > of the document.  Others may seem to me like easy edits but perhaps
+ > you think deserve further discussion, I could not easily discern this
+ > for some of the items.
+ > 
+ > My comments:
+ > 
+ > 1) Section 2.1.1: The sentence "In the world, activities involve
+ > entities in multiple ways: they consume them, they process them, they
+ > transform them, they modify them, they change them, they relocate
+ > them, they use them, they generate them, they are controlled by them,
+ > etc." could be improved by stating it as: "In the world, activities
+ > involve entities in multiple ways: consuming them, processing them,
+ > transforming them, modifying them, changing them, relocating them,
+ > using them, generating them, being controlled by them, etc.
+
+Done.
+
+ > 
+ > 2) Section 2.1.1: I'd add a sentence at the end of the description of
+ > agent to say why it is considered a subclass of entity, something like
+ > "PROV-DM considers agents as a type of entity so that the model can be
+ > used to represent the provenance of the agents themselves.  For
+ > example, a spellchecker software may be an agent of a document
+ > preparation activity, but itself can have a provenance record that
+ > states who its vendor is."
+
+Yes, good added.
+
+ > 
+ > 3) At the beginning of section 3, the notion of a "record" is
+ > introduced.  I get an idea of what is meant by record, but I don't
+ > think it is well motivated.  OWL does not have "records" but it can be
+ > used to state assertions about classes and objects, so why do we need
+ > this notion of record.  Also, what is there raises several questions
+ > that may or may not have the following answers: "A provenance record
+ > is composed of a set of entity records, a set of activity records, a
+ > set of agent records, a set of generation records, (and so on).  An
+ > entity record is a type of provenance record (and so are the others).
+ > A provenance record can have in turn its own provenance record, where
+ > it would be considered an entity."
+
+Introduction of Section 5.1 was changed.
+
+ > 
+ > 4) Section 4.1: It took me a couple of backs and forths to realize
+ > that e0 is a type while e1...e6 are instances.  I'd suggest to rename
+ > e0 to be crime-file, or cf, or something like that.
+
+e0 is not a type, e0 describe the file.
+Nothing done here, but we may want to revisit the example.
+
+ > 
+ > 5) Section 4.2: The examples of Activity Records I think would be more
+ > clear if they had "edit" instead of "add-crime-in-London" and "edit"
+ > instead of "edit-London-New-York".
+
+recipe link was removed, but I added some type attribute with the suggested types.
+
+ > 
+ > 6) Section 4.2: In the examples of Generation Records, I did not
+ > understand g1 and g2 at all.
+
+I have edited the text.
+
+ > 
+ > 7) Section 5.1: The terms "account", "production", and "record
+ > container" pop up out of nowhere.  They should be introduced and
+ > motivated a bit.  They should also be related to the notion of
+ > "record" better than they are now, this is not very clear.  I suspect
+ > there might be plans to discuss this aspect of the model further in
+ > the WG.
+
+I have made sure production is defined earlier (+ link added).
+
+Intro of 5.1 was changed. We are just listing here the kind of records that this section defines.
+
+I have added in overview section.  
+
+  In addition to the kinds of record introduced in the overview
+  figure, PROV-DM also features a notion of <a title="account
+  record">Account Record</a> that allows attribution of provenance
+  records to be expressed.
+
+There is here some brief motivation for the provenance container.
+
+
+ > 
+ > 8) Section 5.2.1: I would change the sentence "If an asserter wishes
+ > to characterize an entity with the same attribute-value pairs over
+ > several intervals, then they are required to assert multiple entity
+ > records, each with its own identifier (so as to allow potential
+ > dependencies between the various entity records to be expressed)." to
+ > clarify the asserting so it says something like: "If an asserter
+ > wishes to characterize an entity with the same attribute-value pairs
+ > over several intervals, then they are required to directly assert or
+ > create axioms to infer assertions for multiple entity records, each
+ > with its own identifier (so as to allow potential dependencies between
+ > the various entity records to be expressed).".
+
+
+
+Axioms have not been defined in this document.
+So, I suggest the following instead:
+
+ ... then they are required to CREATE multiple entity records (EITHER BY DIRECT ASSERTION OR BY INFERENCE)
+
+
+ > 
+ > 9) Section 5.2.3: The examples of agents could include a spellchecker
+ > agent, just to show a bit of diversity in what we consider to be
+ > agents.
+
+
+Woudl be nice to do it in section 4 too.
+TODO.
+
+ > 
+ > 10) Section 5.2.4: The example of the note record should show a link
+ > to some provenance record, ideally one that would have been shown as
+ > an example in section 5.1 (maybe the g1 and g2 that I mentioned in
+ > point 5 above).
+ > 
+Yes, updated.
+
+ > 11) Section 5.3.3: We argue that we don't want to get into
+ > "responsibility".  But we introduce the term "responsible" and
+ > "subordinate".  I suggest we refer to them as "represented-agent" and
+ > "representing-agent" instead.  Also, the section is titled
+ > "Responsibility Record", so that will be confusing, maybe "Delegation
+ > Record" would be better.
+
+I take the point, but Delegation is not better, and seems too specific.
+I think, more generally, we need to revisit exactly how we pitch responsibility.
+See thread ISSUE-203.
+
+ > 
+ > 12) Section 5.3.3: The example uses the terms "delegation" and
+ > "contract".  Perhaps useful to mention that these are domain terms to
+ > make clear that they are not part of the model.
+
+OK, done.
+
+ > 
+ > 13) Section 5.3.3.1: The sentence "To promote take-up, PROV-DM offers
+ > a mild version of responsibility in the form of a relation to
+ > represent when an agent acted on another agent's behalf." is a bit of
+ > an awkard way to introduce this, so I'd replace it by "The definition
+ > of agent mentions that an agent is a type of entity that can be
+ > assigned some degree of responsibility for an activity.  In many
+ > situations, the creators of a provenance record may not have the
+ > authority to ascribe responsibility to the various agents that they
+ > know are involved in the activity.  For example, the developer of a
+ > provenance service using PROV-DM could say that a student and his
+ > advisor were both involved in creating a dataset, but might not be in
+ > a position to know who has actual responsibility for the dataset.
+ > Responsibility often has legal connotations that could deter
+ > developers and users of PROV-DM from stating responsibility assertions
+ > in provenance records.  To address this, PROV-DM offers a mild version
+ > of responsibility in the form of a relation to represent when an agent
+ > acted on another agent's behalf.".
+
+TODO, as we gather more feedback on responsibility.
+
+ > 
+ > 14) Section 5.3.3.2: The terms "we introduce a PROV-DM reserved
+ > attribute STEPS" is used for the first time, no idea what that means.
+ > Maybe just say "we introduce a PROV-DM attribute STEPS".  More
+ > importantly, I did not understand what steps means.
+ > 
+Text has been updated. Attribute steps was introduced first.
+
+ > 15) Section 5.3.3.3: Complementarity is very confusing, even its
+ > description in the primer was confusing to me.  And I am a planning
+ > person used to thinking about entities changing, states, fluents, etc
+ > etc.  I even wrote a survey on "Planning and Description Logics" a
+ > while back.  But this is actually a very complex area that I don't
+ > think is well understood at all.  For my money, I would say this is
+ > worth a side chat with Pat Hayes about this particular aspect of the
+ > model, to get his guidance.  He originally worked with McCarthy on the
+ > frame problem and understands very well all the different issues
+ > involved in this type of logic to reason about actions and change.
+
+All being rewritten.
+
+ > 
+ > 16) Section 5.4.1: Could use a bit of introduction to introduce why
+ > separate provenance records may be created.  For example, in emailing
+ > a file there could be a provenance record kept by the mail client,
+ > another by the SMPT server, etc.  It would also be useful to give
+ > motivating scenarios/examples for how accounts can be nested.
+ > 
+
+Added an intro to 5.4.1
+
+Nesting still needs to be debated.
+
+
+ > 17) Section 5.4.1: The example that introduces account acc2 says at
+ > the end that the result of the merge violates generation-unicity.  But
+ > if I am following this correctly, if a1 and a0 are asserted to be the
+ > same then there is no violation.  Perhaps worth clarifying this, or
+ > perhaps finding a more real-world example that really really creates a
+ > violation.  Otherwise people are going to be scared of merging
+ > provenance records, which I think is the opposite of what we want.
+
+Added:  if the two activities <span class="name">a0</span> and <span class="name">a1</span> are distinct.
+
+This whole section is to be structured in any case.
+ > 
+ > 18) Section 5.4.2: It states "A record container is not a record."  I
+ > am puzzled.  This is related to the confusion I raised in point 6.
+
+Updated intro of 5.4.2
+
+ > 
+ > 19) Section 6.2: I did not understand why the notion of "traceability
+ > record", why is it introduced, and how is it different from a
+ > "derivation record".
+ > 
+
+Added an introduction to 6.2.
+
+
+ > n20) Section 6.5: The sentence "Attribution models the notion of an
+ > activity generating an entity identified by e being controlled by an
+ > agent ag, which takes responsibility for generating e." could be
+ > perhaps replaced by "Attribution models the notion of an activity
+ > generating an entity identified by e being controlled by an agent ag."
+
+I replaced the word control. I didnt see why remove the responsibility bit?
+
+ > 
+ > 21) Section 6.7: I did not understand what a "summary record" is.  I
+ > am guessing we want a notion that someone can excerpt some subset of
+ > assertions from a provenance record in order to create a summary
+ > record.  Is this right?  If so, why would this apply only for entities
+ > and not for other parts of the model?  Also: why wouldn't we use
+ > PROV-DM terms to express this meta-derivation?  It would make the
+ > model easier if we did not need to add an extra notion of "summary
+ > record" as here.  Or perhaps I did not understand.
+ > 
+
+Added ... (expected to be a document)
+
+
+ > One more comment that I am pretty certain is more appropriate for future discussions of the model:
+ > 
+ > 22) Proposal for hadRoleIn: This proposal is motivated by agent being
+ > a subclass of entity.  Should there be a relation between entity and
+ > activity that is subsumes (generalizes) used, generatedby, and
+ > wasAssociatedWith?  I think such a relation would allow us to state
+ > that an entity had to do with an activity but we don't yet know how
+ > exactly it was involved in the activity (eg whether it was an agent,
+ > or it was used by it, or generated by it, or...).  I would propose to
+ > call this something like <entity hadARoleIn activity>.  We should
+ > think about how this aligns with what we now call "roles" (my choice
+ > of name for this new general relation is not a coincidence), so in the
+ > examples in PROV-DM document section 5.2.3 instead of
+ > "[prov:role="sponsor"]" perhaps we could see sponsorOf as a
+ > specialization of hadRoleIn and of wasAssociatedWith.
+ > 
+ > 
+Yes, kept for later ;-)
+
+ > On a rather pedantic note, maybe "New-York" should be "New York", and
+ > that perhaps "half-hexagonal shape" should be "pentagon shape".
+
+Done
+
+ > 
+ > 
+ > Sorry for the long email...
+ > 
+
+Thanks a lot for this constructive input!
+
+Luc
+
+ > Best,
+ > 
+ > Yolanda
+ > 
+ > 
+ > 
+ > Yolanda Gil, USC/ISI
+ > +1-310-448-8794
+ > 
+ > 
+ > 
+ > 
+ > 
+ 

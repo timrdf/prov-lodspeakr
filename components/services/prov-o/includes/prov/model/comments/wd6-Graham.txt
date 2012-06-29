@@ -1,0 +1,992 @@
+  >   > On 25/05/2012 11:16, Luc Moreau wrote:
+  >   > > Hi Graham,
+  >   > >
+  >   > > I have produced an updated version of the prov-dm document for
+  >   > > you to go through.
+  >   > >
+  >   > > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120525/prov-dm.html
+  >   > 
+  >   > 
+  > 
+  > I think we have the makings of a useful, compact orientation in
+  > section 2.1. Naturally, I have a number of comments, but they are
+  > increasingly more stylistic than to do with substance.
+  > 
+  > In my original proposal for reorganization, I suggested moving a
+  > number of sections into the separate CORE part of the specification.
+  > Your reorganization does not do this, but outlines the key concepts
+  > early on.  I'm fine with this, but as the definitions are provided
+  > later in the document I see no point in also including them in section
+  > 2.  So my proposals focus more on explaining how the concepts work
+  > together and not repeating the actual definitions.
+
+I am in favour of keeping definitions in section 2 to make it self-contained.
+Also, as I mention below, there is a danger of paraphrasing definitions and
+conveying a different meaning.
+
+  > 
+  > As I reflect on what I've read, I think it might be worth linking each
+  > of the core structure concepts to the corresponding subsection in
+  > section 5.  This would provide a quick-and-easy route from the
+  > structural overview to the corresponding details.
+
+This can be done. 
+Suggestion: at the end of each definition, add a link to the corresponding subsection in section 5.
+I did it for activty/entiy in 2.1.1. Thoughts?
+
+  > 
+  > Detailed comments follow.
+  > 
+  > == Abstract ==
+  > 
+  > I'm not convinced that the component structure needs to be mentioned
+  > in the abstract.  I might re-arrange the first sentence to lead on the
+  > functionality provided, with something like:
+  > 
+  > [[ Provenance consists of information about entities, activities and
+  > people involved producing a piece of data or thing, which can be used
+  > to form assessments about its quality, reliability or trustworthiness.
+  > PROV-DM is the conceptual data model that forms a basis for the W3C
+  > provenance (PROV) family of specifications.  ...  ]]
+
+Done.
+
+  > 
+  > Otherwise it looks pretty reasonable.
+  > 
+  > 
+  > == Section 1 ==
+  > 
+  > Para 2: "We consider" -> "We present"
+  > 
+
+Done
+
+  > Para 3: "The PROV data model" - this is first use in the body of the
+  > text, and should be defined (what's "PROV"?).  Suggest the *previous*
+  > paragraph starts thus:
+  > 
+  > "We present the PROV data model, a generic data model for provenance..."
+  > 
+  > Para 3:  suggest:
+  > 
+  >   "core structures form the essence of provenance descriptions, and
+  >   are commonly found in various domain-specific vocabularies"
+  > 
+  > to read:
+  > 
+  >   "core structures form the essence of provenance descriptions, and
+  >   are commonly found in various domain-specific vocabularies that deal
+  >   with provenance or similar kinds of information".
+
+Done.
+
+  > 
+  > (Examples, or informational references, could be added to back up this
+  > statement - precursor provenance models and CIDOC-CRM are examples I
+  > have used - OPM, OPMV, Provenir, PML all use broadly similar
+  > structures)
+
+  > 
+
+Good point, I now cite http://www.w3.org/2005/Incubator/prov/wiki/Provenance_Vocabulary_Mappings
+
+  > Para 4 and list: I would have the derivations component immediately
+  > follow on from entities and activities (or folded in with those).
+  > More detail later in discussion of core structures.
+
+We have reorganized components as follows, addressing your concern
+that derivation follows entities and activities, generation and usage.
+
+  component 2: derivation
+  component 3: agent/responsibility.
+  tracedTo (was moved to new component 3)
+
+
+  > 
+  > Para 5 and 6: I think these should be run together.  I find that para
+  > 5 on its own doesn't convey anything useful.  I would suggest even
+  > dropping para 5.
+  > 
+  > Para 6: I'm not sure that "enriching" quite captures the idea.  Also,
+  > "attributes and temporal information" are part of DM, not added by
+  > CONSTRAINTS.  Here's my proposal for para 6:
+  > 
+  > [[
+  > If something is changeable, then it is challenging to express its
+  > provenance precisely (e.g. the data from which a daily weather report
+  > is derived changes from day to day), to support reasoning about its
+  > correctness, trustworthiness, etc.  This is addressed in a companion
+  > specification [PROV-CONSTRAINTS] by proposing formal constraints on
+  > the way that provenance descriptions are related to the things they
+  > describe (such as the use of attributes, temporal information, and
+  > specialization of entities), and additional conclusions that are valid
+  > to infer if those constraints are satisfied.  ]]
+  > 
+
+Agreed it's better to drop the distinction simple provenance ... and enrichment.
+I mostly keep the suggested text.
+
+  > 
+  > == Section 2 ==
+  > 
+  > "catering for more advanced uses..." - I would suggest "catering for more specific uses...".
+  > 
+
+Done.
+
+  > 
+  > == Section 2.1 ==
+  > 
+  > Para 1:  suggest replacement (trying to focus more on orienting the reader on the key ideas):
+  > 
+  > [[
+  > 
+  > At it's core, provenance describes the use and production of
+  > /entities/ by /activities/, which may be controlled or influenced in
+  > various ways by /agents/.  These core types and their relationships
+  > are illustrated in Figure 1.  For a given artifact, its provenance can
+  > usually be seen as a "provenance trace" from one or more source
+  > entities via described activities.  Annotations associated with the
+  > activities provide key information for assessing the reliability and
+  > trustworthiness of the result.
+  > ]]
+
+Good first sentence. It's in.
+
+I am not convinced by the second part, the "provenance trace", and
+then the "annotations" for assessing reliability etc. I don't think we should
+focus on what provenance is used for.
+
+  > 
+  > Figure 1 is a great improvement over previous incarnations, largely by
+  > virtue of the coloured boxes, but I think it could be more effective
+  > and appealing.  I attach a proposed alternative (graffle and png)
+  > which follows the style of diagrams used in the examples.
+
+Thanks. 
+I prefer to use UML diagrams for "schema" level diagrams. 
+The notation ellipsis/rectangle/pentagon is good for "instance" level diagrams.
+
+
+  > 
+  > I think there's an inconsistency between the diagram (figure 1) and
+  > table (Table 2): relations on the diagram use values from the "Name"
+  > column of the table, but types use values from the "Concepts" column.
+  > 
+
+The inconsistency was addressed.
+Relations are now capitalized.  Instances, in prov-n, are lower case.
+
+  > I think it's a little confusing that there are named "concepts" and
+  > (sometimes) different names for the types and relations.  This is
+  > behind my earlier comment suggesting that table 2 be moved top later
+  > in the document.
+  > 
+  > I would suggest that the diagram should use the same terms as are used
+  > in the rest of section 2, then those names can also be used to locate
+  > the corresponding sections in the reference part of the document.  In
+  > this arrangement, I think table 2 is redundant.
+
+
+I think we want to keep both 'wasGeneratedBy/WasGeneratedBy' and 'Generation'.
+The latter is the concept, the former the relation.
+
+I would be reluctant to replace 'wasGeneratedBy' by 'Generation' in
+figures.  Likewise, I would be reluctant to say "WasGeneratedBy is the
+completion of production of a new entity ..."
+
+So, the solution above, with capitalization of relations would address
+the concern.
+
+
+  > 
+  > 
+  > == Section 2.1.1 ==
+  > 
+  > Rather than focusing on the definitions of terms, which is covered
+  > later, I would aim to cover here the key relationships.  In the case
+  > of entities and activities I think this is largely concerned with
+  > their inter-relationship.
+  > 
+  > Suggest:
+  > 
+  > [[
+  > Provenance describes /entities/, which are both generated and used by /activities/.
+  > 
+  > While the main anticipated use of provenance is to describe entities
+why say this?
+  > that are digital artifacts, it is not constrained from describing
+  > other kinds of thing. Thus, an entity may be a broad diversity of
+  > notions, including digital objects such as a file or web page,
+  > physical things such as a mountain, a building, a printed book, or a
+  > car as well as abstract concepts and ideas.
+  > 
+  > <skip entity definition: that's covered in section 5>
+  > 
+  > <skip entity example: that's already covered in the text (yours and mine)>
+  > 
+  > <skip activity definition: that's covered in section 5>
+  > 
+  > Activities are (time-bounded) processes that consume or generate
+  > entities; they are the mechanisms by which entities are created and
+
+I don't feel like we should paraphrase definitions of terms.
+Choice of term 'consume' is too restrictive, that's why I also use alternatives.
+
+
+  > used in the creation of further entities.  Just as entities cover a
+  > broad range of notions, activities can cover a broad range of
+  > processes, commonly related to information processing, but also
+  > covering broader notions like driving a car from Boston to Cambridge.
+  > 
+
+Inserted/rephrased the above.
+
+  > <example 2 (activities> here>
+  > 
+  > Provenance is concerned with activities that create a new state of
+  > affairs that can be described in terms of pre-existing entities, and
+  > new entities that exist as the result of the activities.  Thus we have
+  > two kinds of relationship between an activity and entities:
+  > 
+  > * Usage:
+  > 
+  >   is the relationship between an activity and the entities that it
+  >   uses, which must exist in order for the activity to complete.  Usage
+  >   is considered to occur when an activity starts using an entity; if
+  >   the entity does not exist at this time, usage cannot happen.
+  > 
+  > * Generation:
+  >   which is the elates an activity to entities that it creates, which
+  >   do not exist before the activity is started and do exist by the time
+  >   the activity completes.  Generation is considered to occur when the
+  >   entity is full created, at which point it may be available for use
+  >   by other activities.
+  > 
+  > <example 3 here>
+  > 
+  > <example 4 here>
+
+The above suggested text says 'Usage is relationship' .... 'Usage is considered to occur'
+So, it mixes 'data model construct' and 'concept'. 
+I tried to stay with definitions of concepts here.
+
+  > 
+  > One might reasonably ask what entities are used and consumed by
+  > driving a car from Boston to Cambridge.  This is answered by
+  > considering that a single physical (or digital) artifact may
+  > correspond to several entities; in this case a car in Boston may be a
+  > different artifact from a car in Cambridge (which may in turn have
+  > implications for, say, taxation purposes).  Thus, among other things,
+  > an entity "car in Boston" would be used, and a new entity "car in
+  > Cambridge" would be generated by this activity of driving.  The
+  > provenance trace of our car might include: designed in Japan,
+  > manufactured in Korea, shipped to Boston USA, purchased by customer,
+  > driven to Cambridge, serviced by engineer in Cambridge, etc., all of
+  > which might be important information when deciding whether or not it
+  > represents a sensible second-hand purchase.  Or some of it might
+  > alternatively be relevant when trying to determine the truth of a web
+  > page reporting a traffic violation involving that car.  This breadth
+  > of provenance allows descriptions of interactions between physical and
+  > digital artifacts.
+
+Good!
+
+I summed that you meant "in this case a car in Boston may be a
+different ENTITY from a car in Cambridge"  ... and not ARTIFACT?
+
+  > 
+  > <I added a fair amount of explanatory text here, because I think that
+  > the whole issue of breadth of interpretation begs some explanation.>
+
+Yes, it is good idea. I included it.
+
+  > 
+  > Communication is the generation of an entity by an activity and its
+  > subsequent usage by another activity.
+  > 
+  > <skip definition - it just repeats and is covered later>
+  > 
+
+See above.
+
+  > 
+  > Example 5 here; I might also add to this: the activity of purchasing a
+  > car in Boston could be informed by the the activity of its being
+  > designed in Japan> ]]
+  > 
+
+After adding this example, I removed it since I am not sure it works.
+
+activity(ex:purchasing)
+activity(ex:designing)
+wasGeneratedBy(ex:design, ex:designing)
+wasDerivedFrom(ex:car,ex:design)
+wasDerivedFrom(ex:carInShowRoom, ex:car)
+used(ex:purchasing, ex:carInShowRoom)
+
+
+
+
+  > 
+  > == After section 2.1.1 ==
+  > 
+  > I have proposed previously, and still feel, that the section on
+  > derivation should be part of section 2.1.1.  A compromise position
+  > that keeps it separate would be to introduce it immediately following
+  > section 2.1.1.  It is a natural part of the discussion of provenance
+  > traces, and is arguable one of the most significant us of such traces
+  > (e.g. the weather report W was derived from meteorological datasets X,
+  > Y and Z; my Ford car was derived from a VW design).
+  > 
+
+I have swapped 2.1.2 and 2.1.3.
+
+  > Thus, following on from the proposed revised 2.1.1:
+  > 
+  > [[
+  > 
+  > Derivation is the generation of an entity that is affected by some
+  > other entity that is used directly or indirectly.  Derivation covers
+  > common information processing activities like transforming data,
+  > editing a document, and also extends more broadly to a canvas used for
+  > creating a painting, transporting a work of art from London to New
+  > York, or melting ice to produce water.
+
+I don't like 'Derivation is the generation .." 
+because derivation may have started well before the actual generation.
+
+As indicated above, I find it challenging to paraphrase the definitions.
+
+  > 
+  > While the basic idea is quite simple, the concept of derivation can be
+  > tricky: implicit is the notion that the generated object was affected
+  > in some way by the used object.  It is not sufficient that an artifact
+  > being used by an activity which also generated a new artifact to say
+  > that the second artifact was derived from the first.  In the activity
+  > of creating a painting, an artist may have mixed some paint that was
+  > never actually applied to the canvas - the painting would typically
+  > not be considered a derivation from the unused paint.  The provenance
+  > model does not attempt to define what constitutes derivation; rather,
+  > it is considered to be something that is asserted, having been
+  > determined by unspecified means.
+  > 
+  > Thus, while a chain of usage and generation is necessary for a
+  > derivation relation between entities, it is not sufficient; some
+  > knowledge of the activities involved is also needed.  ]]
+  > 
+  > <Again, I've added bit of text here, because I think it's part of the
+  > orientation that's needed to avoid misunderstandings like the one I
+  > exhibited in the last teleconference.>
+
+I like it, I have added it after a few tweaks.
+
+  > 
+  > == Section 2.1.2 ==
+  > 
+  > I find the introduction of agents as having "responsibility" is a bit
+  > bare, and doesn't really put it into a context of provenance usage.
+  > I'm also uneasy about describing software agents as having
+  > responsibility.
+
+Agreed intro was bare.
+  > 
+  > You say "An agent may be a particular type of entity or activity" -
+  > can an agent *really* be an activity?  While I would shop short of
+  > insisting it cannot, I'm not sure it helps to claim that it can be.  I
+  > had the idea that the reason that a plan is distinct from an agent is
+  > so that provenance-of-instruments-of-agents (e.g. software) can be
+  > handled without making the agents also be entities.
+  > 
+  > Rather than try pick apart the existing text, I'll offer my suggestion:
+  > 
+  > [[
+  > 
+  > Provenance provides a basis for evaluating reliability or
+  > trustworthiness of an entity.  For many purposes, a key consideration
+  > for deciding whether something is reliable and/or trustworthy is
+  > knowing who or what was involved in its production.  Data published by
+  > a respected independent organization may be considered more
+  > trustworthy that that from a lobby organization; a claim by a
+  > well-known scientist with an established track record may be more
+  > believed than a claim by a new student; a calculation performed by an
+  > established software library may be more reliable than by a one-off
+  > program.
+
+I reused this intro, but put the word 'responsible' in it.
+  > 
+  > In provenance terms, an /agent/ is a person or entity that can
+  > initiate, control or otherwise bear responsibility for an activity.
+
+Again, I want to avoid paraphrasing the definition.
+We moved away from "control" a long time ago. 
+
+  > 
+  > <example 6 here>
+  > 
+  > An /association/ of an activity with an agent indicates that the agent
+  > had some role in the activity.
+  > 
+
+  > <example 8 here>
+  > 
+  > An /attribution/ of an entity to an agent means that the entity was
+  > generated by some (possibly unknown) activity that was associated with
+  > the agent.
+
+
+  > 
+  > <example 7 here>
+  > 
+  > The provenance model provides these mechanisms to express information
+  > for reliability or trustworthiness decisions, but does not specify how
+  > any such decisions should be made.  ]]
+  > 
+
+There is too much instance on this in your suggestions. 
+I am not including this.
+
+
+  > .........
+  > 
+  > I'm going to review the rest of section 2 more quickly.  I won't necessarily try to suggest alternatives
+  > 
+  > == Section 2.2 ==
+  > 
+  > Section 2.2 structure feels a bit contrived to me ... it deals with
+  > extension mechanisms (2.2.1) and some new concepts (2.2.2 and 2.2.3)
+  > 
+
+... but the new concepts belong to the extended structures. 
+  > My inclination would be to present:
+  >   2.2 Additional structures
+  >   2.2.1 Bundle
+  >   2.2.2 Collections
+  >   2.3 Extension mechanisms
+  >   2.3.1 Subtyping
+  >   2.3.2 Multi-way relations
+  >   2.3.3 Optional identification and new relations
+
+What is 'additional structures' here? are they extended structures?
+
+  > 
+  > My further comments use the current section numbering...
+  > 
+  > == 2.2.1.1 ==
+  > 
+  > The styling here makes the examples look lime definitions... which if
+  > nothing else is a hostage to fortune (could get out of phase with the
+  > real definition).
+  > 
+  > (Suggest dropping the "defined as ..." and linking the example to the actual definition.)
+  > 
+
+They are definition as before.  
+I suggest no change.
+
+  > 
+  > == 2.2.1.2 ==
+  > 
+  > Para 1: the description here is highly technical, and doesn't really
+  > give an indication why a user/developer would care.  I'd rather just
+  > say something along the lines of wanting to express more information
+  > than is conveniently captured by a simple relation.
+  > 
+  > The text seems very long-winded.  I think the entire useful content
+  > could be captured in a couple of sentences plus the example.  E.g.
+  > 
+  > [[
+  > 
+  > Association (@@link section 2.1.2) can express a relationship between
+  > a software agent and an entity, but in its basic form cannot indicate
+  > what software is being used by the agent.  An extended form of
+  > association (@@link section 5.2.3) also specifies a /plan/, which is
+  > an entity representing a set of actions or steps intended by one or
+  > more agents to achieve some goals, such as the software that is
+  > executed by a software agent.
+  > 
+  > ]]
+
+I trimmed some of the text, but kept the original definitions.
+
+  > 
+  > (Why is the agent optional in section 5.2.3?)
+
+See example 36.
+
+  > 
+  > 
+  > == 2.2.1.3 ==
+  > 
+  > The section title doesn't make any sense to me.  The "New relations"
+  > bit is particularly confusing.
+
+I made it a separate header.  This now identifies four ways by which we
+have created extended structures.
+
+  > 
+  > From the description, it looks to me like reification of a relation so
+  > that arbitrary further information can be added to an instance.
+  > 
+  > I think a title like "Identifying relation instances" might be a
+  > little clearer
+  > 
+  > It's not clear to me whether *any* relation can be reified in this
+  > way, or are there some for which the optional id parameter is not
+  > allowed?
+
+I think the text is clear, and says "in some cases".
+We decided not to do it for specialization/alternate for instance.
+  > 
+  > Does use of this structure map 1:1 to use of qualified relations in
+  > the ontology?  I think not.
+
+As far as I can see, it does. In UML diagrams, "association classes" correspond
+to qualified classes.
+
+
+  > 
+  > 
+  > == 2.2.2 ==
+  > 
+  > What exactly is a "provenance description"?  I don't think that's been introduced yet.
+  > 
+  > Maybe a sentence at the top of section 2 would help; e.g.
+  > [[
+  > A /provenance description/ is a set of assertions based on the core and extended provenance structures described below.
+  > ]]
+
+I added "a provenance description is an instance of a core and extended 
+provenance structure described below."
+
+  > 
+  > I see the term "provenance description" is used throughout the
+  > document, but I see no definition.  Many of the uses are fine - being
+  > descriptive, but in this case (and maybe others) it's being used as a
+  > specific term in a definition, so I think it needs to be clarified.
+  > 
+  > As it is, if the above description is correct, a bundle should be
+  > described as a named provenance description (not a set of
+  > descriptions).
+
+With the above definition, we can keep the definition of bundle.
+
+  > 
+  > ....
+  > 
+  > That's my review to the end of section 2, which is where I planned to
+  > focus my most intense efforts.  I'll continue to look through the rest
+  > of the document in the time remaining today, but I'm going to send
+  > this off to you now.
+  > 
+  > #g
+-- 
+
+  > 
+  > On 25/05/2012 11:16, Luc Moreau wrote:
+  > > Hi Graham,
+  > >
+  > > I have produced an updated version of the prov-dm document for
+  > > you to go through.
+  > >
+  > > http://dvcs.w3.org/hg/prov/raw-file/default/model/releases/ED-prov-dm-20120525/prov-dm.html
+  > 
+  > Continuing (my comments up to section 2 sent previously...)
+  > 
+  > 
+  > == Section 3 ==
+  > 
+  > (Not reviewed in detail)
+  > 
+  > == Section 4 ==
+  > 
+  > (Not reviewed in detail)
+  > 
+  > == Section 5 ==
+  > 
+  > I'd still like to see derivations immediately follow entities/activities.  :)
+
+I swapped components 2 and 3.
+
+  > 
+  > Figure 4: I don't know what this is trying to tell me.
+  > 
+  > What is the significance of vertical stacking and/or horizontal alignment.
+  > 
+  > Figure 5: uses UML, but at one point I was looking for cardinality indicators (1:1, 1:N, N:M, etc.)
+
+
+TO DO.
+Paolo, can you tell me what to add? where? What's the UML default?
+
+
+  > 
+  > == Section 5.1.1 ==
+  > 
+  > Definition of entity seems a bit clumsy, but not problematic.
+
+Was agreed by WG.
+No change here.
+
+  > 
+  > == Section 5.1.2 ==
+  > 
+  > An activity may be "... associated ..." with an entity?  Seems like an
+  > unfortunate overloading of terminology.  Suggest drop "being
+  > associated with" ... it's not trying to be an exhaustive list.
+
+There was no overloading, that's the same association.
+However, agreed, it doesn't have to be exhaustive. I dropped it.
+
+  > 
+  > "An activity is not an entity" - I think you said otherwise further up (see previous email).
+  > 
+
+Not to my knowledge. 
+
+  > == Section 5.1.3 ==
+  > 
+  > "This entity did not exist before..." jarred a little for me.  I'd suggest "was not available for use before ..."
+
+What's the problem with this? The sentence already say "becomes available for usage ..."
+
+  > 
+  > == Section 5.1.4 ==
+  > 
+  > == Section 5.1.5 ==
+  > 
+  > It seems a little odd that the definition leads on the exchange of an
+  > entiry, which is not identified.  Suggest:
+  > 
+  > "/Communication/ is the exchange of information by two activities, in
+  > the form of an unspecified entity, one activity using information
+  > generated by the other"
+
+The exchanged entity may not be digital.
+
+I updated the definition as follows
+
+"Communication is the exchange of an UNSPECIFIED entity by two activities, one activity using SOME entity generated by the other."
+
+  > 
+  > As I recall, this assertion implies the existence of an entity or
+  > entity-derivation-entity chain from one to the other.  Hmmm... Is the
+  > intent here that the entity is always passed directly from one
+  > activity to the other, rather than possibly indirectly via intervening
+  > activities?  The phrasing suggests this, but the example not so much
+  > (what bureaucratic process could be so simple?).
+
+
+Yes, it was the intent. 
+
+
+  > 
+  > == Section 5.1.6 ==
+  > 
+  > The phrase "that initiated the activity" suggests to me that the
+  > trigger is an agent (i.e. capable of action).  Maybe "that set of..."
+  > ?
+
+Good suggestion.
+
+  > 
+  > 
+  > == Section 5.2.1 ==
+  > 
+  > I still feel uneasy about defining agency solely in terms of
+  > "responsibility", particularly when software agents are included.  I
+  > think the defining feature of an agent is that they are capable of
+  > unsupervised action; that they can directly initiate an activity
+  > without the direct involvement of any other agent at the time.
+  > 
+
+That's exactly the path we didn't want to follow: some communities
+don't see autonomy as a key feature of an agent (e.g. mail agent).
+
+
+
+  > == Section 5.2.3 ==
+  > 
+  > As above.
+  > 
+  > I also find, looking at the text, that it's not clear if more than one
+  > agent can be associated with an activity.  The example makes it clear
+  > that this is allowed, but the phrasing "assignment of responsibility"
+  > suggests otherwise to me.
+
+Sorry, I don't understand the issue about the phrasing.
+
+Yes, we can have multiple agents associated with an activity, each with
+a different association.
+
+
+  > 
+  > == Section 5.2.4 ==
+  > 
+
+  > The use of responsibility here is rather more in line with my
+  >     expectation, and not, I think, fully consistent with the preceding
+  >     uses.
+
+
+In what way is this inconsistent?
+
+  > 
+  > == Section 5.3.1 ==
+  > 
+  > "A derivation is a transformation of an entity into another, an update
+  > of an entity, resulting in a new one, or based on an entity, the
+  > construction of another."
+  > 
+  > I'm having trouble parsing this, especially the final clause "the
+  > construction of another" - is there a missing or misplaced "or"?
+  > 
+  > I'm finding "transformation" seems rather a limiting term to define
+  > derivation.  If I get an idea from reading a document, and then write
+  > a new document around that idea, I think there's derivation there, but
+  > not transformation.
+  > 
+  > Here's a stab an an alternative:
+  > 
+  > [[
+  > A /derivation/ is the construction of a new entity using
+  > information obtained directly or indirectly from another pre-existing
+  > entity.  ]]
+  > 
+
+It seems to restrictive: why information?
+
+New definition:
+
+
+A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-exisiting entity.
+
+
+  > 
+  > == Section 5.3.2 ==
+  > 
+  > So many "revise"-based terms in one short definition!
+  > 
+  > maybe:
+  > "A revision is a derivation for which the resulting entity is a
+  >     revised version of some original.  The implication here is that
+  >     the resulting entity contains substantial content from the
+  >     original."
+
+Good.
+
+  > 
+  > 
+  > == Section 5.3.3 ==
+  > 
+  > The definition of quotation makes it seem like an activity, not a relationship between entities.
+  > 
+  > Maybe:
+  > 
+  > "A quotation is a form of derivation in which the new entity contains
+  > a verbatim copy of some or all of the original entity's content."
+
+
+This was agreed a while back.  If you feel like changing it, I suggest
+you raise an issue about it.
+
+  > 
+  > 
+  > == Section 5.3.4 ==
+  > 
+  > 
+  > == Section 5.3.5 ==
+  > 
+  > What's a "responsibility" relation - I don't see that defined anywhere.
+
+It was Delegation.
+
+  > 
+  > I'm completely unclear what is meant by this relation that isn't already covered by derivation.
+  > 
+
+Delegation.  + the fact that it is transitive.
+  > 
+  > I might /guess/ that it's meant to allow the "entity" concerned to be
+  > an agent in the overall process, but I find that confusing given that
+  > agents are separately identified core concepts.
+  > 
+  > What's the requirement for this relation?  Do we really need it?
+  > 
+http://www.w3.org/2011/prov/track/issues/370
+
+  > 
+  > == Section 5.4.1 ==
+  > 
+  > 
+  > "In particular, the lifetime of the specialized entity contains that
+  > of any specialization."  I find the term "specialized entity" is
+  > unclear, making the sentence harder to read.  Suggest: "In particular,
+  > the lifetime of the more general entity contains that of any
+  > specialization."
+  > 
+
+This was voted recently. You need to raise a new ISSUE for this.
+
+  > 
+  > I know this is formally a topic for CONSTRAINTS, but I think it would
+  > help to give an indication of whether a thing can be considered a
+  > specialization of itself.
+  > 
+  > 
+  > == Section 5.4.2 ==
+  > 
+  > 
+  > In example 41, you claim "They are both specialization of an
+  > (unspecified) entity."  If this is true, shouldn't it be part of the
+  > definition of alternate?
+
+I dropped it.
+
+  > 
+  > 
+  > == section 5.5 ==
+  > 
+  > s/depict/depicts/
+  > 
+  > 
+  > == Section 5.5.1 ==
+  > 
+  > "provenance description" is not defined, but appears here as a key
+  > element in a definition.  (See previous comment - maybe in other
+  > email)
+  > 
+
+was added as suggested.
+  > 
+  > == Section 5.5.2 ==
+  > 
+  > 
+  > I found the combination of section title and phrasing difficult to
+  > understand. I think the title and first sentence might read:
+  > 
+  > [[
+  > 5.5.2 Bundle type
+  > 
+  > A bundle is a named set of provenance descriptions.  The bundle name
+  > may be declared to be an entity of type prov:Bundle, and the bundle
+  > may thus have its own provenance description.  ]]
+  > 
+  > Reflecting further on this, what need is served by introducing the
+  > bundle type?  Provenance is just data.  If the Bundle constructor is
+  > present, then naming it as an entity is enough - the bundle type
+  > provides no new information.  If the bundle constructor is not
+  > present, WHY does it matter that the entity described is provenance?
+  > 
+
+Note that the Bundle constructor may not be present (when considering
+incremental navigation, because it has not been retrieved yet).
+
+In fact there is a good reason why you may want to analyse provenance-of-provenance
+before you retrieve the provenance of something. I will retrieve an account that
+is generated by xyz, or an account that provides details.
+
+
+prov:Collection, prov:Plan, prov:Bundle, prov:Dictionary all fall in the same category.
+This type information can be inferred. (We discussed this by email on a separate thread.)
+
+
+  > 
+  > == Section  5.5.3 ==
+  > 
+  > The description of provenance locator is very confusing.  Particularly the bit:
+  > 
+  > "id: an identifier for a provenance locator;"
+  > 
+  > Looking at the examples, I think this should be "the identifier of
+  >     an entity for which provenance is provided".  Or maybe the id is
+  >     optional, and should be shown as "id;" in the PROV-N example.
+  > 
+  > My sense is that, especially as this is motivated by PROV-AQ, there are just too many identifiers floating around.
+  > 
+  > Why not just:
+  > 
+  >   hasProvenanceIn(subject, bundle)
+  > 
+  > Where subject is the URI of an entity, and bundle is the URI of a provenance bundle with information about that entity.
+  > 
+  > I've raised this as a separate issue, as I think it needs discussion.
+  > 
+
+Discussion in progress.
+
+  > 
+  > == Section 5.6 ==
+  > 
+  > I'm skipping review of collections, as I don't really think they
+  > belongs as an integral part of the PROV model, but I know others in
+  > the WG feel differently. Thus, I'm not well-placed to judge how it
+  > meets expectations.
+  > 
+  > 
+  > == Section 5.7 ==
+  > 
+  > 
+  > Why are namespace declarations and qualified names part of the
+  > provenance data model, rather than part of the PROV-N specification?
+  > It seems to me that most of this is syntactic artifact.
+  > 
+
+prov-n is just a serialization for what prov-dm defines.
+If identifiers have not been specified as qualified names in prov-dm,
+how can we create a serialization prov-n?
+
+  > 
+  > == Section 5.7.4 ==
+  > 
+  > I'm finding that the attribute identifiers seem to be somewhat buried
+  > in what is otherwise syntactic detail.  I think that section 5.7.4
+  > would be more appropriately presented as an immediate subsection of
+  > section 5 (e.g. 5.7, with the rest of section 5.7 becoming 5.8)
+  > 
+
+
+  > == Section 5.7.5 ==
+  > 
+  > Similar comments to above.
+
+
+I moved namespace declaration and qualified name after identifier/attribute/value.
+
+
+  > 
+  > 
+  > == Section 6 ==
+  > 
+  > 
+  > "The PROV namespace declares a set of reserved attributes catering for
+  > extensibility: prov:type, prov:role, prov:location."  I think these
+  > should be the first port of call for PROV extensions, and as such
+  > should feature more prominently, and their use discussed more fully,
+  > rather than as an afterthought to "attribute-value lists"
+  > 
+
+  > The second bullet point already does this for prov:type. I think
+  >     this should come first, followed by a similar entry for prov:role.
+
+OK, I will have a go at this.
+
+  > 
+  > 
+  > == Section 7 ==
+  > 
+  > I'm not sure this section is needed.  My preference would be to drop it.
+  > 
+  > But if that's not considered good form, I'd like to revisit this when
+  > the PROV-CONSTRAINTS document settles (especially its introduction and
+  > abstract).  I think they should be conveying the same message.
+  > 
+
+
+I think it's useful to have a 'taster' for prov-constraints.
+Otherwise, readers won't remember we mentioned it in introduction.
+
+Agreed it should be aligned with prov-constraints.
+
+Luc

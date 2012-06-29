@@ -1,0 +1,31 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+<http://aquarius.tw.rpi.edu/prov-wg/prov-o#prov-o-at-a-glance>
+   a prov:Entity, :WebPage;
+   dcterms:replaces <https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html>;
+.
+
+<https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html>
+   a prov:Entity, :WebPage;
+   dcterms:replaces <http://www.w3.org/TR/prov-o/>;
+.
+
+<extended-terms.txt>
+   a prov:Entity, :File;
+   prov:wasDerivedFrom <http://aquarius.tw.rpi.edu/prov-wg/prov-o#prov-o-at-a-glance>;
+   prov:qualifiedAssociation [
+      a prov:Association;
+      prov:agent <http://tw.rpi.edu/instances/TimLebo>;
+      prov:hadPlan [
+         a prov:Plan;
+         dcterms:descrption "Copy and paste the expanded terms list from http://aquarius.tw.rpi.edu/prov-wg/prov-o#prov-o-at-a-glance into extended-terms.txt and put one per line.";
+      ];
+   ];
+.
+
+<http://tw.rpi.edu/instances/TimLebo> a prov:Person .

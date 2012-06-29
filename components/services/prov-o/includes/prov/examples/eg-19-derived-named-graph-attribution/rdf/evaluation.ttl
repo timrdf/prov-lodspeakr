@@ -1,0 +1,53 @@
+@prefix foaf:     <http://xmlns.com/foaf/0.1/> .
+@prefix prov:     <http://www.w3.org/ns/prov#> .
+@prefix void:     <http://rdfs.org/ns/void> .
+@prefix sd:       <http://www.w3.org/ns/sparql-service-description#> .
+@prefix datafaqs: <http://purl.org/twc/vocab/datafaqs#> .
+
+<https://raw.github.com/timrdf/DataFAQs/master/services/sadi/faqt/provenance/named-graph-derivation-materials/sample-inputs/golfers.ttl#service> 
+   a sd:Service;
+   sd:endpoint        <http://logd.tw.rpi.edu/sparql>;
+   sd:availableGraphs <https://raw.github.com/timrdf/DataFAQs/master/services/sadi/faqt/provenance/named-graph-derivation-materials/sample-inputs/golfers.ttl#collection>;
+.
+<https://raw.github.com/timrdf/DataFAQs/master/services/sadi/faqt/provenance/named-graph-derivation-materials/sample-inputs/golfers.ttl#collection> 
+    a datafaqs:Satisfactory, sd:GraphCollection;
+    sd:namedGraph <https://raw.github.com/timrdf/DataFAQs/master/services/sadi/faqt/provenance/named-graph-derivation-materials/sample-inputs/golfers.ttl#named-graph> 
+.
+<https://raw.github.com/timrdf/DataFAQs/master/services/sadi/faqt/provenance/named-graph-derivation-materials/sample-inputs/golfers.ttl#named-graph> 
+    a sd:NamedGraph;
+    sd:name              <http://logd.tw.rpi.edu/source/lebot/dataset/golfers/version/2012-Mar-17>; # cf. SELECT * WHERE { GRAPH <> {} }
+    prov:wasAttributedTo <http://github.com>, 
+                         <http://raw.github.com>;
+    prov:wasDerivedFrom  <http://logd.tw.rpi.edu/source/lebot/file/golfers/version/2012-Mar-17/conversion/lebot-golfers-2012-Mar-17.void.ttl>,
+                         <http://logd.tw.rpi.edu/source/lebot/file/golfers/version/2012-Mar-17/conversion/lebot-golfers-2012-Mar-17.ttl.tgz> .
+
+<http://logd.tw.rpi.edu/source/lebot/file/golfers/version/2012-Mar-17/conversion/lebot-golfers-2012-Mar-17.ttl.tgz> 
+   a void:Graph;
+   prov:wasDerivedFrom <http://logd.tw.rpi.edu/source/lebot/provenance_file/golfers/version/2012-Mar-17/source/golfers.xls.csv>;
+.
+<http://logd.tw.rpi.edu/source/lebot/provenance_file/golfers/version/2012-Mar-17/source/golfers.xls.csv> 
+   a foaf:Document;
+   prov:wasDerivedFrom <http://logd.tw.rpi.edu/source/lebot/provenance_file/golfers/version/2012-Mar-17/source/golfers.xls>;
+.
+<http://logd.tw.rpi.edu/source/lebot/provenance_file/golfers/version/2012-Mar-17/source/golfers.xls> 
+   a foaf:Document;
+   prov:wasDerivedFrom <http://logd.tw.rpi.edu/source/lebot/provenance_file/golfers/version/2012-Mar-17/source/golfers.xls.zip>;
+.
+<http://logd.tw.rpi.edu/source/lebot/provenance_file/golfers/version/2012-Mar-17/source/golfers.xls.zip> 
+   a foaf:Document;
+   prov:alternateOf    <https://raw.github.com/timrdf/csv2rdf4lod-automation/master/doc/examples/source/lebot/golfers/version/original/manual/golfers.xls.zip>;
+   prov:wasDerivedFrom <https://raw.github.com/timrdf/csv2rdf4lod-automation/master/doc/examples/source/lebot/golfers/version/original/manual/golfers.xls.zip>;
+.
+<https://github.com/timrdf/csv2rdf4lod-automation/raw/master/doc/examples/source/lebot/golfers/version/original/manual/golfers.xls.zip> 
+   a foaf:Document;
+   prov:wasAttributedTo <http://github.com>;
+.
+
+<http://github.com>     a prov:Agent .
+<http://raw.github.com> a prov:Agent .
+
+<https://raw.github.com/timrdf/csv2rdf4lod-automation/master/doc/examples/source/lebot/golfers/version/original/manual/golfers.xls.zip> 
+   a foaf:Document;
+   prov:alternateOf     <https://github.com/timrdf/csv2rdf4lod-automation/raw/master/doc/examples/source/lebot/golfers/version/original/manual/golfers.xls.zip>;
+   prov:wasAttributedTo <http://raw.github.com>;
+.

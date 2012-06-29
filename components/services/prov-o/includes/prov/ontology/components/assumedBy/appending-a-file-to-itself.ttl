@@ -1,0 +1,38 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix ext:  <http://www.example.com/crime#> .
+@prefix :     <#> .
+
+:Input  rdfs:subClassOf prov:Role .
+:Output rdfs:subClassOf prov:Role .
+
+:pe
+   a prov:ProcessExecution, :Concatentation;
+   dcterms:description "Tim used the cat unix command to append appending-a-file-to-itself.ttl to itself.",
+                       "cat appending-a-file-to-itself.ttl > tmp; cat tmp >> appending-a-file-to-itself.ttl";
+   prov:used [
+      a :Input; # and by subsumption, also a prov:Role, prov:Entity;
+      ext:hasFilePath <appending-a-file-to-itself.ttl>;
+      ext:hasFileContent "hello"^^xsd:string;
+      dcterms:modified "2011-09-12T16:00:00-04:00"^^xsd:dateTime;
+   ];
+   prov:used [
+      a prov:Controller; # prov:Controller is subclass of prov:Role .
+      prov:assumedBy <http://tw.rpi.edu/instances/TimLebo>;
+      rdfs:seeAlso <https://dvcs.w3.org/hg/prov/file/tip/ontology/components/Controller.ttl>;
+   ];
+   prov:generated [
+      a :Output; # and by subsumption, also a prov:Role, prov:Entity;
+      ext:hasFilePath <appending-a-file-to-itself.ttl>;
+      ext:hasFileContent "hellohello"^^xsd:string;
+      dcterms:modified "2011-09-12T16:01:00-04:00"^^xsd:dateTime;
+   ];
+   rdfs:comment "NOTE, the contents of <appending-a-file-to-itself.ttl> is NO LONGER 'hellohello' - as it contains 'this string right here'";
+.
+
+<http://tw.rpi.edu/instances/TimLebo> 
+   a foaf:Person, [ owl:complementOf prov:Entity ] .

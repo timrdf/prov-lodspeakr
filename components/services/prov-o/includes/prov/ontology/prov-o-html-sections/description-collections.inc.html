@@ -1,0 +1,64 @@
+     <section id="description-collections-terms"> <!-- section 3.1 -->
+       <!-- This section is version controlled at http://dvcs.w3.org/hg/prov/file/tip/ontology and mirroed to
+             https://github.com/timrdf/prov-lodspeakr/tree/master/components/services/prov-o -->
+       <h3>Collections Terms</h3>
+
+	<p> A <code><a class="qname"
+href='#Dictionary'>prov:Dictionary</a></code> is an <code
+class="repeated">prov:Entity</code> that acts as a container to some members,
+which are themselves entities.
+Specifically, a dictionary is composed of set of key-value pairs, where a
+literal key is used to identify a constituent entity within the dictionary. 
+
+To illustrate this, the example below describes a dictionary <code>:c1</code>
+that has as members the two key value pairs <code>("k1", :e1)</code>
+and <code>("k2", :e2)</code>.
+</p>
+
+<div about="#narrative-example-dictionaries-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+   <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-26-provo-collections-narrative/rdf/membership.ttl"
+        class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/membership.ttl" %}{% endescape %}</pre>
+</div>
+
+<p>It is worth noting that <code>:c1</code> MAY also
+have other members (i.e. <code class="repeated">prov:knownMembership</code> is
+not functional).  A dictionary MAY be empty and thus not have any known
+memberships, in which case it SHOULD be described as an instance of the
+subclass <a class="qname"
+href='#EmptyDictionary'><code>prov:EmptyDictionary</code></a>.
+</p>
+
+	<p> To describe the provenance of a dictionary, PROV-O provides two
+kinds of involvements: <code><a class="qname"
+href="#qualifiedInsertion">prov:qualifiedInsertion</a></code> is used to
+describe that a dictionary was obtained from an existing dictionary by
+<em>inserting</em> a set of key-value pairs.  <code><a class="qname"
+href="#qualifiedRemoval">prov:qualifiedRemoval</a></code> is used to specify
+that a given dictionary was obtained from an existing dictionary by
+<em>removing</em> a set of key-value pairs.  The example below specifies that
+the dictionary <code>:c1</code> was obtained from the empty dictionary
+<code>:c</code> by <em>inserting</em> the key-value pairs <code>("k1",
+:e1)</code> and <code>("k2", :e2)</code>.  
+</p>
+
+<div about="#narrative-example-dictionaries-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+<pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-26-provo-collections-narrative/rdf/insertion.ttl"
+     class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/insertion.ttl" %}{% endescape %}</pre>
+</div>
+
+
+	<p>
+	Similarly, the example below specifies that the dictionary
+	<code>:c3</code> was obtained by <em>removing</em> the key-value pairs associated with
+	the keys <code>"k1"</code> and <code>"k2"</code> from the dictionary
+	<code>:c2</code>. Thus, <code>:c3</code> does not contain the
+	members <code>("k1", :e1)</code> and <code>("k2",
+	:e2(</code> from <code>:c2</code>.
+	</p>
+
+<div about="#narrative-example-dictionaries-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+   <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-26-provo-collections-narrative/rdf/removal.ttl"
+        class="example">{% escape %}{% include "includes/prov/examples/eg-26-provo-collections-narrative/rdf/removal.ttl" %}{% endescape %}</pre>
+</div>
+
+     </section>

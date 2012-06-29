@@ -1,0 +1,57 @@
+I think the document puts the cart before the horse to some degree: basic notions, such as identifiers, attributes and other elementary syntax, is buried in section 4.7, which makes it difficult for an uninformed reader to understand the earlier sections.   Similarly, the fact that PROV-N introduces syntax for accounts and expression containers is not mentioned earlier in the document, and containers are used in examples before they are ever discussed. 
+
+> * Can the short name of the document be confirmed (in particular, for prov-n, 
+> prov-dm-constraints, since request needs to be sent for publication)? 
+I think PROV-N is OK as a name.  I am not sure, however, that the split between prov-n and prov-dm is working well, since there is a lot of duplicate material.  A reader new to this might not understand the difference between the notation and the data model, since the DM documents exclusively use PROV-N notation anyway.
+
+
+High-level comments:
+
+* Please define all basic syntax in a preliminary section where it will be seen before it is used, and where it can easily be found for later reference. (i.e. it's highly confusing when the RHS of a grammar rule refers to nonterminals that haven't been defined yet, and whose definitions are hard to find).
+
+* Similarly, for accounts and expression-containers, I suggest adding a sentence to the introduction that mentions these constructs, and a paragraph or two (with examples) to the design rationale section that gives examples of these constructs.  
+
+* Accounts could be discussed before expression containers in order to avoid having to redefine the grammar rule for expressionContainer.
+
+* In sec. 2. it says "PROV-N optional arguments need not be specified as long as this does not lead to ambiguity" - Is this something that implementations should check or is it a property we assert holds?  If the latter, I'm not sure I believe it - there are certainly shift-reduce conflicts in the grammar, even if it is formally unambiguous.  Allowing only one, uniform mechanism for optional arguments would IMO be better. (leading to less complex grammar rules and less guesswork on the part of the reader).
+
+
+Detailed comments:
+
+sec. 2. "so that application*s*", "arguments in bracket*s*."
+
+- In the example talking about optional attributes, is there any difference (to the meaning") between an absent attribute list and an empty one?
+
+- Sentence beginning "PROV-N exposes attributes" ungrammatical, citation of PROV-DM-CONSTRAINTS in the middle makes it hard to read.
+
+sec. 3.- Please split the grammar into six nonterminals, one for each component.  Also, I strongly suggest moving the "further expressions" stuff to the beginning or to its own section before sec. 4., since it applies to sec. 5 and 6 too, and I would like sec. 3 to give a high-level summary of the grammar and explain what a "PROV-N document" is.
+
+sec. 4.  Genreation, start, end and association have extra constraints that can actually be expressed using grammar rules.  This would be more precise.
+
+sec. 4.3.1.  Derivation has some optional identifiers that can be replaced by - but not omitted.  This contradicts the discussion of optional arguments in section 2.  Again, I'd prefer to have just one, uniform mechanism for optional arguments.
+
+sec. 4.5.3.  Membership grammar rule doesn't match the example.
+
+sec. 4.7.1.  Stray "|" in the first line of the grammar.
+
+sec. 4.7.1, example: end should be endContainer (I think).  Also, at this point a reader will not have any idea what the container business is about.  
+
+sec. 4.7.2.  Since prefixes and IRIs are used in namespaceDeclarations, I suggest talking about identifiers first.
+
+sec. 5.  Th discussion implies, without saying explicitly, that containers cannot be nested (right?)
+
+sec. 6.  It is strange that a container can contain either a collection of accounts or a collection of expressions, but not a mix of both.  Also, the need to "update" expressionContainer rule suggests to me that it would be better to discuss accounts first, then containers, since we can then avoid having to change the rule mid-stream. (It would be best to avoid superseding rules, to prevent bugs where a developer misses the fact that the rule is later extended.)
+
+sec. B.1.  The reference to IRIs/RFC 3987 is duplicated (there are two different citations of the same document).
+
+
+====
+The ProvRDF and ProvXML wiki pages (along with the Formal Semantics strawman page) are cited, and I'm listed as author.
+
+While I did start these pages, and am the only contributor to the ProvXML and semantics pages, the work on the ProvRDF page should be credited to the PROV-O team (I've done relatively little since setting the page up initially).
+
+I also assume that eventually references to wiki pages will have to be replaced with something else, e.g. 
+ProvRDF -> a part of PROV-O that covers the mapping (is this planned?)
+ProvXML -> PROV-XML note
+Formal semantics strawman -> official version of PROV-SEM Note
+

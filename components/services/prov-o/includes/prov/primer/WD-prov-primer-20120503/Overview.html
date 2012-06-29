@@ -1,0 +1,1360 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head> 
+  <title>PROV Model Primer</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  
+<!-- 
+    === NOTA BENE ===
+    For the three scripts below, if your spec resides on dev.w3 you can check them
+    out in the same tree and use relative links so that they'll work offline,
+   -->
+
+  
+<!--  PM  -->
+
+  <style type="text/css">
+   .note { font-size:small; margin-left:50px }
+  </style>
+
+  
+
+  
+ <style type="text/css">
+/*****************************************************************
+ * ReSpec CSS
+ * Robin Berjon (robin at berjon dot com)
+ * v0.05 - 2009-07-31
+ *****************************************************************/
+
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+code {
+    color:  #ff4500;
+}
+
+
+/* --- WEB IDL --- */
+pre.idl {
+    border-top: 1px solid #90b8de;
+    border-bottom: 1px solid #90b8de;
+    padding:    1em;
+    line-height:    120%;
+}
+
+pre.idl::before {
+    content:    "WebIDL";
+    display:    block;
+    width:      150px;
+    background: #90b8de;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+.idlType {
+    color:  #ff4500;
+    font-weight:    bold;
+    text-decoration:    none;
+}
+
+/*.idlModule*/
+/*.idlModuleID*/
+/*.idlInterface*/
+.idlInterfaceID, .idlDictionaryID {
+    font-weight:    bold;
+    color:  #005a9c;
+}
+
+.idlSuperclass {
+    font-style: italic;
+    color:  #005a9c;
+}
+
+/*.idlAttribute*/
+.idlAttrType, .idlFieldType, .idlMemberType {
+    color:  #005a9c;
+}
+.idlAttrName, .idlFieldName, .idlMemberName {
+    color:  #ff4500;
+}
+.idlAttrName a, .idlFieldName a, .idlMemberName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlMethod*/
+.idlMethType {
+    color:  #005a9c;
+}
+.idlMethName {
+    color:  #ff4500;
+}
+.idlMethName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlParam*/
+.idlParamType {
+    color:  #005a9c;
+}
+.idlParamName {
+    font-style: italic;
+}
+
+.extAttr {
+    color:  #666;
+}
+
+/*.idlConst*/
+.idlConstType {
+    color:  #005a9c;
+}
+.idlConstName {
+    color:  #ff4500;
+}
+.idlConstName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlException*/
+.idlExceptionID {
+    font-weight:    bold;
+    color:  #c00;
+}
+
+.idlTypedefID, .idlTypedefType {
+    color:  #005a9c;
+}
+
+.idlRaises, .idlRaises a.idlType, .idlRaises a.idlType code, .excName a, .excName a code {
+    color:  #c00;
+    font-weight:    normal;
+}
+
+.excName a {
+    font-family:    monospace;
+}
+
+.idlRaises a.idlType, .excName a.idlType {
+    border-bottom:  1px dotted #c00;
+}
+
+.excGetSetTrue, .excGetSetFalse, .prmNullTrue, .prmNullFalse, .prmOptTrue, .prmOptFalse {
+    width:  45px;
+    text-align: center;
+}
+.excGetSetTrue, .prmNullTrue, .prmOptTrue { color:  #0c0; }
+.excGetSetFalse, .prmNullFalse, .prmOptFalse { color:  #c00; }
+
+.idlImplements a {
+    font-weight:    bold;
+}
+
+dl.attributes, dl.methods, dl.constants, dl.fields, dl.dictionary-members {
+    margin-left:    2em;
+}
+
+.attributes dt, .methods dt, .constants dt, .fields dt, .dictionary-members dt {
+    font-weight:    normal;
+}
+
+.attributes dt code, .methods dt code, .constants dt code, .fields dt code, .dictionary-members dt code {
+    font-weight:    bold;
+    color:  #000;
+    font-family:    monospace;
+}
+
+.attributes dt code, .fields dt code, .dictionary-members dt code {
+    background:  #ffffd2;
+}
+
+.attributes dt .idlAttrType code, .fields dt .idlFieldType code, .dictionary-members dt .idlMemberType code {
+    color:  #005a9c;
+    background:  transparent;
+    font-family:    inherit;
+    font-weight:    normal;
+    font-style: italic;
+}
+
+.methods dt code {
+    background:  #d9e6f8;
+}
+
+.constants dt code {
+    background:  #ddffd2;
+}
+
+.attributes dd, .methods dd, .constants dd, .fields dd, .dictionary-members dd {
+    margin-bottom:  1em;
+}
+
+table.parameters, table.exceptions {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    margin: 0.5em 0;
+    width:  100%;
+}
+table.parameters { border-bottom:  1px solid #90b8de; }
+table.exceptions { border-bottom:  1px solid #deb890; }
+
+.parameters th, .exceptions th {
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+    font-family:    initial;
+    font-weight:    normal;
+    text-shadow:    #666 1px 1px 0;
+}
+.parameters th { background: #90b8de; }
+.exceptions th { background: #deb890; }
+
+.parameters td, .exceptions td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.parameters tr:first-child td, .exceptions tr:first-child td {
+    border-top: none;
+}
+
+.parameters td.prmName, .exceptions td.excName, .exceptions td.excCodeName {
+    width:  100px;
+}
+
+.parameters td.prmType {
+    width:  120px;
+}
+
+table.exceptions table {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    width:  100%;
+}
+
+/* --- TOC --- */
+.toc a {
+    text-decoration:    none;
+}
+
+a .secno {
+    color:  #000;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+/* --- EXAMPLES --- */
+pre.example {
+    border-top: 1px solid #ff4500;
+    border-bottom: 1px solid #ff4500;
+    padding:    1em;
+    margin-top: 1em;
+}
+
+pre.example::before {
+    content:    "Example";
+    display:    block;
+    width:      150px;
+    background: #ff4500;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+/* --- EDITORIAL NOTES --- */
+.issue {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.issue::before {
+    content:    "Issue";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.note {
+    margin: 1em 0em 0em;
+    padding:    1em;
+    border: 2px solid #cff6d9;
+    background: #e2fff0;
+}
+
+.note::before {
+    content:    "Note";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #cff6d9;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+/* --- Best Practices --- */
+div.practice {
+    border: solid #bebebe 1px;
+    margin: 2em 1em 1em 2em;
+}
+
+span.practicelab {
+    margin: 1.5em 0.5em 1em 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+span.practicelab   { background: #dfffff; }
+
+span.practicelab {
+    position: relative;
+    padding: 0 0.5em;
+    top: -1.5em;
+}
+
+p.practicedesc {
+    margin: 1.5em 0.5em 1em 1em;
+}
+
+@media screen {
+    p.practicedesc {
+        position: relative;
+        top: -2em;
+        padding: 0;
+        margin: 1.5em 0.5em -1em 1em;
+    }
+}
+
+/* --- SYNTAX HIGHLIGHTING --- */
+pre.sh_sourceCode {
+  background-color: white;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
+pre.sh_sourceCode .sh_keyword { color: #005a9c; font-weight: bold; }           /* language keywords */
+pre.sh_sourceCode .sh_type { color: #666; }                            /* basic types */
+pre.sh_sourceCode .sh_usertype { color: teal; }                             /* user defined types */
+pre.sh_sourceCode .sh_string { color: red; font-family: monospace; }        /* strings and chars */
+pre.sh_sourceCode .sh_regexp { color: orange; font-family: monospace; }     /* regular expressions */
+pre.sh_sourceCode .sh_specialchar { color: 	#ffc0cb; font-family: monospace; }  /* e.g., \n, \t, \\ */
+pre.sh_sourceCode .sh_comment { color: #A52A2A; font-style: italic; }         /* comments */
+pre.sh_sourceCode .sh_number { color: purple; }                             /* literal numbers */
+pre.sh_sourceCode .sh_preproc { color: #00008B; font-weight: bold; }       /* e.g., #include, import */
+pre.sh_sourceCode .sh_symbol { color: blue; }                            /* e.g., *, + */
+pre.sh_sourceCode .sh_function { color: black; font-weight: bold; }         /* function calls and declarations */
+pre.sh_sourceCode .sh_cbracket { color: red; }                              /* block brackets (e.g., {, }) */
+pre.sh_sourceCode .sh_todo { font-weight: bold; background-color: #00FFFF; }   /* TODO and FIXME */
+
+/* Predefined variables and functions (for instance glsl) */
+pre.sh_sourceCode .sh_predef_var { color: #00008B; }
+pre.sh_sourceCode .sh_predef_func { color: #00008B; font-weight: bold; }
+
+/* for OOP */
+pre.sh_sourceCode .sh_classname { color: teal; }
+
+/* line numbers (not yet implemented) */
+pre.sh_sourceCode .sh_linenum { display: none; }
+
+/* Internet related */
+pre.sh_sourceCode .sh_url { color: blue; text-decoration: underline; font-family: monospace; }
+
+/* for ChangeLog and Log files */
+pre.sh_sourceCode .sh_date { color: blue; font-weight: bold; }
+pre.sh_sourceCode .sh_time, pre.sh_sourceCode .sh_file { color: #00008B; font-weight: bold; }
+pre.sh_sourceCode .sh_ip, pre.sh_sourceCode .sh_name { color: #006400; }
+
+/* for Prolog, Perl... */
+pre.sh_sourceCode .sh_variable { color: #006400; }
+
+/* for LaTeX */
+pre.sh_sourceCode .sh_italics { color: #006400; font-style: italic; }
+pre.sh_sourceCode .sh_bold { color: #006400; font-weight: bold; }
+pre.sh_sourceCode .sh_underline { color: #006400; text-decoration: underline; }
+pre.sh_sourceCode .sh_fixed { color: green; font-family: monospace; }
+pre.sh_sourceCode .sh_argument { color: #006400; }
+pre.sh_sourceCode .sh_optionalargument { color: purple; }
+pre.sh_sourceCode .sh_math { color: orange; }
+pre.sh_sourceCode .sh_bibtex { color: blue; }
+
+/* for diffs */
+pre.sh_sourceCode .sh_oldfile { color: orange; }
+pre.sh_sourceCode .sh_newfile { color: #006400; }
+pre.sh_sourceCode .sh_difflines { color: blue; }
+
+/* for css */
+pre.sh_sourceCode .sh_selector { color: purple; }
+pre.sh_sourceCode .sh_property { color: blue; }
+pre.sh_sourceCode .sh_value { color: #006400; font-style: italic; }
+
+/* other */
+pre.sh_sourceCode .sh_section { color: black; font-weight: bold; }
+pre.sh_sourceCode .sh_paren { color: red; }
+pre.sh_sourceCode .sh_attribute { color: #006400; }
+
+</style><link href="http://www.w3.org/StyleSheets/TR/W3C-WG-NOTE" rel="stylesheet" type="text/css" charset="utf-8" /></head>
+ <body style="display: inherit; "><div class="head"><p><a href="http://www.w3.org/"><img width="72" height="48" src="http://www.w3.org/Icons/w3c_home" alt="W3C" /></a></p><h1 class="title" id="title">PROV Model Primer</h1><h2 id="w3c-working-group-wd-03-may-2012"><acronym title="World Wide Web Consortium">W3C</acronym> Working Draft 03 May 2012</h2><dl><dt>This version:</dt><dd><a href="http://www.w3.org/TR/2012/WD-prov-primer-20120503/">http://www.w3.org/TR/2012/WD-prov-primer-20120503/</a></dd><dt>Latest published version:</dt><dd><a href="http://www.w3.org/TR/prov-primer/">http://www.w3.org/TR/prov-primer/</a></dd><dt>Latest editor's draft:</dt><dd><a href="http://dvcs.w3.org/hg/prov/raw-file/default/primer/Primer.html">http://dvcs.w3.org/hg/prov/raw-file/default/primer/Primer.html</a></dd><dt>Previous version:</dt><dd><a href="http://www.w3.org/TR/2012/WD-prov-primer-20120110/">http://www.w3.org/TR/2012/WD-prov-primer-20120110/</a></dd><dt>Editors:</dt><dd><a href="http://www.isi.edu/~gil/">Yolanda Gil</a>, Information Sciences Institute, University of Southern California, US</dd>
+<dd><a href="http://www.inf.kcl.ac.uk/staff/simonm">Simon Miles</a>, King's College London, UK</dd>
+<dt>Authors:</dt><dd><span><a href="http://semanticweb.org/wiki/Khalid_Belhajjame">Khalid Belhajjame</a></span>, University of Manchester</dd>
+<dd><span>Helena Deus</span>, Digital Enterprise Research Institute (DERI), NUI Galway</dd>
+<dd><span><a href="http://www.oeg-upm.net/index.php/en/phdstudents/28-dgarijo">Daniel Garijo</a></span>, Universidad Politécnica de Madrid</dd>
+<dd><span>Graham Klyne</span>, University of Oxford</dd>
+<dd><span><a href="http://www.cs.ncl.ac.uk/people/Paolo.Missier">Paolo Missier</a></span>, Newcastle University</dd>
+<dd><span><a href="http://soiland-reyes.com/stian/">Stian Soiland-Reyes</a></span>, University of Manchester</dd>
+<dd><span><a href="http://tw.rpi.edu/web/person/StephanZednik">Stephan Zednik</a></span>, Rensselaer Polytechnic Institute</dd>
+</dl><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2012 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. <acronym title="World Wide Web Consortium">W3C</acronym> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p><hr /></div>
+  <div id="abstract" class="introductory section"><h2>Abstract</h2>
+   <p>
+    This document provides an intuitive introduction and guide to the
+    PROV specification for provenance on the Web. PROV is a core data model for
+    provenance for building representations of the entities, people and
+    processes involved in producing a piece of data or thing in the world.
+    This primer explains the fundamental PROV concepts and provides examples 
+    of its use.  The primer is intended as a starting point for those wishing
+    to create or use PROV data.
+   </p>
+
+   
+<!--  p>
+    This is a document for internal discussion, which will ultimately
+    evolve in the first Public Working Draft of the Primer.</p  -->
+
+  </div><div id="sotd" class="introductory section"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <acronym title="World Wide Web Consortium">W3C</acronym> publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><acronym title="World Wide Web Consortium">W3C</acronym> technical reports index</a> at http://www.w3.org/TR/.</em></p>
+   This document is part of a set of specifications aiming to define the
+   various aspects that are necessary to achieve the vision of
+   interoperable interchange of provenance information in heterogeneous
+   environments such as the Web. This document is an
+   intuitive introduction and guide with simple illustrative examples
+   of the core aspects of PROV.
+      
+      <h4 id="prov-family-of-specifications">PROV Family of Specifications</h4>
+The PROV family of specifications aims to define the various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.  
+The specifications are as follows.
+<ul>
+<li> PROV-PRIMER, a primer for the PROV data model (this document),</li>
+<li> PROV-DM, the PROV data model for provenance,</li>
+<li> PROV-DM-CONSTRAINTS, a set of constraints applying to the PROV data model,</li>
+<li> PROV-N, a notation for provenance aimed at human consumption,</li>
+<li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF;</li>
+<li> PROV-AQ, the mechanisms for accessing and querying provenance; </li>
+<li> PROV-SEM, a formal semantics for the PROV data model.</li>
+<li> PROV-XML, an XML schema for the PROV data model.</li>
+</ul>
+<h4 id="how-to-read-the-prov-family-of-specifications">How to read the PROV Family of Specifications</h4>
+<ul>
+<li>The primer is the entry point to PROV offering a pedagogical presentation of the provenance model.</li>
+<li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-DM-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+<li>The XML community should focus on PROV-XML defining an XML schema for PROV-DM. Further details can also be found in PROV-DM, PROV-DM-CONSTRAINTS, and PROV-SEM.</li>
+<li>Developers seeking to retrieve or publish provenance should focus of PROV-AQ.</li>
+<li>Readers seeking to implement other PROV serializations
+should focus on PROV-DM and PROV-DM-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+</ul>
+
+
+  <p>This document was published by the <a href="http://www.w3.org/2011/prov/">Provenance Working Group</a> as a Working Group Note. If you wish to make comments regarding this document, please send them to <a href="mailto:public-prov-wg@w3.org">public-prov-wg@w3.org</a> (<a href="mailto:public-prov-wg-request@w3.org?subject=subscribe">subscribe</a>, <a href="http://lists.w3.org/Archives/Public/public-prov-wg/">archives</a>). All feedback is welcome.</p><p>Publication as a Working Group Note does not imply endorsement by the <acronym title="World Wide Web Consortium">W3C</acronym> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p><p>This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>. <acronym title="World Wide Web Consortium">W3C</acronym> maintains a <a href="http://www.w3.org/2004/01/pp-impl/46974/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>.</p></div><div id="toc" class="section"><h2 class="introductory">Table of Contents</h2><ul class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a></li><li class="tocline"><a href="#intuitive-overview-of-prov" class="tocxref"><span class="secno">2. </span>Intuitive overview of PROV</a><ul class="toc"><li class="tocline"><a href="#entities" class="tocxref"><span class="secno">2.1 </span>Entities</a></li><li class="tocline"><a href="#activities" class="tocxref"><span class="secno">2.2 </span>Activities</a></li><li class="tocline"><a href="#use-and-generation" class="tocxref"><span class="secno">2.3 </span>Use and Generation</a></li><li class="tocline"><a href="#agents-and-responsibility" class="tocxref"><span class="secno">2.4 </span>Agents and Responsibility</a></li><li class="tocline"><a href="#roles" class="tocxref"><span class="secno">2.5 </span>Roles</a></li><li class="tocline"><a href="#derivation-and-revision" class="tocxref"><span class="secno">2.6 </span>Derivation and Revision</a></li><li class="tocline"><a href="#plans" class="tocxref"><span class="secno">2.7 </span>Plans</a></li><li class="tocline"><a href="#time" class="tocxref"><span class="secno">2.8 </span>Time</a></li><li class="tocline"><a href="#alternate-entities-and-specialization" class="tocxref"><span class="secno">2.9 </span>Alternate Entities and Specialization</a></li></ul></li><li class="tocline"><a href="#examples-of-key-concepts-in-prov" class="tocxref"><span class="secno">3. </span>Examples of Key Concepts in PROV</a><ul class="toc"><li class="tocline"><a href="#entities-1" class="tocxref"><span class="secno">3.1 </span>Entities</a></li><li class="tocline"><a href="#activities-1" class="tocxref"><span class="secno">3.2 </span>Activities</a></li><li class="tocline"><a href="#use-and-generation-1" class="tocxref"><span class="secno">3.3 </span>Use and Generation</a></li><li class="tocline"><a href="#agents-and-responsibility-1" class="tocxref"><span class="secno">3.4 </span>Agents and Responsibility</a></li><li class="tocline"><a href="#roles-1" class="tocxref"><span class="secno">3.5 </span>Roles</a></li><li class="tocline"><a href="#derivation-and-revision-1" class="tocxref"><span class="secno">3.6 </span>Derivation and Revision</a></li><li class="tocline"><a href="#plans-1" class="tocxref"><span class="secno">3.7 </span>Plans</a></li><li class="tocline"><a href="#time-1" class="tocxref"><span class="secno">3.8 </span>Time</a></li><li class="tocline"><a href="#alternate-entities-and-specialization-1" class="tocxref"><span class="secno">3.9 </span>Alternate Entities and Specialization</a></li><li class="tocline"><a href="#complete-prov-data" class="tocxref"><span class="secno">3.10 </span>Complete PROV data</a></li></ul></li><li class="tocline"><a href="#prov-n-examples" class="tocxref"><span class="secno">A. </span>PROV-N Examples</a><ul class="toc"><li class="tocline"><a href="#entities-2" class="tocxref"><span class="secno">A.1 </span>Entities</a></li><li class="tocline"><a href="#activities-2" class="tocxref"><span class="secno">A.2 </span>Activities</a></li><li class="tocline"><a href="#use-and-generation-2" class="tocxref"><span class="secno">A.3 </span>Use and Generation</a></li><li class="tocline"><a href="#agents-and-responsibility-2" class="tocxref"><span class="secno">A.4 </span>Agents and Responsibility</a></li><li class="tocline"><a href="#roles-2" class="tocxref"><span class="secno">A.5 </span>Roles</a></li><li class="tocline"><a href="#derivation-and-revision-2" class="tocxref"><span class="secno">A.6 </span>Derivation and Revision</a></li><li class="tocline"><a href="#plans-2" class="tocxref"><span class="secno">A.7 </span>Plans</a></li><li class="tocline"><a href="#time-2" class="tocxref"><span class="secno">A.8 </span>Time</a></li><li class="tocline"><a href="#alternate-entities-and-specialization-2" class="tocxref"><span class="secno">A.9 </span>Alternate Entities and Specialization</a></li></ul></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">B. </span>Acknowledgements</a></li><li class="tocline"><a href="#changes-since-first-public-working-draft" class="tocxref"><span class="secno">C. </span>Changes Since First Public Working Draft</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">D. </span>References</a><ul class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">D.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">D.2 </span>Informative references</a></li></ul></li></ul></div> 
+
+  
+
+  <div id="introduction" class="section"> 
+   
+<!-- OddPage -->
+<h2><span class="secno">1. </span>Introduction</h2>
+   <p>
+    This primer document provides an accessible introduction to the PROV 
+    specification for provenance on the Web.  
+    The <i>provenance</i> of digital objects represents their origins.  PROV is a 
+    proposed specification to represent provenance records, 
+    which contain <i>descriptions</i> of the entities 
+    and activities involved in producing and delivering or otherwise influencing a 
+    given object.
+    For the remainder of this document, we use the term 'provenance' to refer also
+    to records of provenance, except where the distinction is important for clarity.
+    By knowing the provenance of an object, we can make determinations 
+    about how to use it.  Provenance can be used for many purposes, such as 
+    understanding how data was collected so it can be meaningfully used, determining 
+    ownership and rights over an object, making judgments about information to 
+    determine whether to trust it, verifying that the process and steps used to obtain a 
+    result complies with given requirements, and reproducing how something was generated.
+   </p>
+
+   <p>
+    As a specification for provenance, PROV accommodates all those different uses 
+    of provenance.  Different people may have different perspectives on provenance, 
+    and as a result different types of information might be captured in provenance records.  
+    One perspective might focus on <i>agent-centered provenance</i>, that is, what entities 
+    were involved in generating or manipulating the information in question.  For example, 
+    in the provenance of a picture in a news article we might capture the photographer who 
+    took it, the person that edited it, and the newspaper that published it. A second perspective 
+    might focus on <i>object-centered provenance</i>, by tracing the origins of portions of a 
+    document to other documents. An example is having a web page that was assembled from content
+    from a news article, quotes of interviews with experts, and a chart that plots data from a 
+    government agency.  A third perspective one might take is on <i>process-centered provenance</i>, 
+    capturing the actions and steps taken to generate the information in question.  For example, a 
+    chart may have been generated by invoking a service to retrieve data from a database, then 
+    extracting certain statistics from the data using some statistics package, and finally 
+    processing these results with a graphing tool.
+   </p>
+
+   <p>
+    Provenance records are metadata.  There are other kinds of metadata that is 
+    not provenance.  For example, the size of an image is metadata of 
+    that image but it is not provenance.
+    </p>
+    
+   <p>
+    For general background on provenance, a 
+    comprehensive overview of requirements, use cases, prior research, and proposed 
+    vocabularies for provenance are available from the 
+    <a href="http://www.w3.org/2005/Incubator/prov/XGR-prov/">Final Report of the <acronym title="World Wide Web Consortium">W3C</acronym> Provenance Incubator Group</a>.  
+    That document contains three general scenarios 
+    that may help identify the provenance aspects of planned applications and 
+    help plan the design of a provenance system.
+   </p>
+   
+   <p>
+    This primer document aims to ease the adoption of the PROV specifications by providing:
+   </p>
+   <ul>
+    <li>An intuitive explanation of how PROV models provenance. A detailed description of
+    all the concepts and relations in the PROV Data Model is provided in [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>].</li>
+    <li>A simple self-contained example that illustrates how to produce and use PROV assertions, highlighting how 
+    to combine PROV with other popular vocabularies such as FOAF and Dublin Core.  A description
+    of the formal PROV ontology (PROV-O) can be found in [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-O">PROV-O</a></cite>].</li>
+    <li>Example snippets using a notation of PROV designed for human
+    consumption (PROV-N).  Details of this notation can be found at [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-N">PROV-N</a></cite>].</li>
+   </ul>
+   
+   <p>There are additional reference documents for PROV that are not covered in this 
+   primer, including the PROV Access and Query aspects of the specification (PROV-AQ), 
+   the constraints on the PROV data model (PROV-DM-CONSTRAINTS), 
+   a formal semantics of the PROV data model (PROV-SEM), and the PROV XML notation 
+   (PROV-XML). </p>
+
+  </div>
+
+  <div id="intuitive-overview-of-prov" class="section">
+   
+<!-- OddPage -->
+<h2><span class="secno">2. </span>Intuitive overview of PROV</h2>
+
+   <p>
+    This section provides an intuitive explanation of the main concepts in PROV. 
+    As with the rest of this document, it should be treated as a starting point for
+    understanding the model. The PROV-DM data model document [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>]
+    provides precise definitions and constraints to be used.
+   </p>
+   <p>
+    The following diagram provides a high level overview of the structure of PROV records,
+    limited to some key PROV concepts discussed in this document.
+    The diagram is the same that appears in the [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>] document.
+    Note that because PROV is meant to describe how things were created or delivered, 
+    PROV relations are named so they can be used in assertions about the past.  
+    This also affects the domain and range of the relations in PROV.  
+   </p>
+  
+   <div style="text-align: center;">
+    <img src="OverviewDiagram.png" alt="PROV-DM overview" />
+   </div>
+
+   <div id="entities" class="section">
+    <h3><span class="secno">2.1 </span>Entities</h3>
+
+    <p>
+     In PROV, physical, digital, conceptual, or other kinds of thing are called
+     <i>entities</i>.
+     Examples of such entities are a web page, a chart, and a spellchecker.
+     Provenance records can describe the provenance of entities, and
+     an entity’s provenance may refer to many other entities.  For example, a document D is
+     an entity whose provenance refers to other entities such as a chart inserted into D,
+     and the dataset that was used to create that chart.
+     Entities may be described as having different attributes and
+     be described from different perspectives.  For example,
+     document D as stored in my file system, the second version of document D, 
+     and D as an evolving document,
+     are three distinct entities for which we may describe provenance.
+    </p>
+   </div>
+
+   <div id="activities" class="section">
+    <h3><span class="secno">2.2 </span>Activities</h3>
+
+    <p>
+     <i>Activities</i> are how entities come into 
+     existence and how their attributes change to become new entities, 
+     often making use of previously existing entities to achieve this. 
+     They are
+     dynamic aspects of the world, such as actions, processes, etc.
+     For example, if the second version of document D was generated 
+     by a translation from the first version of the document in another language,
+     then this translation is an activity.
+    </p>
+   </div>
+
+   <div id="use-and-generation" class="section">
+    <h3><span class="secno">2.3 </span>Use and Generation</h3>
+    <p>
+     Activities <i>generate</i> new entities.
+     For example, writing a document brings the document into existence, while
+     revising the document brings a new version into existence.
+     Generation does not always occur at the end of an activity, and an activity may generate entities
+     part-way through.
+     Activities also make <i>use</i> of entities. For example, revising a document
+     to fix spelling mistakes uses the original version of the document as well
+     as a list of corrections. 
+    </p>
+   </div>
+
+   <div id="agents-and-responsibility" class="section">
+    <h3><span class="secno">2.4 </span>Agents and Responsibility</h3>
+    <p>
+     An <i>agent</i> takes a role in an activity such 
+     that the agent can be assigned some degree of <i>responsibility</i> for the activity taking 
+     place.
+     An agent can be a person, a piece of software, an inanimate object, an organization, or
+     other entities that may be ascribed responsibility.
+     When an agent has some responsibility for an activity, PROV says the agent was
+     <i>associated</i> with the activity, where several agents may be associated with
+     an activity and vice-versa.
+     Consider a chart displaying some statistics 
+     regarding crime rates over time in a linear regression.  To represent the 
+     provenance of that chart, we could state that the person who created the 
+     chart was an agent involved in its creation, and that the software used to 
+     create the chart was also an agent involved in that activity.
+     An agent may be <i>acting on behalf</i> of others, e.g. an employee on behalf of their
+     organization, and we can express such chains of responsibility in the provenance.
+    </p>
+    <p>
+     We can also describe that an entity is <i>attributed</i> to an agent to express
+     the agent's responsibility for that entity, possibly along with other agents.
+     This description can be understood as a shorthand
+     for saying that the agent was responsible for the activity which generated
+     the entity.
+    </p>
+    <p>
+    One may want to describe the provenance of an agent.  For example, an organization 
+    responsible for the creation of a report may evolve over time as the report is written as
+    some members leave and others join.  To make provenance assertions about an agent in PROV ,
+    the agent must be declared explicitly both as an agent and as an entity.
+    </p>
+
+   </div>
+
+   <div id="roles" class="section">
+    <h3><span class="secno">2.5 </span>Roles</h3>
+    <p>
+     A <i>role</i> is a description of the function or the part that an entity 
+     played in an activity.  Roles specify
+     the relationship between an entity and an activity, whether
+     how an activity used an entity or generated an entity.  Roles also specify how agents are
+     involved in an activity, qualifying their participation in the activity or
+     specifying for what aspect of it each agent was responsible.
+     For example, an agent may play the role of &quot;editor&quot; in an activity that uses
+     one entity in the role of &quot;document to be edited&quot; and another in the role of
+     &quot;addition to be made to the document&quot;, to generate a further entity in the role of &quot;edited document&quot;.
+     Roles are application specific, so PROV does not define any particular roles.
+    </p>
+    
+<!-- p>Roles are intended as an extension point in the model; it is expected users will define and use custom role taxonomies.  Role interpretation is application specific.</p  -->
+
+   </div>
+
+   <div id="derivation-and-revision" class="section">
+    <h3><span class="secno">2.6 </span>Derivation and Revision</h3>
+    <p>
+     When one entity's existence, content, characteristics and so on are
+     at least partly due to another entity, then we say that the former was
+     <i>derived</i> from the latter. For example, one document may contain
+     material copied from another, 
+     and a chart was derived from the data that it illustrates.
+    </p>
+    <p>
+     PROV allows some common, specialized kinds of derivation to be described.
+     For example, a given entity, such as a document, may go through multiple <i>revisions</i> 
+     (also called versions and other comparable terms) over time. Between revisions,
+     one or more attributes of the entity may change. 
+     In PROV, the result of each revision is a new entity.
+     PROV allows one to relate those entities by making a description that 
+     one was a revision of another.
+     Another specialized kind of derivation is to say that one entity, commonly
+     a document, <i>quotes</i> from another.
+    </p>
+   </div>
+
+   <div id="plans" class="section">
+    <h3><span class="secno">2.7 </span>Plans</h3>
+    <p>
+     Activities may follow pre-defined procedures, such as recipes, tutorials, instructions, or workflows.
+     PROV refers to these, in general, as <i>plans</i>, and allows the description that a plan was followed, by agents,
+     in executing an activity.
+    </p>
+   </div>
+
+   <div id="time" class="section">
+    <h3><span class="secno">2.8 </span>Time</h3>
+    <p>
+     Time is often a critical aspect of provenance.
+     PROV allows the timing of significant events to be described, including
+     when an entity was generated or used, or when an activity started
+     and finished. For example, the model can be used to describe facts such as when a new
+     version of a document was created (generation time), or when a document was
+     edited (start and end of the editing activity).
+    </p>
+   </div>
+
+   <div id="alternate-entities-and-specialization" class="section">
+    <h3><span class="secno">2.9 </span>Alternate Entities and Specialization</h3>
+    <p>
+     Entities are defined in a flexible way in PROV, allowing for different
+     perspectives to be taken as appropriate for the application. The following
+     are examples illustrate this idea.
+    </p>
+    <ul>
+     <li>The same entity can appear with different descriptions in a provenance record
+     because each appearance emphasizes different aspects of the entity, e.g.
+     a book may be described by its title in one place and by its author and publication date
+     in another.</li>
+     <li>The same entity can evolve over time into different 
+     versions, e.g. a document that is repeatedly updated and has 
+     subsequent releases over time.</li>
+     <li>The same entity can be copied 
+     or replicated, e.g. a document may be copied to several directories.</li>
+     <li>An entity can go through different incarnations, e.g.
+     a committee producing a report may have a set of members when the report 
+     is first released and have a different set of members when an update of
+     the report is released.</li>
+    </ul>
+    <p>
+       In all these situations, 
+     the more specific entities (the versions, copies, incarnations) can be said in PROV to be <i>specializations</i>
+     of the more general entity (the book, the document or the committee as a general entity).
+     The specific entities in each example are also <i>alternates</i> of each other, as they are specializations
+     of the same general entity.
+     Being aware that two entities are alternates allows those
+     consuming the PROV data to know that understanding the provenance of one entity is salient
+     to understanding the provenance of the other.  Knowing that alternate entities are 
+     specializations of another allows a consumer of PROV to refer to the general entity
+     with a unique identifier even though it is specified as different alternates 
+     throughout the provenance records.
+    </p>
+   </div>   
+
+  </div>
+
+  <div id="examples-of-key-concepts-in-prov" class="section">
+   
+<!-- OddPage -->
+<h2><span class="secno">3. </span>Examples of Key Concepts in PROV</h2>
+
+   <p>
+    In the following sections, we show how PROV can be used to model 
+    provenance in a specific example scenario.
+   </p>
+   <p>
+    We include samples of how the formal ontology (PROV-O)
+    can be used to represent the PROV descriptions as RDF triples.
+    These are shown using the Turtle notation [<cite><a class="bibref" rel="biblioentry" href="#bib-TURTLE">TURTLE</a></cite>]. In 
+    the latter depictions, the namespace prefix <b>prov</b> denotes 
+    terms from the PROV ontology, while <b>ex</b> denotes terms specific to the example.
+    We illustrate in these examples how PROV can be used in combination with other
+    languages, such as FOAF and Dublin Core (with namespace prefix <b>foaf</b> and 
+    <b>dcterms</b> respectively). </p>
+
+   <p>We also provide a representation of the examples in the Provenance
+    Notation, PROV-N, used in the data model document. The full PROV-N data 
+    for the examples in this section is
+    included in the appendix.</p>
+
+   <div id="entities-1" class="section">
+    <h3><span class="secno">3.1 </span>Entities</h3>
+
+    <p>
+     An online newspaper publishes an article with a chart about crime statistics making using of data (GovData) provided through a government portal. 
+     The article includes a chart based on the data, with data values composed (aggregated) by
+     geographical regions.
+    </p>
+    <p>
+     A blogger, Betty, looking at the article, spots what she thinks to be an error in the chart.
+     Betty retrieves a record of the provenance of the article, describing how it was created.
+    </p>
+    <p>Betty finds the following descriptions of entities in the provenance:</p>
+    <pre class="turtle example">ex:article     a prov:Entity ;
+               dcterms:title &quot;Crime rises in cities&quot; .
+ex:dataset1    a prov:Entity .
+ex:regionList  a prov:Entity .
+ex:composition a prov:Entity .
+ex:chart1      a prov:Entity .</pre>
+    <p>
+     These statements, in order, refer to the article (<code>ex:article</code>),
+     an original data set (<code>ex:dataSet1</code>),
+     a list of regions (<code>ex:regionList</code>), 
+     data aggregated by region (<code>ex:composition</code>), 
+     and a chart (<code>ex:chart1</code>), and state that each is an entity.
+     Any entity may have attributes not specific to provenance, such as the title
+     of the article, expressed using <code>dcterms:title</code> above.
+    </p>
+    <p>
+     PROV data is commonly visualized for human consumption using particular conventions,
+     which we will introduce over the following sections. To start with, entities
+     are denoted using ovals, as shown below.
+    </p>
+    <img src="images/entities.png" alt="Visualization of the example entities" />
+   </div>
+
+   <div id="activities-1" class="section">
+    <h3><span class="secno">3.2 </span>Activities</h3>
+
+    <p>
+     Further, the provenance describes that there was
+     an activity (<code>ex:compile</code>) denoting the compilation of the
+     chart from the data set.
+    </p>
+    <pre class="turtle example">ex:compile a prov:Activity .</pre>
+    <p>
+     The provenance also includes reference to the more specific steps involved in this compilation,
+     which are first composing the data by region (<code>ex:compose</code>) and then generating the
+     chart graphic (<code>ex:illustrate</code>).
+    </p>
+    <pre class="turtle example">ex:compose    a prov:Activity .
+ex:illustrate a prov:Activity .</pre>
+    <p>
+     In visualizations of the PROV data, activities are depicted as rectangles, as below.
+    </p>
+    <img src="images/activities.png" alt="Visualization of the example activities" />
+   </div>
+
+   <div id="use-and-generation-1" class="section">
+    <h3><span class="secno">3.3 </span>Use and Generation</h3>
+
+    <p>
+     Concluding the basic description of what occurred, the provenance 
+     describes the key relations among the above
+     entities and activities, i.e. the use of an entity by an activity,
+     or the generation of an entity by an activity.
+    </p>
+    <p>
+     For example, the descriptions below state that the composition activity
+     (<code>ex:compose</code>) used the original data set, that it used the list of
+     regions, and that the composed data was generated by this activity.
+    </p>
+    <pre class="turtle example">ex:compose      prov:used           ex:dataSet1 ;
+                prov:used           ex:regionList .
+ex:composition  prov:wasGeneratedBy ex:compose .</pre>
+    <p>
+     Similarly, the chart graphic creation activity (<code>ex:illustrate</code>)
+     used the composed data, and the chart was generated by this activity.
+    </p>
+    <pre class="turtle example">ex:illustrate prov:used           ex:composition .
+ex:chart1     prov:wasGeneratedBy ex:illustrate .</pre>
+    <p>
+     In visualizing the PROV data, usage and generation are connections between
+     entities and activities.
+    </p>
+    <img src="images/use-generate.png" alt="Connection of the entities and activities by use and generation links" />
+   </div>
+
+   <div id="agents-and-responsibility-1" class="section">
+    <h3><span class="secno">3.4 </span>Agents and Responsibility</h3>
+
+    <p>
+     Digging deeper, Betty wants to know who compiled the chart.
+     Betty sees that Derek was involved in both the composition and
+     chart creation activities:
+    </p>
+    <pre class="turtle example">ex:compose    prov:wasAssociatedWith ex:derek .
+ex:illustrate prov:wasAssociatedWith ex:derek .</pre>
+    <p>
+     The record for Derek provides the
+     following information, of which the first lines are PROV-O statements that
+     Derek is an agent, specifically a person, followed by (non-PROV) statements
+     giving general properties of Derek.
+    </p>
+    <pre class="turtle example">ex:derek a prov:Agent ;
+         a prov:Person ;
+         foaf:givenName &quot;Derek&quot;^^xsd:string ;
+         foaf:mbox      &lt;mailto:derek@example.org&gt; .</pre>
+    <p>
+     Derek works as part of an organization, Chart Generators Inc, and so the provenance
+     declares that he acts on their behalf. Note that the organization is itself
+     an agent.
+    </p>
+    <pre class="turtle example">ex:derek prov:actedOnBehalfOf ex:chartgen .
+ex:chartgen a prov:Agent ;
+            a prov:Organization ;
+            foaf:name &quot;Chart Generators Inc&quot; .</pre>
+    <p>
+     Finally, there is an explicit statement in the provenance that the chart was
+     attributed to Derek.
+    </p>
+    <pre class="turtle example">ex:chart1 prov:wasAttributedTo ex:derek .</pre>
+    <p>
+     We can extend our graphical depiction to show the agents, association and attribution links.
+    </p>
+    <img src="images/agents.png" alt="Agents added to provenance graph and linked to entities and activities" />
+   </div>
+
+   <div id="roles-1" class="section">
+    <h3><span class="secno">3.5 </span>Roles</h3>
+
+    <p>
+     For Betty to understand where the error lies, she needs to have more detailed 
+     information on how entities have been used in and generated 
+     by activities.  Betty has determined that <code>ex:compose</code> used 
+     entities <code>ex:regionList</code> and <code>ex:dataSet1</code>, but she does not 
+     know what function these entities played in the processing.  Betty 
+     also knows that <code>ex:derek</code> was associated with the activities, but she does 
+     not know if Derek was the analyst responsible for determining how the data 
+     should be composed.
+    </p>
+    <p>
+     The above information is described as roles in the provenance. The composition
+     activity involved entities in four roles: the data to be composed (<code>ex:dataToCompose</code>),
+     the regions to aggregate by (<code>ex:regionsToAggregateBy</code>), the
+     resulting composed data (<code>ex:composedData</code>), and the
+     analyst doing the composition (<code>ex:analyst</code>).
+    </p>
+    <pre class="turtle example">ex:dataToCompose        a prov:Role .
+ex:regionsToAggregateBy a prov:Role .
+ex:composedData         a prov:Role .
+ex:analyst              a prov:Role .</pre>
+    <p>
+     Examples in the sections above show descriptions of the simple facts that the
+     composition activity used, generated and was enacted by entities/agents.
+     For example, the usage of the data set by the compose activity is expressed
+     as follows.
+    </p>
+    <pre class="turtle example">ex:compose prov:used ex:dataSet1 .</pre>
+    <p>     
+     The
+     provenance can contain more details of exactly how these entities and agents
+     were involved in the activity. 
+     To express this, PROV-O refers to <i>qualified usage</i>, <i>qualified generation</i>, etc.,
+     which are descriptions consisting of several statements about how use, generation, etc. took place.
+     For example, we may describe the plan followed by an agent in performing an activity, or
+     the time at which an activity generated an entity, both illustrated later.
+     Another example of qualified involvement is the role an entity played in an activity.
+     The descriptions below state
+     that the composition activity (<code>ex:compose</code>) included the usage
+     of the government data set (<code>ex:dataSet1</code>) in the role of the data
+     to be composed (<code>ex:dataToCompose</code>).
+    </p>
+    <pre class="turtle example">ex:compose prov:qualifiedUsage [
+              a prov:Usage ;
+              prov:entity  ex:dataSet1 ;
+              prov:hadRole ex:dataToCompose 
+] .</pre>
+    <p>
+     This can then be distinguished from the same activity's usage of the list of
+     regions because the roles played are different.
+    </p>
+    <pre class="turtle example">ex:compose prov:qualifiedUsage [
+              a prov:Usage ;
+              prov:entity  ex:regionList ;
+              prov:hadRole ex:regionsToAggregateBy
+] .</pre>
+    <p>
+     Similarly, the provenance includes descriptions that the same activity was
+     enacted in a particular way by Derek, so it indicates that he had the role of 
+     <code>ex:analyst</code>, and that the entity <code>ex:composition</code> took the role of the composed
+     data in what the activity generated:
+    </p>
+    <pre class="turtle example">ex:compose  prov:qualifiedAssociation [
+              a  prov:Association ;
+              prov:agent    ex:derek ;
+              prov:hadRole  ex:analyst
+] .
+ex:composition prov:qualifiedGeneration [
+                   a prov:Generation ;
+                   prov:activity  ex:compose ;
+                   prov:hadRole   ex:composedData
+] .</pre>
+    <p>
+     Depicting the above visually, we have the following.
+    </p>
+    <img src="images/roles.png" alt="Provenance graph annotated with roles played by entities and agents" />
+   </div>
+
+   <div id="derivation-and-revision-1" class="section">
+    <h3><span class="secno">3.6 </span>Derivation and Revision</h3>
+
+    <p>
+     After looking at the detail of the compilation activity, there appears
+     to be nothing wrong, so Betty concludes the error is in the government dataset. 
+     She looks at the dataset <code>ex:dataSet1</code>, 
+     and sees that it is missing data from one of the zipcodes in the area.  She contacts
+     the government agency, and a new version of GovData is created, declared to be the
+     next revision of the data. The provenance of this new dataset,
+     <code>ex:dataSet2</code>, states that it is a revision of the
+     old data set, <code>ex:dataSet1</code>.
+    </p>
+    <pre class="turtle example">ex:dataSet2 a prov:Entity ;
+            prov:wasRevisionOf ex:dataSet1 .</pre>
+    <p>
+     Derek notices that there is a new dataset available and creates a new chart based on the revised data, 
+     using another compilation activity. Betty checks the article again at a
+     later point, and wants to know if it is based on the old or new GovData.
+     She sees a new description stating that the new chart is derived from the new dataset.
+    </p>
+    <pre class="example turtle">ex:chart2 a prov:Entity ;
+          prov:wasDerivedFrom ex:dataSet2 .</pre>
+    <p>and that the new chart is a revision of the original one:
+    </p>
+    <pre class="turtle example">ex:chart2 a prov:Entity ;
+            prov:wasRevisionOf ex:chart1 .</pre>
+    <p>
+     Derivation and revision are connections between entities, and so depicted
+     with arrows in our visualization.
+    </p>
+    <img src="images/derivation.png" alt="Derivation and revision links between entities" />
+   </div>
+
+   <div id="plans-1" class="section">
+    <h3><span class="secno">3.7 </span>Plans</h3>
+
+    <p>
+     Betty then wishes to know whether the new data set correctly addresses
+     the error that existed before. The provenance of the new dataset,
+     <code>ex:dataSet2</code>, describes not only who performed the corrections,
+     Edith, but also what instructions she followed in doing so (in PROV terms, the plan).
+     First, the correction activity (<code>ex:correct</code>), the person who corrected
+     it, Edith (<code>ex:edith</code>), and the correction instructions (<code>ex:instructions</code>)
+     are described.
+    </p><pre class="turtle example">ex:correct      a prov:Activity .
+ex:edith        a prov:Agent, prov:Person .
+ex:instructions a prov:Plan .</pre>
+    <p>
+     The connection between them is expressed in PROV-O using a qualified association giving details of
+     how Edith was associated with the correction activity,
+     including that she followed the above correction instructions.
+    </p>
+    <pre class="turtle example">ex:correct prov:qualifiedAssociation [
+               a Association ;
+               prov:agent   ex:edith ;
+               prov:hadPlan ex:instructions
+           ] .
+ex:dataSet2 prov:wasGeneratedBy ex:correct .</pre>
+    <p>
+     Plans are additional information about the connection from an activity to
+     an agent, and so, in our visualization, connect to the link between them.
+    </p>
+    <img src="images/plans.png" alt="Annotaion of example provenance graph with plan followed" />
+   </div>
+
+   <div id="time-1" class="section">
+    <h3><span class="secno">3.8 </span>Time</h3>
+
+    <p>
+     The government agency that produced GovData is concerned to know how long
+     the incorrect chart was in circulation before the corrected chart was created.
+     That is, they wish to compare the times at which the original and the corrected
+     charts were generated. Time of generation is expressed in PROV-O using a qualified
+     description of the generation. The snippet below shows that the second chart
+     was generated roughly a month after the first.
+    </p>
+    <pre class="turtle example">ex:chart1 prov:qualifiedGeneration [
+               a prov:Generation ;
+               prov:activity ex:compile ;
+               prov:atTime   &quot;2012-03-02T10:30:00&quot;^^xsd:dateTime
+] .
+ex:chart2 prov:qualifiedGeneration [
+               a prov:Generation ;
+               prov:activity ex:compile2 ;
+               prov:atTime   &quot;2012-04-01T15:21:00&quot;^^xsd:dateTime
+] .</pre>
+    <p>
+     To ensure their procedures are efficient, the agency also wish to know how long the
+     corrections took once the error was discovered. That is, they wish to know the
+     start and end times of the correction activity (<code>ex:correct</code>).
+     These details are expressed as follows, showing that the corrections took a
+     little over a day.
+    </p>
+    <pre class="turtle example">ex:correct prov:startedAtTime &quot;2012-03-31T09:21:00&quot;^^xsd:dateTime ;
+           prov:endedAtTime   &quot;2012-04-01T15:21:00&quot;^^xsd:dateTime .</pre>
+    <p>
+     Time is visualized as additional information regarding activities or the
+     links between activities and entities or agents.
+    </p>
+    <img src="images/time.png" alt="Annotation of provenance graph with example timestamps" />
+   </div>
+
+   <div id="alternate-entities-and-specialization-1" class="section">
+    <h3><span class="secno">3.9 </span>Alternate Entities and Specialization</h3>
+
+    <p>
+     Before noticing anything wrong with the government data, Betty had already
+     posted a blog entry about the article. The blog entry had its own published
+     provenance, stating that it quoted from the article.
+    </p>
+    <pre class="turtle example">ex:blogEntry a prov:Entity ;
+             prov:wasQuotedFrom ex:article .</pre>
+    <p>
+     The newspaper, from past experience, anticipated that there could be revisions
+     to the article, and so created identifiers for both the article in general
+     (<code>ex:article</code>) as a URI that got redirected to the first version of the article (<code>ex:articleV1</code>),
+     allowing both to be referred to as entities in provenance data. 
+     In the provenance records, the newspaper describes the connection between the two: that
+     the first version of the article is a specialization of the article in general.
+    </p>
+    <pre class="turtle example">ex:articleV1 prov:specializationOf ex:article .</pre>
+    <p>
+     Later, after the data set is corrected and the new chart generated, a new version
+     of the article is created, <code>ex:articleV2</code>, with its own URI where the article
+     is redirected to.  To ensure that those
+     consulting the provenance of <code>ex:articleV2</code> understand that it
+     is connected with the provenance of <code>ex:article</code> and <code>ex:articleV1</code>,
+     the newspaper describes how these entities are related.
+    </p>
+    <pre class="turtle example">ex:articleV2 prov:specializationOf ex:article .
+ex:articleV2 prov:alternateOf      ex:articleV1 .</pre>
+    <p>
+     Specialization and alternate relations connect entities, and so are visualized
+     as links between them.
+    </p>
+    <img src="images/specialization.png" alt="Specialization and alternate links between entities" />
+   </div>
+   
+   <div id="complete-prov-data" class="section">
+    <h3><span class="secno">3.10 </span>Complete PROV data</h3>
+    <p>
+     The set of provenance records above could be grouped into one or multiple bundles, referred to as <i>accounts</i>.
+     We visualize the whole example as a single account below.
+    </p>
+    <img src="images/everything.png" alt="Provenance graph for whole example" />
+   </div>
+  </div>
+
+  <div class="appendix section" id="prov-n-examples">
+   
+<!-- OddPage -->
+<h2><span class="secno">A. </span>PROV-N Examples</h2>
+   <p>
+    Below we give translations of the working example snippets into the Provenance
+    Notation (PROV-N).
+   </p>
+   <div id="entities-2" class="section">
+    <h3><span class="secno">A.1 </span>Entities</h3>
+    <pre class="example asn">entity(ex:article, [dcterms:title=&quot;Crime rises in cities&quot;])
+entity(ex:dataSet1)
+entity(ex:regionList)
+entity(ex:composition)
+entity(ex:chart1)</pre>
+   </div>
+
+   <div id="activities-2" class="section">
+    <h3><span class="secno">A.2 </span>Activities</h3>
+    <pre class="example asn">activity(ex:compile)
+activity(ex:compose)
+activity(ex:illustrate)</pre>
+   </div>
+
+   <div id="use-and-generation-2" class="section">
+    <h3><span class="secno">A.3 </span>Use and Generation</h3>
+    <pre class="example asn">used(ex:compose, ex:dataSet1, -)
+used(ex:compose, ex:regionList, -)
+wasGeneratedBy(ex:composition, ex:compose, -)
+
+used(ex:illustrate, ex:composition, -)
+wasGeneratedBy(ex:chart1, ex:illustrate, -)</pre>
+   </div>
+
+   <div id="agents-and-responsibility-2" class="section">
+    <h3><span class="secno">A.4 </span>Agents and Responsibility</h3>
+    <pre class="example asn">agent(ex:derek, [ prov:type=&quot;prov:Person&quot;, foaf:givenName = &quot;Derek&quot;, 
+       foaf:mbox= &quot;&lt;mailto:derek@example.org&gt;&quot;])
+wasAssociatedWith(ex:compose, ex:derek, -)
+wasAssociatedWith(ex:illustrate, ex:derek, -)
+
+agent(ex:chartgen, [ prov:type=&quot;prov:Organization&quot;,
+       foaf:name = &quot;Chart Generators Inc&quot;])
+actedOnBehalfOf(ex:derek, ex:chartgen, ex:compose)
+
+wasAttributedTo(ex:chart1, ex:derek)</pre>
+   </div>
+
+   <div id="roles-2" class="section">
+    <h3><span class="secno">A.5 </span>Roles</h3>
+    <p>
+     Roles are not declared directly in PROV, rather they are attributes of 
+     relations. Thus, the entire Turtle example in Section 3.5 is rendered as follows:
+    </p>
+    <pre class="example asn">used(ex:compose, ex:dataSet1,   -, [ prov:role = &quot;ex:dataToCompose&quot;])
+used(ex:compose, ex:regionList, -, [ prov:role = &quot;ex:regionsToAggregteBy&quot;])</pre>
+    <p>
+     In the first description above, note that this adds a &quot;role&quot; attribute to the first 'used' description of A.3.
+     Similarly in the second description, we have added a &quot;role&quot; attribute to the second  'used' description of A.3.
+    </p>
+   </div>
+
+   <div id="derivation-and-revision-2" class="section">
+    <h3><span class="secno">A.6 </span>Derivation and Revision</h3>
+    <pre class="example asn">wasRevisionOf(ex:dataSet2, ex:dataSet1, -)</pre>
+
+    <pre class="example asn">wasDerivedFrom(ex:chart2, ex:dataSet2)</pre>
+   </div>
+   
+   <div id="plans-2" class="section">
+    <h3><span class="secno">A.7 </span>Plans</h3>
+    <p>
+     Similarly to roles, plans are attributes of relations, specifically association relations.
+    </p>
+    <pre class="example asn">wasAssociatedWith(ex:correct, ex:edith, ex:instructions)</pre>
+   </div>
+   
+   <div id="time-2" class="section">
+    <h3><span class="secno">A.8 </span>Time</h3>
+    <pre class="example asn">wasGeneratedBy(ex:chart1, ex:compile,  2012-03-02T10:30:00)
+wasGeneratedBy(ex:chart2, ex:compile2, 2012-04-01T15:21:00)
+
+activity(ex:correct, 2012-03-31T09:21:00, 2012-04-01T15:21:00)</pre>
+   </div>
+
+   <div id="alternate-entities-and-specialization-2" class="section">
+    <h3><span class="secno">A.9 </span>Alternate Entities and Specialization</h3>
+    <pre class="example asn">entity(ex:blogEntry)
+wasQuotedFrom(ex:blogEntry, ex:article)
+
+entity(ex:articleV1)
+wasDerivedFrom(ex:articleV1, ex:dataSet1)
+
+specializationOf(ex:articleV1, ex:article)
+
+specializationOf(ex:articleV2, ex:article)
+alternateOf(ex:articleV1, ex:articleV2)</pre>
+   </div>
+  </div>
+
+  <div class="appendix section" id="acknowledgements">
+   
+<!-- OddPage -->
+<h2><span class="secno">B. </span>Acknowledgements</h2>
+   <p>
+    The Provenance Working Group members.
+   </p>
+  </div>
+
+  <div class="appendix section" id="changes-since-first-public-working-draft"> 
+   
+<!-- OddPage -->
+<h2><span class="secno">C. </span>Changes Since First Public Working Draft</h2> 
+   <ul>
+    <li>Removed details about &quot;things&quot; and attributes from intuition on entities.</li>
+    <li>Removed discussion and examples of &quot;eventually derived from&quot; from intuition on derivation.</li>
+    <li>Revised language and namespace prefix (ex1) to talk about a single worked example.</li>
+    <li>Updated wasControlledBy to wasAssociatedWith.</li>
+    <li>Changed (Qualified)Involvement classes and associated relations to match current ontology.</li>
+    <li>Added actedOnBehalfOf in intuition and example.</li>
+    <li>Removed the FAQ section.</li>
+    <li>Added intuition and example sections on plans.</li>
+    <li>Added intuition and example sections on time.</li>
+    <li>Added intuition and example sections on alternates and specialization.</li>
+    <li>Added intuition and examples on quotation.</li>
+    <li>Included description of attribution in intuition section on agents and responsibility.</li>
+    <li>Changed from ASN to PROV-N</li>
+    <li>Updated examples to latest PROV-O terms</li>
+    <li>Updated old PROV-N and added new PROV-N for all recently added concepts</li>
+    <li>Added provenance graph figures for the examples</li>
+   </ul>
+  </div>
+
+ 
+<div id="references" class="appendix section">
+<!-- OddPage -->
+<h2><span class="secno">D. </span>References</h2><div id="normative-references" class="section"><h3><span class="secno">D.1 </span>Normative references</h3><p>No normative references.</p></div><div id="informative-references" class="section"><h3><span class="secno">D.2 </span>Informative references</h3><dl class="bibliography"><dt id="bib-PROV-DM">[PROV-DM]</dt><dd>Luc Moreau, Paolo Missier<a href="http://www.w3.org/TR/prov-dm/"><cite>The PROV Data Model and Abstract Syntax Notation</cite></a>. Working DraftURL: <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a>
+</dd><dt id="bib-PROV-N">[PROV-N]</dt><dd>Luc Moreau, Paolo Missier<a href="http://www.w3.org/TR/prov-n/"><cite>PROV-N: The PROV Notation</cite></a>. Working DraftURL: <a href="http://www.w3.org/TR/prov-n/">http://www.w3.org/TR/prov-n/</a>
+</dd><dt id="bib-PROV-O">[PROV-O]</dt><dd>Timothy Lebo, Satya Sahoo, Deborah McGuinness, Mike Lang Jr.<a href="http://www.w3.org/TR/prov-o/"><cite>The PROV Ontology: Model and Formal Semantics</cite></a>. Working DraftURL: <a href="http://www.w3.org/TR/prov-o/">http://www.w3.org/TR/prov-o/</a>
+</dd><dt id="bib-TURTLE">[TURTLE]</dt><dd>Eric Prud'hommeaux, Gavin Carothers<a href="http://www.w3.org/TR/2011/WD-turtle-20110809/"><cite>Turtle: Terse RDF Triple Language</cite></a>. 9 August 2011. W3C Working Draft. URL: <a href="http://www.w3.org/TR/2011/WD-turtle-20110809/">http://www.w3.org/TR/2011/WD-turtle-20110809/</a>
+</dd></dl></div></div></body></html>

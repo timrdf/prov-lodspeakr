@@ -1,0 +1,71 @@
+entity(e0, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice" ])
+entity(e1, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice", 
+             ex:content="" ])
+entity(e2, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice", 
+             ex:content="There was a lot of crime in London last month."])
+entity(e3, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice", 
+             ex:content="There was a lot of crime in London and New York last month."])
+entity(e4)
+entity(e5)
+entity(e6, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice", 
+             ex:content="There was a lot of crime in London and New York last month.", 
+	     ex:grammarchecked="yes"])
+
+
+activity(a0, 2011-11-16T16:00:00,,[prov:type="createFile"])
+activity(a1, 2011-11-16T16:05:00,,[prov:type="edit"])
+activity(a2, 2011-11-16T17:00:00,,[prov:type="email"])
+activity(a3, 2011-11-17T09:00:00,,[prov:type="edit"])
+activity(a4, 2011-11-17T09:50:00,,[prov:type="email"])
+activity(a5, 2011-11-17T09:30:00, ,[prov:type="grammarcheck"])
+
+wasGeneratedBy(e0, a0)
+wasGeneratedBy(e1, a0, [ex:fct="create"])
+wasGeneratedBy(e2, a1, [ex:fct="save"])     
+wasGeneratedBy(e3, a3, [ex:fct="save"])     
+wasGeneratedBy(g1, e4, a2, [ex:port="smtp", ex:section="attachment"])  
+wasGeneratedBy(g2, e5, a4, [ex:port="smtp", ex:section="attachment"])    
+wasGeneratedBy(e6, a5, [ex:file="stdout"])
+
+used(a1,e1,[ex:fct="load"])
+used(a3,e2,[ex:fct="load"])
+used(u1,a2,e2,[ex:fct="attach"])
+used(u2,a4,e3,[ex:fct="attach"])
+used(a5,e3,[ex:file="stdin"])
+
+wasDerivedFrom(e2,e1)
+wasDerivedFrom(e3,e2)
+wasDerivedFrom(e4,e2,a2,g1,u1)
+wasDerivedFrom(e5,e3,a4,g2,u2)
+
+specializationOf(e1,e0)
+specializationOf(e2,e0)
+specializationOf(e3,e0)
+specializationOf(e6,e3) 
+
+agent(ag1, [ prov:type="prov:Person" %% xsd:QName, ex:name="Alice" ])
+agent(ag2, [ prov:type="prov:Person" %% xsd:QName, ex:name="Bob" ])
+agent(ag3, [ prov:type="prov:Person" %% xsd:QName, ex:name="Charles" ])
+agent(ag4, [ prov:type="prov:Person" %% xsd:QName, ex:name="David" ])
+agent(ag5, [ prov:type="prov:Person" %% xsd:QName, ex:name="Edith" ])
+agent(ag6, [ prov:type="prov:SoftwareAgent" %% xsd:QName, ex:name="GoodEnglish" ])
+
+wasAssociatedWith(a0, ag1, [prov:role="creator"])
+wasAssociatedWith(a1, ag2, [prov:role="author"])
+wasAssociatedWith(a2, ag3, [prov:role="communicator"])
+wasAssociatedWith(a3, ag4, [prov:role="author"])
+wasAssociatedWith(a4, ag5, [prov:role="communicator"])
+
+entity(gr1,[prov:type="prov:Plan"%% xsd:QName, 
+            ex:url="http://example.org/grammarRules.html" %% xsd:anyURI])
+
+wasAssociatedWith(a5, ag6, gr1, [prov:role="checker"])
+
+actedOnBehalfOf(ag6, ag4, a5, [prov:type="delegation"])
+
+
+
+
+
+
+

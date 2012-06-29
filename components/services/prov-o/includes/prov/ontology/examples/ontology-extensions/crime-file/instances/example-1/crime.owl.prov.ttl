@@ -1,0 +1,23 @@
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> . 
+@prefix :        <#> .
+
+:pe_0
+   a prov:ProcessExecution;
+   dcterms:description "Satya pasted some RDF/XML from Protege into http://www.w3.org/2011/prov/wiki/PIL_OWL_Ontology#RDF.2FXML_notation.";
+   dcterms:description "Tim says so, based on Satya telling Tim that Satya pasted it.";
+.
+
+:pe_1
+   a prov:ProcessExecution;
+   dcterms:description "Tim copied the RDF/XML from http://www.w3.org/2011/prov/wiki/PIL_OWL_Ontology#RDF.2FXML_notation into crime.owl on Monday Sept 19th around 10:10am.";
+   rdfs:seeAlso <crime.owl>;
+.
+
+:pe_2
+   a prov:ProcessExecution;
+   dcterms:description "Tim used rapper to compile crime.ttl down to crime.owl Monday Sept 26th around 9:50am.";
+   rdfs:seeAlso <crime.owl>;
+.
+

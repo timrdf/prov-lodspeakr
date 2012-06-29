@@ -1,0 +1,4 @@
+_:bnode376562048 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/ns/prov#Association>
+_:bnode376562048 <http://www.w3.org/ns/prov#agent> <http://example.org#derek>
+_:bnode376562048 <http://www.w3.org/ns/prov#hadRole> <http://example.org#analyst>
+<http://example.org#compose> <http://www.w3.org/ns/prov#qualifiedAssociation> _:bnode376562048

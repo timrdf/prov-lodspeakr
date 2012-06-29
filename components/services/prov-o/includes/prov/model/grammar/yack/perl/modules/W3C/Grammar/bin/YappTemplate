@@ -1,0 +1,371 @@
+# -*- Mode: cperl; coding: utf-8; cperl-indent-level: 4 -*-
+# START LexerBlock
+#
+# YappTemplate: used by yacker to create yapp input files.
+#
+# Use: yacker -l perl -s -n <name> <name>.txt
+#
+# to generate a yapp input module called Sparql.yp.
+
+#line 11 "YappTemplate"
+
+# $Id: YappTemplate,v 1.30 2007-12-01 19:11:19 eric Exp $
+
+sub _Base::new {
+    my ($proto, @args) = @_;
+    my $class = ref($proto) || $proto;
+    my $self = [];
+    foreach my $arg (@args) {
+	if (UNIVERSAL::isa($arg, $class)) {
+
+	    # Collapse nested left-recursive *, +, ? and () productions.
+	    push (@$self, @$arg);
+	} else {
+
+	    # Construct simple parse tree of production parameters.
+	    push (@$self, $arg);
+	}
+    }
+    bless ($self, $class);
+    return $self;
+}
+sub _Base::toString {
+    my ($self) = @_;
+    my @ret = map {$_->toString} @$self;
+    return wantarray ? @ret : join(' ', @ret);
+}
+sub _Base::toXML {
+    my ($self, $prefix, $decls) = @_;
+    my $class = ref $self;
+    my $declsStr = join('', map {my $p = $_ ? ":$_" : ''; "\n xmlns$p=\"$decls->{$_}\""} keys %$decls);
+    my @ret = ("$prefix<$class$declsStr>", map {ref $_ ? $_->toXML("$prefix  ", {}) : $_} @$self, "$prefix</$class>");
+    return wantarray ? @ret : join("\n", @ret);
+}
+
+@_Production::ISA = qw(_Base);
+@_GenProduction::ISA = qw(_Production);
+sub _GenProduction::toXML {
+    my ($self, $prefix) = @_;
+    return join("\n", map {$_->toXML($prefix)} @$self);
+}
+
+@_Terminal::ISA = qw(_Base);
+sub _Terminal::toString {
+    my ($self) = @_;
+    my $encodedValue = $self->[0];
+    $encodedValue =~ s/\r/\\r/g;
+    $encodedValue =~ s/\n/\\n/g;
+    $encodedValue =~ s/\t/\\t/g;
+    return $encodedValue;
+}
+sub _Terminal::toXML {
+    my ($self, $prefix) = @_;
+    my $class = ref $self;
+    my $encodedValue = $self->[0];
+    $encodedValue =~ s/&/&amp;/g;
+    $encodedValue =~ s/</&lt;/g;
+    $encodedValue =~ s/>/&gt;/g;
+    return "$prefix<$class>$encodedValue</$class>";
+}
+@_Constant::ISA = qw(_Base);
+sub _Constant::toString {
+    my ($self) = @_;
+    return ($self->[0]);
+}
+sub _Constant::toXML {
+    my ($self, $prefix) = @_;
+    my $class = ref $self;
+    $class =~ s/^[IG]T_//;
+    return "$prefix<yacker:implicit-terminal>$class</yacker:implicit-terminal>";
+}
+
+sub _Error {
+    my ($self) = @_;
+        exists $self->YYData->{ERRMSG}
+    and do {
+        print $self->YYData->{ERRMSG};
+        delete $self->YYData->{ERRMSG};
+        return;
+    };
+    my $pos = pos $self->YYData->{INPUT};
+    my $lastPos = $self->YYData->{my_LASTPOS};
+    my $excerpt = substr($self->YYData->{INPUT}, $lastPos, $pos - $lastPos);
+    my $expect = @{$self->{STACK}} ? join (' | ', sort {(!(lc $a cmp lc $b)) ? $b cmp $a : lc $a cmp lc $b} map {&_terminalString($_)} $self->YYExpect()) : 'INVALID INITIALIZER';
+    if (ref $expect) {
+	# Flag unexpected (by the author at this point) refs with '?ref'.
+	if (ref $expect eq 'HASH') {
+	    if (exists $expect->{NEXT}) {
+		$expect = $ {$expect->{NEXT}};
+	    } else {
+		$expect = "?ref {%$expect}";
+	    }
+	} elsif (ref $expect eq 'ARRAY') {
+	    $expect = "?ref [@$expect]";
+	} elsif (ref $expect eq 'SCALAR') {
+	    $expect = "?ref $$expect";
+	} elsif (ref $expect eq 'GLOB') {
+	    $expect = "?ref \**$expect";
+	} else {
+	    $expect = "?ref ??? $expect";
+	}
+    }
+    my $token = &_terminalString($self->YYData->{my_LASTTOKEN});
+    my $value = $self->YYData->{my_LASTVALUE};
+    die "expected \"$expect\", got ($token, $value) from \"$excerpt\" at offset $lastPos.\n";
+}
+
+sub _terminalString { # static
+    my ($token) = @_;
+    if ($token =~ m{^I_T_(.+)$}) {
+	$token = "'$1'";
+    } elsif ($token =~ m{^T_(.+)$}) {
+	if (my $base = $ARGV[0]) {
+	    $token = "&lt;<a href=\"${base}$token\">$1</a>&gt;";
+	} else {
+	    $token = "<$1>";
+	}
+    }
+    return $token;
+}
+
+my $AtStart;
+
+sub _Lexer {
+    my($self)=shift;
+
+    my ($token, $value) = ('', undef);
+
+  top:
+    if (defined $self->YYData->{INPUT} && 
+	pos $self->YYData->{INPUT} < length ($self->YYData->{INPUT})) {
+	# still some chars left.
+    } else {
+	return ('', undef);
+    }
+
+    $self->YYData->{my_LASTPOS} = pos $self->YYData->{INPUT};
+    my $startPos = pos $self->YYData->{INPUT};
+    my ($mText, $mLen, $mI, $mLookAhead) = ('', 0, undef, undef);
+    for (my $i = 0; $i < @$Tokens; $i++) {
+	my $rule = $Tokens->[$i];
+	my ($start, $regexp, $action) = @$rule;
+	if ($start && !$AtStart) {
+	    next;
+	}
+	eval {
+	    if ($self->YYData->{INPUT} =~ m/\G($regexp)/gc) {
+		my $lookAhead = defined $2 ? length $2 : 0;
+		my $len = (pos $self->YYData->{INPUT}) - $startPos + $lookAhead;
+		if ($len > $mLen) {
+		    $mText = substr($self->YYData->{INPUT}, $startPos, $len - $lookAhead);
+		    $mLen = $len;
+		    $mI = $i;
+		    $mLookAhead = $lookAhead
+		}
+		pos $self->YYData->{INPUT} = $startPos;
+	    }
+	}; if ($@) {
+	    die "error processing $action: $@";
+	}
+    }
+    if ($mLen) {
+	my ($start, $regexp, $action) = @{$Tokens->[$mI]};
+	pos $self->YYData->{INPUT} += $mLen - $mLookAhead;
+	$AtStart = $mText =~ m/\z/gc;
+	($token, $value) = ($action, $mText);
+    } else {
+	my $excerpt = substr($self->YYData->{INPUT}, pos $self->YYData->{INPUT}, 40);
+	die "lexer couldn't parse at \"$excerpt\"\n";
+    }
+    if (!defined $token) {
+	# We just parsed whitespace or comment.
+	goto top;
+    }
+#    my $pos = pos $self->YYData->{INPUT};
+#    print "\n$pos,$token,$value\n";
+    $self->YYData->{my_LASTTOKEN} = $token;
+    $self->YYData->{my_LASTVALUE} = $value;
+    my $ret = $token->new($value);
+    my $str = $ret->toString;
+    $self->trace("shift ($token, $str)");
+    return ($token, $ret);
+}
+
+# END LexerBlock
+
+sub parse {
+    my ($self, $sample) = @_;
+    $self->YYData->{INPUT} = $sample;
+    pos $self->YYData->{INPUT} = 0;
+    return $self->YYParse( yylex => \&_Lexer, yyerror => \&_Error, yydebug => $ENV{YYDEBUG} );
+}
+
+sub openTraceFd {
+    my ($self, $fd) = @_;
+    open $self->YYData->{Trace}, '>&', $fd;
+}
+sub closeTrace {
+    my ($self, $fd) = @_;
+    close $self->YYData->{Trace};
+}
+sub trace {
+    my($self, $str) = @_;
+    if ($self->YYData->{Trace}) {
+	&utf8::encode($str);
+	print {$self->YYData->{Trace}} "$str\n";
+    }
+}
+sub traceProduction {
+    my($self, $prod, @parms) = @_;
+    if ($self->YYData->{Trace}) {
+	my $str = "  $prod:";
+	my @lines;
+	while (@parms) {
+	    my ($parmName, $parmVal) = (shift @parms, shift @parms);
+
+	    if (UNIVERSAL::isa($parmVal, '_GenProduction')) {
+
+		# Enumerate elements of *, +, ? and () productions.
+		$str .= sprintf(" %s(%d)", $parmName, scalar @$parmVal);
+		for (my $i = 0; $i < @$parmVal; $i++) {
+		    push (@lines, sprintf("    %s(%d): %s", $parmName, $i, join(' ', $parmVal->[$i]->toString)));
+		}
+	    } else {
+
+		# Display singleton properties via their toString form.
+		$str .= sprintf(" %s(%d)", $parmName, 1);
+		push (@lines, sprintf("    %s(%d): %s", $parmName, 0, join(' ', $parmVal->toString)));
+	    }
+	}
+	$str = join("\n", $str, @lines);  
+	&utf8::encode($str);
+	print {$self->YYData->{Trace}} "$str\n";
+    }
+}
+
+require Exporter;
+use vars qw ( @EXPORT );
+push (@ISA, qw ( Exporter ));
+@EXPORT = qw(&test);
+
+sub test {
+    if (@ARGV < 1) {
+	local $/ = undef;
+	&testFile(<STDIN>, $ENV{TRACE_FD});
+    } else {
+	foreach my $file (@ARGV) {
+	    open(F, $file) || die "unable to open input $file: $!\n";
+	    local $/ = undef;
+	    &testFile(<F>, $ENV{TRACE_FD});
+	    close (F);
+	}
+    }
+}
+sub testFile {
+    my ($sample, $traceFd) = @_;
+    my $parser = $LanguageName->new();
+    &utf8::decode($sample);
+    if ($ENV{TRACE_FD}) {
+	$parser->openTraceFd($ENV{TRACE_FD});
+    }
+    eval {
+	my $root = $parser->parse($sample);
+	my $text = $root->toXML('', {
+	 '' => 'http://www.w3.org/2005/01/yacker/uploads/$LanguageName/', 
+	 'yacker' => 'http://www.w3.org/2005/01/yacker/'});
+
+	# @@@ you may need to comment this for command line processing.
+	&utf8::encode($text);
+
+	print "$text\n";
+    };
+    my $lastError = $@;
+    if ($ENV{TRACE_FD}) {
+	$parser->closeTrace();
+    }
+    if ($lastError) {
+	die $lastError;
+    }
+}
+
+1;
+
+__END__
+
+=head1 $LanguageName
+
+$LanguageName - parse some language.
+
+=head1 SYNOPSIS
+
+    my ($sample) = $ARGV[0];
+    &utf8::decode($sample);
+    my $parser = new $LanguageName();
+    my $root = $parser->parser($sample);
+    my $text = $root->toXML('', {
+	 '' => 'http://www.w3.org/2005/01/yacker/uploads/$LanguageName/', 
+	 'yacker' => 'http://www.w3.org/2005/01/yacker/'});
+    &utf8::encode($text);
+    print "$text\n";
+
+=head1 DESCRIPTION
+
+Yacker needs to encode rule patterns in [a-zA-Z_]+ so it reserves symbols starting with '_'. This parser reverses the process.
+
+This module was generated by W3C::Grammar::bin::yacker.
+
+
+=head1 API
+
+This function supplies a single parsing function. The methods of the returned object are described below.
+
+=head2 parse($sample)
+
+Returns an array of objects parsed into the language given to yacker.
+
+=head2 returned object
+
+The returned objects are blessed subclasses of _Production. They have the following functions:
+
+=head3 toString
+
+Return a ' '-separated "normalization" of the parsed $sample.
+
+=head3 toXML
+
+Return an XML parse tree of the parsed $sample.
+
+
+=head1 TESTING/DEBUGGING
+
+    TRACE_FD=3 perl -M$LanguageName -e test < sample.in 3> sample.trace
+or
+    TRACE_FD=3 perl -M$LanguageName -e test sample 3> sample.trace
+
+which should return a parse tree for the given language.
+
+Setting the trace file descriptor to 1 will send the trace output to stdout.
+    TRACE_FD=1
+Leaving it unset will suppress the trace output.
+
+
+=head1 BUGS
+
+The web interface to yacker requires the results to be encoded:
+  &utf8::encode($text)
+
+Many shells do not expect this so you may need to comment it out. You
+may search for the "@@@" above to find the line in sub test.
+
+
+=head1 AUTHOR
+
+$LanguageName author: unknown
+yacker author: Eric Prud'hommeaux <eric@w3.org>
+
+=head1 SEE ALSO
+
+W3C::Grammar::bin::yacker(1)
+
+=cut
+

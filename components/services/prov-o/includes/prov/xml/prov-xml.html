@@ -1,0 +1,802 @@
+<!DOCTYPE html
+>
+
+<html><head> 
+    <title>PROV-XML: The PROV XML Schema</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+<!-- PM -->
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+     </style>
+
+    <script src="http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js" class="remove"></script> 
+    <script src="http://www.w3.org/2007/OWL/toggles.js" class="remove"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" class="remove"></script>
+
+    <script src="../model/glossary.js" class="remove"></script>
+
+
+    <script class="remove">
+
+function insertSchema(doc, content) {
+//	return '<code class="language-xml"> ' + doc._esc(content) + '</code>';
+	return doc._esc(content);
+}
+
+function htmlEncode(value){
+  return $('<div/>').text(value).html();
+}
+
+function insertSchemaDefinition(doc, content, name) {
+
+	var xml=$.parseXML(content);
+	var segment = $(xml).find('complexType[name~="' + name + '"]')[0];
+
+	return doc._esc((new XMLSerializer()).serializeToString(segment));
+}
+
+function insertSchemaEntity(doc, content) {  return insertSchemaDefinition(doc,content,'Entity'); }
+function insertSchemaActivity(doc, content) {  return insertSchemaDefinition(doc,content,'Activity'); }
+function insertSchemaWasGeneratedBy(doc, content) {  return insertSchemaDefinition(doc,content,'WasGeneratedBy'); }
+function insertSchemaUsed(doc, content) {  return insertSchemaDefinition(doc,content,'Used'); }
+function insertSchemaWasStartedBy(doc, content) {  return insertSchemaDefinition(doc,content,'WasStartedBy'); }
+function insertSchemaWasEndedBy(doc, content) {  return insertSchemaDefinition(doc,content,'WasEndedBy'); }
+function insertSchemaWasInformedBy(doc, content) {  return insertSchemaDefinition(doc,content,'WasInformedBy'); }
+function insertSchemaWasStartedByActivity(doc, content) {  return insertSchemaDefinition(doc,content,'WasStartedByActivity'); }
+
+function insertSchemaAgent(doc, content) {  return insertSchemaDefinition(doc,content,'Agent'); }
+function insertSchemaWasAttributedTo(doc, content) {  return insertSchemaDefinition(doc,content,'WasAttributedTo'); }
+function insertSchemaWasAssociatedWith(doc, content) {  return insertSchemaDefinition(doc,content,'WasAssociatedWith'); }
+function insertSchemaActedOnBehalfOf(doc, content) {  return insertSchemaDefinition(doc,content,'ActedOnBehalfOf'); }
+
+
+function insertSchemaWasDerivedFrom(doc, content) {  return insertSchemaDefinition(doc,content,'WasDerivedFrom'); }
+function insertSchemaWasRevisionOf(doc, content) {  return insertSchemaDefinition(doc,content,'WasRevisionOf'); }
+function insertSchemaWasQuotedFrom(doc, content) {  return insertSchemaDefinition(doc,content,'WasQuotedFrom'); }
+function insertSchemaHadOriginalSource(doc, content) {  return insertSchemaDefinition(doc,content,'HadOriginalSource'); }
+function insertSchemaTracedTo(doc, content) {  return insertSchemaDefinition(doc,content,'TracedTo'); }
+
+function insertSchemaSpecializationOf(doc, content) {  return insertSchemaDefinition(doc,content,'SpecializationOf'); }
+function insertSchemaAlternateOf(doc, content) {  return insertSchemaDefinition(doc,content,'AlternateOf'); }
+
+function insertSchemaNote(doc, content) {  return insertSchemaDefinition(doc,content,'Note'); }
+function insertSchemaHasAnnotation(doc, content) {  return insertSchemaDefinition(doc,content,'HasAnnotation'); }
+
+function insertSchemaDefinitionOriginal(doc, content) {
+	// perform transformations to make it render and prettier
+
+	// NB - this is hardcoded to entity at present. The respec js doesn't appear
+	// to pass in the element that it's working with - just the entire doc,
+	// and the respec object.
+
+	var xml=$.parseXML(content);
+	var segment = $(xml).find('complexType[name~="Entity"]')[0];
+	return doc._esc((new XMLSerializer()).serializeToString(segment));
+}
+      function updateGlossaryRefs() {
+        $('.glossary-ref').each(function(index) {
+          var ref=$(this).attr('data-ref');
+          var span=$(this).attr('data-withspan')
+          $(this).removeAttr('data-withspan');
+          $(this).removeAttr('data-ref');
+
+          $('#'+ref+'.glossary').contents().clone().appendTo($(this));
+          $(this).attr('prov:hadOriginalSource',glossary_hg);
+          if (span) {
+            $(this).children('dfn').replaceWith(function(){return $('<span>').addClass('dfn').append($(this).contents())});
+          }
+        });
+      }
+      $(document).ready(function(){
+        // if glossary is in a string:
+        $('#glossary_div').html(glossary_string)
+        updateGlossaryRefs();
+      });
+
+    </script>
+
+    <script class="remove"> 
+      var addExtraReferences = function() {
+          for (var k in extraReferences)
+              berjon.biblio[k] = extraReferences[k];
+      };
+      var extraReferences = {
+        "CLOCK":
+         "Lamport, L. "+
+         "<a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\"><cite>Time, clocks, and the ordering of events in a distributed system</cite></a>."+
+         "Communications of the ACM 21 (7): 558–565. 1978. "+
+         "URL: <a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\">http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf</a> " +
+         "DOI: doi:10.1145/359545.359563.",
+        "CSP":
+         "Hoare, C. A. R. "+
+         "<a href=\"http://www.usingcsp.com/cspbook.pdf\"><cite>Communicating Sequential Processes</cite></a>."+
+         "Prentice-Hall. 1985"+
+         "URL: <a href=\"http://www.usingcsp.com/cspbook.pdf\">http://www.usingcsp.com/cspbook.pdf</a>",
+        "Logic":
+          "W. E. Johnson"+
+          "<a href=\"http://www.ditext.com/johnson/intro-3.html\"><cite>Logic: Part III</cite></a>."+
+          "1924. "+
+          "URL: <a href=\"http://www.ditext.com/johnson/intro-3.html\">http://www.ditext.com/johnson/intro-3.html</a>",
+        "PROV-SEM":
+          "James Cheney "+
+          "<a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\"><cite>Formal Semantics Strawman</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\">http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman</a>",
+
+        "PROV-PRIMER":
+          "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-primer/\"><cite>Prov Model Primer</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
+
+        "PROV-O":
+          "Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, Daniel Garijo, Timothy Lebo, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-o/\"><cite>Provenance Formal Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-o/\">http://www.w3.org/TR/prov-o/</a>",
+
+
+        "PROV-DM":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-dm/\"><cite>PART 1: PROV-DM ...</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-dm/\">http://www.w3.org/TR/prov-dm/</a>",
+
+
+        "PROV-DM-CONSTRAINTS":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-dm-constraints/\"><cite>PROV-DM Constraints</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-dm-constraints/\">http://www.w3.org/TR/prov-dm-constraints/</a>",
+
+        "PROV-N":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-n/\"><cite>PROV-N ....</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-n/\">http://www.w3.org/TR/prov-n/</a>",
+
+        "PROV-AQ":
+          "Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles "+
+          "<a href=\"http://www.w3.org/TR/prov-aq/\"><cite>Provenance Access and Query</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-aq/\">http://www.w3.org/TR/prov-aq/</a>",
+      };
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "prov-xml",
+ 
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          subtitle   :  "initial ideas for PROV XML schema",
+
+ 
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2011-10-18",
+ 
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+ 
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          //previousPublishDate:  "2012-02-02",
+          //previousMaturity:  "WD",
+ 
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "http://dvcs.w3.org/hg/prov/raw-file/default/xml/prov-xml.html",
+ 
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+ 
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          extraCSS:             ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css", "./extra.css"],
+ 
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+                { name: "TBD" },
+//              { name: "Luc Moreau", url: "http://www.ecs.soton.ac.uk/~lavm/",
+//                company: "University of Southampton" },
+
+          ],
+ 
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+ 
+//          authors:  [
+//              {  },
+//          ],
+          
+          // name of the WG
+          wg:           "Provenance Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/2011/prov/",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-prov-wg",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/46974/status",
+
+          // Add extraReferences to bibliography database
+          preProcess: [addExtraReferences],
+      };
+    </script> 
+  </head> 
+  <body> 
+
+    <section id="abstract">
+<p>
+PROV-DM, the PROV data model, is a data model for provenance that describes
+the entities, people and activities involved in
+producing a piece of data or thing. 
+PROV-DM is structured in six components, dealing with: 
+(1) entities and activities, and the time at which they were created, used, or ended;
+(2) agents bearing responsibility for entities that were generated and actities that happened;
+(3) derivations between entities;
+(4) properties to link entities that refer to a same thing;
+(5) collections of entities, whose provenance can itself be tracked;
+(6) a simple annotation mechanism.
+</p>
+
+<p>This document introduces an XML schema for the PROV data model,
+allowing instances of the PROV data model to be serialized in
+XML. </p>
+    </section> 
+
+<section id="sotd">
+<h4>PROV Family of Specifications</h4>
+This document is part of the PROV family of specifications, a set of specifications aiming to define the various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.  The specifications are as follows.
+<ul>
+<li> PROV-DM, the PROV data model for provenance,</li>
+<li> PROV-DM-CONSTRAINTS, a set of constraints applying to the PROV data model,</li>
+<li> PROV-N, a notation for provenance aimed at human consumption,</li>
+<li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF;</li>
+<li> PROV-AQ, the mechanisms for accessing and querying provenance; </li>
+<li> PROV-PRIMER, a primer for the PROV data model,</li>
+<li> PROV-SEM, a formal semantics for the PROV data model.</li>
+<li> PROV-XML, an XML schema for the PROV data model (this document).</li>
+</ul>
+<h4>How to read the PROV Family of Specifications</h4>
+<ul>
+<li>The primer is the entry point to PROV offering a pedagogical presentation of the provenance model.</li>
+<li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-DM-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+<li>The XML community should focus on PROV-XML defining an XML schema for PROV-DM. Further details can also be found in PROV-DM, PROV-DM-CONSTRAINTS, and PROV-SEM.</li>
+<li>Developers seeking to retrieve or publish provenance should focus of PROV-AQ.</li>
+<li>Readers seeking to implement other PROV serializations
+should focus on PROV-DM and PROV-DM-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+</ul>
+
+
+</section>
+
+
+
+
+
+
+
+    <section id="introduction"> 
+      <h2>Introduction<br>
+</h2> 
+
+<p> 
+For the purpose of this specification, <dfn>provenance</dfn> is defined as a record that describes the people,
+institutions, entities, and activities involved in producing,
+influencing, or delivering a piece of data or a thing.
+In particular, the provenance of information is crucial in deciding
+whether information is to be trusted, how it should be integrated with
+other diverse information sources, and how to give credit to its
+originators when reusing it.  In an open and inclusive environment
+such as the Web, where users find information that is often contradictory or
+questionable, provenance can help those users to make trust judgements.
+</p>
+
+
+<p>A set of specifications, referred to as the PROV family of specifications, define the various aspects
+that are necessary to achieve this vision in an interoperable
+way:</p>
+<ul>
+<li>A data model for provenance, which is presented in three documents:
+<ul>
+<li> PROV-DM (part I): the provenance data model itself, expressed in natural language (this document);
+<li> PROV-DM-CONSTRAINTS (part II): constraints underpinning the data model [[PROV-DM-CONSTRAINTS]];
+<li> PROV-N (part III): a notation to express instances of that data model for human consumption [[PROV-N]];
+</ul> 
+</li>
+<li>PROV-O: the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF [[PROV-O]];</li>
+<li>PROV-AQ: the mechanisms for accessing and querying provenance [[PROV-AQ]];</li>
+<li>PROV-PRIMER: a primer for the PROV approach [[PROV-PRIMER]];</li>
+<li>PROV-SEM: semantics of the PROV-DM data model [[PROV-SEM]];</li>
+<li>PROV-XML: an XML schema for the PROV data model.</li>
+</ul>
+
+
+<p>
+  PROV-DM is a domain-agnostic model, but with clear extensibility points allowing further domain-specific and
+application-specific extensions to be defined.
+The PROV data model is structured according to six components covering various aspects of provenance:</p>
+<ol>
+<li> component 1: entities and activities, and the time at which they were created, used, or ended;
+<li> component 2: agents bearing responsibility for entities that were generated and actities that happened;
+<li> component 3: derivations between entities;
+<li> component 4: properties to link entities that refer to a same thing;
+<li> component 5: collections of entities, whose provenance can itself be tracked;
+<li> component 6: a simple annotation mechanism.
+</ol>
+
+
+
+
+    <section id="structure-of-this-document"> 
+<h3>Structure of this Document</h3>
+
+
+    </section> 
+
+<section id="prov-dm-namespace">
+ <h3>PROV Namespace</h3>
+
+
+<p>The PROV namespace is <span class="name">http://www.w3.org/ns/prov#</span>.</p>
+
+<p> All the concepts, reserved names and attributes introduced in this specification belong to the PROV namespace.</p>
+
+</section>
+
+
+    <section id="conventions"> 
+<h3>Conventions</h3>
+
+
+
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+      NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
+      "OPTIONAL" in this document are to be interpreted as described in
+      [[!RFC2119]].</p>
+    </section> 
+
+</section> 
+
+
+
+
+<section id="data-model-components"> 
+
+<h2>PROV XML Schema</h2>
+
+<p>PROV-DM concepts are structured according to six components that are introduced in this section.
+Components and their dependencies are illustrated in Figure <a href="#prov-dm-components">prov-dm-components</a>. A component that relies on concepts defined in another also sits above it in this figure.
+PROV-DM consists of the following components.</p>
+
+<ol>
+<li><b>Component 1: entities and activities.</b> The first component consists of entities, activities, and all concepts linking them, such as generation, usage, start, end. The first component is the only one comprising time-related concepts. </li>
+<li><b>Component 2: agents and responsibility.</b> The second component consists of agents and concepts ascribing responsibility to agents.</li>
+<li><b>Component 3: derivations.</b>  The third component is formed with derivations and its derivation subtypes.</li>
+<li><b>Component 4: alternate.</b> The fourth component consists of relations linking entities somehow referring to a same thing. </li>
+<li><b>Component 5: collections.</b> The fifth component is comprised of collections and operations related to collections. </li>
+<li><b>Component 6: annotations.</b> The sixth component is concerned with annotations to PROV-DM  concepts.</li>
+</ol>
+
+
+<div style="text-align: center;">
+<figure style="max-width: 90%; ">
+<img  usemap="#componentMap" src="../model/images/components.png" alt="PROV-DM Components"  style="max-width: 90%; " />
+<map id="componentMap" name="componentMap">
+<area title="collections" href="#component5" coords="220,0,440,70"  alt="collections" shape="rect"/>
+<area title="alternate"   href="#component4" coords="450,0,510,140" alt="alternate"   shape="rect"/>
+<area title="annotations" href="#component6" coords="530,0,590,220" alt="annotations" shape="rect"/>
+<area title="activities/entities" href="#component1" coords="80,150,510,220" alt="activities/entities" shape="rect"/>
+<area title="derivations" href="#component3" coords="80,0,210,70"   alt="derivations" shape="rect"/>
+<area title="agents/responsibility" href="#component2" coords="0,0,70,220"   alt="agents/responsibility" shape="rect"/>
+</map>
+<figcaption id="prov-dm-components">PROV-DM Components</figcaption>
+</figure>
+</div>
+
+<p>
+While  not all PROV-DM relations are binary, they all involve two primary elements. Hence, Table <a href="#relations-at-a-glance">relations-at-a-glance</a> indexes all relations according to their two primary elements.  The table adopts the same color scheme as Figure <a href="#prov-dm-components">prov-dm-components</a>, allowing components to be readily identified.
+Note that for simplicity, this table  does not include collection-oriented relations.
+</p>
+
+
+<p>In the rest of the section, each type is defined, in English initially, followed by its XML schema definition and some example.</p>  
+
+<section id="component1"> 
+<h3>Component 1: Entities and Activities</h3>
+
+<p>The first component of PROV-DM is concerned with <a title="entity">entities</a> and <a title="activity">activities</a>, and their inter-relations: <a>Usage</a>, <a>Generation</a>, <a>Start</a>, <a>End</a>, <a>Communication</a>, and <a>Start by Activity</a>. </p>
+
+
+
+
+   <section id="term-Entity"> 
+      
+<h4>Entity</h4>
+
+
+<div class="glossary-ref" data-ref="glossary-entity"></div>
+
+<pre class='schema' data-name='entity' data-include='schema/prov.xsd' data-oninclude='insertSchemaEntity'  ></pre> 
+
+
+</section> 
+
+
+<section id="term-Activity"> 
+      
+<h3>Activity</h3>
+
+<div class="glossary-ref" data-ref="glossary-activity"></div>
+
+<pre class='schema' data-name='entity' data-include='schema/prov.xsd' data-oninclude='insertSchemaActivity'  ></pre> 
+
+</section>
+
+
+
+<section id="term-Generation">
+<h4>Generation</h4>
+
+<div class="glossary-ref" data-ref="glossary-generation"></div>
+
+<pre class='schema' data-name='wasGeneratedBy' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasGeneratedBy'  ></pre> 
+
+</section>
+
+
+<section id="term-Usage">
+<h3>Usage</h3>
+
+<div class="glossary-ref" data-ref="glossary-usage"></div>
+
+<pre class='schema' data-name='used' data-include='schema/prov.xsd' data-oninclude='insertSchemaUsed'  ></pre> 
+
+</section>
+
+
+<section id="term-Start">
+<h4>Start</h4>
+
+<div class="glossary-ref" data-ref="glossary-start"></div>
+
+<pre class='schema' data-name='wasStartedBy' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasStartedBy'  ></pre> 
+
+</section>
+
+<section id="term-End">
+<h4>End</h4>
+
+<div class="glossary-ref" data-ref="glossary-end"></div>
+
+<pre class='schema' data-name='wasEndedBy' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasEndedBy'  ></pre> 
+
+</section>
+
+<section id="term-wasInformedBy">
+<h3>Communication</h3>
+
+<div class="glossary-ref" data-ref="glossary-communication"></div>
+
+<pre class='schema' data-name='wasInformedBy' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasInformedBy'  ></pre> 
+</section>
+
+<section id="term-wasStartedByActivity">
+<h3>Start by Activity</h3>
+
+<div class="glossary-ref" data-ref="glossary-startByActivity"></div>
+
+<pre class='schema' data-name='wasStartedByActivity' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasStartedByActivity'  ></pre> 
+</section>
+
+
+</section>
+
+<section id="component2"> 
+<h3>Component 2: Agents and Responsibility</h3>
+
+<p>The second component of PROV-DM is concerned with <a title="agent">agents</a> and the notions of
+<a>Attribution</a>, <a>Association</a>, <a>Responsibility</a>, relating agents to entities, activities, and agents, respectively.
+</p>
+
+
+<section id="term-Agent">
+<h3>Agent</h3>
+
+<div class="glossary-ref" data-ref="glossary-agent"></div>
+
+<pre class='schema' data-name='agent' data-include='schema/prov.xsd' data-oninclude='insertSchemaAgent'  ></pre> 
+
+
+</section>
+
+<section id="term-attribution">
+<h3>Attribution</h3> 
+
+<div class="glossary-ref" data-ref="glossary-attribution"></div>
+
+<pre class='schema' data-name='wasAttributedTo' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasAttributedTo'  ></pre> 
+
+
+</section>  <!-- end attribution -->
+
+
+<section id="term-ActivityAssociation">
+<h4>Association</h4>
+
+<div class="glossary-ref" data-ref="glossary-activityAssociation"></div>
+
+<pre class='schema' data-name='wasAssociatedWith' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasAssociatedWith'  ></pre> 
+
+</section>  <!-- end wasAssociatedWith -->
+
+<section id="term-responsibility">
+
+<h4>Responsibility</h4>
+
+<div class="glossary-ref" data-ref="glossary-responsibility"></div>
+
+<pre class='schema' data-name='actedOnBehalfOf' data-include='schema/prov.xsd' data-oninclude='insertSchemaActedOnBehalfOf'  ></pre> 
+
+</section>
+
+
+
+</section>
+
+<section id="component3"> 
+<h3>Component 3: Derivations</h3>
+
+
+
+<p>The third component of PROV-DM is concerned with <a title="derivation">derivations</a> between <a title="entity">entities</a>, and subtypes of derivations <a>Revision</a>, <a>Quotation</a>, <a>Original Source</a>, and <a>Traceability</a>.
+</p>
+
+
+
+<section id="Derivation-Relation">
+<h4>Derivation</h4>
+
+
+
+
+
+<div class="glossary-ref" data-ref="glossary-derivation"></div>
+
+<pre class='schema' data-name='wasDerivedFrom' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasDerivedFrom'  ></pre> 
+
+</section>
+
+<section id="term-Revision">
+<h3>Revision</h3>
+
+<p><span class="glossary-ref" data-ref="glossary-revision"></span></p>
+
+<pre class='schema' data-name='wasRevisionOf' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasRevisionOf'  ></pre> 
+
+
+
+</section>  <!-- end revision -->
+
+<section id="term-quotation">
+<h3>Quotation</h3>
+
+<p> 
+<span class="glossary-ref" data-ref="glossary-quotation"></span>
+</p>
+
+<pre class='schema' data-name='wasQuotedFrom' data-include='schema/prov.xsd' data-oninclude='insertSchemaWasQuotedFrom'  ></pre> 
+
+</section>  <!-- end quotation -->
+
+
+<section id="term-original-source">
+<h3>Original Source</h3>
+
+<p>
+<span class="glossary-ref" data-ref="glossary-original-source"></span>
+</p>
+
+<pre class='schema' data-name='hadOriginalSource' data-include='schema/prov.xsd' data-oninclude='insertSchemaHadOriginalSource'  ></pre> 
+
+</section>  <!-- end original source -->
+
+<section id="term-traceability">
+<h3>Traceability</h3>
+
+<p>
+<span class="glossary-ref" data-ref="glossary-traceability"></span>
+</p>
+
+<pre class='schema' data-name='tracedTo' data-include='schema/prov.xsd' data-oninclude='insertSchemaTracedTo'  ></pre> 
+
+</section>
+
+</section>
+
+<section id="component4"> 
+<h3>Component 4: Alternate Entities</h3>
+
+
+<p>The fourth component of PROV-DM is concerned with
+relations <a>specialization</a> and <a>alternate</a> between entities.
+</p>
+
+
+<section id="term-specialization">
+
+<h4>Specialization</h4>
+
+
+<span class="glossary-ref" data-ref="glossary-specialization"></span> 
+
+<pre class='schema' data-name='specializationOf' data-include='schema/prov.xsd' data-oninclude='insertSchemaSpecializationOf'  ></pre> 
+
+</section>
+
+<section id="term-alternate">
+
+<h4>Alternate</h4>
+
+
+<span class="glossary-ref" data-ref="glossary-alternate"></span>
+
+<pre class='schema' data-name='alternateOf' data-include='schema/prov.xsd' data-oninclude='insertSchemaAlternateOf'  ></pre> 
+  
+</section>
+
+</section>
+
+
+<section id="component5"> 
+<h3>Component 5: Collections</h3>
+
+<p>The fifth component of PROV-DM is concerned with the notion of collections. 
+A collection is an entity that has some members. The members are themselves entities, and therefore their provenance can be expressed. In many applications, it is also of interest to be able to express the provenance of the collection  itself: e.g. who maintains the collection, which member it contains at which point in time, and how it was assembled. The purpose of Component 5 is to define the types and relations that are useful to express the provenance of collections. </p>
+
+<div class="note">
+XML Schema not defined for collections yet.
+</div>
+
+
+<section id="term-collection">
+<h3>Collection</h3>
+
+<span class="glossary-ref" data-ref="glossary-collection"></span>
+
+
+
+</section>  <!-- end of collection-types -->
+
+
+<section id="term-collection-insertion">
+<h3>Insertion</h3>
+
+<span class="glossary-ref" data-ref="glossary-insertion"></span>
+
+</section>  <!-- insertion -->
+
+
+<section id="term-collection-removal">
+<h3>Removal</h3>
+
+<span class="glossary-ref" data-ref="glossary-removal"></span>
+
+
+</section>  <!-- removal -->
+
+
+<section id="term-collection-membership">
+<h3>Membership</h3>
+
+
+<span class="glossary-ref" data-ref="glossary-membership"></span>
+
+
+</section>  <!-- Membership -->
+
+
+</section>   <!-- end collections-->
+
+
+<section id="component6"> 
+<h3>Component 6: Annotations</h3>
+
+<p>The sixth component of PROV-DM is concerned with <a title="note">notes</a> and <a title="annotation">annotations</a>.
+</p>
+
+   <section id="term-note"> 
+      
+<h4>Note</h4>
+
+<span class="glossary-ref" data-ref="glossary-note"></span>
+
+<pre class='schema' data-name='note' data-include='schema/prov.xsd' data-oninclude='insertSchemaNote'  ></pre> 
+
+   </section> 
+
+<section id="term-annotation">
+<h4>Annotation</h4>
+
+<span class="glossary-ref" data-ref="glossary-annotation"></span>
+
+<pre class='schema' data-name='hasAnnotation' data-include='schema/prov.xsd' data-oninclude='insertSchemaHasAnnotation'  ></pre> 
+
+
+
+
+</section>
+
+
+</section>
+
+</section>
+
+
+
+
+
+
+<!-- end sec. 5 -->
+
+
+<section  id="media-type">
+<h3>Media Type</h3>
+
+<p>
+The media type of PROV-XML is <span class="name">application/prov+xml</span>???
+</p>
+
+<div class="note">
+<p>
+See <a href="http://www.w3.org/2002/06/registering-mediatype">http://www.w3.org/2002/06/registering-mediatype</a> for Register an Internet Media Type for a W3C Spec.</p>
+</div>
+
+</section>
+
+
+
+
+
+<section class="appendix"> 
+      <h2>Full XML Schema</h2> 
+      <p> 
+
+<pre class='schema' data-include='schema/prov.xsd' data-oninclude='insertSchema'></pre> 
+
+      </p> 
+    </section> 
+
+<section class="appendix"> 
+      <h2>Acknowledgements</h2> 
+      <p> 
+        WG membership to be listed here.
+      </p> 
+    </section> 
+
+
+<div id="glossary_div" class="remove">
+<!-- glossary loaded from glossary.js will be hooked up here,
+     class remove, will remove this element from the final output.
+-->
+</div>
+
+
+ </body>
+</html>

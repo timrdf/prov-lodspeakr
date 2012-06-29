@@ -1,0 +1,98 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix run: <http://www.example.com/run1#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix wf: <http://www.example.com/scientific-workflow#> .
+@base <http://example.com/aWorkflow> .
+
+
+:workflowEngine a wf:WorkflowEngine .
+
+:aUser a prov:Agent, foaf:Person;
+     foaf:name "Stian Soiland-Reyes" .
+
+:inputFile a wf:FileValue;
+     wf:file "/tmp/myinput.txt";
+     wf:value "Steve" .
+
+:input a wf:Value;
+     wf:value "Steve" ;
+     wf:wasReadFrom :inputFile .
+
+:workflowRun a wf:Process;
+     wf:ranInWorkflowEngine :workflowEngine;
+     wf:wasDefinedBy <http://www.example.com/workflow1#workflow>;
+     wf:wasLaunchedBy :aUser;
+     prov:startedAt  [ time:inDateTimeXSD "2011-10-21T09:20:15Z" ];
+     prov:endedAt  [ time:inDateTimeXSD "2011-10-21T09:23:32Z" ];
+     wf:usedValue  [ a prov:Usage ;
+         wf:sawValue :input;
+         wf:seenAtPort <http://www.example.com/workflow1#inName>;
+         prov:hadTemporalValue [ time:inDateTimeXSD "2011-10-21T09:21:31Z" ] 
+     ] ;
+     wf:generatedValue [ a prov:Generation ;
+        wf:sawValue :sha1FromWorkflow ;
+        wf:wasSeenAt <http://www.example.com/workflow1#sha1>;
+     ] .
+
+:t0 a time:Instant;
+     time:inDateTimeXSD "2011-10-21T09:20:15Z" .
+
+
+:constant a wf:Process;
+     wf:wasDefinedBy <http://www.example.com/workflow1#String_Constant> ;
+     wf:wasSubProcessExecutionOf :workflowRun ;
+     prov:startedAt :t0 ;
+     prov:endedAt :t0;
+     wf:generatedValue [ a prov:Generation ;
+        prov:hadQualifiedEntity :hello ;
+        prov:hadTemporalValue :t0 ;
+        wf:sawValue <http://www.example.com/workflow1#String_Constant_value>
+     ] .
+
+:hello a wf:Value;
+     wf:value  "Hello, ".
+
+
+:combine a wf:Process;
+     wf:wasDefinedBy <http://www.example.com/workflow1#cat>;
+     wf:wasSubProcessExecutionOf :workflowRun;
+     prov:endedAt  [ time:inDateTimeXSD "2011-10-21T09:20:25Z" ];
+     prov:startedAt  [ time:inDateTimeXSD "2011-10-21T09:20:20Z" ];
+     wf:usedValue [ a prov:Usage ;
+         prov:hadQualifiedEntity :hello;
+         wf:seenAtPort <http://www.example.com/workflow1#catIn1>;
+         prov:hadTemporalValue [ time:inDateTimeXSD "2011-10-21T09:20:21Z" ] 
+       ], [ a prov:Usage ;
+         wf:sawValue :input;
+         wf:seenAtPort <http://www.example.com/workflow1#catIn2>;
+         prov:hadTemporalValue [ time:inDateTimeXSD "2011-10-21T09:20:23Z" ] 
+       ] ;
+     wf:generatedValue [ a prov:Generation ;
+        wf:sawValue :combined ;
+        wf:seenAtPort <http://www.example.com/workflow1#catOut>;
+     ] .  
+
+:combined a wf:Value;
+     wf:value "Hello, Steve".
+
+:shasum a wf:Process;
+     wf:wasDefinedBy <http://www.example.com/workflow1#shasum>;
+     wf:wasSubProcessExecutionOf :workflowRun;
+     prov:startedAt  [ time:inDateTimeXSD "2011-10-21T09:20:30Z" ];
+     prov:endedAt  [ time:inDateTimeXSD "2011-10-21T09:21:00Z" ];
+     wf:generatedValue [ a prov:Generation ;
+         wf:sawValue :sha1;
+         wf:wasSeenAt <http://www.example.com/workflow1#shaOut>;
+     ] .
+
+:sha1 a wf:Value;
+     wf:value "a33d1fb1658d4fbf017de59ab67437a3eb5ff50d" .
+
+:sha1FromWorkflow a wf:Value;
+     wf:value "a33d1fb1658d4fbf017de59ab67437a3eb5ff50d";
+     wf:sameValueAs :sha1 .
+
+
+

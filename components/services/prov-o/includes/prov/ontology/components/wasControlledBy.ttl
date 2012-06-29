@@ -1,0 +1,13 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:wasControlledBy
+   a owl:ObjectProperty;
+
+   rdfs:domain prov:ProcessExecution;
+
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-Agent>;
+   rdfs:comment "If the expressions entity(e,av) and wasControlledBy(pe,e) hold for some identifiers pe, e, and attribute-values av, then the expression agent(e) also holds.";
+   rdfs:range  prov:Agent;
+.

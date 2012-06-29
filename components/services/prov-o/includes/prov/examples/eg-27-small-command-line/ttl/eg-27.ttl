@@ -1,0 +1,34 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix : <http://aers.data2semantics.org/provenance/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix d2s-prov: <http://www.data2semantics.org/provenance-ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://aers.data2semantics.org/provenance/> .
+
+                                             
+###  http://www.data2semantics.org/provenance-ontology/Unzip
+
+d2s-prov:Unzip rdf:type owl:Class ;
+       rdfs:label "Unzip"@en ;
+       rdfs:subClassOf <http://www.w3.org/ns/prov-o/Activity> ;
+       rdfs:comment "Activity that unzips a binary zipped-file"@en .
+
+
+:File rdf:type owl:Class ;
+      rdfs:label "File"@en ;
+      rdfs:subClassOf <http://www.w3.org/ns/prov-o/Entity> .
+
+:aers_asci_2011q1zip rdf:type d2s-prov:File ,
+                               owl:NamedIndividual ;
+                      
+                      rdfs:label "aers_asci_2011q1.zip"@en.
+
+:unzip_aers_ascii_2011q1zip rdf:type d2s-prov:Unzip,
+                                     owl:NamedIndividual;
+                             
+      rdfs:label "unzip_aers_ascii_2011q1.zip"@en;
+      <http://www.w3.org/ns/prov-o/used> :aers_asci_2011q1zip ;
+      <http://www.w3.org/ns/prov-o/wasScheduledAfter> :download_aers_ascii_2011q1zip ;
+      <http://www.w3.org/ns/prov-o/wasControlledBy> <http://www.few.vu.nl/~hoekstra> .

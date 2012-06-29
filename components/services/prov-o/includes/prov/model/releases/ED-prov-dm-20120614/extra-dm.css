@@ -1,0 +1,445 @@
+
+/* --- EDITORIAL NOTES --- */
+.component1-color {
+ background-color: rgba(255,42,42,0.2);
+}
+
+.component3-color {
+ background-color: rgba(0,68,170,0.2);
+}
+
+.component2-color {
+ background-color: rgba(0,170,0,0.2);
+}
+.component4-color {
+ background-color: rgba(244,105,14,0.2);
+}
+
+.component6-color {
+ background-color: rgba(11,40,40,0.2);
+}
+
+.component5-color {
+ background-color: rgba(204,255,0,0.2);
+}
+
+.pending {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #BFEFFF;
+}
+
+.pending::before {
+    content:    "Pending Review";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.resolved {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #9BCD9B;
+}
+
+.resolved::before {
+    content:    "Resolved";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.inference {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.inference[id]::before {
+    content:    "Inference: " attr(id);
+    width:  380px;  /* How can we compute the length of "Constraint: " attr(id) */
+}
+
+
+.inference::before {
+    content:    "Inference";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.syntax {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.syntax[id]::before {
+    content:    "Syntax: " attr(id);
+    width:  380px;  /* How can we compute the length of "Constraint: " attr(id) */
+}
+
+
+.syntax::before {
+    content:    "Syntax";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.unamedconstraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+
+.unamedconstraint::before {
+    content:    "Constraint";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+
+.constraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.constraint[id]::before {
+    content:    "Constraint: " attr(id);
+    width:  380px;  /* How can we compute the length of "Constraint: " attr(id) */
+}
+
+
+.constraint::before {
+    content:    "Constraint";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+
+.interpretation {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.interpretation[id]::before {
+    content:    "Interpretation: " attr(id);
+    width:  380px;  /* How can we compute the length of "Interpretation: " attr(id) */
+}
+
+
+.interpretation::before {
+    content:    "Interpretation";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.definition {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #777;
+    background: #fff;
+}
+
+.definition[id]::before {
+    content:    "Definition: " attr(id);
+    width:  380px; 
+}
+
+
+.definition::before {
+    content:    "Definition";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #000;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+
+.deprecatedconstraint {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #00f;
+    background: #fff;
+}
+
+.deprecatedconstraint[id]::before {
+    content:    "Deprecated: " attr(id);
+    width:  380px;  /* How can we compute the length of "Deprecatedconstraint: " attr(id) */
+}
+
+
+.deprecatedconstraint::before {
+    content:    "Deprecated";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #00f;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.glossary-ref {
+    font-style:    italic;
+}
+
+.dfn {
+    font-weight:    bold;
+}
+
+
+.attribute {
+    font-style: italic;
+}
+
+
+.conditional {
+    color: blue;
+}
+
+.grammar {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    padding-top: 1ex;
+    padding-bottom: 0.6ex;
+    border: 1px dashed #2f6fab;
+    font-size: 80%;
+}
+.nonterminal {
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 95%;
+}
+
+.name {
+    font-family: monospace;
+}
+
+
+.xmpl {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #fff;
+}
+
+.xmpl::before {
+    content:    "Example";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+/* 
+generating this through java script now.
+
+.anexample[data-count]::before {
+    content: "Example " attr(data-count) ;
+    font-family: sans-serif;
+    font-size: 1.6ex;
+    font-weight: bold;
+}
+
+
+.anexample:before {
+    content: "Example:";
+    font-family: sans-serif;
+    font-size: 1.6ex;
+    font-weight: bold;
+}
+
+*/
+
+.anexample {
+    margin-top: 1ex;
+    margin-bottom: 1ex;
+    padding-left: 1ex;
+    padding-right: 1ex;
+    padding-top: 1ex;
+    padding-bottom: 0.6ex;
+    border: 1px dashed #2f6fab;
+    background-color: #f9f9f9;
+}
+.anexample table {
+    background-color: #f9f9f9;
+}
+
+.anexampleTitle {
+    font-family: sans-serif;
+    font-size: 1.6ex;
+    font-weight: bold;
+}
+
+.anexampleTitle {
+    font-family: sans-serif;
+    font-size: 1.6ex;
+    font-weight: bold;
+}
+
+
+.diamond {
+    font-weight: normal;
+    font-size:100%;
+    font-family: sans-serif;
+}
+
+
+div[class="grammar"] span[class="name"]:before {
+    content: "'";
+}
+
+div[class="grammar"] span[class="name"]:after {
+    content: "'";
+}
+
+
+div[class="grammar"] span[class="optional"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="optional"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")?";
+}
+
+
+div[class="grammar"] span[class="plus"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="plus"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")+";
+}
+
+
+div[class="grammar"] span[class="star"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="star"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")*";
+}
+
+div[class="grammar"] span[class="choice"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="choice"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")";
+}
+
+div[class="grammar"] span[class="group"]:before {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: "(";
+}
+
+div[class="grammar"] span[class="group"]:after {
+    font-weight: normal;
+    font-size:130%;
+    font-family: monospace;
+    content: ")";
+}
+
+table {
+    background-color: #f9f9f9;
+}
+
+
+.interpretation-forward::before {
+    content:    "Interpretation: ";
+    font-weight:    bold;
+}
+
+.structural-forward::before {
+    content:    "Structural constraint: ";
+    font-weight:    bold;
+}
+
+.essential {
+    font-weight: bold;
+}
+
+.provType::before {
+}
+

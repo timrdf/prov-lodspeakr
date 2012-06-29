@@ -1,0 +1,10 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:characterized 
+   a owl:ObjectProperty;
+   rdfs:domain prov:Entity;
+   rdfs:seeAlso prov:wasComplementOf;
+   rdfs:comment "A reference to a Resource that this Entity characterizes. When two Entities wasComplement one another, they are characterizing the object of this property.";
+.

@@ -1,0 +1,19 @@
+
+account(ex:acc1,
+        http://example.org/asserter1, 
+
+    ...
+    entity(rs,[ex:created=1870])
+    ...
+    )
+
+
+account(ex:acc2,
+        http://example.org/asserter2, 
+
+    ...
+    entity(rs_m1,[ex:membership=250, ex:year=1900])
+    ...
+    wasComplementOf(rs_m1, ex:acc2, rs, ex:acc1)
+
+)

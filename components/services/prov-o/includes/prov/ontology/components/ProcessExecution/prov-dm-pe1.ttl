@@ -1,0 +1,23 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix app: <http://www.w3.org/TR/2011/WD-prov-dm-20111018/app#> .
+@prefix :    <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#> .
+
+:pe1
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-ProcessExecution>;
+   dcterms:description "processExecution(pe1,add-crime-in-london,t+1,t+1+epsilon,[host='server.example.org',type='app:edit'])";
+   a prov:ProcessExecution;
+   prov:hadRecipe    :add-crime-in-london;
+   time:hadBeginning [ a time:Instant; time:inXSDDateTime "2011-11-05T14:15:37-04:00"^^xsd:dateTime ];
+   time:hadEnd       [ a time:Instant; time:inXSDDateTime "2011-11-05T14:15:53-04:00"^^xsd:dateTime ];
+   :host <http://server.example.org>;
+   a app:Edit;
+.
+:add-crime-in-london
+   a prov:Recipe;
+.

@@ -1,0 +1,9 @@
+
+account(ex:acc2,
+        http://example.org/asserter2, 
+          entity(e0, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice" ])
+          ...
+          activity(a1,create-file,t1)
+          ...
+          wasGeneratedBy(e0,a1,[ex:fct="create"])     
+          ... )

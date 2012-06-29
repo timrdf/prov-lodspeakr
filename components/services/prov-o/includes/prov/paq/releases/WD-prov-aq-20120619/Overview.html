@@ -1,0 +1,1282 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN' 'http://www.w3.org/TR/html4/loose.dtd'>
+<html lang="en" dir="ltr">
+<head>
+    <title>PROV-AQ: Provenance Access and Query</title>
+    <!-- <link rel="stylesheet" type="text/css" href="css/respec.css">
+    <link rel="stylesheet" type="text/css" href="css/prov-aq.css"> 
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"> -->
+<!--  Use common W3C-hosted version of ReSpec.js:
+-->
+    
+<!--  Use local version of ReSpec.js for debugging:
+    <script src="js/respec.js" class="remove"></script>
+-->
+    
+  <style type="text/css">
+/*****************************************************************
+ * ReSpec CSS
+ * Robin Berjon (robin at berjon dot com)
+ * v0.05 - 2009-07-31
+ *****************************************************************/
+
+
+/* --- INLINES --- */
+em.rfc2119 { 
+    text-transform:     lowercase;
+    font-variant:       small-caps;
+    font-style:         normal;
+    color:              #900;
+}
+
+h1 acronym, h2 acronym, h3 acronym, h4 acronym, h5 acronym, h6 acronym, a acronym,
+h1 abbr, h2 abbr, h3 abbr, h4 abbr, h5 abbr, h6 abbr, a abbr {
+    border: none;
+}
+
+dfn {
+    font-weight:    bold;
+}
+
+a.internalDFN {
+    color:  inherit;
+    border-bottom:  1px solid #99c;
+    text-decoration:    none;
+}
+
+a.externalDFN {
+    color:  inherit;
+    border-bottom:  1px dotted #ccc;
+    text-decoration:    none;
+}
+
+a.bibref {
+    text-decoration:    none;
+}
+
+code {
+    color:  #ff4500;
+}
+
+
+/* --- WEB IDL --- */
+pre.idl {
+    border-top: 1px solid #90b8de;
+    border-bottom: 1px solid #90b8de;
+    padding:    1em;
+    line-height:    120%;
+}
+
+pre.idl::before {
+    content:    "WebIDL";
+    display:    block;
+    width:      150px;
+    background: #90b8de;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+.idlType {
+    color:  #ff4500;
+    font-weight:    bold;
+    text-decoration:    none;
+}
+
+/*.idlModule*/
+/*.idlModuleID*/
+/*.idlInterface*/
+.idlInterfaceID, .idlDictionaryID {
+    font-weight:    bold;
+    color:  #005a9c;
+}
+
+.idlSuperclass {
+    font-style: italic;
+    color:  #005a9c;
+}
+
+/*.idlAttribute*/
+.idlAttrType, .idlFieldType, .idlMemberType {
+    color:  #005a9c;
+}
+.idlAttrName, .idlFieldName, .idlMemberName {
+    color:  #ff4500;
+}
+.idlAttrName a, .idlFieldName a, .idlMemberName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlMethod*/
+.idlMethType {
+    color:  #005a9c;
+}
+.idlMethName {
+    color:  #ff4500;
+}
+.idlMethName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlParam*/
+.idlParamType {
+    color:  #005a9c;
+}
+.idlParamName {
+    font-style: italic;
+}
+
+.extAttr {
+    color:  #666;
+}
+
+/*.idlConst*/
+.idlConstType {
+    color:  #005a9c;
+}
+.idlConstName {
+    color:  #ff4500;
+}
+.idlConstName a {
+    color:  #ff4500;
+    border-bottom:  1px dotted #ff4500;
+    text-decoration: none;
+}
+
+/*.idlException*/
+.idlExceptionID {
+    font-weight:    bold;
+    color:  #c00;
+}
+
+.idlTypedefID, .idlTypedefType {
+    color:  #005a9c;
+}
+
+.idlRaises, .idlRaises a.idlType, .idlRaises a.idlType code, .excName a, .excName a code {
+    color:  #c00;
+    font-weight:    normal;
+}
+
+.excName a {
+    font-family:    monospace;
+}
+
+.idlRaises a.idlType, .excName a.idlType {
+    border-bottom:  1px dotted #c00;
+}
+
+.excGetSetTrue, .excGetSetFalse, .prmNullTrue, .prmNullFalse, .prmOptTrue, .prmOptFalse {
+    width:  45px;
+    text-align: center;
+}
+.excGetSetTrue, .prmNullTrue, .prmOptTrue { color:  #0c0; }
+.excGetSetFalse, .prmNullFalse, .prmOptFalse { color:  #c00; }
+
+.idlImplements a {
+    font-weight:    bold;
+}
+
+dl.attributes, dl.methods, dl.constants, dl.fields, dl.dictionary-members {
+    margin-left:    2em;
+}
+
+.attributes dt, .methods dt, .constants dt, .fields dt, .dictionary-members dt {
+    font-weight:    normal;
+}
+
+.attributes dt code, .methods dt code, .constants dt code, .fields dt code, .dictionary-members dt code {
+    font-weight:    bold;
+    color:  #000;
+    font-family:    monospace;
+}
+
+.attributes dt code, .fields dt code, .dictionary-members dt code {
+    background:  #ffffd2;
+}
+
+.attributes dt .idlAttrType code, .fields dt .idlFieldType code, .dictionary-members dt .idlMemberType code {
+    color:  #005a9c;
+    background:  transparent;
+    font-family:    inherit;
+    font-weight:    normal;
+    font-style: italic;
+}
+
+.methods dt code {
+    background:  #d9e6f8;
+}
+
+.constants dt code {
+    background:  #ddffd2;
+}
+
+.attributes dd, .methods dd, .constants dd, .fields dd, .dictionary-members dd {
+    margin-bottom:  1em;
+}
+
+table.parameters, table.exceptions {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    margin: 0.5em 0;
+    width:  100%;
+}
+table.parameters { border-bottom:  1px solid #90b8de; }
+table.exceptions { border-bottom:  1px solid #deb890; }
+
+.parameters th, .exceptions th {
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+    font-family:    initial;
+    font-weight:    normal;
+    text-shadow:    #666 1px 1px 0;
+}
+.parameters th { background: #90b8de; }
+.exceptions th { background: #deb890; }
+
+.parameters td, .exceptions td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.parameters tr:first-child td, .exceptions tr:first-child td {
+    border-top: none;
+}
+
+.parameters td.prmName, .exceptions td.excName, .exceptions td.excCodeName {
+    width:  100px;
+}
+
+.parameters td.prmType {
+    width:  120px;
+}
+
+table.exceptions table {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    width:  100%;
+}
+
+/* --- TOC --- */
+.toc a {
+    text-decoration:    none;
+}
+
+a .secno {
+    color:  #000;
+}
+
+/* --- TABLE --- */
+table.simple {
+    border-spacing: 0;
+    border-collapse:    collapse;
+    border-bottom:  3px solid #005a9c;
+}
+
+.simple th {
+    background: #005a9c;
+    color:  #fff;
+    padding:    3px 5px;
+    text-align: left;
+}
+
+.simple th[scope="row"] {
+    background: inherit;
+    color:  inherit;
+    border-top: 1px solid #ddd;
+}
+
+.simple td {
+    padding:    3px 10px;
+    border-top: 1px solid #ddd;
+}
+
+.simple tr:nth-child(even) {
+    background: #f0f6ff;
+}
+
+/* --- DL --- */
+.section dd > p:first-child {
+    margin-top: 0;
+}
+
+.section dd > p:last-child {
+    margin-bottom: 0;
+}
+
+.section dd {
+    margin-bottom:  1em;
+}
+
+.section dl.attrs dd, .section dl.eldef dd {
+    margin-bottom:  0;
+}
+
+/* --- EXAMPLES --- */
+pre.example {
+    border-top: 1px solid #ff4500;
+    border-bottom: 1px solid #ff4500;
+    padding:    1em;
+    margin-top: 1em;
+}
+
+pre.example::before {
+    content:    "Example";
+    display:    block;
+    width:      150px;
+    background: #ff4500;
+    color:  #fff;
+    font-family:    initial;
+    padding:    3px;
+    font-weight:    bold;
+    margin: -1em 0 1em -1em;
+}
+
+/* --- EDITORIAL NOTES --- */
+.issue {
+    padding:    1em;
+    margin: 1em 0em 0em;
+    border: 1px solid #f00;
+    background: #ffc;
+}
+
+.issue::before {
+    content:    "Issue";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #f00;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+.note {
+    margin: 1em 0em 0em;
+    padding:    1em;
+    border: 2px solid #cff6d9;
+    background: #e2fff0;
+}
+
+.note::before {
+    content:    "Note";
+    display:    block;
+    width:  150px;
+    margin: -1.5em 0 0.5em 0;
+    font-weight:    bold;
+    border: 1px solid #cff6d9;
+    background: #fff;
+    padding:    3px 1em;
+}
+
+/* --- Best Practices --- */
+div.practice {
+    border: solid #bebebe 1px;
+    margin: 2em 1em 1em 2em;
+}
+
+span.practicelab {
+    margin: 1.5em 0.5em 1em 1em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+span.practicelab   { background: #dfffff; }
+
+span.practicelab {
+    position: relative;
+    padding: 0 0.5em;
+    top: -1.5em;
+}
+
+p.practicedesc {
+    margin: 1.5em 0.5em 1em 1em;
+}
+
+@media screen {
+    p.practicedesc {
+        position: relative;
+        top: -2em;
+        padding: 0;
+        margin: 1.5em 0.5em -1em 1em;
+    }
+}
+
+/* --- SYNTAX HIGHLIGHTING --- */
+pre.sh_sourceCode {
+  background-color: white;
+  color: black;
+  font-style: normal;
+  font-weight: normal;
+}
+
+pre.sh_sourceCode .sh_keyword { color: #005a9c; font-weight: bold; }           /* language keywords */
+pre.sh_sourceCode .sh_type { color: #666; }                            /* basic types */
+pre.sh_sourceCode .sh_usertype { color: teal; }                             /* user defined types */
+pre.sh_sourceCode .sh_string { color: red; font-family: monospace; }        /* strings and chars */
+pre.sh_sourceCode .sh_regexp { color: orange; font-family: monospace; }     /* regular expressions */
+pre.sh_sourceCode .sh_specialchar { color: 	#ffc0cb; font-family: monospace; }  /* e.g., \n, \t, \\ */
+pre.sh_sourceCode .sh_comment { color: #A52A2A; font-style: italic; }         /* comments */
+pre.sh_sourceCode .sh_number { color: purple; }                             /* literal numbers */
+pre.sh_sourceCode .sh_preproc { color: #00008B; font-weight: bold; }       /* e.g., #include, import */
+pre.sh_sourceCode .sh_symbol { color: blue; }                            /* e.g., *, + */
+pre.sh_sourceCode .sh_function { color: black; font-weight: bold; }         /* function calls and declarations */
+pre.sh_sourceCode .sh_cbracket { color: red; }                              /* block brackets (e.g., {, }) */
+pre.sh_sourceCode .sh_todo { font-weight: bold; background-color: #00FFFF; }   /* TODO and FIXME */
+
+/* Predefined variables and functions (for instance glsl) */
+pre.sh_sourceCode .sh_predef_var { color: #00008B; }
+pre.sh_sourceCode .sh_predef_func { color: #00008B; font-weight: bold; }
+
+/* for OOP */
+pre.sh_sourceCode .sh_classname { color: teal; }
+
+/* line numbers (not yet implemented) */
+pre.sh_sourceCode .sh_linenum { display: none; }
+
+/* Internet related */
+pre.sh_sourceCode .sh_url { color: blue; text-decoration: underline; font-family: monospace; }
+
+/* for ChangeLog and Log files */
+pre.sh_sourceCode .sh_date { color: blue; font-weight: bold; }
+pre.sh_sourceCode .sh_time, pre.sh_sourceCode .sh_file { color: #00008B; font-weight: bold; }
+pre.sh_sourceCode .sh_ip, pre.sh_sourceCode .sh_name { color: #006400; }
+
+/* for Prolog, Perl... */
+pre.sh_sourceCode .sh_variable { color: #006400; }
+
+/* for LaTeX */
+pre.sh_sourceCode .sh_italics { color: #006400; font-style: italic; }
+pre.sh_sourceCode .sh_bold { color: #006400; font-weight: bold; }
+pre.sh_sourceCode .sh_underline { color: #006400; text-decoration: underline; }
+pre.sh_sourceCode .sh_fixed { color: green; font-family: monospace; }
+pre.sh_sourceCode .sh_argument { color: #006400; }
+pre.sh_sourceCode .sh_optionalargument { color: purple; }
+pre.sh_sourceCode .sh_math { color: orange; }
+pre.sh_sourceCode .sh_bibtex { color: blue; }
+
+/* for diffs */
+pre.sh_sourceCode .sh_oldfile { color: orange; }
+pre.sh_sourceCode .sh_newfile { color: #006400; }
+pre.sh_sourceCode .sh_difflines { color: blue; }
+
+/* for css */
+pre.sh_sourceCode .sh_selector { color: purple; }
+pre.sh_sourceCode .sh_property { color: blue; }
+pre.sh_sourceCode .sh_value { color: #006400; font-style: italic; }
+
+/* other */
+pre.sh_sourceCode .sh_section { color: black; font-weight: bold; }
+pre.sh_sourceCode .sh_paren { color: red; }
+pre.sh_sourceCode .sh_attribute { color: #006400; }
+
+</style><link href="http://www.w3.org/StyleSheets/TR/W3C-WD" rel="stylesheet" type="text/css" charset="utf-8"></head>
+  <body style="display: inherit; "><div class="head"><p><a href="http://www.w3.org/"><img width="72" height="48" src="http://www.w3.org/Icons/w3c_home" alt="W3C"></a></p><h1 class="title" id="title">PROV-AQ: Provenance Access and Query</h1><h2 id="w3c-working-draft-19-june-2012"><acronym title="World Wide Web Consortium">W3C</acronym> Working Draft 19 June 2012</h2><dl><dt>This version:</dt><dd><a href="http://www.w3.org/TR/2012/WD-prov-aq-20120619/">http://www.w3.org/TR/2012/WD-prov-aq-20120619/</a></dd><dt>Latest published version:</dt><dd><a href="http://www.w3.org/TR/prov-aq/">http://www.w3.org/TR/prov-aq/</a></dd><dt>Latest editor's draft:</dt><dd><a href="http://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html">http://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html</a></dd><dt>Previous version:</dt><dd><a href="http://www.w3.org/TR/2012/WD-prov-aq-20120110/">http://www.w3.org/TR/2012/WD-prov-aq-20120110/</a></dd><dt>Editors:</dt><dd><span>Graham Klyne</span>, <a href="http://www.ox.ac.uk/">University of Oxford</a></dd>
+<dd><span>Paul Groth</span>, <a href="http://www.vu.nl/">VU University Amsterdam</a></dd>
+<dt>Authors:</dt><dd><a href="http://www.ecs.soton.ac.uk/~lavm/">Luc Moreau</a>, University of Southampton</dd>
+<dd><a href="http://olafhartig.de/">Olaf Hartig</a>, Invited Expert</dd>
+<dd><span>Yogesh Simmhan</span>, Invited Expert</dd>
+<dd><a href="http://www.rpi.edu/research/ccni/">James Myers</a>, Rensselaer Polytechnic Institute</dd>
+<dd><a href="http://tw.rpi.edu/web/person/TimLebo">Timothy Lebo</a>, Rensselaer Polytechnic Institute</dd>
+<dd><a href="http://semanticweb.org/wiki/Khalid_Belhajjame">Khalid Belhajjame</a>, University of Manchester</dd>
+<dd><a href="http://www.inf.kcl.ac.uk/staff/simonm/">Simon Miles</a>, Invited Expert</dd>
+</dl><p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2012-2012 <a href="http://www.w3.org/"><acronym title="World Wide Web Consortium">W3C</acronym></a><sup>®</sup> (<a href="http://www.csail.mit.edu/"><acronym title="Massachusetts Institute of Technology">MIT</acronym></a>, <a href="http://www.ercim.eu/"><acronym title="European Research Consortium for Informatics and Mathematics">ERCIM</acronym></a>, <a href="http://www.keio.ac.jp/">Keio</a>), All Rights Reserved. <acronym title="World Wide Web Consortium">W3C</acronym> <a href="http://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="http://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="http://www.w3.org/Consortium/Legal/copyright-documents">document use</a> rules apply.</p><hr></div>
+
+
+    <div id="abstract" class="introductory section"><h2>Abstract</h2><p>
+This document specifies how to use standard Web protocols,
+including HTTP, to obtain information about the provenance of
+resources on the Web. We describe both simple access mechanisms for
+locating provenance information associated with web pages or resources, and
+provenance query services for more complex deployments. This is
+part of the larger <acronym title="World Wide Web Consortium">W3C</acronym> Prov provenance framework.
+    </p></div><div id="sotd" class="introductory section"><h2>Status of This Document</h2><p><em>This section describes the status of this document at the time of its publication. Other documents may supersede this document. A list of current <acronym title="World Wide Web Consortium">W3C</acronym> publications and the latest revision of this technical report can be found in the <a href="http://www.w3.org/TR/"><acronym title="World Wide Web Consortium">W3C</acronym> technical reports index</a> at http://www.w3.org/TR/.</em></p>
+      This document is part of a set of specifications produced by the <acronym title="World Wide Web Consortium">W3C</acronym> provenance working group to define interoperable interchange of provenance information in heterogeneous environments such as the Web.  It describes the use of existing web mechanisms for discovery and retrieval of provenance information. 
+      
+      <h4 id="prov-family-of-specifications">PROV Family of Specifications</h4>
+The PROV family of specifications aims to define the various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.  
+The specifications are as follows.
+<ul>
+<li> PROV-DM, the PROV data model for provenance,</li>
+<li> PROV-DM-CONSTRAINTS, a set of constraints applying to the PROV data model,</li>
+<li> PROV-N, a notation for provenance aimed at human consumption,</li>
+<li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF,</li>
+<li> PROV-AQ, the mechanisms for accessing and querying provenance (this document), </li>
+<li> PROV-PRIMER, a primer for the PROV data model,</li>
+<li> PROV-SEM, a formal semantics for the PROV data model.</li>
+<li> PROV-XML, an XML schema for the PROV data model.</li>
+</ul>
+<h4 id="how-to-read-the-prov-family-of-specifications">How to read the PROV Family of Specifications</h4>
+<ul>
+<li>The primer is the entry point to PROV offering a pedagogical presentation of the provenance model.</li>
+<li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-DM-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+<li>The XML community should focus on PROV-XML defining an XML schema for PROV-DM. Further details can also be found in PROV-DM, PROV-DM-CONSTRAINTS, and PROV-SEM.</li>
+<li>Developers seeking to retrieve or publish provenance should focus of PROV-AQ.</li>
+<li>Readers seeking to implement other PROV serializations
+should focus on PROV-DM and PROV-DM-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+</ul>
+<h4 id="second-public-working-draft">Second Public Working Draft</h4>
+<p>
+This is the second public working draft. The changes focus on revising the provenance-service specification to provide better guidance to developers as well as introducing better naming conventions for the use of link headers in locating provenance. 
+</p>
+    <p>This document was published by the <a href="http://www.w3.org/2011/prov">Provenance Working Group</a> as a Working Draft. This document is intended to become a <acronym title="World Wide Web Consortium">W3C</acronym> Recommendation. If you wish to make comments regarding this document, please send them to <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a> (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>, <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>). All feedback is welcome.</p><p>Publication as a Working Draft does not imply endorsement by the <acronym title="World Wide Web Consortium">W3C</acronym> Membership. This is a draft document and may be updated, replaced or obsoleted by other documents at any time. It is inappropriate to cite this document as other than work in progress.</p><p>This document was produced by a group operating under the <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/">5 February 2004 <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>. <acronym title="World Wide Web Consortium">W3C</acronym> maintains a <a href="http://www.w3.org/2004/01/pp-impl/46974/status" rel="disclosure">public list of any patent disclosures</a> made in connection with the deliverables of the group; that page also includes instructions for disclosing a patent. An individual who has actual knowledge of a patent which the individual believes contains <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#def-essential">Essential Claim(s)</a> must disclose the information in accordance with <a href="http://www.w3.org/Consortium/Patent-Policy-20040205/#sec-Disclosure">section 6 of the <acronym title="World Wide Web Consortium">W3C</acronym> Patent Policy</a>.</p></div><div id="toc" class="section"><h2 class="introductory">Table of Contents</h2><ul class="toc"><li class="tocline"><a href="#introduction" class="tocxref"><span class="secno">1. </span>Introduction</a><ul class="toc"><li class="tocline"><a href="#concepts" class="tocxref"><span class="secno">1.1 </span>Concepts</a></li><li class="tocline"><a href="#provenance-and-resources" class="tocxref"><span class="secno">1.2 </span>Provenance and resources</a></li><li class="tocline"><a href="#interpreting-provenance-information" class="tocxref"><span class="secno">1.3 </span>Interpreting provenance information</a></li></ul></li><li class="tocline"><a href="#accessing-provenance-information" class="tocxref"><span class="secno">2. </span>Accessing provenance information</a></li><li class="tocline"><a href="#locating-provenance-information" class="tocxref"><span class="secno">3. </span>Locating provenance information</a><ul class="toc"><li class="tocline"><a href="#resource-accessed-by-http" class="tocxref"><span class="secno">3.1 </span>Resource accessed by HTTP</a><ul class="toc"><li class="tocline"><a href="#specifying-provenance-services" class="tocxref"><span class="secno">3.1.1 </span>Specifying Provenance Services</a></li></ul></li><li class="tocline"><a href="#resource-represented-as-html" class="tocxref"><span class="secno">3.2 </span>Resource represented as HTML</a><ul class="toc"><li class="tocline"><a href="#specifying-provenance-services-1" class="tocxref"><span class="secno">3.2.1 </span>Specifying Provenance Services</a></li></ul></li><li class="tocline"><a href="#resource-represented-as-rdf" class="tocxref"><span class="secno">3.3 </span>Resource represented as RDF</a></li><li class="tocline"><a href="#arbitrary-data" class="tocxref"><span class="secno">3.4 </span>Arbitrary data</a></li></ul></li><li class="tocline"><a href="#provenance-services" class="tocxref"><span class="secno">4. </span>Provenance services</a><ul class="toc"><li class="tocline"><a href="#http-get" class="tocxref"><span class="secno">4.1 </span>HTTP GET</a></li><li class="tocline"><a href="#provenance-service-discovery" class="tocxref"><span class="secno">4.2 </span>Provenance service discovery</a></li><li class="tocline"><a href="#provenance-service-description" class="tocxref"><span class="secno">4.3 </span>Provenance service description</a></li></ul></li><li class="tocline"><a href="#best-practice" class="tocxref"><span class="secno">5. </span>Best practice</a><ul class="toc"><li class="tocline"><a href="#querying-provenance-information" class="tocxref"><span class="secno">5.1 </span>Using SPARQL for provenance queries</a><ul class="toc"><li class="tocline"><a href="#find-a-provenance-uri-given-a-target-uri" class="tocxref"><span class="secno">5.1.1 </span>Find a provenance-URI given a target-URI</a></li><li class="tocline"><a href="#find-provenance-uri-given-identifying-information-about-a-resource" class="tocxref"><span class="secno">5.1.2 </span>Find Provenance-URI given identifying information about a resource</a></li><li class="tocline"><a href="#obtain-provenance-information-directly-given-a-target-uri" class="tocxref"><span class="secno">5.1.3 </span>Obtain provenance information directly given a target-URI</a></li></ul></li><li class="tocline"><a href="#incremental-provenance-retrieval" class="tocxref"><span class="secno">5.2 </span>Incremental Provenance Retrieval</a><ul class="toc"><li class="tocline"><a href="#via-web-retrieval" class="tocxref"><span class="secno">5.2.1 </span>Via Web Retrieval</a></li><li class="tocline"><a href="#via-sparql-queries" class="tocxref"><span class="secno">5.2.2 </span>Via SPARQL Queries</a></li></ul></li></ul></li><li class="tocline"><a href="#iana-considerations" class="tocxref"><span class="secno">6. </span>IANA considerations</a><ul class="toc"><li class="tocline"><a href="#registration-template-for-link-relation---provenance" class="tocxref"><span class="secno">6.1 </span>Registration template for link relation: "provenance"</a></li><li class="tocline"><a href="#registration-template-for-link-relation---anchor" class="tocxref"><span class="secno">6.2 </span>Registration template for link relation: "anchor"</a></li><li class="tocline"><a href="#registration-template-for-link-relation---provenance-service" class="tocxref"><span class="secno">6.3 </span>Registration template for link relation: "provenance-service"</a></li></ul></li><li class="tocline"><a href="#security-considerations" class="tocxref"><span class="secno">7. </span>Security considerations</a></li><li class="tocline"><a href="#acknowledgements" class="tocxref"><span class="secno">A. </span>Acknowledgements</a></li><li class="tocline"><a href="#names-added-to-prov--namespace" class="tocxref"><span class="secno">B. </span>Names added to prov: namespace</a></li><li class="tocline"><a href="#references" class="tocxref"><span class="secno">C. </span>References</a><ul class="toc"><li class="tocline"><a href="#normative-references" class="tocxref"><span class="secno">C.1 </span>Normative references</a></li><li class="tocline"><a href="#informative-references" class="tocxref"><span class="secno">C.2 </span>Informative references</a></li></ul></li></ul></div>
+
+    
+
+
+<!-- == Sect 1 =================================================================================== -->
+    
+    <div id="introduction" class="section">
+      <!--OddPage--><h2><span class="secno">1. </span>Introduction</h2>
+      <p>
+        The Provenance Data Model [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>] and Provenance Ontology [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-O">PROV-O</a></cite>] specifications define how to represent provenance information in the World Wide Web.
+      </p>
+      <p>
+        This note describes how standard web protocols may be used to locate, retrieve and query provenance information:
+      </p>
+        <ul>
+          <li>
+            Simple mechanisms for retrieving and discovering provenance information are described in <a href="#accessing-provenance-information" class="sectionRef">section 2. Accessing provenance information</a> and <a href="#locating-provenance-information" class="sectionRef">section 3. Locating provenance information</a> .
+          </li>
+          <li>
+            More advanced discovery service and query mechanisms that may be used for more demanding deployments are described in <a href="#provenance-services" class="sectionRef">section 4. Provenance services</a>, <a href="#querying-provenance-information" class="sectionRef">section 5.1 Using SPARQL for provenance queries</a> and <a href="#incremental-provenance-retrieval" class="sectionRef">section 5.2 Incremental Provenance Retrieval</a>.
+          </li>
+        </ul>
+     
+      
+      <div id="concepts" class="section">
+        <h3><span class="secno">1.1 </span>Concepts</h3>
+       
+          <p>In defining the specification below, we make use of the following concepts. </p>
+          <dl>
+            <dt><dfn id="dfn-provenance-information">Provenance information</dfn></dt>
+            <dd>refers to provenance represented in some fashion.</dd>
+            <dt><dfn id="dfn-provenance-uri">Provenance-URI</dfn></dt>
+            <dd>a URI denoting some <a class="internalDFN" href="#dfn-provenance-information">provenance information</a>.</dd>
+            <dt><dfn id="dfn-constrained-resource">Constrained resource</dfn></dt>
+            <dd>an aspect, version or instance of a <a class="internalDFN" href="#dfn-resource">resource</a>, about which one may wish to present some <a class="internalDFN" href="#dfn-provenance-information">provenance information</a>. For example, a weather report for a given date may be an aspect of a resource that is maintained as the current weather report. A constrained resource is itself a <a class="internalDFN" href="#dfn-resource">resource</a>, and may have it's own URI different from that of the original.  See also [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>], and [<cite><a class="bibref" rel="biblioentry" href="#bib-WEBARCH">WEBARCH</a></cite>] <a href="http://www.w3.org/TR/webarch/#representation-reuse">section 2.3.2</a>.</dd>
+            <dt><dfn id="dfn-target-uri">Target-URI</dfn></dt>
+            <dd>a URI denoting a <a class="internalDFN" href="#dfn-resource">resource</a> (including any <a class="internalDFN" href="#dfn-constrained-resource">constrained resource</a>), which identifies that resource for the purpose of finding and expressing <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> associated with it (see <a href="#provenance-entities-resources" class="sectionRef">section 1.2 </a> for discussion)</dd>
+            <dt><dfn id="dfn-provenance-service">Provenance service</dfn></dt>
+            <dd>a service that provides <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> given a <a class="internalDFN" href="#dfn-target-uri">target-URI</a>.</dd>
+            <dt><dfn id="dfn-service-uri">Service-URI</dfn></dt>
+            <dd>the URI of a <a class="internalDFN" href="#dfn-provenance-service">provenance service</a>.</dd>
+<!--
+            <dt><dfn>Resource</dfn></dt>
+            <dd>also referred to as <dfn>resource on the Web</dfn>: a resource as described by the Architecture of the World Wide Web [[WEBARCH]], <a href="http://www.w3.org/TR/webarch/#id-resources">section 2.2</a>. A resource may be associated with multiple instances or views (<a class="internalDFN">constrained resource</a>s) with differing provenance.</dd>
+-->
+            <dt><dfn id="dfn-resource">Resource</dfn></dt>
+            <dd>a resource in the general sense of "whatever might be identified by a URI", as described by the Architecture of the World Wide Web [<cite><a class="bibref" rel="biblioentry" href="#bib-WEBARCH">WEBARCH</a></cite>], <a href="http://www.w3.org/TR/webarch/#id-resources">section 2.2</a>. A resource may be associated with multiple instances or views (<a class="internalDFN" href="#dfn-constrained-resource">constrained resource</a>s) with differing provenance.</dd>
+          </dl>
+       
+
+      </div>
+
+      <div id="provenance-and-resources" class="section">
+        <h3 id="provenance-entities-resources"><span class="secno">1.2 </span>Provenance and resources</h3>
+        <p>
+          Fundamentally, <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> is <em>about</em> <a class="internalDFN" href="#dfn-resource">resource</a>s.  In general, resources may vary over time and context.  E.g., a resource describing the weather in London changes from day-to-day, or a listing of restaurants near you will vary depending on your location.  Provenance information, to be useful, must be persistent and not itself dependent on context.  Yet we may still want to make provenance assertions about dynamic or context-dependent resources (e.g. a weather forecast for London on a particular day may have been derived from a particular set of Meteorological Office data).
+        </p>
+        <p>
+          Provenance descriptions of dynamic and context-dependent resources are possible through a notion of constrained resources.  A <a class="internalDFN" href="#dfn-constrained-resource">constrained resource</a> is simply a resource (in the sense defined by [<cite><a class="bibref" rel="biblioentry" href="#bib-WEBARCH">WEBARCH</a></cite>], <a href="http://www.w3.org/TR/webarch/#id-resources">section 2.2</a>) that is a contextualized view or instance of some other resource.  For example, a <acronym title="World Wide Web Consortium">W3C</acronym> specification typically undergoes several public revisions before it is finalized.  A URI that refers to the "current" revision might be thought of as denoting the specification throughout its lifetime.  Each individual revision would also have its own <a class="internalDFN" href="#dfn-target-uri">target-URI</a> denoting the specification at that particular stage in its development.  Using these, we can make provenance assertions that a particular revision was published on a particular date, and was last modified by a particular editor.  Target-URIs may use any URI scheme, and are not required to be dereferencable.
+        </p>
+        <p>
+           Requests for provenance about a resource may return provenance information that uses one or more target-URIs to refer to versions of that resource.  Some given provenance information may use multiple target-URIs if there are assertions referring to the same underlying resource in different contexts.  For example, provenance information describing a <acronym title="World Wide Web Consortium">W3C</acronym> document might include information about all revisions of the document using statements that use the different target-URIs of the various revisions.
+        </p>
+        <p>
+          In summary, <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> may be not universally applicable to a <a class="internalDFN" href="#dfn-resource">resource</a>, but may be expressed with respect to that resource in a restricted context (e.g. at a particular time). This restriction is itself just another resource (e.g. the weather forecast for a give date as opposed to the current weather forecast), with its own URI for referring to it within provenance information.
+        </p>
+      </div>
+
+      <div id="interpreting-provenance-information" class="section">
+        <h3><span class="secno">1.3 </span>Interpreting provenance information</h3>
+        <p>
+          Any given <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> may contain information about several resources, referring to them using their various <a class="internalDFN" href="#dfn-target-uri">target-URI</a>s.
+          Thus, when interpreting provenance information, it is important to be aware that statements about several resources may be present, and to be accordingly selective when using the information provided.  (In some exceptional cases, it may be that the provenance information returned does not contain any information relating to a specific associated resource.)
+        </p>
+        <p>
+          Provenance information is not of itself guaranteed to be authoritative or correct. Trust in provenance information must be determined separately from trust in the original resource. Just as in the web at large, it is a user's responsibility to determine an appropriate level of trust in any other resource; e.g. based on the domain that serves it, or an associated digital signature. (See also <a href="#security-considerations" class="sectionRef">section 7. Security considerations</a>.)
+        </p>
+
+      </div>
+
+    </div>
+ 
+<!-- == Sect 2 =================================================================================== -->
+    
+    <div id="accessing-provenance-information" class="section">
+      <!--OddPage--><h2><span class="secno">2. </span>Accessing provenance information</h2>
+      <p>
+        Web applications may access <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> in the same way as any resource on the Web, by dereferencing its URI. Thus, any provenance information may be associated with a <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a>, and may be accessed by dereferencing that URI using web mechanisms.
+      </p>
+      <p>
+        How much or how little provenance information is returned in response to a retrieval request is a matter for the provenance provider application.  
+      </p>
+      <p>
+        It may be useful to provide provenance information through a service interface. A REST protocol for provenance retrieval is defined in Section <a href="#provenance-services" class="sectionRef">section 4. Provenance services</a>.
+      </p>
+      <p>
+        When publishing provenance information, a corresponding <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a> or <a class="internalDFN" href="#dfn-service-uri">service-URI</a> should be discoverable using one or more of the mechanisms described in <a href="#locating-provenance-information" class="sectionRef">section 3. Locating provenance information</a>.
+      </p>
+      <p>
+        Some alternative practices for accessing provenance information are discussed in <a href="#best-practice" class="sectionRef">section 5. Best practice</a>
+      </p>
+    </div>
+ 
+<!-- == Sect 3 =================================================================================== -->
+    
+    <div id="locating-provenance-information" class="section">
+      <!--OddPage--><h2><span class="secno">3. </span>Locating provenance information</h2>
+      <p>
+        When <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> is a resource that can be accessed using web retrieval, one needs to know its <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a> to dereference.  If this is known in advance, there is nothing more to specify.  If a provenance-URI is not known then a mechanism to discover one must be based on information that is available to the would-be accessor. Likewise, provenance information may be exposed by a service. In this case, the <a class="internalDFN" href="#dfn-service-uri">service-URI</a> needs to be known. 
+      </p>
+      <p>Provenance information about a resource may be provided by several parties other than the provider of that resource, each using different locations, and each with different concerns.  (It is possible that these different parties may provide contradictory provenance information.)
+      </p>
+      <p>
+      Once provenance information about a resource is retrieved, one may also need to know how to locate information about that resource within the provenance information. This may be a <a class="internalDFN" href="#dfn-constrained-resource">constrained resource</a> identified by a separate <a class="internalDFN" href="#dfn-target-uri">target-URI</a>.
+      </p>
+      <p>
+        We start by considering mechanisms for the resource provider to indicate a <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a> or <a class="internalDFN" href="#dfn-service-uri">Service-URI</a> along with a <a class="internalDFN" href="#dfn-target-uri">target-URI</a>.  
+        Three mechanisms are described here:
+      </p>
+        <ul>
+          <li>The requester knows the resource URI <em>and</em> the resource is accessible using HTTP</li>
+          <li>The requester has a copy of a resource represented as HTML or XHTML</li>
+          <li>The requester has a copy of a resource represented as RDF (including the range of possible RDF syntaxes, such as HTML with embedded RDFa)</li>
+        </ul>
+       <p>
+        These particular cases are selected as corresponding to primary current web protocol and data formats.  Finally, in <a href="#arbitrary-data" class="sectionRef">section 3.4 Arbitrary data</a>, we discuss the case of a resource in an unspecified format which has been provided by some means other than HTTP.
+      </p>
+      <p>
+        The mechanisms specified for use with HTTP and HTML are similar to those proposed by POWDER [<cite><a class="bibref" rel="biblioentry" href="#bib-POWDER-DR">POWDER-DR</a></cite>] (sections <a href="http://www.w3.org/TR/2009/REC-powder-dr-20090901/#assoc-markup">4.1.1</a> and <a href="http://www.w3.org/TR/2009/REC-powder-dr-20090901/#httplink">4.1.3</a>).
+      </p>
+
+      <div id="resource-accessed-by-http" class="section">
+        <h3><span class="secno">3.1 </span>Resource accessed by HTTP</h3>
+        <p>
+          For a resource accessible using HTTP, provenance information may be indicated using an HTTP <code>Link</code> header field, as defined by <a href="http://tools.ietf.org/html/rfc5988">Web Linking (RFC 5988)</a> [<cite><a class="bibref" rel="biblioentry" href="#bib-LINK-REL">LINK-REL</a></cite>].  The <code>Link</code> header field is included in the HTTP response to a GET or HEAD operation (other HTTP operations are not excluded, but are not considered here).
+        </p>
+        <p>
+          A <code>provenance</code> link relation type for referencing provenance information is registered according to the template in <a href="#iana-considerations" class="sectionRef">section 6. IANA considerations</a>, and may be used as shown:
+          </p><pre class="pattern">Link: <cite>provenance-URI</cite>; rel="provenance"; anchor="<cite>target-URI</cite>"</pre>
+          When used in conjunction with an HTTP success response code (<code>2xx</code>), this HTTP header field indicates that <code><cite>provenance-URI</cite></code> is the URI of some provenance information associated with the requested resource and that the associated resource is identified within the referenced provenance information as <code><cite>target-URI</cite></code>. (See also <a href="#interpreting-provenance-information" class="sectionRef">section 1.3 Interpreting provenance information</a>.)<p></p>
+        <p>
+        If no <code>anchor</code> parameter is provided then the <code><cite>target-URI</cite></code> is assumed to be the URI of the resource, used in the corresponding HTTP request.
+        </p>
+        <p>
+          At this time, the meaning of these links returned with other HTTP response codes is not defined: future revisions of this specification may define interpretations for these.
+        </p>
+        <p>
+          An HTTP response <em class="rfc2119" title="may">may</em> include multiple <code>provenance</code> link header fields, indicating a number of different provenance resources that are known to the responding server, each providing provenance information about the accessed resource.
+        </p>
+        <p>
+          The presence of a <code>provenance</code> link in an HTTP response does not preclude the possibility that other publishers may offer provenance information about the same resource.  In such cases, discovery of the additional provenance information must use other means (e.g. see <a href="#provenance-services" class="sectionRef">section 4. Provenance services</a>).
+        </p>
+        <p>
+          Provenance resources indicated in this way are not guaranteed to be authoritative.  Trust in the linked provenance information must be determined separately from trust in the original resource. Just as in the web at large, it is a user's responsibility to determine an appropriate level of trust in any other linked resource; e.g. based on the domain that serves it, or an associated digital signature. (See also <a href="#security-considerations" class="sectionRef">section 7. Security considerations</a>.)
+        </p>
+
+        <div id="specifying-provenance-services" class="section">
+          <h4><span class="secno">3.1.1 </span>Specifying Provenance Services</h4>
+            <p>
+              The resource provider may indicate that provenance information about the resource is provided by a <a class="internalDFN" href="#dfn-provenance-service">provenance service</a>. This is done through the use of a <code>provenance-service</code> link relation type following the same pattern as above:
+            </p>
+            <pre class="pattern">Link: <cite>provenance-service-URI</cite>; anchor="<cite>target-URI</cite>"; rel="provenance-service"</pre>
+            <p>
+              The <code>provenance-service</code> link identifies the <a class="internalDFN" href="#dfn-service-uri">service-URI</a>.  Dereferencing this URI yields a service description that provides further information to enable a client to determine a <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a> or retrieve <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> for a <a class="internalDFN" href="#dfn-resource">resource</a>; see <a href="#provenance-services" class="sectionRef">section 4. Provenance services</a> for more details.
+            </p>
+            <p>
+            There may be multiple <code>provenance-service</code> link header fields, and these may appear in an HTTP response together with <code>provenance</code> link header fields (though, in simple cases, we anticipate that <code>provenance</code> and <code>provenance-service</code> link relations will not be used together).
+          </p>
+        </div>
+
+      </div>
+
+      <div id="resource-represented-as-html" class="section">
+        <h3><span class="secno">3.2 </span>Resource represented as HTML</h3>
+        <p>
+          For a document presented as HTML or XHTML, without regard for how it has been obtained, provenance information may be associated with a resource by adding a <code>&lt;link&gt;</code> element to the HTML <code>&lt;head&gt;</code> section.
+          Two new link relation types for referencing provenance information are registered according to the template in <a href="#iana-considerations" class="sectionRef">section 6. IANA considerations</a>, and may be used as shown:
+          </p><pre class="pattern">  &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+     &lt;head&gt;
+        &lt;link rel="provenance" href="<cite>provenance-URI</cite>"&gt;
+        &lt;link rel="anchor" href="<cite>target-URI</cite>"&gt;
+        &lt;title&gt;Welcome to example.com&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+        ...
+     &lt;/body&gt;
+  &lt;/html&gt;</pre>
+        <p></p>
+        <p>
+          The <code><cite>provenance-URI</cite></code> given by the <code>provenance</code> link element identifies the provenance-URI for the document.
+        </p>
+        <p>
+          The <code><cite>target-URI</cite></code> given by the <code>anchor</code> link element specifies an identifier for the document that may be used within the provenance information when referring to the document.
+        </p>
+        <p>
+          An HTML document header <em class="rfc2119" title="may">may</em> include multiple <code>provenance</code> link elements, indicating a number of different provenance sources that are known to the creator of the document, each of which may provide provenance information about the document. 
+        </p>
+<!--
+        <p>
+          Likewise, the header MAY include multiple "anchor" link elements indicating that, e.g., different revisions of the document can be identified in the provenance information using the different  <code><cite>resource-URIs</cite></code>.
+        </p>
+-->
+        <p>
+          If no "anchor" link element is provided then the <code><cite>target-URI</cite></code> is assumed to be the URI of the document. It is <em class="rfc2119" title="recommended">recommended</em> that this convention be used only when the document is static and has a stable URI that is reasonably expected to be available to anyone accessing the document (e.g. when delivered from a web server, or as part of a MIME structure containing content identifiers [<cite><a class="bibref" rel="biblioentry" href="#bib-RFC2392">RFC2392</a></cite>]).
+        </p>
+
+        <div id="specifying-provenance-services-1" class="section">
+          <h4><span class="secno">3.2.1 </span>Specifying Provenance Services</h4>
+            <p>
+              The document creator may specify that the provenance information about the document is provided by a <a class="internalDFN" href="#dfn-provenance-service">provenance service</a>. This is done through the use of a third link relation type following the same pattern as above:
+            </p>
+            <pre class="pattern">  &lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+     &lt;head&gt;
+        &lt;link rel="provenance-service" href="<cite>service-URI</cite>"&gt;
+        &lt;link rel="anchor" href="<cite>target-URI</cite>"&gt;
+        &lt;title&gt;Welcome to example.com&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;body&gt;
+        ...
+     &lt;/body&gt;
+  &lt;/html&gt;</pre>
+          <p>
+            The <code>provenance-service</code> link element identifies the <a class="internalDFN" href="#dfn-service-uri">service-URI</a>.  Dereferencing this URI yields a service description that provides further information to enable a client to access <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> for a <a class="internalDFN" href="#dfn-resource">resource</a>; see <a href="#provenance-services" class="sectionRef">section 4. Provenance services</a> for more details.
+          </p>
+          <p>
+            There <em class="rfc2119" title="may">may</em> be multiple <code>provenance-service</code> link elements, and these <em class="rfc2119" title="may">may</em> appear in the same document as <code>provenance</code> link elements (though, in simple cases, we anticipate that <code>provenance</code> and <code>provenance-service</code> link relations would not be used together).
+          </p>
+        </div>
+      </div>
+
+      <div id="resource-represented-as-rdf" class="section">
+        <h3><span class="secno">3.3 </span>Resource represented as RDF</h3>
+        <p>
+          If a resource is represented as RDF (in any of its recognized syntaxes, including RDFa), it may contain references to its own provenance using additional RDF statements.  For this purpose three new RDF properties, <code>prov:hasProvenance</code>, <code>prov:hasAnchor</code>, and <code>prov:hasProvenanceService</code>, are defined as follows.
+          (These terms may be used to indicate provenance of other resources too, but discussion of such usage is beyond the scope of this section.)
+        </p>
+        <p>
+          The RDF property <code>prov:hasProvenance</code> is defined as a relation between two resources, where the object of the property is a resource that provides provenance information about the subject resource.  Multiple <code>prov:hasProvenance</code> assertions may be made about a subject resource.  This property corresponds to a <a href="#registration-template-for-link-relation---provenance">provenance link relation</a> used with an HTTP <code>Link</code> header field, or HTML <code>&lt;link&gt;</code> element.
+        </p>
+        <p>
+          Property <code>prov:hasAnchor</code> specifies a <a class="internalDFN" href="#dfn-target-uri">target-URI</a> used in the provenance information to refer to the containing RDF document.
+          This corresponds to use of the <code>anchor</code> parameter in an HTTP provenance <code>Link</code> header field, or an <a href="#registration-template-for-link-relation---anchor">anchor link relation</a> in an HTML <code>&lt;link&gt;</code> element, which similarly indicate a URI used by the provenance information to refer to the described document.
+        </p>
+        <p>
+          Property <code>prov:hasProvenanceService</code> specifies a <a class="internalDFN" href="#dfn-service-uri">service-URI</a> associated with the RDF document for possible access to provenance information.  This property corresponds to a <a href="#registration-template-for-link-relation---provenance-service">provenance-service link relation</a> used with an HTTP <code>Link</code> header field, or HTML <code>&lt;link&gt;</code> element.
+        </p>
+        <pre class="example code">@prefix prov: &lt;http://www.w3.org/ns/prov#&gt;
+
+&lt;&gt; dcterms:title      "Welcome to example.com" ;
+   prov:hasAnchor     &lt;http://example.com/data/resource.rdf&gt; ;
+   prov:hasProvenance &lt;http://example.com/provenance/resource.rdf&gt; ;
+   prov:hasProvenanceService &lt;http://example.com/provenance-service/&gt; .
+    :
+   (RDF data)
+    :
+    </pre>
+      </div>
+
+      <div id="arbitrary-data" class="section">
+        <h3><span class="secno">3.4 </span>Arbitrary data</h3>
+        <p>
+          If a resource is represented using a data format other than HTML or RDF, and no URI for the resource is known, provenance discovery becomes trickier to achieve.  This specification does not define a specific mechanism for such arbitrary resources, but this section discusses some of the options that might be considered.
+        </p>
+        <p>
+          For formats which have provision for including metadata within the file (e.g. JPEG images, PDF documents, etc.), use the format-specific metadata to include a <a class="internalDFN" href="#dfn-target-uri">target-URI</a>, <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a> and/or <a class="internalDFN" href="#dfn-service-uri">service-URI</a>. Format-specific metadata provision might also be used to include <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> directly in the resource.
+        </p>
+        <p>
+          Use a generic packaging format that can combine an arbitrary data file with a separate metadata file in a known format, such as RDF.  At this time, it is not clear what format that should be, but some possible candidates are:
+          </p><ul>
+            <li>MIME multipart/related [<cite><a class="bibref" rel="biblioentry" href="#bib-RFC2387">RFC2387</a></cite>]: both email and HTTP are based on MIME or MIME-derivatives, so this has the advantage of working well with the network transfer mechanisms discussed in the motivating scenarios considered.
+            </li>
+            <li>
+              Composite object-packaging work from the digital library community, of which there are several (e.g., <a href="http://www.openarchives.org/ore/">ORE</a>, <a href="http://www.loc.gov/standards/mets/">METS</a>, <a href="http://xml.coverpages.org/mpeg21-didl.html">MPEG-21 DIDL</a>, <a href="https://wiki.ucop.edu/display/Curation/BagIt">BagIt</a>) to name a handful.
+            </li>
+            <li>
+              Packaging formats along the lines of those used for shipping Java web applications (basically, a ZIP file with a manifest and some imposed structure)
+            </li>
+            <li>
+              Ongoing work in the research community (e.g. <a href="http://eprints.ecs.soton.ac.uk/21587/">Why Linked Data is Not Enough for Scientists</a>, <a href="http://idpf.org/epub/30/spec/epub30-overview.html">ePub</a>, etc.) to encapsulate data, code, annotations and metadata into a common exchangeable format.
+            </li>
+          </ul>
+        <p></p>
+      </div>
+
+    </div>
+
+<!-- == Sect 4 =================================================================================== -->
+
+    <div id="provenance-services" class="section">
+      <!--OddPage--><h2><span class="secno">4. </span>Provenance services</h2>
+      <p>
+        This section describes a REST-based protocol [<cite><a class="bibref" rel="biblioentry" href="#bib-REST">REST</a></cite>] for provenance services with facilities for the retrieval of provenance information. The protocol specifies HTTP operations for retrieval of provenance information from a provenance service. It follows the approach of the SPARQL Graph Store HTTP Protocol [<cite><a class="bibref" rel="biblioentry" href="#bib-SPARQL-HTTP">SPARQL-HTTP</a></cite>].
+      </p>
+      <p>The introduction of this protocol is motivated by the following possible considerations:
+        </p><ul>
+        <li>the naming authority associated with the <a class="internalDFN" href="#dfn-target-uri">target-URI</a> is not the same as the service offering provenance information</li>
+        <li>multiple services have <a class="internalDFN" href="#dfn-provenance-information">provenance information</a> about the same resource</li>
+        <li>the service associated with the target-URI is not accessible for adding additional information when handling retrieval requests</li>
+        <li>there is no dereferencable <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a> containing provenance information for a particular resource</li>
+        <li>provenance services may provide additional extensibility points for control over returned provenance information.</li>
+        </ul>
+      <p></p>
+
+     <div id="http-get" class="section">
+        <h3><span class="secno">4.1 </span>HTTP GET</h3>
+        <p>This protocol combines the <a class="internalDFN" href="#dfn-target-uri">target-URI</a> with the <a class="internalDFN" href="#dfn-service-uri">service-URI</a> to formulate an HTTP GET request, according to the following convention:
+          </p><pre class="pattern">  GET /provenance/service?<b>target</b>=http://www.example.com/entity HTTP/1.1
+  Host: example.com</pre>
+        <p></p>
+        <p>The embedded target-URI (<code>http://www.example.com/entity</code>) identifies the resource for which provenance information is to be returned. Any server that implements this protocol and receives a request URI in this form <em class="rfc2119" title="should">should</em> return provenance information for the resource-URI embedded in the query component where that URI is the result of percent-decoding the value associated with the provenance-resource key. The embedded URI <em class="rfc2119" title="must">must</em> be an absolute URI and the server <em class="rfc2119" title="must">must</em> respond with a 400 Bad Request if it is not.  If the supplied resource-URI includes a fragment identifier, the '#' <em class="rfc2119" title="must">must</em> be %-encoded as <code>%23</code> when constructing the provenance-URI value; similarly, any '&amp;' character in the resource-URI must be %-encoded as <code>%26</code>.
+        </p>
+        <p>If the provenance information identified in the request does not exist in the server, a 404 Not Found response code <em class="rfc2119" title="should">should</em> be returned.
+        </p>
+        <p>The format of returned provenance information is not defined here, but may be established through content type negotiation using <code>Accept:</code> header fields in the HTTP request. A provenance service <em class="rfc2119" title="should">should</em> be capable of returning RDF using the vocabulary defined by [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-O">PROV-O</a></cite>], in any standard RDF serialization (e.g. RDF/XML), or any other standard serialization of the Provenance Model specification [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-DM">PROV-DM</a></cite>]. Services <em class="rfc2119" title="must">must</em> identify the <code>Content-Type</code> of the information returned.
+        </p>
+      </div>
+
+      <!-- <section class="informative"> -->
+      <div id="provenance-service-discovery" class="section">
+        <h3><span class="secno">4.2 </span>Provenance service discovery</h3>
+        <p>
+          This specification does not define any specific mechanism for discovering provenance services.  Applications may use any appropriate mechanism, including but not limited to: prior configuration, search engines, service registries, etc.
+        </p>
+        <p>
+          To facilitate service discovery, we recommend that RDF publication of service descriptions uses the provenance service type <code>prov:ProvenanceService</code>, defined by the provenance ontology [<cite><a class="bibref" rel="biblioentry" href="#bib-PROV-O">PROV-O</a></cite>].
+          The RDF service description example below in <a href="#provenance-service-description" class="sectionRef">section 4.3 Provenance service description</a> shows this use.
+        </p>
+        <p class="TODO">
+          @@TODO: sync up term definitions with provenance ontology specification.
+        </p>
+      </div>
+
+      <!-- <section class="informative"> -->
+      <div id="provenance-service-description" class="section">
+        <h3><span class="secno">4.3 </span>Provenance service description</h3>
+        <!--<p>The provenance service interface as described above violates REST constraints by requiring the client to know about the structure of URIs offered by the service (see [[REST-APIs]], 4th bullet point).  The provenance service description mitigates this coupling by providing a mechanism for discovering the URI format to be used, starting with just the service URI.
+        %</p> -->
+        <p>Dereferencing a provenance service URI should yield a provenance service description. This is to be compatible with the constraints of [<cite><a class="bibref" rel="biblioentry" href="#bib-REST-APIs">REST-APIs</a></cite>]. The provenance service description should be available as RDF (in any of its common serializations, and determined through HTTP content negotiation), and it should contain RDF statements of the form:
+        </p>
+        <pre class="pattern">  &lt;<cite>service-URI</cite>&gt; a prov:ProvenanceService ;
+    prov:provenanceUriTemplate "<cite>service-URI</cite>?target={+uri}" .</pre>
+        <p>where <cite><code>service-URI</code></cite> is the URI of the provenance service.  Note that the object of the <code>prov:provenanceUriTemplate</code> statement is a literal text value, not a URI.
+        </p>
+        <p>A client may retrieve this service description and extract the associated value for <code>prov:provenance-URI-template</code>.  This value is a string containing a URI template [<cite><a class="bibref" rel="biblioentry" href="#bib-URI-template">URI-template</a></cite>] (level 2). A URI for the desired provenance information is obtained by expanding the URI template with the variable <code>uri</code> set to the resource-URI for which provenance is required.  If the target-URI contains '#' or '&amp;' these  must be %-escaped as <code>%23</code> or <code>%26</code> respectively before template expansion.
+        </p>
+        <p class="TODO">
+          @@TODO: sync up term definitions with provenance ontology specification.
+        </p>
+      </div>
+
+    </div>
+ 
+<!-- == Sect 5 =================================================================================== -->
+
+    <div id="best-practice" class="section">
+    <!--OddPage--><h2><span class="secno">5. </span>Best practice</h2> 
+
+      <div id="querying-provenance-information" class="section">
+        <h3><span class="secno">5.1 </span>Using SPARQL for provenance queries</h3>
+        <p>
+          Simply identifying and retrieving provenance information as a resource on the Web may not always meet the requirements of a particular application or service, e.g.:
+          </p><ul>
+            <li>the resource for which provenance information is required is not identified by a known URI</li>
+            <li>the provenance information for a resource is not directly identified by a known URI</li>
+            <li>a requirement to access provenance information for a number of distinct but related resources in a single atomic operation</li>
+            <li><i>etc.</i></li>
+          </ul>
+        <p></p>
+        <p>
+          A provenance query service provides an alternative way to access provenance information and/or provenance-URIs.  An application will need a URI for the provenance query service, and some relevant information about the resource whose provenance is to be accessed.
+        </p>
+        <p>
+          The details of a provenance query service is an implementation choice, but for interoperability between different providers and users we recommend use of SPARQL [<cite><a class="bibref" rel="biblioentry" href="#bib-RDF-SPARQL-PROTOCOL">RDF-SPARQL-PROTOCOL</a></cite>] [<cite><a class="bibref" rel="biblioentry" href="#bib-RDF-SPARQL-QUERY">RDF-SPARQL-QUERY</a></cite>].
+          The query service URI would then be the URI of a <a href="http://www.w3.org/TR/rdf-sparql-protocol/#conformant-sparql-protocol-service">SPARQL protocol service</a> 
+(often referred to as a "SPARQL endpoint").
+            The following subsections provide examples for what are considered to be some plausible common scenarios for using SPARQL, and are not intended to cover all possibilities.
+        </p>
+        <p>
+          A SPARQL protocol service description may be published using the <cite>SPARQL 1.1 Service Description</cite> vocabulary [<cite><a class="bibref" rel="biblioentry" href="#bib-SPARQL-SD">SPARQL-SD</a></cite>].
+        </p>
+        <p>
+          The following subsections illustrate use cases for querying a SPARQL-based provenance query service.
+        </p>
+        <div id="find-a-provenance-uri-given-a-target-uri" class="section">
+          <h4><span class="secno">5.1.1 </span>Find a provenance-URI given a target-URI</h4>
+          <p>
+            If the requester has a <a class="internalDFN" href="#dfn-target-uri">target-URI</a>, a simple SPARQL query may be used to return the corresponding <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a>. E.g., if the original resource has a target-URI <code>http://example.org/resource</code>:
+            </p><pre class="example code">@prefix prov: &lt;http://www.w3c.org/ns/prov#&gt;
+SELECT ?provenance_uri WHERE
+{
+  &lt;http://example.org/resource&gt; prov:hasProvenance ?provenance_uri
+}
+          </pre>
+          <p></p>
+        </div>
+
+        <div id="find-provenance-uri-given-identifying-information-about-a-resource" class="section">
+          <h4><span class="secno">5.1.2 </span>Find Provenance-URI given identifying information about a resource</h4>
+          <p>
+            If the requester has identifying information that is not the URI of the original resource, then they will need to construct a more elaborate query to locate a resource description and obtain its provenance-URI(s).  The nature of identifying information that can be used in this way will depend upon the third party service used, further definition of which is out of scope for this specification.  For example, a query for a document identified by a DOI, say <code>1234.5678</code>, using the PRISM vocabulary [<cite><a class="bibref" rel="biblioentry" href="#bib-PRISM">PRISM</a></cite>] recommended by FaBio [<cite><a class="bibref" rel="biblioentry" href="#bib-FABIO">FABIO</a></cite>], might look like this:
+            </p><pre class="example code">@prefix prov: &lt;http://www.w3c.org/ns/prov#&gt;
+@prefix prism: &lt;http://prismstandard.org/namespaces/basic/2.0/&gt;
+SELECT ?provenance_uri WHERE
+{
+  [ prism:doi "1234.5678" ] prov:hasProvenance ?provenance_uri
+}
+          </pre>
+          <p></p>
+        </div>
+
+        <div id="obtain-provenance-information-directly-given-a-target-uri" class="section">
+          <h4><span class="secno">5.1.3 </span>Obtain provenance information directly given a target-URI</h4>
+          <p>
+            This scenario retrieves provenance information directly given the URI of a resource, and may be useful where the provenance information has not been assigned a specific URI, or when the calling application is interested only in specific elements of provenance information.
+          </p>
+          <p>
+            If the original resource has a URI <code>http://example.org/resource</code>, a SPARQL query for provenance information might look like this: 
+            </p><pre class="example code">@prefix prov: &lt;http://www.w3c.org/ns/prov#&gt;
+SELECT ?generationStartTime WHERE {
+    &lt;http://example.org/resource&gt; prov:wasGeneratedBy ?activity .
+    ?activity prov:startedAtTime ?generationStartTime .
+}
+          </pre>
+          <p></p>
+          <p>
+            This query extracts a "generation start time" for an artifact by following links to the start time of the activity which generated it.
+          </p>
+        </div>
+
+      </div>
+
+  <!-- == Sect 5.2 ===================================================================================== -->
+
+      <div id="incremental-provenance-retrieval" class="section">
+        <h3><span class="secno">5.2 </span>Incremental Provenance Retrieval</h3>
+        <p><a class="internalDFN" href="#dfn-provenance-information">Provenance information</a> may be large. While this specification does not define how to implement scalable provenance systems, it does allow for publishers to make available provenance in an incremental fashion. We now discuss two possibilities for incremental provenance retrieval.
+        </p>
+
+        <div id="via-web-retrieval" class="section">
+          <h4><span class="secno">5.2.1 </span>Via Web Retrieval</h4>
+          <p>Publishers are not required to publish all the provenance information associated with a given resource at a particular <a class="internalDFN" href="#dfn-provenance-uri">provenance-URI</a>. The amount of provenance information exposed is application dependent. However, it is possible to incrementally retrieve (i.e. walk the provenance graph) by progressively looking up provenance information using HTTP. The pattern is as follows:
+            </p><ol>
+              <li>For a given resource (<code>resource-URI</code>) retrieve it's associated <code>provenance-URI-1</code> and its associated <code>target-URI-1</code> using a returned HTTP <code>Link:</code> header field (<a href="#resource-accessed-by-http" class="sectionRef">section 3.1 Resource accessed by HTTP</a>)</li>
+              <li>Dereference <code>provenance-URI-1</code></li>
+              <li>Navigate the provenance information</li>
+              <li>When reaching a dead-end during navigation, that is on encountering a reference to a resource (<code>target-URI-2</code>) with no provided provenance information, find its provenance-URI and continue from Step 2.  (Note: an HTTP HEAD request for <code>target-URI-2</code> may be used to obtain the <code>Link:</code> headers without retrieving the resource representation.)</li>
+            </ol>
+          <p></p>
+          <p>To reduce the overhead of multiple HTTP requests, a provenance information publishers are encouraged to link entities to their associated provenance information using the <code>prov:hasProvenance</code> predicate. Thus, the same pattern above applies, except instead of having to retrieve a new <code>Link</code> header field, one can immediately access the resource's associated provenance.
+          </p>
+          <p>The same approach can be adopted when using the <a class="internalDFN" href="#dfn-provenance-service">provenance service</a> API (<a href="#provenance-services" class="sectionRef">section 4. Provenance services</a>). However, instead of performing an HTTP HEAD or GET against a resource one queries the provenance service using the given <a class="internalDFN" href="#dfn-target-uri">target-URI</a>.
+          </p>
+        </div>
+
+        <div id="via-sparql-queries" class="section">
+          <h4><span class="secno">5.2.2 </span>Via SPARQL Queries</h4>
+          <p>Provenance information may be made available using a SPARQL endpoint (<a href="#querying-provenance-information" class="sectionRef">section 5.1 Using SPARQL for provenance queries</a>) [<cite><a class="bibref" rel="biblioentry" href="#bib-RDF-SPARQL-PROTOCOL">RDF-SPARQL-PROTOCOL</a></cite>] [<cite><a class="bibref" rel="biblioentry" href="#bib-RDF-SPARQL-QUERY">RDF-SPARQL-QUERY</a></cite>]. Using SPARQL queries, provenance can be selectively retrieved using combinations of filters and or path queries.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+ 
+<!-- ==== Section 6 ===================================================================================== -->
+
+    <div id="iana-considerations" class="section">
+      <!--OddPage--><h2><span class="secno">6. </span>IANA considerations</h2>
+      <p>This document requests registration of new link relations, per <a href="http://tools.ietf.org/html/rfc5988#section-6.2.1">section-6.2.1 of RFC 5988</a>.
+      </p>
+      <p class="TODO">
+          @@TODO The following templates should be completed and submitted to link-relations@ietf.org:
+      </p>
+      <div id="registration-template-for-link-relation---provenance" class="section">
+        <h3><span class="secno">6.1 </span>Registration template for link relation: "provenance"</h3>
+        <p>
+          </p><dl>
+            <dt>Relation Name:</dt>
+            <dd>
+              <code>provenance</code>
+            </dd>
+            <dt>Description:</dt>
+            <dd>
+              the resource identified by target IRI of the link provides provenance information about the resource identified by the context link
+            </dd>
+            <dt>Reference:</dt>
+            <dd>
+              @@this spec, @@provenance-model-spec
+            </dd>
+            <dt>Notes:</dt>
+            <dd>
+              ...
+            </dd>
+            <dt>Application Data:</dt>
+            <dd>
+              ...
+            </dd>
+          </dl>
+        <p></p>
+      </div>
+      <div id="registration-template-for-link-relation---anchor" class="section">
+        <h3><span class="secno">6.2 </span>Registration template for link relation: "anchor"</h3>
+        <p>
+          </p><dl>
+            <dt>Relation Name:</dt>
+            <dd>
+              <code>anchor</code>
+            </dd>
+            <dt>Description:</dt>
+            <dd>
+              when used in conjunction with a "provenance" link, the resource identified by target IRI of the link is one for which provenance information may be provided.  This may be used, for example, to isolate relevant information from a referenced document that contains provenance information for several entities.
+            </dd>
+            <dt>Reference:</dt>
+            <dd>
+              @@this spec, @@provenance-model-spec
+            </dd>
+            <dt>Notes:</dt>
+            <dd>
+              ...
+            </dd>
+            <dt>Application Data:</dt>
+            <dd>
+              ...
+            </dd>
+          </dl>
+        <p></p>
+      </div>
+      <div id="registration-template-for-link-relation---provenance-service" class="section">
+        <h3><span class="secno">6.3 </span>Registration template for link relation: "provenance-service"</h3>
+        <p>
+          </p><dl>
+            <dt>Relation Name:</dt>
+            <dd>
+              <code>provenance-service</code>
+            </dd>
+            <dt>Description:</dt>
+            <dd>
+              the resource identified by target URI of the link is an provenance service per <a href="#provenance-services" class="sectionRef">section 4. Provenance services</a> of this specification.
+            </dd>
+            <dt>Reference:</dt>
+            <dd>
+              @@this spec, @@provenance-model-spec
+            </dd>
+            <dt>Notes:</dt>
+            <dd>
+              ...
+            </dd>
+            <dt>Application Data:</dt>
+            <dd>
+              ...
+            </dd>
+          </dl>
+        <p></p>
+      </div>
+    </div>
+ 
+<!-- ==== Section 7 ===================================================================================== -->
+
+    <div id="security-considerations" class="section">
+      <!--OddPage--><h2><span class="secno">7. </span>Security considerations</h2>
+      <p>
+        Provenance is central to establishing trust in data. If provenance information is corrupted, it may lead agents (human or software) to draw inappropriate and possibly harmful conclusions.  Therefore, care is needed to ensure that the integrity of provenance information is maintained.
+      </p>
+      <p>
+        Secure HTTP (https) <em class="rfc2119" title="should">should</em> be used across unsecured networks when accessing provenance information that may be used as a basis for trust decisions, or to obtain a provenance URI for same.
+      </p>
+      <p>
+        When retrieving a provenance URI from a document, steps <em class="rfc2119" title="should">should</em> be taken to ensure the document itself is an accurate copy of the original whose author is being trusted (e.g. signature checking, or verifying its checksum against an author-provided secure web service).
+      </p>
+      <p class="TODO">
+        @@TODO ... privacy, access control to provenance (note to self: discussed in Edinburgh linked data provenance workshop).  In particular, note that the fact that a resource is openly accessible does not mean that its provenance information should also be.
+      </p>
+      <p class="TODO">
+        @@TODO Expand on trust-in-provenance issues. Suggested by Curt: Just as provenance information can help determine trust of the information content of a resource, provenance information related to the provenance itself ("provenance of provenance") can help determine trust of the provenance.
+      </p>
+    </div>
+ 
+<!-- ===================================================================================== -->
+    
+    <div class="appendix section" id="acknowledgements">
+      <!--OddPage--><h2><span class="secno">A. </span>Acknowledgements</h2>
+      <p>
+        The editors acknowledge the contribution and review from members of the provenance working group.
+      </p>
+      <p>
+        Many thanks to Robin Berjon for making our lives so much easier with his cool <a href="http://dev.w3.org/2009/dap/ReSpec.js/documentation.html">ReSpec</a> tool.
+      </p>
+    </div>
+
+<!-- ===================================================================================== -->
+    
+    <div class="appendix section" id="names-added-to-prov--namespace">
+      <!--OddPage--><h2><span class="secno">B. </span>Names added to prov: namespace</h2>
+      <p>
+        This specification defines the following additional names in the provenance namespace.
+      </p>
+      <p>
+        The provenance namespace URI is http://www.w3c.org/ns/prov#.
+      </p>
+      <p>
+        </p><table>
+          <tbody><tr>
+            <th>name</th><th>Description</th><th>Definition ref</th>
+          </tr>
+          <tr>
+            <td>ProvenanceService</td><td>Class for a service described by a provenance service description</td><td>...</td>
+          </tr>
+          <tr>
+            <td>hasAnchor</td><td>Indicates anchor URI for a potentially dynamic resource instance</td><td>...</td>
+          </tr>
+          <tr>
+            <td>hasProvenance</td><td>Relates a resource to its provenance</td><td>...</td>
+          </tr>
+          <tr>
+            <td>hasProvenanceService</td><td>Relates a resource to a provenance service</td><td>...</td>
+          </tr>
+          <tr>
+            <td>provenanceUriTemplate</td><td>Relates a provenance service to a URI template string for constructing provenance-URIs</td><td>...</td>
+          </tr>
+        </tbody></table>
+      <p></p>
+    </div>
+
+
+<!-- ===================================================================================== -->
+
+    <!-- 
+<section class='appendix'>
+      <h2>Provenance service format examples</h2>
+      <p>
+        In <a href="#provenance-services" class="sectionRef"></a>, the provenance service description was represented as a JSON-formatted document.  As noted, HTTP content negotiation MAY be enabled to retrieve the document in alternative formats.  This appendix provides examples of service description document represented using RDF Turtle and XML syntaxes, and XML. 
+      </p>
+
+      <section>
+        <h2>RDF Turtle example of service description</h2>
+        <p>
+          This example uses the RDF Turtle format [[TURTLE]], presented as MIME content-type <code>text/turtle</code>.
+        </p>
+        <pre class="example code">
+  @prefix provds: &lt;@@TBD@@#&gt; .
+  @prefix prov: &lt;http://www.w3.org/ns/prov-o/&gt; .
+  
+  &lt;http://example.org/provenance_service/&gt; a prov:ProvenanceService ;
+    provds:provenance_locations_template       "http://example.org/provenance_service/locations/?uri={uri}" ;
+    provds:provenance_content_template     "http://example.org/provenance_service/provenance/?uri={uri}"
+    .
+        </pre>
+        <p class="note">
+          The provenance URI templates are encoded in RDF as plain string literals, <em>not</em> as resource URIs.
+        </p>
+        <p class="TODO">
+          Finalize URIs in the above example.
+        </p>
+      </section>
+
+      <section>
+        <h2>RDF/XML example of service description</h2>
+        <p>This is essentially the same as the Turtle example above, but encoded in RDF/XML [[RDF-SYNTAX-GRAMMAR]], and presented as MIME content-type <code>application/xml+rdf</code>.</p>
+        <pre class="example code">
+  &lt;rdf:RDF
+    xmlns:rdf    = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs   = "http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:provds = "@@TBD@@#"
+    xmlns:prov   = "http://www.w3.org/ns/prov-o/"
+  &gt;
+    &lt;prov:ProvenanceService rdf:about="http://example.org/provenance_service/"&gt;
+     example.org &lt;provds:provenance_locations_template&gt;http://example.org/provenance_service/locations/?uri={uri}&lt;/provds:location_template&gt; ;
+      &lt;provds:provenance_content_template&gt;http://example.org/provenance_service/provenance/?uri={uri}&lt;/provds:provenance_template&gt; ;
+    &lt;/prov:ProvenanceService&gt;
+  &lt;/rdf:RDF&gt;
+        </pre>
+        <p class="TODO">
+          Finalize URIs in the above example.
+        </p>
+      </section>
+
+      <section>
+        <h2>Plain XML example of service description</h2>
+        <p class="TODO">
+          @@TODO: provide example and schema
+        </p>
+      </section>
+
+      <section>
+        <h2>RDF Turtle example of provenance locations</h2>
+        <p>
+          This example uses the RDF Turtle format [[TURTLE]], presented as MIME content type <code>text/turtle</code>.
+        </p>
+        <pre class="example code">
+  @prefix prov: &lt;@@TBD@@#&gt; .
+  &lt;http://example.org/qdata/&gt; a prov:Entity ;
+    prov:hasProvenance  &lt;http://source1.example.org/provenance/qdata/&gt; ;
+    prov:hasProvenance  &lt;http://source2.example.org/prov/qdata/&gt; ;
+    prov:hasProvenance  &lt;http://source3.example.com/prov?id=qdata&gt;
+    .
+        </pre>
+        <p class="issue">
+          NOTE: The namespace URI used here for the provenance properties is different from that used in the service description.  I am anticipating that it will be defined as part of the provenance model.  If it is not defined as part of the provenance model, then a property name should be allocated in the provenance discovery service namespace.
+        </p>
+        <p class="TODO">@@TODO: revise to conform with Provenance Model vocabulary; review URIs</p>
+      </section>
+
+      <section>
+        <h2>RDF/XML example of provenance locations</h2>
+        <p>
+          This is essentially the same as the Turtle example above, but encoded in RDF/XML [[RDF-SYNTAX-GRAMMAR]], and presented with MIME content type <code>application/rdf+xml</code>.
+        </p>
+        <pre class="example code">
+  &lt;rdf:RDF
+    xmlns:rdf    = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs   = "http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:prov   = "@@TBD@@#"
+  &gt;
+    &lt;prov:Entity rdf:about="http://example.org/qdata/"&gt;
+      &lt;prov:hasProvenance  rdf:resource="http://source1.example.org/provenance/qdata/" /&gt; ;
+      &lt;prov:hasProvenance  rdf:resource="http://source2.example.org/prov/qdata/" /&gt; ;
+      &lt;prov:hasProvenance  rdf:resource="http://source3.example.com/prov?id=qdata" /&gt; ;
+    &lt;/prov:Entity&gt;
+  &lt;/rdf:RDF&gt;
+        </pre>
+        <p class="TODO">@@TODO: revise to conform with Provenance Model vocabulary</p>
+      </section>
+
+      <section>
+        <h2>Plain XML example of provenance locations</h2>
+        <p class="TODO">
+          @@TODO: provide example and schema
+        </p>
+      </section>
+
+    </section>
+ -->
+
+<!-- ===================================================================================== -->
+
+<div id="references" class="appendix section"><!--OddPage--><h2><span class="secno">C. </span>References</h2><div id="normative-references" class="section"><h3><span class="secno">C.1 </span>Normative references</h3><p>No normative references.</p></div><div id="informative-references" class="section"><h3><span class="secno">C.2 </span>Informative references</h3><dl class="bibliography"><dt id="bib-FABIO">[FABIO]</dt><dd>D. Shotton; S. Peroni. <a href="http://speroni.web.cs.unibo.it/cgi-bin/lode/req.py?req=http:/purl.org/spar/fabio#namespacedeclarations"><cite>FaBiO, the FRBR-aligned Bibliographic Ontology.</cite></a> June 2011. URL: <a href="http://speroni.web.cs.unibo.it/cgi-bin/lode/req.py?req=http:/purl.org/spar/fabio#namespacedeclarations">http://speroni.web.cs.unibo.it/cgi-bin/lode/req.py?req=http:/purl.org/spar/fabio#namespacedeclarations</a>
+</dd><dt id="bib-LINK-REL">[LINK-REL]</dt><dd>M. Nottingham, <a href="http://www.ietf.org/rfc/rfc5988.txt"><cite>Web Linking</cite></a>, October 2010, Internet RFC 5988. URL: <a href="http://www.ietf.org/rfc/rfc5988.txt">http://www.ietf.org/rfc/rfc5988.txt</a>
+</dd><dt id="bib-POWDER-DR">[POWDER-DR]</dt><dd>Kevin Smith; Phil Archer; Andrea Perego. <a href="http://www.w3.org/TR/2008/WD-powder-dr-20081114"><cite>Protocol for Web Description Resources (POWDER): Description Resources.</cite></a> 14 November 2008. W3C Working Draft. (Work in progress.) URL: <a href="http://www.w3.org/TR/2008/WD-powder-dr-20081114">http://www.w3.org/TR/2008/WD-powder-dr-20081114</a> 
+</dd><dt id="bib-PRISM">[PRISM]</dt><dd>International Digital Enterprise Alliance, Inc. <a href="http://www.prismstandard.org/specifications/2.0/PRISM_prism_namespace_2.0.pdf"><cite>PRISM: Publishing Requirements for Industry Standard Metadata</cite></a>. February 2008. URL: <a href="http://www.prismstandard.org/specifications/2.0/PRISM_prism_namespace_2.0.pdf">http://www.prismstandard.org/specifications/2.0/PRISM_prism_namespace_2.0.pdf</a>
+</dd><dt id="bib-PROV-DM">[PROV-DM]</dt><dd>L. Moreau; P. Missier. <a href="http://www.w3.org/TR/prov-dm/"><cite>The PROV Data Model and Abstract Syntax Notation</cite></a>. 2011, Work in progress. URL: <a href="http://www.w3.org/TR/prov-dm/">http://www.w3.org/TR/prov-dm/</a>
+</dd><dt id="bib-PROV-O">[PROV-O]</dt><dd>S. Sahoo; D. McGuinness. <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceFormalModel.html"><cite>PROV Ontology Model</cite></a>. 2011, Work in progress. URL: <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceFormalModel.html/">http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceFormalModel.html</a>
+</dd><dt id="bib-RDF-SPARQL-PROTOCOL">[RDF-SPARQL-PROTOCOL]</dt><dd>Lee Feigenbaum; Kendall Grant Clark; Elias Torres. <a href="http://www.w3.org/TR/2008/REC-rdf-sparql-protocol-20080115"><cite>SPARQL Protocol for RDF.</cite></a> 15 January 2008. W3C Recommendation. URL: <a href="http://www.w3.org/TR/2008/REC-rdf-sparql-protocol-20080115">http://www.w3.org/TR/2008/REC-rdf-sparql-protocol-20080115</a> 
+</dd><dt id="bib-RDF-SPARQL-QUERY">[RDF-SPARQL-QUERY]</dt><dd>Andy Seaborne; Eric Prud'hommeaux. <a href="http://www.w3.org/TR/2008/REC-rdf-sparql-query-20080115"><cite>SPARQL Query Language for RDF.</cite></a> 15 January 2008. W3C Recommendation. URL: <a href="http://www.w3.org/TR/2008/REC-rdf-sparql-query-20080115">http://www.w3.org/TR/2008/REC-rdf-sparql-query-20080115</a> 
+</dd><dt id="bib-REST">[REST]</dt><dd>R. Fielding. <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"><cite>Representational State Transfer (REST)</cite></a>. 2000, Ph.D. dissertation. URL: <a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm">http://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm</a>
+</dd><dt id="bib-REST-APIs">[REST-APIs]</dt><dd>R. Fielding. <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven"><cite>REST APIs must be hypertext driven</cite></a>. October 2008 (blog post), URL: <a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven</a>
+</dd><dt id="bib-RFC2387">[RFC2387]</dt><dd>E. Levinson. <a href="http://www.ietf.org/rfc/rfc2387.txt"><cite>The MIME Multipart/Related Content-type.</cite></a> August 1998. Internet RFC 2387. URL: <a href="http://www.ietf.org/rfc/rfc2387.txt">http://www.ietf.org/rfc/rfc2387.txt</a>
+</dd><dt id="bib-RFC2392">[RFC2392]</dt><dd>E. Levinson. <a href="http://www.ietf.org/rfc/rfc2392.txt"><cite>Content-ID and Message-ID Uniform Resource Locators.</cite></a> August 1998. Internet RFC 2392. URL: <a href="http://www.ietf.org/rfc/rfc2392.txt">http://www.ietf.org/rfc/rfc2392.txt</a>
+</dd><dt id="bib-SPARQL-HTTP">[SPARQL-HTTP]</dt><dd>Chimezie Ogbuji. <a href="http://www.w3.org/TR/sparql11-http-rdf-update/"><cite>SPARQL 1.1 Service Description</cite></a>. 2011, Work in progress. URL: <a href="http://www.w3.org/TR/sparql11-http-rdf-update/">http://www.w3.org/TR/sparql11-http-rdf-update/</a>
+</dd><dt id="bib-SPARQL-SD">[SPARQL-SD]</dt><dd>G. T. Williams. <a href="http://www.w3.org/TR/sparql11-service-description/"><cite>SPARQL 1.1 Service Description</cite></a>. 2011, Work in progress. URL: <a href="http://www.w3.org/TR/sparql11-service-description/">http://www.w3.org/TR/sparql11-service-description/</a>
+</dd><dt id="bib-URI-template">[URI-template]</dt><dd>J. Gregorio; R. Fielding; M. Hadley; M. Nottingham; D. Orchard. <a href="http://tools.ietf.org/html/rfc6570"><cite>URI Template</cite></a>. March 2012, Internet RFC 6570. URL: <a href="http://tools.ietf.org/html/rfc6570/"><cite>http://tools.ietf.org/html/rfc6570</cite></a>
+</dd><dt id="bib-WEBARCH">[WEBARCH]</dt><dd>Norman Walsh; Ian Jacobs. <a href="http://www.w3.org/TR/2004/REC-webarch-20041215/"><cite>Architecture of the World Wide Web, Volume One.</cite></a> 15 December 2004. W3C Recommendation. URL: <a href="http://www.w3.org/TR/2004/REC-webarch-20041215/">http://www.w3.org/TR/2004/REC-webarch-20041215/</a> 
+</dd></dl></div></div></body></html>

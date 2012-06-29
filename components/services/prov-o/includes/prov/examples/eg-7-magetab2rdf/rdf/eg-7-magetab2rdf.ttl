@@ -1,0 +1,2669 @@
+@prefix dc:      <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix ro:      <http://www.obofoundry.org/ro/ro.owl#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix efo:     <http://www.ebi.ac.uk/efo/> .
+@prefix vcard:   <http://www.w3.org/2006/vcard/ns#> .
+@prefix muo:     <http://purl.oclc.org/NET/muo/muo#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix obo:     <http://purl.obolibrary.org/obo/> .
+@prefix mged:    <http://mged.sourceforge.net/ontologies/MGEDOntology.owl#> .
+@prefix chebi:   <http://purl.org/obo/owl/CHEBI#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_11__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_11::P-AFFY-6" , "Hybridization_11::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_11::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_11::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12/factorValues/TREATMENT>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation> , efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "sham implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_02.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 02.CEL" , "CJ 02.CEL"^^xsd:string ;
+      dc:identifier "CJ 02.CEL"^^xsd:string ;
+      dc:title "CJ 02.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_02__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , obo:OBI_0000011 ;
+      rdfs:label "Bladder11::P-MTAB-3883" , "Bladder11::P-MTAB-3883"^^xsd:string ;
+      dc:identifier "Bladder11::P-MTAB-3883"^^xsd:string ;
+      dc:title "Bladder11::P-MTAB-3883"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3883> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_12.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 12.biotin" , "Labeled Extract 12.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 12.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 12.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/7ac70186-e952-43f5-aebf-afe6f98943fc> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder05" , "Bladder05"^^xsd:string ;
+      dc:identifier "Bladder05"^^xsd:string ;
+      dc:title "Bladder05"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/OrganismPart> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , efo:EFO_0000311 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/studyDesign>
+      rdf:type obo:OBI_0500000 , efo:EFO_0002091 ;
+      rdfs:subClassOf efo:EFO_0001769 , mged:co-expression_design , efo:EFO_0002768 , efo:EFO_0001756 ;
+      mged:has_experiment_factors
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      obo:OBI_0000308 efo:EFO_0002091 ;
+      ro:has_part <http://purl.org/twc/arrayexpress/P-MTAB-3888> , <http://purl.org/twc/arrayexpress/P-MTAB-3889> , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , <http://purl.org/twc/arrayexpress/P-MTAB-3885> , <http://purl.org/twc/arrayexpress/P-AFFY-6> , <http://purl.org/twc/arrayexpress/P-MTAB-3887> , <http://purl.org/twc/arrayexpress/P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_17__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_17::P-AFFY-6" , "Hybridization_17::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_17::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_17::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder13::P-MTAB-3884::P-MTAB-3886" , "Bladder13::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder13::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder13::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f79804b9-e48c-4895-8093-119b117ad2dd> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_09.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 09.CEL" , "CJ 09.CEL"^^xsd:string ;
+      dc:identifier "CJ 09.CEL"^^xsd:string ;
+      dc:title "CJ 09.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_09__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3885>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3885"^^xsd:string ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action> ;
+      obo:OBI_0000308 <http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action> ;
+      dc:description "The rats were placed into standard cages and monitored daily for general health status, including body weight"^^xsd:string ;
+      dc:identifier "P-MTAB-3885"^^xsd:string ;
+      dc:title "P-MTAB-3885"^^xsd:string .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_10__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_10::P-AFFY-6" , "Hybridization_10::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_10::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_10::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/83037fe8-b97b-44a7-aad4-db75f05e4858>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/2c8d01f1-e146-43d0-81ba-69530cbc69d6> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_08.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_08.CEL" , "CJ_08.CEL"^^xsd:string ;
+      dc:identifier "CJ_08.CEL"^^xsd:string ;
+      dc:title "CJ_08.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/comment/AEMIAMESCORE>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "AEMIAMESCORE" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder14::P-MTAB-3884::P-MTAB-3886" , "Bladder14::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder14::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder14::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/0469b8f8-84fb-4080-9e8e-90f416acbd72> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      rdfs:label "Bladder06::P-MTAB-3885" , "Bladder06::P-MTAB-3885"^^xsd:string ;
+      dc:identifier "Bladder06::P-MTAB-3885"^^xsd:string ;
+      dc:title "Bladder06::P-MTAB-3885"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887" , "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f8d1cd51-2d21-44cb-95db-7f78bed2975c> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder04" , "Bladder04"^^xsd:string ;
+      dc:identifier "Bladder04"^^xsd:string ;
+      dc:title "Bladder04"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_11.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 11.CEL" , "CJ 11.CEL"^^xsd:string ;
+      dc:identifier "CJ 11.CEL"^^xsd:string ;
+      dc:title "CJ 11.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_11__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a7689919-583c-4e08-8a78-553608778954> .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3884>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3884"^^xsd:string ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action> ;
+      obo:OBI_0000308 <http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action> ;
+      dc:description "The bladder urothelium was first conditioned with an acid rinse (0.1 N HCl for 15 seconds and then 0.1 N KOH for 15 seconds). Subsequently the bladder was drained and flushed three times with 0.30 ml sterile phosphate buffered saline (PBS). Immediately after bladder conditioning the AY-27 cells were instilled and left indwelling for 1 hour. The rats were turned 90 degrees every 15 minutes to facilitate whole bladder exposure to the tumor cell suspension. After recovery from anaesthesia the rats were placed into standard cages and monitored daily for general health status, including body weight"^^xsd:string ;
+      dc:identifier "P-MTAB-3884"^^xsd:string ;
+      dc:title "P-MTAB-3884"^^xsd:string .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/5377c637-b6fd-4ac0-a1b6-27d7073260f0>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f12e1d36-4cac-4c24-9dc5-f776ddf022ca> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      rdfs:label "Bladder03::P-MTAB-3885" , "Bladder03::P-MTAB-3885"^^xsd:string ;
+      dc:identifier "Bladder03::P-MTAB-3885"^^xsd:string ;
+      dc:title "Bladder03::P-MTAB-3885"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , obo:OBI_0000011 ;
+      rdfs:label "Bladder07::P-MTAB-3883" , "Bladder07::P-MTAB-3883"^^xsd:string ;
+      dc:identifier "Bladder07::P-MTAB-3883"^^xsd:string ;
+      dc:title "Bladder07::P-MTAB-3883"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3883> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/8ccdd437-18c3-4d21-bb1d-06debf8c44e2>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_09.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_09.CEL" , "CJ_09.CEL"^^xsd:string ;
+      dc:identifier "CJ_09.CEL"^^xsd:string ;
+      dc:title "CJ_09.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , obo:OBI_0000011 ;
+      rdfs:label "Bladder12::P-MTAB-3883" , "Bladder12::P-MTAB-3883"^^xsd:string ;
+      dc:identifier "Bladder12::P-MTAB-3883"^^xsd:string ;
+      dc:title "Bladder12::P-MTAB-3883"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3883> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12> .
+
+efo:EFO_0002091
+      rdfs:label "biological replicate" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/2f06add2-43cd-4527-aa5c-3f5ecd87aa9d>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      rdfs:label "Bladder01::P-MTAB-3885" , "Bladder01::P-MTAB-3885"^^xsd:string ;
+      dc:identifier "Bladder01::P-MTAB-3885"^^xsd:string ;
+      dc:title "Bladder01::P-MTAB-3885"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation> ;
+      rdfs:label "no implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/999d6983-02a5-4ed4-b0dc-888ce26ab8c9>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887" , "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/2c8d01f1-e146-43d0-81ba-69530cbc69d6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+prov:used
+      rdf:type rdf:Property , owl:ObjectProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder07" , "Bladder07"^^xsd:string ;
+      dc:identifier "Bladder07"^^xsd:string ;
+      dc:title "Bladder07"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/OrganismPart> .
+
+rdf:type
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3887>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3887"^^xsd:string ;
+      rdfs:subClassOf obo:OBI_0666667 ;
+      obo:OBI_0000308 obo:OBI_0666667 ;
+      dc:description "Total RNA from the individual bladders were isolated and purified using the RNeasy Fibrous Midi Kit and Rnase-free Dnase Set (Qiagen,Valencia, CA) according to the manufacturerÂs protocol. After purification, the RNA concentration was determined by absorbance at 260 nm on a spectrophotometer."^^xsd:string ;
+      dc:identifier "P-MTAB-3887"^^xsd:string ;
+      dc:title "P-MTAB-3887"^^xsd:string .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_18" , "Hybridization_18"^^xsd:string ;
+      dc:identifier "Hybridization_18"^^xsd:string ;
+      dc:title "Hybridization_18"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18/factorValues/DISEASESTATE> .
+
+prov:Entity
+      rdf:type owl:Class .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000311 , obo:BFO_0000019 ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_06.CEL__P-MTAB-3889>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3889> , obo:OBI_0000011 ;
+      rdfs:label "CJ_15.CEL::P-MTAB-3889" , "CJ_15.CEL::P-MTAB-3889"^^xsd:string , "CJ_06.CEL::P-MTAB-3889" , "CJ_06.CEL::P-MTAB-3889"^^xsd:string ;
+      dc:identifier "CJ_06.CEL::P-MTAB-3889"^^xsd:string , "CJ_15.CEL::P-MTAB-3889"^^xsd:string ;
+      dc:title "CJ_15.CEL::P-MTAB-3889"^^xsd:string , "CJ_06.CEL::P-MTAB-3889"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3889> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_15.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_06.CEL> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      rdfs:label "Bladder05::P-MTAB-3885" , "Bladder05::P-MTAB-3885"^^xsd:string ;
+      dc:identifier "Bladder05::P-MTAB-3885"^^xsd:string ;
+      dc:title "Bladder05::P-MTAB-3885"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_16.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_16.CEL" , "CJ_16.CEL"^^xsd:string ;
+      dc:identifier "CJ_16.CEL"^^xsd:string ;
+      dc:title "CJ_16.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder15::P-MTAB-3884::P-MTAB-3886" , "Bladder15::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder15::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder15::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/b8726a04-f250-4837-a8ce-eefa6b5a3d95> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , obo:OBI_0000011 ;
+      rdfs:label "Bladder08::P-MTAB-3883" , "Bladder08::P-MTAB-3883"^^xsd:string ;
+      dc:identifier "Bladder08::P-MTAB-3883"^^xsd:string ;
+      dc:title "Bladder08::P-MTAB-3883"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3883> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , efo:EFO_0000311 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/fa8d40ea-dc39-48c6-b919-6642cbae3609>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/aa946a65-da21-4f46-bf93-3acc30a61c5d> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886> .
+
+prov:specializationOf
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_11.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 11.biotin" , "Labeled Extract 11.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 11.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 11.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/4176b97a-b143-4b7b-8d40-f5fd79b67ddb> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/14581df2-36af-4536-bcb8-182b3cf46222> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder06" , "Bladder06"^^xsd:string ;
+      dc:identifier "Bladder06"^^xsd:string ;
+      dc:title "Bladder06"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+efo:EFO_0002768
+      rdfs:label "transcription profiling by array" .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3886>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3886"^^xsd:string ;
+      rdfs:subClassOf mged:dissect ;
+      obo:OBI_0000308 mged:dissect ;
+      dc:description "The entire bladder from each rat was removed, placed in a sterile plastic test tube, immediately frozen in a bath of liquid nitrogen, and then stored in a freezer at -80Âº C until isolation of RNA."^^xsd:string ;
+      dc:identifier "P-MTAB-3886"^^xsd:string ;
+      dc:title "P-MTAB-3886"^^xsd:string .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9ca56d3f-43d5-41dc-9d91-d336fa818e8d>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/8ccdd437-18c3-4d21-bb1d-06debf8c44e2> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_06" , "Hybridization_06"^^xsd:string ;
+      dc:identifier "Hybridization_06"^^xsd:string ;
+      dc:title "Hybridization_06"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder11::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/4176b97a-b143-4b7b-8d40-f5fd79b67ddb> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE>
+      rdf:type efo:EFO_0000001 , owl:Class ;
+      rdfs:label "DISEASESTATE" ;
+      rdfs:subClassOf efo:EFO_0001756 .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder09" , "Bladder09"^^xsd:string ;
+      dc:identifier "Bladder09"^^xsd:string ;
+      dc:title "Bladder09"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/OrganismPart> .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3889>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3889"^^xsd:string ;
+      rdfs:subClassOf mged:bioassay_data_transformation ;
+      obo:OBI_0000308 mged:bioassay_data_transformation ;
+      dc:description "Data Processing/Normalization:Bioconducttor rma algorithm used to generate probeset-level intensities in RMA file."^^xsd:string ;
+      dc:identifier "P-MTAB-3889"^^xsd:string ;
+      dc:title "P-MTAB-3889"^^xsd:string .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_08__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_08::P-AFFY-6" , "Hybridization_08::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_08::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_08::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder17::P-MTAB-3884::P-MTAB-3886" , "Bladder17::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder17::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder17::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/667b8aad-4646-45fc-aef9-00a8fbe23528> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08/factorValues/TREATMENT>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation> , efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "sham implantation" .
+
+<http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "has OrganismPart" ;
+      rdfs:subPropertyOf <http://semanticscience.org/resource/SIO_000008> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887" , "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/72974b58-ed3d-4995-a5af-5e55cf68b7c3> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_07" , "Hybridization_07"^^xsd:string ;
+      dc:identifier "Hybridization_07"^^xsd:string ;
+      dc:title "Hybridization_07"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder06::P-MTAB-3885::P-MTAB-3886" , "Bladder06::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder06::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder06::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/8277bd5c-f6ef-42e6-bc21-23ec5be775a1> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder18" , "Bladder18"^^xsd:string ;
+      dc:identifier "Bladder18"^^xsd:string ;
+      dc:title "Bladder18"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3888>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3888"^^xsd:string ;
+      rdfs:subClassOf rdfs:label ;
+      obo:OBI_0000308 rdfs:label ;
+      dc:description "According to the Affymetrix standard protocol"^^xsd:string ;
+      dc:identifier "P-MTAB-3888"^^xsd:string ;
+      dc:title "P-MTAB-3888"^^xsd:string .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation>
+      rdf:type owl:Class ;
+      rdfs:label "sham implantation" ;
+      rdfs:subClassOf efo:EFO_0000727 .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder08" , "Bladder08"^^xsd:string ;
+      dc:identifier "Bladder08"^^xsd:string ;
+      dc:title "Bladder08"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/OrganismPart> .
+
+obo:IAO_0000142
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_02.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_02.CEL" , "CJ_02.CEL"^^xsd:string ;
+      dc:identifier "CJ_02.CEL"^^xsd:string ;
+      dc:title "CJ_02.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/0469b8f8-84fb-4080-9e8e-90f416acbd72>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884> .
+
+<http://purl.org/twc/arrayexpress/comment/Derived_ArrayExpress_FTP_file>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "Derived ArrayExpress FTP file" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_10.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_10.CEL" , "CJ_10.CEL"^^xsd:string ;
+      dc:identifier "CJ_10.CEL"^^xsd:string ;
+      dc:title "CJ_10.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/44b7fddd-f264-491d-8332-25bc2a8e6516>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/0469b8f8-84fb-4080-9e8e-90f416acbd72> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886> .
+
+efo:EFO_0000311
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , owl:Class ;
+      rdfs:label "cancer" ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/b0998fb3-f42d-4def-b1a1-e386e5860c96>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6155be0f-b6e4-4395-b9cf-f5222f0c2b72> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder17" , "Bladder17"^^xsd:string ;
+      dc:identifier "Bladder17"^^xsd:string ;
+      dc:title "Bladder17"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17/characteristic/DiseaseState> .
+
+mged:bioassay_data_transformation
+      rdf:type owl:Class .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000311 , obo:BFO_0000019 ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_16.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 16.CEL" , "CJ 16.CEL"^^xsd:string ;
+      dc:identifier "CJ 16.CEL"^^xsd:string ;
+      dc:title "CJ 16.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_16__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/3f229106-ec7d-4407-8580-10d3bbae2186> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder07::P-MTAB-3883::P-MTAB-3886" , "Bladder07::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder07::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder07::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/590dd61f-2dfe-418b-a72f-5bd8b717b103> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887" , "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder06::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6d802db4-7b70-43d7-8ed5-62fa97054168> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_08" , "Hybridization_08"^^xsd:string ;
+      dc:identifier "Hybridization_08"^^xsd:string ;
+      dc:title "Hybridization_08"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a7689919-583c-4e08-8a78-553608778954>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/eeba4009-6ecf-45dc-9444-7c8463e453c0> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_04.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_04.CEL" , "CJ_04.CEL"^^xsd:string ;
+      dc:identifier "CJ_04.CEL"^^xsd:string ;
+      dc:title "CJ_04.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder16" , "Bladder16"^^xsd:string ;
+      dc:identifier "Bladder16"^^xsd:string ;
+      dc:title "Bladder16"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/b8726a04-f250-4837-a8ce-eefa6b5a3d95>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation> ;
+      rdfs:label "no implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder18::P-MTAB-3884::P-MTAB-3886" , "Bladder18::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder18::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder18::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/60856bb2-9c21-48d0-b3b0-badf195c2a37> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000311 , obo:BFO_0000019 ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_09" , "Hybridization_09"^^xsd:string ;
+      dc:identifier "Hybridization_09"^^xsd:string ;
+      dc:title "Hybridization_09"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/32cadf62-fff2-4573-b65e-615d15aa00db> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_05.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_05.CEL" , "CJ_05.CEL"^^xsd:string ;
+      dc:identifier "CJ_05.CEL"^^xsd:string ;
+      dc:title "CJ_05.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_7.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 7.biotin" , "Labeled Extract 7.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 7.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 7.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/83037fe8-b97b-44a7-aad4-db75f05e4858> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_14.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 14.CEL" , "CJ 14.CEL"^^xsd:string ;
+      dc:identifier "CJ 14.CEL"^^xsd:string ;
+      dc:title "CJ 14.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_14__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_04__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_04::P-AFFY-6" , "Hybridization_04::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_04::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_04::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04> .
+
+dc:identifier
+      rdf:type owl:AnnotationProperty , owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+obo:OBI_0200005
+      rdfs:label "feature extraction objective" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/da44521f-6192-422b-80fa-75ba032e57bf>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a5ed1729-f999-4e00-a9df-481f3f04ac8b> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887" , "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder02::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/fa8d40ea-dc39-48c6-b919-6642cbae3609> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_9.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 9.biotin" , "Labeled Extract 9.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 9.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 9.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/5377c637-b6fd-4ac0-a1b6-27d7073260f0> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+foaf:mbox
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor> , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "implanted tumor" .
+
+rdfs:comment
+      rdf:type owl:AnnotationProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_14__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_14::P-AFFY-6" , "Hybridization_14::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_14::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_14::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_06.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 06.CEL" , "CJ 06.CEL"^^xsd:string ;
+      dc:identifier "CJ 06.CEL"^^xsd:string ;
+      dc:title "CJ 06.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_06__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_15.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_15.CEL" , "CJ_15.CEL"^^xsd:string ;
+      dc:identifier "CJ_15.CEL"^^xsd:string ;
+      dc:title "CJ_15.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation> ;
+      rdfs:label "no implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_12__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_12::P-AFFY-6" , "Hybridization_12::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_12::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_12::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/74a17dea-36a2-4702-8650-64f0409e9555>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/7991134e-f976-4571-b98b-7a3cda85b5b7> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6e8916cd-af3b-4ee9-b55c-9fad2cdebccc>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/77eb323c-29cc-4660-807c-fe64660a1299> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+dc:description
+      rdf:type owl:AnnotationProperty , owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_14.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 14.biotin" , "Labeled Extract 14.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 14.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 14.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a4771672-bfe5-4e34-a7bc-af6d4df0d48b> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10/factorValues/TREATMENT>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation> , efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "sham implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/7ac70186-e952-43f5-aebf-afe6f98943fc> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/da44521f-6192-422b-80fa-75ba032e57bf> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/77eb323c-29cc-4660-807c-fe64660a1299>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/b8726a04-f250-4837-a8ce-eefa6b5a3d95> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , efo:EFO_0000311 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_01.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 01.CEL" , "CJ 01.CEL"^^xsd:string ;
+      dc:identifier "CJ 01.CEL"^^xsd:string ;
+      dc:title "CJ 01.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_01__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      rdfs:label "Bladder02::P-MTAB-3885" , "Bladder02::P-MTAB-3885"^^xsd:string ;
+      dc:identifier "Bladder02::P-MTAB-3885"^^xsd:string ;
+      dc:title "Bladder02::P-MTAB-3885"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , obo:OBI_0000011 ;
+      rdfs:label "Bladder09::P-MTAB-3883" , "Bladder09::P-MTAB-3883"^^xsd:string ;
+      dc:identifier "Bladder09::P-MTAB-3883"^^xsd:string ;
+      dc:title "Bladder09::P-MTAB-3883"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3883> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f01b348c-a42c-4e57-8f48-ca1a064baa37>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9906da5d-0695-4b04-a5bf-8cabc54671fd> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      rdfs:label "Bladder04::P-MTAB-3885" , "Bladder04::P-MTAB-3885"^^xsd:string ;
+      dc:identifier "Bladder04::P-MTAB-3885"^^xsd:string ;
+      dc:title "Bladder04::P-MTAB-3885"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3885> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/publication/0>
+      rdf:type obo:IAO_0000311 , prov:Entity ;
+      rdfs:label "Gene expression profiling and pathway analysis of urinary bladder with syngeneic and orthotopic cancer in rats"^^xsd:string ;
+      dc:creator "Carl-Jorgen Arum, Endre Anderssen, Karin Tommeras, Steinar Lundgren, Duan Chen, Chun-Mei Zhao"^^xsd:string ;
+      dc:title "Gene expression profiling and pathway analysis of urinary bladder with syngeneic and orthotopic cancer in rats"^^xsd:string ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887" , "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6a733383-9bb8-41e4-80ba-87da09667d24> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_18.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 18.CEL" , "CJ 18.CEL"^^xsd:string ;
+      dc:identifier "CJ 18.CEL"^^xsd:string ;
+      dc:title "CJ 18.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_18__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/4176b97a-b143-4b7b-8d40-f5fd79b67ddb>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f8d1cd51-2d21-44cb-95db-7f78bed2975c> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/7ac70186-e952-43f5-aebf-afe6f98943fc>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/5b878a38-7377-412c-89ee-4027ece4b270> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation> ;
+      rdfs:label "no implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/organization/NTNU>
+      rdf:type foaf:Organization , obo:OBI_0000245 , prov:Organization ;
+      rdfs:label "NTNU" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , efo:EFO_0000311 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder04::P-MTAB-3885::P-MTAB-3886" , "Bladder04::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder04::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder04::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/00df4ceb-86bf-4bcd-bef6-209e64a7337d> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action>
+      rdf:type owl:Class ;
+      rdfs:label "specified_biomaterial_action" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_05.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 05.CEL" , "CJ 05.CEL"^^xsd:string ;
+      dc:identifier "CJ 05.CEL"^^xsd:string ;
+      dc:title "CJ 05.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_05__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/32cadf62-fff2-4573-b65e-615d15aa00db>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9ca56d3f-43d5-41dc-9d91-d336fa818e8d> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_17.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_17.CEL" , "CJ_17.CEL"^^xsd:string ;
+      dc:identifier "CJ_17.CEL"^^xsd:string ;
+      dc:title "CJ_17.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , obo:OBI_0000011 ;
+      rdfs:label "Bladder18::P-MTAB-3884" , "Bladder18::P-MTAB-3884"^^xsd:string ;
+      dc:identifier "Bladder18::P-MTAB-3884"^^xsd:string ;
+      dc:title "Bladder18::P-MTAB-3884"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3884> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887" , "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f12e1d36-4cac-4c24-9dc5-f776ddf022ca> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_03__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_03::P-AFFY-6" , "Hybridization_03::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_03::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_03::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder03::P-MTAB-3885::P-MTAB-3886" , "Bladder03::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder03::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder03::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/7991134e-f976-4571-b98b-7a3cda85b5b7> .
+
+rdfs:label
+      rdf:type owl:AnnotationProperty , owl:DatatypeProperty ;
+      rdfs:label "label" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder16::P-MTAB-3884::P-MTAB-3886" , "Bladder16::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder16::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder16::P-MTAB-3884::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6155be0f-b6e4-4395-b9cf-f5222f0c2b72> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/774bf109-0560-4f52-bc2e-40fc8d63c92c>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/72974b58-ed3d-4995-a5af-5e55cf68b7c3> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor> , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "implanted tumor" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/MaterialType>
+      rdf:type owl:Class ;
+      rdfs:label "MaterialType" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a3c59d32-6056-473b-8964-80d92db2d84f>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+mged:co-expression_design
+      rdf:type owl:Class .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9dee5430-5cb7-4a68-8632-4998f47873d8> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887" , "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/b0998fb3-f42d-4def-b1a1-e386e5860c96> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_4.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 4.biotin" , "Labeled Extract 4.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 4.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 4.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/ba75e26c-1f43-4469-b2f5-0291f65cf005> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+prov:startedAtTime
+      rdf:type owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_10.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 10.biotin" , "Labeled Extract 10.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 10.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 10.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/32cadf62-fff2-4573-b65e-615d15aa00db> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_1.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 1.biotin" , "Labeled Extract 1.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 1.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 1.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a7689919-583c-4e08-8a78-553608778954> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/60856bb2-9c21-48d0-b3b0-badf195c2a37>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/derivedarraydatamatrixfile/FinalMatrix.txt>
+      rdf:type obo:IAO_0000100 ;
+      rdfs:label "FinalMatrix.txt" , "FinalMatrix.txt"^^xsd:string ;
+      dc:identifier "FinalMatrix.txt"^^xsd:string ;
+      dc:title "FinalMatrix.txt"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/Derived_ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.processed.1.zip" ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_15.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_10.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_17.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_08.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_09.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_16.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_04.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_13.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_11.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_03.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_18.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_14.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_02.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_07.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_01.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_12.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_06.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_05.CEL> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_09.CEL__P-MTAB-3889> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_06.CEL__P-MTAB-3889> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_15.CEL__P-MTAB-3889> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder09::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/5377c637-b6fd-4ac0-a1b6-27d7073260f0> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_18.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_18.CEL" , "CJ_18.CEL"^^xsd:string ;
+      dc:identifier "CJ_18.CEL"^^xsd:string ;
+      dc:title "CJ_18.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/person/Anderssen_Endre>
+      rdf:type foaf:Person , efo:EFO_0001741 , prov:Person ;
+      rdfs:label "Endre Anderssen" ;
+      obo:OBI_0000846 <http://purl.org/twc/arrayexpress/E-MTAB-104/organization/NTNU> ;
+      vcard:adr <http://purl.org/twc/arrayexpress/E-MTAB-104/person/Anderssen_Endre/addr> ;
+      vcard:family-name "Anderssen"^^xsd:string ;
+      vcard:given-name "Endre"^^xsd:string ;
+      vcard:workTel "4792220336"^^xsd:string ;
+      prov:actedOnBehalfOf
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/organization/NTNU> ;
+      foaf:familyName "Anderssen"^^xsd:string ;
+      foaf:givenName "Endre"^^xsd:string ;
+      foaf:mbox <mailto:endre.anderssen@gmail.com> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/4e73ed81-5aaa-4493-aac0-862dd5bee7d6>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/74a17dea-36a2-4702-8650-64f0409e9555> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/0bd242be-2c7e-40bd-a05c-a376955d1dac>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/b0998fb3-f42d-4def-b1a1-e386e5860c96> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor> , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "implanted tumor" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_02__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_02::P-AFFY-6" , "Hybridization_02::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_02::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_02::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_01.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_01.CEL" , "CJ_01.CEL"^^xsd:string ;
+      dc:identifier "CJ_01.CEL"^^xsd:string ;
+      dc:title "CJ_01.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887" , "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/eaead22d-4131-4a21-9277-50b4131038c6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "has Organism" ;
+      rdfs:subPropertyOf <http://semanticscience.org/resource/SIO_000008> .
+
+efo:EFO_0000727
+      rdfs:label "treatment" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_04.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 04.CEL" , "CJ 04.CEL"^^xsd:string ;
+      dc:identifier "CJ 04.CEL"^^xsd:string ;
+      dc:title "CJ 04.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_04__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+      rdf:type owl:ObjectProperty ;
+      rdfs:label "has DiseaseState" ;
+      rdfs:subPropertyOf <http://semanticscience.org/resource/SIO_000008> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_16__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_16::P-AFFY-6" , "Hybridization_16::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_16::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_16::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16> .
+
+ro:has_part
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/c17e60e4-53f4-4054-8747-494a5bcb3b04>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/67b66259-1abc-420b-bc78-aca9598723e8> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_15.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 15.CEL" , "CJ 15.CEL"^^xsd:string ;
+      dc:identifier "CJ 15.CEL"^^xsd:string ;
+      dc:title "CJ 15.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_15__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_06.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_06.CEL" , "CJ_06.CEL"^^xsd:string ;
+      dc:identifier "CJ_06.CEL"^^xsd:string ;
+      dc:title "CJ_06.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887" , "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder08::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/c17e60e4-53f4-4054-8747-494a5bcb3b04> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , obo:OBI_0000011 ;
+      rdfs:label "Bladder15::P-MTAB-3884" , "Bladder15::P-MTAB-3884"^^xsd:string ;
+      dc:identifier "Bladder15::P-MTAB-3884"^^xsd:string ;
+      dc:title "Bladder15::P-MTAB-3884"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3884> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_6.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 6.biotin" , "Labeled Extract 6.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 6.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 6.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/3f229106-ec7d-4407-8580-10d3bbae2186> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+obo:OBI_0000308
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT>
+      rdf:type efo:EFO_0000001 , owl:Class ;
+      rdfs:label "TREATMENT" ;
+      rdfs:subClassOf efo:EFO_0000727 .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a4771672-bfe5-4e34-a7bc-af6d4df0d48b> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_13__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_13::P-AFFY-6" , "Hybridization_13::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_13::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_13::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13> .
+
+<http://purl.org/twc/arrayexpress/comment/SecondaryAccession>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "SecondaryAccession" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887" , "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder10::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9ca56d3f-43d5-41dc-9d91-d336fa818e8d> .
+
+vcard:adr
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/eeba4009-6ecf-45dc-9444-7c8463e453c0>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/e7aa4740-e65a-40df-8d53-5180b1792e49> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9906da5d-0695-4b04-a5bf-8cabc54671fd>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f79804b9-e48c-4895-8093-119b117ad2dd> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886> .
+
+vcard:family-name
+      rdf:type owl:DatatypeProperty .
+
+mged:has_experiment_factors
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/667b8aad-4646-45fc-aef9-00a8fbe23528>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/00df4ceb-86bf-4bcd-bef6-209e64a7337d>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/8277bd5c-f6ef-42e6-bc21-23ec5be775a1>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation> ;
+      rdfs:label "no implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+dc:creator
+      rdf:type owl:AnnotationProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6a733383-9bb8-41e4-80ba-87da09667d24>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/00df4ceb-86bf-4bcd-bef6-209e64a7337d> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_05__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_05::P-AFFY-6" , "Hybridization_05::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_05::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_05::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder08::P-MTAB-3883::P-MTAB-3886" , "Bladder08::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder08::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder08::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/67b66259-1abc-420b-bc78-aca9598723e8> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor> , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "implanted tumor" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/studyDesign> , prov:Activity , obo:OBI_0000066 ;
+      rdfs:label "Transcription profiling of rat bladder after inoculation with bladder cancer cells"^^xsd:string ;
+      obo:IAO_0000142 <http://purl.org/twc/arrayexpress/E-MTAB-104/publication/0> ;
+      dc:date "2009-01-22T00:04:00Z"^^xsd:dateTime ;
+      dc:description "Rat bladder cancer cells (AY-27 cell line) were inoculated intravesically into syngeneic female Fischer rats. The bladder was analyzed by histology and Affymetrix GeneChips and compared to bladders from sham operated and normal rats."^^xsd:string ;
+      dc:identifier "E-MTAB-104"^^xsd:string ;
+      dc:title "Transcription profiling of rat bladder after inoculation with bladder cancer cells"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/AEMIAMESCORE>
+              "4" ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpressAccession>
+              "E-MTAB-104" ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpressReleaseDate>
+              "2009-04-22" ;
+      <http://purl.org/twc/arrayexpress/comment/MAGETAB_TimeStamp_Version>
+              "2010-08-11 17:23:09 Last Changed Rev: 13058" ;
+      <http://purl.org/twc/arrayexpress/comment/SecondaryAccession>
+              "" ;
+      <http://purl.org/twc/arrayexpress/comment/Submitted_Name>
+              "rat bladder cancer model" ;
+      ro:has_part <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_04__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_03__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_11__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_13__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_09__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_17__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_14__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_10__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_08__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_12__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_05__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_06__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_01__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_07__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_09.CEL__P-MTAB-3889> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_02__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_15.CEL__P-MTAB-3889> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_18__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_06.CEL__P-MTAB-3889> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_16__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_15__P-AFFY-6> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> , <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> ;
+      prov:alternateOf <http://www.ebi.ac.uk/gxa/experiment/E-MTAB-104> ;
+      prov:endedAtTime "2009-01-22T00:04:00Z"^^xsd:dateTime ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/E-MTAB-104/studyDesign> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10> ;
+      prov:wasDerivedFrom <http://www.ebi.ac.uk/microarray-as/ae/files/E-MTAB-104/E-MTAB-104.idf.txt> , <http://www.ebi.ac.uk/microarray-as/ae/files/E-MTAB-104/E-MTAB-104.sdrf.txt> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/conversion> ;
+      prov:wasStartedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/person/Anderssen_Endre> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f01b348c-a42c-4e57-8f48-ca1a064baa37> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , obo:OBI_0000011 ;
+      rdfs:label "Bladder14::P-MTAB-3884" , "Bladder14::P-MTAB-3884"^^xsd:string ;
+      dc:identifier "Bladder14::P-MTAB-3884"^^xsd:string ;
+      dc:title "Bladder14::P-MTAB-3884"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3884> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_07__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_07::P-AFFY-6" , "Hybridization_07::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_07::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_07::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887" , "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/74a17dea-36a2-4702-8650-64f0409e9555> .
+
+prov:hadPlan
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_15.CEL__P-MTAB-3889>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3889> , obo:OBI_0000011 ;
+      rdfs:label "CJ_01.CEL::P-MTAB-3889" , "CJ_01.CEL::P-MTAB-3889"^^xsd:string , "CJ_08.CEL::P-MTAB-3889"^^xsd:string , "CJ_08.CEL::P-MTAB-3889" , "CJ_05.CEL::P-MTAB-3889" , "CJ_05.CEL::P-MTAB-3889"^^xsd:string , "CJ_09.CEL::P-MTAB-3889"^^xsd:string , "CJ_09.CEL::P-MTAB-3889" , "CJ_04.CEL::P-MTAB-3889"^^xsd:string , "CJ_04.CEL::P-MTAB-3889" , "CJ_03.CEL::P-MTAB-3889" , "CJ_03.CEL::P-MTAB-3889"^^xsd:string , "CJ_14.CEL::P-MTAB-3889" , "CJ_14.CEL::P-MTAB-3889"^^xsd:string , "CJ_07.CEL::P-MTAB-3889" , "CJ_07.CEL::P-MTAB-3889"^^xsd:string , "CJ_17.CEL::P-MTAB-3889" , "CJ_17.CEL::P-MTAB-3889"^^xsd:string , "CJ_12.CEL::P-MTAB-3889" , "CJ_10.CEL::P-MTAB-3889" , "CJ_10.CEL::P-MTAB-3889"^^xsd:string , "CJ_12.CEL::P-MTAB-3889"^^xsd:string , "CJ_16.CEL::P-MTAB-3889"^^xsd:string , "CJ_16.CEL::P-MTAB-3889" , "CJ_13.CEL::P-MTAB-3889"^^xsd:string , "CJ_13.CEL::P-MTAB-3889" ;
+      dc:identifier "CJ_03.CEL::P-MTAB-3889"^^xsd:string , "CJ_04.CEL::P-MTAB-3889"^^xsd:string , "CJ_01.CEL::P-MTAB-3889"^^xsd:string , "CJ_08.CEL::P-MTAB-3889"^^xsd:string , "CJ_14.CEL::P-MTAB-3889"^^xsd:string , "CJ_07.CEL::P-MTAB-3889"^^xsd:string , "CJ_17.CEL::P-MTAB-3889"^^xsd:string , "CJ_05.CEL::P-MTAB-3889"^^xsd:string , "CJ_10.CEL::P-MTAB-3889"^^xsd:string , "CJ_12.CEL::P-MTAB-3889"^^xsd:string , "CJ_16.CEL::P-MTAB-3889"^^xsd:string , "CJ_09.CEL::P-MTAB-3889"^^xsd:string , "CJ_13.CEL::P-MTAB-3889"^^xsd:string ;
+      dc:title "CJ_03.CEL::P-MTAB-3889"^^xsd:string , "CJ_04.CEL::P-MTAB-3889"^^xsd:string , "CJ_01.CEL::P-MTAB-3889"^^xsd:string , "CJ_08.CEL::P-MTAB-3889"^^xsd:string , "CJ_14.CEL::P-MTAB-3889"^^xsd:string , "CJ_07.CEL::P-MTAB-3889"^^xsd:string , "CJ_17.CEL::P-MTAB-3889"^^xsd:string , "CJ_05.CEL::P-MTAB-3889"^^xsd:string , "CJ_12.CEL::P-MTAB-3889"^^xsd:string , "CJ_10.CEL::P-MTAB-3889"^^xsd:string , "CJ_16.CEL::P-MTAB-3889"^^xsd:string , "CJ_09.CEL::P-MTAB-3889"^^xsd:string , "CJ_13.CEL::P-MTAB-3889"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3889> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_10.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_17.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_08.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_09.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_16.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_04.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_13.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_03.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_14.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_01.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_07.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_12.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_05.CEL> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/A-AFFY-25>
+      rdf:type efo:EFO_0000269 .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/7991134e-f976-4571-b98b-7a3cda85b5b7>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState>
+      rdf:type owl:Class ;
+      rdfs:label "DiseaseState" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09/factorValues/TREATMENT>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation> , efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "sham implantation" .
+
+vcard:given-name
+      rdf:type owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000311 , obo:BFO_0000019 ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_13.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 13.CEL" , "CJ 13.CEL"^^xsd:string ;
+      dc:identifier "CJ 13.CEL"^^xsd:string ;
+      dc:title "CJ 13.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_13__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor>
+      rdf:type owl:Class ;
+      rdfs:label "implanted tumor" ;
+      rdfs:subClassOf efo:EFO_0000727 .
+
+prov:Activity
+      rdf:type owl:Class .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_18.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 18.biotin" , "Labeled Extract 18.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 18.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 18.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/da44521f-6192-422b-80fa-75ba032e57bf> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/comment/MAGETAB_TimeStamp_Version>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "MAGETAB TimeStamp_Version" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor> , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "implanted tumor" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_11.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_11.CEL" , "CJ_11.CEL"^^xsd:string ;
+      dc:identifier "CJ_11.CEL"^^xsd:string ;
+      dc:title "CJ_11.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116>
+      rdf:type obo:OBI_0100026 , owl:Class ;
+      rdfs:label "Rattus norvegicus" ;
+      rdfs:subClassOf obo:OBI_0100026 .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/conversion>
+      rdf:type prov:Activity ;
+      prov:endedAtTime "2012-04-26T02:04:01.074Z"^^xsd:dateTime ;
+      prov:startedAtTime "2012-04-26T02:03:59.823Z"^^xsd:dateTime ;
+      prov:used <http://www.ebi.ac.uk/microarray-as/ae/files/E-MTAB-104/E-MTAB-104.idf.txt> , <http://www.ebi.ac.uk/microarray-as/ae/files/E-MTAB-104/E-MTAB-104.sdrf.txt> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887" , "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder13::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9906da5d-0695-4b04-a5bf-8cabc54671fd> .
+
+efo:EFO_0001769
+      rdfs:label "in vivo design" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6e8916cd-af3b-4ee9-b55c-9fad2cdebccc> .
+
+<http://purl.org/twc/arrayexpress/P-AFFY-6>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-AFFY-6"^^xsd:string ;
+      rdfs:subClassOf obo:OBI_0200005 ;
+      rdfs:subClassOf
+              [ rdf:type owl:Restriction ;
+                owl:onProperty prov:used ;
+                owl:someValuesFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/term/MicroArraySuite_5.0>
+              ] ;
+      obo:OBI_0000308 obo:OBI_0200005 ;
+      dc:description "Title: Affymetrix CEL analysis. Description:"^^xsd:string ;
+      dc:identifier "P-AFFY-6"^^xsd:string ;
+      dc:title "P-AFFY-6"^^xsd:string .
+
+prov:endedAtTime
+      rdf:type owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_13.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_13.CEL" , "CJ_13.CEL"^^xsd:string ;
+      dc:identifier "CJ_13.CEL"^^xsd:string ;
+      dc:title "CJ_13.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder03::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/4e73ed81-5aaa-4493-aac0-862dd5bee7d6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://www.ebi.ac.uk/microarray-as/ae/files/E-MTAB-104/E-MTAB-104.idf.txt>
+      rdf:type prov:Entity .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/3f229106-ec7d-4407-8580-10d3bbae2186>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6d802db4-7b70-43d7-8ed5-62fa97054168> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder02::P-MTAB-3885::P-MTAB-3886" , "Bladder02::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder02::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder02::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/aa946a65-da21-4f46-bf93-3acc30a61c5d> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_8.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 8.biotin" , "Labeled Extract 8.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 8.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 8.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9dee5430-5cb7-4a68-8632-4998f47873d8> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/5b878a38-7377-412c-89ee-4027ece4b270>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/77da5270-3a98-419a-a181-828b3bcbe6e7> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a4771672-bfe5-4e34-a7bc-af6d4df0d48b>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/44b7fddd-f264-491d-8332-25bc2a8e6516> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder14__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887" , "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder14::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/44b7fddd-f264-491d-8332-25bc2a8e6516> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/implanted_tumor> , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "implanted tumor" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/MicroArraySuite_5.0>
+      rdf:type owl:Class ;
+      rdfs:label "MicroArraySuite 5.0" .
+
+dc:title
+      rdf:type owl:AnnotationProperty , owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_13.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 13.biotin" , "Labeled Extract 13.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 13.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 13.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f01b348c-a42c-4e57-8f48-ca1a064baa37> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f12e1d36-4cac-4c24-9dc5-f776ddf022ca>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/999d6983-02a5-4ed4-b0dc-888ce26ab8c9> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887" , "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder15::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/77eb323c-29cc-4660-807c-fe64660a1299> .
+
+obo:OBI_0000846
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_3.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 3.biotin" , "Labeled Extract 3.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 3.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 3.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/4e73ed81-5aaa-4493-aac0-862dd5bee7d6> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder03__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/72974b58-ed3d-4995-a5af-5e55cf68b7c3>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/667b8aad-4646-45fc-aef9-00a8fbe23528> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE>
+      rdf:type owl:Class ;
+      rdfs:label "DISEASESTATE" .
+
+obo:OBI_0100026
+      rdf:type owl:Class ;
+      rdfs:label "organism" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+mged:dissect
+      rdfs:label "dissect" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder11::P-MTAB-3883::P-MTAB-3886" , "Bladder11::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder11::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder11::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a3c59d32-6056-473b-8964-80d92db2d84f> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_10.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 10.CEL" , "CJ 10.CEL"^^xsd:string ;
+      dc:identifier "CJ 10.CEL"^^xsd:string ;
+      dc:title "CJ 10.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_10__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/9dee5430-5cb7-4a68-8632-4998f47873d8>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/c17e60e4-53f4-4054-8747-494a5bcb3b04> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887> .
+
+efo:EFO_0000761
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , owl:Class ;
+      rdfs:label "normal" ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_17.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 17.CEL" , "CJ 17.CEL"^^xsd:string ;
+      dc:identifier "CJ 17.CEL"^^xsd:string ;
+      dc:title "CJ 17.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_17__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_12.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 12.CEL" , "CJ 12.CEL"^^xsd:string ;
+      dc:identifier "CJ 12.CEL"^^xsd:string ;
+      dc:title "CJ 12.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_12__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder09__P-MTAB-3883__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder09::P-MTAB-3883::P-MTAB-3886" , "Bladder09::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder09::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder09::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/999d6983-02a5-4ed4-b0dc-888ce26ab8c9> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder05::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/aaf7b309-a401-42da-9311-90d87fa72b9a> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000311 , obo:BFO_0000019 ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a5ed1729-f999-4e00-a9df-481f3f04ac8b>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/60856bb2-9c21-48d0-b3b0-badf195c2a37> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887" , "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder12::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/5b878a38-7377-412c-89ee-4027ece4b270> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , obo:OBI_0000011 ;
+      rdfs:label "Bladder16::P-MTAB-3884" , "Bladder16::P-MTAB-3884"^^xsd:string ;
+      dc:identifier "Bladder16::P-MTAB-3884"^^xsd:string ;
+      dc:title "Bladder16::P-MTAB-3884"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3884> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16> .
+
+<http://purl.org/twc/arrayexpress/comment/ArrayExpressReleaseDate>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "ArrayExpressReleaseDate" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/comment/Submitted_Name>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "Submitted Name" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_09__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_09::P-AFFY-6" , "Hybridization_09::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_09::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_09::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_09> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder10::P-MTAB-3883::P-MTAB-3886" , "Bladder10::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder10::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder10::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/8ccdd437-18c3-4d21-bb1d-06debf8c44e2> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_5.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 5.biotin" , "Labeled Extract 5.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 5.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 5.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/aaf7b309-a401-42da-9311-90d87fa72b9a> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_05" , "Hybridization_05"^^xsd:string ;
+      dc:identifier "Hybridization_05"^^xsd:string ;
+      dc:title "Hybridization_05"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder18__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887" , "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder18::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a5ed1729-f999-4e00-a9df-481f3f04ac8b> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f79804b9-e48c-4895-8093-119b117ad2dd>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_12.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_12.CEL" , "CJ_12.CEL"^^xsd:string ;
+      dc:identifier "CJ_12.CEL"^^xsd:string ;
+      dc:title "CJ_12.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder13__P-MTAB-3884>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , obo:OBI_0000011 ;
+      rdfs:label "Bladder13::P-MTAB-3884" , "Bladder13::P-MTAB-3884"^^xsd:string ;
+      dc:identifier "Bladder13::P-MTAB-3884"^^xsd:string ;
+      dc:title "Bladder13::P-MTAB-3884"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3884> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_15" , "Hybridization_15"^^xsd:string ;
+      dc:identifier "Hybridization_15"^^xsd:string ;
+      dc:title "Hybridization_15"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6155be0f-b6e4-4395-b9cf-f5222f0c2b72>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart>
+      rdf:type owl:Class ;
+      rdfs:label "OrganismPart" .
+
+prov:wasDerivedFrom
+      rdf:type rdf:Property , owl:ObjectProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/aa946a65-da21-4f46-bf93-3acc30a61c5d>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      rdfs:label "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887" , "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:identifier "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      dc:title "Bladder01::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3887> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/eeba4009-6ecf-45dc-9444-7c8463e453c0> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_04" , "Hybridization_04"^^xsd:string ;
+      dc:identifier "Hybridization_04"^^xsd:string ;
+      dc:title "Hybridization_04"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_14.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_14.CEL" , "CJ_14.CEL"^^xsd:string ;
+      dc:identifier "CJ_14.CEL"^^xsd:string ;
+      dc:title "CJ_14.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_07.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_07.CEL" , "CJ_07.CEL"^^xsd:string ;
+      dc:identifier "CJ_07.CEL"^^xsd:string ;
+      dc:title "CJ_07.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_08.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 08.CEL" , "CJ 08.CEL"^^xsd:string ;
+      dc:identifier "CJ 08.CEL"^^xsd:string ;
+      dc:title "CJ 08.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_08> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_08__P-AFFY-6> .
+
+<http://www.ebi.ac.uk/microarray-as/ae/files/E-MTAB-104/E-MTAB-104.sdrf.txt>
+      rdf:type prov:Entity .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_14" , "Hybridization_14"^^xsd:string ;
+      dc:identifier "Hybridization_14"^^xsd:string ;
+      dc:title "Hybridization_14"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_14/factorValues/TREATMENT> .
+
+prov:actedOnBehalfOf
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder05/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "ArrayExpress FTP file" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation>
+      rdf:type owl:Class ;
+      rdfs:label "no implantation" ;
+      rdfs:subClassOf efo:EFO_0000727 .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_04/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+efo:EFO_0001756
+      rdfs:label "disease state design" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/CJ_09.CEL__P-MTAB-3889>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3889> , obo:OBI_0000011 ;
+      rdfs:label "CJ_18.CEL::P-MTAB-3889" , "CJ_18.CEL::P-MTAB-3889"^^xsd:string , "CJ_11.CEL::P-MTAB-3889" , "CJ_11.CEL::P-MTAB-3889"^^xsd:string , "CJ_02.CEL::P-MTAB-3889" , "CJ_02.CEL::P-MTAB-3889"^^xsd:string ;
+      dc:identifier "CJ_18.CEL::P-MTAB-3889"^^xsd:string , "CJ_11.CEL::P-MTAB-3889"^^xsd:string , "CJ_02.CEL::P-MTAB-3889"^^xsd:string ;
+      dc:title "CJ_18.CEL::P-MTAB-3889"^^xsd:string , "CJ_11.CEL::P-MTAB-3889"^^xsd:string , "CJ_02.CEL::P-MTAB-3889"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3889> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_18.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_02.CEL> , <http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_11.CEL> .
+
+rdfs:subClassOf
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/f8d1cd51-2d21-44cb-95db-7f78bed2975c>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/a3c59d32-6056-473b-8964-80d92db2d84f> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder11__P-MTAB-3883__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_03" , "Hybridization_03"^^xsd:string ;
+      dc:identifier "Hybridization_03"^^xsd:string ;
+      dc:title "Hybridization_03"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder18/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/2c8d01f1-e146-43d0-81ba-69530cbc69d6>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/590dd61f-2dfe-418b-a72f-5bd8b717b103> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder10" , "Bladder10"^^xsd:string ;
+      dc:identifier "Bladder10"^^xsd:string ;
+      dc:title "Bladder10"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10/characteristic/DiseaseState> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_17" , "Hybridization_17"^^xsd:string ;
+      dc:identifier "Hybridization_17"^^xsd:string ;
+      dc:title "Hybridization_17"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder11" , "Bladder11"^^xsd:string ;
+      dc:identifier "Bladder11"^^xsd:string ;
+      dc:title "Bladder11"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder11/characteristic/OrganismPart> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder06/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/ba75e26c-1f43-4469-b2f5-0291f65cf005>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6a733383-9bb8-41e4-80ba-87da09667d24> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder05::P-MTAB-3885::P-MTAB-3886" , "Bladder05::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder05::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder05::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/2f06add2-43cd-4527-aa5c-3f5ecd87aa9d> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder17::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/774bf109-0560-4f52-bc2e-40fc8d63c92c> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder04__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder04::P-MTAB-3885::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/ba75e26c-1f43-4469-b2f5-0291f65cf005> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11/factorValues/TREATMENT>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation> , efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "sham implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_02" , "Hybridization_02"^^xsd:string ;
+      dc:identifier "Hybridization_02"^^xsd:string ;
+      dc:title "Hybridization_02"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_02/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_17.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 17.biotin" , "Labeled Extract 17.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 17.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 17.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/774bf109-0560-4f52-bc2e-40fc8d63c92c> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_16" , "Hybridization_16"^^xsd:string ;
+      dc:identifier "Hybridization_16"^^xsd:string ;
+      dc:title "Hybridization_16"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_16/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_16.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 16.biotin" , "Labeled Extract 16.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 16.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 16.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/0bd242be-2c7e-40bd-a05c-a376955d1dac> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown>
+      rdf:type owl:Class ;
+      rdfs:label "unknown" ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/MaterialType> .
+
+vcard:workTel
+      rdf:type owl:DatatypeProperty .
+
+prov:wasStartedBy
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/comment/ArrayExpressAccession>
+      rdf:type owl:AnnotationProperty ;
+      rdfs:label "ArrayExpressAccession" ;
+      rdfs:subPropertyOf rdfs:comment .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder16/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000311 , obo:BFO_0000019 ;
+      rdfs:label "cancer" .
+
+foaf:givenName
+      rdf:type owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder02"^^xsd:string , "Bladder02" ;
+      dc:identifier "Bladder02"^^xsd:string ;
+      dc:title "Bladder02"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder02/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder12" , "Bladder12"^^xsd:string ;
+      dc:identifier "Bladder12"^^xsd:string ;
+      dc:title "Bladder12"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/eaead22d-4131-4a21-9277-50b4131038c6>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/2f06add2-43cd-4527-aa5c-3f5ecd87aa9d> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886> .
+
+prov:wasGeneratedBy
+      rdf:type rdf:Property , owl:ObjectProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_11" , "Hybridization_11"^^xsd:string ;
+      dc:identifier "Hybridization_11"^^xsd:string ;
+      dc:title "Hybridization_11"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_11/factorValues/DISEASESTATE> .
+
+<http://semanticscience.org/resource/SIO_000008>
+      rdf:type rdf:Property .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_01" , "Hybridization_01"^^xsd:string ;
+      dc:identifier "Hybridization_01"^^xsd:string ;
+      dc:title "Hybridization_01"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder01::P-MTAB-3885::P-MTAB-3886" , "Bladder01::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder01::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder01::P-MTAB-3885::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/e7aa4740-e65a-40df-8d53-5180b1792e49> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_17/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , efo:EFO_0000311 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , efo:EFO_0000311 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "cancer" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/14581df2-36af-4536-bcb8-182b3cf46222>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/fa8d40ea-dc39-48c6-b919-6642cbae3609> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10/factorValues/DISEASESTATE>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DISEASESTATE> , mged:FactorValue , efo:EFO_0000761 , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/DISEASESTATE> ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder16__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder16::P-MTAB-3884::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/0bd242be-2c7e-40bd-a05c-a376955d1dac> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder03" , "Bladder03"^^xsd:string ;
+      dc:identifier "Bladder03"^^xsd:string ;
+      dc:title "Bladder03"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder03/characteristic/DiseaseState> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/OrganismPart>
+      rdf:type obo:BFO_0000019 , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> , efo:EFO_0000290 ;
+      rdfs:label "bladder" .
+
+<http://purl.org/twc/arrayexpress/P-MTAB-3883>
+      rdf:type obo:OBI_0000272 , owl:Class , prov:Plan ;
+      rdfs:label "P-MTAB-3883"^^xsd:string ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action> ;
+      obo:OBI_0000308 <http://purl.org/twc/arrayexpress/E-MTAB-104/term/specified_biomaterial_action> ;
+      dc:description "The bladder urothelium was first conditioned with an acid rinse (0.1 N HCl for 15 seconds and then 0.1 N KOH for 15 seconds). Subsequently the bladder was drained and flushed three times with 0.30 ml sterile phosphate buffered saline (PBS). The rats were turned 90 degrees every 15 minutes  for 1 hour. After recovery from anaesthesia the rats were placed into standard cages and monitored daily for general health status, including body weight."^^xsd:string ;
+      dc:identifier "P-MTAB-3883"^^xsd:string ;
+      dc:title "P-MTAB-3883"^^xsd:string .
+
+efo:EFO_0001741
+      rdfs:label "submitter" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder13" , "Bladder13"^^xsd:string ;
+      dc:identifier "Bladder13"^^xsd:string ;
+      dc:title "Bladder13"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder13/characteristic/OrganismPart> .
+
+obo:OBI_0666667
+      rdfs:label "nucleic acid extraction" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/arraydatafile/CJ_03.CEL>
+      rdf:type obo:IAO_0000027 ;
+      rdfs:label "CJ_03.CEL" , "CJ_03.CEL"^^xsd:string ;
+      dc:identifier "CJ_03.CEL"^^xsd:string ;
+      dc:title "CJ_03.CEL"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/comment/ArrayExpress_FTP_file>
+              "ftp://ftp.ebi.ac.uk/pub/databases/microarray/data/experiment/MTAB/E-MTAB-104/E-MTAB-104.raw.1.zip" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883__P-MTAB-3886>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      rdfs:label "Bladder12::P-MTAB-3883::P-MTAB-3886" , "Bladder12::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:identifier "Bladder12::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      dc:title "Bladder12::P-MTAB-3883::P-MTAB-3886"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3886> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/77da5270-3a98-419a-a181-828b3bcbe6e7> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_05/factorValues/TREATMENT>
+      rdf:type efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/no_implantation> ;
+      rdfs:label "no implantation" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07/characteristic/DiseaseState>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/DiseaseState> , efo:EFO_0000761 , obo:BFO_0000019 ;
+      rdfs:label "normal" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_07.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 07.CEL" , "CJ 07.CEL"^^xsd:string ;
+      dc:identifier "CJ 07.CEL"^^xsd:string ;
+      dc:title "CJ 07.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_07__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_2.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 2.biotin" , "Labeled Extract 2.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 2.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 2.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/14581df2-36af-4536-bcb8-182b3cf46222> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder02__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_10" , "Hybridization_10"^^xsd:string ;
+      dc:identifier "Hybridization_10"^^xsd:string ;
+      dc:title "Hybridization_10"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_10/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/person/Anderssen_Endre/addr>
+      rdf:type vcard:Address ;
+      rdfs:label "Institutt for Kreftforskning og molekylÃ¦r medisin, Medisinsk teknisk forskningssenter, Olav Kyrres gt. 9, N-7489   Trondheim, Norway" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_01__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_01::P-AFFY-6" , "Hybridization_01::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_01::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_01::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_01> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_06__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_06::P-AFFY-6" , "Hybridization_06::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_06::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_06::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_06> .
+
+dc:date
+      rdf:type owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6d802db4-7b70-43d7-8ed5-62fa97054168>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/8277bd5c-f6ef-42e6-bc21-23ec5be775a1> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder06__P-MTAB-3885__P-MTAB-3886> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/e7aa4740-e65a-40df-8d53-5180b1792e49>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder01__P-MTAB-3885> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder14" , "Bladder14"^^xsd:string ;
+      dc:identifier "Bladder14"^^xsd:string ;
+      dc:title "Bladder14"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/DiseaseState> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder14/characteristic/Organism> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_13" , "Hybridization_13"^^xsd:string ;
+      dc:identifier "Hybridization_13"^^xsd:string ;
+      dc:title "Hybridization_13"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13/factorValues/TREATMENT> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_13/factorValues/DISEASESTATE> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder17__P-MTAB-3884>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3884> , obo:OBI_0000011 ;
+      rdfs:label "Bladder17::P-MTAB-3884" , "Bladder17::P-MTAB-3884"^^xsd:string ;
+      dc:identifier "Bladder17::P-MTAB-3884"^^xsd:string ;
+      dc:title "Bladder17::P-MTAB-3884"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3884> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder17> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder04/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_18__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_18::P-AFFY-6" , "Hybridization_18::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_18::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_18::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_18> .
+
+foaf:familyName
+      rdf:type owl:DatatypeProperty .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder10__P-MTAB-3883>
+      rdf:type prov:Activity , <http://purl.org/twc/arrayexpress/P-MTAB-3883> , obo:OBI_0000011 ;
+      rdfs:label "Bladder10::P-MTAB-3883" , "Bladder10::P-MTAB-3883"^^xsd:string ;
+      dc:identifier "Bladder10::P-MTAB-3883"^^xsd:string ;
+      dc:title "Bladder10::P-MTAB-3883"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3883> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder10> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/590dd61f-2dfe-418b-a72f-5bd8b717b103>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder07> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder01" , "Bladder01"^^xsd:string ;
+      dc:identifier "Bladder01"^^xsd:string ;
+      dc:title "Bladder01"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder01/characteristic/DiseaseState> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder09/characteristic/Organism>
+      rdf:type obo:OBI_0100026 , <http://purl.org/obo/owl/NCBITaxon#NCBITaxon:10116> , obo:BFO_0000019 ;
+      rdfs:label "Rattus norvegicus" .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/77da5270-3a98-419a-a181-828b3bcbe6e7>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder12> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder12__P-MTAB-3883> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15>
+      rdf:type obo:BFO_0000040 ;
+      rdfs:label "Bladder15" , "Bladder15"^^xsd:string ;
+      dc:identifier "Bladder15"^^xsd:string ;
+      dc:title "Bladder15"^^xsd:string ;
+      <http://purl.org/twc/arrayexpress/ontology#hasDiseaseState>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/DiseaseState> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganism>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/Organism> ;
+      <http://purl.org/twc/arrayexpress/ontology#hasOrganismPart>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/OrganismPart> ;
+      <http://semanticscience.org/resource/SIO_000008>
+              <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/OrganismPart> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/Organism> , <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder15/characteristic/DiseaseState> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/scanname/CJ_03.CEL>
+      rdf:type obo:IAO_0000101 ;
+      rdfs:label "CJ 03.CEL" , "CJ 03.CEL"^^xsd:string ;
+      dc:identifier "CJ 03.CEL"^^xsd:string ;
+      dc:title "CJ 03.CEL"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_03> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_03__P-AFFY-6> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder07__P-MTAB-3883__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888>
+      rdf:type <http://purl.org/twc/arrayexpress/P-MTAB-3888> , prov:Activity , obo:OBI_0000011 ;
+      rdfs:label "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888" , "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:identifier "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      dc:title "Bladder07::P-MTAB-3883::P-MTAB-3886::P-MTAB-3887::P-MTAB-3888"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-MTAB-3888> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/83037fe8-b97b-44a7-aad4-db75f05e4858> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Hybridization_15__P-AFFY-6>
+      rdf:type prov:Activity , obo:OBI_0000011 , <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      rdfs:label "Hybridization_15::P-AFFY-6" , "Hybridization_15::P-AFFY-6"^^xsd:string ;
+      dc:identifier "Hybridization_15::P-AFFY-6"^^xsd:string ;
+      dc:title "Hybridization_15::P-AFFY-6"^^xsd:string ;
+      prov:hadPlan <http://purl.org/twc/arrayexpress/P-AFFY-6> ;
+      prov:used <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_15> .
+
+efo:EFO_0000290
+      rdf:type owl:Class , <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> ;
+      rdfs:label "bladder" ;
+      rdfs:subClassOf <http://purl.org/twc/arrayexpress/E-MTAB-104/term/OrganismPart> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/labeledextractname/Labeled_Extract_15.biotin>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/unknown> , chebi:CHEBI_23367 ;
+      rdfs:label "Labeled Extract 15.biotin" , "Labeled Extract 15.biotin"^^xsd:string ;
+      dc:identifier "Labeled Extract 15.biotin"^^xsd:string ;
+      dc:title "Labeled Extract 15.biotin"^^xsd:string ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/6e8916cd-af3b-4ee9-b55c-9fad2cdebccc> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder15__P-MTAB-3884__P-MTAB-3886__P-MTAB-3887__P-MTAB-3888> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12>
+      rdf:type obo:OBI_0400147 ;
+      rdfs:label "Hybridization_12" , "Hybridization_12"^^xsd:string ;
+      dc:identifier "Hybridization_12"^^xsd:string ;
+      dc:title "Hybridization_12"^^xsd:string ;
+      prov:specializationOf
+              <http://purl.org/twc/arrayexpress/A-AFFY-25> ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12/factorValues/DISEASESTATE> , <http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_12/factorValues/TREATMENT> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/67b66259-1abc-420b-bc78-aca9598723e8>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/sourcename/Bladder08> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder08__P-MTAB-3883> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/aaf7b309-a401-42da-9311-90d87fa72b9a>
+      rdf:type prov:Entity ;
+      prov:wasDerivedFrom <http://purl.org/twc/arrayexpress/E-MTAB-104/unknown/eaead22d-4131-4a21-9277-50b4131038c6> ;
+      prov:wasGeneratedBy <http://purl.org/twc/arrayexpress/E-MTAB-104/protocolref/Bladder05__P-MTAB-3885__P-MTAB-3886__P-MTAB-3887> .
+
+<http://purl.org/twc/arrayexpress/E-MTAB-104/hybridizationname/Hybridization_07/factorValues/TREATMENT>
+      rdf:type <http://purl.org/twc/arrayexpress/E-MTAB-104/term/sham_implantation> , efo:EFO_0000727 , mged:FactorValue , <http://purl.org/twc/arrayexpress/E-MTAB-104/factor/TREATMENT> ;
+      rdfs:label "sham implantation" .

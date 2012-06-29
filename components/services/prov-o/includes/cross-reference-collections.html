@@ -11,7 +11,9 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#Collection</p>
-    <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.</p>
+    <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.
+
+A collection is a multiset of entities (it is a multiset, rather than a set, because it may not be possible to verify that two distinct entity identitifiers do not denote, in fact, the same entity).</p>
     </div>
 
     <div about="#example-for-class-Collection" typeof="prov:Entity" class="example">
@@ -34,10 +36,44 @@
         <a title="http://www.w3.org/ns/prov#hadMember" href="#hadMember">prov:hadMember</a> <sup class="type-op" title="object property">op</sup>
       </dd>
 
-      <dt>has subclass</dt>
+      <dt>has subclasses</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
+        <a title="http://www.w3.org/ns/prov#CompleteCollection" href="#CompleteCollection" class="owlclass">prov:CompleteCollection</a>
+        , <a title="http://www.w3.org/ns/prov#EmptyCollection" href="#EmptyCollection" class="owlclass">prov:EmptyCollection</a>
+        , <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
       </dd>
+    </dl>
+  </div>
+
+  <div id="CompleteCollection" class="entity">
+    <h3>
+      Class: <a href="#CompleteCollection"><span class="dotted" title="http://www.w3.org/ns/prov#CompleteCollection">prov:CompleteCollection</span></a>
+      <span class="backlink">
+         back to <a href="#prov-collections-owl-terms-at-a-glance">collections classes</a>
+      </span>
+    </h3>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#CompleteCollection</p>
+
+    <div about="#example-for-class-CompleteCollection" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#CompleteCollection"></span>
+      <strong class="crossreference">Example</strong>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CompleteCollection.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_CompleteCollection.ttl"%}{% endescape %}</pre>
+    </div>
+
+    <dl class="description">
+    <dd class="comment"><p>Indicates that no other member belongs to the collection, that is all the prov:member stated for this CompleteMembership constitutes all members of the collection.</p>
+    </dd>
+
+      <dt>is subclass of</dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
+      </dd>
+      <dt>described with properties:</dt><dd></dd>
+
+      <dt></dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#hadMember" href="#hadMember">prov:hadMember</a>  <sup class="type-op" title="object property">op</sup>      </dd>
     </dl>
   </div>
 
@@ -92,11 +128,6 @@
         <a title="http://www.w3.org/ns/prov#derivedByRemovalFrom" href="#derivedByRemovalFrom">prov:derivedByRemovalFrom</a> <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#dictionary" href="#dictionary">prov:dictionary</a> <sup class="type-op" title="object property">op</sup>
       </dd>
-
-      <dt>has subclass</dt>
-      <dd>
-        <a title="http://www.w3.org/ns/prov#EmptyDictionary" href="#EmptyDictionary" class="owlclass">prov:EmptyDictionary</a>
-      </dd>
     </dl>
   </div>
 
@@ -137,22 +168,22 @@
     </dl>
   </div>
 
-  <div id="EmptyDictionary" class="entity">
+  <div id="EmptyCollection" class="entity">
     <h3>
-      Class: <a href="#EmptyDictionary"><span class="dotted" title="http://www.w3.org/ns/prov#EmptyDictionary">prov:EmptyDictionary</span></a>
+      Class: <a href="#EmptyCollection"><span class="dotted" title="http://www.w3.org/ns/prov#EmptyCollection">prov:EmptyCollection</span></a>
       <span class="backlink">
          back to <a href="#prov-collections-owl-terms-at-a-glance">collections classes</a>
       </span>
     </h3>
-    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#EmptyDictionary</p>
-    <div class="definition"><p>An empty dictionary is a dictionary without member.</p>
+    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#EmptyCollection</p>
+    <div class="definition"><p>An empty collection is a collection without members.</p>
     </div>
 
-    <div about="#example-for-class-EmptyDictionary" typeof="prov:Entity" class="example">
-      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#EmptyDictionary"></span>
+    <div about="#example-for-class-EmptyCollection" typeof="prov:Entity" class="example">
+      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#EmptyCollection"></span>
       <strong class="crossreference">Example</strong>
-      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyDictionary.ttl"
-           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyDictionary.ttl"%}{% endescape %}</pre>
+      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyCollection.ttl"
+           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_EmptyCollection.ttl"%}{% endescape %}</pre>
     </div>
 
     <dl class="description">
@@ -161,8 +192,13 @@
 
       <dt>is subclass of</dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#Dictionary" href="#Dictionary" class="owlclass">prov:Dictionary</a>
+        <a title="http://www.w3.org/ns/prov#Collection" href="#Collection" class="owlclass">prov:Collection</a>
       </dd>
+      <dt>described with properties:</dt><dd></dd>
+
+      <dt></dt>
+      <dd>
+        <a title="http://www.w3.org/ns/prov#hadMember" href="#hadMember">prov:hadMember</a>  <sup class="type-op" title="object property">op</sup>      </dd>
     </dl>
   </div>
 
@@ -250,7 +286,6 @@
       <dt>in range of</dt>
       <dd>
         <a title="http://www.w3.org/ns/prov#pair" href="#pair">prov:pair</a> <sup class="type-op" title="object property">op</sup>
-        <a title="http://www.w3.org/ns/prov#removed" href="#removed">prov:removed</a> <sup class="type-op" title="object property">op</sup>
         <a title="http://www.w3.org/ns/prov#inserted" href="#inserted">prov:inserted</a> <sup class="type-op" title="object property">op</sup>
       </dd>
     </dl>
@@ -273,7 +308,7 @@
     </div>
 
     <dl class="description">
-    <dd class="comment"><p>Described members of a collection, in the form of key-value pairs. The Membership resource can also be annotated with attributes.</p>
+    <dd class="comment"><p>The descriptions on this Membership applies to the memberships of all KeyValuePairs cited by prov:pair.</p>
     </dd>
 
       <dt>is subclass of</dt>
@@ -333,8 +368,7 @@
 
       <dt></dt>
       <dd>
-        <a title="http://www.w3.org/ns/prov#removed" href="#removed">prov:removed</a> <sup class="type-op" title="object property">op</sup>
-        , <a title="http://www.w3.org/ns/prov#removedKey" href="#removedKey">prov:removedKey</a> <sup class="type-dp" title="data property">dp</sup>
+        <a title="http://www.w3.org/ns/prov#removed" href="#removed">prov:removed</a> <sup class="type-dp" title="data property">dp</sup>
       </dd>
 
       <dt></dt>
@@ -550,7 +584,9 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#hadMember</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
+    <div class="definition"><p>A collection is an entity that provides a structure to some constituents, which are themselves entities. These constituents are said to be member of the collections.
+
+A collection is a multiset of entities (it is a multiset, rather than a set, because it may not be possible to verify that two distinct entity identitifiers do not denote, in fact, the same entity).</p>
     </div>
 
     <div about="#example-for-property-hadMember" typeof="prov:Entity" class="example">
@@ -638,7 +674,7 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#pair</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
+    <div class="definition"><p>The KeyValuePair(s) whose membership is being qualified by this instance of prov:Membership.</p>
     </div>
 
     <div about="#example-for-property-pair" typeof="prov:Entity" class="example">
@@ -649,7 +685,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>The key-value pair was part of the membership. A membership can have multiple members.</p>
+      <div class="comment"><p>A membership can have multiple members.</p>
       </div>
       <dl>
 
@@ -692,7 +728,7 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#pairKey</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
+    <div class="definition"><p>Removal is a derivation that transforms a dictionary into another, by removing one or more key-value pairs.</p>
     </div>
 
     <div about="#example-for-property-pairKey" typeof="prov:Entity" class="example">
@@ -738,7 +774,7 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#pairValue</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
+    <div class="definition"><p>The Entity value of a KeyValuePair, which may go into a prov:Dictionary under the key specified by prov:pairKey.</p>
     </div>
 
     <div about="#example-for-property-pairValue" typeof="prov:Entity" class="example">
@@ -795,7 +831,7 @@
     </div>
 
     <div class="description">
-      <div class="comment"><p>If this Dictionary prov:derivedByInsertionFrom another Dictionary :e, then it can qualify how it did perform the Insertion using prov:qualifiedInsertion [ a prov:Insertion;  prov:dictionary :e; prov:inserted [a prov:KeyValuePair; prov:key "k1"^^xsd:string; prov:value :foo] ].</p>
+      <div class="comment"><p>If this Dictionary prov:derivedByInsertionFrom another Dictionary :e, then it can qualify how it did perform the Insertion using prov:qualifiedInsertion [ a prov:Insertion;  prov:dictionary :e; prov:inserted [a prov:KeyValuePair; prov:pairKey "k1"^^xsd:string; prov:pairValue :foo] ].</p>
       </div>
       <dl>
 
@@ -834,7 +870,7 @@
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#qualifiedMembership</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
+    <div class="definition"><p>An optional set of descriptions about the membership of KeyValuePairs in a prov:Dictionary.</p>
     </div>
 
     <div about="#example-for-property-qualifiedMembership" typeof="prov:Entity" class="example">
@@ -923,13 +959,13 @@
 
   <div id="removed" class="entity">
     <h3>
-      Property: <a href="#removed"><span class="dotted" title="http://www.w3.org/ns/prov#removed">prov:removed</span></a> <sup class="type-op" title="object property">op</sup>
+      Property: <a href="#removed"><span class="dotted" title="http://www.w3.org/ns/prov#removed">prov:removed</span></a> <sup class="type-dp" title="data property">dp</sup>
       <span class="backlink">
          back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
       </span>
     </h3>
     <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#removed</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
+    <div class="definition"><p>The key removed from a prov:Dictionary in a Removal, resulting in a new prov:Dictionary.</p>
     </div>
 
     <div about="#example-for-property-removed" typeof="prov:Entity" class="example">
@@ -940,51 +976,6 @@
     </div>
 
     <div class="description">
-      <dl>
-
-        <dt>has domain</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#Removal" href="#Removal" class="owlclass">prov:Removal</a>
-            </li>
-          </ul>
-        </dd>
-
-        <dt>has range</dt>
-        <dd>
-          <ul>
-            <li>
-              <a title="http://www.w3.org/ns/prov#KeyValuePair" href="#KeyValuePair" class="owlclass">prov:KeyValuePair</a>
-            </li>
-          </ul>
-        </dd>
-
-      </dl>
-    </div>
-  </div>
-
-  <div id="removedKey" class="entity">
-    <h3>
-      Property: <a href="#removedKey"><span class="dotted" title="http://www.w3.org/ns/prov#removedKey">prov:removedKey</span></a> <sup class="type-dp" title="data property">dp</sup>
-      <span class="backlink">
-         back to <a href="#prov-collections-owl-terms-at-a-glance">collections properties</a>
-      </span>
-    </h3>
-    <p><strong class="crossreference">IRI:</strong>http://www.w3.org/ns/prov#removedKey</p>
-    <div class="definition"><p>TODO Property needs a definition.</p>
-    </div>
-
-    <div about="#example-for-property-removedKey" typeof="prov:Entity" class="example">
-      <span rel="dcterms:subject" resource="http://www.w3.org/ns/prov#removedKey"></span>
-      <strong class="crossreference">Example</strong>
-      <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_removedKey.ttl"
-           property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/property_removedKey.ttl"%}{% endescape %}</pre>
-    </div>
-
-    <div class="description">
-      <div class="comment"><p>The key removed in a Removal.</p>
-      </div>
       <dl>
 
         <dt>has domain</dt>

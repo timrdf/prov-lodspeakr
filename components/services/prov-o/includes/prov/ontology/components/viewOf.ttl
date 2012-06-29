@@ -1,0 +1,16 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+prov:viewOf
+   a owl:ObjectProperty;
+   rdfs:label "viewOf";
+   rdfs:comment "This entity is a more specific view of a more abstract entity";
+   rdfs:comment "'Invariant View Or Perspective Of' is being abbreviated to 'viewOf' here, for simplicity.";
+   rdfs:domain prov:Entity;
+   rdfs:range  prov:Entity;
+.

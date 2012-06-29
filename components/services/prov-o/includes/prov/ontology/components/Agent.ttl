@@ -1,0 +1,12 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:Agent
+   a owl:Class;
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-Agent>,
+                <http://www.w3.org/mid/CDFD3D2D-6354-4618-BB05-B541B84DC5EB@ISI.EDU>;
+   rdfs:comment "A characterized thing capable of activity.";
+   rdfs:subClassOf prov:Entity;
+.

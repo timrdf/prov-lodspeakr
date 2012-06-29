@@ -1,0 +1,22 @@
+@prefix sd: <http://www.w3.org/ns/sparql-service-description#> .
+@prefix :   <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/components/Account/tbl-jah-in-logd.ttl#> .
+
+:logd_endpoint
+  a sd:Service;
+  sd:url <http://logd.tw.rpi.edu/sparql>;
+  sd:availableGraphDescriptions [ 
+     a sd:GraphCollection;
+     sd:namedGraph :tbl_graph, 
+                   :jah_graph;
+  ];
+.
+
+:tbl_graph 
+  a sd:NamedGraph; 
+  sd:name <http://www.w3.org/People/Berners-Lee/card>;
+.
+
+:jah_graph
+  a sd:NamedGraph; 
+  sd:name <http://www.cs.rpi.edu/~hendler/foaf.rdf>;
+.

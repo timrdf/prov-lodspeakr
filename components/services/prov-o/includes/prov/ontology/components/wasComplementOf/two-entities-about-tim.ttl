@@ -1,0 +1,46 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix sioc: <http://rdfs.org/sioc/ns#> .
+@prefix : <#> .
+
+#
+# A person and their twitter account:
+#
+
+:person_behind_twitter_timrdf
+   a prov:Entity;
+   a foaf:Persion;
+   foaf:holdsAccount :twitter_timrdf;
+   prov:characterized <http://purl.org/twc/id/person/TimLebo>;
+.
+:twitter_timrdf
+   a foaf:OnlineAccount, sioc:UserAccount, :TwitterAccount;
+   foaf:accountName "timrdf";
+   rdfs:seeAlso <http://twitter.com/timrdf>;
+.
+
+#
+# A person and their W3C wiki account:
+#   
+
+:person_behind_w3cprov_tlebo
+   a prov:Entity;
+   a foaf:Person;
+   foaf:holdsAccount :w3cprov_timrdf;
+   prov:characterized <http://data.semanticweb.org/person/timothy-lebo>;
+.
+:w3cprov_timrdf
+   a foaf:OnlineAccount, sioc:UserAccount, :W3C-PROV-WG-Account;
+   foaf:accountName "Tlebo";
+   rdfs:seeAlso <http://www.w3.org/2011/prov/wiki/User:Tlebo>;
+.
+
+#
+# The wasComplementOf relationship is used to denote that two entities complement each other, 
+# in the sense that they each represent a partial, but mutually compatible characterization of the same thing.
+# -http://www.w3.org/TR/2011/WD-prov-dm-20111018
+
+:person_behind_w3cprov_tlebo prov:wasComplementOf :person_behind_twitter_timrdf .

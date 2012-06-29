@@ -1,0 +1,31 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:Activity
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:qualifiedControl;
+      owl:minCardinality 0;
+   ];
+.
+
+prov:Control
+   a owl:Class;
+   rdfs:subClassOf prov:QualifiedEntityInvolvement;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty prov:role;
+      owl:hasValue   prov:controller;
+   ];
+   rdfs:comment "This class is reifying the prov:wasControlledBy triple from the Activity to the Entity: subClassOf onProperty rdf:predicate/owl:annotatedProperty; hasValue prov:wasControlledBy -tlebo 2011-11-06";
+.
+
+prov:qualifiedControl
+   a owl:ObjectProperty;
+   rdfs:subPropertyOf prov:qualifiedInvolvement;
+   rdfs:domain prov:Activity;
+   rdfs:range  prov:Control;
+.

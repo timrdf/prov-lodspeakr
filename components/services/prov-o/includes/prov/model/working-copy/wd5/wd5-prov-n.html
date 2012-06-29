@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+
+<html><head> 
+    <title>WD5 Working Copy of: PROV-N: The Provenance Notation</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+<!-- PM -->
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+     </style>
+
+    <script src="http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js" class="remove"></script> 
+    <script src="http://www.w3.org/2007/OWL/toggles.js" class="remove"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" class="remove"></script>
+
+    <script class="remove">
+      function updateGlossaryRefs() {
+        $('.glossary-ref').each(function(index) {
+          var ref=$(this).attr('ref');
+          $('#'+ref+'.glossary').contents().clone().appendTo($(this));
+          $(this).children('dfn').replaceWith(function(){return $('<span>').addClass('dfn').append($(this).contents())});
+        });
+      }
+      $(document).ready(updateGlossaryRefs);
+    function glossary_include(doc, content) {
+        window.setTimeout(updateGlossaryRefs, 1000);
+        return content;
+    }
+    </script>
+
+    <script class="remove"> 
+      var addExtraReferences = function() {
+          for (var k in extraReferences)
+              berjon.biblio[k] = extraReferences[k];
+      };
+      var extraReferences = {
+        "CLOCK":
+         "Lamport, L. "+
+         "<a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\"><cite>Time, clocks, and the ordering of events in a distributed system</cite></a>."+
+         "Communications of the ACM 21 (7): 558–565. 1978. "+
+         "URL: <a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\">http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf</a> " +
+         "DOI: doi:10.1145/359545.359563.",
+        "CSP":
+         "Hoare, C. A. R. "+
+         "<a href=\"http://www.usingcsp.com/cspbook.pdf\"><cite>Communicating Sequential Processes</cite></a>."+
+         "Prentice-Hall. 1985"+
+         "URL: <a href=\"http://www.usingcsp.com/cspbook.pdf\">http://www.usingcsp.com/cspbook.pdf</a>",
+        "Logic":
+          "W. E. Johnson"+
+          "<a href=\"http://www.ditext.com/johnson/intro-3.html\"><cite>Logic: Part III</cite></a>."+
+          "1924. "+
+          "URL: <a href=\"http://www.ditext.com/johnson/intro-3.html\">http://www.ditext.com/johnson/intro-3.html</a>",
+
+
+
+        "PROV-RDF":
+          "James Cheney"+
+          "<a href=\"http://www.w3.org/2011/prov/wiki/ProvRDF\"><cite>PROV-RDF Mapping </cite></a>"+
+          "2012, Working in Progress. "+
+          "URL: <a href=\"http://www.w3.org/2011/prov/wiki/ProvRDF\">http://www.w3.org/2011/prov/wiki/ProvRDF</a>",
+
+        "PROV-XML":
+          "James Cheney"+
+          "<a href=\"http://www.w3.org/2011/prov/wiki/ProvXML\"><cite>PROV-XML Mapping </cite></a>"+
+          "2012, Working in Progress. "+
+          "URL: <a href=\"http://www.w3.org/2011/prov/wiki/ProvXML\">http://www.w3.org/2011/prov/wiki/ProvXML</a>",
+
+
+        "PROV-DM":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-dm/\"><cite>PART 1: PROV-DM ...</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-dm/\">http://www.w3.org/TR/prov-dm/</a>",
+
+        "PROV-DM-CONSTRAINTS":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-dm-constraints/\"><cite>PROV-DM Constraints</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-dm-constraints/\">http://www.w3.org/TR/prov-dm-constraints/</a>",
+
+
+        "PROV-SEM":
+          "James Cheney "+
+          "<a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\"><cite>Formal Semantics Strawman</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\">http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman</a>",
+
+        "PROV-PRIMER":
+          "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-primer/\"><cite>Prov Model Primer</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
+
+        "PROV-O":
+          "Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, Daniel Garijo, Timothy Lebo, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-o/\"><cite>Provenance Formal Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-o/\">http://www.w3.org/TR/prov-o/</a>",
+
+        "PROV-AQ":
+          "Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles "+
+          "<a href=\"http://www.w3.org/TR/prov-aq/\"><cite>Provenance Access and Query</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-aq/\">http://www.w3.org/TR/prov-aq/</a>",
+      };
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "prov-n",
+ 
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+        //          subtitle   :  "About-to-be-frozen WD4 (for internal release)",
+          subtitle   :  "Initial document for discussion, WD5",
+
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2011-10-18",
+ 
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          copyrightStart: "2011",
+ 
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          //previousPublishDate:  "2011-12-15",
+          //previousMaturity:  "WD",
+ 
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "http://dvcs.w3.org/hg/prov/raw-file/default/model/working-copy/wd5-prov-n.html",
+ 
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+ 
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          extraCSS:             ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css", "./extra.css"],
+ 
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Luc Moreau", url: "http://www.ecs.soton.ac.uk/~lavm/",
+                company: "University of Southampton" },
+              { name: "Paolo Missier", url: "http://www.cs.ncl.ac.uk/people/Paolo.Missier",
+                company: "Newcastle University" },
+          ],
+ 
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+
+          authors:  [
+              { name: "TBD" },
+         ],
+ 
+          
+          // name of the WG
+          wg:           "Provenance Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/2011/prov/",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-prov-wg",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/46974/status",
+
+          // Add extraReferences to bibliography database
+          preProcess: [addExtraReferences],
+      };
+    </script> 
+  </head> 
+  <body> 
+
+    <section id="abstract">
+<p>
+PROV-DM is a data model for provenance that describes
+the entities, people and activities involved in
+producing a piece of data or thing in the world. PROV-DM is
+domain-agnostic, but is equipped with extensibility points allowing
+further domain-specific and application-specific extensions to be
+defined.  PROV-DM is accompanied by PROV-N, a technology-independent
+notation, which allows serializations of PROV-DM
+instances to be created for human consumption, which facilitates the
+mapping of PROV-DM to concrete syntax, and which is used as the basis for a
+formal semantics of PROV-DM.  The purpose of this document is to define the PROV-N notation.
+</p>
+    </section> 
+
+<section id="sotd">
+<b>This document is released internally by the Provenance Working Group.</b>
+<section id="prov-family">
+<!-- <h3>Prov Family of Specifications</h3>-->
+This document is part of the PROV family of specifications, a set of specifications aiming to define the various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.   This document defines  the PROV-DM data model for provenance, accompanied with a notation to express
+instances of that data model for human consumption. Other documents are: 
+<ul>
+<li> PROV-DM-CONSTRAINTS, a set of constraints applying to the PROV-DM data model,</li>
+<li> PROV-N, a notation for provenance aimed at human consumption,</li>
+<li> PROV-O, the provenance ontology:  by means of a mapping of PROV-DM to the OWL2 Web Ontology Language, this specification provides a normative serialization of PROV-DM in RDF</li>
+<li> PROV-AQ, provenance access and query: the mechanisms for accessing and querying provenance; </li>
+<li> PROV-PRIMER: a primer for the PROV-DM provenance data model,</li>
+<li> PROV-SEM: a formal semantics for the PROV-DM provenance data model.</li>
+</ul>
+</section>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="introduction"> 
+<h2>Introduction</h2>
+
+<p> Provenance is defined as a record that describes the people,
+institutions, entities, and activities, involved in producing,
+influencing, or delivering a piece of data or a thing in the world.  Two
+companion specifications respectively define PROV-DM, a data model for
+provenance, allowing such descriptions to be expressed  [[PROV-DM]]  and a set of constraints that provenance descriptions are expectively to satisfy   [[PROV-DM-CONSTRAINTS]].
+</p>
+
+
+<p>In this context,  PROV-N was introduced as a notation to write instances of the data model, as close to its abstract  syntax as possible.   PROV-N is primarily aimed at human consumption. PROV-N allows
+serializations of PROV-DM instances to be written in a technology independent manner.
+So far, PROV-N has been used in the following ways:</p>
+<ul>
+<li> PROV-N is used to provide technology independent illustrations in [[PROV-DM]] and in the definition of PROV-DM constraints [[PROV-DM-CONSTRAINTS]];</li>
+<li> PROV-N is instrumental in defining the mapping mapping of PROV-DM to concrete syntaxes. Mappings translate each PROV-N expression to RDF [[PROV-RDF]] and to XML [[PROV-XML]];</li>
+<li> PROV-N is the basis for a
+formal semantics, in which each PROV-N expression is provided with an interpretation [[PROV-SEM]].
+</ul>
+
+<p>PROV-N was designed to be as close as possible to PROV-DM without the syntactic bias and modelling constraints that concrete technologies bring with them, e.g., XML's choice between attribute and element, RDF's reliance on triples, or JSON's usage of dictionaries. </p>
+
+<p>The purpose of this document is solely to define the syntax of PROV-N.
+For each construct of PROV-DM, a corresponding PROV-N expression is introduced, by way of a production in the PROV-N grammar presented in this document. </p> 
+
+
+<p>This specification is one of several specifications, referred to as the PROV family of specifications, defining the various aspects
+that are necessary to achieve the vision of  inter-operable exchange of provenance:</p>
+<ul>
+<li>A data model for provenance, which is presented in three documents:
+<ul>
+<li> PROV-DM (part I): the provenance data model itself, expressed in natural language  [[PROV-DM]];
+<li> PROV-DM-CONSTRAINTS (part II): constraints underpinning the data model [[PROV-DM-CONSTRAINTS]];
+<li> PROV-N (part III): a notation to express instances of that data model for human consumption (this document);
+</ul> 
+</li>
+
+<li>PROV-O: a normative serialization of PROV-DM in RDF [[!PROV-O]], specified by means of a mapping to the OWL2 Web Ontology Language [[!OWL2-SYNTAX]];</li>
+<li>PROV-AQ: the mechanisms for accessing and querying provenance [[PROV-AQ]];</li>
+<li>PROV-PRIMER: a primer for the PROV approach [[PROV-PRIMER]];</li>
+<li>PROV-SEM: semantics of the PROV-DM data model [[PROV-SEM]];</li>
+</ul>
+
+    <section id="structure-of-this-document"> 
+<h3>Structure of this Document</h3>
+
+<div class='note'>TODO</div>
+
+
+    </section> 
+
+
+<section id="prov-dm-namespace">
+ <h3>PROV-DM Namespace</h3>
+
+
+<p>The PROV-DM namespace is <span class="name">http://www.w3.org/ns/prov/</span>.</p>
+
+<p> All the elements, relations, reserved names and attributes introduced in this specification belong to the PROV-DM namespace.</p>
+
+<div class="issue">
+There is a desire to use a single namespace that all specifications of the PROV family can share to refer to common provenance terms. This is <a href="http://www.w3.org/2011/prov/track/issues/224">ISSUE-224</a>.
+</div>
+
+</section>
+
+    <section id="conventions"> 
+<h3>Conventions</h3>
+
+
+
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+      NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and
+      "OPTIONAL" in this document are to be interpreted as described in
+      [[!RFC2119]].</p>
+    </section> 
+
+</section> 
+
+
+<section id="grammar-notation"> 
+<h3>Design Rationale for PROV-N</h3>
+
+<p>A key goal of PROV-DM is the specification of a machine-processable data model for provenance so that application having obtained the provenance of the resource they manipulate can reason about such provenance. As such, representations of PROV-DM are available in RDF and XML.
+</p>
+
+<p>However, communicating provenance between humans is also important when teaching, illustrating, formalizing, and discussing provenance-related issues.  To this end, PROV-N is a notation that is designed to  write instances of the PROV-DM data model in a compact textual form, without the syntactic bagage and constraints coming with a markup language such as XML or a description framework such as RDF. </p>
+
+<ul>
+<li>PROV-N adopts a <em>functional notation</em> consisting a name and a series of arguments in bracket.</li>
+<div class="anexample">
+<pre class="codeexample" >
+wasDerivedFrom(e2, e1, a, g2, u1)
+</pre>
+</div>
+
+<li>The interpretation of PROV-N arguments is defined according to their <em>position</em> in the list of arguments. This convention allows for a compact notation. </li>
+
+<li><p>
+PROV-N <em>optional arguments</em> need not be specified (when this does not lead to ambiguity).</p>
+<div class="anexample">
+<p>The activity, generation, and usage are specified in the first derivation, whereas they are not in the second.</p>
+<pre class="codeexample" >
+wasDerivedFrom(e2, e1, a, g2, u1)
+wasDerivedFrom(e2, e1)
+</pre>
+</div>
+
+<div class="anexample">
+<p>Activity <span class="name">a1</span> does not have start and end times specified, whereas <span class="name">a2</span> does</p>
+<pre class="codeexample" >
+activity(a1)
+activity(a2, 2011-11-16T16:00:00, 2011-11-16T16:00:01)
+</pre>
+</div>
+</li>
+
+<li><p>For cases where it is desirable to indicate which arguments have not been specified, PROV-N uses  the <em>syntactic marker</em> <span class="name">-</span> for unspecified arguments.</p>
+<div class="anexample">
+<p>The activity, generation, and usage are specified in the first derivation, whereas they are not in the second, but have been explicitly marked as such.</p>
+<pre class="codeexample" >
+wasDerivedFrom(e2, e1, a, g2, u1)
+wasDerivedFrom(e2, e1, a, -, -)
+wasDerivedFrom(e2, e1, -, -, -)
+</pre>
+</div>
+
+<p>Activity <span class="name">a1</span> does not have start and end times specified, but  they are been marked syntactically.</p>
+<div class="anexample">
+<pre class="codeexample" >
+activity(a1, -, -)
+activity(a2, 2011-11-16T16:00:00, 2011-11-16T16:00:01)
+</pre>
+</div>
+</li>
+
+<li><p>The identifier always occur in <em>first position</em>.   For expressions with optional identifier, it may be expressed by the syntactic marker  <span class="name">-</span>.</p>
+
+<p>Derivation has an optional identifier. In the first derivation, the identifier is not expressed. It is explicit in the second, and marked by a <span class="name">-</span> in the third.</p>
+<div class="anexample">
+<pre class="codeexample" >
+wasDerivedFrom(e2, e1)
+wasDerivedFrom(d, e2, e1)
+wasDerivedFrom(-, e2, e1)
+</pre>
+</div>
+
+<li><p>Most expressions have an optional set of attribute-value pairs, which occur in <em>last position</em>, and delimited by square brackets. </p>
+<div class="anexample">
+<pre class="codeexample" >
+activity(ex:a10)
+activity(ex:a10, [])
+activity(ex:a10, [prov:type="createFile"])
+activity(ex:a10, [ex:param="a", ex:param="b"])
+</pre>
+</div>
+<li> PROV-N exposes attributes that PROV-DM provides an interpretation for [[PROV-DM-CONSTRAINTS]] directly as positional arguments of expressions, whereas those for which PROV-DM provides no interpretation need to be expressed among the optional attribute-value pairs.
+</li>
+
+</ul>
+
+
+
+</section>
+
+<section id="grammar-notation"> 
+<h3>Grammar Notation</h3>
+
+<p>This specification includes a grammar for PROV-N expressed using the Extended  Backus-Naur Form (EBNF) notation.</p>
+
+<div class="grammar">
+<p> Each production rule (or <dfn>production</dfn>, for short) in the grammar defines one non-terminal symbol, in the form:</p>
+<p>
+<span class="nonterminal">E</span>&nbsp;::= <em>expression</em>
+</p>
+
+
+Within the expression on the right-hand side of a rule, the following expressions are used to match strings of one or more characters:
+<ul>
+<li> 
+<span class="nonterminal">E</span>: matches term satisfying rule for symbol E.
+</li>
+
+<li> 
+<span class="name">abc</span>: matches the literal string inside the single quotes.
+</li>
+
+
+<li> 
+<span class="optional"><em>expression</em></span>: matches <em>expression</em> or nothing; optional <em>expression</em>.
+</li>
+
+<li> 
+<span class="plus"><em>expression</em></span>: matches one or more occurrences of <em>expression</em>.
+</li>
+
+<li> 
+<span class="star"><em>expression</em></span>: matches zero or more occurrences of <em>expression</em>.
+</li>
+
+</ul>
+</div>
+
+</section>
+
+<section id="components"> 
+<h2>PROV-N Productions per Component</h2>
+
+<p>A PROV-N document allows writing down instances of the PROV-DM data model in a compact textual form. It consists of a sequence of expressions.</p>
+
+
+<p>Instances of the PROV-DM data model are expressed in PROV-N by a text conformant with the toplevel <a>production</a> <span class="nonterminal">expression</span> of the grammar. </p>
+
+<div class='grammar'>
+<table border="0" style="background: white;">
+<tr><td><span class="nonterminal">expression</span> 
+&nbsp;::=<br/><br/><br/><br/><br/><br/></td><td>
+<!-- Component 1-->
+&nbsp;&nbsp;<span class="nonterminal">entityExpression</span> 
+| <span class="nonterminal">activityExpression</span> 
+| <span class="nonterminal">generationExpression</span> 
+| <span class="nonterminal">usageExpression</span> 
+<br/>
+| <span class="nonterminal">startExpression</span> 
+| <span class="nonterminal">endExpression</span> 
+| <span class="nonterminal">communicationExpression</span> 
+| <span class="nonterminal">startByActivityExpression</span> 
+<br/>
+<!-- Component 2-->
+| <span class="nonterminal">agentExpression</span>
+| <span class="nonterminal">attributionExpression</span> 
+| <span class="nonterminal">associationExpression</span> 
+| <span class="nonterminal">responsibilityExpression</span> 
+<br/>
+<!-- Component 3-->
+| <span class="nonterminal">derivationExpression</span> 
+| <span class="nonterminal">revisionExpression</span> 
+| <span class="nonterminal">quotationExpression</span> 
+| <span class="nonterminal">hadOriginalSourceExpression</span> 
+| <span class="nonterminal">traceabilityExpression</span> 
+<br/>
+<!-- Component 4-->
+| <span class="nonterminal">alternateExpression</span> 
+| <span class="nonterminal">specializationExpression</span>
+<br/>
+<!-- Component 5-->
+<!-- Component 6-->
+
+| <span class="nonterminal">noteExpression</span> 
+| <span class="nonterminal">annotationExpression</span> 
+<br/>
+</td></tr>
+</table>
+</div>
+
+
+
+
+
+<section id="component1"> 
+<h3>Component 1: Entities and Activities</h3>
+
+<section id="expression-Entity"> 
+<h4>Entity</h4>
+
+<div class="withPn">
+<p>
+An entity's text matches the <span class="nonterminal">entityExpression</span> production.
+</p>
+
+<div class='grammar'>
+<span class="nonterminal">entityExpression</span>&nbsp;::=  
+<span class="name">entity</span>
+<span class="name">(</span>
+<span class="nonterminal">identifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span><br/><br/>
+<!-- -->
+<span class="nonterminal">optional-attribute-values</span>&nbsp;::= 
+<span class="optional"><span class="name">,</span>
+<span class="name">[</span>
+<span class="nonterminal">attribute-values</span>
+<span class="name">]</span>
+</span><br/>
+<span class="nonterminal">attribute-values</span>&nbsp;::=  
+<span class="nonterminal">attribute-value</span>
+| <span class="nonterminal">attribute-value</span> <span class="name">,</span> <span class="nonterminal">attribute-values</span>
+<br/>
+<span class="nonterminal">attribute-value</span>&nbsp;::=  
+<span class="nonterminal">attribute</span>
+<span class="name">=</span>
+<span class="nonterminal">Literal</span>
+<br/>
+</div>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+entity(tr:WD-prov-dm-20111215)
+entity(tr:WD-prov-dm-20111215, [ prov:type="document" ])
+entity(tr:WD-prov-dm-20111215, [ prov:type="document", ex:version=2 ])
+</pre>
+</div>
+
+
+
+</section> 
+<section id="expression-Activity"> 
+<h4>Activity</h4>
+
+
+<div class="withPn">
+<p>An activity's text matches the <span class='nonterminal'>activityExpression</span> production.</p>
+
+
+
+<div class='grammar'>
+<span class="nonterminal">activityExpression</span>&nbsp;::=  
+<span class="name">activity</span>
+<span class="name">(</span>
+<span class="nonterminal">identifier</span>
+<span class="optional"><span class="name">,</span>
+(<span class="nonterminal">time</span> | <span class="name">-</span> )
+<span class="name">,</span>
+(<span class="nonterminal">time</span> | <span class="name">-</span> )</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+activity(ex:a10)
+activity(ex:a10, -, -)
+activity(ex:a10, -, -, [prov:type="edit"])
+activity(ex:a10, -, 2011-11-16T16:00:00)
+activity(ex:a10, 2011-11-16T16:00:00, -)
+activity(ex:a10, 2011-11-16T16:00:00, -, [prov:type="createFile"])
+activity(ex:a10, 2011-11-16T16:00:00, 2011-11-16T16:00:01, [prov:type="createFile"])
+activity(ex:a10, [prov:type="edit"])
+</pre>
+</div>
+
+
+</section>
+<section id="expression-Generation">
+<h4>Generation</h4>
+
+
+<div class="withPn">
+<p>A generation's text matches the <span class='nonterminal'>generationExpression</span> production.</p>
+
+<div class='grammar'>
+<span class="nonterminal">generationExpression</span>&nbsp;::=  
+<span class="name">wasGeneratedBy</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span>
+( <span class="nonterminal">aIdentifier</span> | <span class="name">-</span> )
+<span class="name">,</span> ( <span class="nonterminal">time</span> | <span class="name">-</span> )
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span><br/>
+</div>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+wasGeneratedBy(tr:WD-prov-dm-20111215, ex:edit1, -)
+wasGeneratedBy(tr:WD-prov-dm-20111215, ex:edit1, 2011-11-16T16:00:00)
+wasGeneratedBy(e2, a1, -, [ex:fct="save"])     
+wasGeneratedBy(e2, -, -, [ex:fct="save"])     
+wasGeneratedBy(ex:g1, tr:WD-prov-dm-20111215, ex:edit1, -)
+wasGeneratedBy(ex:g1, tr:WD-prov-dm-20111215, ex:edit1, 2011-11-16T16:00:00)
+wasGeneratedBy(-, tr:WD-prov-dm-20111215, ex:edit1, -)
+</pre>
+</div>
+
+<p>Even though the production <span class="nonterminal">generationExpression</span> allows for expressions <span class="name">wasGeneratedBy(e2, -, -)</span>  and <span class="name">wasGeneratedBy(-, e2, -, -)</span>, these expressions are not valid in PROV-N.</p>
+
+
+</section>
+
+<section id="expression-Usage">
+<h4>Usage</h4>
+
+
+<p>A usage's text matches the <span class='nonterminal'>usageExpression</span> production.</p>
+
+<div class='grammar'>
+<span class="nonterminal">usageExpression</span>&nbsp;::=  
+<span class="name">used</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">aIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span> ( <span class="nonterminal">time</span> | <span class="name">-</span> ) 
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span><br/>
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+used(ex:act2, ar3:0111, -)
+used(ex:act2, ar3:0111, 2011-11-16T16:00:00)
+used(a1,e1, -, [ex:fct="load"])
+used(ex:u1, ex:act2, ar3:0111, -)
+used(-, ex:act2, ar3:0111, -)
+</pre>
+</div>
+
+<p>Even though the production <span class="nonterminal">usageExpression</span> allows for expressions <span class="name">used(e2, -, -)</span>  and <span class="name">used(-, e2, -, -)</span>, these expressions are not valid in PROV-N.</p>
+
+</section>
+<section id="expression-Start">
+<h4>Start</h4>
+
+<p>An activity start's text matches the <span class="nonterminal">startExpression</span> production of the grammar
+</p>
+
+
+<div class='grammar'>
+<span class="nonterminal">startExpression</span>&nbsp;::= 
+<span class="name">wasStartedBy</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">aIdentifier</span>
+<span class="name">,</span>
+( <span class="nonterminal">eIdentifier</span> | <span class="name">-</span> )
+<span class="name">,</span> ( <span class="nonterminal">time</span> | <span class="name">-</span> )
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+wasStartedBy(ex:act2, ar3:0111, -)
+wasStartedBy(ex:act2, ar3:0111, 2011-11-16T16:00:00)
+wasStartedBy(ex:act2, -, 2011-11-16T16:00:00)
+wasStartedBy(ex:act2, -, -)
+wasStartedBy(ex:act2, -, -, [ex:param="a"])
+wasStartedBy(s, ex:act2, ar3:0111, 2011-11-16T16:00:00)
+wasStartedBy(-, ex:act2, ar3:0111, 2011-11-16T16:00:00)
+</pre>
+</div>
+
+<p>Even though the production <span class="nonterminal">startExpression</span> allows for expressions <span class="name">wasStartedBy(e2, -, -)</span>  and <span class="name">wasStartedBy(-, e2, -, -)</span>, these expressions are not valid in PROV-N.</p>
+
+</section>
+
+<section id="expression-End">
+<h4>End</h4>
+
+<p>An activity  end's text matches the <span class="nonterminal">endExpression</span> production of the grammar.
+</p>
+
+
+<div class='grammar'>
+<span class="nonterminal">endExpression</span>&nbsp;::= 
+<span class="name">wasEndedBy</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">aIdentifier</span>
+<span class="name">,</span>
+( <span class="nonterminal">eIdentifier</span> | <span class="name">-</span> )
+<span class="name">,</span> ( <span class="nonterminal">time</span> | <span class="name">-</span> )
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+wasEndedBy(ex:act2, ex:trigger, -)
+wasEndedBy(ex:act2, ex:trigger, 2011-11-16T16:00:00)
+wasEndedBy(ex:act2, -, 2011-11-16T16:00:00)
+wasEndedBy(ex:act2, -, 2011-11-16T16:00:00, [ex:param="a"])
+wasEndedBy(e,ex:act2, -, -)
+wasEndedBy(e, ex:act2, ex:trigger, 2011-11-16T16:00:00)
+wasEndedBy(-, ex:act2, ex:trigger, 2011-11-16T16:00:00)
+</pre>
+</div>
+
+<p>Even though the production <span class="nonterminal">endExpression</span> allows for expressions <span class="name">wasEndedBy(e2, -, -)</span>  and <span class="name">wasEndedBy(-, e2, -, -)</span>, these expressions are not valid in PROV-N.</p>
+</section>
+
+<section id="expression-wasInformedBy">
+<h4>Communication</h4>
+
+
+<div class="grammar">
+<span class="nonterminal">communicationExpression</span> &nbsp;::= 
+<span class="name">wasInformedBy</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">aIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">aIdentifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+wasInformedBy(ex:a1, ex:a2)
+wasInformedBy(ex:a1, ex:a2, [ex:param1="a", ex:param2="b"])
+wasInformedBy(i, ex:a1, ex:a2)
+wasInformedBy(i, ex:a1, ex:a2, [ex:param1="a", ex:param2="b"])
+wasInformedBy(-, ex:a1, ex:a2)
+wasInformedBy(-, ex:a1, ex:a2, [ex:param1="a", ex:param2="b"])
+</pre>
+</div>
+</section>
+
+<section id="expression-startByActivity">
+<h4>Start by Activity</h4>
+
+<div class="grammar">
+<span class="nonterminal">startByActivityExpression</span> &nbsp;::= 
+<span class="name">wasStartedByActivity</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">aIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">aIdentifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+<br>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+wasStartedByActivity(ex:a1, ex:a2)
+wasStartedByActivity(ex:a1, ex:a2, [ex:param1="a", ex:param2="b"])
+wasStartedByActivity(s,ex:a1, ex:a2)
+wasStartedByActivity(s,ex:a1, ex:a2, [ex:param1="a", ex:param2="b"])
+wasStartedByActivity(-,ex:a1, ex:a2)
+wasStartedByActivity(-,ex:a1, ex:a2, [ex:param1="a", ex:param2="b"])
+</pre>
+</div>
+</section>
+</section>
+
+
+<section id="component2"> 
+<h3>Component 2: Agents and Responsibility</h3>
+<section id="expression-Agent">
+<h4>Agent</h4>
+
+
+<div class="withPn">
+<p>An agent's text matches the <span class="nonterminal">agentExpression</span> production.
+</p>
+
+
+<div class='grammar'>
+<span class="nonterminal">agentExpression</span>&nbsp;::= 
+<span class="name">agent</span>
+<span class="name">(</span>
+<span class="nonterminal">identifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+agent(ag4)
+agent(ag4, [ prov:type="prov:Person" %% xsd:QName, ex:name="David" ])
+</pre>
+</div>
+
+
+</section>
+<section id="expression-attribution">
+<h4>Attribution</h4>
+
+<div class="grammar">
+<span class="nonterminal">attributionExpression</span>&nbsp;::=  
+<span class="name">wasAttributedTo</span> 
+<span class="name">(</span> 
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span> 
+<span class="nonterminal">agIdentifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span> 
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+wasAttributedTo(e,ag)
+wasAttributedTo(e,ag,[ex:license="cc:attributionURL" %% "xsd:QName"])
+wasAttributedTo(id,e,ag,[ex:license="cc:attributionURL" %% "xsd:QName"])
+wasAttributedTo(-,e,ag,[ex:license="cc:attributionURL" %% "xsd:QName"])
+</pre>
+</div>
+
+</section>  <!-- end attribution -->
+
+
+<section id="expression-Association">
+<h4>Association</h4>
+
+<p>An association's text matches the <span class="nonterminal">activityAssociationExpression</span> productions of the grammar defined in this specification
+document.</p>
+
+<div class='grammar'>
+<span class="nonterminal">associationExpression</span>&nbsp;::= 
+<span class="name">wasAssociatedWith</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">aIdentifier</span>
+<span class="name">,</span> 
+( <span class="nonterminal">agIdentifier</span>  | <span class="name">-</span> )
+<span class="name">,</span> 
+( <span class="nonterminal">eIdentifier</span>  | <span class="name">-</span> )
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+
+
+<div class="anexample">
+<pre class="codeexample">
+wasAssociatedWith(ex:a1, -, ex:e1)
+wasAssociatedWith(ex:a1, ex:ag1, -)
+wasAssociatedWith(ex:a1, ex:ag1, ex:e1)
+wasAssociatedWith(ex:a1, ex:ag1, ex:e1, [ex:param1="a", ex:param2="b"])
+wasAssociatedWith(a, ex:a1, -, ex:e1)
+wasAssociatedWith(-, ex:a1, -, ex:e1)
+wasAssociatedWith(-, ex:a1, ex:ag1, -)
+</pre>
+</div>
+
+<p>Even though the production <span class="nonterminal">associationExpression</span> allows for expressions <span class="name">wasAssociatedWith(a, -, -)</span>  and <span class="name">wasAssociatiedWith(-, a, -, -)</span>, these expressions are not valid in PROV-N.</p>
+</section>
+<section id="expression-responsibility">
+<h4>Responsibility</h4>
+
+<div class='grammar'>
+<span class="nonterminal">responsibilityExpression</span>&nbsp;::= 
+<span class="name">actedOnBehalfOf</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">agIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">agIdentifier</span>
+<span class="name">,</span>
+( <span class="nonterminal">aIdentifier</span> | <span class="name">-</span> )
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+actedOnBehalfOf(ag1, ag2, -)
+actedOnBehalfOf(ag1, ag2, a)
+actedOnBehalfOf(ag1, ag2, -, [prov:type="delegation"])
+actedOnBehalfOf(ag2, ag3, a, [prov:type="contract"])
+actedOnBehalfOf(r, ag2, ag3, a, [prov:type="contract"])
+actedOnBehalfOf(-, ag1, ag2, -)
+</pre>
+</div>
+
+
+</section>
+</section>
+<section id="component3"> 
+<h3>Component 3: Derivations</h3>
+<section id="Derivation-Relation">
+<h4>Derivation</h4>
+
+<p>A derivation expression's text matches the <span class='nonterminal'>derivationExpression</span> production.</p>
+
+<div class='grammar'>
+<span class="nonterminal">derivationExpression</span>&nbsp;::= 
+<span class="name">wasDerivedFrom</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">eIdentifier</span>
+<span class="optional">
+<span class="name">,</span>
+( <span class="nonterminal">aIdentifier</span> | <span class="name">-</span> )
+<span class="name">,</span>
+( <span class="nonterminal">gIdentifier</span> | <span class="name">-</span> )
+<span class="name">,</span>
+( <span class="nonterminal">uIdentifier</span> | <span class="name">-</span> )
+</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+wasDerivedFrom(e2, e1)
+wasDerivedFrom(e2, e1, a, g2, u1)
+wasDerivedFrom(e2, e1, -, g2, u1)
+wasDerivedFrom(e2, e1, a, -, u1)
+wasDerivedFrom(e2, e1, a, g2, -)
+wasDerivedFrom(e2, e1, a, -, -)
+wasDerivedFrom(e2, e1, -, -, u1)
+wasDerivedFrom(e2, e1, -, -, -)
+wasDerivedFrom(d, e2, e1, a, g2, u1)
+wasDerivedFrom(-, e2, e1, a, g2, u1)
+</pre>
+</div>
+
+</section>
+<section id="expression-Revision">
+<h4>Revision</h4>
+
+<div class="grammar">
+<span class="nonterminal">revisionExpression</span>&nbsp;::= 
+<span class="name">wasRevisionOf</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span>
+( <span class="nonterminal">agIdentifier</span> | <span class="name">-</span> )
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+wasRevisionOf(tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, -)
+wasRevisionOf(tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, w3:Consortium)
+wasRevisionOf(id,tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, w3:Consortium)
+wasRevisionOf(tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, -)
+wasRevisionOf(id,tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, -)
+wasRevisionOf(-,tr:WD-prov-dm-20111215, tr:WD-prov-dm-20111018, -)
+</pre>
+</div>
+
+
+</section>  <!-- end revision -->
+<section id="expression-quotation">
+<h4>Quotation</h4>
+
+<p>A quotation expression's text matches the <span class="nonterminal">quotationExpression</span> production of the grammar.</p>
+
+<div class="grammar">
+<span class="nonterminal">quotationExpression</span>&nbsp;::=  
+<span class="name">wasQuotedFrom</span> 
+<span class="name">(</span> 
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span> 
+<span class="nonterminal">eIdentifier</span>
+<span class="optional">
+<span class="name">,</span> 
+( <span class="nonterminal">agIdentifier</span> | <span class="name">-</span> )
+<span class="name">,</span> 
+( <span class="nonterminal">agIdentifier</span> | <span class="name">-</span> )
+</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span> 
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+wasQuotedFrom(ex:blockQuote,ex:blog)
+wasQuotedFrom(ex:blockQuote,ex:blog,ex:Luc,ex:Paul)
+wasQuotedFrom(ex:blockQuote,ex:blog,-,ex:Paul)
+wasQuotedFrom(ex:blockQuote,ex:blog,ex:Luc,ex:Paul,[])
+wasQuotedFrom(ex:blockQuote,ex:blog, -, -)
+wasQuotedFrom(id,ex:blockQuote,ex:blog,ex:Luc,ex:Paul)
+wasQuotedFrom(-,ex:blockQuote,ex:blog,ex:Luc,-)
+
+</pre>
+</div>
+
+</section>  <!-- end quotation -->
+
+
+<section id="expression-original-source">
+<h4>Original Source</h4>
+
+<p>An original source record's text matches the <span class="nonterminal">originalSourceExpression</span> production of the grammar.</p>
+
+<div class="grammar">
+<span class="nonterminal">originalSourceExpression</span>&nbsp;::=  
+<span class="name">hadOriginalSource</span> 
+<span class="name">(</span> 
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span> 
+<span class="nonterminal">eIdentifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span> 
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+hadOriginalSource(ex:e1, ex:e2)
+hadOriginalSource(ex:e1, ex:e2,[ex:param="a"])
+hadOriginalSource(-,ex:e1, ex:e2,[ex:param="a"])
+hadOriginalSource(-,ex:e1, ex:e2)
+</pre>
+</div>
+
+</section>  <!-- end original source -->
+<section id="expression-traceability">
+<h4>Traceability</h4>
+
+<p>A traceability expression's text matches the <span class="nonterminal">traceabilityExpression</span> production of the grammar.</p>
+
+
+<div class="grammar">
+<span class="nonterminal">traceabilityExpression</span>&nbsp;::= 
+<span class="name">tracedTo</span>
+<span class="name">(</span>
+<span class="optional">( <span class="nonterminal">identifier</span> | <span class="name">-</span> ) <span class="name">,</span> </span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">eIdentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+tracedTo(e2,e1)
+tracedTo(e2,e1,[ex:param="a"])
+tracedTo(id,e2,e1,[ex:param="a"])
+tracedTo(-,e2,e1)
+</pre>
+</div>
+
+</section>
+</section>
+<section id="component4"> 
+<h3>Component 4: Alternate Entities</h3>
+<section id="expression-alternate">
+<h4>Alternate</h4>
+
+<p>An alternate relation's text matches the <span class="nonterminal">alternateExpression</span> production.</p>
+
+<div class='grammar'>
+   <span class="nonterminal">alternateExpression</span>&nbsp;::=
+  <span class="name">alternateOf</span> 
+<span class="name">(</span> 
+<span class="nonterminal">eIdentifier</span> 
+<span class="name">,</span> 
+<span class="nonterminal">eIdentifier</span> 
+<span class="name">)</span>  
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+alternateOf(tr:WD-prov-dm-20111215,ex:alternate-20111215)
+</pre>
+</div>
+
+
+</section>
+<section id="expression-specialization">
+<h4>Specialization</h4>
+
+<p>A specialization relation's text matches the <span class="nonterminal">specializationExpression</span> production.</p>
+
+<div class='grammar'>
+   <span class="nonterminal">specializationExpression</span>&nbsp;::=
+  <span class="name">specializationOf</span> 
+<span class="name">(</span> 
+<span class="nonterminal">eIdentifier</span> 
+<span class="name">,</span> 
+<span class="nonterminal">eIdentifier</span> 
+<span class="name">)</span>  
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+specializationOf(tr:WD-prov-dm-20111215,tr:prov-dm)
+</pre>
+</div>
+
+</section>
+</section>
+
+<section id="component5"> 
+<h3>Component 5: Collections</h3>
+
+<div class="note">To be checked: Grammar has not been implemented yet.</div>
+
+<section id="expression-collection-insertion">
+<h3>Insertion</h3>
+
+A Derivation-by-Insertion relation's text matches the <span class="nonterminal">derivationByInsertionFromExpression</span> production.</p>
+
+<div class="grammar">
+ <span class="nonterminal">derivationByInsertionFromExpression</span>&nbsp;::=  
+<span class="name">derivedByInsertionFrom</span> 
+ <span class="name">(</span>
+ <span class="optional"><span class="nonterminal">identifier</span>
+ <span class="name">,</span></span>
+<span class="nonterminal">afterIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">beforeIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">keyidentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">validentifier</span>
+<span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+  <span class="name">)</span>
+  <br>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+derivedByInsertionFrom(id, c1, c, "k1", v1)  
+derivedByInsertionFrom(id, c1, c, "k1", v1, [])  
+</pre>
+</div>
+
+
+</section>
+
+<section id="expression-collection-removal">
+<h3>Removal</h3>
+
+A Derivation-by-Removal relation's text matches the <span class="nonterminal">derivationByRemovalFromExpression</span> production.</p>
+
+<div class="grammar">
+ <span class="nonterminal">derivationByRemovalFromExpression</span>&nbsp;::=  
+<span class="name">derivedByRemovalFrom</span> 
+ <span class="name">(</span>
+ <span class="optional"><span class="nonterminal">identifier</span>
+ <span class="name">,</span></span>
+<span class="nonterminal">afterIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">beforeIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">keyidentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+  <span class="name">)</span>
+  <br>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+derivedByRemovalFrom(id, c1, c, "k1")  
+derivedByRemovalFrom(id, c1, c, "k1", [])
+  </pre>
+</div>
+
+</section>
+
+
+<section id="expression-collection-containment">
+<h3>Containment</h3>
+
+A Containment relation's  text matches the <span class="nonterminal">containedExpression</span> production.</p>
+
+<div class="grammar">
+ <span class="nonterminal">containedExpression</span>&nbsp;::=  
+<span class="name">contained</span> 
+ <span class="name">(</span>
+ <span class="optional"><span class="nonterminal">identifier</span>
+ <span class="name">,</span></span>
+<span class="nonterminal">afterIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">keyidentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">validentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+  <span class="name">)</span>
+  <br>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+contained(id, c, "k", v)
+contained(id, c, "k", v,[])  
+</pre>
+</div>
+
+</section>
+
+<section id="collection-convenience-relations">
+<h3>Convenience relations</h3>
+
+A  Derivation-by-Bulk-Insertion relation's  text matches the <span class="nonterminal">derivationByBulkInsertionFromExpression</span> production.</p>
+
+<div class="grammar">
+ <span class="nonterminal">derivationByBulkInsertionFromExpression</span>&nbsp;::=  
+<span class="name">derivedByBulkInsertionFrom</span> 
+ <span class="name">(</span>
+ <span class="optional"><span class="nonterminal">identifier</span>
+ <span class="name">,</span></span>
+<span class="nonterminal">afterIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">beforeIdentifier</span>
+ <span class="name">,</span>
+  <span class="name">{</span>
+  <span class="nonterminal">keyValuePairs</span>
+   <span class="name">}</span>
+<span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+  <span class="name">)</span>
+</div>
+
+<div class="anexample">
+  <pre class="codeexample">
+ derivedByBulkInsertionFrom(c1, c, {("k1", v1), ("k2", v2)})  
+ derivedByBulkInsertionFrom(c1, c, {("k1", v1), ("k2", v2)}), []
+</pre>
+</div>
+
+<p> A Derivation-by-Bulk-Removal relation's  text matches the <span class="nonterminal">derivationByBulkRemovalFromExpression</span> production.</p>
+
+  
+<div class="grammar">
+ <span class="nonterminal">derivationByBulkRemovalFromExpression</span>&nbsp;::=  
+<span class="name">derivedByRemovalFrom</span> 
+ <span class="name">(</span>
+ <span class="optional"><span class="nonterminal">identifier</span>
+ <span class="name">,</span></span>
+<span class="nonterminal">afterIdentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">beforeIdentifier</span>
+ <span class="name">,</span>
+  <span class="name">{</span>
+  <span class="nonterminal">keySet</span>
+   <span class="name">}</span>
+ <span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+  <span class="name">)</span>
+  <br>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+   derivedByBulkRemovalFrom(c3, c1, {"k1", "k3"})               
+   derivedByBulkRemovalFrom(c3, c1, {"k1", "k3"}, [])               
+
+</pre>
+  </div>
+
+
+<p> A Bulk-Containment relation's  text matches the <span class="nonterminal">containedBulkExpression</span> production.</p>
+
+<div class="grammar">
+ <span class="nonterminal">containedBulkExpression</span>&nbsp;::=  
+<span class="name">contained</span> 
+ <span class="name">(</span>
+ <span class="optional"><span class="nonterminal">identifier</span>
+ <span class="name">,</span></span>
+<span class="nonterminal">afterIdentifier</span>
+ <span class="name">,</span>
+  <span class="name">{</span>
+  <span class="nonterminal">keyValuePairs</span>
+   <span class="name">}</span>
+<span class="nonterminal">validentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">optional-attribute-values</span>
+  <span class="name">)</span>
+  <br>
+</div>
+
+<div class="anexample">
+  <pre class="codeexample">
+   containedBulk(c3, {("k4", v4), ("k5", v5)})
+   containedBulk(c3, {("k4", v4), ("k5", v5)},[])  
+</pre>
+</div>
+
+  In the productions above, nonterminals <span class="nonterminal">keyValuePairs</span> and <span class="nonterminal">keySet</span> are defined as follows.
+
+
+  <div class="grammar">
+<span class="nonterminal">keyValuePairs</span> &nbsp;::= 
+<span class="name">(</span>
+    <span class="nonterminal">keyidentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">validentifier</span>
+    <span class="name">)</span>
+|
+<span class="name">(</span>
+  <span class="nonterminal">keyidentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">validentifier</span>
+<span class="name">)</span>
+  <span class="name">,</span>
+<span class="nonterminal">keyValuePairs</span>
+</div>
+
+  <div class="grammar">
+<span class="nonterminal">keySet</span> &nbsp;::= 
+    <span class="nonterminal">keyidentifier</span>
+|
+  <span class="nonterminal">keyidentifier</span>
+ <span class="name">,</span>
+<span class="nonterminal">keySet</span>
+</div>
+
+
+</section>
+
+
+</section>   <!-- end collections-->
+<section id="component6"> 
+<h3>Component 6: Annotations</h3>
+   <section id="expression-note"> 
+<h4>Note</h4>
+
+<div class="withPn">
+<p>A note's text matches the <span class="nonterminal">noteExpression</span> production.
+</p>
+
+
+<div class='grammar'>
+<span class="nonterminal">noteExpression</span>&nbsp;::= 
+<span class="name">note</span>
+<span class="name">(</span>
+<span class="nonterminal">identifier</span>
+<span class="nonterminal">optional-attribute-values</span>
+<span class="name">)</span>
+</div>
+</div>
+
+<div class="anexample">
+<pre class="codeexample">
+note(ann1,[ex:color="blue", ex:screenX=20, ex:screenY=30])
+</pre>
+</div>
+
+   </section> 
+
+<section id="expression-annotation">
+<h4>Annotation</h4>
+
+
+<p>A note's text matches the <span class="nonterminal">noteExpression</span> production.
+</p>
+
+<div class='grammar'>
+<span class="nonterminal">annotationExpression</span>&nbsp;::=  
+<span class="name">hasAnnotation</span>
+<span class="name">(</span>
+<span class="nonterminal">identifier</span>
+<span class="name">,</span>
+<span class="nonterminal">nIdentifier</span>
+<span class="name">)</span>
+</div>
+
+
+<div class="anexample">
+<pre class="codeexample">
+hasAnnotation(tr:WD-prov-dm-20111215,ex2:n1)
+</pre>
+</div>
+
+
+</section>
+<section  id="second-class-elements">
+<section id="expression-NamespaceDeclaration">
+</section>
+<section id="expression-identifier">
+</section>
+<section id="expression-attribute">
+<section id="expression-attribute-role">
+</section>
+<section id="expression-attribute-type">
+</section>
+<section id="expression-attribute-label">
+</section>
+<section id="expression-attribute-location">
+</section>
+</section>
+<section id="expression-value">
+</section>
+</section>
+</section>
+
+
+
+
+
+
+<section  id="subexpressions">
+<h3>Further Expressions</h3>
+
+This section defines further expressions of PROV-N.
+
+
+<section id="expression-NamespaceDeclaration">
+<h3>Namespace Declaration</h3>
+
+
+<div class='grammar'>
+<span class="nonterminal">namespaceDeclarations</span>&nbsp;::=  
+ |  <span class="group"><span class="nonterminal">defaultNamespaceDeclaration</span> | <span class="nonterminal">namespaceDeclaration</span></span> <span class="star"> <span
+class="nonterminal">namespaceDeclaration</span></span><br>
+<span class="nonterminal">namespaceDeclaration</span>&nbsp;::=  
+<span class="name">prefix</span> <span class="nonterminal">prefix</span> <span class="nonterminal">IRI</span><br/>
+<span class="nonterminal">defaultNamespaceDeclaration</span>&nbsp;::=  
+ <span class="name">default</span> <span class="nonterminal">IRI</span> <br/>
+</div>
+
+<p>In PROV-N, the prefix  <span class="name">prov</span> is reserved and denotes the PROV namespace.</p>
+</section>
+
+
+<section id="expression-identifier">
+<h4>Identifier</h4>
+
+
+<div class='grammar'>
+<span class="nonterminal">identifier</span>&nbsp;::=  <span class="nonterminal">qualifiedName</span><br/>
+<span class="nonterminal">eIdentifier</span>&nbsp;::=  <span class="nonterminal">identifier</span>  <em>(intended to denote an entity)</em><br/>
+<span class="nonterminal">aIdentifier</span>&nbsp;::=  <span class="nonterminal">identifier</span>  <em>(intended to denote an activity)</em><br/>
+<span class="nonterminal">agIdentifier</span>&nbsp;::=  <span class="nonterminal">identifier</span>  <em>(intended to denote an agent)</em><br/>
+<span class="nonterminal">gIdentifier</span>::=  <span class="nonterminal">identifier</span> <em>(intended to denote a generation)</em><br/>
+<span class="nonterminal">uIdentifier</span>::=  <span class="nonterminal">identifier</span> <em>(intended to denote a usage)</em><br/>
+<span class="nonterminal">nIdentifier</span>::=  <span class="nonterminal">identifier</span> <em>(intended to denote a note)</em><br/>
+<span class="nonterminal">accIdentifier</span>::=  <span class="nonterminal">identifier</span> <em>(intended to denote an account)</em>
+<br/>
+<br/>
+<span class="nonterminal">qualifiedName</span> &nbsp;::= <span class="nonterminal">prefixedName</span> | <span class="nonterminal">unprefixedName</span><br/>
+<span class="nonterminal">prefixedName</span> &nbsp;::= <span class="nonterminal">prefix</span> <span class="name">:</span> <span class="nonterminal">localPart</span><br/>
+<span class="nonterminal">unprefixedName</span> &nbsp;::= <span class="nonterminal">localPart</span><br/>
+<span class="nonterminal">prefix</span> &nbsp;::= <em>a name without colon compatible with the <a href="http://www.w3.org/TR/2009/REC-xml-names-20091208/#NT-NCName">NC_NAME</a> production
+[[!XML-NAMES]]</em><br/>
+<span class="nonterminal">localPart</span> &nbsp;::= <em>a name without colon compatible with the <a href="http://www.w3.org/TR/2009/REC-xml-names-20091208/#NT-NCName">NC_NAME</a> production
+[[!XML-NAMES]]</em>
+</div>
+
+
+<div class="note">Note that XML NC_NAME don't allow local identifiers to start with a number.  Instead, should we use the productions used in SPARQL or TURTLE?</div>
+
+</section>
+
+<section id="expression-attribute">
+<h4>Attribute</h4>
+
+
+<p>An attribute's text matches the <span class="nonterminal">attribute</span> production.</p>
+
+<div class='grammar'>
+<span class="nonterminal">attribute</span>&nbsp;::=  <span class="nonterminal">qualifiedName</span><br/>
+</div>
+
+<p>The  reserved attributes in the PROV namespace are the following.</p>
+
+<ol>
+<li>  <span class="name">prov:label</span>
+<li>  <span class="name">prov:location</span>
+<li>  <span class="name">prov:role</span>
+<li>  <span class="name">prov:steps</span>
+<li>  <span class="name">prov:type</span>
+</ol>
+
+
+</section>
+
+
+
+
+
+<section id="expression-literal">
+<h4>Literal</h4>
+
+<p>A Literal's text matches the <span class="nonterminal">Literal</span> production.</p>
+
+<div class='grammar'>
+<span class="nonterminal">Literal</span> &nbsp;::= <span class="nonterminal">typedLiteral</span> | <span class="nonterminal">convenienceNotation</span> <br/>
+<span class="nonterminal">typedLiteral</span> ::= <span class="nonterminal">quotedString</span> <span class="name">%%</span> <span class="nonterminal">datatype</span><br/>
+<span class="nonterminal">datatype</span> ::= <span class="nonterminal">qualifiedName</span><br/>
+<span class="nonterminal">convenienceNotation</span> &nbsp;::= <span class="nonterminal">stringLiteral</span> | <span class="nonterminal">intLiteral</span><br/>
+<span class="nonterminal">stringLiteral</span> ::= <span class="nonterminal">quotedString</span><br/>
+<span class="nonterminal">quotedString</span> ::= <em>a finite sequence of characters in which &quot; (U+22) and \ (U+5C) occur only in pairs of the form \&quot; (U+5C, U+22) and \\ (U+5C,
+U+5C), enclosed in a pair of &quot; (U+22) characters</em><br/>
+<span class="nonterminal">intLiteral</span> ::= <em>a finite-length sequence of decimal digits (#x30-#x39) with an optional leading negative sign (-)</em>
+</div>
+
+<p>The non terminals <span class="nonterminal">stringLiteral</span> and
+<span class="nonterminal">intLiteral</span>
+are syntactic sugar for quoted strings with datatype <span class="name">xsd:string</span> and <span class="name">xsd:int</span>, respectively.
+</p>
+
+<p> In particular, a PROV-DM Literal may be an IRI-typed string (with datatype <span class="name">xsd:anyURI</span>);  such IRI has no specific interpretation in the context of PROV-DM.</p>
+
+<section id="expression-types">
+<h4>Reserved Type Values</h4>
+
+<p>The  reserved type values in the PROV namespace are the following.</p>
+
+<ol>
+<li>  <span class="name">prov:AccountEntity</span>
+<li>  <span class="name">prov:SoftwareAgent</span>
+<li>  <span class="name">prov:Person</span>
+<li>  <span class="name">prov:Organization</span>
+<li>  <span class="name">prov:Plan</span>
+<li>  <span class="name">prov:Collection</span>
+<li>  <span class="name">prov:EmptyCollection</span>
+</ol>
+
+</section>
+
+<section id="expression-Time">
+<h4>Time Values</h4>
+
+<p><dfn id="dfn-time">Time instants</dfn> are defined according to xsd:dateTime [[!XMLSCHEMA-2]].</p> 
+
+
+
+
+</section>
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</section>
+</section>
+
+
+
+
+
+<section id="ExpressionContainer">
+<h4>Expression Container</h4>
+
+<p>An <dfn id="dfn-ExpressionContainer">expression container</dfn> is a house-keeping construct of PROV-N capable of packaging up PROV-N <a title="expression">expressions</a> and namespace declarations.  An expression container forms a self-contained package of provenance descriptions for the purpose of <em>exchanging</em> them.  An expression container may be used
+ to  package up PROV-N <a title="record">expressions</a> in response to a request for the provenance of something ([[PROV-AQ]]).</p>
+
+<p> Given its status of house keeping construct for the purpose of exchanging provenance expressions,  an expression container is not defined as a PROV-N expression (<a href="#data-model-concepts">production <span class="nonterminal">expression</span></a>).</p> 
+
+
+<p>An expression container, written <span class="name">container decls  exprs endContainer</span> in PROV-N, contains:
+<ul>
+<li><em>namespaceDeclarations</em>: a set <span class="name">decls</span> of namespace declarations, declaring namespaces and associated prefixes, which can be used in <a
+title="attribute">attributes</a> and  <a title="identifier">identifiers</a> occurring inside  <span class="name">exprs</span>;</li>
+<li><em>expressions</em>:  a non-empty set of expressions <span class="name">exprs</span>.</li>
+</ul>
+
+<p>An expression container's text matches the <span class="nonterminal">expressionContainer</span> production.</p>
+
+
+<div class='grammar'>
+<span class="nonterminal">expressionContainer</span> ::=  
+<span class="name">container</span> 
+<span class="nonterminal">namespaceDeclarations</span> 
+<span class="plus"> <span class="nonterminal">expression</span> </span>
+<span class="name">endContainer</span> 
+</div>
+
+
+<div class="anexample">
+<p>
+The following container contains expressions related to the provenance of entity 
+<span class="name">e2</span>.
+</p>
+<pre class="codeexample">
+container
+
+  prefix ex: http://example.org/,
+
+  entity(e2, [ prov:type="File", ex:path="/shared/crime.txt", ex:creator="Alice", 
+             ex:content="There was a lot of crime in London last month."])
+  activity(a1, 2011-11-16T16:05:00,,[prov:type="edit"])
+  wasGeneratedBy(e2, a1, [ex:fct="save"])     
+  wasAssociatedWith(a1, ag2, [prov:role="author"])
+  agent(ag2, [ prov:type="prov:Person" %% xsd:QName, ex:name="Bob" ])
+
+endContainer
+</pre>
+<p>This container could for instance be returned as the result of a query to a provenance store for the provenance of entity <span class="name">e2</span> [[PROV-AQ]].  
+</p>
+</div>
+
+
+
+<div class='issue'>
+Clarify what records are. This is <a href="http://www.w3.org/2011/prov/track/issues/208">ISSUE-208</a>. </div>
+</section>
+
+
+<section  id="account">
+<h3>Account</h3>
+
+<p>PROV-DM has introduced a notion of account by which a set of provenance descriptions can be bundled up and named.  PROV-DM <em>assumes</em> the existence of mechanisms to implement accounts, but such mechanisms remain outside its scope.  It is suggested that specific serializations may offer solutions to name bundles of descriptions. </p>
+
+<p>Given that the primary motivation for PROV-N is to provide a notation aimed at human consumption, it is therefore appropriate to introduce a notation for accounts, which would include an account name and a bundle of expressions.</p>
+
+
+
+<p>An account, written <span class="name">account(id, exprs)</span> in PROV-N, contains:</p>
+<ul>
+<li><em>id</em>: an identifier <span class="name">id</span>  that identifies this account;</li>
+<li><em>expressions</em>: a set <span class="name">exprs</span> of expressions;</li>
+</ul>
+
+<p>In PROV-N, an account's text matches the <span class="nonterminal">accountExpression</span> production of the grammar.</p>
+
+<div class='grammar'>
+<span class="nonterminal">accountExpression</span>&nbsp;::=  
+<span class="name">account</span> 
+<span class="name">(</span> 
+<span class="nonterminal">identifier</span> 
+<span class="name">,</span> 
+<span class="plus">
+<span class="nonterminal">expression</span> </span>
+<span class="name">)</span> 
+</div>
+
+<p>It is also useful to package up one or more account expressions in an expression container, for interchange purpose. Hence,  <span class="nonterminal">expressionContainer</span> is revised as follows. </p>
+
+<div class='grammar'>
+<span class="nonterminal">expressionContainer</span> ::=  
+<span class="name">container</span> 
+<span class="nonterminal">namespaceDeclarations</span> 
+<span class="plus"> <span class="nonterminal">expression</span> </span>
+<span class="name">endContainer</span>   <br/>
+| <span class="name">container</span> 
+<span class="nonterminal">namespaceDeclarations</span> 
+<span class="plus"> <span class="nonterminal">accountExpression</span> </span>
+<span class="name">endContainer</span>  
+</div>
+
+
+
+<div class="anexample">
+<p>
+The following container </p>
+<pre class="codeexample">
+container
+  prefix ex: http://example.org/,
+
+  account(ex:acc1,...)
+  account(ex:acc2,...)
+endContainer
+</pre>
+<p> illustrates how two accounts with identifiers <span class="name">ex:acc1</span> and <span class="name">ex:acc2</span> can be returned in a PROV-N serialization of the provenance of
+something.
+</p>
+</div>
+
+
+<div class="anexample">
+<p>
+The following container </p>
+<pre class="codeexample">
+container
+  prefix ex: http://example.org/,
+  ...
+
+  account(ex:acc1,
+      entity(tr:WD-prov-dm-20111018, [ prov:type="pr:RecsWD" %% xsd:QName ])
+      entity(tr:WD-prov-dm-20111215, [ prov:type="pr:RecsWD" %% xsd:QName ])
+      ...
+      wasAssociatedWith(ex:pub2, w3:Consortium  @ pr:rec-advance))
+
+  account(ex:acc2,
+      entity(ex:acc1, [prov:type="prov:AccountEntity" %% xsd:QName ])
+      wasAttributedTo(ex1:acc1,w3:Consortium))
+
+endContainer
+</pre>
+<p> illustrates a first account, with identifier <span class="name">ex:acc1</span>, containing expressions describing the provenance  of the technical report <span class="name">tr:WD-prov-dm-20111215</span>, and a second account <span class="name">ex:acc2</span>, describing the provenance of the first.  In account <span class="name">ex:acc2</span>, <span class="name">ex:acc1</span> is the identifier of an entity of type <span class="name">prov:AccountEntity</span>.
+</p>
+</div>
+
+</section>
+
+</body>
+
+</html>

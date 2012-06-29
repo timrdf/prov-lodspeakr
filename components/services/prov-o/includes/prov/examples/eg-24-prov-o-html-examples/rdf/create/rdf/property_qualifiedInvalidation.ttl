@@ -1,0 +1,19 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:the-Painter 
+   a prov:Entity, :Painting;
+   rdfs:label "Le Peintre"@fr, "The Painter"@en;
+   prov:wasAttributedTo <http://dbpedia.org/resource/Pablo_Picasso>;
+
+   prov:wasInvalidatedBy :swissair_Flight_111_crash;
+   prov:qualifiedInvalidation [
+      a prov:Invalidation;
+      prov:activity    :swissair_Flight_111_crash;
+      prov:atTime      "2012-09-02T01:31:00Z";
+      prov:atLocation  <http://purl.org/twc/location/Swissair-Flight-111-crash>;
+   ];
+. 

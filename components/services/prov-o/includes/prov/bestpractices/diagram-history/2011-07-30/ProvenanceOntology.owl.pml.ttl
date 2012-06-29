@@ -1,0 +1,169 @@
+@prefix rdfs:       <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:        <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms:    <http://purl.org/dc/terms/> .
+@prefix pmlp:       <http://inference-web.org/2.0/pml-provenance.owl#> .
+@prefix pmlj:       <http://inference-web.org/2.0/pml-justification.owl#> .
+@prefix foaf:       <http://xmlns.com/foaf/0.1/> .
+@prefix sioc:       <http://rdfs.org/sioc/ns#> .
+@prefix oboro:      <http://obofoundry.org/ro/ro.owl#> .
+@prefix oprov:      <http://openprovenance.org/ontology#> .
+@prefix hartigprov: <http://purl.org/net/provenance/ns#> .
+@prefix irw:        <http://www.ontologydesignpatterns.org/ont/web/irw.owl#> .
+@prefix nfo:        <http://www.semanticdesktop.org/ontologies/nfo/#> .
+@prefix conv:       <http://purl.org/twc/vocab/conversion/> .
+@prefix httphead:   <http://inference-web.org/registry/MPR/HTTP_1_1_HEAD.owl#> .
+@prefix httpget:    <http://inference-web.org/registry/MPR/HTTP_1_1_GET.owl#> .
+@prefix httppost:   <http://inference-web.org/registry/MPR/HTTP_1_1_POST.owl#> .
+
+<http://tw.rpi.edu/instances/TimLebo> foaf:holdsAccount <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot> .
+<http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>
+   a foaf:OnlineAccount;
+   foaf:accountName "lebot";
+   dcterms:isPartOf <http://purl.org/twc/id/machine/lebot/MacBookPro6_2>;
+   sioc:account_of  <http://tw.rpi.edu/instances/TimLebo>;
+.
+
+<http://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl>
+   a pmlp:Source;
+   irw:redirectsTo <https://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl>;
+.
+
+<https://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl>
+   a pmlp:Source;
+.
+
+<ProvenanceOntology.owl>
+   a pmlp:Information;
+   pmlp:hasReferenceSourceUsage <sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>;
+.
+<ProvenanceOntology.owl>
+   a pmlp:Information;
+   nfo:hasHash <md5_7073dfcd0cfec96ebf9f5731d7003f3a_time_1312051789>;
+.
+<md5_7073dfcd0cfec96ebf9f5731d7003f3a_time_1312051789>
+   a nfo:FileHash; 
+   dcterms:date      "2011-07-30T14:49:49-04:00"^^xsd:dateTime;
+   nfo:hashAlgorithm "md5";
+   nfo:hashValue     "7073dfcd0cfec96ebf9f5731d7003f3a";
+.
+
+<nodeSet_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <ProvenanceOntology.owl>;
+   pmlj:isConsequentOf <inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>;
+.
+<inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>;
+   pmlj:hasInferenceEngine conv:curl_md5_5670dffdc5533a4c57243fc97b19a654;
+   pmlj:hasInferenceRule   httpget:HTTP_1_1_GET;
+   oboro:has_agent          <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   hartigprov:involvedActor <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+.
+
+<sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <https://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl>;
+   pmlp:hasUsageDateTime "2011-07-30T14:49:48-04:00"^^xsd:dateTime;
+.
+
+<wasControlledBy_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>
+   a oprov:WasControlledBy;
+   oprov:cause  <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   oprov:effect <inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_content>;
+   oprov:endTime "2011-07-30T14:49:48-04:00"^^xsd:dateTime;
+.
+ 
+<info_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>
+   a pmlp:Information, conv:HTTPHeader;
+   pmlp:hasRawString """HTTP/1.1 301 Moved Permanently
+Date: Sat, 30 Jul 2011 18:49:44 GMT
+Server: Apache/2.2.16 (Debian)
+Location: https://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl
+Vary: Accept-Encoding
+Content-Type: text/html; charset=iso-8859-1
+""";
+   pmlp:hasReferenceSourceUsage <sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>;
+.
+ 
+<nodeSet_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <info_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>;
+   pmlj:isConsequentOf <inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>;
+.
+<inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>;
+   pmlj:hasInferenceEngine conv:curl_md5_5670dffdc5533a4c57243fc97b19a654;
+   pmlj:hasInferenceRule   httphead:HTTP_1_1_HEAD;
+   oboro:has_agent          <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   hartigprov:involvedActor <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+.
+
+<sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <http://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl>;
+   pmlp:hasUsageDateTime "2011-07-30T14:49:48-04:00"^^xsd:dateTime;
+.
+<wasControlledBy_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>
+   a oprov:WasControlledBy;
+   oprov:cause  <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   oprov:effect <nodeSet_cb797ad2-41db-473d-bc4b-54a52d1ab96d_url_header>;
+   oprov:endTime "2011-07-30T14:49:48-04:00"^^xsd:dateTime;
+.
+
+<info_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>
+   a pmlp:Information, conv:HTTPHeader;
+   pmlp:hasRawString """HTTP/1.1 200 Script output follows
+Date: Sat, 30 Jul 2011 18:49:48 GMT
+Server: Apache/2.2.16 (Debian)
+Content-Disposition: inline; filename="ProvenanceOntology.owl"
+Content-Length: 5661
+Vary: Accept-Encoding
+Content-Type: text/plain; charset="UTF-8"
+X-Pad: avoid browser bug
+""";
+   pmlp:hasReferenceSourceUsage <sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>;
+.
+
+<nodeSet_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>
+   a pmlj:NodeSet;
+   pmlj:hasConclusion <info_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>;
+   pmlj:isConsequentOf <inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>;
+.
+<inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>
+   a pmlj:InferenceStep;
+   pmlj:hasIndex 0;
+   pmlj:hasAntecedentList ();
+   pmlj:hasSourceUsage     <sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>;
+   pmlj:hasInferenceEngine conv:curl_md5_5670dffdc5533a4c57243fc97b19a654;
+   pmlj:hasInferenceRule   httphead:HTTP_1_1_HEAD;
+   oboro:has_agent          <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   hartigprov:involvedActor <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+.
+
+<sourceUsage_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>
+   a pmlp:SourceUsage;
+   pmlp:hasSource        <https://dvcs.w3.org/hg/prov/raw-file/33af4c38d469/ontology/ProvenanceOntology.owl>;
+   pmlp:hasUsageDateTime "2011-07-30T14:49:48-04:00"^^xsd:dateTime;
+.
+<wasControlledBy_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>
+   a oprov:WasControlledBy;
+   oprov:cause  <http://purl.org/twc/id/machine/lebot/MacBookPro6_2#lebot>;
+   oprov:effect <inferenceStep_cb797ad2-41db-473d-bc4b-54a52d1ab96d_redirected_url_header>;
+   oprov:endTime "2011-07-30T14:49:48-04:00"^^xsd:dateTime;
+.
+
+conv:curl_md5_5670dffdc5533a4c57243fc97b19a654
+   a pmlp:InferenceEngine, conv:Curl;
+   dcterms:identifier "md5_5670dffdc5533a4c57243fc97b19a654";
+   dcterms:description """curl 7.19.7 (universal-apple-darwin10.0) libcurl/7.19.7 OpenSSL/0.9.8r zlib/1.2.3
+Protocols: tftp ftp telnet dict ldap http file https ftps 
+Features: GSS-Negotiate IPv6 Largefile NTLM SSL libz """;
+.
+
+conv:Curl rdfs:subClassOf pmlp:InferenceEngine .

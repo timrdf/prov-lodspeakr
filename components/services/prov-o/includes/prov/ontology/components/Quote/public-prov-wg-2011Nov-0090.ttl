@@ -1,0 +1,28 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+:what_luc_said
+   a prov:Entity;
+   rdf:value
+"""Remember that an entity is a perspective on a thing.
+So, here, we can have multiple perspectives:
+
+e1 Luc
+e2 Luc at age=5
+e3 Luc at age=10
+
+e3 and e2 have a same attribute name age, but different values. So they 
+must be different entities,i.e. perspectives, over human being e1.""";
+   prov:wasQuoteOf <http://lists.w3.org/Archives/Public/public-prov-wg/2011Nov/0090.html>;
+   prov:qualifiedQuotation [
+      a prov:Quotation;
+      prov:hadQualifiedEntity <http://lists.w3.org/Archives/Public/public-prov-wg/2011Nov/0090.html>;
+      prov:hadQuoter          <http://purl.org/twc/id/person/TimLebo>;
+      prov:hadQuotee          <http://data.semanticweb.org/person/luc-moreau>;
+   ];
+.

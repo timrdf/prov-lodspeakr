@@ -1,0 +1,59 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time:    <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+:e_1
+   rdfs:seeAlso <http://lists.w3.org/Archives/Public/public-prov-wg/2011Nov/0090.html>;
+   dcterms:description
+""" Issue: If two sculptors collaborate on creating a human figurine statue entity e1: sculptor A by PE pe1 creates the arms and legs of e1 and sculptor B by PE pe2 creates the head and upper-body part of e1 then both pe1 and pe2 create e1. They may or may not be synchronized. How can we infer that pe1 = pe2 (whether in one account or across accounts)?
+  
+
+I think you've articulated well the case that A and B create different parts.  If they do this at different times, you will have
+statue without head, statue with head without leg, statue with head with leg.
+
+The constrained with accounts on generation-unicity is enforcing some structure in the provenance records, so that if really pe1<>pe2, then
+they should generate the statue in different records.""";
+
+   a :Human_Figurine_Statue, prov:Entity;
+.
+
+:sculptor_a
+   a :Sculptor, prov:Agent;
+.
+
+:pe_1
+   a prov:ProcessExecution;
+   prov:wasControlledBy :sculptor_a;
+   prov:generated :arms, :legs;
+.
+
+:sculptor_b
+   a :Sculptor, prov:Agent;
+.
+
+:pe_2
+   a prov:ProcessExecution;
+   prov:wasControlledBy :sculptor_b;
+   prov:generated :head, :upper-body;
+.
+
+:statue_without_head
+   a prov:Entity;
+.
+
+:statue_with_head_without_legs
+   a prov:Entity;
+   prov:wasDerivedFrom :statue_without_head, 
+                       :head;
+.
+
+:statue_with_head_with_legs
+   a prov:Entity;
+   prov:wasDerivedFrom :statue_with_head_without_legs, 
+                       :legs;
+.

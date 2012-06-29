@@ -1,0 +1,38 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix dcat:    <http://www.w3.org/ns/dcat#> .
+@prefix void:    <http://rdfs.org/ns/void#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix :        <http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-18-opposite-of-generated/rdf/eg-18-opposite-of-generated.ttl#> .
+
+:buy_one_beer_get_one_free_one_per_customer_offer_valid_during_happy_hour
+  a prov:Entity;
+  prov:wasAttributedTo :proprietor;
+
+  prov:expiredAtTime "2012-03-10T18:00:00-05:00"^^xsd:dateTime;  # unqualified form
+  prov:qualifiedExpiration [ 
+       a prov:Expiration, prov:InstantaneousEvent;  # THIS IS NOT AN INVOLVEMENT
+       prov:atTime "2012-03-10T18:00:00-05:00"^^xsd:dateTime;   # qualified form
+  ];
+  foaf:page <http://www.w3.org/2011/prov/wiki/Eg-18-opposite-of-generated>;
+.
+
+
+:buy_one_beer_get_one_free_one_per_customer_offer_valid_during_happy_hour       # same entity as above!
+  a prov:Entity;
+  prov:wasAttributedTo :proprietor;  # same generous guy.
+
+  prov:consumedBy :paolo_got_one_free_today; # unqualified form, destructive parallel to prov:wasGeneratedBy, "active" parallel to expiry.
+
+  prov:qualifiedConsumption [                                   # qualified form
+       a prov:Consumption, prov:ActivityInvolvement, prov:InstantaneousEvent;
+       prov:activity :paolo_got_one_free_today;
+       prov:atTime "2012-03-10T17:15:00-05:00"^^xsd:dateTime;   
+       rdfs:comment "Paulo consumed his beer 45 minutes before the offer expired.";
+  ];
+. 

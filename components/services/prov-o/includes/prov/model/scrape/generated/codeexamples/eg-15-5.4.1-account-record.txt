@@ -1,0 +1,6 @@
+
+account(ex:acc1,
+        http://example.org/id,
+          entity(e,[prov:type="person", ex:age=20])
+          entity(e,[prov:type="person", ex:age=30])
+          ...)

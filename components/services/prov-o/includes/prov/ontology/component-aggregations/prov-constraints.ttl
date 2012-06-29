@@ -1,0 +1,23 @@
+# http://dvcs.w3.org/hg/prov/file/tip/ontology/component-aggregations/prov-constraints.ttl
+#
+# This is the component aggregation list that creates the constraint ontology.
+#
+# For a description of the component aggregation design, see:
+#    http://www.w3.org/2011/prov/wiki/PROV_OWL_ontology_components
+#
+# Created by tlebo 2012-01-05
+
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+@base <http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/component-aggregations/> .
+
+<> 
+   a owl:Ontology;
+   owl:imports 
+
+      <../components/Event.ttl>,
+#      <http://dvcs.w3.org/hg/prov/raw-file/63887c796f43/ontology/components/QualifiedInvolvement.ttl>, # A specific version.
+#      <../components/Usage.ttl>,                                                                       # The latest version.
+.

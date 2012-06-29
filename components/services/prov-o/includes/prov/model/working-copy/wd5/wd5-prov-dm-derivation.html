@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html><head> 
+    <title>PROV-DM PROPOSAL on Derivation</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+    <!-- 
+      === NOTA BENE ===
+      For the three scripts below, if your spec resides on dev.w3 you can check them
+      out in the same tree and use relative links so that they'll work offline,
+     -->
+<!-- PM -->
+    <style type="text/css">
+      .note { font-size:small; margin-left:50px }
+     </style>
+
+    <script src="http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js" class="remove"></script> 
+    <script src="http://www.w3.org/2007/OWL/toggles.js" class="remove"></script> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" class="remove"></script>
+
+    <script src="../glossary.js" class="remove"></script>
+
+    <script class="remove">
+      function updateGlossaryRefs() {
+        $('.glossary-ref').each(function(index) {
+          var ref=$(this).attr('ref');
+          var span=$(this).attr('withspan')
+          $('#'+ref+'.glossary').contents().clone().appendTo($(this));
+          $(this).attr('prov:hadOriginalSource',glossary_hg);
+          if (span) {
+            $(this).children('dfn').replaceWith(function(){return $('<span>').addClass('dfn').append($(this).contents())});
+          }
+        });
+      }
+      $(document).ready(function(){
+        // if glossary is in a string:
+        $('#glossary_div').html(glossary_string)
+        updateGlossaryRefs();
+      });
+
+    </script>
+
+    <script class="remove"> 
+      var addExtraReferences = function() {
+          for (var k in extraReferences)
+              berjon.biblio[k] = extraReferences[k];
+      };
+      var extraReferences = {
+        "CLOCK":
+         "Lamport, L. "+
+         "<a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\"><cite>Time, clocks, and the ordering of events in a distributed system</cite></a>."+
+         "Communications of the ACM 21 (7): 558–565. 1978. "+
+         "URL: <a href=\"http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf\">http://research.microsoft.com/users/lamport/pubs/time-clocks.pdf</a> " +
+         "DOI: doi:10.1145/359545.359563.",
+        "CSP":
+         "Hoare, C. A. R. "+
+         "<a href=\"http://www.usingcsp.com/cspbook.pdf\"><cite>Communicating Sequential Processes</cite></a>."+
+         "Prentice-Hall. 1985"+
+         "URL: <a href=\"http://www.usingcsp.com/cspbook.pdf\">http://www.usingcsp.com/cspbook.pdf</a>",
+        "Logic":
+          "W. E. Johnson"+
+          "<a href=\"http://www.ditext.com/johnson/intro-3.html\"><cite>Logic: Part III</cite></a>."+
+          "1924. "+
+          "URL: <a href=\"http://www.ditext.com/johnson/intro-3.html\">http://www.ditext.com/johnson/intro-3.html</a>",
+        "PROV-SEM":
+          "James Cheney "+
+          "<a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\"><cite>Formal Semantics Strawman</cite></a>. "+
+          "2011, Work in progress. "+
+          "URL: <a href=\"http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman\">http://www.w3.org/2011/prov/wiki/FormalSemanticsStrawman</a>",
+
+        "PROV-PRIMER":
+          "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-primer/\"><cite>Prov Model Primer</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
+
+        "PROV-O":
+          "Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, Daniel Garijo, Timothy Lebo, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-o/\"><cite>Provenance Formal Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-o/\">http://www.w3.org/TR/prov-o/</a>",
+
+
+        "PROV-DM":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-dm/\"><cite>PART 1: PROV-DM ...</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-dm/\">http://www.w3.org/TR/prov-dm/</a>",
+
+
+        "PROV-DM-CONSTRAINTS":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-dm-constraints/\"><cite>PROV-DM Constraints</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-dm-constraints/\">http://www.w3.org/TR/prov-dm-constraints/</a>",
+
+        "PROV-ASN":
+          "Luc Moreau and Paolo Missier (eds.) ... "+
+          "<a href=\"http://www.w3.org/TR/prov-asn/\"><cite>PROV-ASN ....</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-asn/\">http://www.w3.org/TR/prov-asn/</a>",
+
+        "PROV-AQ":
+          "Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles "+
+          "<a href=\"http://www.w3.org/TR/prov-aq/\"><cite>Provenance Access and Query</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-aq/\">http://www.w3.org/TR/prov-aq/</a>",
+      };
+      var respecConfig = {
+          // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
+          specStatus:           "ED",
+          
+          // the specification's short name, as in http://www.w3.org/TR/short-name/
+          shortName:            "prov-dm",
+ 
+          // if your specification has a subtitle that goes below the main
+          // formal title, define it here
+          subtitle   :  "Draft proposal (to be incorporated in Editor's Draft when approved)",
+
+ 
+          // if you wish the publication date to be other than today, set this
+          // publishDate:  "2011-10-18",
+ 
+          // if the specification's copyright date is a range of years, specify
+          // the start date here:
+          // copyrightStart: "2005"
+ 
+          // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
+          // and its maturity status
+          previousPublishDate:  "2012-02-02",
+          previousMaturity:  "WD",
+ 
+          // if there a publicly available Editor's Draft, this is the link
+          edDraftURI:           "http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html",
+ 
+          // if this is a LCWD, uncomment and set the end of its review period
+          // lcEnd: "2009-08-05",
+ 
+          // if you want to have extra CSS, append them to this list
+          // it is recommended that the respec.css stylesheet be kept
+          extraCSS:             ["http://dev.w3.org/2009/dap/ReSpec.js/css/respec.css", "./extra.css"],
+ 
+          // editors, add as many as you like
+          // only "name" is required
+          editors:  [
+              { name: "Luc Moreau", url: "http://www.ecs.soton.ac.uk/~lavm/",
+                company: "University of Southampton" },
+              { name: "Paolo Missier", url: "http://www.cs.ncl.ac.uk/people/Paolo.Missier",
+                company: "Newcastle University" },
+          ],
+ 
+          // authors, add as many as you like. 
+          // This is optional, uncomment if you have authors as well as editors.
+          // only "name" is required. Same format as editors.
+ 
+          authors:  [
+              { name: "Khalid Belhajjame", url: "http://semanticweb.org/wiki/Khalid_Belhajjame",
+                company: "University of Manchester" },
+              { name: "Stephen Cresswell",
+                company: "legislation.gov.uk"},
+              { name: "Yolanda Gil",
+                company: "Invited Expert", url:"http://www.isi.edu/~gil/"},
+              { name: "Reza B'Far",
+                company: "Oracle Corporation" },
+              { name: "Paul Groth", url: "http://www.few.vu.nl/~pgroth/",
+                company: "VU University of Amsterdam" },
+              { name: "Graham Klyne",
+                company: "University of Oxford" },
+              { name: "Jim McCusker", url: "http://tw.rpi.edu/web/person/JamesMcCusker",
+                company: "Rensselaer Polytechnic Institute" },
+              { name: "Simon Miles", 
+                company: "Invited Expert", url:"http://www.inf.kcl.ac.uk/staff/simonm/" },
+              { name: "James Myers", url:"http://www.rpi.edu/research/ccni/",
+                company: "Rensselaer Polytechnic Institute"},
+              { name: "Satya Sahoo", url:"http://cci.case.edu/cci/index.php/Satya_Sahoo",
+                company: "Case Western Reserve University" },
+          ],
+          
+          // name of the WG
+          wg:           "Provenance Working Group",
+          
+          // URI of the public WG page
+          wgURI:        "http://www.w3.org/2011/prov/",
+          
+          // name (with the @w3c.org) of the public mailing to which comments are due
+          wgPublicList: "public-prov-wg",
+          
+          // URI of the patent status for this WG, for Rec-track documents
+          // !!!! IMPORTANT !!!!
+          // This is important for Rec-track documents, do not copy a patent URI from a random
+          // document unless you know what you're doing. If in doubt ask your friendly neighbourhood
+          // Team Contact.
+          wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/46974/status",
+
+          // Add extraReferences to bibliography database
+          preProcess: [addExtraReferences],
+      };
+    </script> 
+  </head> 
+  <body> 
+
+    <section id="abstract">
+<div class="note">TO EDIT</div>
+<p>
+PROV-DM is a data model for provenance for building
+representations of the entities, people and activities involved in
+producing a piece of data or thing in the world. PROV-DM is
+domain-agnostic, but is equipped with extensibility points allowing
+further domain-specific and application-specific extensions to be
+defined.  PROV-DM is accompanied by PROV-ASN, a technology-independent
+abstract syntax notation, which allows serializations of PROV-DM
+instances to be created for human consumption, which facilitates its
+mapping to concrete syntax, and which is used as the basis for a
+formal semantics.
+</p>
+    </section> 
+
+<section id="sotd">
+<div class="note">TO EDIT</div>
+<section id="prov-family">
+<!-- <h3>Prov Family of Specifications</h3>-->
+This document is part of the PROV family of specifications, a set of specifications aiming to define the various aspects that are necessary to achieve the vision of inter-operable
+interchange of provenance information in heterogeneous environments such as the Web.   This document defines  the PROV-DM data model for provenance, accompanied with a notation to express
+instances of that data model for human consumption. Other documents are: 
+<ul>
+<li> PROV-DM-CONSTRAINTS, a set of constraints applying to the PROV-DM data model,</li>
+<li> PROV-ASN, a notation for provenance aimed at human consumption,</li>
+<li> PROV-O, the provenance ontology:  by means of a mapping of PROV-DM to the OWL2 Web Ontology Language, this specification provides a normative serialization of PROV-DM in RDF</li>
+<li> PROV-AQ, provenance access and query: the mechanisms for accessing and querying provenance; </li>
+<li> PROV-PRIMER: a primer for the PROV-DM provenance data model,</li>
+<li> PROV-SEM: a formal semantics for the PROV-DM provenance data model.</li>
+</ul>
+</section>
+</section>
+
+
+
+<div class="buttonpanel"> 
+<form action="#"><p> 
+<input id="hide-asn" onclick="set_display_by_class('div','withAsn','none');set_display_by_class('span','withAsn','none'); set_display_by_id('hide-asn','none'); set_display_by_id('show-asn','');" type="button"
+value="Hide ASN" /> 
+<input id="show-asn" onclick="set_display_by_class('div','withAsn',''); set_display_by_class('span','withAsn','');  set_display_by_id('hide-asn',''); set_display_by_id('show-asn','none');" style="display: none"
+type="button" value="Show ASN" /> 
+</p> 
+</form> 
+</div>     
+
+
+
+
+
+<section id="Derivation-Relation">
+<h4>Derivation</h4>
+
+<div class="glossary-ref" ref="glossary-derivation" withspan='true'></div>
+
+
+
+
+<p>According to <a href="#conceptualization">Section Overview</a>, for an entity to be transformed from, created from, or resulting from an update to another, there must be some
+underpinning activities performing the necessary actions resulting in such a derivation.  
+A derivation can be described at various levels of precision. In its simplest form, derivation relates two entities. Optionally, attributes can be added to describe modalities of derivation.  If the derivation is the result of a single known activity, then this activity can also be optionally expressed. And to provide a completely accurate description of derivation, the generation and usage of the generated and used entities, respectively, can be provided. The reason for optional information such as activity, generation, and usage to be linked to derivations is to aid analysis of provenance and to facilitate provenance-based reproducibility. </p>
+
+
+<p><div class="attributes" id="attributes-derivation">A <dfn>derivation</dfn><span class="withAsn">, written <span class="pnExpression" id="pn-wasDerivedFrom">wasDerivedFrom(id, e2, e1, a, g2, u1, attrs)</span> in PROV-ASN,</span> contains:</p>
+<ul>
+<li><em>id</em>:  an OPTIONAL identifier  for a derivation;</li> 
+<li><em>generatedEntity</em>: the identifier (<span class="name">e2</span>) of the entity generated by the derivation;</li>
+<li><em>usedEntity</em>: the identifier (<span class="name">e1</span>) of the entity used by the derivation;</li>
+<li><em>activity</em>: an OPTIONAL identifier (<span class="name">a</span>) for the activity using and generating the above entities;</li>
+<li><em>generation</em>: an OPTIONAL identifier for the generation (<span class="name">g2</span>) involving the generated entity and activity;</li> 
+<li><em>usage</em>: an OPTIONAL identifier for the usage (<span class="name">u1</span>) involving the used entity and activity;</li> 
+<li><em>attributes</em>: an OPTIONAL set of attribute-value pairs that describe the modalities of this derivation.</li>
+</ul>
+</div>
+
+<p> Derivation is not defined to be transitive. Domain-specific specializations of derivation may be defined in such a way that the transitivity property
+holds.</p>
+
+
+
+
+
+<div class="anexample">
+<p>The following descriptions state the existence of derivations.</p>
+<pre class="codeexample">
+wasDerivedFrom(e2,e1)
+wasDerivedFrom(e2,e1,[prov:type="physical transform"])
+wasDerivedFrom(e2,e1,a,g2,u1)
+  wasGeneratedBy(g2,e2,a)
+  used(u1,a,e1)
+</pre>
+<p>
+The first and second lines are about derivations of <span class="name">e2</span> (the generated entity) from  <span class="name">e1</span> (the used entity), but no information is provided as to the identity of the activity (and usage and generation) underpinning the derivation. In the second line, a type attribute is also provided.</p>
+<p>
+The third description expresses that activity  <span class="name">a</span>, 
+using the entity <span class="name">e1</span> according to usage <span class="name">u1</span>,
+ derived the
+entity <span class="name">e2</span> and generated it according to generation
+ <span class="name">g2</span>. It is followed by descriptions for generation <span class="name">g2</span> and usage <span class="name">u1</span>. With such a comprehensive description of derivation, a program that analyzes provenance can identify the activity underpinning the derivation, it can identify how the original entity <span class="name">e1</span> was used by  the activity (e.g. for instance, which argument it was passed as, if the activity is the result of a function invocation), and which output the derived entity <span class="name">e2</span> was obtained from (say, for a function returning multiple results).</p>
+</div>
+
+
+
+<div class='pending'>Several points were raised about the attribute steps.
+Its name, its default value   <a href="http://www.w3.org/2011/prov/track/issues/180">ISSUE-180</a>.
+ <a href="http://www.w3.org/2011/prov/track/issues/179">ISSUE-179</a>.</div>
+
+
+<div class='pending'> Is imprecise-1 derivation necessary? Can we just use precise-1 and imprecise-n?   <a href="http://www.w3.org/2011/prov/track/issues/249">ISSUE-249</a>.</div>
+
+<div class='issue'> Emphasize the notion of 'affected by'   <a href="http://www.w3.org/2011/prov/track/issues/133">ISSUE-133</a>.</div>
+
+
+</section>
+
+
+<section id="Derivation-Relation">
+<h4>TO GO in PART II: Derivation</h4>
+
+
+<b>Section <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#Derivation-Relation">Derivation-Relation</a> edited as follows</b>.
+
+
+<p>A derivation is more informative if it contains a reference to an activity, generation, and usage. Hence, the following implication
+holds.</p>
+<div class='inference' id='derivation-implication'>
+Given two entities denoted by <span class="name">e1</span> and <span class="name">e2</span>, <span class='conditional'>if</span> the assertion  <span class="name">wasDerivedFrom(e2,
+e1, a, g2, u1, attrs)</span>
+ holds for some generation <span class="name">g2</span>,  usage <span class="name">u1</span>,  and set of attribute-value pairs <span class="name">attrs</span>, then <span
+class="name">wasDerivedFrom(e2,e1, attrs)</span> also holds.<br>
+ </div>
+
+<div class="interpretation-forward">
+For the interpretation of a derivation, see <a href="#derivation-usage-generation-ordering">derivation-usage-generation-ordering</a> and <a
+href="#derivation-generation-generation-ordering">derivation-generation-generation-ordering</a>
+</div>
+
+
+<p>
+Note that inferring derivation from usage and generation does not hold
+in general. Indeed, when a generation <span class="name">wasGeneratedBy(g, e2, a, attrs2)</span>
+<a>precedes</a> <span class="name">used(u, a, e1, attrs1)</span>, for
+some <span class="name">e1</span>, <span class="name">e2</span>, <span class="name">attrs1</span>, <span class="name">attrs2</span>, and <span class="name">a</span>, one
+cannot infer derivation <span class="name">wasDerivedFrom(e2, e1, a, g, u)</span>
+or <span class="name">wasDerivedFrom(e2,e1)</span> since 
+of <span class="name">e2</span> cannot possibly be derived from
+ <span class="name">e1</span>, given the creation of <span class="name">e2</span> <a>precedes</a> the use
+of <span class="name">e1</span>.
+</p>
+
+
+<!--
+<p>The effective placeholder for an entity generation time is  <a>generation</a>. The presence of 
+time information in derivations is merely a convenience notation for a timeless derivation and a generation with this generation time information. </p>
+
+<div class='inference' id="derivation-time-elimination">
+<span class='conditional'>If</span> <span class="name">wasDerivedFrom(e2,e1,t,attrs)</span> holds, <span class='conditional'>then</span> the following expressions also hold:
+<span class="name">wasDerivedFrom(e2,e1,attrs)</span> and <span class="name">wasGeneratedBy(e2,t)</span>.
+</div>
+-->
+
+<p></p>
+<div class="structural-forward">
+See <a href="#derivation-use">derivation-use</a> for a structural constraint on derivations.
+</div>
+
+
+
+
+
+<div class='pending'>Several points were raised about the attribute steps.
+Its name, its default value   <a href="http://www.w3.org/2011/prov/track/issues/180">ISSUE-180</a>.
+ <a href="http://www.w3.org/2011/prov/track/issues/179">ISSUE-179</a>.</div>
+
+<div class='issue'> Emphasize the notion of 'affected by'   <a href="http://www.w3.org/2011/prov/track/issues/133">ISSUE-133</a>.</div>
+
+<div class='pending'> Simplify derivation   <a href="http://www.w3.org/2011/prov/track/issues/249">ISSUE-249</a>.</div>
+
+
+</section>
+
+
+<section>
+<h4>TO GO in PART 2: PROV-DM Account Constraints</h4>
+
+<b>To replace <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#derivation-use">derivation-use</a></b>.
+
+
+
+<p>A further inference is permitted from derivations with an explicit activity and no usage: </p>
+<div class='inference' id='derivation-use'>
+<p>Given an activity <span class="name">a</span>, entities  denoted by <span class="name">e1</span> and <span class="name">e2</span>, and  sets of attribute-value
+pairs <span class="name">dAttrs</span>, <span class="name">gAttrs</span>,
+<span class='conditional'>if</span> <span class="name">wasDerivedFrom(e2,e1, a, dAttrs)</span> and <span class="name">wasGeneratedBy(e2,a,gAttrs)</span> hold, <span
+class='conditional'>then</span> <span class="name">used(a,e1,uAttrs)</span> also holds
+for some set of attribute-value pairs <span class="name">uAttrs</span>.
+</div>
+<p>This inference is justified by the fact that the entity denoted by <span class="name">e2</span> is generated by at most one activity in a given account
+(see <a href="#generation-uniqueness">generation-uniqueness</a>). Hence,  this activity is also the one referred to by the usage of <span class="name">e1</span>. 
+</p>
+
+
+</section>
+
+
+<div id="glossary_div" class="remove">
+<!-- glossary loaded from glossary.js will be hooked up here,
+     class remove, will remove this element from the final output.
+-->
+</div>
+
+ </body>
+</html>

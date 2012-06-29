@@ -1,0 +1,37 @@
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+@prefix con:     <http://www.w3.org/2000/10/swap/pim/contact#> .
+@prefix sd:      <http://www.w3.org/ns/sparql-service-description#> .
+@prefix card:    <http://www.w3.org/People/Berners-Lee/card#> .
+@prefix prov:    <http://www.w3.org/ns/prov-o/> .
+@prefix :        <#> .
+
+:about_tbl_card {
+   :tbl_card
+       a sd:NamedGraph;
+       sd:name          <http://www.w3.org/People/Berners-Lee/card>; 
+       prov:hadLocation <>;
+       dcterms:subject  card:i;
+       rdfs:comment "The named graph <http://www.w3.org/People/Berners-Lee/card> in this file is about Tim Berners-Lee.";
+   .
+}
+
+<http://www.w3.org/People/Berners-Lee/card> { 
+   card:i rdfs:label "Tim Berners-Lee";
+        con:assistant card:amy .
+}
+
+:about_tbl_card {
+   :about_tbl_card
+       a sd:NamedGraph;
+       sd:name          :about_tbl_card; 
+       prov:hadLocation <>;
+       dcterms:subject  :tbl-card, 
+                        :about_tbl_card;
+       rdfs:comment "The named graph #about_tbl_card in this file is about two named graphs in this file.";
+   .
+}
+
+

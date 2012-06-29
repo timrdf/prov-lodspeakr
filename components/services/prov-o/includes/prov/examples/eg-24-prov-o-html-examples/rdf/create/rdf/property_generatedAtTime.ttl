@@ -1,0 +1,15 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+# A widget was generated 1:35:23 PM on April 3, 2012 UTC
+
+:widget-789532
+   a prov:Entity;
+   prov:generatedAtTime "2012-04-03T13:35:23Z"^^xsd:dateTime;
+.
+
+# The above statement is equivalent to:
+# :widget-789532 prov:qualifiedGeneration [ prov:atTime "2012-04-03T13:35:23Z"^^xsd:dateTime ] .

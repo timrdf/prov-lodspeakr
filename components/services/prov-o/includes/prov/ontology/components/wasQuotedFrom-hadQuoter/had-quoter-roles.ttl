@@ -1,0 +1,72 @@
+@prefix ex:   <http://www.example.org/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#"> .
+
+<> rdfs:comment """Variant of eg-25-had-quoter-was-attributed-to.ttl
+	using roles"""@en ;
+    prov:wasDerivedFrom <had-quoter-was-attributed-to.ttl> .
+
+#entity(ex:blogpost)
+ex:blogpost a prov:Entity .
+
+#agent(ex:Luc)
+ex:Luc a prov:Agent .
+
+#agent(ex:Paul)
+ex:Paul a prov:Agent .
+
+#wasQuotedFrom(ex:paragraph, ex:blogpost,ex:Luc,ex:Paul)
+ex:paragraph a prov:Entity ;
+    prov:wasQuotedFrom ex:blogpost ;
+    prov:wasAttributedTo ex:Luc ;
+    prov:qualifiedAttribution [ a prov:Attribution ;
+	# Assuming there can only be one quotation per entity?
+        prov:agent ex:Luc ;
+        prov:role ex:Quoter .
+    ] .
+
+ex:blogpost prov:wasAttributedTo ex:Paul ;
+    prov:qualifiedAttribution [ a prov:Attribution ;
+	# A bit odd - he was not Quoted when making ex:blogpost,
+	# but later
+        prov:agent ex:Paul ;
+        prov:role ex:Quoted .
+    ] .
+
+
+# The blogpost contains a photo by someone else
+ex:somePhotographer a prov:Agent ;
+    owl:differentFrom ex:Paul .
+
+ex:blogpost prov:wasAttributedTo ex:somePhotographer .
+# Fine - not as ex:Quoted role
+
+
+# Paolo made the paragraph appear in italics
+ex:Paolo a prov:Agent .
+ex:paragraph prov:wasAttributedTo ex:Paolo .
+# but not in ex:Quoter role
+
+
+# But what if someone quotes the picture?
+#https://twitter.com/#!/soilandreyes/status/193127219894296576
+ex:tweet a prov:Entity ;
+    rdf:value "@pgroth at the Principles of Provenance workshop http://t.co/G7nX3EGb" ;
+    prov:wasQuotedFrom ex:blogpost ;
+    prov:wasAttributedTo ex:Stian ;
+    prov:qualifiedAttribution [ a prov:Attribution ;
+	# Assuming there can only be one quotation per entity?
+        prov:agent ex:Stian ;
+        prov:role ex:Quoter .
+    ] .
+
+# Uh oh... now we have a second ex:Quoted
+ex:blogpost prov:wasAttributedTo ex:Paul ;
+    prov:qualifiedAttribution [ a prov:Attribution ;
+        prov:agent ex:somePhotographer ;
+        prov:role ex:Quoted .
+    ] .
+
+# But we don't know if it is related to ex:tweet or ex:blogpost

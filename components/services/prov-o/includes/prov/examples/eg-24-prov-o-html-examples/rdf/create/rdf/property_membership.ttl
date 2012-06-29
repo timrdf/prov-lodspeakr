@@ -1,0 +1,24 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix :     <http://example.com/> .
+
+:e1 a prov:Entity .
+:e2 a prov:Entity .
+
+:c1 a prov:Dictionary, prov:Entity;
+   prov:membership [ 
+      a prov:Membership;
+      # These are (some of the) members of c1
+      prov:member [ 
+         a prov:KeyValuePair;
+         prov:key   "k1"^^xsd:string;
+         prov:value :e1
+      ], [ 
+         a prov:KeyValuePair;
+         prov:key   "k2"^^xsd:string;
+         prov:value :e2
+      ];
+   ];
+.

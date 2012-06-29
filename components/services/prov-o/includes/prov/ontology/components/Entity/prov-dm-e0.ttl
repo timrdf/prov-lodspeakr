@@ -1,0 +1,17 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+@prefix nfo: <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix app: <http://www.w3.org/TR/2011/WD-prov-dm-20111018/app#> .
+@prefix :    <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#> .
+
+:e0
+   a prov:Entity;
+   a nfo:File;
+   :location <file:///shared/crime.txt>;
+   dcterms:creator :Alice;
+   dcterms:description "entity(e0, [ type='File', location='/shared/crime.txt', creator='Alice' ])";
+   rdfs:seeAlso <http://www.w3.org/TR/2011/WD-prov-dm-20111018/#expression-Entity>;
+.

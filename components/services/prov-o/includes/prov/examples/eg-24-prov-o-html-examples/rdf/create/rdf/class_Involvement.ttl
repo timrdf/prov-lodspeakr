@@ -1,0 +1,29 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix my:   <http://example.com/ontology#> .
+@prefix :     <http://example.com/> .
+
+# Although a domain extension (e.g. ':wasConductedBy') is not defined by PROV-O,
+# the relation between a surgery and an agent can still be qualified
+# by reusing prov:Involvement and one of its three subclasses 
+# (depending on the type of the instance involved):
+# AgentInvolvement, EntityInvolvement, and ActivityInvolement.
+
+my:wasConductedBy rdfs:subPropertyOf prov:wasAssociatedWith .
+
+:conductingSurgery_1
+   a prov:Activity;
+   my:wasConductedBy :bob;     # This unqualified involvement is unknown in PROV, this would be a subproperty of wasAssocitedWith
+   prov:qualifiedAssociation [ # Even though PROV systems do not understand :wasConductedBy, 
+      a prov:Association,      # they can recognize that the unknonw relation is being qualified wtih hadRole.
+        prov:AgentInvolvement, # Inferred
+        prov:Involvement;      # Inferred
+      prov:agent   :bob;       # The object of :wasConductedBy
+      prov:hadRole :surgeon;
+   ];
+.
+
+:bob       a prov:Agent .
+my:surgeon a prov:Role .

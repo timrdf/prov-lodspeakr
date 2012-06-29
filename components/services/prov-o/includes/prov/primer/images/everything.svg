@@ -1,0 +1,2385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.2 r9819"
+   width="1154.5759"
+   height="766.44946"
+   xml:space="preserve"
+   sodipodi:docname="everything.svg"
+   inkscape:export-filename="C:\Work\standards\w3c\prov\primer\images\everything.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90"><metadata
+     id="metadata8"><rdf:RDF><cc:Work
+         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+     id="defs6"><linearGradient
+       id="linearGradient3148"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3150" /><stop
+         style="stop-color:#b8b8b8;stop-opacity:1;"
+         offset="1"
+         id="stop3152" /></linearGradient><linearGradient
+       id="linearGradient4511"><stop
+         style="stop-color:#d19d00;stop-opacity:1;"
+         offset="0"
+         id="stop4513" /><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop4515" /></linearGradient><linearGradient
+       id="linearGradient4452"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4452"
+       id="linearGradient4458"
+       x1="222.17677"
+       y1="164.01802"
+       x2="223.60345"
+       y2="182.29561"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient4452-6"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-5" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-0" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4480"
+       xlink:href="#linearGradient4452-6"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4511"
+       id="linearGradient4517"
+       x1="375.91525"
+       y1="246.26715"
+       x2="375.91525"
+       y2="226.1618"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient4452-5"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-0" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-9" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4539"
+       xlink:href="#linearGradient4452-5"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4511-4"><stop
+         style="stop-color:#d19d00;stop-opacity:1;"
+         offset="0"
+         id="stop4513-4" /><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop4515-6" /></linearGradient><linearGradient
+       y2="226.1618"
+       x2="375.91525"
+       y1="246.26715"
+       x1="375.91525"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4584"
+       xlink:href="#linearGradient4511-4"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4452-5-7"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-0-8" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-9-8" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4670"
+       xlink:href="#linearGradient4452-5-7"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3148"
+       id="linearGradient3154"
+       x1="213.28375"
+       y1="304.68256"
+       x2="213.28375"
+       y2="317.47687"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3148"
+       id="linearGradient3349"
+       gradientUnits="userSpaceOnUse"
+       x1="213.28375"
+       y1="304.68256"
+       x2="213.28375"
+       y2="317.47687" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3148-7"
+       id="linearGradient3154-1"
+       x1="213.28375"
+       y1="304.68256"
+       x2="213.28375"
+       y2="317.47687"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient3148-7"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3150-4" /><stop
+         style="stop-color:#b8b8b8;stop-opacity:1;"
+         offset="1"
+         id="stop3152-0" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3148-7"
+       id="linearGradient3349-9"
+       gradientUnits="userSpaceOnUse"
+       x1="213.28375"
+       y1="304.68256"
+       x2="213.28375"
+       y2="317.47687" /><linearGradient
+       id="linearGradient3119"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3121" /><stop
+         style="stop-color:#b8b8b8;stop-opacity:1;"
+         offset="1"
+         id="stop3123" /></linearGradient><linearGradient
+       y2="317.47687"
+       x2="213.28375"
+       y1="304.68256"
+       x1="213.28375"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3134"
+       xlink:href="#linearGradient3148-7"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4452-7"
+       id="linearGradient4458-2"
+       x1="222.17677"
+       y1="164.01802"
+       x2="223.60345"
+       y2="182.29561"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient4452-7"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-6" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-1" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3236"
+       xlink:href="#linearGradient4452-7"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4452-63"
+       id="linearGradient4458-9"
+       x1="222.17677"
+       y1="164.01802"
+       x2="223.60345"
+       y2="182.29561"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient4452-63"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-7" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-8" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3700"
+       xlink:href="#linearGradient4452-63"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4511-42"
+       id="linearGradient4517-5"
+       x1="375.91525"
+       y1="246.26715"
+       x2="375.91525"
+       y2="226.1618"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient4511-42"><stop
+         style="stop-color:#d19d00;stop-opacity:1;"
+         offset="0"
+         id="stop4513-0" /><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop4515-9" /></linearGradient><linearGradient
+       y2="226.1618"
+       x2="375.91525"
+       y1="246.26715"
+       x1="375.91525"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3791"
+       xlink:href="#linearGradient4511-42"
+       inkscape:collect="always" /><linearGradient
+       y2="226.1618"
+       x2="375.91525"
+       y1="246.26715"
+       x1="375.91525"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3791-3"
+       xlink:href="#linearGradient4511-42-5"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4511-42-5"><stop
+         style="stop-color:#d19d00;stop-opacity:1;"
+         offset="0"
+         id="stop4513-0-1" /><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop4515-9-2" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4670-8"
+       xlink:href="#linearGradient4452-5-7-9"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4452-5-7-9"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-0-8-8" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-9-8-4" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4283"
+       xlink:href="#linearGradient4452-5-7-9"
+       inkscape:collect="always" /><linearGradient
+       y2="226.1618"
+       x2="375.91525"
+       y1="246.26715"
+       x1="375.91525"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3791-9"
+       xlink:href="#linearGradient4511-42-9"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4511-42-9"><stop
+         style="stop-color:#d19d00;stop-opacity:1;"
+         offset="0"
+         id="stop4513-0-6" /><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop4515-9-8" /></linearGradient><linearGradient
+       y2="226.1618"
+       x2="375.91525"
+       y1="246.26715"
+       x1="375.91525"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4503"
+       xlink:href="#linearGradient4511-42-9"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3148-8"
+       id="linearGradient3154-9"
+       x1="213.28375"
+       y1="304.68256"
+       x2="213.28375"
+       y2="317.47687"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient3148-8"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop3150-9" /><stop
+         style="stop-color:#b8b8b8;stop-opacity:1;"
+         offset="1"
+         id="stop3152-7" /></linearGradient><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3148-8"
+       id="linearGradient3349-2"
+       gradientUnits="userSpaceOnUse"
+       x1="213.28375"
+       y1="304.68256"
+       x2="213.28375"
+       y2="317.47687" /><linearGradient
+       id="linearGradient4697"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4699" /><stop
+         style="stop-color:#b8b8b8;stop-opacity:1;"
+         offset="1"
+         id="stop4701" /></linearGradient><linearGradient
+       y2="317.47687"
+       x2="213.28375"
+       y1="304.68256"
+       x1="213.28375"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4709"
+       xlink:href="#linearGradient3148-8"
+       inkscape:collect="always" /><linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient4452-2"
+       id="linearGradient4458-4"
+       x1="222.17677"
+       y1="164.01802"
+       x2="223.60345"
+       y2="182.29561"
+       gradientUnits="userSpaceOnUse" /><linearGradient
+       id="linearGradient4452-2"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-58" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-6" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient4836"
+       xlink:href="#linearGradient4452-2"
+       inkscape:collect="always" /><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3236-4"
+       xlink:href="#linearGradient4452-7-0"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4452-7-0"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-6-9" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-1-4" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3403"
+       xlink:href="#linearGradient4452-7-0"
+       inkscape:collect="always" /><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3403-2"
+       xlink:href="#linearGradient4452-7-0-7"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4452-7-0-7"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-6-9-6" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-1-4-1" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3510"
+       xlink:href="#linearGradient4452-7-0-7"
+       inkscape:collect="always" /><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3510-3"
+       xlink:href="#linearGradient4452-7-0-7-4"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4452-7-0-7-4"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-6-9-6-1" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-1-4-1-1" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3403-6"
+       xlink:href="#linearGradient4452-7-0-5"
+       inkscape:collect="always" /><linearGradient
+       id="linearGradient4452-7-0-5"><stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="0"
+         id="stop4454-6-9-0" /><stop
+         style="stop-color:#2effff;stop-opacity:1;"
+         offset="1"
+         id="stop4456-1-4-2" /></linearGradient><linearGradient
+       y2="182.29561"
+       x2="223.60345"
+       y1="164.01802"
+       x1="222.17677"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3766"
+       xlink:href="#linearGradient4452-7-0-5"
+       inkscape:collect="always" /></defs><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1440"
+     inkscape:window-height="838"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.87538929"
+     inkscape:cx="677.59184"
+     inkscape:cy="527.95841"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g12"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     showguides="true"
+     inkscape:guide-bbox="true" /><g
+     id="g12"
+     inkscape:groupmode="layer"
+     inkscape:label="example-graphical"
+     transform="matrix(1.25,0,0,-1.25,205.32932,1482.1763)"><path
+   id="path502-6-2"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 412.28727,901.46249 6.36954,-5.69464 2.17385,5.59235 -8.54339,0.10229 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   id="g14"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1.2454971,0,0,-1,-262.57855,1034.7)"
+   id="g262"><path
+     inkscape:connector-curvature="0"
+     id="path264"
+     style="fill:url(#linearGradient4517);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,221.25 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z" /></g><g
+   transform="matrix(1,0,0,-1,195.9912,804.8)"
+   id="g266"><text
+   id="text268"
+   transform="translate(-13.23096,5)"><tspan
+     y="0"
+     x="0"
+     id="tspan270"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">ex:</tspan><tspan
+     id="tspan4509"
+     y="14"
+     x="0"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">compose</tspan></text>
+
+
+
+
+
+
+
+
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g936-2"
+   transform="matrix(1.2811284,0,0,-1,-243.02664,966.2343)"><path
+     inkscape:connector-curvature="0"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     style="fill:url(#linearGradient4480);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path938-8" /></g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g544-9-6"
+   transform="matrix(1,0,0,-1,24.41479,797.44439)"><text
+   transform="translate(-7.640396,-2)"
+   id="text546-3-0"><tspan
+     id="tspan3196-2"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line">ex:</tspan><tspan
+     id="tspan4448-4"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="13.75"
+     sodipodi:role="line">regionList</tspan></text>
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(1.2454971,0,0,-1,65.32126,1035.0947)"
+   id="g262-0"><path
+     inkscape:connector-curvature="0"
+     id="path264-6"
+     style="fill:url(#linearGradient4584);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,221.25 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z" /></g><g
+   transform="matrix(1,0,0,-1,525.13557,804.552)"
+   id="g266-6"><text
+   id="text268-18"
+   transform="translate(-13.23096,5)"><tspan
+     y="0"
+     x="0"
+     id="tspan270-4"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">ex:</tspan><tspan
+     id="tspan4509-9"
+     y="14"
+     x="0"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">illustrate</tspan></text>
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,294.12,802.15)"
+   id="g334"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text336"
+   transform="translate(-46.02539,4)"><tspan
+     id="tspan338"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 30.6744 37.348801 44.023201 50.697601 54.6936 61.368 64.701599 71.375999 78.0504 86.054398"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasGeneratedBy</tspan></text>
+
+
+
+
+
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(0.9368205,0,0,-1,-142.39394,1034.7)"
+   id="g340"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path342"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 408.7794,240 524,240"
+     inkscape:connector-curvature="0" /></g><path
+   id="path344"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 233.2794,794.7 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(0.88509451,-0.46541135,-0.46541135,-0.88509451,106.34197,842.25263)"
+   id="g486"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text488"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan490"
+     sodipodi:role="line"
+     y="0"
+     x="0 6.6743999 12.6744 19.348801"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">used</tspan></text>
+
+
+
+
+
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,-175.5,1034.7)"
+   id="g498"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path500"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,240 -98.3914,0"
+     inkscape:connector-curvature="0" /></g><path
+   id="path502"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 72.8116,794.7 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(1,0,0,-1,-175.5,1034.7)"
+   id="g504"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path506"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 248.3116,240 8,3 0,-6 -8,3 z"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1.7434792,0,0,-1,-436.48081,1071.5)"
+   id="g936"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938"
+     style="fill:url(#linearGradient4458);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1.8669634,0,0,-1.5696053,-483.55761,1171.9327)"
+   id="g960"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path962"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 354.703,240 254.7608,176.3198"
+     inkscape:connector-curvature="0" /></g><path
+   id="path964"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m -9.086,897.879 5.1347,-6.8289 3.2242,5.0601 -8.3589,1.7688 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(1,0,0,-1,116.27766,802.86125)"
+   id="g998"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text1000"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan1002"
+     sodipodi:role="line"
+     y="0"
+     x="0 6.6743999 12.6744 19.348801"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">used</tspan></text>
+
+
+
+
+
+
+
+
+
+
+
+
+</g>
+
+
+
+
+<g
+   transform="matrix(1,0,0,-1,-66.3571,902.71014)"
+   id="g544-9"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3"
+   transform="translate(-7.640396,-2)"><tspan
+     sodipodi:role="line"
+     y="0"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="13.75"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448">dataSet1</tspan></text>
+
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(0.71351425,0,0,-1,254.12833,1034.83)"
+   id="g498-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path500-7"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,240 -98.3914,0"
+     inkscape:connector-curvature="0" /></g><path
+   id="path502-6"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 429.0103,794.83001 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(1,0,0,-1,461.27636,802.99121)"
+   id="g998-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text1000-3"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan1002-2"
+     sodipodi:role="line"
+     y="0"
+     x="0 6.6743999 12.6744 19.348801"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">used</tspan></text>
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,629.04784,802.28001)"
+   id="g334-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text336-8"
+   transform="translate(-46.02539,4)"><tspan
+     id="tspan338-7"
+     sodipodi:role="line"
+     y="0"
+     x="0 8.6664 15.3408 21.340799 30.6744 37.348801 44.023201 50.697601 54.6936 61.368 64.701599 71.375999 78.0504 86.054398"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasGeneratedBy</tspan></text>
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(1.5826615,0,0,-1,38.212014,965.3546)"
+   id="g936-0"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-0"
+     style="fill:url(#linearGradient4539);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,366.35927,796.56467)"
+   id="g544-9-61"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-3"
+   transform="translate(-7.640396,-2)"><tspan
+     sodipodi:role="line"
+     y="0"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-8">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="13.75"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-9">composition</tspan></text>
+
+
+
+
+
+
+
+</g><g
+   id="g3270"
+   transform="translate(0,-36.8)"><g
+     inkscape:export-ydpi="79.550438"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+     id="g340-4"
+     transform="matrix(1,0,0,-1,159.42784,1071.63)"><path
+       inkscape:connector-curvature="0"
+       d="M 408.7794,240 524,240"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+       id="path342-2" /></g><path
+     inkscape:connector-curvature="0"
+     inkscape:export-ydpi="79.550438"
+     inkscape:export-xdpi="79.550438"
+     inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+     d="m 560.54101,831.63001 8,-3.91388 0,7.82776 -8,-3.91388 z"
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     id="path344-6" /></g><g
+   transform="matrix(1.0394571,0,0,-1,483.59481,964.9161)"
+   id="g936-0-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-0-9"
+     style="fill:url(#linearGradient4670);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,702.38205,796.12622)"
+   id="g544-9-61-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-3-3"
+   transform="translate(-7.640396,-2)"><tspan
+     sodipodi:role="line"
+     y="0"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-8-5">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="13.75"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-9-9">chart1</tspan></text>
+
+
+
+
+
+
+
+</g><g
+   transform="matrix(1,0,0,-1,-169.56841,991.0782)"
+   id="g318"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   style="fill:url(#linearGradient3154);fill-opacity:1"><path
+     inkscape:connector-curvature="0"
+     id="path320"
+     style="fill:url(#linearGradient3349);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 175,333.3316 0,-30.9031 36.456,-15.4285 36.456,15.4285 0,30.9031 -72.912,0 z" /></g><g
+   transform="matrix(0.42191787,1.5145196,0.84729499,-0.75416817,-174.41082,438.08422)"
+   id="g960-4"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path962-0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="M 354.703,240 254.7608,176.3198"
+     inkscape:connector-curvature="0" /></g><path
+   id="path344-6-9"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 76.959475,687.80681 8.818086,1.24893 -4.392036,6.4795 -4.42605,-7.72843 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g544-9-6-4"
+   transform="matrix(1,0,0,-1,26.408902,680.37281)"><text
+   id="text546-3-0-8"
+   x="-0.32936299"
+   y="-2"><tspan
+     id="tspan3196-2-8"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-0.32936299"
+     y="-2"
+     sodipodi:role="line">ex:</tspan><tspan
+     id="tspan4448-4-2"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-0.32936299"
+     y="11.75"
+     sodipodi:role="line">derek</tspan></text>
+
+
+
+
+
+</g><text
+   style="font-size:12px"
+   y="-421.20554"
+   x="570.37744"
+   transform="matrix(0.69154428,0.72233407,0.72233407,-0.69154428,0,0)"
+   id="text336-5"><tspan
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="570.37744 579.04388 585.71826"
+     y="-421.20554"
+     sodipodi:role="line"
+     id="tspan338-5">wasAssociatedWith</tspan></text>
+
+
+
+
+
+<text
+   style="font-size:11.99999905px"
+   y="-654.78522"
+   x="350.8913"
+   transform="matrix(0.97795856,0.20879907,0.20879907,-0.97795856,0,0)"
+   id="text336-5-1"><tspan
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="350.8913 359.55774 366.23212"
+     y="-654.78522"
+     sodipodi:role="line"
+     id="tspan338-5-7">wasAssociatedWith</tspan></text>
+
+
+
+
+
+<path
+   style="fill:none;stroke:#000000;stroke-width:0.92126256px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   d="M 506.9356,780.19235 79.473094,677.8999"
+   id="path3327"
+   inkscape:connector-curvature="0" /><path
+   id="path344-6-9-2"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 76.780911,678.50155 8.200081,-3.47522 -0.423603,7.8163 -7.776478,-4.34108 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><path
+   style="fill:none;stroke:#000000;stroke-width:1.16911769px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   d="M 686.42734,783.45182 82.834028,666.78515"
+   id="path3327-1"
+   inkscape:connector-curvature="0" /><path
+   id="path344-6-9-2-6"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 78.66727,666.88626 8.20008,-3.47522 -0.4236,7.8163 -7.77648,-4.34108 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><text
+   style="font-size:11.99999809px"
+   y="-637.52173"
+   x="521.4187"
+   transform="matrix(0.9800966,0.19852118,0.19852118,-0.9800966,0,0)"
+   id="text336-5-1-8"><tspan
+     style="font-size:11.19999886px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="521.4187 530.08514 536.75952"
+     y="-637.52173"
+     sodipodi:role="line"
+     id="tspan338-5-7-5">wasAttributedTo</tspan></text>
+
+
+
+
+
+<g
+   transform="matrix(1,0,0,-1,-170.83865,906.41306)"
+   id="g318-4"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   style="fill:url(#linearGradient3154-1);fill-opacity:1"><path
+     inkscape:connector-curvature="0"
+     id="path320-8"
+     style="fill:url(#linearGradient3134);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 175,333.3316 0,-30.9031 36.456,-15.4285 36.456,15.4285 0,30.9031 -72.912,0 z" /></g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g544-9-6-4-2"
+   transform="matrix(1,0,0,-1,25.138656,595.70772)"><text
+   id="text546-3-0-8-4"
+   x="-5.1293631"
+   y="-2"><tspan
+     id="tspan3196-2-8-5"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-5.1293631"
+     y="-2"
+     sodipodi:role="line">ex:</tspan><tspan
+     id="tspan4448-4-2-5"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-5.1293631"
+     y="11.75"
+     sodipodi:role="line">chartgen</tspan></text>
+
+
+
+
+</g><path
+   id="path344-6-9-2-6-1"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 40.556676,618.3994 4.238763,7.83271 -7.821181,0.32112 3.582418,-8.15383 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(0.00498905,-0.41777461,-0.99998756,-0.00208432,278.53266,764.04859)"
+   id="g498-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path500-5"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,240 -98.3914,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1.3408862,0,0,-1,-120.15904,1332.779)"
+   id="g936-4"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-2"
+     style="fill:url(#linearGradient3236);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,167.31306,1163.9891)"
+   id="g544-9-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-21">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-6">article</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(1.6167515,0,0,-1,-69.14114,1403.714)"
+   id="g558"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,-8.093757,1165.6297)"
+   id="g544-9-3-8"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-6-6">dcterms:title=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3303">   &quot;Crime rises in cities&quot;</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(0.43309751,-0.00230963,0.02385816,-1.4614635,51.707733,1511.0808)"
+   id="g572"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.6167515,0,0,-1.7598192,-207.07236,1105.7628)"
+   id="g558-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-8"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,-146.02498,686.81689)"
+   id="g544-9-3-8-9"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-2"
+   x="-7.6403961"
+   y="-13.200001"><tspan
+     sodipodi:role="line"
+     y="-13.200001"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3303-9">foaf:givenName=</tspan><tspan
+     sodipodi:role="line"
+     y="0.54999924"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3355">  &quot;Derek&quot;</tspan><tspan
+     sodipodi:role="line"
+     y="14.299999"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3357">foaf:mbox=</tspan><tspan
+     sodipodi:role="line"
+     y="28.049999"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3359">  &quot;derek@example.org&quot;</tspan></text>
+
+
+
+
+<g
+   transform="matrix(1.6167515,0,0,0.92048921,-60.257445,-125.07222)"
+   id="g558-1-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-8-1"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><text
+   style="font-size:12px"
+   id="text546-3-2-5-2-2"
+   x="-6.850409"
+   y="93.257935"><tspan
+     sodipodi:role="line"
+     y="93.257935"
+     x="-6.850409"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3303-9-3">foaf:name=</tspan><tspan
+     sodipodi:role="line"
+     y="107.00793"
+     x="-6.850409"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3359-1">&quot;Chart Generators Inc&quot;</tspan></text>
+
+
+
+
+<g
+   transform="matrix(0.43309751,0.00230963,0.02385816,1.4614635,60.59143,-253.39309)"
+   id="g572-5-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-4-3"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g></g><g
+   transform="matrix(0.43309751,-0.00230963,0.02385816,-1.4614635,-86.223483,1032.268)"
+   id="g572-5"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-4"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1,0,0,-1,56.558885,638.06112)"
+   id="g998-27"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text1000-7"
+   transform="translate(-13.01074,4)"><tspan
+     id="tspan1002-9"
+     sodipodi:role="line"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0">actedOnBehalfOf</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(1.4146437,0,0,-0.84786888,92.069991,1075.8453)"
+   id="g558-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,144.46046,873.33077)"
+   id="g544-9-3-8-98"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3491">prov:hadRole=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495">  ex:dataToCompose</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(0.29192986,0.32279258,1.7382768,-0.60122387,-303.94221,938.06345)"
+   id="g572-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.6504538,0,0,-0.84786888,-128.20999,1048.9774)"
+   id="g558-3-6"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1-0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,-48.752028,844.86283)"
+   id="g544-9-3-8-98-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6-4"
+   x="-30.040401"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-30.040401"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3491-8">prov:hadRole=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-30.040401"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495-6">ex:regionsToAggregateBy</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(-0.6837653,0.41048076,1.4796713,1.9262836,-179.39281,286.98448)"
+   id="g572-2-5"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8-0"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.0553141,0,0,-0.84786888,-37.026375,950.96745)"
+   id="g558-3-9"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1-00"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,5.662205,746.85286)"
+   id="g544-9-3-8-98-6"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6-1"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3491-3">prov:hadRole=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495-8">ex:analyst</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(-0.62188296,0.39975874,1.3457576,1.8759678,-168.43478,203.36898)"
+   id="g572-2-5-9"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8-0-3"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.268666,0,0,-0.84786888,197.0879,1040.9746)"
+   id="g558-3-4"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1-4"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,245.53697,836.85999)"
+   id="g544-9-3-8-98-60"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6-6"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3491-6">prov:hadRole=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495-1">ex:composedData</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(0.00870226,0.28186705,1.6936272,-0.18063826,-164.96914,810.84161)"
+   id="g572-2-8"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8-4"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.2811284,0,0,-1,124.91365,1127.6032)"
+   id="g936-8"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-29"
+     style="fill:url(#linearGradient3700);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><text
+   transform="scale(1,-1)"
+   id="text546-3-35"
+   x="384.71475"
+   y="-960.81244"><tspan
+     id="tspan3196-9"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="384.71475"
+     y="-960.81244"
+     sodipodi:role="line">ex:</tspan><tspan
+     id="tspan4448-8"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="384.71475"
+     y="-947.06244"
+     sodipodi:role="line">dataSet2</tspan></text>
+
+
+
+
+<g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4"
+   transform="matrix(1,0,0,-1,245.19197,907.6109)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76">used</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3"
+   transform="matrix(3.1568137,0,0,-1,-1296.1082,1140.1609)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6" /></g><path
+   inkscape:connector-curvature="0"
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   d="m -6.04863,900.1609 8,-3 0,6 -8,-3 z"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="path344-1" /><g
+   transform="matrix(1.2454971,0,0,-1,-82.36558,1138.8523)"
+   id="g262-7"><path
+     inkscape:connector-curvature="0"
+     id="path264-3"
+     style="fill:url(#linearGradient3791);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,221.25 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z" /></g><g
+   transform="matrix(1,0,0,-1,377.80416,908.95229)"
+   id="g266-7"><text
+   id="text268-2"
+   transform="translate(-13.23096,5)"><tspan
+     y="0"
+     x="0"
+     id="tspan270-6"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">ex:</tspan><tspan
+     id="tspan4509-0"
+     y="14"
+     x="0"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">compile</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-7"
+   transform="matrix(2.4073596,-0.77821634,-0.25502404,-0.96742807,-508.74913,1450.296)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-7" /></g><g
+   transform="matrix(0.9376888,0.34747621,0.34747621,-0.9376888,535.52127,922.6664)"
+   id="g334-3-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text336-8-8"
+   transform="matrix(0.79140274,0.61129511,-0.61129511,0.79140274,0,0)"
+   x="-29.671028"
+   y="53.953274"
+   style="font-size:12px"><tspan
+     id="tspan338-7-2"
+     sodipodi:role="line"
+     y="53.953274"
+     x="-29.671028 -21.004583 -14.330159 -8.3301592 1.003441 7.6778412 14.352242 21.026646 25.022642 31.697042 35.030647 41.705082 48.379513 56.383511"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasGeneratedBy</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-9"
+   transform="matrix(0.98784205,0.15546086,0.15546086,-0.98784205,218.63236,966.43059)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-4"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-7">used</tspan></text>
+
+
+
+
+</g><path
+   inkscape:connector-curvature="0"
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   d="m -10.009689,908.16524 9.415904,-0.97922 -1.705725,6.71283 -7.710179,-5.73361 z"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="path344-1-8" /><path
+   id="path502-6-2-0"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 556.04305,958.73795 9.09492,-5.69464 3.10399,5.59235 -12.19891,0.10229 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(1.2454971,0,0,-1,61.3902,1194.5278)"
+   id="g262-7-1"><path
+     inkscape:connector-curvature="0"
+     id="path264-3-6"
+     style="fill:url(#linearGradient3791-3);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,221.25 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z" /></g><g
+   transform="matrix(1,0,0,-1,521.55993,964.62775)"
+   id="g266-7-4"><text
+   id="text268-2-0"
+   transform="translate(-13.23096,5)"><tspan
+     y="0"
+     x="0"
+     id="tspan270-6-6"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">ex:</tspan><tspan
+     id="tspan4509-0-1"
+     y="14"
+     x="0"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">compile2</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(1.0394571,0,0,-1,502.75321,1070.2623)"
+   id="g936-0-2-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-0-9-4"
+     style="fill:url(#linearGradient4283);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,721.54046,901.47234)"
+   id="g544-9-61-1-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-3-3-9"
+   transform="translate(-7.640396,-2)"><tspan
+     sodipodi:role="line"
+     y="0"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-8-5-8">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="13.75"
+     x="0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-9-9-8">chart2</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-7-0"
+   transform="matrix(1.2556932,-0.38098545,-0.13302207,-0.4736164,82.22042,1226.2691)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-7-8" /></g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-77"
+   transform="matrix(0.49252485,0,0,-1,243.74663,1195.0032)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-8" /></g><path
+   id="path344-3"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 439.8321,954.58752 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-8"
+   transform="matrix(1,0,0,-1,510.98321,962.77573)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-3"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-71">used</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(0.9376888,0.34747621,0.34747621,-0.9376888,651.76262,989.27394)"
+   id="g334-3-1-0"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text336-8-8-7"
+   transform="matrix(0.79140274,0.61129511,-0.61129511,0.79140274,0,0)"
+   x="-29.671028"
+   y="53.953274"
+   style="font-size:12px"><tspan
+     id="tspan338-7-2-3"
+     sodipodi:role="line"
+     y="53.953274"
+     x="-29.671028 -21.004583 -14.330159 -8.3301592 1.003441 7.6778412 14.352242 21.026646 25.022642 31.697042 35.030647 41.705082 48.379513 56.383511"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasGeneratedBy</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-7-0-4"
+   transform="matrix(2.4508216,-0.4139357,-0.25962818,-0.51457805,-514.99751,1230.2079)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-7-8-9" /></g><path
+   id="path344-3-6"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 425.85916,936.6943 8,-3.91388 0,7.82776 -8,-3.91388 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(0.88373777,0.46798243,0.46798243,-0.88373777,595.55353,966.06502)"
+   id="g334-3-1-0-5"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text336-8-8-7-1"
+   transform="matrix(0.79140274,0.61129511,-0.61129511,0.79140274,0,0)"
+   x="-29.671028"
+   y="53.953274"
+   style="font-size:12px"><tspan
+     id="tspan338-7-2-3-0"
+     sodipodi:role="line"
+     y="53.953274"
+     x="-29.671028 -21.004583 -14.330159"
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">wasDerivedFrom</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(1.0611643,0,0,-1,-123.33092,1236.364)"
+   id="g262-7-3"><path
+     inkscape:connector-curvature="0"
+     id="path264-3-4"
+     style="fill:url(#linearGradient4503);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 354.703,221.25 44.17639,0 0,37.5 -44.17639,0 0,-37.5 z" /></g><g
+   transform="matrix(1,0,0,-1,271.45542,1006.4641)"
+   id="g266-7-8"><text
+   id="text268-2-4"
+   transform="translate(-13.23096,5)"><tspan
+     y="0"
+     x="0"
+     id="tspan270-6-9"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">ex:</tspan><tspan
+     id="tspan4509-0-9"
+     y="14"
+     x="0"
+     sodipodi:role="line"
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT">correct</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-2"
+   transform="matrix(3.3051302,0.3220066,0.23412569,-0.81211558,-1411.7302,972.30402)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-5" /></g><path
+   inkscape:connector-curvature="0"
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   d="m -13.570491,910.6307 9.882505,-2.3145 -2.240765,6.59819 -7.64174,-4.28369 z"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="path344-1-5" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-3"
+   transform="matrix(0.99545918,0.09518926,0.09518926,-0.99545918,263.8164,941.40513)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-33"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-74">wasRevisionOf</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-8-0"
+   transform="matrix(0.92712277,-0.37475776,-0.37475776,-0.92712277,354.85251,978.18444)"><text
+   id="text336-0-3-6"
+   x="-62.025375"
+   y="-8.8000002"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-62.025375"
+     y="-8.8000002"
+     sodipodi:role="line"
+     id="tspan338-76-71-8">wasGeneratedBy</tspan></text>
+
+
+
+
+</g><path
+   inkscape:connector-curvature="0"
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   d="m 300.35167,997.5632 8.21358,-5.9631 0.49111,6.951 -8.70469,-0.9879 z"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="path344-1-5-1" /><g
+   transform="matrix(1,0,0,-0.82435258,-111.75773,1257.675)"
+   id="g318-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   style="fill:url(#linearGradient3154-9);fill-opacity:1"><path
+     inkscape:connector-curvature="0"
+     id="path320-82"
+     style="fill:url(#linearGradient4709);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 175,333.3316 0,-30.9031 36.456,-15.4285 36.456,15.4285 0,30.9031 -72.912,0 z" /></g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g544-9-6-4-8"
+   transform="matrix(1,0,0,-1,89.019582,1002.3184)"><text
+   id="text546-3-0-8-9"
+   x="-0.32936299"
+   y="-2"><tspan
+     id="tspan3196-2-8-0"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-0.32936299"
+     y="-2"
+     sodipodi:role="line">ex:</tspan><tspan
+     id="tspan4448-4-2-7"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-0.32936299"
+     y="11.75"
+     sodipodi:role="line">edith</tspan></text>
+
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-8"
+   transform="matrix(0.95841126,0,0,-1,-251.49432,1243.6893)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-1" /></g><path
+   inkscape:connector-curvature="0"
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   d="m 136.61215,1003.6893 8,-3 0,6 -8,-3 z"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="path344-1-58" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-6"
+   transform="matrix(1,0,0,-1,189.238,1013.7053)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-1"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-2">wasAssociatedWith</tspan></text>
+
+
+
+
+</g><path
+   sodipodi:type="arc"
+   style="fill:#151b23;fill-opacity:0.97916667;stroke:#000000;stroke-width:1.20000005;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+   id="path5588-7"
+   sodipodi:cx="409.51385"
+   sodipodi:cy="345.28378"
+   sodipodi:rx="4.4720702"
+   sodipodi:ry="4.4720702"
+   d="m 413.98593,345.28378 c 0,2.46986 -2.00222,4.47207 -4.47208,4.47207 -2.46985,0 -4.47207,-2.00221 -4.47207,-4.47207 0,-2.46985 2.00222,-4.47207 4.47207,-4.47207 2.46986,0 4.47208,2.00222 4.47208,4.47207 z"
+   transform="matrix(0.8,0,0,-0.8,-124.61032,1279.7512)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><g
+   transform="matrix(1.5022527,0,0,-0.71210916,-235.32786,1077.4576)"
+   id="g936-26"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-5"
+     style="fill:url(#linearGradient4836);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,76.631191,957.89944)"
+   id="g544-9-39"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-24"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-6">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-1">instructions</tspan></text>
+
+
+
+
+</g><path
+   id="path342-6-0-2"
+   style="fill:none;stroke:#000000;stroke-width:1.27020955;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+   d="m 138.53221,959.81329 67.19758,46.07211"
+   inkscape:connector-curvature="0" /><path
+   inkscape:connector-curvature="0"
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   d="m 133.40742,958.04482 10.05906,1.35502 -4.44278,5.36833 -5.61628,-6.72335 z"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   id="path344-1-5-11" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-9-9"
+   transform="matrix(0.84177283,0.53983192,0.53983192,-0.84177283,178.57558,993.70215)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-4-7"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-7-6">hadPlan</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(1.4146052,0,0,-0.84786888,359.52897,1054.7903)"
+   id="g558-3-4-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1-4-9"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,423.73947,850.67572)"
+   id="g544-9-3-8-98-60-5"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6-6-2"
+   x="-22.0404"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495-1-0">prov:atTime=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4969"> 2012-03-02T10:30:00</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(-0.79741846,0.01415798,0.60418273,1.6898123,522.91277,437.9406)"
+   id="g572-2-8-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8-4-9"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.4146052,0,0,-0.84786888,592.77844,1170.8109)"
+   id="g558-3-4-2-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1-4-9-8"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,656.98893,966.69625)"
+   id="g544-9-3-8-98-60-5-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6-6-2-9"
+   x="-22.0404"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495-1-0-5">prov:atTime=</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4969-3">2012-04-01T15:21:00</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(-0.4860202,-0.23750576,-0.18759351,1.1471291,727.3055,719.20578)"
+   id="g572-2-8-3-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8-4-9-5"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><g
+   transform="matrix(1.694849,0,0,-1.5821629,158.89211,1431.5985)"
+   id="g558-3-4-2-1-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path560-1-4-9-8-5"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 108,233.7841 c 0,-3.359 -1.0287,-3.7746 -8.54307,-7.0987 l -0.07938,-0.0345 c -7.55406,-3.3589 -7.63263,-3.3589 -15.38514,-3.3589 -10.32264,0 -56.99241,0 -56.99241,0 l 0,35.4582 81,0 0,-24.9661 z m 0,-0.173 c 0,-3.186 -0.0794,-3.186 -16.25508,-3.186 l 0,0 c 0,-7.0983 0,-7.1331 -7.27785,-7.1331" /></g><g
+   transform="matrix(1,0,0,-1,230.66918,1063.5218)"
+   id="g544-9-3-8-98-60-5-1-8"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-5-6-6-2-9-6"
+   x="-22.0404"
+   y="-3.5999999"><tspan
+     sodipodi:role="line"
+     y="-3.5999999"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3495-1-0-5-7">prov:startedAtTime=</tspan><tspan
+     sodipodi:role="line"
+     y="10.15"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4969-3-7"> 2012-03-31T09:21:00</tspan><tspan
+     sodipodi:role="line"
+     y="23.9"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3353">prov:endedAtTime=</tspan><tspan
+     sodipodi:role="line"
+     y="37.650002"
+     x="-22.0404"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3356"> 2012-04-01T15:21:00</tspan></text>
+
+
+
+
+</g><g
+   transform="matrix(0.0340166,0.0659249,2.399107,-0.03142758,-305.93401,1016.1301)"
+   id="g572-2-5-1"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     inkscape:connector-curvature="0"
+     id="path574-8-0-7"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:4, 4;stroke-dashoffset:0"
+     d="M 108.5,240.6891 193.588,240" /></g><path
+   style="fill:none;stroke:#000000;stroke-width:0.65616947px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+   d="m 304.6916,995.61216 71.60192,-29.59491"
+   id="path3381"
+   inkscape:connector-type="polyline"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(1.2806619,0,0,-1,-106.05234,1270.1581)"
+   id="g936-4-8"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-2-8"
+     style="fill:url(#linearGradient3403);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,161.29517,1101.3682)"
+   id="g544-9-3-2"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-4"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-21-5">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-6-5">articleV1</tspan></text>
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-7-0-1"
+   transform="matrix(0.01012975,-0.16687377,-0.7766355,2.2128047e-4,358.28157,1209.3703)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-7-8-1" /></g><path
+   id="path344-6-9-2-5"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 175.47867,1140.9223 -2.49756,-8.5487 7.71393,1.3301 -5.21637,7.2186 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   transform="matrix(1.2806619,0,0,-1,68.752795,1334.1752)"
+   id="g936-4-8-4"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-2-8-2"
+     style="fill:url(#linearGradient3510);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,335.18702,1164.4634)"
+   id="g544-9-3-2-3"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-4-2"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-21-5-2">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-6-5-1">blogEntry</tspan></text>
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-77-6"
+   transform="matrix(0.87879751,0,0,-1,-145.48889,1402.3773)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-8-8" /></g><path
+   id="path344-3-5"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 208.49689,1161.9616 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-8-7"
+   transform="matrix(1,0,0,-1,279.64801,1163.7498)"><text
+   id="text336-0-3-61"
+   x="-60.425377"
+   y="-3.0861211"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="-60.425377"
+     y="-3.0861211"
+     sodipodi:role="line"
+     id="tspan338-76-71-89">wasQuotedFrom</tspan></text>
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-2-2"
+   transform="matrix(2.608892,0.56412354,0.27069134,-0.74718224,-1136.038,860.75549)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-5-7" /></g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-5-8-9"
+   transform="matrix(1.8148222,1.3857039,0.65866967,-1.2672404,-951.06028,659.54012)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-0-2-5" /></g><text
+   style="font-size:12px"
+   y="-790.39417"
+   x="572.9967"
+   transform="matrix(0.81417724,0.58061642,0.58061642,-0.81417724,0,0)"
+   id="text336-5-4"><tspan
+     style="font-size:11.19999981px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="572.9967 581.66315 588.33752"
+     y="-790.39417"
+     sodipodi:role="line"
+     id="tspan338-5-3">wasDerivedFrom</tspan></text>
+
+
+
+<g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-6-1"
+   transform="matrix(1,0,0,-1,131.42121,1129.6466)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-1-2"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-2-3">specializationOf</tspan></text>
+
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-77-6-7"
+   transform="matrix(2.0630747,0,0,-1,-628.81077,1340.9054)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-8-8-9" /></g><path
+   id="path344-3-5-3"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 209.28311,1100.4897 8,-3 0,6 -8,-3 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-8-7-1"
+   transform="matrix(1,0,0,-1,280.43423,1119.8779)"><text
+   id="text336-0-3-61-9"
+   x="10.857195"
+   y="14.277582"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="10.857195"
+     y="14.277582"
+     sodipodi:role="line"
+     id="tspan338-76-71-89-8">alternateOf</tspan></text>
+
+
+
+</g><g
+   transform="matrix(1.2806619,0,0,-1,201.63694,1272.02)"
+   id="g936-4-8-8"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><path
+     id="path938-2-8-6"
+     style="fill:url(#linearGradient3766);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     d="m 238.6758,155.4437 c 10.3144,8.5915 10.3144,22.5211 0,31.1126 -10.3145,8.5916 -27.0375,8.5916 -37.3519,0 -10.3145,-8.5915 -10.3145,-22.5211 0,-31.1126 10.3144,-8.5916 27.0374,-8.5916 37.3519,0"
+     inkscape:connector-curvature="0" /></g><g
+   transform="matrix(1,0,0,-1,468.98445,1103.2301)"
+   id="g544-9-3-2-0"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"><text
+   id="text546-3-2-4-24"
+   x="-7.6403961"
+   y="-2"><tspan
+     sodipodi:role="line"
+     y="-2"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan3196-21-5-8">ex:</tspan><tspan
+     sodipodi:role="line"
+     y="11.75"
+     x="-7.6403961"
+     style="font-size:11px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     id="tspan4448-6-5-6">articleV2</tspan></text>
+
+
+
+</g><path
+   id="path344-6-9-0"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m -51.92373,921.93294 8.81809,1.249 -4.39204,6.4795 -4.42605,-7.7285 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-7-0-1-2"
+   transform="matrix(2.1038968,-0.39272917,355.87968,-67.003206,-86063.128,17394.89)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-7-8-1-7" /></g><path
+   id="path344-6-9-2-5-6"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 217.69004,1155.9691 -8.58796,-1.4872 5.94663,-7.569 2.64133,9.0562 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g334-4-6-1-1"
+   transform="matrix(0.98297512,-0.18373855,-0.18373855,-0.98297512,385.18382,1127.7006)"><text
+   transform="translate(-46.02539,4)"
+   id="text336-0-1-2-4"><tspan
+     style="font-size:12px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="0"
+     y="0"
+     sodipodi:role="line"
+     id="tspan338-76-2-3-2">specializationOf</tspan></text>
+
+
+</g><g
+   inkscape:export-ydpi="79.550438"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   id="g340-3-5-8-9-1"
+   transform="matrix(0.44273048,0.87492319,1.0362874,-0.56001155,-9.483132,754.92455)"><path
+     inkscape:connector-curvature="0"
+     d="M 408.7794,240 524,240"
+     style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1;stroke-dasharray:none"
+     id="path342-6-0-2-5-7" /></g><text
+   style="font-size:11.99999905px"
+   y="-76.7658"
+   x="1077.7798"
+   transform="matrix(0.45679829,0.8895703,0.8895703,-0.45679829,0,0)"
+   id="text336-5-4-1"><tspan
+     style="font-size:11.19999886px;font-variant:normal;font-weight:normal;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:ArialMT;-inkscape-font-specification:ArialMT"
+     x="1077.7798 1086.4462 1093.1206"
+     y="-76.7658"
+     sodipodi:role="line"
+     id="tspan338-5-3-1">wasDerivedFrom</tspan></text>
+
+
+<path
+   id="path344-6-9-0-5"
+   style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+   d="m 417.43652,975.90336 7.67897,4.51128 -6.52758,4.32014 -1.15139,-8.83142 z"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438"
+   inkscape:connector-curvature="0" /><path
+   sodipodi:type="arc"
+   style="fill:#151b23;fill-opacity:0.97916667;stroke:#000000;stroke-width:1.20000005;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+   id="path5588-7-1"
+   sodipodi:cx="409.51385"
+   sodipodi:cy="345.28378"
+   sodipodi:rx="4.4720702"
+   sodipodi:ry="4.4720702"
+   d="m 413.98593,345.28378 c 0,2.46986 -2.00222,4.47207 -4.47208,4.47207 -2.46985,0 -4.47207,-2.00221 -4.47207,-4.47207 0,-2.46985 2.00222,-4.47207 4.47207,-4.47207 2.46986,0 4.47208,2.00222 4.47208,4.47207 z"
+   transform="matrix(0.8,0,0,-0.8,262.98962,1224.4128)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /><path
+   sodipodi:type="arc"
+   style="fill:#151b23;fill-opacity:0.97916667;stroke:#000000;stroke-width:1.20000005;stroke-linecap:round;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+   id="path5588-7-7"
+   sodipodi:cx="409.51385"
+   sodipodi:cy="345.28378"
+   sodipodi:rx="4.4720702"
+   sodipodi:ry="4.4720702"
+   d="m 413.98593,345.28378 c 0,2.46986 -2.00222,4.47207 -4.47208,4.47207 -2.46985,0 -4.47207,-2.00221 -4.47207,-4.47207 0,-2.46985 2.00222,-4.47207 4.47207,-4.47207 2.46986,0 4.47208,2.00222 4.47208,4.47207 z"
+   transform="matrix(0.8,0,0,-0.8,252.93695,1122.9722)"
+   inkscape:export-filename="/home/lavm/papers/papers/prov-wg/hg/model/images/w3-publication1.png"
+   inkscape:export-xdpi="79.550438"
+   inkscape:export-ydpi="79.550438" /></g></svg>

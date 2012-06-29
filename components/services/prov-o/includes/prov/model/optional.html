@@ -1,0 +1,92 @@
+<html>
+   <section id="optional"> 
+<h3>Optional Attributes</h3>
+
+PROV-DM allows for some attributes to be optionally expressed. Unless otherwise specified, when an optional attribute is not present in a description, some value SHOULD be assumed to exist for this attribute, though it is not known which.  See <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#optional-attributes1"> TEXT HERE</a>)
+
+<h4>Time related attributes</h4>
+
+Existence of time implied, if unspecified, since events are instantaneous.
+<ol>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#activity.startTime">startTime</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#activity.endTime">endTime</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#generation.time">time</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#usage.time">time</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#start.time">time</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#end.time">time</a>
+</ol>
+
+<h4>Optional entity/agent/activity</h4>
+<ol>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#generation.activity">activity</a> (existence of activity implied, if not specified)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#start.trigger">trigger</a> (existence of trigger implied, if not specified)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#end.trigger">trigger</a> (existence of trigger implied, if not specified)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#association.agent">agent</a> (existence of agent implied, if not specified)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#association.plan">plan</a> (<b>no plan implied</b>, if unspecified, there may be none, see <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#optional-attributes4"> TEXT HERE</a>)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#responsibility.activity">activity</a> (existence of activity implied, if not specified)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#revision.responsibility">responsibility</a> (<b>no agent implied</b>, if unspecified, see <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#optional-attributes5"> TEXT HERE</a>)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#quotation.quoterAgent">quoterAgent</a> (<b>no agent implied</b>, if unspecified, see <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#optional-attributes6"> TEXT HERE</a>)
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#quotation.originalAgent">originalAgent</a> (<b>no agent implied</b>, if unspecified, see <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm-constraints.html#optional-attributes6"> TEXT HERE</a>)
+</ol>
+
+<h4>Optional derivation-related</h4>
+If some of the following attributes are not specified, the derivation path is not specified. It is always possible to infer some activity, generation and usage, for which the derivation holds (though not necessarily in current account if constraint on generation uniqueness holds).
+<ol>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivation.activity">activity</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivation.generation">generation</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivation.usage">usage</a>
+</ol>
+
+
+<h4>Optional attributes</h4>
+
+Existence of list of attributes (empty or not) is implied, if not specified.
+<ol>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#entity.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#activity.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#generation.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#usage.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#start.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#end.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#wasInformedBy.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#startByActivity.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#attribution.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#association.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#responsibility.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivation.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#revision.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#quotation.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#originalSource.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#traceability.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivedByInsertionFrom.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivedByRemovalFrom.attributes">attributes</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#memberOf.attributes">attributes</a>
+</ol>
+
+
+<h4>Optional id</h4>
+
+Existence of identifier implied, if not specified.
+<ol>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#generation.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#usage.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#start.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#end.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#wasInformedBy.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#startByActivity.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#attribution.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#association.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#responsibility.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivation.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#revision.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#quotation.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#originalSource.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#traceability.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivedByInsertionFrom.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#derivedByRemovalFrom.id">id</a>
+<li><a class='attribute' href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#memberOf.id">id</a>
+</ol>
+
+
+</section>
+</html>

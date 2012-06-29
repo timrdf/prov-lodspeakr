@@ -1,0 +1,23 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov-o/> .
+
+prov:AssertionProcessExecution
+   a owl:Class;
+   rdfs:label "AssertionProcessExecution";
+   rdfs:comment "A special activity where a controlling Agent 'asserts' a set of provenance assertions";
+   rdfs:subClassOf prov:ProcessExecution;
+   rdfs:subClassOf [
+      a owl:Restriction;
+      owl:onProperty     prov:hadAsserter;
+      owl:minCardinality 1;
+   ];
+.
+
+prov:hadAsserter
+   a owl:ObjectProperty;
+   rdfs:label "hadAsserter";
+   rdfs:subPropertyOf prov:wasControlledBy;
+.
