@@ -334,8 +334,8 @@ for category in categories.keys():
 
          # class prov:unqualifiedForm ?p
          if len(owlClass.prov_unqualifiedForm) > 0:
-            print owlClass.subject
-            print owlClass.prov_unqualifiedForm.first
+            #print owlClass.subject
+            #print owlClass.prov_unqualifiedForm.first
             qname = owlClass.prov_unqualifiedForm.first.subject.split('#')
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
@@ -343,7 +343,34 @@ for category in categories.keys():
             cross.write('        <a title="'+owlClass.prov_unqualifiedForm.first.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a>'
                                  +sup[propertyTypes[owlClass.prov_unqualifiedForm.first.subject]]+'\n')
             cross.write('      </dd>\n')
-            
+ 
+         include_dm_links = True
+         if include_dm_links:
+            if len(owlClass.prov_dm) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-dm</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-dm" href="'+owlClass.prov_dm.first+'">prov-dm</a>')
+               cross.write('      </dd>\n')
+            if len(owlClass.prov_constraints) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-constraints</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-constraints" href="'+owlClass.prov_constraints.first+'">prov-constraints</a>')
+               cross.write('      </dd>\n')
+            if len(owlClass.prov_n) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-n</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-n" href="'+owlClass.prov_n.first+'">prov-n</a>')
+               cross.write('      </dd>\n')
+            if len(owlClass.prov_aq) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-aq</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-aq" href="'+owlClass.prov_aq.first+'">prov-aq</a>')
+               cross.write('      </dd>\n')
+
          cross.write('    </dl>\n')
          cross.write('  </div>\n')
       cross.write('</div>\n')
@@ -385,8 +412,8 @@ for category in categories.keys():
          elif len(property.prov_sharesDefinitionWith) > 0:
             # If it shares a definition, use that.
             sharer = property.prov_sharesDefinitionWith.first
-            print property.subject + ' sharing definition'
-            print property.subject + ' sharing definition of ' + sharer.subject
+            #print property.subject + ' sharing definition'
+            #print property.subject + ' sharing definition of ' + sharer.subject
             if len(sharer.prov_definition) > 0:
                cross.write('    <div class="definition"><p>'+sharer.prov_definition.first+'</p>\n')
             elif len(sharer.prov_editorsDefinition) > 0:
@@ -618,6 +645,33 @@ for category in categories.keys():
 
          cross.write('\n')
          cross.write('      </dl>\n')
+
+         if include_dm_links:
+            if len(property.prov_dm) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-dm</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-dm" href="'+property.prov_dm.first+'">prov-dm</a>')
+               cross.write('      </dd>\n')
+            if len(property.prov_constraints) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-constraints</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-constraints" href="'+property.prov_constraints.first+'">prov-constraints</a>')
+               cross.write('      </dd>\n')
+            if len(property.prov_n) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-n</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-n" href="'+property.prov_n.first+'">prov-n</a>')
+               cross.write('      </dd>\n')
+            if len(property.prov_aq) > 0:
+               cross.write('\n')
+               cross.write('      <dt>prov-aq</dt>\n')
+               cross.write('      <dd>\n')
+               cross.write('        <a title="prov-aq" href="'+property.prov_aq.first+'">prov-aq</a>')
+               cross.write('      </dd>\n')
+
 
          cross.write('    </div>\n') # e.g. <div class="description">
          cross.write('  </div>\n')   # e.g. <div id="wasGeneratedBy" class="entity">
