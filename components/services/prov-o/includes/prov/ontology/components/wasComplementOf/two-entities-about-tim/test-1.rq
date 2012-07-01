@@ -1,6 +1,0 @@
-PREFIX owl: <http://www.w3.org/2002/07/owl#>
-
-ASK
-WHERE {
-   <purl.org/twc/id/person/TimLebo> owl:sameAs <http://data.semanticweb.org/person/timothy-lebo> .
-}

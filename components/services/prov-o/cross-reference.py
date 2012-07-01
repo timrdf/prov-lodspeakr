@@ -385,7 +385,8 @@ for category in categories.keys():
          elif len(property.prov_sharesDefinitionWith) > 0:
             # If it shares a definition, use that.
             sharer = property.prov_sharesDefinitionWith.first
-            #print property.subject + ' sharing definition of ' + sharer.subject
+            print property.subject + ' sharing definition'
+            print property.subject + ' sharing definition of ' + sharer.subject
             if len(sharer.prov_definition) > 0:
                cross.write('    <div class="definition"><p>'+sharer.prov_definition.first+'</p>\n')
             elif len(sharer.prov_editorsDefinition) > 0:
@@ -521,7 +522,18 @@ for category in categories.keys():
                   elif qname[0] == 'http://www.w3.org/2002/07/owl':
                      noop = 'noop'
                   else:
-                     cross.write('              '+str(range)+'\n')
+                     # cross.write('              TODO '+str(range)+'\n')
+                     # NOTE: This processes ALL [ owl:unionOf () ], so if there are more than one it will duplicate.
+                     # Part of the problem is that SuRF might be giving different bnode IDs than rdflib.
+                     #print property.subject + ' has a union domain that includes:'
+                     for triple in graph.triples((property.subject, ns.RDFS['range'], None)):
+                        for union in graph.triples((triple[2],ns.OWL['unionOf'],None)):
+                           orString = ''
+                           for classInDomain in graph.items(union[2]):
+                              qname = classInDomain.split('#')
+                              #print '     ' + qname[1]
+                              cross.write('              '+orString+'<a title="'+classInDomain+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a>\n')
+                              orString = ' or '
                except:
                   cross.write('              '+str(range)+'\n')
                cross.write('            </li>\n')

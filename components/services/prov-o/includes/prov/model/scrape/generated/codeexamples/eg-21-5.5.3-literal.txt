@@ -1,6 +1,0 @@
-
-  "abc"
-  "abc" %% xsd:string
-  "1" %% xsd:int
-  1
-  "http://example.org/foo" %% xsd:anyURI

@@ -1,8 +1,0 @@
-
-wasDerivedFrom(e5,e3,a4,g2,u2,[])
-wasDerivedFrom(e5,e3,a4,g2,u2,[prov:steps="1"])
-
-wasDerivedFrom(e3,e2,[prov:steps="1"])
-
-wasDerivedFrom(e2,e1,[])
-wasDerivedFrom(e2,e1,[prov:steps="n"])

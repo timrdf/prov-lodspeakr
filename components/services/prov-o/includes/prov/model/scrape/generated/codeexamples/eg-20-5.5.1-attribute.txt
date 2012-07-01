@@ -1,2 +1,0 @@
-
-   agent(ag, [prov:type="prov:SoftwareAgent" %% xsd:QName])

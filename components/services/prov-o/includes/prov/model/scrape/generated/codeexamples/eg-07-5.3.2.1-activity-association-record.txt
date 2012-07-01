@@ -1,6 +1,0 @@
-
-activity(a,[prov:type="workflow"])
-agent(ag1,[prov:type="programmer"])
-agent(ag2,[prov:type="researcher"])
-wasAssociatedWith(a,ag1,[prov:role="loggedInUser", ex:how="webapp"])
-wasAssociatedWith(a,ag2,[prov:role="designer", ex:context="phd"])

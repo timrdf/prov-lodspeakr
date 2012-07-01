@@ -1,7 +1,0 @@
-
-container
-  prefix ex: http://example.org/,
-
-  account(ex:acc1,http://example.org/asserter1,...)
-  account(ex:acc2,http://example.org/asserter1,...)
-endContainer
