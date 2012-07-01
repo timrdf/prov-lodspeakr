@@ -653,7 +653,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-06-05",
+          publishDate:  "2012-06-29",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -818,13 +818,6 @@
          {% include "includes/at-a-glance-qualified.html" %}
       </div>
 
-      <!-- Khalid's desired take away: Relations between the starting point classes can be specified using the starting object properties. However, in certain cases, users may want to provide elaborated information about such relations. Qualified classes and properties provides users with the means to do so. -->
-      <p><strong>Collection classes and properties</strong> are specializations of the Starting Point and Qualified terms that describe the provenance of collections as key-value pairs that are inserted and removed to create new collections. 
-      The classes and properties in this category are listed below and are discussed in <a href="#description-collections-terms">Section 3.4</a>.</p>
-      <div    id="prov-collections-owl-terms-at-a-glance">
-      {% include "includes/at-a-glance-collections.html" %}
-      </div>
-
       <div>
       {% for row in models.uncategorized %}
          <p>TODO: categorize as "starting-point", "qualified", or "additional" in <a href="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl">ProvenanceOntology.owl</a></p>
@@ -844,13 +837,11 @@
          <li><a href="#description-starting-point-terms">Starting Point Terms</a></li>
          <li><a href="#description-expanded-terms">Expanded Terms</a></li>
          <li><a href="#description-qualified-terms">Qualified Terms</a></li>
-         <li><a href="#description-collections-terms">Dictionary Terms</a></li>
       </ul>
 
 {% include "prov-o-html-sections/description-starting-points.inc.html" %}
 {% include "prov-o-html-sections/description-expanded-terms.inc.html" %}
 {% include "prov-o-html-sections/description-qualified-terms.inc.html" %}
-{% include "prov-o-html-sections/description-collections.inc.html" %}
 
     </section>
 
@@ -892,13 +883,6 @@
          <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
          {% include "includes/at-a-glance-qualified.html" %}
          {% include "includes/cross-reference-qualified.html" %}
-      </section>
-
-      <section id="cross-reference-collection-terms">
-         <h3>Collection Terms</h3>
-         <p>The terms used to describe the provenance of collections of key-value pairs are discussed in <a href="#description-collections-terms">Section 3.4</a>.</p>
-         {% include "includes/at-a-glance-collections.html" %}
-         {% include "includes/cross-reference-collections.html" %}
       </section>
    </section>
 
