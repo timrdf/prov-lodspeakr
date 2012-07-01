@@ -678,19 +678,23 @@ for category in categories.keys():
          cross.write('\n')
       cross.write('</div>\n')        # e.g. <div id="prov-starting-point-owl-classes-crossreference"
 
+      tableCount = { 'expanded' : '2', 'starting-point' : '1', 'qualified' : '3', 'access-and-query' : '4' }
       n = ''
       if category.lower()[0] in ['a','e','i,','o','u']:
          n = 'n'
       quals.write('<table class="qualified-forms">\n')
-      quals.write('  <caption>Qualification Property and Involvement Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
+      quals.write('  <caption><a href="#qualified-forms-'+category+'">Table '+tableCount[category]+'</a>: Qualification Property and Influence Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
       quals.write('  <tr>\n')
       qname = property.subject.split('#')
-      quals.write('    <th>'+category.capitalize()+' Property</th>\n')
+      quals.write('    <th>Influenced Class</th>\n')
+      quals.write('    <th>Unqualified Influence</th>\n')
       quals.write('    <th>Qualification Property</th>\n')
-      quals.write('    <th>Involvement Class</th>\n')
-      quals.write('    <th>Object Property</th>\n')
+      quals.write('    <th>Qualified Influence</th>\n')
+      quals.write('    <th>Influencer Property</th>\n')
+      quals.write('    <th>Influencing Class</th>\n')
       quals.write('  </tr>\n')
       for uri in ordered['properties']:
+         #print 'qual table ' + uri
          property = []
          if propertyTypes[uri] == 'datatype-property':
             property = session.get_resource(uri,DatatypeProperties)
@@ -708,15 +712,15 @@ for category in categories.keys():
                   qualClass = qualified                           # e.g. http://www.w3.org/ns/prov#Responsibility
                   for super in qualClass.rdfs_subClassOf:
                      qname = super.subject.split('#')
-                     if   ( qname[1]  == 'EntityInvolvement' ):
+                     if   ( qname[1]  == 'EntityInfluence' ):
                         objectProp = 'entity' 
-                     elif ( qname[1]  == 'ActivityInvolvement' ):
+                     elif ( qname[1]  == 'ActivityInfluence' ):
                         objectProp = 'activity' 
-                     elif ( qname[1]  == 'AgentInvolvement' ):
+                     elif ( qname[1]  == 'AgentInfluence' ):
                         objectProp = 'agent' 
-                     elif ( qname[1]  == 'CollectionInvolvement' ):
+                     elif ( qname[1]  == 'CollectionInfluence' ):
                         objectProp = 'collection' 
-                     elif ( qname[1]  == 'DictionaryInvolvement' ):
+                     elif ( qname[1]  == 'DictionaryInfluence' ):
                         objectProp = 'collection' 
                else:
                   if "qualified" in qualified.subject:
@@ -725,13 +729,23 @@ for category in categories.keys():
                      qualProp = 'no' # Avoiding prov:startedAtTime, prov:atTime, prov:Start, null
             if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
                quals.write('  <tr>\n')
+
+               print property.subject
+               qname = property.rdfs_domain.first.subject.split('#')
+               quals.write('    <td><a title="'+property.rdfs_domain.first.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+
                qname = property.subject.split('#')
                quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+
                qname = qualProp.subject.split('#')
                quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+
                qname = qualClass.subject.split('#')
                quals.write('    <td><a title="'+qualClass.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
+
                quals.write('    <td><a title="'+qname[0]+'#'+objectProp+'" href="#'+objectProp+'" class="owlproperty">'+PREFIX+':'+objectProp+'</a></td>\n')
+
+               quals.write('    <td><a title="'+qname[0]+'#'+objectProp.capitalize()+'" href="#'+objectProp.capitalize()+'" class="owlclass">'+PREFIX+':'+objectProp.capitalize()+'</a></td>\n')
                quals.write('  </tr>\n')
       quals.write('</table>\n')
 
