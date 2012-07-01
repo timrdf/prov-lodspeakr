@@ -33,8 +33,11 @@ the class <a class="qname" href='#Generation'>prov:Generation</a>, which is a su
 </p>
 <pre class="example">
 :e1    prov:wasGeneratedBy :e1Gen .
-:e1Gen a                   prov:Generation ;
-       prov:entity         :a1 .
+
+:e1Gen 
+   a prov:Generation;
+   prov:entity :a1;
+.
 </pre>
 <p>
 The asserter can thus attach additional properties to <code>:e1Gen</code> to
@@ -60,6 +63,25 @@ involvement).  </p>
             <div class="figcaption"><a href="#qualified-terms-figure">Figure 3</a>. </div>
        </div>
 
+      <div id="qualifed-forms-starting-point" style="padding: 10px">
+         <p>Usage and Association (described above) are accompanied by six other qualifications of <a href="#description-starting-point-terms">Starting point</a> relations. The <a href="#qualifed-forms-starting-point">following table</a> lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
+         </p>
+         <div style="text-align: center">
+            {% include "includes/qualifed-forms-starting-point.html" %}
+         </div>
+      </div>
+
+      <div id="qualifed-forms-expanded" style="padding: 10px">
+         <p>Six <a href="#description-expanded-terms">Expanded terms</a> relations can also be qualified. The <a href="#qualifed-forms-expanded">following table</a> lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
+         </p>
+         <div style="text-align: center">
+            {% include "includes/qualifed-forms-expanded.html" %}
+         </div>
+      </div>
+
+
+
+
       <p>The following two examples show the result of applying the Usage and Association patterns to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
       </p>
        <div class="exampleOuter">
@@ -76,21 +98,7 @@ involvement).  </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
        </div>
 
-      <div id="qualifed-forms-starting-point" style="padding: 20px">
-         <p>Usage and Association (described above) are accompanied by six other qualifications of Starting Point relations. The <a href="#qualifed-forms-starting-point">following table</a> lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
-         </p>
-         <div style="text-align: center">
-            {% include "includes/qualifed-forms-starting-point.html" %}
-         </div>
-      </div>
 
-      <div id="qualifed-forms-expanded" style="padding: 20px">
-         <p>Six relations from the Expanded category can also be qualified. The <a href="#qualifed-forms-expanded">following table</a> lists the simple relations that can be qualified, along with the qualification property, qualification class, and the property used to indicate the object of the qualified relation.
-         </p>
-         <div style="text-align: center">
-            {% include "includes/qualifed-forms-expanded.html" %}
-         </div>
-      </div>
 
        <p>This section finishes with two more examples of qualification as applied to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
        </p>
