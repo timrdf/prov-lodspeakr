@@ -1,3 +1,5 @@
+git add prov-o-html-sections/*.inc.html; git commit -m 'save-before-prepare'
+
 date > prepared-on.txt
 
 if [ ! -d ../../../static/prov-o-diagrams ]; then
