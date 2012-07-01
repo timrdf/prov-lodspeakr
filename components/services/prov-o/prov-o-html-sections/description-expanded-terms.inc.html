@@ -1,37 +1,46 @@
      <section id="description-expanded-terms">
 	  	<h3>Expanded Terms</h3>
 
-        <p>The terms introduced in this section provide additional ways to describe the provenance among Entities, Activities, and Agents. The terms are illustrated in the following figure.</p>
+      <p>The terms introduced in this section provide additional ways to describe the provenance among Entities, Activities, and Agents. 
+         The additional terms are illustrated in the following figure and can be separated into four different categories.</p>
 
       <div id="expanded-terms-figure" style="text-align: center;" class="figure">
             <!-- When publishing to w3c: replace prov-o-diagrams/ with diagrams/ -->
             <!--img src="prov-o-diagrams/Starting-points-terms.png"-->
             <img src="http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/diagram-history/2012-05-03/expanded.svg"
-                 style="width: 50%; min-width: 25em; max-width: 60em" 
+                 style="width: 70%; min-width: 25em; max-width: 60em" 
                  alt="PROV-O Starting Point terms"/>
-            <div class="figcaption"><a href="#expanded-terms-figure">Figure 2</a>. The expanded terms build upon those in the Starting Points section. We can separate them in five different categories:</div>
+            <div class="figcaption"><a href="#expanded-terms-figure">Figure 2</a>. The expanded terms build upon those in the Starting Points section.</div>
       </div>
-	  <p> The first category extends the Starting Point terms with subclasses and subproperties. Three common subclasses of Agent are provided: <a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and <a href="#SoftwareAgent" class="qname">prov:SoftwareAgent</a>. These classes are not disjoint and may overlap. Further, Agents may be Entities, in cases where one wishes to describe the provenance of Agents.
-      </p>
-	  <p>
-      On the properties, three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are provided: <a href="#wasQuotedFrom" class="qname">prov:wasQuotedFrom</a>, <a href="#wasRevisionOf" class="qname">prov:wasRevisionOf</a>, and <a href="#hadPrimarySource" class="qname">prov:hadPrimarySource</a>. <span class="repeated">prov:wasQuotedFrom</span> cites a potentially larger Entity (such as a Book, or Blog) from which a quote was taken, <span class="repeated">prov:wasRevisionOf</span> cites an older version of a revised Entity, and <span class="repeated">prov:hadPrimarySource</span> cites the Entity that is closest to the person, information, period, or idea being studied (such as a news article that "broke the story"). The property <a href="#tracedTo" class="qname">prov:tracedTo</a> is a superproperty of all four of these properties, and is transitive.
+
+
+	  <p>The <strong>first</strong> category extends the <a href="#description-starting-point-terms">Starting Point terms</a> with subclasses and subproperties.</p>
+
+     <p>Three subclasses of Agent are provided (<a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and <a href="#SoftwareAgent" class="qname">prov:SoftwareAgent</a>), 
+      while two subclasses of Entity are also provided: <a href="#Collection" class="qname">prov:Collection</a> is an Entity that provides a structure to some constituents (which are themselves Entities) and 
+      <a href="#Bundle" class="qname">prov:Bundle</a> is a named set of provenance descriptions that enables the expression of provenance of provenance.
+Note that a named set of provenance descriptions can take any form beyond PROV-O triples, including videotaped testimony or scribbles on a drink napkin. The extension of Bundle that contains only PROV-O assertions is not named by PROV or PROV-O, since it is more appropriate to do so using other recommendations, standards, or technologies. In any case, a Bundle of PROV-O assertions is an abstract set of RDF triples, and adding or removing a triple creates a distinct Bundle of PROV-O assertions.
+		</p>
+
+	  <p>More generally, the property <a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> is a superproperty that relates any influenced Entity, Activity, or Agent to any other influencing Entity, Activity, or Agent that had an effect on its characteristics. 
+        More specifically, three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are provided for certain kinds of derivation among Entities: <a href="#wasQuotedFrom" class="qname">prov:wasQuotedFrom</a> cites a potentially larger Entity (such as a Book, or Blog) from which an Entity was taken, <a href="#wasRevisionOf" class="qname">prov:wasRevisionOf</a> cites an older version of a revised Entity (such as first edition of a book), and <a href="#hadPrimarySource" class="qname">prov:hadPrimarySource</a> cites an ancestor Entity produced by some agent with direct experience and knowledge about the topic. 
+
       </p>
 	  
-	  <p> The second category refers to the provenance of dinamyc resources. <a href="#specializationOf" class="qname">prov:specializationOf</a> and <a href="#alternateOf" class="qname">prov:alternateOf</a> relate Entities that exist at different levels of specificity. While <span class="repeated">prov:specializationOf</span> links a more specific Entity to a more general one (e.g., today's BBC news home page versus BBC's news home page on any day), <span class="repeated">prov:alternateOf</span> links Entities that present aspects of the same thing, but not necessarily the same aspects or at the same time (e.g., the serialization of a document in different formats).
+	  <p>The <strong>second</strong> category relates Entities according to their levels of abstraction, where some Entities may present more aspects than their more general counterparts. 
+      While <a href="#specializationOf" class="qname">prov:specializationOf</a> links a more specific Entity to a more general one (e.g., today's BBC news home page versus BBC's news home page on any day), <a href="#alternateOf" class="qname">prov:alternateOf</a> links Entities that present aspects of the same thing, but not necessarily the same aspects or at the same time (e.g., the serialization of a document in different formats).
+    <a href="#mentionOf" class="qname">prov:mentionOf</a> is a special type of <span class="repeated">prov:specializationOf</span> whose subject presents as an aspect a particular <span class="repeated">prov:Bundle</span> in which its more general Entity was described (<a href="#asInBundle" class="qname">prov:asInBundle</a> is used to cite the Bundle in which the generalization was mentioned).
 	  </p>
 	  
-	  <p>The third category groups the provenance of provenance: a <a href="#Bundle" class="qname">prov:Bundle</a> is a named set of provenance descriptions, and is itself an entity, so allowing provenance of provenance to be expressed. Note that a named set of provenance descriptions can take any form, including scribbles on a drink napkin. A named set of PROV-O assertions is a special type of bundle that is not named by PROV or PROV-O.
-		</p>
  
-      <p>
-      Similarly to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable. The fourth category consists on the properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>, <a href="#generated" class="qname">prov:generated</a> and <a href="#invalidatedAtTime" class="qname">prov:invalidatedAtTime</a> for this purpose. For example, a painting could not have been displayed before it was painted, and it cannot be sold after it is destroyed by fire. 
-	  The property <a href="#wasInvalidatedBy" class="qname">prov:wasInvalidatedBy</a> may be used to cite the Activity that invalidated any further uses of an Entity, so it is included in this category as well.	  
-	  <span class="repeated">prov:generated</span> is the inverse of <span class="repeated">prov:wasGeneratedBy</span> and is defined so that Activities being described can reference their generated outputs directly without needing to 'stop' and start describing the Entity. 
-	  This helps 'Activity-centric' modeling as opposed to 'Entity-centric' modeling. 
+      <p>The <strong>third</strong> category describes the lifetime of an Entity beyond being generated by an Activity and used by other Activities. For example, a painting could not have been displayed before it was painted, and it cannot be sold after it is destroyed by fire. 
+      Similarly to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable. 
+The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a> and <a href="#invalidatedAtTime" class="qname">prov:invalidatedAtTime</a> can be used to bound the starting and ending moments of an Entity's existence. The Activities that led to the generation or invalidation of an Entity can be provided using <span class="repeated">prov:wasGeneratedBy</span> and <a href="#wasInvalidatedBy" class="qname">prov:wasInvalidatedBy</a>, respectively. 
+<a href="#generated" class="qname">prov:generated</a> is the inverse of <span class="repeated">prov:wasGeneratedBy</span> and is defined to facilitate Activity-centric in addition to Entity-centric modeling. 
       </p>
 
       <p>
-      The fifth category contains miscellaneous properties that extend but don't specialize any starting points:<a href="#value" class="qname">prov:value</a>, <a href="#wasStartedBy" class=" qname">prov:wasStartedBy</a>, <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, <a href="#atLocation" class="qname">prov:atLocation</a> and <a href="#Location" class="qname">prov:Location</a>. Entities may use the property <a href="#value" class="repeated">prov:value</a> to hold a literal value. For example, the <span class="repeated">prov:value</span> of a quote could be the quote itself, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
+      The <strong>fourth</strong> category contains miscellaneous properties that extend but don't specialize any starting points:<a href="#value" class="qname">prov:value</a>, <a href="#wasStartedBy" class=" qname">prov:wasStartedBy</a>, <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, <a href="#atLocation" class="qname">prov:atLocation</a> and <a href="#Location" class="qname">prov:Location</a>. Entities may use the property <a href="#value" class="repeated">prov:value</a> to hold a literal value. For example, the <span class="repeated">prov:value</span> of a quote could be the quote itself, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
       </p>
 
       <p>Activities may be started or ended by Entities, which is described using the properties <a href="#wasStartedBy" class="repeated">prov:wasStartedBy</a> and <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, respectively. Since Entities may start or end Activities, and Agents may be Entities, then Agents may also start or end Activities.
