@@ -14,13 +14,12 @@ document, each property that can be qualified has a <em>can be qualified
 with</em> header linking to the qualifying property and involvement class.
 In the PROV-O OWL these are indicated using the annotation property <span
 class="qname">prov:qualifiedForm</span>. The involvement class is a
-subclass of <a class="qname" href="#Involvement">prov:Involvement</a> which
-determines which property to link from the involvement to the unqualified object,
+subclass of <a class="qname" href="#Influence">prov:Influence</a> which
+determines which property to link from the influence to the unqualified object,
 that is either
  <a class="qname" href="#entity">prov:entity</a>,
- <a class="qname" href="#activity">prov:activity</a>,
- <a class="qname" href="#agent">prov:agent</a> or
- <a class="qname" href="#dictionary">prov:dictionary</a>.</p>
+ <a class="qname" href="#activity">prov:activity</a>, or
+ <a class="qname" href="#agent">prov:agent</a>
 <p>
 So for instance, if we have the unqualified statement:
 <pre class="example">
@@ -30,7 +29,7 @@ So for instance, if we have the unqualified statement:
 <p>Then we find in PROV-O that <a class="qname" href="#wasGeneratedBy">prov:wasGeneratedBy</a> can be qualified with  
 the qualification property <a class="qname" href='#qualifiedGeneration'>prov:qualifiedGeneration</a> 
 and
-the involvement class <a class="qname" href='#Generation'>prov:Generation</a>, which is a subclass of <a class ="qname" href="#ActivityInvolvement">prov:ActivityInvolvement</a>. From this, we can restate the above relation using the <em>qualification pattern</em> as:
+the class <a class="qname" href='#Generation'>prov:Generation</a>, which is a subclass of <a class ="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>. From this, we can restate the above relation using the <em>qualification pattern</em> as:
 </p>
 <pre class="example">
 :e1    prov:wasGeneratedBy :e1Gen .
