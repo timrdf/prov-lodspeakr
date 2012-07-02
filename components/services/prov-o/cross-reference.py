@@ -49,6 +49,29 @@ ObjectProperties   = session.get_class(ns.OWL["ObjectProperty"])
 Classes            = session.get_class(ns.OWL["Class"])
 Thing              = session.get_class(ns.OWL["Thing"])
 
+all_ordered = {}
+all_ordered['classes'] = []
+for owlClass in Classes.all():
+   if owlClass.subject.startswith('http://www.w3.org/ns/prov#'):
+      all_ordered['classes'].append(owlClass.subject)
+all_ordered['classes'].sort()
+
+all_ordered['properties'] = []
+all_ordered['datatypeproperties'] = []
+for prop in DatatypeProperties.all():
+   if prop.subject.startswith('http://www.w3.org/ns/prov#'):
+      all_ordered['properties'].append(prop.subject)
+      all_ordered['datatypeproperties'].append(prop.subject)
+all_ordered['datatypeproperties'].sort()
+
+all_ordered['objectproperties'] = []
+for prop in ObjectProperties.all():
+   if prop.subject.startswith('http://www.w3.org/ns/prov#'):
+      all_ordered['properties'].append(prop.subject)
+      all_ordered['objectproperties'].append(prop.subject)
+all_ordered['objectproperties'].sort()
+all_ordered['properties'].sort()
+
 qualifiedFormsQ = '''
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix prov: <http://www.w3.org/ns/prov#>
@@ -728,7 +751,7 @@ for category in categories.keys():
             if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
                quals.write('  <tr>\n')
 
-               print property.subject
+               #print property.subject + ' gets qualified'
                qname = property.rdfs_domain.first.subject.split('#')
                quals.write('    <td><a title="'+property.rdfs_domain.first.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
@@ -783,10 +806,10 @@ if rdfa:
    inverses.write('       xmlns:xsd="http://www.w3.org/2001/XMLSchema#"\n')
    inverses.write('       typeof="prov:Dictionary" class="inverse-names">\n')
    inverses.write('  <span rel="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>\n')
-   inverses.write('  <span rel="prov:wasTracedTo"    resource="http://www.w3.org/TR/rdfa-syntax/#rdfa-attributes"/>\n')
-   inverses.write('  <span rel="prov:wasTracedTo"    resource="http://www.w3.org/2007/08/pyRdfa/"/>\n')
-   inverses.write('  <span rel="prov:wasTracedTo"    resource="http://data.semanticweb.org/person/alvaro-graves"/>\n')
-   inverses.write('  <span rel="prov:wasTracedTo"    resource="http://tw.rpi.edu/instances/TimLebo"/>\n')
+   inverses.write('  <span rel="prov:wasInfluencedBy"    resource="http://www.w3.org/TR/rdfa-syntax/#rdfa-attributes"/>\n')
+   inverses.write('  <span rel="prov:wasInfluencedBy"    resource="http://www.w3.org/2007/08/pyRdfa/"/>\n')
+   inverses.write('  <span rel="prov:wasInfluencedBy"    resource="http://data.semanticweb.org/person/alvaro-graves"/>\n')
+   inverses.write('  <span rel="prov:wasInfluencedBy"    resource="http://tw.rpi.edu/instances/TimLebo"/>\n')
    inverses.write('  <span rel="prov:specializationOf" resource="#inverse-names"><span rel="rdf:type" resource="http://www.w3.org/ns/prov#Dictionary"/></span>\n')
    inverses.write('  <span property="prov:generatedAtTime" content="'+str(datetime.datetime.utcnow()).replace(' ','T')+'" datatype="xsd:dateTime"/>\n')
    inverses.write('  <caption>Names of inverses</caption>\n')
@@ -814,9 +837,9 @@ elif False:
    #     prefix="prov: http://www.w3.org/ns/prov#"
    #     typeof="prov:Dictionary">
    # <span property="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>
-   # <span property="prov:wasTracedTo" resource="http://www.w3.org/TR/rdfa-syntax/#rdfa-attributes"/>
-   # <span property="prov:wasTracedTo" resource="http://data.semanticweb.org/person/alvaro-graves"/>
-   # <span property="prov:wasTracedTo" resource="http://tw.rpi.edu/instances/TimLebo"/>
+   # <span property="prov:wasInfluencedBy" resource="http://www.w3.org/TR/rdfa-syntax/#rdfa-attributes"/>
+   # <span property="prov:wasInfluencedBy" resource="http://data.semanticweb.org/person/alvaro-graves"/>
+   # <span property="prov:wasInfluencedBy" resource="http://tw.rpi.edu/instances/TimLebo"/>
    # <span property="prov:specializationOf" resource="#inverse-names">
    # <span property="rdf:type" resource="http://www.w3.org/ns/prov#Dictionary"/>
    # <span property="prov:wasDerivedFrom" resource="http://www.w3.org/TR/prov-o/prov.owl"/>
@@ -847,23 +870,57 @@ else:
    inverses.write('<table class="inverse-names">\n')
    inverses.write(' <caption>Names of inverses</caption>\n')
    inverses.write(' <tr>\n')
+   inverses.write(' <th>Domain</th>\n')
    inverses.write(' <th>PROV-O Property</th>\n')
    inverses.write(' <th>Recommended inverse name</th>\n')
+   inverses.write(' <th>Range</th>\n')
    inverses.write(' </tr>\n')
-   for property in ObjectProperties.all():
+   for property_uri in all_ordered['objectproperties']:
+      property = session.get_resource(property_uri,ObjectProperties) 
       qname = property.subject.split('#')
       if property.prov_inverse:
          inverses.write(' <tr>\n')
+
+         # Column 1
+         if len(property.rdfs_domain):
+            print property.subject + ' domain ' + property.rdfs_domain.first.subject
+            if property.rdfs_domain.first.subject.startswith('http://www.w3.org/ns/prov#'):
+               qname_domain = property.rdfs_domain.first.subject.split('#')
+               inverses.write(' <td><a title="'+property.rdfs_domain.first.subject+'" href="#'+qname_domain[1]+'" class="owlproperty">'+PREFIX+':'+qname_domain[1]+'</a></td>\n')
+            else:
+               inverses.write(' <td>union</td>\n')
+         else:
+            inverses.write(' <td></td>\n')
+
+         # Column 2
          inverses.write(' <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+
+         # Column 3
          inverses.write(' <td>prov:'+property.prov_inverse.first+'</td>\n')
+
+         # Column 4
+         if len(property.rdfs_range):
+            print property.subject + ' range ' + property.rdfs_range.first.subject
+            if property.rdfs_range.first.subject.startswith('http://www.w3.org/ns/prov#'):
+               qname_range = property.rdfs_range.first.subject.split('#')
+               inverses.write(' <td><a title="'+property.rdfs_range.first.subject+'" href="#'+qname_range[1]+'" class="owlproperty">'+PREFIX+':'+qname_range[1]+'</a></td>\n')
+            else:
+               inverses.write(' <td>union</td>\n')
+
          inverses.write(' </tr>\n')
    inverses.write('</table>\n')
 inverses.close()
 
 inversesName = 'inverses.ttl'
-termsName = 'terms.txt'
-inverses = open(inversesName, 'w')
-terms = open(termsName, 'w')
+termsName    = 'terms.txt'
+inverses  = open(inversesName, 'w')
+terms     = open(termsName, 'w')
+
+for class_uri in all_ordered['classes']:
+   owlClass = session.get_resource(class_uri,Classes)
+   qname = owlClass.subject.split('#')
+   terms.write(qname[1]+'\n')
+
 inverses.write('@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .\n')
 inverses.write('@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .\n')
 inverses.write('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n')
@@ -874,7 +931,8 @@ inverses.write('<> prov:wasDerivedFrom <http://www.w3.org/TR/prov-o/prov.owl>;\n
 inverses.write('   rdfs:seeAlso        <http://www.w3.org/TR/prov-o/#names-of-inverse-properties>;\n')
 inverses.write('   owl:versionIRI      <http://www.w3.org/TR/2012/WD-prov-o-2012MMDD> .\n')
 inverses.write('\n')
-for property in ObjectProperties.all():
+for property_uri in all_ordered['objectproperties']:
+   property = session.get_resource(property_uri,ObjectProperties)
    qname = property.subject.split('#')
    terms.write(qname[1]+'\n') 
    if property.prov_inverse:
@@ -884,12 +942,6 @@ for property in ObjectProperties.all():
 #         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
    elif qname[1] is not 'topObjectProperty':
       print 'WARNING: ' + property.subject + ' does not have an inverse'
-
-for owlClass in Classes.all():
-   if owlClass.subject.startswith('http://www.w3.org/ns/prov#'):
-      qname = owlClass.subject.split('#')
-      if qname[1] is not 'topObjectProperty':
-         terms.write(qname[1]+'\n')
 
 inverses.close()
 terms.close()
