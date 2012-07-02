@@ -319,9 +319,7 @@ for category in categories.keys():
 
          # ?sub rdfs:subClassOf class
          if len(owlClass.is_rdfs_subClassOf_of) > 0:
-            es = '' # plural form grammar
-            if len(owlClass.is_rdfs_subClassOf_of) > 1:
-               es="es"
+            es = 'es' if len(owlClass.is_rdfs_subClassOf_of) > 1 else ''
             cross.write('\n')
             cross.write('      <dt>has subclass'+es+'</dt>\n')
             cross.write('      <dd>\n')
