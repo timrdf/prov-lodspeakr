@@ -8,7 +8,7 @@
          <a href="#prov-expanded-owl-terms-at-a-glance">Expanded</a> categories.  
       The Qualification Pattern consists of restating the unqualified
          relation by using an intermediate class that represents the influence between two resources. 
-      This new instance, in turn, can be described with arbitrary descriptions about the influence between the two resources cited. The following two tables list the relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. For example, the first table's third row indicates that when we want to elaborate the association (<span class="repeated">prov:wasAssociatedWith</span>) that an Agent had upon an Activity, we add an additional description (<span class="repeated">prov:qualifiedAssociation</span>) to the Activity that references an instance of <span class="repeated">prov:Association</span> that, in turn, references the influencing Agent with the property <span class="repeated">prov:agent</span>. The instance of  <span class="repeated">prov:Association</span> can then be annotated with arbitrary descriptions of the influence that the Agent had upon the Activity.
+      This new instance, in turn, can be described with arbitrary descriptions about the influence between the two resources cited. The following two tables list the relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. For example, the first table's third row indicates that when we want to elaborate the association (<span class="repeated">prov:wasAssociatedWith</span>) that an Agent had upon an Activity, we add an additional description (<span class="repeated">prov:qualifiedAssociation</span>) to the Activity that references an instance of <span class="repeated">prov:Association</span> that, in turn, references the influencing Agent with the property <span class="repeated">prov:agent</span>. The instance of  <span class="repeated">prov:Association</span> can then be annotated with arbitrary descriptions about the influence that the Agent had upon the Activity.
       </p>
 
       <div id="qualified-forms-starting-point" style="padding: 10px">
@@ -29,10 +29,11 @@
 
 
       <p>
-       In the <a href="#cross-reference">cross reference</a> in the next section of this document, 
-         each property that can be qualified provides a <strong>can be qualified with</strong> 
-         header linking to the qualifying property and involvement class.
-      In the PROV-O OWL these are indicated using the annotation property <span class="qname">prov:qualifiedForm</span>. 
+       The qualification classes and properties shown in the previous two tables can also be found in the <a href="#cross-reference">cross reference</a> 
+        in the following section of this document. Each property that can be qualified provides a <strong>can be qualified with</strong> 
+         header that links to the qualifying property and influence class.
+      The annotation property <span class="qname">prov:qualifiedForm</span> also references the qualification property and influence class within the OWL file itself.
+
          The involvement class is a subclass of <a class="qname" href="#Influence">prov:Influence</a> which
       determines which property to link from the influence to the unqualified object, that is either
     <a class="qname" href="#entity">prov:entity</a>,
