@@ -35,11 +35,14 @@
          Conversely, each influence class indicates the unqualified property that it qualifies with the <strong>qualifies</strong> header in the cross reference below.
       The annotation property <span class="qname">prov:qualifiedForm</span> also references the qualification property and influence class within the OWL file itself.
 
-         The involvement class is a subclass of <a class="qname" href="#Influence">prov:Influence</a> which
-      determines which property to link from the influence to the unqualified object, that is either
-    <a class="qname" href="#entity">prov:entity</a>,
-    <a class="qname" href="#activity">prov:activity</a>, or
-    <a class="qname" href="#agent">prov:agent</a>
+         The influence classes (e.g. <span class="repeated">prov:Association</span>, <span class="repeated">prov:Usage</span>) are extensions of 
+         <a class="qname" href="#Influence">prov:Influence</a>, 
+         <a class="qname" href="#EntityInfluence">prov:EntityInfluence</a>, 
+         <a class="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>, and
+         <a class="qname" href="#AgentInfluence">prov:AgentInfluence</a>, which determine the property to use to cite the influencing resource (either
+       <a class="qname" href="#entity">prov:entity</a>,
+       <a class="qname" href="#activity">prov:activity</a>, or
+       <a class="qname" href="#agent">prov:agent</a>).
          <p>
 So for instance, if we have the unqualified statement:
 <pre class="example">
