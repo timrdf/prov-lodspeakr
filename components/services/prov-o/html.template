@@ -593,6 +593,9 @@
       strong.crossreference {
          padding-right: 15px;
       }
+      div.feature-at-risk {
+         color: red;
+      }
      </style>
 
      <script src='http://dev.w3.org/2009/dap/ReSpec.js/js/respec.js' class='remove' type="text/javascript"></script>

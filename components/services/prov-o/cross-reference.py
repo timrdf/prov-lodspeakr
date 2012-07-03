@@ -471,7 +471,8 @@ for category in categories.keys():
 
          # property rdfs:comment
          for comment in property.rdfs_comment:
-            cross.write('      <div class="comment"><p>'+comment+'</p>\n')
+            atRisk = ' feature-at-risk' if comment.find('may be removed from this specification') >=0 else ''
+            cross.write('      <div class="comment '+atRisk+'"><p>'+comment+'</p>\n')
             cross.write('      </div>\n')
 
          # Characteristics
