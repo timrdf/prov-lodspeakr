@@ -702,7 +702,6 @@
            { name: "Daniel Garijo",
                  url:"http://www.oeg-upm.net/index.php/en/phdstudents/28-dgarijo",
                    company: "Universidad Politécnica de Madrid, Spain" },
-             { name: "Mike Lang, Jr.", company: "Revelytix, USA"},
            { name: "Stian Soiland-Reyes",
                    url:"http://soiland-reyes.com/stian/",
                   company: "University of Manchester, UK" },
@@ -751,6 +750,18 @@
   
  
     <section id='sotd'>
+<h4>Intended to be Last Call (TBC)</h4>
+<p>This is the third public release of the PROV-O document.
+Publication as Last Call working draft means that the Working Group believes that it has satisfied the relevant technical requirements outlined in its charter on this document. The design is not expected to change significantly, going forward, and now is the key time for external review, before the implementation phase.</p> 
+<p>This specification identifies two  <a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">features at risk</a>: <a href="#mentionOf">prov:mentionOf</a> and  <a href="#asInBundle">prov:asInBundle</a> might be removed from PROV-O if implementation experience reveals problems with supporting this construct. These two OWL properties are based on the PROV <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#term-mention">Mentions</a> feature.</p>
+
+
+<h4>Please Comment By 2012-09-13 (date TBC)</h4>
+<p>The PROV Working group seeks public feedback on this Working Draft.
+The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we would appreciate comments by that date to public-prov-comments@w3.org
+</p>
+
+
       <h4>PROV Family of Specifications</h4>
       This document is part of the PROV family of specifications, a set of specifications defining various aspects that are necessary to achieve the vision of inter-operable
       interchange of provenance information in heterogeneous environments such as the Web.  The specifications are:
