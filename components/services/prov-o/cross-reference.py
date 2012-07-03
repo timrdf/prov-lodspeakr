@@ -355,8 +355,8 @@ for category in categories.keys():
 
          # class prov:unqualifiedForm ?p
          if len(owlClass.prov_unqualifiedForm) > 0:
-            #print owlClass.subject
-            #print owlClass.prov_unqualifiedForm.first
+            print 'Influence:             ' + owlClass.subject
+            print 'unqualified influence: ' + owlClass.prov_unqualifiedForm.first.subject
             qname = owlClass.prov_unqualifiedForm.first.subject.split('#')
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
@@ -900,7 +900,7 @@ else:
 
          # Column 4
          if len(property.rdfs_range):
-            print property.subject + ' range ' + property.rdfs_range.first.subject
+            #print property.subject + ' range ' + property.rdfs_range.first.subject
             if property.rdfs_range.first.subject.startswith('http://www.w3.org/ns/prov#'):
                qname_range = property.rdfs_range.first.subject.split('#')
                inverses.write(' <td><a title="'+property.rdfs_range.first.subject+'" href="#'+qname_range[1]+'" class="owlproperty">'+PREFIX+':'+qname_range[1]+'</a></td>\n')
