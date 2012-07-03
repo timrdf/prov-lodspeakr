@@ -355,8 +355,8 @@ for category in categories.keys():
 
          # class prov:unqualifiedForm ?p
          if len(owlClass.prov_unqualifiedForm) > 0:
-            print 'Influence:             ' + owlClass.subject
-            print 'unqualified influence: ' + owlClass.prov_unqualifiedForm.first.subject
+            #print 'Influence:             ' + owlClass.subject
+            #print 'unqualified influence: ' + owlClass.prov_unqualifiedForm.first.subject
             qname = owlClass.prov_unqualifiedForm.first.subject.split('#')
             cross.write('\n')
             cross.write('      <dt>qualifies</dt>\n')
@@ -884,7 +884,7 @@ else:
 
          # Column 1
          if len(property.rdfs_domain):
-            print property.subject + ' domain ' + property.rdfs_domain.first.subject
+            #print property.subject + ' domain ' + property.rdfs_domain.first.subject
             if property.rdfs_domain.first.subject.startswith('http://www.w3.org/ns/prov#'):
                qname_domain = property.rdfs_domain.first.subject.split('#')
                inverses.write(' <td><a title="'+property.rdfs_domain.first.subject+'" href="#'+qname_domain[1]+'" class="owlproperty">'+PREFIX+':'+qname_domain[1]+'</a></td>\n')
@@ -919,6 +919,8 @@ terms     = open(termsName, 'w')
 
 for class_uri in all_ordered['classes']:
    owlClass = session.get_resource(class_uri,Classes)
+   if len(owlClass.rdfs_isDefinedBy) is not 1 or str(owlClass.rdfs_isDefinedBy.first.subject) != 'http://www.w3.org/ns/prov#':
+      print 'WARNING: ' + owlClass.subject + ' does not have correct rdfs:isDefinedBy ' + str(len(owlClass.rdfs_isDefinedBy))  #+ ' ' + owlClass.rdfs_isDefinedBy.first.subject
    qname = owlClass.subject.split('#')
    terms.write(qname[1]+'\n')
 
@@ -950,3 +952,13 @@ for property_uri in all_ordered['objectproperties']:
 
 inverses.close()
 terms.close()
+
+for property_uri in all_ordered['objectproperties']:
+   property = session.get_resource(property_uri,ObjectProperties)
+   if len(property.rdfs_isDefinedBy) is not 1 or str(property.rdfs_isDefinedBy.first.subject) != 'http://www.w3.org/ns/prov#':
+      print 'WARNING: ' + property.subject + ' does not have correct rdfs:isDefinedBy ' + str(len(property.rdfs_isDefinedBy))  #+ ' ' + property.rdfs_isDefinedBy.first.subject
+for property_uri in all_ordered['datatypeproperties']:
+   property = session.get_resource(property_uri,DatatypeProperties)
+   if len(property.rdfs_isDefinedBy) is not 1 or str(property.rdfs_isDefinedBy.first.subject) != 'http://www.w3.org/ns/prov#':
+      print 'WARNING: ' + property.subject + ' does not have correct rdfs:isDefinedBy ' + str(len(property.rdfs_isDefinedBy))  #+ ' ' + property.rdfs_isDefinedBy.first.subject
+
