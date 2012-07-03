@@ -20,7 +20,8 @@
       For example, a blog writing activity may use a particular dataset and generate a bar chart. Provenance chains of alternating Activities and 
       Entities can be created with usage and generation. In addiition, we can say that an Activity <a href='#wasInformedBy' class="qname">prov:wasInformedBy</a>
       another Activity to provide some ordering information without explicitly mentioning the activities' start and end times. 
-      Further, we know that the informed Activity used an Entity that was generated the informing Activity. Thus, the 
+      A <span class="repeated">prov:wasInformedBy</span> relation among Activities suggests that the informed Activity used an Entity that was generated the informing 
+      Activity, but the Entity is itself is not of interest. Thus, the 
       <span class="repeated">prov:wasInformedBy</span> allows the assertion of provenance chains comprising only Activities.
       </p>
 
