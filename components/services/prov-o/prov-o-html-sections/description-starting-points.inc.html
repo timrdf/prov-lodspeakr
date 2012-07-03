@@ -19,8 +19,6 @@
       <a href='#used' class="qname">prov:used</a> and <a href='#wasGeneratedBy' class="qname">prov:wasGeneratedBy</a>, respectively). 
       For example, a blog writing activity may use a particular dataset and generate a bar chart. 
       Provenance chains of alternating Activities and Entities can be created by applying usage and generation.
-      Arbitrary RDF properties can be used to describe the fixed aspects of an Entity that are interesting to a particular application (for example, 
-      the file size and format of the dataset, or the aspect ratio of the bar chart).
       </p>
 
       <p>In addiition, we can say that an Activity <a href='#wasInformedBy' class="qname">prov:wasInformedBy</a>
@@ -29,9 +27,11 @@
       Activity, but the Entity itself is not interesting. So, the <span class="repeated">prov:wasInformedBy</span> property allows the assertion of provenance chains comprising only Activities.
       </p>
 
-      <p>The <a href='#wasDerivedFrom' class="qname">prov:wasDerivedFrom</a> property can be used to form provenance chains of only Entities.
+      <p>Property chains of Entities can be formed using the <a href='#wasDerivedFrom' class="qname">prov:wasDerivedFrom</a> property.
          A derivation is a transformation of one entity into another. For example, if the Activity that created the bar chart is not interesting,
-          the we can say that the bar chart <span class="repeated">prov:wasDerivedFrom</span> the dataset.
+          then we can say that the bar chart <span class="repeated">prov:wasDerivedFrom</span> the dataset.
+         Arbitrary RDF properties can be used to describe the fixed aspects of an Entity that are interesting to a particular application (for example, 
+         the file size and format of the dataset, or the aspect ratio of the bar chart).
       </p>
 
       <p>An Agent can be responsible for an Activity or an Entity, which is described using the properties <a href='#wasAssociatedWith' class="qname">prov:wasAssociatedWith</a> and <a href='#wasAttributedTo' class="qname">prov:wasAttributedTo</a>, respectively. Agents can also be responsible for other Agents' actions. In this case, the Agent that influenced an Activity or Entity <a href='#actedOnBehalfOf' class="qname">prov:actedOnBehalfOf</a> another Agent that may have had less influence, but still bears some responnsibility for the resulting Activity or Entity.
