@@ -49,6 +49,12 @@
     <a href="#mentionOf" class="qname">prov:mentionOf</a> is a special type of <span class="repeated">prov:specializationOf</span> whose subject presents as an aspect a particular <span class="repeated">prov:Bundle</span> in which its more general Entity was described (<a href="#asInBundle" class="qname">prov:asInBundle</a> is used to cite the Bundle in which the generalization was mentioned).
 	  </p>
 	  
+      <div class="note">
+      <p>Note: <span class="repeated">prov:mentionOf</span> and <span class="repeated">prov:asInBundle</span> features are "<a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">at risk</a>" and may be removed from this specification based on feedback. Please send feedback to public-prov-comments@w3.org.</p>
+
+      <p>The "Mention" construct might be removed from PROV if implementation experience reveals problems with supporting this construct. 
+      Since PROV-O uses <span class="repeated">prov:mentionOf</span> and <span class="repeated">prov:asInBundle</span> to encode "Mention", these two properties might also be removed under the same conditions.</p>
+      </div>
 
       <p>
       The <strong>third</strong> category allows further description of Entities. The property <a href="#value" class="qname">prov:value</a> holds a literal value for the Entity. For example, the <span class="repeated">prov:value</span> of a quote could be a string of the sentences stated, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
