@@ -55,11 +55,15 @@ and
 the class <a class="qname" href='#Generation'>prov:Generation</a>, which is a subclass of <a class ="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>. From this, we can restate the above relation using the <em>qualification pattern</em> as:
 </p>
 <pre class="example">
-:e1 prov:wasGeneratedBy :e1Gen .
+:e1 
+   prov:wasGeneratedBy      :a1;
+   prov:qualifiedGeneration :e1Gen;
+.
 
 :e1Gen 
    a prov:Generation;
    prov:entity :a1;
+   :foo :bar;
 .
 </pre>
 <p>
