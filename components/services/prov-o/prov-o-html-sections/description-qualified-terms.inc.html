@@ -46,7 +46,12 @@
          <p>
 So for instance, if we have the unqualified statement:
 <pre class="example">
-:e1 prov:wasGeneratedBy :a1 .
+:e1 
+   a prov:Entity;
+   prov:wasGeneratedBy :a1;
+.
+
+:a1 a prov:Activity .
 </pre>
 </p>
 <p>Then we find in PROV-O that <a class="qname" href="#wasGeneratedBy">prov:wasGeneratedBy</a> can be qualified with  
@@ -56,13 +61,16 @@ the class <a class="qname" href='#Generation'>prov:Generation</a>, which is a su
 </p>
 <pre class="example">
 :e1 
+   a prov:Entity;
    prov:wasGeneratedBy      :a1;
-   prov:qualifiedGeneration :e1Gen;
+   prov:qualifiedGeneration :e1Gen; # Add the qualification
 .
+
+:a1 a prov:Activity .
 
 :e1Gen 
    a prov:Generation;
-   prov:activity :a1;
+   prov:activity :a1; # Cite the influencing Activity.
    :foo :bar;
 .
 </pre>
