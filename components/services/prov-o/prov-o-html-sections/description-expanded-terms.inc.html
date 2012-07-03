@@ -19,19 +19,18 @@
      <p>Three subclasses of Agent (<a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and 
       <a href="#SoftwareAgent" class="qname">prov:SoftwareAgent</a>) and
       two subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, and <a href="#Bundle" class="qname">prov:Bundle</a>). 
-      A <span class="repeated">prov:Collection</span> is an Entity that provides a structure to some constituents (which are themselves Entities) and 
-      <a href="#Bundle" class="qname">prov:Bundle</a> is a named set of provenance descriptions that enables the expression of provenance of provenance.
       </p>
 
       <p>
+      A <span class="repeated">prov:Collection</span> is an Entity that provides a structure to some constituents (which are themselves Entities). 
       The <span class="repeated">prov:Collection</span> class can be used to express the provenance of different kinds of collections (sets, lists, etc.) themselves: 
       e.g. who maintains the collection (attribution), which members it contains as it evolves, and how it was assembled. 
       The <a href="#hadMember" class="qname">prov:hadMember</a> property is used to assert membership in a collection.
       </p>
 
       <p>
-      A <span class="repeated">prov:Bundle</span> is a named set of provenance descriptions can take any form beyond PROV-O triples, 
-      including videotaped testimony or scribbles on a drink napkin. 
+      A <a href="#Bundle" class="qname">prov:Bundle</a> is a named set of provenance descriptions that enables the expression of provenance of provenance.
+      It is important to note that the set of provenance descriptions can assume forms beyond PROV-O triples, such as videotaped testimony or scribbles on a drink napkin. 
       The extension of Bundle that contains only PROV-O assertions is not named by PROV or PROV-O, since it is more appropriate to do so using other recommendations, 
       standards, or technologies. In any case, a Bundle of PROV-O assertions is an abstract set of RDF triples, and adding or removing a triple creates a distinct 
       Bundle of PROV-O assertions.
