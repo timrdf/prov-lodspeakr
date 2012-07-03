@@ -937,7 +937,11 @@ for property_uri in all_ordered['objectproperties']:
    qname = property.subject.split('#')
    terms.write(qname[1]+'\n') 
    if property.prov_inverse:
-      inverses.write('prov:'+qname[1]+' owl:inverseOf prov:'+property.prov_inverse.first+' .\n')
+      inverses.write('prov:'+property.prov_inverse.first+'\n')
+      inverses.write('   rdfs:label       "'+property.prov_inverse.first+'";\n')
+      inverses.write('   owl:inverseOf    prov:'+qname[1]+';\n')
+      inverses.write('   rdfs:isDefinedBy <http://www.w3.org/TR/prov-o/inverses.owl> .\n\n')
+      inverses.write('prov:'+qname[1] + ' rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .\n\n\n')
 #         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 #                       #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
 #         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
