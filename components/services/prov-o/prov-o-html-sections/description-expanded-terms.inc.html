@@ -46,7 +46,7 @@
       knowledge about the topic (such as a reading from a sensor, or a journal written during an historical event). 
       </p>
 	  
-	  <p>The <strong>second</strong> category relates Entities according to their levels of abstraction, where some Entities may present more aspects than their more general counterparts. 
+	  <p>The <strong>second</strong> category relates Entities according to their levels of abstraction, where some Entities may present more specific aspects than their more general counterparts. 
       While <a href="#specializationOf" class="qname">prov:specializationOf</a> links a more specific Entity to a more general one (e.g., today's BBC news home page versus BBC's news home page on any day), <a href="#alternateOf" class="qname">prov:alternateOf</a> links Entities that present aspects of the same thing, but not necessarily the same aspects or at the same time (e.g., the serialization of a document in different formats).
     <a href="#mentionOf" class="qname">prov:mentionOf</a> is a special type of <span class="repeated">prov:specializationOf</span> whose subject presents as an aspect a particular <span class="repeated">prov:Bundle</span> in which its more general Entity was described (<a href="#asInBundle" class="qname">prov:asInBundle</a> is used to cite the Bundle in which the generalization was mentioned).
 	  </p>
@@ -67,8 +67,8 @@
 		</p>
 
  
-      <p>The <strong>fourth</strong> category describes the lifetime of an Entity beyond being <strong>generated</strong> by an Activity and <strong>used</strong> by other Activities. For example, a painting could not have been displayed before it was painted, and it cannot be sold after it is destroyed by fire. 
-      Similarly to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable. 
+      <p>The <strong>fourth</strong> category describes the lifetime of an Entity beyond being <strong>generated</strong> by an Activity and <strong>used</strong> by other Activities. For example, a painting could not have been displayed before it was painted, and it could not be sold after it was destroyed by fire. 
+      Similar to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable. 
 The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a> and <a href="#invalidatedAtTime" class="qname">prov:invalidatedAtTime</a> can be used to bound the starting and ending moments of an Entity's existence. The Activities that led to the generation or invalidation of an Entity can be provided using <span class="repeated">prov:wasGeneratedBy</span> and <a href="#wasInvalidatedBy" class="qname">prov:wasInvalidatedBy</a>, respectively. 
 <a href="#generated" class="qname">prov:generated</a> and <a href="#invalidated" class="qname">prov:invalidated</a> are the inverses of <span class="repeated">prov:wasGeneratedBy</span> and <span class="repeated">prov:wasInvalidatedBy</span>, respectively, and are defined to facilitate Activity-centric in addition to Entity-centric modeling. 
       </p>
@@ -86,7 +86,7 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
         </div>
 		   
 		   <p>
-		   Agent <code>ex:derek</code>, acting again in behalf of the <code>ex:chartgenerators</code> organization, 
+		   Agent <code>ex:derek</code>, acting again on behalf of the <code>ex:chartgenerators</code> organization, 
 		   publishes a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>) using the tool <code>ex:postEditor</code>. Since he is the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
 		   is recorded as well. The post produced by <code>ex:derek</code> (<code>ex:post9821v1</code>) includes a permanent link where the content of the latest version is shown
 		   (<code>ex:more-crime-happens-in-cities</code>) plus a snapshot of the content of the current version (<code>ex:postContent0</code>). Derek also adds additional metadata of the post, like the title.
@@ -98,9 +98,9 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		   </p>		   
 		   
 		 <div about="#narrative-example-expanded-1-a" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-           <p>Shortly after Derek's post publication, ex:monica adapts the text for a wider audience in a new post (<code>ex:post9822</code>). This version is an specialization of the original post,
+           <p>Shortly after Derek's post publication, ex:monica adapts the text for a wider audience in a new post (<code>ex:post9822</code>). This version is a specialization of the original post,
 		   and an alternate of the version modified by Derek. Since the provenance produced by the activities of Derek and Monica correspond to different user views, the system
-		   automatically publish it in different <a href="#Bundle" class="qname">prov:Bundles</a> (<code>ex:bundlePost and ex:bundlePost1</code>).
+		   automatically publish it in different <a href="#Bundle" class="qname">prov:Bundle</a>s (<code>ex:bundlePost and ex:bundlePost1</code>).
             </p> 		   
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl"
                  class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl" %}{% endescape %}</pre> 
