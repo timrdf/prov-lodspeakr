@@ -1,14 +1,18 @@
 <!-- incorporate https://dvcs.w3.org/hg/prov/rev/e3ecc51f4598 -->
      <section id="description-qualified-terms">
        <h3>Qualified Terms</h3>
-       <p>The Qualified Terms category is for users who wish to provide further details about the influence among
+       <p>The Qualified Terms category is for users who wish to provide further details about the provenance-related influence among
          Entities, Activities, and Agents.  The terms in this category are the result of
          applying the <strong>Qualification Pattern</strong> [[LD-Patterns-QR]] to the simple (unqualified)
          relations available in the <a href="#prov-starting-point-owl-terms-at-a-glance">Starting Point</a> and 
          <a href="#prov-expanded-owl-terms-at-a-glance">Expanded</a> categories.  
       The Qualification Pattern consists of restating the unqualified
          relation by using an intermediate class that represents the influence between two resources. 
-      This new instance, in turn, can be described with arbitrary descriptions about the influence between the two resources cited. The following two tables list the relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. For example, the first table's third row indicates that when we want to elaborate the association (<span class="repeated">prov:wasAssociatedWith</span>) that an Agent had upon an Activity, we add an additional description (<span class="repeated">prov:qualifiedAssociation</span>) to the Activity that references an instance of <span class="repeated">prov:Association</span> that, in turn, references the influencing Agent with the property <span class="repeated">prov:agent</span>. The instance of  <span class="repeated">prov:Association</span> can then be annotated with arbitrary descriptions about the influence that the Agent had upon the Activity.
+      This new instance, in turn, can be annotated with additional descriptions about the influence relationships between the two resources cited. 
+      The following two tables list the relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. 
+      For example, the first table's third row indicates that when we want to elaborate the association (<span class="repeated">prov:wasAssociatedWith</span>) that an 
+      Agent had upon an Activity, we can create an instance of <span class="repeated">prov:Association</span> 
+      and use that to express additional descriptions about the influence that the Agent had upon the Activity.  
       </p>
 
       <div id="qualified-forms-starting-point" style="padding: 10px">
