@@ -648,6 +648,12 @@
           "<a href=\"http://www.w3.org/TR/owl2-primer/\"><cite>OWL 2 Web Ontology Language Primer</cite></a>. "+
           "modified 27 October 2009, accessed July 03 2012 "+
           "URL: <a href=\"http://www.w3.org/TR/owl2-primer/\">http://www.w3.org/TR/owl2-primer/</a>",
+
+         "XMLSCHEMA11-2":
+          "Henry S. Thompson; et al. "+
+          "<a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405//\"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes.</cite></a>. "+
+          "5 April 2012. W3C Recommendation "+
+          "URL: <a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/\">http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/</a>",
       };
 
       var respecConfig = {
@@ -806,12 +812,12 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
          <p>The PROV Ontology (PROV-O) defines the normative OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
-         PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
+         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
-         <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-RDF-BASED-SEMANTICS]]. 
+         <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-RDF-BASED-SEMANTICS]]. 
         </p>
 
-        <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA-2]].   
+        <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA11-2]].   
         </p>
         <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
     </section>
