@@ -76,11 +76,16 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
       <p>The <strong>fifth</strong> category describes the lifetime of an Activity beyond its start and end times and predecessor Activities.  
       Activities may also be started or ended by Entities, which are described using the properties <a href="#wasStartedBy" class="qname">prov:wasStartedBy</a> and <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, respectively. Since Entities may start or end Activities, and Agents may be Entities, then Agents may also start or end Activities.
       </p>
-        <div about="#narrative-example-expanded-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+
+        <div id="narrative-example-expanded-1" about="#narrative-example-expanded-1" 
+            typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
            <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. Derek then published a post about
-		   his work with the aggregated file:
+		   his work with the aggregated file.
             </p> 
-		   
+            <p>   
+               <a href="#narrative-example-expanded-1"/>Example 2</a>:
+            </p>
+
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl"
                  class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}{% endescape %}</pre> 
         </div>
@@ -102,6 +107,9 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		   and an alternate of the version modified by Derek. Since the provenance produced by the activities of Derek and Monica correspond to different user views, the system
 		   automatically publish it in different <a href="#Bundle" class="qname">prov:Bundle</a>s (<code>ex:bundlePost and ex:bundlePost1</code>).
             </p> 		   
+            <p>   
+               <a href="#narrative-example-expanded-1-a"/>Example 3</a>:
+            </p>
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl"
                  class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl" %}{% endescape %}</pre> 
         </div>
@@ -109,6 +117,9 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
          <div about="#narrative-example-expanded-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
             <p>Some time passes by, and John writes his own conclusions quoting the previous two posts:
             </p> 
+            <p>   
+               <a href="#narrative-example-expanded-2"/>Example 4</a>:
+            </p>
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl"
                  class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}{% endescape %}</pre> 
          </div>
@@ -122,6 +133,9 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		   </p> 		   
 		   
          <div about="#narrative-example-expanded-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <p>   
+               <a href="#narrative-example-expanded-3"/>Example 5</a>:
+            </p>
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt4.ttl"
                  class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt4.ttl" %}{% endescape %}</pre>
          </div>
