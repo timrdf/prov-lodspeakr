@@ -15,6 +15,8 @@ rdflib.plugin.register('sparql', rdflib.query.Result,    'rdfextras.sparql.query
 import datetime
 import uuid
 
+from sets import Set
+
 if len(sys.argv) != 4:
    print "usage: cross-reference.py http://some.owl someont.owl prefix"
    print
@@ -198,6 +200,10 @@ for category in categories.keys():
          for definition in owlClass.prov_definition:
             cross.write('    <div class="definition"><p>'+definition+'</p>\n')
             cross.write('    </div>\n')
+         if len(owlClass.prov_definition) == 0:
+            for definition in owlClass.prov_editorsDefinition:
+               cross.write('    <div class="editors definition"><p>'+definition+'</p>\n')
+               cross.write('    </div>\n')
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          # <pre about="#example-for-class-Entity" typeof="prov:Entity" 
@@ -364,8 +370,17 @@ for category in categories.keys():
             cross.write('        <a title="'+owlClass.prov_unqualifiedForm.first.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a>'
                                  +sup[propertyTypes[owlClass.prov_unqualifiedForm.first.subject]]+'\n')
             cross.write('      </dd>\n')
- 
+
+         validSeeAlsos = Set()
+         if len(owlClass.rdfs_seeAlso) > 0:
+            for also in owlClass.rdfs_seeAlso:
+               if str(also).startswith('http://www.w3.org/ns/prov#') or str(also).startswith('http://www.w3.org/TR/prov-o'):
+                  validSeeAlsos.add(str(also))
+         for also in validSeeAlsos:
+            print owlClass.subject + ' see also ' + also
+
          include_dm_links = True
+         include_other_links = False
          if include_dm_links:
             if len(owlClass.prov_dm) > 0:
                cross.write('\n')
@@ -373,6 +388,8 @@ for category in categories.keys():
                cross.write('      <dd>\n')
                cross.write('        <a title="prov-dm" href="'+owlClass.prov_dm.first+'">prov-dm</a>')
                cross.write('      </dd>\n')
+            
+         if include_other_links:
             if len(owlClass.prov_constraints) > 0:
                cross.write('\n')
                cross.write('      <dt>prov-constraints</dt>\n')
@@ -428,32 +445,32 @@ for category in categories.keys():
          # prov:qualifiedFrom [ a owl:Class, prov:definition ], prov:editorsDefinition
          if len(property.prov_definition) > 0:
             # If it has its own definition, use it.
-            for definition in owlClass.prov_definition:
-               cross.write('    <div class="definition"><p>'+definition+'</p>\n')
+            for definition in property.prov_definition:
+               cross.write('    <div class="definition def-from-1"><p>'+definition+'</p>\n')
          elif len(property.prov_sharesDefinitionWith) > 0:
             # If it shares a definition, use that.
             sharer = property.prov_sharesDefinitionWith.first
             #print property.subject + ' sharing definition'
             #print property.subject + ' sharing definition of ' + sharer.subject
             if len(sharer.prov_definition) > 0:
-               cross.write('    <div class="definition"><p>'+sharer.prov_definition.first+'</p>\n')
+               cross.write('    <div class="definition def-from-2"><p>'+sharer.prov_definition.first+'</p>\n')
             elif len(sharer.prov_editorsDefinition) > 0:
-               cross.write('    <div class="definition"><p>'+sharer.prov_editorsDefinition.first+'</p>\n')
+               cross.write('    <div class="definition def-from-3"><p>'+sharer.prov_editorsDefinition.first+'</p>\n')
             else:
-               cross.write('    <div class="definition"><p>TODO property shared def missing.</p>\n')
+               cross.write('    <div class="definition def-from-4"><p>TODO property shared def missing.</p>\n')
          elif len(property.prov_qualifiedForm) > 0:
             found = False
             for qualifiedForm in property.prov_qualifiedForm:
                if ns.OWL['Class'] in qualifiedForm.rdf_type:
                   found = True
-                  cross.write('    <div class="definition"><p>'+qualifiedForm.prov_definition.first+'</p>\n')
+                  cross.write('    <div class="definition def-from-5"><p>'+qualifiedForm.prov_definition.first+'</p>\n')
             if not found:
-               cross.write('    <div class="definition"><p>TODO get property from qualified form class.</p>\n')
+               cross.write('    <div class="definition def-from-6"><p>TODO get property from qualified form class.</p>\n')
          elif len(property.prov_editorsDefinition) > 0:
             for definition in property.prov_editorsDefinition:
-               cross.write('    <div class="definition"><p>'+definition+'</p>\n')
+               cross.write('    <div class="definition def-from-7"><p>'+definition+'</p>\n')
          else:
-            cross.write('    <div class="definition"><p>TODO Property needs a definition.</p>\n')
+            cross.write('    <div class="definition def-from-8"><p>TODO Property needs a definition.</p>\n')
          cross.write('    </div>\n')
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
@@ -675,6 +692,7 @@ for category in categories.keys():
                cross.write('      <dd>\n')
                cross.write('        <a title="prov-dm" href="'+property.prov_dm.first+'">prov-dm</a>')
                cross.write('      </dd>\n')
+         if include_other_links:
             if len(property.prov_constraints) > 0:
                cross.write('\n')
                cross.write('      <dt>prov-constraints</dt>\n')
