@@ -746,7 +746,8 @@
   <body>
 
     <section id="abstract">
-         <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. It can also be specialized to create new classes and properties to model provenance information specific to different domain applications.
+         <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. 
+It can also be specialized to create new classes and properties to model provenance information for different applications and domains.
         </p>
 
         <p style="text-align: center;">The namespace for all PROV-O terms is <span class="repeated">http://www.w3.org/ns/prov#</span>.
@@ -761,7 +762,7 @@
     <section id='sotd'>
 <h4>Intended to be Last Call (TBC)</h4>
 <p>This is the third public release of the PROV-O document.
-Publication as Last Call working draft means that the Working Group believes that it has satisfied the relevant technical requirements outlined in its charter on this document. The design is not expected to change significantly, going forward, and now is the key time for external review, before the implementation phase.</p> 
+Publication as Last Call working draft means that the Working Group believes that it has satisfied the relevant technical requirements outlined in its charter on this document. The design is not expected to change significantly, going forward, and now is the key time for external review.</p> 
 <p>This specification identifies two  <a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">features at risk</a>: <a href="#mentionOf">prov:mentionOf</a> and  <a href="#asInBundle">prov:asInBundle</a> might be removed from PROV-O if implementation experience reveals problems with supporting this construct. These two OWL properties are based on the PROV <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#term-mention">Mentions</a> feature.</p>
 
 
@@ -787,7 +788,7 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
       <h4>How to read the PROV Family of Specifications</h4>
       <ul>
       <li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
-      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL-RL ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
+      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
       <li>The XML community should focus on PROV-XML defining an XML schema for PROV. Further details can also be found in PROV-DM, PROV-CONSTRAINTS, and PROV-SEM.</li>
       <li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
       <li>Readers seeking to implement other PROV serializations
@@ -802,10 +803,10 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
      <section id="introduction">    
          <h2>Introduction</h2>  
-         <p>The PROV Ontology (PROV-O) defines the normative OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange and management in domain-specific Web-based applications.
+         <p>The PROV Ontology (PROV-O) defines the normative OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
-         PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]]. PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications.
+         PROV-O conforms to the OWL-RL profile and is lightweight so that it can be adopted in the widest range of applications. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
          <p> The PROV Data Model [[PROV-DM]] introduces a minimal set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language, which facilitates a fixed interpretation and use of the PROV Data Model concepts based on the formal semantics of OWL2 [[!OWL2-RDF-BASED-SEMANTICS]]. 
         </p>
@@ -820,7 +821,7 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
    <section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
 
-      <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into four categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, terms for Qualifying relationships, and terms for Collections.
+      <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into three categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, and terms for Qualifying relationships.
       </p>
 
       <div id="prov-starting-point-owl-terms-at-a-glance">
