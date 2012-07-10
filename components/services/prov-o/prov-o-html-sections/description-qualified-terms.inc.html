@@ -45,7 +45,7 @@
          Conversely, the <strong>qualifies</strong> headers in the listings for qualification terms indicate the unqualified property that they qualify.
       In the OWL file iteself, the annotation properties <span class="qname">prov:qualifiedForm</span> and <span class="qname">prov:unqualifiedForm</span> provide the same linkages between the unqualified properties and their qualifiying terms.
 
-         The influence classes (e.g. <span class="repeated">prov:Association</span>, <span class="repeated">prov:Usage</span>) are extensions of 
+         All influence classes (e.g. <span class="repeated">prov:Association</span>, <span class="repeated">prov:Usage</span>) are extensions of 
          <a class="qname" href="#Influence">prov:Influence</a> and either 
          <a class="qname" href="#EntityInfluence">prov:EntityInfluence</a>, 
          <a class="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>, or
@@ -54,50 +54,57 @@
        <a class="qname" href="#activity">prov:activity</a>, or
        <a class="qname" href="#agent">prov:agent</a>, respectively).
          <p>
-So for instance, if we have the unqualified statement:
-<pre class="example">
-:e1 
-   a prov:Entity;
-   prov:wasGeneratedBy :a1;
-.
+            For example, given the unqualified statement:
+            <pre class="example">
+            :e1 
+               a prov:Entity;
+               prov:wasGeneratedBy :a1;
+            .
 
-:a1 a prov:Activity .
-</pre>
-</p>
-<p>Then we find in PROV-O that <a class="qname" href="#wasGeneratedBy">prov:wasGeneratedBy</a> can be qualified with  
-the qualification property <a class="qname" href='#qualifiedGeneration'>prov:qualifiedGeneration</a> 
-and
-the class <a class="qname" href='#Generation'>prov:Generation</a>, which is a subclass of <a class ="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>. From this, we can restate the above relation using the <em>qualification pattern</em> as:
-</p>
-<pre class="example">
-:e1 
-   a prov:Entity;
-   prov:wasGeneratedBy      :a1;
-   prov:qualifiedGeneration :e1Gen; # Add the qualification
-.
+            :a1 a prov:Activity .
+            </pre>
+         </p>
 
-:a1 a prov:Activity .
+         <p>One can find that <a class="qname" href="#wasGeneratedBy">prov:wasGeneratedBy</a> 
+            can be qualified using the qualification property <a class="qname" href='#qualifiedGeneration'>prov:qualifiedGeneration</a> 
+            and the class <a class="qname" href='#Generation'>prov:Generation</a> (a subclass of <a class ="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>). 
+            From this, the influence relation above can be restated with the <em>qualification pattern</em> as:
+         </p>
 
-:e1Gen 
-   a prov:Generation;
-   prov:activity :a1;               # Cite the influencing Activity.
-   :foo :bar;
-.
-</pre>
-<p>
-The asserter can thus attach additional properties to <code>:e1Gen</code> to
-describe the generation of <code>:e1</code>. To simplify client queries, any
-qualified relation SHOULD be accompanied by the equivalent unqualified
-statement. Unqualified properties SHOULD NOT have the equivalent qualified form
-asserted unless it adds additional information.  
-   </p>
+            <pre class="example">
+            :e1 
+               a prov:Entity;
+               prov:wasGeneratedBy      :a1;
+               prov:qualifiedGeneration :e1Gen; # Add the qualification
+            .
 
-      <p>In addition to the previous two tables, <a href="#qualified-terms-figure">Figure 4</a> illustrates the classes and properties needed to apply the qualification pattern to the thirteen unqualified influence relations. 
+            :a1 a prov:Activity .
 
-   For example, while <a class="qname" href="#qualifiedUsage">prov:qualifiedUsage</a>, <a class="qname" href="#Usage">prov:Usage</a>, and <a class="qname" href="#entity">prov:entity</a> are used to qualify 
-      <span class="repeated">prov:used</span> relations, 
+            :e1Gen 
+               a prov:Generation;
+               prov:activity :a1;               # Cite the influencing Activity.
+               :foo :bar;
+            .
+            </pre>
+
+         <p>
+            The asserter can thus attach additional properties to <code>:e1Gen</code> to
+            describe the generation of <code>:e1</code>. To simplify client queries, any
+            qualified relation SHOULD be accompanied by the equivalent unqualified
+            statement. Unqualified properties SHOULD NOT have the equivalent qualified form
+            asserted unless it adds additional information.  
+        </p>
+
+      <p>In addition to the previous two tables, <a href="#qualified-terms-figure">Figure 4</a> 
+         illustrates the classes and properties needed to apply the qualification pattern to the thirteen unqualified influence relations. 
+
+         For example, while <a class="qname" href="#qualifiedUsage">prov:qualifiedUsage</a>, 
+         <a class="qname" href="#Usage">prov:Usage</a>, and <a class="qname" href="#entity">prov:entity</a> are used to qualify 
+         <span class="repeated">prov:used</span> relations, 
    
-      <a class="qname" href="#qualifiedAssociation">prov:qualifiedAssociation</a>, <a class="qname" href="#Association">prov:Association</a>, and <a class="qname" href="#agent">prov:agent</a> are used to qualify <span class="repeated">prov:wasAssociatedWith</span> relations. This pattern applies to the eleven other influence relations that can be qualified.
+         <a class="qname" href="#qualifiedAssociation">prov:qualifiedAssociation</a>, <a class="qname" href="#Association">prov:Association</a>, 
+         and <a class="qname" href="#agent">prov:agent</a> are used to qualify <span class="repeated">prov:wasAssociatedWith</span> 
+         relations. This pattern applies to the eleven other influence relations that can be qualified.
       </p>
 
       <p>In subfigure <strong>a</strong> the <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property and references an instance of 
