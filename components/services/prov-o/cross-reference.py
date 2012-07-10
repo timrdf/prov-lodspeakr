@@ -726,12 +726,12 @@ for category in categories.keys():
       quals.write('  <caption><a href="#qualified-forms-'+category+'">Table '+tableCount[category]+'</a>: Qualification Property and Influence Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
       quals.write('  <tr>\n')
       qname = property.subject.split('#')
-      quals.write('    <th>Influenced Class</th>\n')
-      quals.write('    <th>Unqualified Influence</th>\n')
-      quals.write('    <th>Qualification Property</th>\n')
-      quals.write('    <th>Qualified Influence</th>\n')
-      quals.write('    <th>Influencer Property</th>\n')
-      quals.write('    <th>Influencing Class</th>\n')
+      quals.write('    <th><span title="Influenced Class">Influenced Class</span></th>\n')
+      quals.write('    <th><span title="Unqualified Influence">Unqualified Influence</span></th>\n')
+      quals.write('    <th><span title="Qualification Property">Qualification Property</span></th>\n')
+      quals.write('    <th><span title="Qualified Influence">Qualified Influence</span></th>\n')
+      quals.write('    <th><span title="Influencer Property">Influencer Property</span></th>\n')
+      quals.write('    <th><span title="Influencing Class">Influencing Class</span></th>\n')
       quals.write('  </tr>\n')
       for uri in ordered['properties']:
          #print 'qual table ' + uri
