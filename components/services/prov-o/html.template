@@ -668,7 +668,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-07-06",
+          publishDate:  "2012-07-11",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -802,17 +802,17 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
       </ul>
 
       <h4>PROV-O Second Working Draft</h4>
-     <p>This specification defines the PROV Ontology as the normative representation of the PROV Data Model using the Web Ontology Language (OWL2). Following feedback, the structure of the document has been reorganized to suit a gradual introduction to the terms available in PROV-O, permitting the addition of more elaborate terms as users understand the earlier terms. A cross reference was added and is created directly from the OWL ontology. Examples throughout this document are taken directly from the working group's version control system.
+     <p>This specification defines the PROV Ontology as the representation of the PROV Data Model using the Web Ontology Language (OWL2). Following feedback, the structure of the document has been reorganized to suit a gradual introduction to the terms available in PROV-O, permitting the addition of more elaborate terms as users understand the earlier terms. A cross reference was added and is created directly from the OWL ontology. Examples throughout this document are taken directly from the working group's version control system.
      </p>   
     </section>
 
 
      <section id="introduction">    
          <h2>Introduction</h2>  
-         <p>The PROV Ontology (PROV-O) defines the normative OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
+         <p>The PROV Ontology (PROV-O) defines the OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
-         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
+         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
          <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-RDF-BASED-SEMANTICS]]. 
         </p>
@@ -913,12 +913,12 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
       <!--section id="cross-reference-access-and-query">
          <h3>Qualified Terms</h3>
-         <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p-->
+         <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
       <div id="prov-access-and-query-owl-terms-at-a-glance">
          {% include "includes/at-a-glance-access-and-query.html" %}
       </div>
          {% include "includes/cross-reference-access-and-query.html" %}
-      <!--/section-->
+      <!/section-->
    </section>
 
     <!--section class="appendix">
@@ -937,17 +937,18 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
     <section class='appendix'>
       <h2>PROV-O OWL Profile</h2>
+
       <p>To encourage widespread adoption, PROV-O's design is intentionally minimal and lightweight. 
       Because the OWL 2 RL profile is aimed at RDF applications that require scalable reasoning without sacrificing too much expressive power [[OWL-2-PRIMER]], 
-      it served as a baseline for all axioms included in PROV-O. The PROV-O axioms that do not suit the OWL 2 RL profile are listed in <a href="#owl-rl-violations">Table 3</a>. 
-      All five use a <em>class union</em> for the domain or range of a property, while OWL 2 RL requires them to be explicitly named. 
+      it served as a baseline for all axioms included in PROV-O. The PROV-O axioms that do not suit the OWL 2 RL profile are listed in 
+      <a href="#owl-rl-violations">Table 3</a>. 
+
+      All five use an anonymous <em>class union</em> for the domain or range of a property, while OWL 2 RL requires the classes to be explicitly named. 
       Although introducing "placeholder" classes would have suited the
       OWL 2 RL profile, these additional "abstract" classes would have been irrelevant 
       to the modeling of provenance information, increased the size of PROV-O unnecessarily, and exposed a potential to confuse users.
-      All five axioms listed in the following table <em>use a
-      non-superclass expression in a position that requires a superclass
-      expression</em> which is not valid according to the OWL 2 RL
-      Profile.
+      All five axioms listed in the following table <em>use a non-superclass expression in a position that requires a superclass expression</em> 
+      and do not conform to the OWL 2 RL Profile.
       </p>
 
 <!-- The following table is generated by executing the following from a checked out version of http://dvcs.w3.org/hg/prov/file/tip/ontology
@@ -981,61 +982,54 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
   </table>
 </div>
+         <p>
+         To provide guidance for OWL 2 RL environments that ignore the union domain axioms, some 
+         property domains or ranges have also been defined with the closest
+         common superclass for the classes in the union, as shown in the following table.
+         </p>
 
+         <div style="text-align: center">
+           <table id="owl-rl-extra-domains">
+             <caption><a href="#owl-rl-extra-domains">Table 4</a>: Intersecting OWL2 RL compatible domains/ranges</caption>
+             <tr>
+               <th>Property</th> <th>Direction</th> <th>Domain/range</th>
+             </tr>
+             <tr>
+               <td><a href="#atLocation" class="qname">prov:atLocation</a></td>
+               <td>rdfs:domain</td>
+               <td>(implied: <span class="name">owl:Thing</span>)</td>
+             </tr>
+             <tr>
+               <td><a href="#hadActivity" class="qname">prov:hadActivity</a></td>
+               <td>rdfs:domain</td>
+               <td><a href="#Influence" class="qname">prov:Influence</a></td>
+             </tr> 
 
+             <tr>
+               <td><a href="#hadRole" class="qname">prov:hadRole</a></td>
+               <td>rdfs:domain</td>
+               <td><a href="#Influence" class="qname">prov:Influence</a></td>
+             </tr> 
 
-<p>
-In order to provide some guidance for OWL 2 RL environments, some of the
-properties of the axioms above have also been defined with the closest
-common superclass for the classes of the union, as shown in the
-table below:
-</p>
+             <tr>
+               <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a></td>
+               <td>rdfs:domain / rdfs:range</td>
+               <td>(implied: <span class="name">owl:Thing</span>)
+             </tr> 
+           </table>
+         </div>
 
-<div style="text-align: center">
-  <table id="owl-rl-extra-domains">
-    <caption><a href="#owl-rl-extra-domains">Table 4</a>: Intersecting OWL2 RL
-    compatible domains/ranges</caption>
-    <tr>
-      <th>Property</th> <th>Direction</th> <th>Domain/range</th>
-    </tr>
-    <tr>
-      <td><a href="#atLocation" class="qname">prov:atLocation</a></td>
-      <td>rdfs:domain</td>
-      <td>(implied: <span class="name">owl:Thing</span>)</td>
-    </tr>
-    <tr>
-      <td><a href="#hadActivity" class="qname">prov:hadActivity</a></td>
-      <td>rdfs:domain</td>
-      <td><a href="#Influence" class="qname">prov:Influence</a></td>
-    </tr> 
-
-    <tr>
-      <td><a href="#hadRole" class="qname">prov:hadRole</a></td>
-      <td>rdfs:domain</td>
-      <td><a href="#Influence" class="qname">prov:Influence</a></td>
-    </tr> 
-
-    <tr>
-      <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a></td>
-      <td>rdfs:domain / rdfs:range</td>
-      <td>(implied: <span class="name">owl:Thing</span>)
-    </tr> 
-  </table>
-</div>
-
-
-
-
-<p>
-Multiple RDFS domains and ranges [[RDF-SCHEMA]] for a property are <a href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_range">interpreted as an
-intersection</a>, and thus the above do not provide any additional
-information in an OWL 2 DL or OWL 2 Full profile which also understands
-the unions. This should not be
-interpreted as say "<span class="qname">prov:hadActivity</span> can be used with any
-<span class="qname">prov:Influence</span>", but as 
-"Anything using <span class="qname">prov:hadActivity</span> is (at least) a
-prov:Influence". 
-</p>
+         <p>
+         Multiple RDFS domains and ranges [[RDF-SCHEMA]] for a property are 
+         <a href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_range">interpreted as an intersection</a>,
+         and thus the above do not provide any additional
+         information in an OWL 2 DL or OWL 2 Full profile which also understands
+         the unions. The more general domain should not be
+         interpreted as saying, e.g., 
+         "<span class="qname">prov:hadActivity</span> can be used with any <span class="qname">prov:Influence</span>", 
+         but as 
+         "Anything using <span class="qname">prov:hadActivity</span> is (at least) a prov:Influence". 
+         </p>
     </section>
 
     <section class='appendix'>
