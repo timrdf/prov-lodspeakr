@@ -384,9 +384,9 @@ for category in categories.keys():
          if include_dm_links:
             if len(owlClass.prov_dm) > 0:
                cross.write('\n')
-               cross.write('      <dt>prov-dm</dt>\n')
+               cross.write('      <dt>alternate</dt>\n')
                cross.write('      <dd>\n')
-               cross.write('        <a title="prov-dm" href="'+owlClass.prov_dm.first+'">prov-dm</a>')
+               cross.write('        as in <a title="prov-dm" href="'+owlClass.prov_dm.first+'">prov-dm</a>')
                cross.write('      </dd>\n')
             
          if include_other_links:
@@ -649,6 +649,7 @@ for category in categories.keys():
             cross.write('        </dd>\n')
 
          # property prov:qualifiedForm ?class, ?property
+         qualifiedClass = False
          if len(property.prov_qualifiedForm) > 0:
             qname = property.prov_qualifiedForm.first.subject.split('#')
             cross.write('\n')
@@ -661,6 +662,7 @@ for category in categories.keys():
                s=''
                if ns.OWL['Class'] in qualified.rdf_type:
                   owlType='class'
+                  qualifiedClass = qualified
                else:
                   owlType='property'
                   s = sup[propertyTypes[qualified.subject]]
@@ -686,11 +688,21 @@ for category in categories.keys():
          cross.write('      </dl>\n')
 
          if include_dm_links:
+            dmLink = False
             if len(property.prov_dm) > 0:
+               dmLink = property.prov_dm.first
+            elif len(property.prov_sharesDefinitionWith) > 0:
+               #print property.subject + ' XX qualform: ' + property.prov_sharesDefinitionWith.first.subject
+               dmLink = property.prov_sharesDefinitionWith.first.prov_dm.first
+            elif qualifiedClass:
+               dmLink = qualifiedClass.prov_dm.first
+            else:
+               print property.subject + ' has no dmLink' 
+            if dmLink:
                cross.write('\n')
-               cross.write('      <dt>prov-dm</dt>\n')
+               cross.write('      <dt>alternate</dt>\n')
                cross.write('      <dd>\n')
-               cross.write('        <a title="prov-dm" href="'+property.prov_dm.first+'">prov-dm</a>')
+               cross.write('        as in <a title="prov-dm" href="'+dmLink+'">prov-dm</a>')
                cross.write('      </dd>\n')
          if include_other_links:
             if len(property.prov_constraints) > 0:
@@ -886,8 +898,9 @@ elif False:
    print 'todo: better rdfa'
 
 else:
+   inverses.write('<div id="inverse-names-table">\n')
    inverses.write('<table class="inverse-names">\n')
-   inverses.write(' <caption>Names of inverses</caption>\n')
+   inverses.write(' <caption><a href="#inverse-names-table">Table 5</a>: Names of inverses</caption>\n')
    inverses.write(' <tr>\n')
    inverses.write(' <th>Domain</th>\n')
    inverses.write(' <th>PROV-O Property</th>\n')
@@ -928,6 +941,7 @@ else:
 
          inverses.write(' </tr>\n')
    inverses.write('</table>\n')
+   inverses.write('</div>\n')
 inverses.close()
 
 inversesName = 'inverses.ttl'
