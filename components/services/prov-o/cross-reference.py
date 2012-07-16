@@ -684,9 +684,6 @@ for category in categories.keys():
                                           +sup[propertyTypes[property.prov_unqualifiedForm.first.subject]]+'\n')
             cross.write('      </dd>\n')
 
-         cross.write('\n')
-         cross.write('      </dl>\n')
-
          if include_dm_links:
             dmLink = False
             if len(property.prov_dm) > 0:
@@ -723,6 +720,10 @@ for category in categories.keys():
                cross.write('      <dd>\n')
                cross.write('        <a title="prov-aq" href="'+property.prov_aq.first+'">prov-aq</a>')
                cross.write('      </dd>\n')
+
+
+         cross.write('\n') 
+         cross.write('      </dl>\n')
 
 
          cross.write('    </div>\n') # e.g. <div class="description">

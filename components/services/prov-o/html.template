@@ -911,14 +911,6 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
          {% include "includes/cross-reference-qualified.html" %}
       </section>
 
-      <!--section id="cross-reference-access-and-query">
-         <h3>Qualified Terms</h3>
-         <p>The terms used to qualify the Starting Point and Expanded properties are discussed in <a href="#description-qualified-terms">Section 3.3</a>.</p>
-      <div id="prov-access-and-query-owl-terms-at-a-glance">
-         {% include "includes/at-a-glance-access-and-query.html" %}
-      </div>
-         {% include "includes/cross-reference-access-and-query.html" %}
-      <!/section-->
    </section>
 
     <!--section class="appendix">
