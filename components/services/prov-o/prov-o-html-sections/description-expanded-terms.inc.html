@@ -11,7 +11,7 @@
                  style="width: 60%; min-width: 25em; max-width: 60em" 
                  alt="PROV-O Starting Point terms"/>
             <div class="figcaption"><a href="#expanded-terms-figure">Figure 3</a>. The expanded terms build upon those in the Starting Points section. <br/>
-            The domain of <a href="atLocation">prov:atLocation</a> (<span class="repeated">prov:Activity</span> or <span class="repeated">prov:Entity</span> or <span class="repeated">prov:Agent</span> or <span class="repeated">prov:InstantaneousEvent</span>) is not illustrated.</div>
+            The domain of <a href="#atLocation">prov:atLocation</a> (<span class="repeated">prov:Activity</span> or <span class="repeated">prov:Entity</span> or <span class="repeated">prov:Agent</span> or <span class="repeated">prov:InstantaneousEvent</span>) is not illustrated.</div>
       </div>
 
 
@@ -29,13 +29,15 @@
       The <a href="#hadMember" class="qname">prov:hadMember</a> property is used to assert membership in a collection.
       </p>
 
-      <p>
-      A <span class="repeated">prov:Bundle</span> is a named set of provenance descriptions that enables the expression of provenance of provenance.
-      It is important to note that the set of provenance descriptions can assume forms beyond PROV-O triples, such as videotaped testimony or scribbles on a drink napkin. 
-      The subclass of Bundle that contains PROV-O assertions is not provided by PROV-O, since it is more appropriate to do so using other recommendations, 
-      standards, or technologies. In any case, a Bundle of PROV-O assertions is an abstract set of RDF triples, and adding or removing a triple creates a distinct 
-      Bundle of PROV-O assertions.
-		</p>
+      <div id="description-bundle">
+         <p>
+         A <span class="repeated">prov:Bundle</span> is a named set of provenance descriptions that enables the expression of provenance of provenance.
+         It is important to note that the set of provenance descriptions can assume forms beyond PROV-O triples, such as videotaped testimony or scribbles on a drink napkin. 
+         The subclass of Bundle that contains PROV-O assertions is not provided by PROV-O, since it is more appropriate to do so using other recommendations, 
+         standards, or technologies. In any case, a Bundle of PROV-O assertions is an abstract set of RDF triples, and adding or removing a triple creates a distinct 
+         Bundle of PROV-O assertions.
+         </p>
+      </div>
 
 	  <p>More general and more specific properties are also provided by the expanded terms. More generally, the property <a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> is a superproperty that relates any influenced Entity, Activity, or Agent to any other influencing Entity, Activity, or Agent that had an effect on its characteristics. 
         More specifically, three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are provided for certain kinds of derivation among Entities: 
