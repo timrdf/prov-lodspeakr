@@ -383,10 +383,12 @@ for category in categories.keys():
          include_other_links = False
          if include_dm_links:
             if len(owlClass.prov_dm) > 0:
+               qname = owlClass.prov_dm.first.split('#')
+               #print 'DM Term ' + qname[1]
                cross.write('\n')
-               cross.write('      <dt>alternate</dt>\n')
+               cross.write('      <dt>PROV-DM term</dt>\n')
                cross.write('      <dd>\n')
-               cross.write('        as in <a title="prov-dm" href="'+owlClass.prov_dm.first+'">prov-dm</a>')
+               cross.write('        <a title="prov-dm" href="'+owlClass.prov_dm.first+'">'+qname[1].replace('term-','')+'</a>')
                cross.write('      </dd>\n')
             
          if include_other_links:
@@ -696,10 +698,12 @@ for category in categories.keys():
             else:
                print property.subject + ' has no dmLink' 
             if dmLink:
+               qname = dmLink.split('#')
+               #print 'DM Term ' + qname[1]
                cross.write('\n')
-               cross.write('      <dt>alternate</dt>\n')
+               cross.write('      <dt>PROV-DM term</dt>\n')
                cross.write('      <dd>\n')
-               cross.write('        as in <a title="prov-dm" href="'+dmLink+'">prov-dm</a>')
+               cross.write('         <a title="prov-dm" href="'+dmLink+'">'+qname[1].replace('term-','')+'</a>')
                cross.write('      </dd>\n')
          if include_other_links:
             if len(property.prov_constraints) > 0:
