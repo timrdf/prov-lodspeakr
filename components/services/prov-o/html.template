@@ -668,7 +668,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-07-11",
+          publishDate:  "2012-07-17",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -812,7 +812,7 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
          <p>The PROV Ontology (PROV-O) defines the OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
-         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitate interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
+         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
          <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-RDF-BASED-SEMANTICS]]. 
         </p>
@@ -888,6 +888,22 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
       <p>
       The superscripts <sup class="type-op" title="object property">op</sup> and <sup class="type-dp" title="data property">dp</sup> denote that a property is an OWL <a href="http://www.w3.org/TR/owl2-syntax/#Object_Properties">object property</a> or <a href="http://www.w3.org/TR/owl2-syntax/#Data_Properties">data property</a>, respectively.
+      </p>
+
+      <p>Each PROV-O term in this cross reference links to the corresponding PROV-DM concept. The PROV-DM's table 
+         <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#prov-dm-to-prov-o-and-prov-n">Cross-References to PROV-O and PROV-N</a> 
+         provides an overview of the correspondences between PROV-O and PROV-DM.
+
+      </p>
+
+      <p>
+         The qualification classes and properties shown in <a href="#qualified-forms-starting-point">Table 2</a> and 
+         <a href="#qualified-forms-expanded">Table 3</a> of the previous section can also be found in each entry of this cross reference.
+         If the property can be qualified, the <strong>can be qualified with</strong>
+         header indicates the qualifying property and influence class that should be used.
+         Conversely, the <strong>qualifies</strong> headers in the listings for qualification terms indicate the unqualified property that they qualify.
+         In the OWL file iteself, the annotation properties <span class="qname repeated">prov:qualifiedForm</span> and <span class="qname repeated">prov:unqualifiedForm</span>
+         provide the same linkages between the unqualified properties and their qualifiying terms.
       </p>
 
       <section id="cross-reference-starting-point-terms">
@@ -1015,7 +1031,7 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
          Multiple RDFS domains and ranges [[RDF-SCHEMA]] for a property are 
          <a href="http://www.w3.org/TR/2004/REC-rdf-schema-20040210/#ch_range">interpreted as an intersection</a>,
          and thus the above do not provide any additional
-         information in an OWL 2 DL or OWL 2 Full profile which also understands
+         information in an OWL 2 DL or OWL 2 Full profile, which also understands
          the unions. The more general domain should not be
          interpreted as saying, e.g., 
          "<span class="qname">prov:hadActivity</span> can be used with any <span class="qname">prov:Influence</span>", 
@@ -1026,12 +1042,18 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
     <section class='appendix'>
       <h2>Names of inverse properties</h2>
-      <p>To maximize interoperability, PROV-O intentionally avoids defining too many properties' inverses. In fact, it only defines one (<a class="qname" href="#generated">prov:generated</a>). When all inverses are defined for all properties, modelers may choose from two logically equivalent properties when making each assertion. Although the two options may be logically equivalent, developers consuming the assertions must exert extra effort to handle both (either by adding an OWL reasoner, or writing code and queries to handle both cases). This extra effort must be avoided.
+      <p>To maximize interoperability, PROV-O intentionally avoids defining too many properties' inverses. 
+         In fact, it only defines two (<a class="qname" href="#generated">prov:generated</a> and <a class="qname" href="#invalidated">prov:invalidated</a>). 
+        When all inverses are defined for all properties, modelers may choose from two logically equivalent properties when making each assertion. 
+      Although the two options may be logically equivalent, developers consuming the assertions may need to exert extra effort to handle both 
+      (e.g., by either adding an OWL reasoner or writing code and queries to handle both cases). 
+      This extra effort can be reduced by preferring one inverse over another.
       </p>
 
      <div about="#inverse-names-example-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
         <p>For example, the first PROV-O statement (below) could just as easily be asserted as the second statement. 
-            But if a client queries using <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a> when <span class="repeated">:hadDerivation</span> was used in the assertion, there will be no results unless OWL reasoning is applied (or the size of the query is doubled).
+            But if a client queries using <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a> when <span class="repeated">:hadDerivation</span> 
+            was used in the assertion, no results will be returned unless OWL reasoning is applied (or the size of the query is doubled).
         </p>
         <pre class="example">
 &lt;http://www.w3.org/TR/prov-o/&gt;  prov:wasDerivedFrom &lt;http://www.w3.org/TR/prov-dm/&gt; .
@@ -1055,11 +1077,11 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
 
      <div about="#inverse-names-example-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
         <p>For example, since PROV-O does not define the inverse of <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a>, 
-         and if three developers really want to model their assertions in the opposite direction, the following set of assertions might be found in the future web of provenance. 
+         and if three developers would rather model their assertions in the opposite direction, the following set of assertions might be found in the future web of provenance. 
          These assertions are not in an interoperable form without the use of an OWL reasoner, additional code, or larger queries.
         </p>
         <pre class="example">
-   # If PROV-O's properties' inverses are not defined, modelers are motivated to define their own inverse.
+   # If PROV-O's properties' inverses are not defined, modelers may be motivated to introduce their own inverse property name.
    # The following three statements are equivalent if their predicates are all inverses of prov:wasDerivedFrom.
 
 &lt;http://www.w3.org/TR/prov-dm/&gt;    my:hadDerivation  &lt;http://www.w3.org/TR/prov-o/&gt;  .
@@ -1068,9 +1090,10 @@ The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we w
         </pre>
      </div>
 
-   <p>To balance these two interoperability risks, this document provides recommendations for the local names of all PROV-O properties' inverses.
-      The local name is available as an annotation (<span class="repeated">http://www.w3.org/ns/prov#inverse</span>) on the preferred property that is defined in PROV-O.
-      Although PROV-O does not define the inverses, modelers wishing to use them may; and they should use the existing PROV-O namespace (<span class="repeated">http://www.w3.org/ns/prov#</span>).
+   <p>To balance these two interoperability risks, this document reserves the names of the PROV-O inverses.
+      The name of a property's inverse is determined by appending the value of its <span class="repeated">http://www.w3.org/ns/prov#inverse</span> 
+      annotation to the PROV namespace (<span class="repeated">http://www.w3.org/ns/prov#</span>). 
+      Modelers wishing to use inverses of the properties defined by PROV-O SHOULD use those reserved by this document.
    </p>
 
      <div about="#inverse-names-example-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
