@@ -19,7 +19,8 @@
 
      <p>Three subclasses of Agent (<a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and 
       <a href="#SoftwareAgent" class="qname">prov:SoftwareAgent</a>) and
-      two subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, and <a href="#Bundle" class="qname">prov:Bundle</a>). 
+      Three subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, <a href="#Bundle" class="qname">prov:Bundle</a>, 
+      and <a href="#Plan" class="qname">prov:Plan</a>). 
       </p>
 
       <p>
@@ -39,8 +40,16 @@
          </p>
       </div>
 
-	  <p>More general and more specific properties are also provided by the expanded terms. More generally, the property <a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> is a superproperty that relates any influenced Entity, Activity, or Agent to any other influencing Entity, Activity, or Agent that had an effect on its characteristics. 
-        More specifically, three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are provided for certain kinds of derivation among Entities: 
+      <p>A <span class="repeated">prov:Plan</span> is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals. 
+      </p>
+
+
+	  <p>
+      More general and more specific properties are also provided by the expanded terms. More generally, the property 
+      <a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> is a superproperty that relates any influenced Entity, Activity, or Agent to any other 
+      influencing Entity, Activity, or Agent that had an effect on its characteristics. 
+
+      More specifically, three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are provided for certain kinds of derivation among Entities: 
       <a href="#wasQuotedFrom" class="qname">prov:wasQuotedFrom</a> cites a potentially larger Entity (such as a book, blog, or image) from which a new Entity was created
       by repeating some or all of the original, 
       <a href="#wasRevisionOf" class="qname">prov:wasRevisionOf</a> indicates that the derived Entity contains substantial content from the original Entity 
