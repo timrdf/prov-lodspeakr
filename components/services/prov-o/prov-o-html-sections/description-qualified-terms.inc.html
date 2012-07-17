@@ -16,9 +16,6 @@
       While the <span class="repeated">prov:Usage</span> cites the influencing entity with the <span class="repeated">prov:entity</span> property,
       the influenced <span class="repeated">prov:Activity</span> cites the <span class="repeated">prov:Usage</span> with the property <span class="repeated">prov:qualifiedUsage</span>.
       This structure is illustrated in <a href="#qualified-terms-figure">Figure 4a</a> below.
-
-      <!-- For example, the first table's third row indicates that when we want to elaborate the association (prov:wasAssociatedWith) that an 
-         Agent had upon an Activity, we can create an instance of prov:Association and use that to express additional descriptions about the influence that the Agent had upon the Activity. -->
       </p>
 
       <div id="qualified-forms-starting-point" style="padding: 10px">
@@ -50,20 +47,26 @@
          <a class="qname" href="#EntityInfluence">prov:EntityInfluence</a>, 
          <a class="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>, or
          <a class="qname" href="#AgentInfluence">prov:AgentInfluence</a>, which determine the property to use to cite the influencing resource (either
-       <a class="qname" href="#entity">prov:entity</a>,
-       <a class="qname" href="#activity">prov:activity</a>, or
-       <a class="qname" href="#agent">prov:agent</a>, respectively).
-         <p>
-            For example, given the unqualified statement:
-            <pre class="example">
-            :e1 
-               a prov:Entity;
-               prov:wasGeneratedBy :a1;
-            .
+         <a class="qname" href="#entity">prov:entity</a>,
+         <a class="qname" href="#activity">prov:activity</a>, or
+         <a class="qname" href="#agent">prov:agent</a>, respectively).
 
-            :a1 a prov:Activity .
-            </pre>
-         </p>
+         <div about="#narrative-example-qualified-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <p>
+               <a href="#narrative-example-qualified-1"/>Example 6</a>:
+            </p>
+            <p>
+               For example, given the unqualified statement:
+               <pre class="example">
+               :e1 
+                  a prov:Entity;
+                  prov:wasGeneratedBy :a1;
+               .
+
+               :a1 a prov:Activity .
+               </pre>
+            </p>
+         </div>
 
          <p>One can find that <a class="qname" href="#wasGeneratedBy">prov:wasGeneratedBy</a> 
             can be qualified using the qualification property <a class="qname" href='#qualifiedGeneration'>prov:qualifiedGeneration</a> 
@@ -71,6 +74,10 @@
             From this, the influence relation above can be restated with the <em>qualification pattern</em> as:
          </p>
 
+         <div about="#narrative-example-qualified-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <p>
+               <a href="#narrative-example-qualified-2"/>Example 7</a>:
+            </p>
             <pre class="example">
             :e1 
                a prov:Entity;
@@ -86,6 +93,7 @@
                ex:foo :bar;                     # Add additional attributes about the influence relation.
             .
             </pre>
+         </div>
 
          <p>
             The asserter can thus attach additional properties to <code>:e1Gen</code> to
@@ -152,40 +160,58 @@
 
       <p>The following two examples show the result of applying the Usage and Association patterns to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
       </p>
-       <div class="exampleOuter">
-          <div><b>Qualified Usage</b></div>
-            <p>The <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <span class="repeated">prov:Usage</span> cites the data used (<code>ex:aggregatedByRegions</code>) and the time the activity used it (<code>2011-07-14T03:03:03Z</code>).
-          </p>
-             <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
-       </div>
 
+      <div about="#narrative-example-qualified-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+         <p>
+            <a href="#narrative-example-qualified-3"/>Example 8</a>:
+         </p>
+          <div class="exampleOuter">
+             <div><b>Qualified Usage</b></div>
+               <p>The <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <span class="repeated">prov:Usage</span> cites the data used (<code>ex:aggregatedByRegions</code>) and the time the activity used it (<code>2011-07-14T03:03:03Z</code>).
+             </p>
+                <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
+          </div>
+      </div>
+
+      <div about="#narrative-example-qualified-4" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+         <p>
+            <a href="#narrative-example-qualified-4"/>Example 9</a>:
+         </p>
         <div class="exampleOuter">
            <div><b>Qualified Association</b></div>
             <p>The <span class="repeated">prov:qualifiedAssociation</span> property parallels the <span class="repeated">prov:wasAssociatedWith</span> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <span class="repeated">prov:Association</span> cites the agent (<code>ex:derek</code>) that followed the instructions (<code>ex:tutorial_blog</code>).
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
-       </div>
-
-
-
-
+        </div>
+      </div>
 
 
        <p>This section finishes with two more examples of qualification as applied to the chart making example from <a href=#description-starting-point-terms>Section 3.1</a>.
        </p>
 
+
+      <div about="#narrative-example-qualified-5" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+         <p>
+            <a href="#narrative-example-qualified-5"/>Example 10</a>:
+         </p>
         <div class="exampleOuter">
            <div><b>Qualified Generation</b></div>
             <p>The <span class="repeated">prov:qualifiedGeneration</span> property parallels the <span class="repeated">prov:wasGeneratedBy</span> property to provide an additional description to <code>ex:chart1</code>. The instance of <span class="repeated">prov:Generation</span> cites the time (2011-07-14T15:52:14Z) that the activity (<code>ex:illustrationActivity</code>) generated the chart (<code>ex:chart1</code>).
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
         </div>
+      </div>
 
+      <div about="#narrative-example-qualified-6" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+         <p>
+            <a href="#narrative-example-qualified-6"/>Example 11</a>:
+         </p>
         <div class="exampleOuter">
            <div><b>Qualified Derivation</b></div>
             <p>The <span class="repeated">prov:qualifiedDerivation</span> property parallels the <span class="repeated">prov:wasDerivedFrom</span> property to provide an additional description to <code>ex:chart1</code>. The instance of <span class="repeated">prov:Derivation</span> cites the activity (<code>ex:illustrationActivity</code>) and the Usages and Generations that the activity conduced to create the chart (<code>ex:chart1</code>).
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
         </div>
+      </div>
 
 	  </section>
