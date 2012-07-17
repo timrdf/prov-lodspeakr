@@ -93,11 +93,19 @@
          </div>
 
          <p>
-            The asserter can thus attach additional properties to <code>:e1Gen</code> to
-            describe the generation of <code>:e1</code>. To simplify client queries, any
-            qualified relation SHOULD be accompanied by the equivalent unqualified
-            statement. Unqualified properties SHOULD NOT have the equivalent qualified form
-            asserted unless it adds additional information.  
+            The asserter can thus attach additional properties to <code>:e1Gen</code> to describe the generation of <code>:e1</code> by <code>:a1</code>.
+
+            As can be seen in this example, qualifying an influence relation provides a second form (e.g. <code>:e1Gen</code>) to express an equivalent influence relation 
+            (e.g. <code>:e1 prov:wasGeneratedBy :a1</code>).
+            It is correct and acceptable for an implementer to use either qualified or unqualified forms as they choose, 
+            and a consuming application should be prepared to recognize either form.
+            Because the qualification form is more verbose, the unqualified form should be favored in cases where additional properties are not provided.
+            When the qualified form is expressed, including the equivalent unqualified form will facilitate PROV-O consumption.
+
+            <-- To simplify client queries, 
+            any qualified relation SHOULD be accompanied by the equivalent unqualified statement. 
+            Unqualified properties SHOULD NOT have the equivalent qualified form
+            asserted unless it adds additional information. -->
         </p>
 
       <p>In addition to the previous two tables, <a href="#qualified-terms-figure">Figure 4</a> 
