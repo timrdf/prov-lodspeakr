@@ -100,7 +100,8 @@
             As can be seen in this example, qualifying an influence relation provides a second form (e.g. <code>:e1 prov:qualifiedGeneration :e1Gen</code>) to express an equivalent influence relation 
             (e.g. <code>:e1 prov:wasGeneratedBy :a1</code>).
             It is correct and acceptable for an implementer to use either qualified or unqualified forms as they choose (or both), 
-            and a consuming application should be prepared to recognize either form.
+            and a consuming application should be prepared to recognize either form. 
+            Consuming applications SHOULD recognize both qualified and unqualified forms, and treat the qualified form as implying the unqualified form.
             Because the qualification form is more verbose, the unqualified form should be favored in cases where additional properties are not provided.
             When the qualified form is expressed, including the equivalent unqualified form can facilitate PROV-O consumption, and is thus encouraged.
         </p>
