@@ -658,7 +658,7 @@
 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "ED",
+          specStatus:           "LC",
           
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "prov-o",
@@ -668,7 +668,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-07-17",
+          publishDate:  "2012-07-24",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -676,14 +676,14 @@
 
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
-          previousPublishDate:  "2011-12-13",
-          previousMaturity:  "FPWD",
+          previousPublishDate:  "2012-05-03",
+          previousMaturity:  "SPWD",
 
           // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
 
           // if this is a LCWD, uncomment and set the end of its review period
-          // lcEnd: "2009-08-05",
+          // lcEnd: "2012-09-18",
 
           // if you want to have extra CSS, append them to this list
           // it is recommended that the respec.css stylesheet be kept
@@ -768,47 +768,35 @@ It can also be specialized to create new classes and properties to model provena
     </section>
   
  
-    <section id='sotd'>
-<h4>Intended to be Last Call (TBC)</h4>
-<p>This is the third public release of the PROV-O document.
-Publication as Last Call working draft means that the Working Group believes that it has satisfied the relevant technical requirements outlined in its charter on this document. The design is not expected to change significantly, going forward, and now is the key time for external review.</p> 
-<p>This specification identifies two  <a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">features at risk</a>: <a href="#mentionOf">prov:mentionOf</a> and  <a href="#asInBundle">prov:asInBundle</a> might be removed from PROV-O if implementation experience reveals problems with supporting this construct. These two OWL properties are based on the PROV <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#term-mention">Mentions</a> feature.</p>
+    <section id="sotd">
+      <h4>Last Call</h4>
+      <p>This is the third public release of the PROV-DM document.
+      This is a Last Call Working Draft. The design is not expected to change significantly, going forward, and now is the key time for external review.</p>
 
-
-<h4>Please Comment By 2012-09-13 (date TBC)</h4>
-<p>The PROV Working group seeks public feedback on this Working Draft.
-The end date of the Last Call review period is <b>2012-09-13 (TBC)</b>, and we would appreciate comments by that date to public-prov-comments@w3.org
-</p>
+      <p>This specification identifies two  <a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">features at risk</a>: <a href="#mentionOf">prov:mentionOf</a> and  <a href="#asInBundle">prov:asInBundle</a> might be removed from PROV-O if implementation experience reveals problems with supporting this construct. These two OWL properties are based on the PROV <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#term-mention">Mentions</a> feature.</p>
 
 
       <h4>PROV Family of Specifications</h4>
       This document is part of the PROV family of specifications, a set of specifications defining various aspects that are necessary to achieve the vision of inter-operable
       interchange of provenance information in heterogeneous environments such as the Web.  The specifications are:
       <ul>
-      <li> PROV-DM, the PROV data model for provenance;</li>
-      <li> PROV-CONSTRAINTS, a set of constraints applying to the PROV data model;</li>
-      <li> PROV-N, a notation for provenance aimed at human consumption;</li>
-      <li> PROV-O, the PROV ontology, an OWL-RL ontology allowing the mapping of PROV to RDF; (this document)</li>
-      <li> PROV-AQ, the mechanisms for accessing and querying provenance; </li>
-      <li> PROV-PRIMER, a primer for the PROV data model;</li>
-      <li> PROV-SEM, a formal semantics for the PROV data model;</li>
-      <li> PROV-XML, an XML schema for the PROV data model.</li>
+      <li> <a href="http://www.w3.org/TR/prov-dm/">PROV-DM</a>, the PROV data model for provenance (this document);</li>
+      <li> <a href="http://www.w3.org/TR/prov-constraints/">PROV-CONSTRAINTS</a>, a set of constraints applying to the PROV data model [[PROV-CONSTRAINTS]];</li>
+      <li> <a href="http://www.w3.org/TR/prov-n/">PROV-N</a>, a notation for provenance aimed at human consumption [[PROV-N]];</li>
+      <li> <a href="http://www.w3.org/TR/prov-o/">PROV-O</a>, the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF [[PROV-O]];</li>
+      <li> <a href="http://www.w3.org/TR/prov-aq/">PROV-AQ</a>, the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
+      <li> <a href="http://www.w3.org/TR/prov-primer/">PROV-PRIMER</a>, a primer for the PROV data model [[PROV-PRIMER]].</li>
       </ul>
       <h4>How to read the PROV Family of Specifications</h4>
       <ul>
       <li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
-      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. PROV-SEM provides a mathematical semantics.</li>
-      <li>The XML community should focus on PROV-XML defining an XML schema for PROV. Further details can also be found in PROV-DM, PROV-CONSTRAINTS, and PROV-SEM.</li>
+      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the cons
+      traints applicable to the data model, and its interpretation. </li>
       <li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
       <li>Readers seeking to implement other PROV serializations
-      should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O, PROV-N, PROV-XML offer examples of mapping to RDF, text, and XML, respectively.</li>
+      should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O and PROV-N offer examples of mapping to RDF and text, respectively.</li>
       </ul>
-
-      <h4>PROV-O Second Working Draft</h4>
-     <p>This specification defines the PROV Ontology as the representation of the PROV Data Model using the Web Ontology Language (OWL2). Following feedback, the structure of the document has been reorganized to suit a gradual introduction to the terms available in PROV-O, permitting the addition of more elaborate terms as users understand the earlier terms. A cross reference was added and is created directly from the OWL ontology. Examples throughout this document are taken directly from the working group's version control system.
-     </p>   
     </section>
-
 
      <section id="introduction">    
          <h2>Introduction</h2>  
