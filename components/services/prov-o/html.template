@@ -625,6 +625,30 @@
           "2011, Working Draft. "+
           "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
 
+        "PROV-N":
+          "Luc Moreau and Paolo Missier (eds.) James Cheney, Stian Soiland-Reyes "+
+          "<a href=\"http://www.w3.org/TR/prov-n/\"><cite>PROV-N: The Provenance Notation</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-n/\">http://www.w3.org/TR/prov-n/</a>",
+
+        "PROV-AQ":
+          "Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles "+
+          "<a href=\"http://www.w3.org/TR/prov-aq/\"><cite>Provenance Access and Query</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-aq/\">http://www.w3.org/TR/prov-aq/</a>",
+
+        "PROV-CONSTRAINTS":
+          "James Cheney, Paolo Missier, and Luc Moreau (eds.) "+
+          "<a href=\"http://www.w3.org/TR/prov-constraints/\"><cite>Constraints of the PROV Data Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-constraints/\">http://www.w3.org/TR/prov-constraints/</a>",
+
+        "PROV-O":
+          "Timothy Lebo, Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, David Corsar, Daniel Garijo, Stian Soiland-Reyes, and Stephan Zednik "+
+          "<a href=\"http://www.w3.org/TR/prov-o/\"><cite>Provenance Formal Model</cite></a>. "+
+          "2011, Working Draft. "+
+          "URL: <a href=\"http://www.w3.org/TR/prov-o/\">http://www.w3.org/TR/prov-o/</a>",
+
          "PROV-Ontology-Namespace":
           "TBD"+
           "<a href=\"http://www.w3.org/ns/prov-o/\"><cite>PROV Ontology Namespace</cite></a>. "+
@@ -651,14 +675,14 @@
 
          "XMLSCHEMA11-2":
           "Henry S. Thompson; et al. "+
-          "<a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405//\"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes.</cite></a>. "+
+          "<a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/\"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes.</cite></a>. "+
           "5 April 2012. W3C Recommendation "+
           "URL: <a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/\">http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/</a>",
       };
 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "LC",
+          specStatus:           "WD",
           
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "prov-o",
@@ -668,7 +692,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-07-24",
+          publishDate:  "2012-07-19",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -676,14 +700,14 @@
 
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
-          previousPublishDate:  "2012-05-03",
-          previousMaturity:  "SPWD",
+          previousPublishDate:  "2012-07-24",
+          previousMaturity:  "WD",
 
           // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
 
           // if this is a LCWD, uncomment and set the end of its review period
-          lcEnd: "2012-09-18",
+          // lcEnd: "2012-09-18",
 
           // if you want to have extra CSS, append them to this list
           // it is recommended that the respec.css stylesheet be kept
