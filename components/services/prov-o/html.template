@@ -1151,6 +1151,13 @@ prov:wasDerivedFrom
 
 
     <section class='appendix'>
+      <h2>Changes since WD-prov-o-20120724</h2>
+      <ul>
+         <li>Restated prov:hadRole's domain to 'Association or InstantaneousEvent' instead of the original that enumerated the subclasses of InstantaneousEvent ('Association or End or Generation or Invalidation or Start or Usage').</li>
+      </ul>
+    </section>
+
+    <section class='appendix'>
       <h2>Acknowledgements</h2>
       <p>Thanks to the members of the Provenance Working Group for their feedback throughout the development of the PROV Ontology and this documentation page. We also thank the developers of the tools that helped create the PROV-O ontology and portions of this page. Without these great tools, developing PROV-O would have been much less of a pleasure.</p>
       <ul>
