@@ -1153,7 +1153,7 @@ prov:wasDerivedFrom
     <section class='appendix'>
       <h2>Changes since WD-prov-o-20120724</h2>
       <ul>
-         <li>Restated prov:hadRole's domain to 'Association or InstantaneousEvent' instead of the original that enumerated the subclasses of InstantaneousEvent ('Association or End or Generation or Invalidation or Start or Usage').</li>
+         <li>Restated <a href="#hadRole" class="qname">prov:hadRole</a>'s domain to 'Association or InstantaneousEvent' instead of the original that enumerated the subclasses of InstantaneousEvent ('Association or End or Generation or Invalidation or Start or Usage').</li>
       </ul>
     </section>
 
