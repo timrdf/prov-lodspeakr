@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" {% for i, ns in lodspk.ns %}xmlns:{{i}}="{{ns}}" {%endfor%}
+<html xmlns="http://www.w3.org/1999/xhtml" 
       version="XHTML+RDFa 1.0" xml:lang="en">
   <head>
     <title>crawl-with-d3</title>
     <link href="{{lodspk.baseUrl}}css/basic.css" rel="stylesheet" type="text/css" media="screen" />
     <script type="text/javascript" src="http://d3js.org/d3.v2.js"></script>
     <style type="text/css">
+      circle {
+         stroke: gray;
+         fill-opacity: 60%;
+      }
     </style>
     <script type="text/javascript">
-      myData45 = [
+      baked_in = [
           {
               "count"     : 440,
               "num_topics": 0
@@ -19,7 +23,6 @@
               "num_topics": 10
           }
       ]
-
     </script>
   </head>
   <body>
@@ -31,21 +34,74 @@
     </ul>
     <a href="{{lodspk.baseUrl}}data.json">here</a>
     <script>
-      d3.json('{{lodspk.baseUrl}}crawl-with-d3.json',
-         function(data) {
-            d3.select("body")
-              .append("ul")
-              .selectAll("li")
-              .data(data)
-              .enter()
-              .append("li")
-              .text(
-                  function(d) {
-                     return d.count + ' people specify ' + d.num_topics + ' topics'
-                  } 
-              );
-         }
-      )
+      d3.json('{{lodspk.baseUrl}}crawl-with-d3.json', function(data) { 
+         grabbed_by_d3 = data
+         mySVG = d3.select("body").append("svg")
+
+         dots  = mySVG.selectAll("circle").data(grabbed_by_d3).enter().append("circle")
+
+         x_scale = d3.scale.linear().domain([0, d3.max(grabbed_by_d3, function(d){return d.num_topics})])
+                                    .range([10,500])
+         
+         dots.attr("cx",function(d){ return x_scale(d.num_topics) })
+         dots.attr("cy",function(d){ return d.count })
+         dots.attr("r", 5)
+
+         xAxis = d3.svg.axis().scale(x_scale).ticks(4)
+         mySVG.append("svg:g").attr("class","xaxis").attr("transform","translate(0,280").call(xAxis)
+
+   
+         drawSVG = d3.select("body").append("svg")
+         drawSVG
+            .selectAll("circle")
+            .data([32, 57, 112])
+            .enter()
+               .append('circle')
+               .attr('r',30)
+               .attr('cx',function(d){return d})
+               .attr('cy',function(d){return d})
+               .attr('fill','blue')
+               .on("mouseover", function(){d3.select(this).style("fill", "yellow")})
+               .on("mouseout",  function(){d3.select(this).style("fill", "black")})
+
+         drawSVG
+            .selectAll("circle")
+            .data([32, 57, 112, 150, 170])
+            .attr('r',10)
+            .enter()
+               .append('circle')
+               .attr('cx',function(d){return d})
+               .attr('cy',function(d){return d})
+               .attr('r',25)
+               .attr('fill','red')
+               .transition()
+                 .delay(1000)
+                 .duration(1000)   
+                 .attr('fill','purple')
+
+         drawSVG
+            .selectAll("circle")
+            .data([32, 57, 112, 150])
+            .on("mousedown", animate)
+            .exit()
+               .attr('fill','orange')
+      })
+
+      # .ease("exp-in-out")
+
+      function animate() {
+         origR = d3.select(this).attr('r')
+         origC = d3.select(this).attr('fill')
+         d3.select(this)
+           .transition()
+             .duration(1000)
+             .attr("r", 5*origR)
+             .attr("fill", 'aliceblue')
+           .transition()
+             .delay(1000)
+             .attr("r",    origR)
+             .attr("fill", origC)
+      };
     </script>
   </body>
 </html>
