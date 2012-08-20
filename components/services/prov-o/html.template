@@ -682,7 +682,7 @@
 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "WD",
+          specStatus:           "ED",
           
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "prov-o",
@@ -692,7 +692,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-07-19",
+          publishDate:  "2012-08-14",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -701,7 +701,7 @@
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
           previousPublishDate:  "2012-07-24",
-          previousMaturity:  "WD",
+          previousMaturity:  "LCWD",
 
           // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
@@ -786,7 +786,7 @@ It can also be specialized to create new classes and properties to model provena
         <p style="text-align: center;">The namespace for all PROV-O terms is <span class="repeated">http://www.w3.org/ns/prov#</span>.
         </p>
 
-        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl">here</a>.
+        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/tip/ontology/ProvenanceOntology.owl">here</a>.
         </p>
 
     </section>
@@ -1153,7 +1153,13 @@ prov:wasDerivedFrom
     <section class='appendix'>
       <h2>Changes since WD-prov-o-20120724</h2>
       <ul>
-         <li>Restated <a href="#hadRole" class="qname">prov:hadRole</a>'s domain to 'Association or InstantaneousEvent' instead of the original that enumerated the subclasses of InstantaneousEvent ('Association or End or Generation or Invalidation or Start or Usage').</li>
+         <li>Restated <a href="#hadRole" class="qname">prov:hadRole</a>'s domain to 'Association or InstantaneousEvent' 
+             instead of the original that enumerated the subclasses of InstantaneousEvent 
+             ('Association or End or Generation or Invalidation or Start or Usage').
+         </li>
+         <li>Renamed prov:Source to <a href="#PrimarySource" class="qname">prov:PrimarySource</a>
+             and prov:qualifiedSource to <a href="#qualifiedPrimarySource" class="qname">prov:qualifiedPrimarySource</a>.
+         </li>
       </ul>
     </section>
 
