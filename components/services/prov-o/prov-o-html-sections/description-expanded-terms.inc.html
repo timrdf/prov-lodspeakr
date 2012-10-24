@@ -17,7 +17,7 @@
 
      <p>Three subclasses of Agent (<a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and 
       <a href="#SoftwareAgent" class="qname">prov:SoftwareAgent</a>) and
-      Three subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, <a href="#Bundle" class="qname">prov:Bundle</a>, 
+      three subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, <a href="#Bundle" class="qname">prov:Bundle</a>, 
       and <a href="#Plan" class="qname">prov:Plan</a>). 
       </p>
 
@@ -89,7 +89,7 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 
         <div id="narrative-example-expanded-1" about="#narrative-example-expanded-1" 
             typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-           <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. Derek then published a post about
+           <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. After his previous actions, Derek then published a post about
 		   his work with the aggregated file.
             </p> 
             <p>   
@@ -102,13 +102,13 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		   
 		   <p>
 		   Agent <code>ex:derek</code>, acting again on behalf of the <code>:national_newspaper_inc</code> organization, 
-		   published a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>) using the tool <code>ex:postEditor</code> (which was included in a user action tracking system compliant to PROV)
-		   . Since he was the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
+		   published a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>) using the tool <code>ex:postEditor</code> (which was included in a user action tracking system compliant to PROV). 
+		   Since he was the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
 		   was recorded as well. The post produced by <code>ex:derek</code> (<code>ex:post9821v1</code>) included a permanent link where the content of the latest version is shown
 		   (<code>ex:more-crime-happens-in-cities</code>) plus a snapshot of the content of the current version (<code>ex:postContent0</code>). Derek also added additional metadata of the post, like the title.
 		   </p>
 		   <p>
-		   However, shortly after having published the post, Derek detected a typo. He didn't not want to record the activity that led to the new version, so he just created a new version and 
+		   However, shortly after having published the post, Derek detected a typo. He didn't want to record the activity that led to the new version, so he just created a new version and 
 		   summarized the changes in a revision of the original post (<code>ex:post9821v2</code>). This revision was also an alternate of the original post, 
          since they were both forms of the long-standing blog.
          Thus, the permalink to the latest version (<code>ex:more-crime-happens-in-cities</code>) remained the same in the new revision, but a different URL was given for its snapshot (<code>ex:postContent1</code>).
@@ -130,8 +130,8 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		 <div id="narrative-example-expanded-1-a" about="#narrative-example-expanded-1-a" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
            <p>Shortly after Derek's post publication, Monica adapted the text for a wider audience in a new post (<code>ex:post9822</code>). This version was a specialization of the original post,
 		   and an alternate of the version modified by Derek. Since the provenance produced by the activities of Derek and Monica corresponded to different user views, the system
-		   automatically published it in different <a href="#Bundle" class="qname">prov:Bundles</a> (<code>ex:bundlePost and ex:bundlePost1</code>). The system also tagged them as the topic of 
-			the bundle (so as to be able to locate easily their actions) and added additional metadata, such as the date of creation of the bundle or the creator.
+		   automatically published it in different <a href="#Bundle" class="qname">prov:Bundles</a>. The system also tagged them as the involved users 
+			with the bundle (so as to be able to locate easily their actions) and added additional metadata, such as the date of creation of the bundle or the creator.
             </p> 		   
             <p>   
                <a href="#narrative-example-expanded-1-a"/>Example 3</a>:
@@ -152,7 +152,7 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		   
 		   <p>
 		   Agent <code>ex:John</code> also named the URI of the original source (<code>ex:aggregatedByRegions</code>). All the provenance statements related to his post
-		   are grouped in a new <span class="repeated">prov:Bundle</span> (<code>ex:bundlePost2</code>).
+		   are grouped in a new <span class="repeated">prov:Bundle</span>.
 		   
 		   Unfortunately, there was a problem in the servers where <code>:post19201</code> was being stored, and all the data related to the post was lost permanently. Thus, the system
 		   invalidated the entity automatically and notified John about the error.
