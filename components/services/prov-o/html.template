@@ -692,7 +692,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-08-14",
+          publishDate:  "2012-11-01",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -786,7 +786,7 @@ It can also be specialized to create new classes and properties to model provena
         <p style="text-align: center;">The namespace for all PROV-O terms is <span class="repeated">http://www.w3.org/ns/prov#</span>.
         </p>
 
-        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="https://dvcs.w3.org/hg/prov/raw-file/tip/ontology/ProvenanceOntology.owl">here</a>.
+        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="http://www.w3.org/ns/prov-o.owl">here</a>.
         </p>
 
     </section>
@@ -1170,6 +1170,7 @@ prov:wasDerivedFrom
          like <code>:illustration_usage</code> rather than
          <code>:usage_1</code>.
          </li>
+         <li>Fixed naming mismatch by changing prov:hadOriginalSource to <a href="#hadPrimarySource" class="qname">prov:hadPrimarySource</a>.
       </ul>
     </section>
 
