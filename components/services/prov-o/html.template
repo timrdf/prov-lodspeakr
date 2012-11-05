@@ -1157,20 +1157,34 @@ prov:wasDerivedFrom
              instead of the original that enumerated the subclasses of InstantaneousEvent 
              ('Association or End or Generation or Invalidation or Start or Usage').
          </li>
+
          <li>Renamed prov:Source to <a href="#PrimarySource" class="qname">prov:PrimarySource</a>
              and prov:qualifiedSource to <a href="#qualifiedPrimarySource" class="qname">prov:qualifiedPrimarySource</a>.
          </li>
-         <li>Examples have been rewritten to void usage of TriG named
+
+         <li>Examples have been rewritten to avoid usage of TriG named
          graph syntax except for when showing bundles in 
          <a href="#asInBundle" class="qname">prov:asInBundle</a>
          and
          <a href="#mentionOf" class="qname">prov:mentionOf</a>.
          </li>
+
          <li>Some examples have been elaborated to use resource names
          like <code>:illustration_usage</code> rather than
          <code>:usage_1</code>.
          </li>
+
          <li>Fixed naming mismatch by changing prov:hadOriginalSource to <a href="#hadPrimarySource" class="qname">prov:hadPrimarySource</a>.
+         
+         <li>Rephrased definitions for <a href="#EntityInfluence" class="qname">prov:EntityInfluence</a>, 
+            <a href="#ActivityInfluence" class="qname">prov:ActivityInfluence</a>, and <a href="#AgentInfluence" class="qname">prov:AgentInfluence</a> 
+            to align with the definition of their superclass <a href="#Influence" class="qname">prov:Influence</a>.
+         </li>
+
+         <li>Updated definitions for <a href="#Start" class="qname">prov:Start</a> and 
+            <a href="#End" class="qname">prov:End</a> from PROV-DM.
+         </li>
+
       </ul>
     </section>
 
