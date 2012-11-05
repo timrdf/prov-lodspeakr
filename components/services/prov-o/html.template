@@ -1139,7 +1139,7 @@ prov:wasDerivedFrom
      </div>
 
       <p>The following table lists the recommended inverse names that should be used if a modeler does not want to use the recommended PROV-O property. 
-      For convenience, <a href="inverses.ttl">this file</a> lists the resulting inverse properties.
+      For convenience, <a href="http://www.w3.org/ns/prov-inverses.owl">this file</a> lists the resulting inverse properties.
       </p>
 
       <strong>TODO: include <a href="http://aquarius.tw.rpi.edu/prov-wg/inverse-names.html">table</a> here. See <a href="http://www.w3.org/2011/prov/wiki/PIL_OWL_Ontology#Steps_taken_for_LC">instructions</a> and contact lebot@rpi.edu if you see this.</strong>
