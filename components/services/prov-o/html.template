@@ -1177,7 +1177,7 @@ prov:wasDerivedFrom
          graph syntax except for when showing bundles in 
          <a href="#asInBundle" class="qname">prov:asInBundle</a>
          and
-         <a href="#mentionOf" class="qname">prov:mentionOf</a>.
+         <a href="#mentionOf" class="qname">prov:mentionOf</a>. A citation to TriG was added.
          </li>
 
          <li>Some examples have been elaborated to use resource names
