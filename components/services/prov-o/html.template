@@ -803,7 +803,6 @@ It can also be specialized to create new classes and properties to model provena
       <p>This is the third public release of the PROV-DM document.
       This is a Last Call Working Draft. The design is not expected to change significantly, going forward, and now is the key time for external review.</p>
 
-      <p>This specification identifies two  <a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">features at risk</a>: <a href="#mentionOf">prov:mentionOf</a> and  <a href="#asInBundle">prov:asInBundle</a> might be removed from PROV-O if implementation experience reveals problems with supporting this construct. These two OWL properties are based on the PROV <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#term-mention">Mentions</a> feature.</p>
 
 
       <h4>PROV Family of Specifications</h4>
@@ -1196,6 +1195,7 @@ prov:wasDerivedFrom
             <a href="#End" class="qname">prov:End</a> from PROV-DM.
          </li>
 
+         <li>Removed prov:mentionOf and prov:asInBundle, which have been relocated to a Note.</li>
       </ul>
     </section>
 
