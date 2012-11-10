@@ -1195,6 +1195,10 @@ prov:wasDerivedFrom
             <a href="#End" class="qname">prov:End</a> from PROV-DM.
          </li>
 
+         <li>The property chain for <a href="#wasInformedBy" class="qname">prov:wasInformedBy</a> was fixed from 
+                "qualifiedCommunication o entity subproperty of wasInformedBy" 
+             to "<a href="#qualifiedCommunication" class="qname">prov:qualifiedCommunication</a> o <a href="#activity" class="qname">prov:activity</a> subproperty of wasInformedBy"</li>
+
          <li>Removed prov:mentionOf and prov:asInBundle, which have been relocated to a Note.</li>
       </ul>
     </section>
