@@ -1199,7 +1199,9 @@ prov:wasDerivedFrom
                 "qualifiedCommunication o entity subproperty of wasInformedBy" 
              to "<a href="#qualifiedCommunication" class="qname">prov:qualifiedCommunication</a> o <a href="#activity" class="qname">prov:activity</a> subproperty of wasInformedBy"</li>
 
-         <li>Removed prov:mentionOf and prov:asInBundle, which have been relocated to a Note.</li>
+         <li>Removed prov:mentionOf and prov:asInBundle, which have been relocated to its own Note.</li>
+   
+         <li>Added comments encouraging the use of the more specific forms of <a href="#Influence" class="qname">prov:Influence</a>.</li>
       </ul>
     </section>
 
