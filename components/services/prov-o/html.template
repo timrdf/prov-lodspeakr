@@ -1209,11 +1209,11 @@ prov:wasDerivedFrom
       <h2>Acknowledgements</h2>
       <p>Thanks to the members of the Provenance Working Group for their feedback throughout the development of the PROV Ontology and this documentation page. We also thank the developers of the tools that helped create the PROV-O ontology and portions of this page. Without these great tools, developing PROV-O would have been much less of a pleasure.</p>
       <ul>
-         <li>Stanford's <a href="http://protege.stanford.edu/">Protege</a> for editing the ontology.</li>
-         <li>Dave Beckett's <a href="http://librdf.org/raptor/">rapper</a> for the many serialization checks of so many examples.</li>
-         <li>Alvaro Graves' <a href="http://alangrafu.github.com/lodspeakr/">LODSpeaKr</a> for constructing portions of this page with SPARQL queries of PROV-O.</li>
-         <li>Cosmin Basca's <a href="http://packages.python.org/SuRF/">SuRF</a> and Ivan Herman's <a href="https://github.com/RDFLib">rdflib</a> for easing the construction of this page's cross reference section.</li>
-         <li>Silvio Peroni's <a href="http://lode.sourceforge.net/">LODE</a> for the CSS styling of this page's cross reference section.</li>
+         <li>Stanford's <a href="http://protege.stanford.edu">Protege</a> for editing the ontology.</li>
+         <li>Dave Beckett's <a href="http://librdf.org/raptor">rapper</a> for the many serialization checks of so many examples.</li>
+         <li>Alvaro Graves' <a href="http://alangrafu.github.com/lodspeakr">LODSpeaKr</a> for constructing portions of this page with SPARQL queries of PROV-O.</li>
+         <li>Cosmin Basca's <a href="http://packages.python.org/SuRF">SuRF</a> and Ivan Herman's <a href="https://github.com/RDFLib">rdflib</a> for easing the construction of this page's cross reference section.</li>
+         <li>Silvio Peroni's <a href="http://lode.sourceforge.net">LODE</a> for the CSS styling of this page's cross reference section.</li>
          <li>Robin Berjon's <a href="http://dev.w3.org/2009/dap/ReSpec.js/documentation.html">respec</a> for handling the W3C styling.</li>
       </ul>
     </section>
