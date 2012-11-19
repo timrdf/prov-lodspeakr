@@ -735,7 +735,8 @@ for category in categories.keys():
          cross.write('\n')
       cross.write('</div>\n')        # e.g. <div id="prov-starting-point-owl-classes-crossreference"
 
-      tableCount = { 'expanded' : '2', 'starting-point' : '1', 'qualified' : '3', 'access-and-query' : '4' }
+      # There is one table in the document before the qualified form tables.
+      tableCount = { 'expanded' : '3', 'starting-point' : '2', 'qualified' : '4', 'access-and-query' : '5' }
       n = ''
       if category.lower()[0] in ['a','e','i,','o','u']:
          n = 'n'
