@@ -1275,7 +1275,86 @@ prov:wasDerivedFrom
 
     <section class='appendix'>
       <h2>Acknowledgements</h2>
-      <p>Thanks to the members of the Provenance Working Group for their feedback throughout the development of the PROV Ontology and this documentation page. We also thank the developers of the tools that helped create the PROV-O ontology and portions of this page. Without these great tools, developing PROV-O would have been much less of a pleasure.</p>
+
+      <p>This document has been produced by the PROV Working Group, and its contents reflect extensive discussion within the Working Group as a whole. The editors extend special thanks to Sandro Hawke (W3C/MIT) and Ivan Herman (W3C/ERCIM), W3C contacts for the PROV Working Group.</p>
+
+      <p> The editors acknowledge valuable contributions from the following:
+         Tom Baker,
+         David Booth,
+         Robert Freimuth,
+         Satrajit Ghosh,
+         Ralph Hodgson,
+         Renato Iannella,
+         Jacek Kopecky,
+         James Leigh,
+         Jacco van Ossenbruggen,
+         Alan Ruttenberg,
+         Reza Samavi, and
+         Antoine Zimmermann.
+      </p>
+
+      <p>Members of the PROV Working Group at the time of publication of this document were:
+
+         Ilkay Altintas (Invited expert),
+         Reza B'Far (Oracle Corporation),
+         Khalid Belhajjame (University of Manchester),
+         James Cheney (University of Edinburgh, School of Informatics),
+         Sam Coppens (IBBT),
+         David Corsar (University of Aberdeen, Computing Science),
+         Stephen Cresswell (The National Archives),
+         Tom De Nies (IBBT),
+         Helena Deus (DERI Galway at the National University of Ireland, Galway, Ireland),
+         Simon Dobson (Invited expert),
+         Martin Doerr (Foundation for Research and Technology - Hellas(FORTH)),
+         Kai Eckert (Invited expert),
+         Jean-Pierre EVAIN (European Broadcasting Union, EBU-UER),
+         James Frew (Invited expert),
+         Irini Fundulaki (Foundation for Research and Technology - Hellas(FORTH)),
+         Daniel Garijo (Universidad Politécnica de Madrid),
+         Yolanda Gil (Invited expert),
+         Ryan Golden (Oracle Corporation),
+         Paul Groth (Vrije Universiteit),
+         Olaf Hartig (Invited expert),
+         David Hau (National Cancer Institute, NCI),
+         Sandro Hawke (W3C/MIT),
+         Jörn Hees (German Research Center for Artificial Intelligence (DFKI) Gmbh),
+         Ivan Herman, (W3C/ERCIM),
+         Ralph Hodgson (TopQuadrant),
+         Hook Hua (Invited expert),
+         Trung Dong Huynh (University of Southampton),
+         Graham Klyne (University of Oxford),
+         Michael Lang (Revelytix, Inc.),
+         Timothy Lebo (Rensselaer Polytechnic Institute),
+         James McCusker (Rensselaer Polytechnic Institute),
+         Deborah McGuinness (Rensselaer Polytechnic Institute),
+         Simon Miles (Invited expert),
+         Paolo Missier (School of Computing Science, Newcastle university),
+         Luc Moreau (University of Southampton),
+         James Myers (Rensselaer Polytechnic Institute),
+         Vinh Nguyen (Wright State University),
+         Edoardo Pignotti (University of Aberdeen, Computing Science),
+         Paulo da Silva Pinheiro (Rensselaer Polytechnic Institute),
+         Carl Reed (Open Geospatial Consortium),
+         Adam Retter (Invited Expert),
+         Christine Runnegar (Invited expert),
+         Satya Sahoo (Invited expert),
+         David Schaengold (Revelytix, Inc.),
+         Daniel Schutzer (FSTC, Financial Services Technology Consortium),
+         Yogesh Simmhan (Invited expert),
+         Stian Soiland-Reyes (University of Manchester),
+         Eric Stephan (Pacific Northwest National Laboratory),
+         Linda Stewart (The National Archives),
+         Ed Summers (Library of Congress),
+         Maria Theodoridou (Foundation for Research and Technology - Hellas(FORTH)),
+         Ted Thibodeau (OpenLink Software Inc.),
+         Curt Tilmes (National Aeronautics and Space Administration),
+         Craig Trim (IBM Corporation),
+         Stephan Zednik (Rensselaer Polytechnic Institute),
+         Jun Zhao (University of Oxford),
+         Yuting Zhao (University of Aberdeen, Computing Science).
+      </p>
+
+      <p>The editors also thank the developers of the tools that helped create the PROV-O ontology and portions of this document. Without these great tools, developing PROV-O would have been much less of a pleasure.</p>
       <ul>
          <li>Stanford's <a href="http://protege.stanford.edu">Protege</a> for editing the ontology.</li>
          <li>Dave Beckett's <a href="http://librdf.org/raptor">rapper</a> for the many serialization checks of so many examples.</li>
