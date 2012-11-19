@@ -864,16 +864,26 @@ It can also be specialized to create new classes and properties to model provena
 
         <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA11-2]].   
         </p>
-        <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
 
     <section id="compliance">    
        <h2>Compliance with this Document</h2>  
-      <p>For the purpose of compliance, the normative sections of this document are
-      </p>.
+      <p>For the purpose of compliance, the normative sections of this document are 
+         <a href="#compliance">Section 1.1</a>, 
+         <a href="#notations">Section 1.2</a>,
+         <a href="#description">Section 3</a>, and
+         <a href="#cross-reference">Section 4</a>.
+      </p>
       <ul>
          <li>Information in tables is normative if it appears in a normative section.</li>
-         <li>All figures (including UML diagrams) are informative.</li>
+         <li>All figures and diagrams are informative.</li>
+         <li>All examples are informative.</li>
       </ul>
+    </section>
+
+    <section id="notations">    
+       <h2>Notational Conventions</h2>  
+
+        <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
     </section>
 
       <section class="informative" id="namespaces">
