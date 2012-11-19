@@ -823,34 +823,32 @@ It can also be specialized to create new classes and properties to model provena
     </section>
   
  
-    <section id="sotd">
-      <h4>Last Call</h4>
-      <p>This is the fourth public release of the PROV-O document.
-      This is a Last Call Working Draft. The design is not expected to change significantly, going forward, and now is the key time for external review.</p>
 
+      <section id="sotd">
+         <h4>PROV Family of Documents</h4>
+         This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable 
+            interchange of provenance information in heterogeneous environments such as the Web.  These documents are:
+         <ul>
+         <li> <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV-OVERVIEW</a> (Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
+         <li> <a href="http://www.w3.org/TR/2012/WD-prov-primer-20121211/">PROV-PRIMER</a> (Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
+         <li> <a href="http://www.w3.org/TR/2012/CR-prov-o-20121211/">PROV-O</a> (Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF [[!PROV-O]] (this document);</li>
+         <li> <a href="http://www.w3.org/TR/2012/CR-prov-dm-20121211/">PROV-DM</a> (Recommendation), the PROV data model for provenance;</li>
+         <li> <a href="http://www.w3.org/TR/2012/CR-prov-n-20121211/">PROV-N</a> (Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
+         <li> <a href="http://www.w3.org/TR/2012/CR-prov-constraints-20121211/">PROV-CONSTRAINTS</a> (Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
+         <li> <a href="http://www.w3.org/TR/2012/WD-prov-aq-20120619/">PROV-AQ</a> (Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
+         <li> <a href="http://www.w3.org/TR/2012/WD-prov-xml-20121211/">PROV-XML</a> (Note),  an XML schema for the PROV data model [[PROV-XML]].</li>
 
+         </ul>
+         <h4>How to read the PROV Family of Documentation</h4>
+         <ul>
+         <li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
+         <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. </li>
+         <li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
+         <li>Readers seeking to implement other PROV serializations
+         should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O and PROV-N offer examples of mapping to RDF and text, respectively.</li>
+         </ul>
+      </section>
 
-      <h4>PROV Family of Specifications</h4>
-      This document is part of the PROV family of specifications, a set of specifications defining various aspects that are necessary to achieve the vision of inter-operable
-      interchange of provenance information in heterogeneous environments such as the Web.  The specifications are:
-      <ul>
-      <li> <a href="http://www.w3.org/TR/prov-dm/">PROV-DM</a>, the PROV data model for provenance (this document);</li>
-      <li> <a href="http://www.w3.org/TR/prov-constraints/">PROV-CONSTRAINTS</a>, a set of constraints applying to the PROV data model [[PROV-CONSTRAINTS]];</li>
-      <li> <a href="http://www.w3.org/TR/prov-n/">PROV-N</a>, a notation for provenance aimed at human consumption [[PROV-N]];</li>
-      <li> <a href="http://www.w3.org/TR/prov-o/">PROV-O</a>, the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF [[PROV-O]];</li>
-      <li> <a href="http://www.w3.org/TR/prov-aq/">PROV-AQ</a>, the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
-      <li> <a href="http://www.w3.org/TR/prov-primer/">PROV-PRIMER</a>, a primer for the PROV data model [[PROV-PRIMER]].</li>
-      </ul>
-      <h4>How to read the PROV Family of Specifications</h4>
-      <ul>
-      <li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
-      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the cons
-      traints applicable to the data model, and its interpretation. </li>
-      <li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
-      <li>Readers seeking to implement other PROV serializations
-      should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O and PROV-N offer examples of mapping to RDF and text, respectively.</li>
-      </ul>
-    </section>
 
      <section id="introduction">    
          <h2>Introduction</h2>  
