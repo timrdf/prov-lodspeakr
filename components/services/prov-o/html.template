@@ -519,9 +519,34 @@
      -->
 
    <!-- From DM -->
+   <script src="http://dvcs.w3.org/hg/prov/raw-file/default/model/provbib.js" class="remove"></script>
+   <!-- From DM -->
    <style type="text/css">
       .note { font-size:small; margin-left:50px }
        table { text-align: center; vertical-align: middle }
+
+      table.thinborder {
+         border-width: 1px;
+         border-spacing: 0px;
+         border-style: none;
+         border-color: gray;
+         border-collapse: collapse;
+      }
+      table.thinborder th {
+         border-width: 1px;
+         padding: 0px;
+         border-style: solid;
+         border-color: gray;
+         -moz-border-radius: ;
+      }
+      table.thinborder td {
+         border-width: 1px;
+         padding: 2px;
+         border-style: solid;
+         border-color: gray;
+         -moz-border-radius: ;
+         background-color: rgb(246,246,246);
+      }
    </style>
 
    <style type="text/css">
@@ -613,12 +638,6 @@
           "18 October 2011. W3C Working Draft. (Work in progress.) "+
           "URL: <a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\">http://www.w3.org/TR/2011/WD-prov-dm-20111018/</a>",
 
-        "PROV-PAQ":
-          "Graham Klyne and Paul Groth "+
-          "<a href=\"https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\"><cite>Provenance Access and Query</cite></a>. "+
-          "2011, Work in progress. "+
-          "URL: <a href=\"https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html\">https://dvcs.w3.org/hg/prov/raw-file/tip/paq/prov-aq.html</a>",
-
         "PROV-PRIMER":
           "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
           "<a href=\"http://www.w3.org/TR/prov-primer/\"><cite>Prov Model Primer</cite></a>. "+
@@ -673,6 +692,12 @@
           "modified 27 October 2009, accessed July 03 2012 "+
           "URL: <a href=\"http://www.w3.org/TR/owl2-primer/\">http://www.w3.org/TR/owl2-primer/</a>",
 
+         "OWL-2-OVERVIEW":
+          "W3C OWL Working Group "+
+          "<a href=\"http://www.w3.org/TR/2009/REC-owl2-overview-20091027/\"><cite>OWL 2 Web Ontology Language Document Overview</cite></a>. "+
+          "modified 27 October 2009, accessed November 19 2012 "+
+          "URL: <a href=\"http://www.w3.org/TR/2009/REC-owl2-overview-20091027/\">http://www.w3.org/TR/2009/REC-owl2-overview-20091027/</a>",
+
          "XMLSCHEMA11-2":
           "Henry S. Thompson; et al. "+
           "<a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/\"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes.</cite></a>. "+
@@ -698,7 +723,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-11-11",
+          publishDate:  "2012-11-19",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -778,7 +803,7 @@
           wgPatentURI:  "http://www.w3.org/2004/01/pp-impl/46974/status",
 
       // Add extraReferences to bibliography database
-          preProcess: [addExtraReferences], 
+          preProcess: [addExtraReferences, addProvReferences], 
       };
     </script>
   </head>
@@ -800,7 +825,7 @@ It can also be specialized to create new classes and properties to model provena
  
     <section id="sotd">
       <h4>Last Call</h4>
-      <p>This is the third public release of the PROV-DM document.
+      <p>This is the fourth public release of the PROV-O document.
       This is a Last Call Working Draft. The design is not expected to change significantly, going forward, and now is the key time for external review.</p>
 
 
@@ -829,7 +854,7 @@ It can also be specialized to create new classes and properties to model provena
 
      <section id="introduction">    
          <h2>Introduction</h2>  
-         <p>The PROV Ontology (PROV-O) defines the OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-PAQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
+         <p>The PROV Ontology (PROV-O) defines the OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-AQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
          PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
@@ -840,9 +865,41 @@ It can also be specialized to create new classes and properties to model provena
         <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA11-2]].   
         </p>
         <p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and       "OPTIONAL" in this document are to be interpreted as described in [[!RFC2119]].</p>
+
+    <section id="compliance">    
+       <h2>Compliance with this Document</h2>  
+      <p>For the purpose of compliance, the normative sections of this document are
+      </p>.
+      <ul>
+         <li>Information in tables is normative if it appears in a normative section.</li>
+         <li>All figures (including UML diagrams) are informative.</li>
+      </ul>
     </section>
 
+      <section class="informative" id="namespaces">
+         <h3>Namespaces</h3>
+         <p>The following namespaces prefixes are used throughout this document.
 
+         <div style="text-align: left;">
+            <table  class="thinborder" style="margin-left: auto; margin-right: auto;">
+            <caption id="namespace-table"><a href="#namespace-table">Table 1</a>: Prefix and Namespaces used in this specification</caption> <!-- Table 1-->
+            <tr><td><a><b>prefix</b></a></td><td><b>namespace IRI</b></td> <td><b>definition</b></td></tr>
+
+            <tr><td><a>prov</a></td><td>http://www.w3.org/ns/prov#</td>
+                <td>The PROV namespace [[!PROV-DM]]</td></tr>
+
+            <tr><td><a>xsd</a></td><td>http://www.w3.org/2000/10/XMLSchema#</td><td>XML Schema Namespace [[!XMLSCHEMA11-2]]</td></tr>
+
+            <tr><td><a>rdf</a></td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td><td>The RDF namespace [[!RDF-CONCEPTS]]</td></tr>
+
+            <tr><td><a>owl</a></td><td>http://www.w3.org/2002/07/owl#</td><td>The OWL namespace [[!OWL-2-OVERVIEW]]</td></tr>
+
+            <tr><td><a>(others)</a></td><td>(various)</td><td>All other namespace prefixes are used in examples only. <br/> 
+                  In particular, IRIs starting with "http://example.com" represent<br/> some application-dependent IRI [[!IRI]]</td></tr>
+            </table>
+         </div>
+      </section>
+   </section>
 
    <section id="prov-o-at-a-glance">
       <h2>PROV-O at a glance</h2>
@@ -974,7 +1031,7 @@ It can also be specialized to create new classes and properties to model provena
       <p>To encourage widespread adoption, PROV-O's design is intentionally minimal and lightweight. 
       Because the OWL 2 RL profile is aimed at RDF applications that require scalable reasoning without sacrificing too much expressive power [[OWL-2-PRIMER]], 
       it served as a baseline for all axioms included in PROV-O. The PROV-O axioms that do not suit the OWL 2 RL profile are listed in 
-      <a href="#owl-rl-violations">Table 3</a>. 
+      <a href="#owl-rl-violations">Table 4</a>. 
 
       All five use an anonymous <em>class union</em> for the domain or range of a property, while OWL 2 RL requires the classes to be explicitly named. 
       Although introducing "placeholder" classes would have suited the
@@ -989,28 +1046,28 @@ It can also be specialized to create new classes and properties to model provena
 -->
 <div style="text-align: center">
   <table id="owl-rl-violations">
-    <caption><a href="#owl-rl-violations">Table 3</a>: All OWL Axioms in PROV-O that do not conform to the OWL-RL profile.</caption>
+    <caption><a href="#owl-rl-violations">Table 4</a>: All OWL Axioms in PROV-O that do not conform to the OWL-RL profile.</caption>
     <tr>
       <th>Non OWL-RL PROV-O Axiom</td>
     </tr>
     <tr>
-      <td><a href="#atLocation" class="qname">prov:atLocation</a> rdfs:domain <span class="name">[ (prov:Activity prov:Agent prov:Entity prov:InstantaneousEvent) ]</span></td>
+      <td><a href="#atLocation" class="qname">prov:atLocation</a> rdfs:domain <span class="name">[ owl:unionOf (prov:Activity prov:Agent prov:Entity prov:InstantaneousEvent) ]</span></td>
     </tr> <!-- 1 -->
 
     <tr>
-      <td><a href="#hadActivity" class="qname">prov:hadActivity</a> rdfs:domain <span class="name">[ (prov:Delegation prov:Derivation prov:Start) ]</span></td>
-    </tr> <!-- 3 -->
-
-    <tr>
-      <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> rdfs:range <span class="name">[ (prov:Activity prov:Agent prov:Entity) ]</span></td>
-    </tr> <!-- 2 -->
-
-    <tr>
-      <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> rdfs:domain <span class="name">[ (prov:Activity prov:Agent prov:Entity) ]</span></td>
+      <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> rdfs:domain <span class="name">[ owl:unionOf (prov:Activity prov:Agent prov:Entity) ]</span></td>
     </tr> <!-- 5 -->
 
     <tr>
-      <td><a href="#hadRole" class="qname">prov:hadRole</a> rdfs:domain <span class="name">[ (prov:Association prov:End prov:Generation prov:Invalidation prov:Start prov:Usage) ]</span></td>
+      <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> rdfs:range <span class="name">[ owl:unionOf (prov:Activity prov:Agent prov:Entity) ]</span></td>
+    </tr> <!-- 2 -->
+
+    <tr>
+      <td><a href="#hadActivity" class="qname">prov:hadActivity</a> rdfs:domain <span class="name">[ owl:unionOf (prov:Delegation prov:Derivation prov:Start prov:End) ]</span></td>
+    </tr> <!-- 3 -->
+
+    <tr>
+      <td><a href="#hadRole" class="qname">prov:hadRole</a> rdfs:domain <span class="name">[ owl:unionOf (prov:Association prov:InstantaneousEvent) ]</span></td>
     </tr> <!-- 4 -->
 
   </table>
@@ -1023,7 +1080,7 @@ It can also be specialized to create new classes and properties to model provena
 
          <div style="text-align: center">
            <table id="owl-rl-extra-domains">
-             <caption><a href="#owl-rl-extra-domains">Table 4</a>: Intersecting OWL2 RL compatible domains/ranges</caption>
+             <caption><a href="#owl-rl-extra-domains">Table 5</a>: Intersecting OWL2 RL compatible domains/ranges</caption>
              <tr>
                <th>Property</th> <th>Direction</th> <th>Domain/range</th>
              </tr>
@@ -1032,6 +1089,13 @@ It can also be specialized to create new classes and properties to model provena
                <td>rdfs:domain</td>
                <td>(implied: <span class="name">owl:Thing</span>)</td>
              </tr>
+
+             <tr>
+               <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a></td>
+               <td>rdfs:domain / rdfs:range</td>
+               <td>(implied: <span class="name">owl:Thing</span>)
+             </tr> 
+
              <tr>
                <td><a href="#hadActivity" class="qname">prov:hadActivity</a></td>
                <td>rdfs:domain</td>
@@ -1042,12 +1106,6 @@ It can also be specialized to create new classes and properties to model provena
                <td><a href="#hadRole" class="qname">prov:hadRole</a></td>
                <td>rdfs:domain</td>
                <td><a href="#Influence" class="qname">prov:Influence</a></td>
-             </tr> 
-
-             <tr>
-               <td><a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a></td>
-               <td>rdfs:domain / rdfs:range</td>
-               <td>(implied: <span class="name">owl:Thing</span>)
              </tr> 
            </table>
          </div>
@@ -1202,6 +1260,16 @@ prov:wasDerivedFrom
          <li>Removed prov:mentionOf and prov:asInBundle, which have been relocated to its own Note.</li>
    
          <li>Added comments encouraging the use of the more specific forms of <a href="#Influence" class="qname">prov:Influence</a>.</li>
+
+         <li>Added uniform references to other "dated" PROV documents.</li>
+
+         <li>Added <a href="#namespace-table">prefix namespace table</a>.</li>
+
+         <li>Added <a href="#compliance">Compliance with this document</a> section.</li>
+
+         <li>Corrected Turtle syntax for RL violations in <a href="#prov-o-owl-profile">PROV-O OWL Profile</a> section. They were missing owl:unionOf.</li>
+
+         <li>Updated attributions for the tools used to produce this document in <a href="#acknowledgements">Acknowledgements</a> section.</li>
       </ul>
     </section>
 
@@ -1211,8 +1279,9 @@ prov:wasDerivedFrom
       <ul>
          <li>Stanford's <a href="http://protege.stanford.edu">Protege</a> for editing the ontology.</li>
          <li>Dave Beckett's <a href="http://librdf.org/raptor">rapper</a> for the many serialization checks of so many examples.</li>
+         <li>Cosmin Basca's <a href="http://packages.python.org/SuRF">SuRF</a> for easing the construction of this page's cross reference section.</li>
+         <li>The creators, contributors, and maintainers of <a href="https://github.com/RDFLib">rdflib</a> for easing the construction of this page's cross reference section.</li>
          <li>Alvaro Graves' <a href="http://alangrafu.github.com/lodspeakr">LODSpeaKr</a> for constructing portions of this page with SPARQL queries of PROV-O.</li>
-         <li>Cosmin Basca's <a href="http://packages.python.org/SuRF">SuRF</a> and Ivan Herman's <a href="https://github.com/RDFLib">rdflib</a> for easing the construction of this page's cross reference section.</li>
          <li>Silvio Peroni's <a href="http://lode.sourceforge.net">LODE</a> for the CSS styling of this page's cross reference section.</li>
          <li>Robin Berjon's <a href="http://dev.w3.org/2009/dap/ReSpec.js/documentation.html">respec</a> for handling the W3C styling.</li>
       </ul>
