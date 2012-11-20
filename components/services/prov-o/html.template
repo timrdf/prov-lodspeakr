@@ -537,14 +537,12 @@
          padding: 0px;
          border-style: solid;
          border-color: gray;
-         -moz-border-radius: ;
       }
       table.thinborder td {
          border-width: 1px;
          padding: 2px;
          border-style: solid;
          border-color: gray;
-         -moz-border-radius: ;
          background-color: rgb(246,246,246);
       }
    </style>
@@ -683,19 +681,19 @@
          "LD-Patterns-QR":
           "Leigh Dodds and Ian Davis "+
           "<a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\"><cite>Qualified Relation</cite></a>. "+
-          "modified 31 May 2012, accessed June 01 2012 "+
+          "modified 31 May 2012, accessed 01 June 2012 "+
           "URL: <a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\">http://patterns.dataincubator.org/book/qualified-relation.html</a>",
 
          "OWL-2-PRIMER":
           "Pascal Hitzler, Markus Krötzsch, Bijan Parsia, Peter F. Patel-Schneider, Sebastian Rudolph "+
           "<a href=\"http://www.w3.org/TR/owl2-primer/\"><cite>OWL 2 Web Ontology Language Primer</cite></a>. "+
-          "modified 27 October 2009, accessed July 03 2012 "+
+          "modified 27 October 2009, accessed 03 July 2012 "+
           "URL: <a href=\"http://www.w3.org/TR/owl2-primer/\">http://www.w3.org/TR/owl2-primer/</a>",
 
          "OWL-2-OVERVIEW":
           "W3C OWL Working Group "+
           "<a href=\"http://www.w3.org/TR/2009/REC-owl2-overview-20091027/\"><cite>OWL 2 Web Ontology Language Document Overview</cite></a>. "+
-          "modified 27 October 2009, accessed November 19 2012 "+
+          "modified 27 October 2009, accessed 19 November 2012 "+
           "URL: <a href=\"http://www.w3.org/TR/2009/REC-owl2-overview-20091027/\">http://www.w3.org/TR/2009/REC-owl2-overview-20091027/</a>",
 
          "XMLSCHEMA11-2":
@@ -706,9 +704,9 @@
 
          "TRIG":
           "Chris Bizer and Richard Cyganiak "+
-          "<a href=\"http://www4.wiwiss.fu-berlin.de/bizer/trig/\"><cite>The TriG Syntax</cite></a>. "+
-          "modified 30 July 2007, accessed November 05 2012  "+
-          "URL: <a href=\"http://www4.wiwiss.fu-berlin.de/bizer/trig/\">http://www4.wiwiss.fu-berlin.de/bizer/trig/</a>",
+          "<a href=\"http://wifo5-03.informatik.uni-mannheim.de/bizer/trig/\"><cite>The TriG Syntax</cite></a>. "+
+          "modified 30 July 2007, accessed 05 November 2012 "+
+          "URL: <a href=\"http://wifo5-03.informatik.uni-mannheim.de/bizer/trig/\">http://wifo5-03.informatik.uni-mannheim.de/bizer/trig/</a>",
       };
 
       var respecConfig = {
@@ -832,7 +830,7 @@ It can also be specialized to create new classes and properties to model provena
          <ul>
          <li> <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV-OVERVIEW</a> (Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
          <li> <a href="http://www.w3.org/TR/2012/WD-prov-primer-20121211/">PROV-PRIMER</a> (Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
-         <li> <a href="http://www.w3.org/TR/2012/CR-prov-o-20121211/">PROV-O</a> (Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF [[!PROV-O]] (this document);</li>
+         <li> PROV-O (Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
          <li> <a href="http://www.w3.org/TR/2012/CR-prov-dm-20121211/">PROV-DM</a> (Recommendation), the PROV data model for provenance;</li>
          <li> <a href="http://www.w3.org/TR/2012/CR-prov-n-20121211/">PROV-N</a> (Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
          <li> <a href="http://www.w3.org/TR/2012/CR-prov-constraints-20121211/">PROV-CONSTRAINTS</a> (Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
@@ -1241,9 +1239,7 @@ prov:wasDerivedFrom
 
          <li>Examples have been rewritten to avoid usage of TriG named
          graph syntax except for when showing bundles in 
-         <a href="#asInBundle" class="qname">prov:asInBundle</a>
-         and
-         <a href="#mentionOf" class="qname">prov:mentionOf</a>. A citation to TriG was added.
+         prov:asInBundle and prov:mentionOf (since removed to a separate Note). A citation to TriG was added.
          </li>
 
          <li>Some examples have been elaborated to use resource names
@@ -1366,10 +1362,10 @@ prov:wasDerivedFrom
       <p>The editors also thank the developers of the tools that helped create the PROV-O ontology and portions of this document. Without these great tools, developing PROV-O would have been much less of a pleasure.</p>
       <ul>
          <li>Stanford's <a href="http://protege.stanford.edu">Protege</a> for editing the ontology.</li>
-         <li>Dave Beckett's <a href="http://librdf.org/raptor">rapper</a> for the many serialization checks of so many examples.</li>
-         <li>Cosmin Basca's <a href="http://packages.python.org/SuRF">SuRF</a> for easing the construction of this page's cross reference section.</li>
+         <li>Dave Beckett's <a href="http://librdf.org/raptor/">rapper</a> for the many serialization checks of so many examples.</li>
+         <li>Cosmin Basca's <a href="http://packages.python.org/SuRF/">SuRF</a> for easing the construction of this page's cross reference section.</li>
          <li>The creators, contributors, and maintainers of <a href="https://github.com/RDFLib">rdflib</a> for easing the construction of this page's cross reference section.</li>
-         <li>Alvaro Graves' <a href="http://alangrafu.github.com/lodspeakr">LODSpeaKr</a> for constructing portions of this page with SPARQL queries of PROV-O.</li>
+         <li>Alvaro Graves' <a href="http://alangrafu.github.com/lodspeakr/">LODSpeaKr</a> for constructing portions of this page with SPARQL queries of PROV-O.</li>
          <li>Silvio Peroni's <a href="http://lode.sourceforge.net">LODE</a> for the CSS styling of this page's cross reference section.</li>
          <li>Robin Berjon's <a href="http://dev.w3.org/2009/dap/ReSpec.js/documentation.html">respec</a> for handling the W3C styling.</li>
       </ul>
