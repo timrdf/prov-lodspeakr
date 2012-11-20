@@ -630,54 +630,6 @@
               berjon.biblio[k] = extraReferences[k];
       };
       var extraReferences = {
-        "PROV-DM":
-          "Luc Moreau, Paolo Missier"+
-          "<a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\"><cite>The PROV Data Model and Abstract Syntax Notation</cite></a>. "+
-          "18 October 2011. W3C Working Draft. (Work in progress.) "+
-          "URL: <a href=\"http://www.w3.org/TR/2011/WD-prov-dm-20111018/\">http://www.w3.org/TR/2011/WD-prov-dm-20111018/</a>",
-
-        "PROV-PRIMER":
-          "Yolanda Gil and Simon Miles (eds.) Khalid Belhajjame, Helena Deus, Daniel Garijo, Graham Klyne, Paolo Missier, Stian Soiland-Reyes, and Stephan Zednik "+
-          "<a href=\"http://www.w3.org/TR/prov-primer/\"><cite>Prov Model Primer</cite></a>. "+
-          "2011, Working Draft. "+
-          "URL: <a href=\"http://www.w3.org/TR/prov-primer/\">http://www.w3.org/TR/prov-primer/</a>",
-
-        "PROV-N":
-          "Luc Moreau and Paolo Missier (eds.) James Cheney, Stian Soiland-Reyes "+
-          "<a href=\"http://www.w3.org/TR/prov-n/\"><cite>PROV-N: The Provenance Notation</cite></a>. "+
-          "2011, Working Draft. "+
-          "URL: <a href=\"http://www.w3.org/TR/prov-n/\">http://www.w3.org/TR/prov-n/</a>",
-
-        "PROV-AQ":
-          "Graham Klyne and Paul Groth (eds.) Luc Moreau, Olaf Hartig, Yogesh Simmhan, James Meyers, Timothy Lebo, Khalid Belhajjame, and Simon Miles "+
-          "<a href=\"http://www.w3.org/TR/prov-aq/\"><cite>Provenance Access and Query</cite></a>. "+
-          "2011, Working Draft. "+
-          "URL: <a href=\"http://www.w3.org/TR/prov-aq/\">http://www.w3.org/TR/prov-aq/</a>",
-
-        "PROV-CONSTRAINTS":
-          "James Cheney, Paolo Missier, and Luc Moreau (eds.) "+
-          "<a href=\"http://www.w3.org/TR/prov-constraints/\"><cite>Constraints of the PROV Data Model</cite></a>. "+
-          "2011, Working Draft. "+
-          "URL: <a href=\"http://www.w3.org/TR/prov-constraints/\">http://www.w3.org/TR/prov-constraints/</a>",
-
-        "PROV-O":
-          "Timothy Lebo, Satya Sahoo and Deborah McGuinness (eds.) Khalid Belhajjame, James Cheney, David Corsar, Daniel Garijo, Stian Soiland-Reyes, and Stephan Zednik "+
-          "<a href=\"http://www.w3.org/TR/prov-o/\"><cite>Provenance Formal Model</cite></a>. "+
-          "2011, Working Draft. "+
-          "URL: <a href=\"http://www.w3.org/TR/prov-o/\">http://www.w3.org/TR/prov-o/</a>",
-
-         "PROV-Ontology-Namespace":
-          "TBD"+
-          "<a href=\"http://www.w3.org/ns/prov-o/\"><cite>PROV Ontology Namespace</cite></a>. "+
-          "2011, Work in progress. "+
-          "URL: <a href=\"http://www.w3.org/ns/prov-o/\">http://www.w3.org/ns/prov-o/</a>",
-
-         "PROV-BestPractices":
-          "Stian Soiland-Reyes "+
-          "<a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/bestpractices/BestPractices.html\"><cite>PROV Best Practices</cite></a>. "+
-          "2011, Work in progress. "+
-          "URL: <a href=\"http://dvcs.w3.org/hg/prov/raw-file/tip/bestpractices/BestPractices.html\">http://dvcs.w3.org/hg/prov/tip/bestpracties/BestPractices.html</a>",
-
          "LD-Patterns-QR":
           "Leigh Dodds and Ian Davis "+
           "<a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\"><cite>Qualified Relation</cite></a>. "+
