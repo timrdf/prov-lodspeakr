@@ -13,7 +13,9 @@ ex:illustrationActivity
       a prov:Association;            ## did Derek follow when creating the graphical chart?
       prov:agent   ex:derek
       prov:hadPlan ex:tutorial_blog;
+      prov:hadRole ex:illustrationist;
    ];
 .
 
-ex:tutorial_blog a prov:Plan, prov:Entity .
+ex:tutorial_blog   a prov:Plan, prov:Entity .
+ex:illustrationist a prov:Role .
