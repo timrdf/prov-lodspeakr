@@ -629,30 +629,15 @@
           for (var k in extraReferences)
               berjon.biblio[k] = extraReferences[k];
       };
+      //
+      // http://dev.w3.org/2009/dap/ReSpec.js/biblio.html lists the references that respec adds automatically.
+      //
       var extraReferences = {
          "LD-Patterns-QR":
           "Leigh Dodds and Ian Davis "+
           "<a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\"><cite>Qualified Relation</cite></a>. "+
           "modified 31 May 2012, accessed 01 June 2012 "+
           "URL: <a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\">http://patterns.dataincubator.org/book/qualified-relation.html</a>",
-
-         "OWL-2-PRIMER":
-          "Pascal Hitzler, Markus Krötzsch, Bijan Parsia, Peter F. Patel-Schneider, Sebastian Rudolph "+
-          "<a href=\"http://www.w3.org/TR/owl2-primer/\"><cite>OWL 2 Web Ontology Language Primer</cite></a>. "+
-          "modified 27 October 2009, accessed 03 July 2012 "+
-          "URL: <a href=\"http://www.w3.org/TR/owl2-primer/\">http://www.w3.org/TR/owl2-primer/</a>",
-
-         "OWL-2-OVERVIEW":
-          "W3C OWL Working Group "+
-          "<a href=\"http://www.w3.org/TR/2009/REC-owl2-overview-20091027/\"><cite>OWL 2 Web Ontology Language Document Overview</cite></a>. "+
-          "modified 27 October 2009, accessed 19 November 2012 "+
-          "URL: <a href=\"http://www.w3.org/TR/2009/REC-owl2-overview-20091027/\">http://www.w3.org/TR/2009/REC-owl2-overview-20091027/</a>",
-
-         "XMLSCHEMA11-2":
-          "Henry S. Thompson; et al. "+
-          "<a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/\"><cite>W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes.</cite></a>. "+
-          "5 April 2012. W3C Recommendation "+
-          "URL: <a href=\"http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/\">http://www.w3.org/TR/2012/REC-xmlschema11-2-20120405/</a>",
 
          "TRIG":
           "Chris Bizer and Richard Cyganiak "+
@@ -806,7 +791,7 @@ It can also be specialized to create new classes and properties to model provena
          <p>The PROV Ontology (PROV-O) defines the OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-AQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
-         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL-2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
+         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
          <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-RDF-BASED-SEMANTICS]]. 
         </p>
@@ -851,7 +836,7 @@ It can also be specialized to create new classes and properties to model provena
 
             <tr><td><a>rdf</a></td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td><td>The RDF namespace [[!RDF-CONCEPTS]]</td></tr>
 
-            <tr><td><a>owl</a></td><td>http://www.w3.org/2002/07/owl#</td><td>The OWL namespace [[!OWL-2-OVERVIEW]]</td></tr>
+            <tr><td><a>owl</a></td><td>http://www.w3.org/2002/07/owl#</td><td>The OWL namespace [[!OWL2-OVERVIEW]]</td></tr>
 
             <tr><td><a>(others)</a></td><td>(various)</td><td>All other namespace prefixes are used in examples only. <br/> 
                   In particular, IRIs starting with "http://example.com" represent<br/> some application-dependent IRI [[!IRI]]</td></tr>
@@ -988,7 +973,7 @@ It can also be specialized to create new classes and properties to model provena
       <h2>PROV-O OWL Profile</h2>
 
       <p>To encourage widespread adoption, PROV-O's design is intentionally minimal and lightweight. 
-      Because the OWL 2 RL profile is aimed at RDF applications that require scalable reasoning without sacrificing too much expressive power [[OWL-2-PRIMER]], 
+      Because the OWL 2 RL profile is aimed at RDF applications that require scalable reasoning without sacrificing too much expressive power [[OWL2-PRIMER]], 
       it served as a baseline for all axioms included in PROV-O. The PROV-O axioms that do not suit the OWL 2 RL profile are listed in 
       <a href="#owl-rl-violations">Table 4</a>. 
 
