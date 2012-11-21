@@ -667,7 +667,7 @@
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
           previousPublishDate:  "2012-07-24",
-          previousMaturity:  "LCWD",
+          previousMaturity:  "WD",
 
           // if there a publicly available Editor's Draft, this is the link
           edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
