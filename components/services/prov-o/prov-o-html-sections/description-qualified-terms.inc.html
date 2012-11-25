@@ -1,22 +1,27 @@
 <!-- incorporate https://dvcs.w3.org/hg/prov/rev/e3ecc51f4598 -->
      <section id="description-qualified-terms">
        <h3>Qualified Terms</h3>
-       <p>The Qualified Terms category is for users who wish to provide further details about the provenance-related influence among
-         Entities, Activities, and Agents.  The terms in this category are the result of
+
+       <p>The terms in the Qualified Terms category are the result of
          applying the <strong>Qualification Pattern</strong> [[LD-Patterns-QR]] to the simple (unqualified)
          relations available in the <a href="#prov-starting-point-owl-terms-at-a-glance">Starting Point</a> and 
          <a href="#prov-expanded-owl-terms-at-a-glance">Expanded</a> categories.  
-      The Qualification Pattern consists of restating the unqualified
-         relation by using an intermediate class that represents the influence between two resources. 
-      This new instance, in turn, can be annotated with additional descriptions about the influence relationship between the two resources cited. 
-      The following two tables list the influence relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. 
+      The terms in this category are for users who wish to provide further details about the provenance-related influence among
+         Entities, Activities, and Agents.
+       </p>
 
-      For example, the second row of the first table indicates that to elaborate how an <span class="repeated">prov:Activity</span>
-      <span class="repeated">prov:used</span> a particular <span class="repeated">prov:Entity</span>, one creates an instance of <span class="repeated">prov:Usage</span>.
-      While the <span class="repeated">prov:Usage</span> cites the influencing entity with the <span class="repeated">prov:entity</span> property,
-      the influenced <span class="repeated">prov:Activity</span> cites the <span class="repeated">prov:Usage</span> with the property <span class="repeated">prov:qualifiedUsage</span>.
-      This structure is illustrated in <a href="#qualified-terms-figure">Figure 4a</a> below.
-      </p>
+       <p>The Qualification Pattern consists of restating the unqualified
+         relation by using an intermediate class that represents the influence between two resources. 
+         This new instance, in turn, can be annotated with additional descriptions about the influence relationship between the two resources cited. 
+         The following two tables list the influence relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. 
+
+         For example, the second row of the first table indicates that to elaborate how an <span class="repeated">prov:Activity</span>
+         <span class="repeated">prov:used</span> a particular <span class="repeated">prov:Entity</span>, one creates an instance of <span class="repeated">prov:Usage</span>.
+         While the <span class="repeated">prov:Usage</span> cites the influencing entity with the <span class="repeated">prov:entity</span> property,
+         the influenced <span class="repeated">prov:Activity</span> cites the <span class="repeated">prov:Usage</span> with the property 
+         <span class="repeated">prov:qualifiedUsage</span>.
+         This structure is illustrated in <a href="#qualified-terms-figure">Figure 4a</a> below.
+       </p>
 
       <div id="qualified-forms-starting-point" style="padding: 10px">
          <p>Seven <a href="#description-starting-point-terms">Starting Point</a> relations that can be further described using the Qualification Pattern.
