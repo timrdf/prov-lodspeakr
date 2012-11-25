@@ -59,12 +59,12 @@
       knowledge about the topic (such as a reading from a sensor, or a journal written during an historical event). 
       </p>
 	  
-	  <p>The <strong>second</strong> category relates Entities according to their levels of abstraction, where some Entities may present more specific aspects than their more general counterparts. 
+	  <p>The <strong>second</strong> category of expanded terms relates Entities according to their levels of abstraction, where some Entities may present more specific aspects than their more general counterparts. 
       While <a href="#specializationOf" class="qname">prov:specializationOf</a> links a more specific Entity to a more general one (e.g., today's BBC news home page versus BBC's news home page on any day), <a href="#alternateOf" class="qname">prov:alternateOf</a> links Entities that present aspects of the same thing, but not necessarily the same aspects or at the same time (e.g., the serialization of a document in different formats).
 	  </p>
 	  
       <p>
-      The <strong>third</strong> category allows further description of Entities. The property <a href="#value" class="qname">prov:value</a> holds a literal value for the Entity. For example, the <span class="repeated">prov:value</span> of a quote could be a string of the sentences stated, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
+      The <strong>third</strong> category of expanded terms allows further description of Entities. The property <a href="#value" class="qname">prov:value</a> holds a literal value for the Entity. For example, the <span class="repeated">prov:value</span> of a quote could be a string of the sentences stated, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
 		 The property <a href="#atLocation" class="qname">prov:atLocation</a> can be used to describe the <a href="#Location" class="qname">prov:Location</a> of any 
       Entity, Activity, Agent, or <a href="#InstantaneousEvent" class="qname">prov:InstantaneousEvent</a> 
       (i.e., generation, usage, or invalidation of an entity and the starting or ending of an activity). 
@@ -73,13 +73,13 @@
 		</p>
 
  
-      <p>The <strong>fourth</strong> category describes the lifetime of an Entity beyond being <strong>generated</strong> by an Activity and <strong>used</strong> by other Activities. For example, a painting could not have been displayed before it was painted, and it could not be sold after it was destroyed by fire. 
+      <p>The <strong>fourth</strong> category of expanded terms describes the lifetime of an Entity beyond being <strong>generated</strong> by an Activity and <strong>used</strong> by other Activities. For example, a painting could not have been displayed before it was painted, and it could not be sold after it was destroyed by fire. 
       Similar to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable. 
 The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a> and <a href="#invalidatedAtTime" class="qname">prov:invalidatedAtTime</a> can be used to bound the starting and ending moments of an Entity's existence. The Activities that led to the generation or invalidation of an Entity can be provided using <span class="repeated">prov:wasGeneratedBy</span> and <a href="#wasInvalidatedBy" class="qname">prov:wasInvalidatedBy</a>, respectively. 
 <a href="#generated" class="qname">prov:generated</a> and <a href="#invalidated" class="qname">prov:invalidated</a> are the inverses of <span class="repeated">prov:wasGeneratedBy</span> and <span class="repeated">prov:wasInvalidatedBy</span>, respectively, and are defined to facilitate Activity-as-subject as well as Entity-as-subject descriptions. 
       </p>
 
-      <p>The <strong>fifth</strong> category describes the lifetime of an Activity beyond its start and end times and predecessor Activities.  
+      <p>The <strong>fifth</strong> category of expanded terms describes the lifetime of an Activity beyond its start and end times and predecessor Activities.  
       Activities may also be started or ended by Entities, which are described using the properties <a href="#wasStartedBy" class="qname">prov:wasStartedBy</a> and <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, respectively. Since Entities may start or end Activities, and Agents may be Entities, then Agents may also start or end Activities.
       </p>
 
