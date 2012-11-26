@@ -928,8 +928,9 @@ It can also be specialized to create new classes and properties to model provena
       </p>
 
       <p>Most examples shown in this cross reference are encoded using the Turtle RDF serialization. 
-         When an example requires a <span class="qname repeated">prov:Bundle</span>, it may use the [[TRIG]] syntax. 
-         Although this document does not specify how to encode Bundles in RDF, TriG's named graph construct is used only to illustrate the concept.
+         When it is convenient to do so (e.g., when an example describes a <span class="qname repeated">prov:Bundle</span>), it may use the [[TRIG]] syntax. 
+         Although this document does not specify how to encode Bundles in RDF, TriG's named graph construct is used only to illustrate the concept of 
+         creating a named set of PROV assertions. Note that <a href="#compliance">all examples are non-normative</a>.
       </p>
 
       <section id="cross-reference-starting-point-terms">
