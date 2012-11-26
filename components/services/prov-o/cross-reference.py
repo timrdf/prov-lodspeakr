@@ -736,7 +736,7 @@ for category in categories.keys():
       cross.write('</div>\n')        # e.g. <div id="prov-starting-point-owl-classes-crossreference"
 
       # There is one table in the document before the qualified form tables.
-      tableCount = { 'expanded' : '3', 'starting-point' : '2', 'qualified' : '4', 'access-and-query' : '5' }
+      tableCount = { 'starting-point' : '2', 'expanded' : '3', 'qualified' : '4' }
       n = ''
       if category.lower()[0] in ['a','e','i,','o','u']:
          n = 'n'
@@ -751,8 +751,32 @@ for category in categories.keys():
       quals.write('    <th><span title="Qualified Influence">Qualified Influence</span></th>\n')
       quals.write('    <th><span title="Influencer Property">Influencer Property</span></th>\n')
       quals.write('  </tr>\n')
+      if category == 'expanded': # Hard coded for super class.
+         quals.write('  <tr>\n')
+
+         quals.write('    <td style="text-align: center">\n')
+         quals.write('        <a title="'+PREFIX+'Entity"   href="#Entity"   class="owlclass">'+PREFIX+':Entity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Activity" href="#Activity" class="owlclass">'+PREFIX+':Activity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Agent"    href="#Agent"    class="owlclass">'+PREFIX+':Agent</a>')
+         quals.write('    </td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'wasInfluencedBy" href="#wasInfluencedBy" class="owlproperty">'+PREFIX+':wasInfluencedBy</a></td>\n')
+
+         quals.write('    <td style="text-align: center">\n')
+         quals.write('        <a title="'+PREFIX+'Entity"   href="#Entity"   class="owlclass">'+PREFIX+':Entity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Activity" href="#Activity" class="owlclass">'+PREFIX+':Activity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Agent"    href="#Agent"    class="owlclass">'+PREFIX+':Agent</a>')
+         quals.write('    </td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'qualifiedInfluence" href="#qualifiedInfluence" class="owlproperty">'+PREFIX+':qualifiedInfluence</a></td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'Influence" href="#Influence" class="owlclass">'+PREFIX+':Influence</a></td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'influencer" href="#influencer" class="owlproperty">'+PREFIX+':influencer</a></td>\n')
+
+         quals.write('  </tr>\n')
       for uri in ordered['properties']:
-         #print 'qual table ' + uri
+         print 'qual table ' + uri
          property = []
          if propertyTypes[uri] == 'datatype-property':
             property = session.get_resource(uri,DatatypeProperties)
@@ -768,27 +792,31 @@ for category in categories.keys():
                   print qualified + ' is not defined'
                elif ns.OWL['Class'] in qualified.rdf_type:
                   qualClass = qualified                           # e.g. http://www.w3.org/ns/prov#Responsibility
+                  print '   qual class: ' + qualClass.subject
                   for super in qualClass.rdfs_subClassOf:
                      qname = super.subject.split('#')
-                     if   ( qname[1]  == 'EntityInfluence' ):
+                     if     qname[1] in ('EntityInfluence', 'Derivation'):
                         objectProp = 'entity' 
-                     elif ( qname[1]  == 'ActivityInfluence' ):
+                     elif   qname[1]  == 'ActivityInfluence':
                         objectProp = 'activity' 
-                     elif ( qname[1]  == 'AgentInfluence' ):
+                     elif   qname[1]  == 'AgentInfluence':
                         objectProp = 'agent' 
-                     elif ( qname[1]  == 'CollectionInfluence' ):
+                     elif   qname[1]  == 'CollectionInfluence':
                         objectProp = 'collection' 
-                     elif ( qname[1]  == 'DictionaryInfluence' ):
+                     elif   qname[1]  == 'DictionaryInfluence':
                         objectProp = 'collection' 
                else:
                   if "qualified" in qualified.subject:
-                     qualProp  = qualified                           # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
+                     print '   qual prop: ' + qualified.subject
+                     qualProp = qualified                         # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
                   else:
+                     print '   does not contain "qualified": ' + qualified.subject
                      qualProp = 'no' # Avoiding prov:startedAtTime, prov:atTime, prov:Start, null
             if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
+               #print property.subject + ' gets qualified'
+
                quals.write('  <tr>\n')
 
-               #print property.subject + ' gets qualified'
                qname = property.rdfs_domain.first.subject.split('#')
                quals.write('    <td><a title="'+property.rdfs_domain.first.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
@@ -796,6 +824,7 @@ for category in categories.keys():
                quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
                quals.write('    <td><a title="'+qname[0]+'#'+objectProp.capitalize()+'" href="#'+objectProp.capitalize()+'" class="owlclass">'+PREFIX+':'+objectProp.capitalize()+'</a></td>\n')
+
                qname = qualProp.subject.split('#')
                quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
@@ -805,6 +834,8 @@ for category in categories.keys():
                quals.write('    <td><a title="'+qname[0]+'#'+objectProp+'" href="#'+objectProp+'" class="owlproperty">'+PREFIX+':'+objectProp+'</a></td>\n')
 
                quals.write('  </tr>\n')
+            else:
+               print '   (not qualifiable)'
       quals.write('</table>\n')
 
       glance.close()
