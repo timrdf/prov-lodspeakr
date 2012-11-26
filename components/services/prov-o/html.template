@@ -822,21 +822,21 @@ It can also be specialized to create new classes and properties to model provena
 
       <section class="informative" id="namespaces">
          <h3>Namespaces</h3>
-         <p>The following namespaces prefixes are used throughout this document.
+         <p>The following namespace prefixes are used throughout this document.
 
          <div style="text-align: left;">
             <table  class="thinborder" style="margin-left: auto; margin-right: auto;">
             <caption id="namespace-table"><a href="#namespace-table">Table 1</a>: Prefix and Namespaces used in this specification</caption> <!-- Table 1-->
             <tr><td><a><b>prefix</b></a></td><td><b>namespace IRI</b></td> <td><b>definition</b></td></tr>
 
-            <tr><td><a>prov</a></td><td>http://www.w3.org/ns/prov#</td>
-                <td>The PROV namespace [[!PROV-DM]]</td></tr>
+            <tr><td><a>rdf</a></td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td><td>The RDF namespace [[!RDF-CONCEPTS]]</td></tr>
 
             <tr><td><a>xsd</a></td><td>http://www.w3.org/2000/10/XMLSchema#</td><td>XML Schema Namespace [[!XMLSCHEMA11-2]]</td></tr>
 
-            <tr><td><a>rdf</a></td><td>http://www.w3.org/1999/02/22-rdf-syntax-ns#</td><td>The RDF namespace [[!RDF-CONCEPTS]]</td></tr>
-
             <tr><td><a>owl</a></td><td>http://www.w3.org/2002/07/owl#</td><td>The OWL namespace [[!OWL2-OVERVIEW]]</td></tr>
+
+            <tr><td><a>prov</a></td><td>http://www.w3.org/ns/prov#</td>
+                <td>The PROV namespace [[!PROV-DM]]</td></tr>
 
             <tr><td><a>(others)</a></td><td>(various)</td><td>All other namespace prefixes are used in examples only. <br/> 
                   In particular, IRIs starting with "http://example.com" represent<br/> some application-dependent IRI [[!IRI]]</td></tr>

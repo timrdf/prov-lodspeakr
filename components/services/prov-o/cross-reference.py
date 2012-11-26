@@ -741,15 +741,15 @@ for category in categories.keys():
       if category.lower()[0] in ['a','e','i,','o','u']:
          n = 'n'
       quals.write('<table class="qualified-forms">\n')
-      quals.write('  <caption><a href="#qualified-forms-'+category+'">Table '+tableCount[category]+'</a>: Qualification Property and Influence Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
+      quals.write('  <caption><a href="#qualified-forms-'+category+'">Table '+tableCount[category]+'</a>: Qualification Property and Qualified Influence Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
       quals.write('  <tr>\n')
       qname = property.subject.split('#')
       quals.write('    <th><span title="Influenced Class">Influenced Class</span></th>\n')
       quals.write('    <th><span title="Unqualified Influence">Unqualified Influence</span></th>\n')
+      quals.write('    <th><span title="Influencing Class">Influencing Class</span></th>\n')
       quals.write('    <th><span title="Qualification Property">Qualification Property</span></th>\n')
       quals.write('    <th><span title="Qualified Influence">Qualified Influence</span></th>\n')
       quals.write('    <th><span title="Influencer Property">Influencer Property</span></th>\n')
-      quals.write('    <th><span title="Influencing Class">Influencing Class</span></th>\n')
       quals.write('  </tr>\n')
       for uri in ordered['properties']:
          #print 'qual table ' + uri
@@ -795,6 +795,7 @@ for category in categories.keys():
                qname = property.subject.split('#')
                quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
+               quals.write('    <td><a title="'+qname[0]+'#'+objectProp.capitalize()+'" href="#'+objectProp.capitalize()+'" class="owlclass">'+PREFIX+':'+objectProp.capitalize()+'</a></td>\n')
                qname = qualProp.subject.split('#')
                quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
@@ -803,7 +804,6 @@ for category in categories.keys():
 
                quals.write('    <td><a title="'+qname[0]+'#'+objectProp+'" href="#'+objectProp+'" class="owlproperty">'+PREFIX+':'+objectProp+'</a></td>\n')
 
-               quals.write('    <td><a title="'+qname[0]+'#'+objectProp.capitalize()+'" href="#'+objectProp.capitalize()+'" class="owlclass">'+PREFIX+':'+objectProp.capitalize()+'</a></td>\n')
                quals.write('  </tr>\n')
       quals.write('</table>\n')
 
