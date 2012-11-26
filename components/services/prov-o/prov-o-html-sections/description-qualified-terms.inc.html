@@ -118,7 +118,7 @@
             asserted unless it adds additional information. -->
 
       <p>In addition to the previous two tables, <a href="#qualified-terms-figure">Figure 4</a> 
-         illustrates the classes and properties needed to apply the qualification pattern to the fourteen unqualified influence relations. 
+         illustrates the classes and properties needed to apply the qualification pattern to ten of the fourteen qualifiable influence relations. 
 
          For example, while <a class="qname" href="#qualifiedUsage">prov:qualifiedUsage</a>, 
          <a class="qname" href="#Usage">prov:Usage</a>, and <a class="qname" href="#entity">prov:entity</a> are used to qualify 
@@ -182,7 +182,7 @@
          </p>
           <div class="exampleOuter">
              <div><b>Qualified Usage</b></div>
-               <p>The <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <span class="repeated">prov:Usage</span> cites the data used (<code>ex:aggregatedByRegions</code>) and the time the activity used it (<code>2011-07-14T03:03:03Z</code>).
+               <p>The <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property to provide an additional description to <code>:illustrationActivity</code>. The instance of <span class="repeated">prov:Usage</span> cites the data used (<code>:aggregatedByRegions</code>) and the time the activity used it (<code>2011-07-14T03:03:03Z</code>).
              </p>
                 <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
           </div>
@@ -195,8 +195,8 @@
         <div class="exampleOuter">
            <div><b>Qualified Association</b></div>
             <p>The <span class="repeated">prov:qualifiedAssociation</span> property parallels the 
-            <span class="repeated">prov:wasAssociatedWith</span> property to provide an additional description about the <code>ex:illustrationActivity</code> that Derek influenced. 
-            The instance of <span class="repeated">prov:Association</span> cites the influencing agent (<code>ex:derek</code>) that followed the instructions (<code>ex:tutorial_blog</code>). 
+            <span class="repeated">prov:wasAssociatedWith</span> property to provide an additional description about the <code>:illustrationActivity</code> that Derek influenced. 
+            The instance of <span class="repeated">prov:Association</span> cites the influencing agent (<code>:derek</code>) that followed the instructions (<code>:tutorial_blog</code>). 
             Further, Derek served the role of illustrationist during the activity.
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
@@ -214,7 +214,7 @@
          </p>
         <div class="exampleOuter">
            <div><b>Qualified Generation</b></div>
-            <p>The <span class="repeated">prov:qualifiedGeneration</span> property parallels the <span class="repeated">prov:wasGeneratedBy</span> property to provide an additional description to <code>ex:chart1</code>. The instance of <span class="repeated">prov:Generation</span> cites the time (2011-07-14T15:52:14Z) that the activity (<code>ex:illustrationActivity</code>) generated the chart (<code>ex:chart1</code>).
+            <p>The <span class="repeated">prov:qualifiedGeneration</span> property parallels the <span class="repeated">prov:wasGeneratedBy</span> property to provide an additional description to <code>:chart1</code>. The instance of <span class="repeated">prov:Generation</span> cites the time (2011-07-14T15:52:14Z) that the activity (<code>:illustrationActivity</code>) generated the chart (<code>:chart1</code>).
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
         </div>
@@ -226,7 +226,7 @@
          </p>
         <div class="exampleOuter">
            <div><b>Qualified Derivation</b></div>
-            <p>The <span class="repeated">prov:qualifiedDerivation</span> property parallels the <span class="repeated">prov:wasDerivedFrom</span> property to provide an additional description to <code>ex:chart1</code>. The instance of <span class="repeated">prov:Derivation</span> cites the activity (<code>ex:illustrationActivity</code>) and the Usages and Generations that the activity conduced to create the chart (<code>ex:chart1</code>).
+            <p>The <span class="repeated">prov:qualifiedDerivation</span> property parallels the <span class="repeated">prov:wasDerivedFrom</span> property to provide an additional description to <code>:chart1</code>. The instance of <span class="repeated">prov:Derivation</span> cites the activity (<code>:illustrationActivity</code>) and the Usages and Generations that the activity conduced to create the chart (<code>:chart1</code>).
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
         </div>
