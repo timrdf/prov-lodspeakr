@@ -155,6 +155,8 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
                Each quote that John makes (<code>:quote_from_monica</code> and <code>:quote_from_derek</code>) is a new Entity derived from the 
                previous blogs and is annotated with the time that the quote was taken.
                The provenance of John's blog notes that his post is the result of the quotes that he took from Derek and Monica.
+               The blog post is also derived from Derek's <code>:aggregatedByRegions</code> dataset because John inspected it and found a 
+               concern that he discusses in his blog. All the provenance statements related to John's post are grouped in a new <span class="repeated">prov:Bundle</span>.
             </p>
             <p>
                <a href="#narrative-example-expanded-3"/>Example 4</a>:
@@ -165,10 +167,7 @@ The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a>
 		
 	
          <div id="narrative-example-expanded-4" about="#narrative-example-expanded-4" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-            <p>Agent <code>:john</code> also named the URI of the original source (<code>:aggregatedByRegions</code>). All the provenance statements related to his post
-            are grouped in a new <span class="repeated">prov:Bundle</span>.
-
-            Unfortunately, there was a problem in the servers where <code>:post19201</code> was being stored, and all the data related to the post was lost permanently.
+            <p>Unfortunately, there was a problem in the servers where <code>:post19201</code> was being stored, and all the data related to the post was lost permanently.
             Thus, the system invalidated the entity automatically and notified John about the error.
             </p> 		
 	         <p>
