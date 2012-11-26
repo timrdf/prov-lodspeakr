@@ -746,7 +746,7 @@
   <body>
 
     <section id="abstract">
-         <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. 
+         <p>The PROV Ontology (PROV-O) expresses the PROV Data Model [[!PROV-DM]] using the OWL2 Web Ontology Language (OWL2) [[!OWL2-OVERVIEW]]. It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. 
 It can also be specialized to create new classes and properties to model provenance information for different applications and domains.
         The <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV Document Overview</a> describes the overall state of PROV, and should be read before other PROV documents.
         </p>
@@ -779,11 +779,11 @@ It can also be specialized to create new classes and properties to model provena
       <ul>
       <li>[[PROV-OVERVIEW]] overviews the PROV family of documents. </li>
       <li>The primer [[PROV-PRIMER]] is the entry point to PROV offering an introduction to the provenance model.</li>
-      <li>The Linked Data and Semantic Web community should focus on [[!PROV-O]] defining PROV classes and properties specified in an OWL2 ontology. For further details, [[!PROV-DM]] and [[!PROV-CONSTRAINTS]] specify the constraints applicable to the data model, and its interpretation. </li>
+      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, [[!PROV-DM]] and [[!PROV-CONSTRAINTS]] specify the constraints applicable to the data model, and its interpretation. </li>
       <li>The XML community should focus on [[PROV-XML]] defining an XML schema for PROV. Further details can also be found in [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].</li>
       <li>Developers seeking to retrieve or publish provenance should focus on [[PROV-AQ]].</li>
       <li>Readers seeking to implement other PROV serializations
-      should focus on [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].  [[!PROV-O]], [[!PROV-N]], and [[PROV-XML]] offer examples of mapping to RDF, text, and XML, respectively.</li>
+      should focus on [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].  PROV-O, [[!PROV-N]], and [[PROV-XML]] offer examples of mapping to RDF, text, and XML, respectively.</li>
       </ul>
 
       <h4>Please Comment By January 31, 2013</h4>
@@ -809,7 +809,7 @@ It can also be specialized to create new classes and properties to model provena
          for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. 
          To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
-         <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-RDF-BASED-SEMANTICS]]. 
+         <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-OVERVIEW]]. 
         </p>
 
         <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. 
