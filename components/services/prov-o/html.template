@@ -634,13 +634,13 @@
       //
       var extraReferences = {
          "LD-Patterns-QR":
-          "Leigh Dodds and Ian Davis "+
+          "Leigh Dodds; Ian Davis. "+
           "<a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\"><cite>Qualified Relation</cite></a>. "+
           "modified 31 May 2012, accessed 01 June 2012 "+
           "URL: <a href=\"http://patterns.dataincubator.org/book/qualified-relation.html\">http://patterns.dataincubator.org/book/qualified-relation.html</a>",
 
          "TRIG":
-          "Chris Bizer and Richard Cyganiak "+
+          "Chris Bizer; Richard Cyganiak. "+
           "<a href=\"http://wifo5-03.informatik.uni-mannheim.de/bizer/trig/\"><cite>The TriG Syntax</cite></a>. "+
           "modified 30 July 2007, accessed 05 November 2012 "+
           "URL: <a href=\"http://wifo5-03.informatik.uni-mannheim.de/bizer/trig/\">http://wifo5-03.informatik.uni-mannheim.de/bizer/trig/</a>",
@@ -670,7 +670,7 @@
           previousMaturity:  "WD",
 
           // if there a publicly available Editor's Draft, this is the link
-          edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
+          //edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2012-09-18",
@@ -748,42 +748,52 @@
     <section id="abstract">
          <p>The PROV Ontology (PROV-O) expresses the PROV Data Model using the OWL2 Web Ontology Language (OWL2). It provides a set of classes, properties, and restrictions that can be used to represent and interchange provenance information generated in different systems and under different contexts. 
 It can also be specialized to create new classes and properties to model provenance information for different applications and domains.
+        The <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV Document Overview</a> describes the overall state of PROV, and should be read before other PROV documents.
         </p>
+
 
         <p style="text-align: center;">The namespace for all PROV-O terms is <span class="repeated">http://www.w3.org/ns/prov#</span>.
         </p>
 
-        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="http://www.w3.org/ns/prov-o.owl">here</a>.
+        <p style="text-align: center;">The OWL encoding of the PROV Ontology is available <a href="http://www.w3.org/ns/prov-o">here</a>.
         </p>
-
     </section>
   
  
+    <section id="sotd">
+      <h4>PROV Family of Documents</h4>
+      This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable
+      interchange of provenance information in heterogeneous environments such as the Web.  These documents are:
+      <ul>
+      <li> <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV-OVERVIEW</a> (To be published as Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
+      <li> <a href="http://www.w3.org/TR/2012/WD-prov-primer-20121211/">PROV-PRIMER</a> (To be published as Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
+      <li> <a href="http://www.w3.org/TR/2012/CR-prov-o-20121211/">PROV-O</a> (Candidate Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
+      <li> <a href="http://www.w3.org/TR/2012/CR-prov-dm-20121211/">PROV-DM</a> (Candidate Recommendation), the PROV data model for provenance [[!PROV-DM]];</li>
+      <li> <a href="http://www.w3.org/TR/2012/CR-prov-n-20121211/">PROV-N</a> (Candidate Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
+      <li> <a href="http://www.w3.org/TR/2012/CR-prov-constraints-20121211/">PROV-CONSTRAINTS</a> (Candidate Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
+      <li> <a href="http://www.w3.org/TR/2012/WD-prov-aq-20120619/">PROV-AQ</a> (To be published as Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
+      <li> <a href="http://www.w3.org/TR/2012/WD-prov-xml-20121211/">PROV-XML</a> (To be published as Note),  an XML schema for the PROV data model [[PROV-XML]].</li>
 
-      <section id="sotd">
-         <h4>PROV Family of Documents</h4>
-         This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable 
-            interchange of provenance information in heterogeneous environments such as the Web.  These documents are:
-         <ul>
-         <li> <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV-OVERVIEW</a> (Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
-         <li> <a href="http://www.w3.org/TR/2012/WD-prov-primer-20121211/">PROV-PRIMER</a> (Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
-         <li> PROV-O (Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
-         <li> <a href="http://www.w3.org/TR/2012/CR-prov-dm-20121211/">PROV-DM</a> (Recommendation), the PROV data model for provenance;</li>
-         <li> <a href="http://www.w3.org/TR/2012/CR-prov-n-20121211/">PROV-N</a> (Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
-         <li> <a href="http://www.w3.org/TR/2012/CR-prov-constraints-20121211/">PROV-CONSTRAINTS</a> (Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
-         <li> <a href="http://www.w3.org/TR/2012/WD-prov-aq-20120619/">PROV-AQ</a> (Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
-         <li> <a href="http://www.w3.org/TR/2012/WD-prov-xml-20121211/">PROV-XML</a> (Note),  an XML schema for the PROV data model [[PROV-XML]].</li>
+      </ul>
+      <h4>How to read the PROV Family of Documents</h4>
+      <ul>
+      <li>[[PROV-OVERVIEW]] overviews the PROV family of documents. </li>
+      <li>The Primer [[PROV-PRIMER]] is the entry point to PROV offering an introduction to the provenance model.</li>
+      <li>The Linked Data and Semantic Web community should focus on [[!PROV-O]] defining PROV classes and properties specified in an OWL2 ontology. For further details, [[!PROV-DM]] and [[!PROV-CONSTRAINTS]] specify the constraints applicable to the data model, and its interpretation. </li>
+      <li>The XML community should focus on [[PROV-XML]] defining an XML schema for PROV. Further details can also be found in [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].</li>
+      <li>Developers seeking to retrieve or publish provenance should focus on [[PROV-AQ]].</li>
+      <li>Readers seeking to implement other PROV serializations
+      should focus on [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].  [[!PROV-O]], [[!PROV-N]], and [[PROV-XML]] offer examples of mapping to RDF, text, and XML, respectively.</li>
+      </ul>
 
-         </ul>
-         <h4>How to read the PROV Family of Documentation</h4>
-         <ul>
-         <li>The primer is the entry point to PROV offering an introduction to the provenance model.</li>
-         <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, PROV-DM and PROV-CONSTRAINTS specify the constraints applicable to the data model, and its interpretation. </li>
-         <li>Developers seeking to retrieve or publish provenance should focus on PROV-AQ.</li>
-         <li>Readers seeking to implement other PROV serializations
-         should focus on PROV-DM and PROV-CONSTRAINTS.  PROV-O and PROV-N offer examples of mapping to RDF and text, respectively.</li>
-         </ul>
-      </section>
+      <h4>Please Comment By January 31, 2013</h4>
+
+      The Provenance Working Group seeks to gather experience from <a href="http://www.w3.org/2011/prov/wiki/ProvImplementations">implementations</a> in order to increase confidence in the specifications and meet specific <a href="http://www.w3.org/2011/prov/wiki/ProvCRExitCriteria">exit criteria</a>. This document will remain a Candidate Recommendation until at least 31 January 31, 2013. After that date, when and if the exit criteria are met, the group intends to request <a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsPR">Proposed Recommendation</a> status.
+
+
+    </section>
+
+
 
 
      <section id="introduction">    
@@ -791,12 +801,25 @@ It can also be specialized to create new classes and properties to model provena
          <p>The PROV Ontology (PROV-O) defines the OWL2 Web Ontology Language encoding of the PROV Data Model [[PROV-DM]]. This document describes the set of classes, properties, and restrictions that constitute the PROV Ontology. This ontology specification provides the foundation to implement provenance applications in different domains that can represent, exchange, and integrate provenance information generated in different systems and under different contexts. Together with the PROV Access and Query [[PROV-AQ]] and PROV Data Model [[PROV-DM]], this document forms a framework for provenance information interchange in domain-specific Web-based applications.
          </p>
         <p>
-         PROV-O is lightweight so that it can be adopted in the widest range of applications. With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL2-PRIMER]]. The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, but also can be specialized for modeling application-specific provenance details in a variety of domains. Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
+         PROV-O is a lightweight ontology that can be adopted in a wide range of applications. 
+         With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL2-PRIMER]]. 
+         The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, 
+         but also can be specialized for modeling application-specific provenance details in a variety of domains. 
+         Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> 
+         for creating domain-specific provenance ontologies and thereby facilitates interoperable provenance modeling. 
+         To demonstrate the use of PROV-O classes and properties, this document uses an example provenance scenario similar to the one introduced in the PROV-Primer [[PROV-PRIMER]].
         </p>
          <p> The PROV Data Model [[PROV-DM]] introduces a set of concepts to represent provenance information in a variety of application domains. This document maps the PROV Data Model to PROV Ontology using the OWL2 ontology language [[!OWL2-RDF-BASED-SEMANTICS]]. 
         </p>
 
-        <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car, and a set of individuals sharing a set of additional characteristics is called a <i>class</i>. Person and Car are examples of classes representing the set of individual persons and cars respectively. The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. For example, the object property "hasOwner" can be used to link car with person. The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA11-2]].   
+        <p> We briefly introduce some of the OWL2 modeling terms that will be used to describe the PROV Ontology. 
+         An OWL2 <i>instance</i> is an individual object in a domain of discourse, for example a person named Alice or a car named KITT. 
+         A set of individuals sharing common characteristics constitutes a <i>class</i>.
+
+         Person and Car are examples of classes representing the set of individual persons and cars respectively. 
+         The OWL2 object properties are used to link individuals, classes, or create a property hierarchy. 
+         For example, the object property "hasOwner" can be used to link car with person. 
+         The OWL2 datatype properties are used to link individuals or classes to data values, including XML Schema datatypes [[!XMLSCHEMA11-2]].   
         </p>
 
     <section id="compliance">    
@@ -804,8 +827,9 @@ It can also be specialized to create new classes and properties to model provena
       <p>For the purpose of compliance, the normative sections of this document are 
          <a href="#compliance">Section 1.1</a>, 
          <a href="#notations">Section 1.2</a>,
-         <a href="#description">Section 3</a>, and
-         <a href="#cross-reference">Section 4</a>.
+         <a href="#description">Section 3</a>,
+         <a href="#cross-reference">Section 4</a>, and
+         <a href="#inverse-names">Appendix B</a>
       </p>
       <ul>
          <li>Information in tables is normative if it appears in a normative section.</li>
@@ -845,7 +869,7 @@ It can also be specialized to create new classes and properties to model provena
       </section>
    </section>
 
-   <section id="prov-o-at-a-glance">
+   <section id="prov-o-at-a-glance" class="informative">
       <h2>PROV-O at a glance</h2>
 
       <p>PROV-O users may only need to use parts of the entire ontology, depending on their needs and according to how much detail they want to include in their provenance information. For this, the PROV-O terms (classes and properties) are grouped into three categories to provide an incremental introduction to the ontology: Starting Point terms, Expanded terms, and terms for Qualifying relationships.
@@ -895,7 +919,7 @@ It can also be specialized to create new classes and properties to model provena
 
  
 
-   <section id="cross-reference"> <!-- class='informative' -->
+   <section id="cross-reference" class='normative'>
       <!-- prov:tracedTo [ prov:wasGeneratedBy [ a prov:Activity; 
            dcterms:description "python eg-24-prov-o-html-examples.py http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl" ] ] ] -->
       <h2>Cross reference for PROV-O classes and properties</h2>
@@ -970,7 +994,7 @@ It can also be specialized to create new classes and properties to model provena
           </ul>  
     </section-->
 
-    <section class='appendix'>
+    <section id="owl-profile" class='appendix informative'>
       <h2>PROV-O OWL Profile</h2>
 
       <p>To encourage widespread adoption, PROV-O's design is intentionally minimal and lightweight. 
@@ -1068,7 +1092,7 @@ It can also be specialized to create new classes and properties to model provena
          </p>
     </section>
 
-    <section class='appendix'>
+    <section class='appendix' id="inverse-names">
       <h2>Names of inverse properties</h2>
       <p>To maximize interoperability, PROV-O intentionally avoids defining too many properties' inverses. 
          In fact, it only defines two (<a class="qname" href="#generated">prov:generated</a> and <a class="qname" href="#invalidated">prov:invalidated</a>). 
@@ -1152,7 +1176,7 @@ prov:wasDerivedFrom
      </div>
 
       <p>The following table lists the recommended inverse names that should be used if a modeler does not want to use the recommended PROV-O property. 
-      For convenience, <a href="http://www.w3.org/ns/prov-o-inverses.owl">this file</a> lists the resulting inverse properties.
+      For convenience, <a href="http://www.w3.org/ns/prov-o-inverses">this file</a> lists the resulting inverse properties.
       </p>
 
       <strong>TODO: include <a href="http://aquarius.tw.rpi.edu/prov-wg/inverse-names.html">table</a> here. See <a href="http://www.w3.org/2011/prov/wiki/PIL_OWL_Ontology#Steps_taken_for_LC">instructions</a> and contact lebot@rpi.edu if you see this. (inverses come from http://aquarius.tw.rpi.edu/prov-wg/inverses.ttl)</strong>
@@ -1163,7 +1187,7 @@ prov:wasDerivedFrom
        </section>
 
 
-    <section class='appendix'>
+    <section class='appendix informative'>
       <h2>Changes since WD-prov-o-20120724</h2>
       <ul>
          <li>Restated <a href="#hadRole" class="qname">prov:hadRole</a>'s domain to 'Association or InstantaneousEvent' 
@@ -1213,10 +1237,12 @@ prov:wasDerivedFrom
          <li>Corrected Turtle syntax for RL violations in <a href="#prov-o-owl-profile">PROV-O OWL Profile</a> section. They were missing owl:unionOf.</li>
 
          <li>Updated attributions for the tools used to produce this document in <a href="#acknowledgements">Acknowledgements</a> section.</li>
+
+         <li>Reworked the <a href="#description-expanded-terms">Expanded Terms</a> narrative and examples to better highlight each term.</li>
       </ul>
     </section>
 
-    <section class='appendix'>
+    <section class='appendix informative'>
       <h2>Acknowledgements</h2>
 
       <p>This document has been produced by the PROV Working Group, and its contents reflect extensive discussion within the Working Group as a whole. The editors extend special thanks to Sandro Hawke (W3C/MIT) and Ivan Herman (W3C/ERCIM), W3C contacts for the PROV Working Group.</p>
