@@ -778,7 +778,7 @@ It can also be specialized to create new classes and properties to model provena
       <h4>How to read the PROV Family of Documents</h4>
       <ul>
       <li>[[PROV-OVERVIEW]] overviews the PROV family of documents. </li>
-      <li>The Primer [[PROV-PRIMER]] is the entry point to PROV offering an introduction to the provenance model.</li>
+      <li>The primer [[PROV-PRIMER]] is the entry point to PROV offering an introduction to the provenance model.</li>
       <li>The Linked Data and Semantic Web community should focus on [[!PROV-O]] defining PROV classes and properties specified in an OWL2 ontology. For further details, [[!PROV-DM]] and [[!PROV-CONSTRAINTS]] specify the constraints applicable to the data model, and its interpretation. </li>
       <li>The XML community should focus on [[PROV-XML]] defining an XML schema for PROV. Further details can also be found in [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].</li>
       <li>Developers seeking to retrieve or publish provenance should focus on [[PROV-AQ]].</li>
@@ -802,7 +802,7 @@ It can also be specialized to create new classes and properties to model provena
          </p>
         <p>
          PROV-O is a lightweight ontology that can be adopted in a wide range of applications. 
-         With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[!OWL2-PRIMER]]. 
+         With the exception of <a href="#prov-o-owl-profile">five axioms</a>, PROV-O conforms to the OWL-RL profile [[OWL2-PRIMER]]. 
          The PROV Ontology classes and properties are defined such that they can not only be used directly to represent provenance information, 
          but also can be specialized for modeling application-specific provenance details in a variety of domains. 
          Thus, the PROV Ontology is expected to be both directly usable in applications as well as serve as a <i>reference model</i> 
