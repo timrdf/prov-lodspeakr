@@ -25,7 +25,7 @@
 
       <div id="qualified-forms-starting-point" style="padding: 10px">
          <p>Seven <a href="#description-starting-point-terms">Starting Point</a> relations can be further described using the Qualification Pattern.
-            They are listed in the following table.
+            They are listed in the following normative table.
          </p>
          <div style="text-align: center">
             {% include "includes/qualifed-forms-starting-point.html" %}
@@ -34,7 +34,7 @@
 
       <div id="qualified-forms-expanded" style="padding: 10px">
          <p>Seven <a href="#description-expanded-terms">Expanded</a> relations can be further described using the Qualification Pattern.
-            They are listed in the following table.
+            They are listed in the following normative table.
          </p>
          <div style="text-align: center">
             {% include "includes/qualifed-forms-expanded.html" %}
@@ -85,16 +85,16 @@
             :e1 
                a prov:Entity;
                prov:wasGeneratedBy      :a1;
-               prov:qualifiedGeneration :e1Gen; # Add the qualification
+               prov:qualifiedGeneration :e1Gen; # Add the qualification.
             .
-
-            :a1 a prov:Activity .
 
             :e1Gen 
                a prov:Generation;
-               prov:activity :a1;               # Cite the influencing Activity.
-               ex:foo :bar;                     # Add additional attributes about the influence relation.
+               prov:activity            :a1;    # Cite the influencing Activity.
+               ex:foo                   :bar;   # Describe the Activity's influence upon the Entity.
             .
+
+            :a1 a prov:Activity .
             </pre>
          </div>
 
