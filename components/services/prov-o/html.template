@@ -1242,6 +1242,14 @@ prov:wasDerivedFrom
       </ul>
     </section>
 
+
+      <section class='appendix informative'>
+            <h2>Changes since CR-prov-o-20121211</h2>
+            <ul>
+               <li>Updated exemplar in cross reference entry <a href="#hadGeneration" class="qname">prov:hadGeneration</a> to include <a href="#activity" class="qname">prov:activity</a> property.</li>
+            </ul>
+      </section>
+
     <section class='appendix informative'>
       <h2>Acknowledgements</h2>
 
