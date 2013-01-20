@@ -658,7 +658,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2012-12-11",
+          publishDate:  "2013-01-19",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -978,6 +978,12 @@ It can also be specialized to create new classes and properties to model provena
          {% include "includes/cross-reference-qualified.html" %}
       </section>
 
+      <section id="cross-reference-index">
+         <h3>Term Index</h3>
+         <p>The PROV-O terms in this cross reference are shown below alphabetically, along with their entry number.</p>
+         {% include "includes/xrefs.html" %}
+      </section>
+
    </section>
 
     <!--section class="appendix">
@@ -1000,7 +1006,7 @@ It can also be specialized to create new classes and properties to model provena
       <p>To encourage widespread adoption, PROV-O's design is intentionally minimal and lightweight. 
       Because the OWL 2 RL profile is aimed at RDF applications that require scalable reasoning without sacrificing too much expressive power [[OWL2-PRIMER]], 
       it served as a baseline for all axioms included in PROV-O. The PROV-O axioms that do not suit the OWL 2 RL profile are listed in 
-      <a href="#owl-rl-violations">Table 4</a>. 
+      <a href="#owl-rl-violations">Table 5</a>. 
 
       All five use an anonymous <em>class union</em> for the domain or range of a property, while OWL 2 RL requires the classes to be explicitly named. 
       Although introducing "placeholder" classes would have suited the
@@ -1015,7 +1021,7 @@ It can also be specialized to create new classes and properties to model provena
 -->
 <div style="text-align: center">
   <table id="owl-rl-violations">
-    <caption><a href="#owl-rl-violations">Table 4</a>: All OWL Axioms in PROV-O that do not conform to the OWL-RL profile.</caption>
+    <caption><a href="#owl-rl-violations">Table 5</a>: All OWL Axioms in PROV-O that do not conform to the OWL-RL profile.</caption>
     <tr>
       <th>Non OWL-RL PROV-O Axiom</td>
     </tr>
@@ -1049,7 +1055,7 @@ It can also be specialized to create new classes and properties to model provena
 
          <div style="text-align: center">
            <table id="owl-rl-extra-domains">
-             <caption><a href="#owl-rl-extra-domains">Table 5</a>: Intersecting OWL2 RL compatible domains/ranges</caption>
+             <caption><a href="#owl-rl-extra-domains">Table 6</a>: Intersecting OWL2 RL compatible domains/ranges</caption>
              <tr>
                <th>Property</th> <th>Direction</th> <th>Domain/range</th>
              </tr>
@@ -1247,6 +1253,8 @@ prov:wasDerivedFrom
             <h2>Changes since CR-prov-o-20121211</h2>
             <ul>
                <li>Updated exemplar in cross reference entry <a href="#hadGeneration" class="qname">prov:hadGeneration</a> to include <a href="#activity" class="qname">prov:activity</a> property.</li>
+               <li>Reordered class and predicate terms from alphabetical to a more natural narrative-based order.</li>
+               <li>Added <a href="#cross-reference-index">Term Index</a> to aid reading this document in printed form.</li>
             </ul>
       </section>
 

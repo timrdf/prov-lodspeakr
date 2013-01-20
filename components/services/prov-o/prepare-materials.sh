@@ -7,10 +7,10 @@ if [ ! -d ../../../static/prov-o-diagrams ]; then
 fi
 pushd ../../../static/prov-o-diagrams
    # Diagrams
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/diagram-simple.png
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Qualified-Association.png
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/involvements.png
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Starting-points-terms.png
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/diagram-simple.png
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Qualified-Association.png
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/involvements.png
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/Starting-points-terms.png
 popd &> /dev/null
 
 #if [ ! -d ../../../static/prov-o-lode ]; then
@@ -28,10 +28,10 @@ if [ ! -d prov-o-html-sections ]; then
    mkdir prov-o-html-sections
 fi
 pushd prov-o-html-sections
-    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-starting-points.inc.html
-    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-expanded-terms.inc.html
-    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-qualified-terms.inc.html
-    curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-collections.inc.html
+    curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-starting-points.inc.html
+    curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-expanded-terms.inc.html
+    curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-qualified-terms.inc.html
+    curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/prov-o-html-sections/description-collections.inc.html
 popd &> /dev/null
 
 if [ ! -d includes ]; then
@@ -52,18 +52,23 @@ pushd includes
    owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/default/ontology/ProvenanceOntology.owl"
    owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/$changeset/ontology/ProvenanceOntology.owl"
    #owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/cf7deb6c5f3e/ontology/ProvenanceOntology.owl"
-   curl -sO $owlURLversion
-   .././cross-reference.py $owlURLversion ProvenanceOntology.owl prov
+   owlURLversion="http://dvcs.w3.org/hg/prov/raw-file/$changeset/ontology/working-dir/ProvenanceOntology-ordered.owl"
+   curl -LsO $owlURLversion
+   rapper -qg -o turtle ProvenanceOntology.owl > ProvenanceOntology-ordered.ttl
+   echo "@prefix prov: <http://www.w3.org/ns/prov#> ." >> ProvenanceOntology-ordered.ttl
+   cat prov/ontology/term-order.ttl >> ProvenanceOntology-ordered.ttl 
+   rapper -qg -o rdfxml ProvenanceOntology-ordered.ttl > ProvenanceOntology.owl
+   .././cross-reference.py $owlURLversion prov/ontology/working-dir/ProvenanceOntology-ordered.owl prov
  
    touch beforefetch
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-9-provrdf-owl-coverage/rdf/create/rdf/eg-9-provrdf-owl-coverage.html.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-9-provrdf-owl-coverage/rdf/create/rdf/eg-9-provrdf-owl-coverage.html.ttl
    # Examples
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-association.ttl
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-derivation.ttl
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-generation.ttl
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-usage.ttl
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-simple-without-comments.ttl
-   curl -sO http://dvcs.w3.org/hg/prov/raw-file/6bbc47ad770e/examples/eg-22-blog-original-source/rdf/eg-22-blog-original-source.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-association.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-derivation.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-generation.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-qualified-usage.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/khalid-jun-dropbox/eg16-journalism-simple-without-comments.ttl
+   curl -LsO http://dvcs.w3.org/hg/prov/raw-file/6bbc47ad770e/examples/eg-22-blog-original-source/rdf/eg-22-blog-original-source.ttl
    for ttl in `find . -name "*.ttl" -newer beforefetch`; do
       cat $ttl | sed 's/</\&lt;/g; s/>/\&gt;/g' > b
       mv b $ttl

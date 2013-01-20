@@ -51,6 +51,22 @@ ObjectProperties   = session.get_class(ns.OWL["ObjectProperty"])
 Classes            = session.get_class(ns.OWL["Class"])
 Thing              = session.get_class(ns.OWL["Thing"])
 
+def getURI(resource):
+   """Get URI.
+
+      'resource' could be a rdflib.term.URIRef or SuRF resource (surf.session.OwlObjectProperty, etc).
+      The distinction doesn't matter.
+   """
+   if type(resource) == rdflib.term.URIRef:
+      return str(resource)
+   else:
+      return resource.subject
+
+sorts = {
+   'narrative' : lambda R: float(session.get_resource(R,Thing).prov_order.first if len(session.get_resource(R,Thing).prov_order)>0 else sys.maxint),
+   'uri'       : lambda R: R.subject
+}
+
 all_ordered = {}
 all_ordered['classes'] = []
 for owlClass in Classes.all():
@@ -101,7 +117,8 @@ results = graph.query('select distinct ?cat where { [] prov:category ?cat } orde
 categories = {}
 for bindings in results:
    categories[bindings] = True # distinct operator is not being recognized. Need to reimplement here.
-for category in categories.keys():
+xRefIndex = {}
+for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
    print category
 
    glanceName = 'at-a-glance-'+category+'.html'
@@ -124,7 +141,7 @@ for category in categories.keys():
       for owlClass in Classes.all():
          if owlClass.prov_category.first == category and owlClass.subject.startswith('http://www.w3.org/ns/prov#'):
             ordered['classes'].append(owlClass.subject)
-      ordered['classes'].sort()
+      ordered['classes'].sort(key=sorts['narrative'])
 
       # at-a-glance
       for uri in ordered['classes']:
@@ -153,7 +170,7 @@ for category in categories.keys():
          propertyTypes[property.subject] = "object-property"
          if property.prov_category.first == category:
             ordered['properties'].append(property.subject)
-      ordered['properties'].sort()
+      ordered['properties'].sort(key=sorts['narrative'])
 
       sup = {}
       sup['datatype-property'] = ' <sup class="type-dp" title="data property">dp</sup>'
@@ -181,14 +198,15 @@ for category in categories.keys():
       cross.write('     xmlns:dcterms="http://purl.org/dc/terms/"\n')
       cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
       for uri in ordered['classes']:
+         xRefIndex[uri] = len(xRefIndex) + 1
          owlClass = session.get_resource(uri,Classes)
          qname = owlClass.subject.split('#')
          cross.write('\n')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
+         cross.write('      <span class="xref" id="'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
          cross.write('      Class: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
          cross.write('      <span class="backlink">\n')
-         #cross.write('         back to <a href="#toc">ToC</a> or\n')
          cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-terms-at-a-glance">'+category+' classes</a>\n')
          cross.write('      </span>\n')
          cross.write('    </h3>\n')
@@ -422,6 +440,7 @@ for category in categories.keys():
       cross.write('     class="'+PREFIX+'-'+category+' owl-properties crossreference"\n')
       cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
       for uri in ordered['properties']:
+         xRefIndex[uri] = len(xRefIndex) + 1
          property = []
          if propertyTypes[uri] == 'datatype-property':
             property = session.get_resource(uri,DatatypeProperties)
@@ -430,6 +449,7 @@ for category in categories.keys():
          qname = property.subject.split('#')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
+         cross.write('      <span class="xref" id="'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
          cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>')
          if ns.OWL['DatatypeProperty'] in property.rdf_type:
             cross.write(' <sup class="type-dp" title="data property">dp</sup>\n')
@@ -695,8 +715,8 @@ for category in categories.keys():
                dmLink = property.prov_sharesDefinitionWith.first.prov_dm.first
             elif qualifiedClass:
                dmLink = qualifiedClass.prov_dm.first
-            else:
-               print property.subject + ' has no dmLink' 
+            #else:
+            #   print property.subject + ' has no dmLink' 
             if dmLink:
                qname = dmLink.split('#')
                #print 'DM Term ' + qname[1]
@@ -776,7 +796,7 @@ for category in categories.keys():
 
          quals.write('  </tr>\n')
       for uri in ordered['properties']:
-         print 'qual table ' + uri
+         #print 'qual table ' + uri
          property = []
          if propertyTypes[uri] == 'datatype-property':
             property = session.get_resource(uri,DatatypeProperties)
@@ -792,7 +812,7 @@ for category in categories.keys():
                   print qualified + ' is not defined'
                elif ns.OWL['Class'] in qualified.rdf_type:
                   qualClass = qualified                           # e.g. http://www.w3.org/ns/prov#Responsibility
-                  print '   qual class: ' + qualClass.subject
+                  #print '   qual class: ' + qualClass.subject
                   for super in qualClass.rdfs_subClassOf:
                      qname = super.subject.split('#')
                      if     qname[1] in ('EntityInfluence', 'Derivation'):
@@ -807,10 +827,10 @@ for category in categories.keys():
                         objectProp = 'collection' 
                else:
                   if "qualified" in qualified.subject:
-                     print '   qual prop: ' + qualified.subject
+                     #print '   qual prop: ' + qualified.subject
                      qualProp = qualified                         # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
                   else:
-                     print '   does not contain "qualified": ' + qualified.subject
+                     #print '   does not contain "qualified": ' + qualified.subject
                      qualProp = 'no' # Avoiding prov:startedAtTime, prov:atTime, prov:Start, null
             if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
                #print property.subject + ' gets qualified'
@@ -834,8 +854,8 @@ for category in categories.keys():
                quals.write('    <td><a title="'+qname[0]+'#'+objectProp+'" href="#'+objectProp+'" class="owlproperty">'+PREFIX+':'+objectProp+'</a></td>\n')
 
                quals.write('  </tr>\n')
-            else:
-               print '   (not qualifiable)'
+            #else:
+               #print '   (not qualifiable)'
       quals.write('</table>\n')
 
       glance.close()
@@ -980,6 +1000,27 @@ else:
    inverses.write('</table>\n')
    inverses.write('</div>\n')
 inverses.close()
+
+xRefs = open('xrefs.html', 'w')
+xRefSorted = xRefIndex.keys()
+xRefSorted.sort(key=lambda s: s.lower())
+xRefs.write('<div>\n')
+xRefs.write('  <table>\n')
+xRefs.write('    <caption id="xref-table"><a href="#cross-reference-index">Table 4</a>: Term Index.</caption> \n')
+xRefs.write('    <tr>\n')
+xRefs.write('      <th>PROV-O Term</th>\n')
+xRefs.write('      <th>Position within Cross Reference</th>\n')
+xRefs.write('    </tr>\n')
+for term in xRefSorted:
+   qname = term.split('#')
+   #print term + ' ' + str(xRefIndex[term])
+   xRefs.write('    <tr>\n')
+   xRefs.write('      <td><a href="#'+qname[1]+'">'+qname[1]+'</a></td>\n')
+   xRefs.write('      <td><a href="#'+qname[1]+'">Entry '+str(xRefIndex[term])+'</a></td>\n')
+   xRefs.write('    </tr>\n')
+xRefs.write('  </table>\n')
+xRefs.write('</div>\n')
+xRefs.close()
 
 inversesName = 'inverses.ttl'
 termsName    = 'terms.txt'
