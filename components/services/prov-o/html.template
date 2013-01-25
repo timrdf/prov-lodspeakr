@@ -947,7 +947,7 @@ It can also be specialized to create new classes and properties to model provena
          If the property can be qualified, the <strong>can be qualified with</strong>
          header indicates the qualifying property and influence class that should be used.
          Conversely, the <strong>qualifies</strong> headers in the listings for qualification terms indicate the unqualified property that they qualify.
-         In the OWL file iteself, the annotation properties <span class="qname repeated">prov:qualifiedForm</span> and <span class="qname repeated">prov:unqualifiedForm</span>
+         In the OWL file itself, the annotation properties <span class="qname repeated">prov:qualifiedForm</span> and <span class="qname repeated">prov:unqualifiedForm</span>
          provide the same linkages between the unqualified properties and their qualifiying terms.
       </p>
 
@@ -1163,7 +1163,7 @@ It can also be specialized to create new classes and properties to model provena
 # Each PROV-O property is annotated with the local name of its inverse.
 
 prov:wasDerivedFrom
-   a owl:AsymmetricProperty, owl:IrreflexiveProperty, owl:ObjectProperty;
+   a owl:ObjectProperty;
    rdfs:isDefinedBy &lt;http://www.w3.org/ns/prov#&gt;;
    prov:inverse     "hadDerivation";
    rdfs:domain  prov:Entity;
@@ -1255,6 +1255,9 @@ prov:wasDerivedFrom
                <li>Updated exemplar in cross reference entry <a href="#hadGeneration" class="qname">prov:hadGeneration</a> to include <a href="#activity" class="qname">prov:activity</a> property.</li>
                <li>Reordered class and predicate terms from alphabetical to a more natural narrative-based order.</li>
                <li>Added <a href="#cross-reference-index">Term Index</a> to aid reading this document in printed form.</li>
+               <li>Fixed typo 'iteself' to 'itself'.</li>
+               <li>Removed inaccurate property characteristics (AsymmetricProperty, IrreflexiveProperty) 
+                   in third example of <a href="#inverse-names">Appendix B</a>.</li>
             </ul>
       </section>
 
