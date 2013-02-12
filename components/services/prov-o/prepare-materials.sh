@@ -56,7 +56,7 @@ pushd includes
    curl -LsO $owlURLversion
    rapper -qg -o turtle ProvenanceOntology.owl > ProvenanceOntology-ordered.ttl
    echo "@prefix prov: <http://www.w3.org/ns/prov#> ." >> ProvenanceOntology-ordered.ttl
-   cat prov/ontology/term-order.ttl >> ProvenanceOntology-ordered.ttl 
+   cat prov/ontology/term-order.csv | awk '$1 ~ /</ {i++; print $1,"prov:order",i,"."}' >> ProvenanceOntology-ordered.ttl
    rapper -qg -o rdfxml ProvenanceOntology-ordered.ttl > ProvenanceOntology.owl
    .././cross-reference.py $owlURLversion prov/ontology/working-dir/ProvenanceOntology-ordered.owl prov
  
