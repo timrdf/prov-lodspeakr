@@ -1028,6 +1028,8 @@ inverses  = open(inversesName, 'w')
 terms     = open(termsName, 'w')
 
 for class_uri in all_ordered['classes']:
+   # Mix back into the OWL file after Protege has it's way with it:
+   # <owl:Ontology rdf:about="http://www.w3.org/ns/prov#"><owl:Ontology>
    owlClass = session.get_resource(class_uri,Classes)
    if len(owlClass.rdfs_isDefinedBy) is not 1 or str(owlClass.rdfs_isDefinedBy.first.subject) != 'http://www.w3.org/ns/prov#':
       print 'WARNING: ' + owlClass.subject + ' does not have correct rdfs:isDefinedBy ' + str(len(owlClass.rdfs_isDefinedBy))  #+ ' ' + owlClass.rdfs_isDefinedBy.first.subject

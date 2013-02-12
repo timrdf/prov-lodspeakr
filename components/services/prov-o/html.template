@@ -621,8 +621,8 @@
       }
      </style>
 
-     <script src='http://www.w3.org/Tools/respec/respec-w3c-common' class='remove' type="text/javascript"></script>
-     <script src="http://www.w3.org/2007/OWL/toggles.js" class="remove" type="text/javascript"></script>
+     <script src='https://www.w3.org/Tools/respec/respec-w3c-common' class='remove' type="text/javascript"></script>
+     <script src="https://www.w3.org/2007/OWL/toggles.js" class="remove" type="text/javascript"></script>
    
     <script class='remove'>
    var addExtraReferences = function() {
@@ -1259,6 +1259,13 @@ prov:wasDerivedFrom
                <li>Fixed typo 'iteself' to 'itself'.</li>
                <li>Removed inaccurate property characteristics (AsymmetricProperty, IrreflexiveProperty) 
                    in third example of <a href="#inverse-names">Appendix B</a>.</li>
+               <li>Added note to <a href="#description-starting-point-terms">Starting Point Terms</a> stating that 
+                   rdf:type and rdfs:label are used to express PROV-DM's prov:type and prov:label.</li>
+               <li>Updated prov:value's out-of-date definition to conform to PROV-DM's (i.e., "Provides a value that is a direct representation of an entity.".</li>
+               <li>Updated prov:wasDerivedFrom's out-of-date definition to conform to PROV-DM's 
+                  (i.e., "A derivation is a transformation of an entity into another, an update of an entity resulting in a new one, or the construction of a new entity based on a pre-existing entity.".</li>
+               <li>Added xsd:dateType datatypes to exemplar in Invalidation and invalidatedAtTime.</li>
+               <li>Fixed some incorrect wasAttributedTo/wasAssociatedWith in the cross reference exemplars.</li>
             </ul>
       </section>
 
