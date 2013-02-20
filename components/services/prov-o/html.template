@@ -648,7 +648,7 @@
 
       var respecConfig = {
           // specification status (e.g. WD, LCWD, NOTE, etc.). If in doubt use ED.
-          specStatus:           "WD",
+          specStatus:           "PR",
           
           // the specification's short name, as in http://www.w3.org/TR/short-name/
           shortName:            "prov-o",
@@ -666,15 +666,15 @@
 
           // if there is a previously published draft, uncomment this and set its YYYY-MM-DD date
           // and its maturity status
-          previousPublishDate:  "2012-07-24",
-          previousMaturity:  "WD",
+          previousPublishDate:  "2012-12-11",
+          previousMaturity:  "CR",
 
           // if there a publicly available Editor's Draft, this is the link
           //edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
 
           // if this is a LCWD, uncomment and set the end of its review period
           // lcEnd: "2012-09-18",
-          crEnd: "2013-01-31",
+          crEnd: "2013-04-09",
 
           // if you want to have extra CSS, append them to this list
           // it is recommended that the respec.css stylesheet be kept
