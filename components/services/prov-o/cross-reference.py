@@ -204,7 +204,7 @@ for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
          cross.write('\n')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
-         cross.write('      <span class="xref" id="'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
+         cross.write('      <span class="xref" id="eg'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
          cross.write('      Class: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
          cross.write('      <span class="backlink">\n')
          cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-terms-at-a-glance">'+category+' classes</a>\n')
@@ -449,7 +449,7 @@ for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
          qname = property.subject.split('#')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
-         cross.write('      <span class="xref" id="'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
+         cross.write('      <span class="xref" id="eg'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
          cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>')
          if ns.OWL['DatatypeProperty'] in property.rdf_type:
             cross.write(' <sup class="type-dp" title="data property">dp</sup>\n')
