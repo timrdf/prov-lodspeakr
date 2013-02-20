@@ -658,7 +658,7 @@
           //subtitle   :  "",
 
           // if you wish the publication date to be other than today, set this
-          publishDate:  "2013-01-19",
+          publishDate:  "2013-03-12",
 
           // if the specification's copyright date is a range of years, specify
           // the start date here:
@@ -761,40 +761,36 @@ It can also be specialized to create new classes and properties to model provena
     </section>
   
  
-    <section id="sotd">
-      <h4>PROV Family of Documents</h4>
-      This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable
-      interchange of provenance information in heterogeneous environments such as the Web.  These documents are:
-      <ul>
-      <li> <a href="http://www.w3.org/TR/2012/WD-prov-overview-20121211/">PROV-OVERVIEW</a> (To be published as Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
-      <li> <a href="http://www.w3.org/TR/2012/WD-prov-primer-20121211/">PROV-PRIMER</a> (To be published as Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
-      <li> <a href="http://www.w3.org/TR/2012/CR-prov-o-20121211/">PROV-O</a> (Candidate Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
-      <li> <a href="http://www.w3.org/TR/2012/CR-prov-dm-20121211/">PROV-DM</a> (Candidate Recommendation), the PROV data model for provenance [[!PROV-DM]];</li>
-      <li> <a href="http://www.w3.org/TR/2012/CR-prov-n-20121211/">PROV-N</a> (Candidate Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
-      <li> <a href="http://www.w3.org/TR/2012/CR-prov-constraints-20121211/">PROV-CONSTRAINTS</a> (Candidate Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
-      <li> <a href="http://www.w3.org/TR/2012/WD-prov-aq-20120619/">PROV-AQ</a> (To be published as Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
-      <li> <a href="http://www.w3.org/TR/2012/WD-prov-xml-20121211/">PROV-XML</a> (To be published as Note),  an XML schema for the PROV data model [[PROV-XML]].</li>
+     <section id="sotd">
+         <h4>PROV Family of Documents</h4>
+         This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable
+         interchange of provenance information in heterogeneous environments such as the Web.  These documents are listed below. Please consult the [[PROV-OVERVIEW]] for a guide to reading these documents.
+         <ul>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-overview-20130312/">PROV-OVERVIEW</a> (To be published as Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-primer-20130312/">PROV-PRIMER</a> (To be published as Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/PR-prov-o-20130312/">PROV-O</a> (Proposed Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
+         <li> <a href="http://www.w3.org/TR/2013/PR-prov-dm-20130312/">PROV-DM</a> (Proposed Recommendation), the PROV data model for provenance;</li>
+         <li> <a href="http://www.w3.org/TR/2013/PR-prov-n-20130312/">PROV-N</a> (Proposed Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/PR-prov-constraints-20130312/">PROV-CONSTRAINTS</a> (Proposed Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-xml-20130312/">PROV-XML</a> (To be published as Note),  an XML schema for the PROV data model [[PROV-XML]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-aq-20130312/">PROV-AQ</a> (To be published as Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-dictionary-20130312/">PROV-DICTIONARY</a> (To be published as Note) introduces a specific type of collection, consisting of key-entity pairs [[PROV-DICTIONARY]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-dc-20130312/">PROV-DC</a> (To be published as Note) provides a mapping between PROV and Dublic Core Terms [[PROV-DC]];</li>
+         <li> <a href="http://www.w3.org/TR/2013/WD-prov-links-20130312/">PROV-LINKS</a> (To be published as Note) introduces a mechanism to link across bundles [[PROV-LINKS]].</li>
+         </ul>
 
-      </ul>
-      <h4>How to read the PROV Family of Documents</h4>
-      <ul>
-      <li>[[PROV-OVERVIEW]] overviews the PROV family of documents. </li>
-      <li>The primer [[PROV-PRIMER]] is the entry point to PROV offering an introduction to the provenance model.</li>
-      <li>The Linked Data and Semantic Web community should focus on PROV-O defining PROV classes and properties specified in an OWL2 ontology. For further details, [[!PROV-DM]] and [[!PROV-CONSTRAINTS]] specify the constraints applicable to the data model, and its interpretation. </li>
-      <li>The XML community should focus on [[PROV-XML]] defining an XML schema for PROV. Further details can also be found in [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].</li>
-      <li>Developers seeking to retrieve or publish provenance should focus on [[PROV-AQ]].</li>
-      <li>Readers seeking to implement other PROV serializations
-      should focus on [[!PROV-DM]] and [[!PROV-CONSTRAINTS]].  PROV-O, [[!PROV-N]], and [[PROV-XML]] offer examples of mapping to RDF, text, and XML, respectively.</li>
-      </ul>
+         <h4>W3C Members Please Review By 09 April 2013</h4>
 
-      <h4>Please Comment By January 31, 2013</h4>
+         <p>The W3C Director seeks review and feedback from W3C Advisory Committee representatives, via their <a href="http://form-tbd/">review form</a> by 09 April 2013. This will allow the Director to assess consensus and determine whether to issue this document as a W3C Recommendation.</p>
 
-      The Provenance Working Group seeks to gather experience from <a href="http://www.w3.org/2011/prov/wiki/ProvImplementations">implementations</a> in order to increase confidence in the specifications and meet specific <a href="http://www.w3.org/2011/prov/wiki/ProvCRExitCriteria">exit criteria</a>. This document will remain a Candidate Recommendation until at least 31 January 31, 2013. After that date, when and if the exit criteria are met, the group intends to request <a href="http://www.w3.org/2005/10/Process-20051014/tr.html#RecsPR">Proposed Recommendation</a> status.
-
-
-    </section>
-
-
+         <p>Others are encouraged by the Provenance Working Group to continue to send reports of implementation experience, and other feedback, to
+         <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a>
+                   (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>,
+                   <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>). Open discussion among developers is also welcome at
+         <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a>
+                   (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>,
+                   <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>).</p>
+     </section>
 
 
      <section id="introduction">    
