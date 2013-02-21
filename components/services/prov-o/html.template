@@ -4,6 +4,7 @@
   <head xmlns:prov="http://www.w3.org/ns/prov#">
     <title>PROV-O: The PROV Ontology</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
+    <link rel="http://www.w3.org/ns/prov#hasProvenance" href="http://www.w3.org/2011/prov/provenance/prov-o"/>
 
     <style type="text/css">
       /* prov:wasQuotedFrom http://speronitomcat.web.cs.unibo.it:8080/LODE/owl.css */
