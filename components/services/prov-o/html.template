@@ -1,7 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
-    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head xmlns:prov="http://www.w3.org/ns/prov#">
+  <head>
     <title>PROV-O: The PROV Ontology</title>
     <meta http-equiv='Content-Type' content='text/html;charset=utf-8'/>
     <link rel="http://www.w3.org/ns/prov#hasProvenance" href="http://www.w3.org/2011/prov/provenance/prov-o"/>
@@ -764,36 +763,37 @@ It can also be specialized to create new classes and properties to model provena
     </section>
   
  
-     <section id="sotd">
-         <h4>PROV Family of Documents</h4>
-         This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable
-         interchange of provenance information in heterogeneous environments such as the Web.  These documents are listed below. Please consult the [[PROV-OVERVIEW]] for a guide to reading these documents.
-         <ul>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-overview-20130312/">PROV-OVERVIEW</a> (To be published as Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-primer-20130312/">PROV-PRIMER</a> (To be published as Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/PR-prov-o-20130312/">PROV-O</a> (Proposed Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
-         <li> <a href="http://www.w3.org/TR/2013/PR-prov-dm-20130312/">PROV-DM</a> (Proposed Recommendation), the PROV data model for provenance;</li>
-         <li> <a href="http://www.w3.org/TR/2013/PR-prov-n-20130312/">PROV-N</a> (Proposed Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/PR-prov-constraints-20130312/">PROV-CONSTRAINTS</a> (Proposed Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-xml-20130312/">PROV-XML</a> (To be published as Note),  an XML schema for the PROV data model [[PROV-XML]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-aq-20130312/">PROV-AQ</a> (To be published as Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-dictionary-20130312/">PROV-DICTIONARY</a> (To be published as Note) introduces a specific type of collection, consisting of key-entity pairs [[PROV-DICTIONARY]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-dc-20130312/">PROV-DC</a> (To be published as Note) provides a mapping between PROV and Dublic Core Terms [[PROV-DC]];</li>
-         <li> <a href="http://www.w3.org/TR/2013/WD-prov-links-20130312/">PROV-LINKS</a> (To be published as Note) introduces a mechanism to link across bundles [[PROV-LINKS]].</li>
-         </ul>
-
-         <h4>W3C Members Please Review By 09 April 2013</h4>
-
-         <p>The W3C Director seeks review and feedback from W3C Advisory Committee representatives, via their <a href="http://form-tbd/">review form</a> by 09 April 2013. This will allow the Director to assess consensus and determine whether to issue this document as a W3C Recommendation.</p>
-
-         <p>Others are encouraged by the Provenance Working Group to continue to send reports of implementation experience, and other feedback, to
-         <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a>
-                   (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>,
-                   <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>). Open discussion among developers is also welcome at
-         <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a>
-                   (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>,
-                   <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>).</p>
-     </section>
+    <section id="sotd">
+       <h4>PROV Family of Documents</h4>
+       This document is part of the PROV family of documents, a set of documents defining various aspects that are necessary to achieve the vision of inter-operable
+       interchange of provenance information in heterogeneous environments such as the Web.  These documents are listed below. Please consult the [[PROV-OVERVIEW]] for a guide to reading these documents.
+       <ul>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-overview-20130312/">PROV-OVERVIEW</a> (To be published as Note), an overview of the PROV family of documents [[PROV-OVERVIEW]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-primer-20130312/">PROV-PRIMER</a> (To be published as Note), a primer for the PROV data model [[PROV-PRIMER]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/PR-prov-o-20130312/">PROV-O</a> (Proposed Recommendation), the PROV ontology, an OWL2 ontology allowing the mapping of PROV to RDF (this document);</li>
+       <li> <a href="http://www.w3.org/TR/2013/PR-prov-dm-20130312/">PROV-DM</a> (Proposed Recommendation), the PROV data model for provenance [[!PROV-DM]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/PR-prov-n-20130312/">PROV-N</a> (Proposed Recommendation), a notation for provenance aimed at human consumption [[!PROV-N]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/PR-prov-constraints-20130312/">PROV-CONSTRAINTS</a> (Proposed Recommendation), a set of constraints applying to the PROV data model [[!PROV-CONSTRAINTS]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-xml-20130312/">PROV-XML</a> (To be published as Note),  an XML schema for the PROV data model [[PROV-XML]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-aq-20130312/">PROV-AQ</a> (To be published as Note), the mechanisms for accessing and querying provenance [[PROV-AQ]]; </li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-dictionary-20130312/">PROV-DICTIONARY</a> (To be published as Note) introduces a specific type of collection, consisting of key-entity pairs [[PROV-DICTIONARY]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-dc-20130312/">PROV-DC</a> (To be published as Note) provides a mapping between PROV and Dublic Core Terms [[PROV-DC]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-sem-20130312/">PROV-SEM</a> (To be published as Note), a declarative specification in terms of first-order logic of the PROV data model [[PROV-SEM]];</li>
+       <li> <a href="http://www.w3.org/TR/2013/WD-prov-links-20130312/">PROV-LINKS</a> (To be published as Note) introduces a mechanism to link across bundles [[PROV-LINKS]].</li>
+       </ul>
+    
+       <h4>W3C Members Please Review By 09 April 2013</h4>
+    
+       <p>The W3C Director seeks review and feedback from W3C Advisory Committee representatives by 09 April 2013. This will allow the Director to assess consensus and determine whether to issue this document as a W3C Recommendation.</p>
+    
+       <p>Others are encouraged by the Provenance Working Group to continue to send reports of implementation experience, and other feedback, to
+       <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a>
+                 (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>,
+                 <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>). Open discussion among developers is also welcome at
+       <a href="mailto:public-prov-comments@w3.org">public-prov-comments@w3.org</a>
+                 (<a href="mailto:public-prov-comments-request@w3.org?subject=subscribe">subscribe</a>,
+              <a href="http://lists.w3.org/Archives/Public/public-prov-comments/">archives</a>).</p>
+    </section>
 
 
      <section id="introduction">    
@@ -1108,7 +1108,7 @@ It can also be specialized to create new classes and properties to model provena
       This extra effort can be reduced by preferring one inverse over another.
       </p>
 
-     <div about="#inverse-names-example-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+     <div about="#inverse-names-example-1" typeof="prov:Entity" class="exampleOuter" prefix="prov: http://www.w3.org/ns/prov#">
         <p>For example, the first PROV-O statement (below) could just as easily be asserted as the second statement. 
             But if a client queries using <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a> when <span class="repeated">:hadDerivation</span> 
             was used in the assertion, no results will be returned unless OWL reasoning is applied (or the size of the query is doubled).
@@ -1133,7 +1133,7 @@ It can also be specialized to create new classes and properties to model provena
       they may be motivated to assert the inverse of any PROV-O property defined herein.
    </p>
 
-     <div about="#inverse-names-example-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+     <div about="#inverse-names-example-2" typeof="prov:Entity" class="exampleOuter" prefix="prov: http://www.w3.org/ns/prov#">
         <p>For example, since PROV-O does not define the inverse of <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a>, 
          and if three developers would rather model their assertions in the opposite direction, the following set of assertions might be found in the future web of provenance. 
          These assertions are not in an interoperable form without the use of an OWL reasoner, additional code, or larger queries.
@@ -1154,7 +1154,7 @@ It can also be specialized to create new classes and properties to model provena
       Modelers wishing to use inverses of the properties defined by PROV-O SHOULD use those reserved by this document.
    </p>
 
-     <div about="#inverse-names-example-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+     <div about="#inverse-names-example-3" typeof="prov:Entity" class="exampleOuter" prefix="prov: http://www.w3.org/ns/prov#">
         <p>For example, the same three modelers above that defined <code>my:hadDerivation</code>, <code>your:ledTo</code>, and <code>their:derivedTo</code> should instead look for the <span class="repeated">http://www.w3.org/ns/prov#inverse</span> annotation on <a class="qname" href="#wasDerivedFrom">prov:wasDerivedFrom</a> to determine that they should use the property <span class="repeated">http://www.w3.org/ns/prov#hadDerivation</span>. 
         </p>
         <pre class="example">
