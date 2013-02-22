@@ -195,8 +195,8 @@ for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
       # cross-reference
       cross.write('<div\n') # We want to include it multiple times: id="'+PREFIX+'-'+category+'-owl-classes-crossreference"\n')
       cross.write('     class="'+PREFIX+'-'+category+' owl-classes crossreference"\n')
-      cross.write('     xmlns:dcterms="http://purl.org/dc/terms/"\n')
-      cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
+      cross.write('     prefix="prov: http://www.w3.org/ns/prov#"\n')
+      cross.write('     prefix="prov: http://www.w3.org/ns/prov#">\n')
       for uri in ordered['classes']:
          xRefIndex[uri] = len(xRefIndex) + 1
          owlClass = session.get_resource(uri,Classes)
@@ -228,11 +228,13 @@ for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
          #      rel="prov:wasQuotedFrom"  resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl" 
          #      property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl"%}{% endescape %}</pre>
          cross.write('\n')
-         cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
-         cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
+         # 11th-hour: cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
+         cross.write('    <div about="#example-for-class-'+qname[1]+'"class="example">\n')
+         # 11th-hour cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
          cross.write('      <strong class="crossreference">Example</strong>\n')
-         cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'class_'+qname[1]+'.ttl"\n')
-         cross.write('           property="prov:value">')
+         # 11th-hour cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'class_'+qname[1]+'.ttl"\n')
+         # 11th-hour cross.write('           property="prov:value">')
+         cross.write('      <pre>')
          cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
@@ -497,11 +499,13 @@ for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          cross.write('\n')
-         cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
-         cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
+         # 11th-hour cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
+         cross.write('    <div about="#example-for-property-'+qname[1]+'"class="example">\n')
+         # 11th-hour cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
          cross.write('      <strong class="crossreference">Example</strong>\n')
-         cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'property_'+qname[1]+'.ttl"\n')
-         cross.write('           property="prov:value">')
+         # 11th-hour cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'property_'+qname[1]+'.ttl"\n')
+         # 11th-hour cross.write('           property="prov:value">')
+         cross.write('      <pre>')
          cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
@@ -909,10 +913,13 @@ if rdfa:
       qname = property.subject.split('#')
       if property.prov_inverse:
          inverses.write('  <span rel="prov:member">\n')
-         inverses.write('    <tr about="#inverse-of-'+qname[1]+'" typeof="prov:KeyValuePair">\n')
-         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+         # 11th-hour inverses.write('    <tr about="#inverse-of-'+qname[1]+'" typeof="prov:KeyValuePair">\n')
+         inverses.write('    <tr about="#inverse-of-'+qname[1]+'">\n')
+         # 11th-hour inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+         inverses.write('      <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
                        #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
-         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+         # 11th-hour inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+         inverses.write('      <td>prov:'+property.prov_inverse.first+'</td>\n')
          inverses.write('    </tr>\n')
          inverses.write('  </span>\n')
    inverses.write('</table>\n')
