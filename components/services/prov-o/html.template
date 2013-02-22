@@ -669,7 +669,7 @@
           previousPublishDate:  "2012-12-11",
           previousMaturity:  "CR",
 
-          implementationReportURI: "http://dvcs.w3.org/hg/prov/raw-file/default/reports/prov-implementations.html",
+          implementationReportURI: "http://www.w3.org/TR/2013/WD-prov-implementations-20130312/",
 
           // if there a publicly available Editor's Draft, this is the link
           //edDraftURI:           "https://dvcs.w3.org/hg/prov/raw-file/default/ontology/Overview.html",
