@@ -1,166 +1,177 @@
      <section id="description-expanded-terms">
 	  	<h3>Expanded Terms</h3>
 
-      <p>The terms introduced in this section provide additional ways to describe the provenance among Entities, Activities, and Agents. 
+      <p>The terms introduced in this section provide additional ways to describe the provenance among Entities, Activities, and Agents.
          The additional terms are illustrated in the following figure and can be separated into five different categories.</p>
 
       <div id="expanded-terms-figure" style="text-align: center;" class="figure">
             <img src="http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/diagram-history/2012-05-03/expanded.svg"
-                 style="width: 60%; min-width: 25em; max-width: 60em" 
+                 style="width: 60%; min-width: 25em; max-width: 60em"
                  alt="PROV-O Starting Point terms"/>
-            <div class="figcaption"><a href="#expanded-terms-figure">Figure 3</a>. The expanded terms build upon those in the Starting Points section. <br/>
-            The domain of <a href="#atLocation">prov:atLocation</a> (<span class="repeated">prov:Activity</span> or <span class="repeated">prov:Entity</span> or <span class="repeated">prov:Agent</span> or <span class="repeated">prov:InstantaneousEvent</span>) is not illustrated.</div>
+            <div class="figcaption"><a href="#expanded-terms-figure">Figure 3</a>.
+            The expanded terms build upon those in the <a href="#description-starting-point-terms">Starting Points section</a>.<br/>
+            The diagrams in this document depict Entities as yellow ovals, Activities as blue rectangles, and Agents as orange pentagons.<br/>
+            The domain of <a href="#atLocation">prov:atLocation</a> (<span class="repeated">prov:Activity</span> or <span class="repeated">prov:Entity</span> or <span class="repeated">prov:Agent</span> or <span class="repeated">prov:InstantaneousEvent</span>) is not illustrated.
+            </div>
       </div>
 
 
-	  <p>The <strong>first</strong> category extends the <a href="#description-starting-point-terms">Starting Point terms</a> with subclasses, subproperties, and one superproperty.</p>
+	  <p>The <strong>first</strong> category extends the <a href="#description-starting-point-terms">Starting Point terms</a> with subclasses, subproperties, and a superproperty.</p>
 
-     <p>Three subclasses of Agent (<a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and 
+     <p>Three subclasses of Agent (<a href="#Person" class="qname">prov:Person</a>, <a href="#Organization" class="qname">prov:Organization</a>, and
       <a href="#SoftwareAgent" class="qname">prov:SoftwareAgent</a>) and
-      three subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, <a href="#Bundle" class="qname">prov:Bundle</a>, 
-      and <a href="#Plan" class="qname">prov:Plan</a>). 
+      three subclasses of Entity are provided (<a href="#Collection" class="qname">prov:Collection</a>, <a href="#Bundle" class="qname">prov:Bundle</a>,
+      and <a href="#Plan" class="qname">prov:Plan</a>).
       </p>
 
       <p>
-      A <span class="repeated">prov:Collection</span> is an Entity that provides a structure (e.g. set, list, etc.) to some constituents (which are themselves Entities). 
-      The <span class="repeated">prov:Collection</span> class can be used to express the provenance of the collection itself: 
-      e.g. who maintains the collection (attribution), which members it contains as it evolves, and how it was assembled. 
+      A <span class="repeated">prov:Collection</span> is an Entity that provides a structure (e.g. set, list, etc.) to some constituents (which are themselves Entities).
+      The <span class="repeated">prov:Collection</span> class can be used to express the provenance of the collection itself:
+      e.g. who maintained the collection, which members it contained as it evolved, and how it was assembled.
       The <a href="#hadMember" class="qname">prov:hadMember</a> property is used to assert membership in a collection.
       </p>
 
       <div id="description-bundle">
          <p>
-         A <span class="repeated">prov:Bundle</span> is a named set of provenance descriptions, which may itself have provenance. 
-         The named provenance descriptions may be expressed as PROV-O or in some other form.
-         The subclass of Bundle that contains PROV-O assertions is not provided by PROV-O, since it is more appropriate to do so using other recommendations, 
-         standards, or technologies. In any case, a Bundle of PROV-O assertions is an abstract set of RDF triples, and adding or removing a triple creates a distinct 
+         A <span class="repeated">prov:Bundle</span> is a named set of provenance descriptions, which may itself have provenance.
+         The named set of provenance descriptions may be expressed as PROV-O or any other form.
+         The subclass of Bundle that names a set of PROV-O assertions is not provided by PROV-O, since it is more appropriate to do so using other recommendations,
+         standards, or technologies. In any case, a Bundle of PROV-O assertions is an abstract set of RDF triples, and adding or removing a triple creates a new distinct
          Bundle of PROV-O assertions.
          </p>
       </div>
 
-      <p>A <span class="repeated">prov:Plan</span> is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals. 
+      <p>A <span class="repeated">prov:Plan</span> is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals.
       </p>
 
 
 	  <p>
-      More general and more specific properties are also provided by the expanded terms. More generally, the property 
-      <a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> is a superproperty that relates any influenced Entity, Activity, or Agent to any other 
-      influencing Entity, Activity, or Agent that had an effect on its characteristics. 
+      More general and more specific properties are also provided by the expanded terms. More generally, the property
+      <a href="#wasInfluencedBy" class="qname">prov:wasInfluencedBy</a> is a superproperty that relates any influenced Entity, Activity, or Agent to any other
+      influencing Entity, Activity, or Agent that had an effect on its characteristics.
 
-      More specifically, three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are provided for certain kinds of derivation among Entities: 
+      Three subproperties of <span class="repeated">prov:wasDerivedFrom</span> are also provided for certain kinds of derivation among Entities:
       <a href="#wasQuotedFrom" class="qname">prov:wasQuotedFrom</a> cites a potentially larger Entity (such as a book, blog, or image) from which a new Entity was created
-      by repeating some or all of the original, 
-      <a href="#wasRevisionOf" class="qname">prov:wasRevisionOf</a> indicates that the derived Entity contains substantial content from the original Entity 
-      (e.g., two editions of a book), and 
-      <a href="#hadPrimarySource" class="qname">prov:hadPrimarySource</a> cites an older Entity produced by some agent with direct experience and 
-      knowledge about the topic (such as a reading from a sensor, or a journal written during an historical event). 
+      by repeating some or all of the original,
+      <a href="#wasRevisionOf" class="qname">prov:wasRevisionOf</a> indicates that the derived Entity contains substantial content from the original Entity
+      (e.g., two editions of a book), and
+      <a href="#hadPrimarySource" class="qname">prov:hadPrimarySource</a> cites a preceding Entity produced by some agent with direct experience and
+      knowledge about the topic (such as a reading from a sensor, or a journal written during an historical event).
       </p>
-	  
-	  <p>The <strong>second</strong> category relates Entities according to their levels of abstraction, where some Entities may present more specific aspects than their more general counterparts. 
-      While <a href="#specializationOf" class="qname">prov:specializationOf</a> links a more specific Entity to a more general one (e.g., today's BBC news home page versus BBC's news home page on any day), <a href="#alternateOf" class="qname">prov:alternateOf</a> links Entities that present aspects of the same thing, but not necessarily the same aspects or at the same time (e.g., the serialization of a document in different formats).
-    <a href="#mentionOf" class="qname">prov:mentionOf</a> is a special type of <span class="repeated">prov:specializationOf</span> whose subject presents as an aspect a particular <span class="repeated">prov:Bundle</span> in which its more general Entity was described (<a href="#asInBundle" class="qname">prov:asInBundle</a> is used to cite the Bundle in which the generalization was mentioned).
+	
+	  <p>The <strong>second</strong> category of expanded terms relates Entities according to their levels of abstraction, where some Entities may present more specific aspects than their more general counterparts.
+      While <a href="#specializationOf" class="qname">prov:specializationOf</a> links a more specific Entity to a more general one (e.g., today's BBC news home page versus BBC's news home page on any day), <a href="#alternateOf" class="qname">prov:alternateOf</a> links Entities that present aspects of the same thing, but not necessarily the same aspects or at the same time (e.g., the serialization of a document in different formats or a backup copy of a computer file).
 	  </p>
-	  
-      <div class="note">
-      <p>The <span class="repeated">prov:mentionOf</span> and <span class="repeated">prov:asInBundle</span> properties are "<a href="http://www.w3.org/2005/10/Process-20051014/tr#cfi">at risk</a>" and may be removed from this specification based on feedback. Please send feedback to public-prov-comments@w3.org.</p>
-
-      <p>These two properties are used to encode the PROV-DM's <a href="http://dvcs.w3.org/hg/prov/raw-file/default/model/prov-dm.html#term-mention">Mention construct</a>, which might be removed from PROV if implementation experience reveals problems with supporting this construct. 
-      </div>
-
+	
       <p>
-      The <strong>third</strong> category allows further description of Entities. The property <a href="#value" class="qname">prov:value</a> holds a literal value for the Entity. For example, the <span class="repeated">prov:value</span> of a quote could be a string of the sentences stated, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
-		 The property <a href="#atLocation" class="qname">prov:atLocation</a> can be used to describe the <a href="#Location" class="qname">prov:Location</a> of any 
-      Entity, Activity, Agent, or <a href="#InstantaneousEvent" class="qname">prov:InstantaneousEvent</a> 
-      (i.e., generation, usage, or invalidation of an entity and the starting or ending of an activity). 
-      The properties used to describe instances of <span class="repeated">prov:Location</span> are outside the scope of PROV-O; 
+      The <strong>third</strong> category of expanded terms allows further description of Entities. The property <a href="#value" class="qname">prov:value</a>
+      provides a literal value that is a direct representation of an entity.
+      For example, the <span class="repeated">prov:value</span> of a quote could be a string of the sentences stated, or the <span class="repeated">prov:value</span> of an Entity involved in a numeric calculation could be the xsd:integer four.
+	   The property <a href="#atLocation" class="qname">prov:atLocation</a> can be used to describe the <a href="#Location" class="qname">prov:Location</a> of any
+      Entity, Activity, Agent, or <a href="#InstantaneousEvent" class="qname">prov:InstantaneousEvent</a>
+      (i.e., the starting or ending of an activity or the generation, usage, or invalidation of an entity).
+      The properties used to describe instances of <span class="repeated">prov:Location</span> are outside the scope of PROV-O;
       reuse of other existing vocabulary is encouraged.
 		</p>
 
- 
-      <p>The <strong>fourth</strong> category describes the lifetime of an Entity beyond being <strong>generated</strong> by an Activity and <strong>used</strong> by other Activities. For example, a painting could not have been displayed before it was painted, and it could not be sold after it was destroyed by fire. 
-      Similar to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable. 
-The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a> and <a href="#invalidatedAtTime" class="qname">prov:invalidatedAtTime</a> can be used to bound the starting and ending moments of an Entity's existence. The Activities that led to the generation or invalidation of an Entity can be provided using <span class="repeated">prov:wasGeneratedBy</span> and <a href="#wasInvalidatedBy" class="qname">prov:wasInvalidatedBy</a>, respectively. 
-<a href="#generated" class="qname">prov:generated</a> and <a href="#invalidated" class="qname">prov:invalidated</a> are the inverses of <span class="repeated">prov:wasGeneratedBy</span> and <span class="repeated">prov:wasInvalidatedBy</span>, respectively, and are defined to facilitate Activity-as-subject as well as Entity-as-subject descriptions. 
+
+      <p>The <strong>fourth</strong> category of expanded terms describes the lifetime of an Entity beyond being <strong>generated</strong> by an Activity and <strong>used</strong> by other Activities. For example, a painting could not have been displayed before it was painted, and it could not be sold after it was destroyed by fire.
+      Similar to how Activities have start and end times, an Entity may be bound by points in time for which it was generated or is no longer usable.
+The properties <a href="#generatedAtTime" class="qname">prov:generatedAtTime</a> and <a href="#invalidatedAtTime" class="qname">prov:invalidatedAtTime</a> can be used to bound the starting and ending moments of an Entity's existence. The Activities that led to the generation or invalidation of an Entity can be provided using <span class="repeated">prov:wasGeneratedBy</span> and <a href="#wasInvalidatedBy" class="qname">prov:wasInvalidatedBy</a>, respectively.
+<a href="#generated" class="qname">prov:generated</a> and <a href="#invalidated" class="qname">prov:invalidated</a> are the inverses of <span class="repeated">prov:wasGeneratedBy</span> and <span class="repeated">prov:wasInvalidatedBy</span>, respectively, and are defined to facilitate Activity-as-subject as well as Entity-as-subject descriptions.
+      For more about inverses, see the <a href="#inverse-names">Appendix B</a>.
       </p>
 
-      <p>The <strong>fifth</strong> category describes the lifetime of an Activity beyond its start and end times and predecessor Activities.  
-      Activities may also be started or ended by Entities, which are described using the properties <a href="#wasStartedBy" class="qname">prov:wasStartedBy</a> and <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, respectively. Since Entities may start or end Activities, and Agents may be Entities, then Agents may also start or end Activities.
+      <p>The <strong>fifth</strong> category of expanded terms describes the lifetime of an Activity beyond its start and end times and predecessor Activities.
+      Activities may also be started or ended by Entities, which are described using the properties <a href="#wasStartedBy" class="qname">prov:wasStartedBy</a>
+      and <a href="#wasEndedBy" class="qname">prov:wasEndedBy</a>, respectively. Since Entities may start or end Activities, and Agents may be Entities,
+      then Agents may also start or end Activities.
       </p>
 
-        <div id="narrative-example-expanded-1" about="#narrative-example-expanded-1" 
+        <div id="narrative-example-expanded-1" about="#narrative-example-expanded-1"
             typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-           <p>We illustrate below the use of the expanded terms using the crime file example from the previous section as reference. After his previous actions, Derek then published a post about
-		   his work with the aggregated file.
-            </p> 
-            <p>   
-               <a href="#narrative-example-expanded-1"/>Example 2</a>:
-            </p>
+           <p>The following examples illustrate the expanded terms by elaborating the <a href="#narrative-example-simple-1">crime chart example</a> from the previous section.
+              After aggregating the dataset and creating the chart, Derek published a post to exhibit his work.
+           </p>
+           <p>
+              <a href="#narrative-example-expanded-1"/>Example 2</a>:
+           </p>
 
-            <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl"
-                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}{% endescape %}</pre> 
+           <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl"
+                class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1.ttl" %}{% endescape %}</pre>
         </div>
-		   
-		   <p>
-		   Agent <code>ex:derek</code>, acting again on behalf of the <code>:national_newspaper_inc</code> organization, 
-		   published a post about his recent changes to the aggregated file (<code>ex:aggregatedByRegions</code>) using the tool <code>ex:postEditor</code> (which was included in a user action tracking system compliant to PROV). 
-		   Since he was the one who started and ended the publishing activity (<code>ex:publicationActivity1123</code>), that information
-		   was recorded as well. The post produced by <code>ex:derek</code> (<code>ex:post9821v1</code>) included a permanent link where the content of the latest version is shown
-		   (<code>ex:more-crime-happens-in-cities</code>) plus a snapshot of the content of the current version (<code>ex:postContent0</code>). Derek also added additional metadata of the post, like the title.
+		
+		   <p>Agent <code>:derek</code>, acting again on behalf of the <code>:national_newspaper_inc</code> organization,
+		   used the <code>:postEditor</code> tool to publish a post about his recent data analysis <code>:aggregatedByRegions</code>.
+         The blog editing tool tracked Derek's actions as PROV-O assertions and published them as a Bundle (the current file <code>&lt;&gt;</code>).
+		   The tool recorded that <code>:derek</code> started and ended the publishing activity (<code>:publicationActivity1123</code>)
+         that generated the post <code>:post9821v1</code>. The post
+		   included a permanent link where the content of the latest version is available
+		   (<code>:more-crime-happens-in-cities</code>) in addition to a textual snapshot of the current version (using prov:value).
+         Derek also included additional domain-specific descriptions of the post, such as its title.
 		   </p>
-		   <p>
-		   However, shortly after having published the post, Derek detected a typo. He didn't want to record the activity that led to the new version, so he just created a new version and 
-		   summarized the changes in a revision of the original post (<code>ex:post9821v2</code>). This revision was also an alternate of the original post, 
-         since they were both forms of the long-standing blog.
-         Thus, the permalink to the latest version (<code>ex:more-crime-happens-in-cities</code>) remained the same in the new revision, but a different URL was given for its snapshot (<code>ex:postContent1</code>).
-		   </p>		   
+
+		   <p>Shortly after publishing the post, Derek noticed a typographical error in his narrative.
+         Because the fix would be minimal, he did not record the activity that led to the new version.
+         Instead, he related the new version (<code>:post9821v2</code>) as a revision of the previous (<code>:post9821v1</code>).
+		   Since both versions of the blog are forms of the long-standing blog permalink <code>:more-crime-happens-in-cities</code>,
+         the revisions are alternates of one another and each is a <a href="#specializationOf" class="qname">prov:specializationOf</a> of <code>:more-crime-happens-in-cities</code>.
+		   </p>		
 
          <div id="expanded-example-illustration-1" style="text-align: center;" class="figure">
 
                <img src="http://dvcs.w3.org/hg/prov/raw-file/tip/ontology/diagram-history/2012-07-09-david/expanded-terms-example-bundlePost.svg"
-                    style="width: 95%; min-width: 25em; max-width: 60em" 
+                    style="width: 95%; min-width: 25em; max-width: 60em"
                     alt="PROV-O Starting Point terms"/>
 
-               <div class="figcaption"><a href="#expanded-example-illustration-1">Figure 4</a>. 
-                  An illustration of the PROV-O assertions in <a href="#narrative-example-expanded-1">Example 3</a>, where Derek published two versions of a blog for the National Newspaper, Inc.
+               <div class="figcaption"><a href="#expanded-example-illustration-1">Figure 4</a>.
+                  An illustration of the PROV-O assertions in <a href="#narrative-example-expanded-1">Example 2</a>, where Derek<br/>
+                  published two versions of a blog for the National Newspaper, Inc.<br/>
+                  The diagrams in this document depict Entities as yellow ovals, Activities as blue rectangles,<br/>
+                  and Agents as orange pentagons. The responsibility properties are shown in pink.
                </div>
          </div>
 
 
- 
-		 <div id="narrative-example-expanded-1-a" about="#narrative-example-expanded-1-a" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-           <p>Shortly after Derek's post publication, Monica adapted the text for a wider audience in a new post (<code>ex:post9822</code>). This version was a specialization of the original post,
-		   and an alternate of the version modified by Derek. Since the provenance produced by the activities of Derek and Monica corresponded to different user views, the system
-		   automatically published it in different <a href="#Bundle" class="qname">prov:Bundles</a>. The system also tagged them as the involved users 
-			with the bundle (so as to be able to locate easily their actions) and added additional metadata, such as the date of creation of the bundle or the creator.
-            </p> 		   
-            <p>   
-               <a href="#narrative-example-expanded-1-a"/>Example 3</a>:
+
+		 <div id="narrative-example-expanded-2" about="#narrative-example-expanded-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+           <p>Shortly after Derek published his blog post, Monica adapted the text for a wider audience in a new post (<code>:post9822</code>).
+            This rewrite is an alternate, abbreviated view of the same topic that Derek wrote about and was created from his original text.
+            Since the provenance produced by the activities of Derek and Monica corresponded to different user views, the system
+		      automatically published it in a different <a href="#Bundle" class="qname">prov:Bundle</a>.
+            The tool also asserted provenance about the bundle that it produced (e.g., the date of creation, its creator, and the fact that it Derek's bundle was used).
+            Because a bundle is a kind of entity, all provenance assertions that can be made about entities can also be made about bundles.
+            The use of bundles enables the creation of provenance of provenance.
+            </p> 		
+            <p>
+               <a href="#narrative-example-expanded-2"/>Example 3</a>:
             </p>
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl"
-                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl" %}{% endescape %}</pre> 
+                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt1_a.ttl" %}{% endescape %}</pre>
         </div>
-		   
-         <div id="narrative-example-expanded-2" about="#narrative-example-expanded-2" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-            <p>After some time, John wrote his own conclusions quoting the previous two posts:
-            </p> 
-            <p>   
-               <a href="#narrative-example-expanded-2"/>Example 4</a>:
+		
+         <div id="narrative-example-expanded-3" about="#narrative-example-expanded-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <p>After some time, John wrote his own conclusions in his own post (<code>:post19201</code>) quoting the previous two posts. 
+               Each quote that John makes (<code>:quote_from_monica</code> and <code>:quote_from_derek</code>) is a new entity derived from the 
+               previous blogs and is annotated with the time that the quote was taken.
+               The provenance of John's blog notes that his post is the result of the quotes that he took from Derek and Monica.
+               The blog post is also derived from Derek's <code>:aggregatedByRegions</code> dataset because John inspected it and found a 
+               concern that he discusses in his blog. All the provenance statements related to John's post are grouped in a new <span class="repeated">prov:Bundle</span>.
+            </p>
+            <p>
+               <a href="#narrative-example-expanded-3"/>Example 4</a>:
             </p>
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl"
-                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}{% endescape %}</pre> 
+                 class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt2.ttl" %}{% endescape %}</pre>
          </div>
-		   
-		   <p>
-		   Agent <code>ex:John</code> also named the URI of the original source (<code>ex:aggregatedByRegions</code>). All the provenance statements related to his post
-		   are grouped in a new <span class="repeated">prov:Bundle</span>.
-		   
-		   Unfortunately, there was a problem in the servers where <code>:post19201</code> was being stored, and all the data related to the post was lost permanently. Thus, the system
-		   invalidated the entity automatically and notified John about the error.
-		   </p> 		   
-		   
-         <div id="narrative-example-expanded-3" about="#narrative-example-expanded-3" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
-            <p>   
-               <a href="#narrative-example-expanded-3"/>Example 5</a>:
+		
+	
+         <div id="narrative-example-expanded-4" about="#narrative-example-expanded-4" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
+            <p>Unfortunately, there was a problem in the servers where <code>:post19201</code> was being stored, and all the data related to the post was lost permanently.
+            Thus, the system invalidated the entity automatically and notified John about the error.
+            </p> 		
+	         <p>
+               <a href="#narrative-example-expanded-4"/>Example 5</a>:
             </p>
             <pre rel="prov:wasQuotedFrom" resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt4.ttl"
                  class="example">{% escape %}{% include "includes/prov/examples/eg-25-extended-crime-file-example/rdf/extended-crime-file-pt4.ttl" %}{% endescape %}</pre>

@@ -51,6 +51,22 @@ ObjectProperties   = session.get_class(ns.OWL["ObjectProperty"])
 Classes            = session.get_class(ns.OWL["Class"])
 Thing              = session.get_class(ns.OWL["Thing"])
 
+def getURI(resource):
+   """Get URI.
+
+      'resource' could be a rdflib.term.URIRef or SuRF resource (surf.session.OwlObjectProperty, etc).
+      The distinction doesn't matter.
+   """
+   if type(resource) == rdflib.term.URIRef:
+      return str(resource)
+   else:
+      return resource.subject
+
+sorts = {
+   'narrative' : lambda R: float(session.get_resource(R,Thing).prov_order.first if len(session.get_resource(R,Thing).prov_order)>0 else sys.maxint),
+   'uri'       : lambda R: R.subject
+}
+
 all_ordered = {}
 all_ordered['classes'] = []
 for owlClass in Classes.all():
@@ -101,7 +117,8 @@ results = graph.query('select distinct ?cat where { [] prov:category ?cat } orde
 categories = {}
 for bindings in results:
    categories[bindings] = True # distinct operator is not being recognized. Need to reimplement here.
-for category in categories.keys():
+xRefIndex = {}
+for category in ['starting-point', 'expanded', 'qualified']: #categories.keys():
    print category
 
    glanceName = 'at-a-glance-'+category+'.html'
@@ -124,7 +141,7 @@ for category in categories.keys():
       for owlClass in Classes.all():
          if owlClass.prov_category.first == category and owlClass.subject.startswith('http://www.w3.org/ns/prov#'):
             ordered['classes'].append(owlClass.subject)
-      ordered['classes'].sort()
+      ordered['classes'].sort(key=sorts['narrative'])
 
       # at-a-glance
       for uri in ordered['classes']:
@@ -153,7 +170,7 @@ for category in categories.keys():
          propertyTypes[property.subject] = "object-property"
          if property.prov_category.first == category:
             ordered['properties'].append(property.subject)
-      ordered['properties'].sort()
+      ordered['properties'].sort(key=sorts['narrative'])
 
       sup = {}
       sup['datatype-property'] = ' <sup class="type-dp" title="data property">dp</sup>'
@@ -178,17 +195,18 @@ for category in categories.keys():
       # cross-reference
       cross.write('<div\n') # We want to include it multiple times: id="'+PREFIX+'-'+category+'-owl-classes-crossreference"\n')
       cross.write('     class="'+PREFIX+'-'+category+' owl-classes crossreference"\n')
-      cross.write('     xmlns:dcterms="http://purl.org/dc/terms/"\n')
-      cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
+      cross.write('     prefix="prov: http://www.w3.org/ns/prov#"\n')
+      cross.write('     prefix="prov: http://www.w3.org/ns/prov#">\n')
       for uri in ordered['classes']:
+         xRefIndex[uri] = len(xRefIndex) + 1
          owlClass = session.get_resource(uri,Classes)
          qname = owlClass.subject.split('#')
          cross.write('\n')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
+         cross.write('      <span class="xref" id="eg'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
          cross.write('      Class: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>\n')
          cross.write('      <span class="backlink">\n')
-         #cross.write('         back to <a href="#toc">ToC</a> or\n')
          cross.write('         back to <a href="#'+PREFIX+'-'+category+'-owl-terms-at-a-glance">'+category+' classes</a>\n')
          cross.write('      </span>\n')
          cross.write('    </h3>\n')
@@ -210,11 +228,13 @@ for category in categories.keys():
          #      rel="prov:wasQuotedFrom"  resource="http://dvcs.w3.org/hg/prov/raw-file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl" 
          #      property="prov:value">{% escape %}{% include "includes/prov/examples/eg-24-prov-o-html-examples/rdf/create/rdf/class_Entity.ttl"%}{% endescape %}</pre>
          cross.write('\n')
-         cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
-         cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
+         # 11th-hour: cross.write('    <div about="#example-for-class-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
+         cross.write('    <div about="#example-for-class-'+qname[1]+'"class="example">\n')
+         # 11th-hour cross.write('      <span rel="dcterms:subject" resource="'+owlClass.subject+'"></span>\n')
          cross.write('      <strong class="crossreference">Example</strong>\n')
-         cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'class_'+qname[1]+'.ttl"\n')
-         cross.write('           property="prov:value">')
+         # 11th-hour cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'class_'+qname[1]+'.ttl"\n')
+         # 11th-hour cross.write('           property="prov:value">')
+         cross.write('      <pre>')
          cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'class_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
@@ -422,6 +442,7 @@ for category in categories.keys():
       cross.write('     class="'+PREFIX+'-'+category+' owl-properties crossreference"\n')
       cross.write('     xmlns:prov="http://www.w3.org/ns/prov#">\n')
       for uri in ordered['properties']:
+         xRefIndex[uri] = len(xRefIndex) + 1
          property = []
          if propertyTypes[uri] == 'datatype-property':
             property = session.get_resource(uri,DatatypeProperties)
@@ -430,6 +451,7 @@ for category in categories.keys():
          qname = property.subject.split('#')
          cross.write('  <div id="'+qname[1]+'" class="entity">\n')
          cross.write('    <h3>\n')
+         cross.write('      <span class="xref" id="eg'+str(xRefIndex[uri])+'">('+str(xRefIndex[uri])+')</span>\n')
          cross.write('      Property: <a href="#'+qname[1]+'"><span class="dotted" title="'+uri+'">'+PREFIX+':'+qname[1]+'</span></a>')
          if ns.OWL['DatatypeProperty'] in property.rdf_type:
             cross.write(' <sup class="type-dp" title="data property">dp</sup>\n')
@@ -477,11 +499,13 @@ for category in categories.keys():
 
          # Example taken from http://dvcs.w3.org/hg/prov/file/tip/examples/eg-24-prov-o-html-examples/rdf/create/rdf
          cross.write('\n')
-         cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
-         cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
+         # 11th-hour cross.write('    <div about="#example-for-property-'+qname[1]+'" typeof="prov:Entity" class="example">\n')
+         cross.write('    <div about="#example-for-property-'+qname[1]+'"class="example">\n')
+         # 11th-hour cross.write('      <span rel="dcterms:subject" resource="'+property.subject+'"></span>\n')
          cross.write('      <strong class="crossreference">Example</strong>\n')
-         cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'property_'+qname[1]+'.ttl"\n')
-         cross.write('           property="prov:value">')
+         # 11th-hour cross.write('      <pre rel="prov:wasQuotedFrom" resource="'+EXAMPLE_BASE_URL+'property_'+qname[1]+'.ttl"\n')
+         # 11th-hour cross.write('           property="prov:value">')
+         cross.write('      <pre>')
          cross.write('{% escape %}{% include "'+EXAMPLE_BASE_LOCAL+'property_'+qname[1]+'.ttl"%}{% endescape %}</pre>\n')
          cross.write('    </div>\n')
          cross.write('\n')
@@ -695,8 +719,8 @@ for category in categories.keys():
                dmLink = property.prov_sharesDefinitionWith.first.prov_dm.first
             elif qualifiedClass:
                dmLink = qualifiedClass.prov_dm.first
-            else:
-               print property.subject + ' has no dmLink' 
+            #else:
+            #   print property.subject + ' has no dmLink' 
             if dmLink:
                qname = dmLink.split('#')
                #print 'DM Term ' + qname[1]
@@ -735,21 +759,46 @@ for category in categories.keys():
          cross.write('\n')
       cross.write('</div>\n')        # e.g. <div id="prov-starting-point-owl-classes-crossreference"
 
-      tableCount = { 'expanded' : '2', 'starting-point' : '1', 'qualified' : '3', 'access-and-query' : '4' }
+      # There is one table in the document before the qualified form tables.
+      tableCount = { 'starting-point' : '2', 'expanded' : '3', 'qualified' : '4' }
       n = ''
       if category.lower()[0] in ['a','e','i,','o','u']:
          n = 'n'
       quals.write('<table class="qualified-forms">\n')
-      quals.write('  <caption><a href="#qualified-forms-'+category+'">Table '+tableCount[category]+'</a>: Qualification Property and Influence Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
+      quals.write('  <caption><a href="#qualified-forms-'+category+'">Table '+tableCount[category]+'</a>: Qualification Property and Qualified Influence Class used to qualify a'+n+' '+category.capitalize()+' Property.</caption>\n')
       quals.write('  <tr>\n')
       qname = property.subject.split('#')
       quals.write('    <th><span title="Influenced Class">Influenced Class</span></th>\n')
       quals.write('    <th><span title="Unqualified Influence">Unqualified Influence</span></th>\n')
+      quals.write('    <th><span title="Influencing Class">Influencing Class</span></th>\n')
       quals.write('    <th><span title="Qualification Property">Qualification Property</span></th>\n')
       quals.write('    <th><span title="Qualified Influence">Qualified Influence</span></th>\n')
       quals.write('    <th><span title="Influencer Property">Influencer Property</span></th>\n')
-      quals.write('    <th><span title="Influencing Class">Influencing Class</span></th>\n')
       quals.write('  </tr>\n')
+      if category == 'expanded': # Hard coded for super class.
+         quals.write('  <tr>\n')
+
+         quals.write('    <td style="text-align: center">\n')
+         quals.write('        <a title="'+PREFIX+'Entity"   href="#Entity"   class="owlclass">'+PREFIX+':Entity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Activity" href="#Activity" class="owlclass">'+PREFIX+':Activity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Agent"    href="#Agent"    class="owlclass">'+PREFIX+':Agent</a>')
+         quals.write('    </td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'wasInfluencedBy" href="#wasInfluencedBy" class="owlproperty">'+PREFIX+':wasInfluencedBy</a></td>\n')
+
+         quals.write('    <td style="text-align: center">\n')
+         quals.write('        <a title="'+PREFIX+'Entity"   href="#Entity"   class="owlclass">'+PREFIX+':Entity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Activity" href="#Activity" class="owlclass">'+PREFIX+':Activity</a> or\n')
+         quals.write('        <a title="'+PREFIX+'Agent"    href="#Agent"    class="owlclass">'+PREFIX+':Agent</a>')
+         quals.write('    </td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'qualifiedInfluence" href="#qualifiedInfluence" class="owlproperty">'+PREFIX+':qualifiedInfluence</a></td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'Influence" href="#Influence" class="owlclass">'+PREFIX+':Influence</a></td>\n')
+
+         quals.write('    <td><a title="'+PREFIX+'influencer" href="#influencer" class="owlproperty">'+PREFIX+':influencer</a></td>\n')
+
+         quals.write('  </tr>\n')
       for uri in ordered['properties']:
          #print 'qual table ' + uri
          property = []
@@ -767,32 +816,38 @@ for category in categories.keys():
                   print qualified + ' is not defined'
                elif ns.OWL['Class'] in qualified.rdf_type:
                   qualClass = qualified                           # e.g. http://www.w3.org/ns/prov#Responsibility
+                  #print '   qual class: ' + qualClass.subject
                   for super in qualClass.rdfs_subClassOf:
                      qname = super.subject.split('#')
-                     if   ( qname[1]  == 'EntityInfluence' ):
+                     if     qname[1] in ('EntityInfluence', 'Derivation'):
                         objectProp = 'entity' 
-                     elif ( qname[1]  == 'ActivityInfluence' ):
+                     elif   qname[1]  == 'ActivityInfluence':
                         objectProp = 'activity' 
-                     elif ( qname[1]  == 'AgentInfluence' ):
+                     elif   qname[1]  == 'AgentInfluence':
                         objectProp = 'agent' 
-                     elif ( qname[1]  == 'CollectionInfluence' ):
+                     elif   qname[1]  == 'CollectionInfluence':
                         objectProp = 'collection' 
-                     elif ( qname[1]  == 'DictionaryInfluence' ):
+                     elif   qname[1]  == 'DictionaryInfluence':
                         objectProp = 'collection' 
                else:
                   if "qualified" in qualified.subject:
-                     qualProp  = qualified                           # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
+                     #print '   qual prop: ' + qualified.subject
+                     qualProp = qualified                         # e.g. http://www.w3.org/ns/prov#qualifiedResponsibility
                   else:
+                     #print '   does not contain "qualified": ' + qualified.subject
                      qualProp = 'no' # Avoiding prov:startedAtTime, prov:atTime, prov:Start, null
             if qualProp != 'no' and qualClass != 'no' and objectProp != 'no':
+               #print property.subject + ' gets qualified'
+
                quals.write('  <tr>\n')
 
-               #print property.subject + ' gets qualified'
                qname = property.rdfs_domain.first.subject.split('#')
                quals.write('    <td><a title="'+property.rdfs_domain.first.subject+'" href="#'+qname[1]+'" class="owlclass">'+PREFIX+':'+qname[1]+'</a></td>\n')
 
                qname = property.subject.split('#')
                quals.write('    <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+
+               quals.write('    <td><a title="'+qname[0]+'#'+objectProp.capitalize()+'" href="#'+objectProp.capitalize()+'" class="owlclass">'+PREFIX+':'+objectProp.capitalize()+'</a></td>\n')
 
                qname = qualProp.subject.split('#')
                quals.write('    <td><a title="'+qualProp.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
@@ -802,8 +857,9 @@ for category in categories.keys():
 
                quals.write('    <td><a title="'+qname[0]+'#'+objectProp+'" href="#'+objectProp+'" class="owlproperty">'+PREFIX+':'+objectProp+'</a></td>\n')
 
-               quals.write('    <td><a title="'+qname[0]+'#'+objectProp.capitalize()+'" href="#'+objectProp.capitalize()+'" class="owlclass">'+PREFIX+':'+objectProp.capitalize()+'</a></td>\n')
                quals.write('  </tr>\n')
+            #else:
+               #print '   (not qualifiable)'
       quals.write('</table>\n')
 
       glance.close()
@@ -857,10 +913,13 @@ if rdfa:
       qname = property.subject.split('#')
       if property.prov_inverse:
          inverses.write('  <span rel="prov:member">\n')
-         inverses.write('    <tr about="#inverse-of-'+qname[1]+'" typeof="prov:KeyValuePair">\n')
-         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+         # 11th-hour inverses.write('    <tr about="#inverse-of-'+qname[1]+'" typeof="prov:KeyValuePair">\n')
+         inverses.write('    <tr about="#inverse-of-'+qname[1]+'">\n')
+         # 11th-hour inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
+         inverses.write('      <td><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
                        #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
-         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+         # 11th-hour inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+         inverses.write('      <td>prov:'+property.prov_inverse.first+'</td>\n')
          inverses.write('    </tr>\n')
          inverses.write('  </span>\n')
    inverses.write('</table>\n')
@@ -949,12 +1008,35 @@ else:
    inverses.write('</div>\n')
 inverses.close()
 
+xRefs = open('xrefs.html', 'w')
+xRefSorted = xRefIndex.keys()
+xRefSorted.sort(key=lambda s: s.lower())
+xRefs.write('<div>\n')
+xRefs.write('  <table>\n')
+xRefs.write('    <caption id="xref-table"><a href="#cross-reference-index">Table 4</a>: Term Index.</caption> \n')
+xRefs.write('    <tr>\n')
+xRefs.write('      <th>PROV-O Term</th>\n')
+xRefs.write('      <th>Position within Cross Reference</th>\n')
+xRefs.write('    </tr>\n')
+for term in xRefSorted:
+   qname = term.split('#')
+   #print term + ' ' + str(xRefIndex[term])
+   xRefs.write('    <tr>\n')
+   xRefs.write('      <td><a href="#'+qname[1]+'">'+qname[1]+'</a></td>\n')
+   xRefs.write('      <td><a href="#'+qname[1]+'">Entry '+str(xRefIndex[term])+'</a></td>\n')
+   xRefs.write('    </tr>\n')
+xRefs.write('  </table>\n')
+xRefs.write('</div>\n')
+xRefs.close()
+
 inversesName = 'inverses.ttl'
 termsName    = 'terms.txt'
 inverses  = open(inversesName, 'w')
 terms     = open(termsName, 'w')
 
 for class_uri in all_ordered['classes']:
+   # Mix back into the OWL file after Protege has it's way with it:
+   # <owl:Ontology rdf:about="http://www.w3.org/ns/prov#"><owl:Ontology>
    owlClass = session.get_resource(class_uri,Classes)
    if len(owlClass.rdfs_isDefinedBy) is not 1 or str(owlClass.rdfs_isDefinedBy.first.subject) != 'http://www.w3.org/ns/prov#':
       print 'WARNING: ' + owlClass.subject + ' does not have correct rdfs:isDefinedBy ' + str(len(owlClass.rdfs_isDefinedBy))  #+ ' ' + owlClass.rdfs_isDefinedBy.first.subject
@@ -967,11 +1049,13 @@ inverses.write('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .\n')
 inverses.write('@prefix owl:  <http://www.w3.org/2002/07/owl#> .\n')
 inverses.write('@prefix prov: <http://www.w3.org/ns/prov#> .\n')
 inverses.write('\n')
-inverses.write('<> a owl:Ontology;\n')
-inverses.write('   prov:wasDerivedFrom <http://www.w3.org/TR/prov-o/prov.owl>;\n')
-inverses.write('   owl:imports         <http://www.w3.org/TR/prov-o/prov.owl>;\n')
-inverses.write('   rdfs:seeAlso        <http://www.w3.org/TR/prov-o/#names-of-inverse-properties>;\n')
-inverses.write('   owl:versionIRI      <http://www.w3.org/TR/2012/WD-prov-o-2012MMDD/inverses.owl> .\n')
+inverses.write('<http://www.w3.org/ns/prov-o-inverses#> a owl:Ontology;\n')
+inverses.write('   owl:versionIRI        <http://www.w3.org/ns/prov-o-inverses-2012MMDD>;\n')
+inverses.write('   prov:wasRevisionOf    <http://www.w3.org/ns/prov-o-inverses-2012mmdd>;\n')
+inverses.write('   prov:specializationOf <http://www.w3.org/ns/prov-o-inverses>;\n')
+inverses.write('   prov:wasDerivedFrom   <http://www.w3.org/ns/prov-o-2012MMDD>;\n')
+inverses.write('   owl:imports           <http://www.w3.org/ns/prov-o#>;\n')
+inverses.write('   rdfs:seeAlso          <http://www.w3.org/TR/prov-o/#names-of-inverse-properties> .\n')
 inverses.write('\n')
 for property_uri in all_ordered['objectproperties']:
    property = session.get_resource(property_uri,ObjectProperties)
@@ -981,11 +1065,8 @@ for property_uri in all_ordered['objectproperties']:
       inverses.write('prov:'+property.prov_inverse.first+'\n')
       inverses.write('   rdfs:label       "'+property.prov_inverse.first+'";\n')
       inverses.write('   owl:inverseOf    prov:'+qname[1]+';\n')
-      inverses.write('   rdfs:isDefinedBy <http://www.w3.org/TR/prov-o/inverses.owl> .\n\n')
-      inverses.write('prov:'+qname[1] + ' rdfs:isDefinedBy <http://www.w3.org/ns/prov#> .\n\n\n')
-#         inverses.write('      <td property="prov:pairKey" content="'+property.subject+'"><a title="'+property.subject+'" href="#'+qname[1]+'" class="owlproperty">'+PREFIX+':'+qname[1]+'</a></td>\n')
-#                       #       <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="wasQuotedBy">prov:wasQuotedBy</span></td>
-#         inverses.write('      <td rel="prov:pairValue"><span typeof="prov:Entity" property="prov:value" content="'+property.prov_inverse.first+'">prov:'+property.prov_inverse.first+'</span></td>\n')
+      inverses.write('   rdfs:isDefinedBy <http://www.w3.org/ns/prov-o-inverses#> .\n\n')
+      inverses.write('prov:'+qname[1] + ' rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> .\n\n\n')
    elif qname[1] is not 'topObjectProperty':
       print 'WARNING: ' + property.subject + ' does not have an inverse'
 

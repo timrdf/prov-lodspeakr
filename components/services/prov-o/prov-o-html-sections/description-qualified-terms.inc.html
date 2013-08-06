@@ -1,25 +1,31 @@
 <!-- incorporate https://dvcs.w3.org/hg/prov/rev/e3ecc51f4598 -->
      <section id="description-qualified-terms">
        <h3>Qualified Terms</h3>
-       <p>The Qualified Terms category is for users who wish to provide further details about the provenance-related influence among
-         Entities, Activities, and Agents.  The terms in this category are the result of
+
+       <p>The Qualified Terms category is the result of
          applying the <strong>Qualification Pattern</strong> [[LD-Patterns-QR]] to the simple (unqualified)
          relations available in the <a href="#prov-starting-point-owl-terms-at-a-glance">Starting Point</a> and 
          <a href="#prov-expanded-owl-terms-at-a-glance">Expanded</a> categories.  
-      The Qualification Pattern consists of restating the unqualified
-         relation by using an intermediate class that represents the influence between two resources. 
-      This new instance, in turn, can be annotated with additional descriptions about the influence relationship between the two resources cited. 
-      The following two tables list the influence relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. 
+         The terms in this category are for users who wish to provide further details about the provenance-related influence among
+         Entities, Activities, and Agents.
+       </p>
 
-      For example, the second row of the first table indicates that to elaborate how an <span class="repeated">prov:Activity</span>
-      <span class="repeated">prov:used</span> a particular <span class="repeated">prov:Entity</span>, one creates an instance of <span class="repeated">prov:Usage</span>.
-      While the <span class="repeated">prov:Usage</span> cites the influencing entity with the <span class="repeated">prov:entity</span> property,
-      the influenced <span class="repeated">prov:Activity</span> cites the <span class="repeated">prov:Usage</span> with the property <span class="repeated">prov:qualifiedUsage</span>.
-      This structure is illustrated in <a href="#qualified-terms-figure">Figure 4a</a> below.
-      </p>
+       <p>The Qualification Pattern restates an unqualified influence 
+         relation by using an intermediate class that represents the influence between two resources. 
+         This new instance, in turn, can be annotated with additional descriptions of the influence that one resource had upon another.
+         The following two tables list the influence relations that can be qualified using the Qualification Pattern, along with the properties used to qualify them. 
+
+         For example, the second row of the first table indicates that to elaborate how an <span class="repeated">prov:Activity</span>
+         <span class="repeated">prov:used</span> a particular <span class="repeated">prov:Entity</span>, one creates an instance of <span class="repeated">prov:Usage</span>
+         that indicates the influencing entity with the <span class="repeated">prov:entity</span> property.
+         Meanwhile, the influenced <span class="repeated">prov:Activity</span> indicates the <span class="repeated">prov:Usage</span> with the property 
+         <span class="repeated">prov:qualifiedUsage</span>.
+         The resulting structure that qualifies the an Activity's usage of an Entity is illustrated in <a href="#qualified-terms-figure">Figure 4a</a> below.
+       </p>
 
       <div id="qualified-forms-starting-point" style="padding: 10px">
-         <p>Seven <a href="#description-starting-point-terms">Starting Point</a> relations that can be further described using the Qualification Pattern.
+         <p>Seven <a href="#description-starting-point-terms">Starting Point</a> relations can be further described using the Qualification Pattern.
+            They are listed in the following normative table.
          </p>
          <div style="text-align: center">
             {% include "includes/qualifed-forms-starting-point.html" %}
@@ -27,7 +33,8 @@
       </div>
 
       <div id="qualified-forms-expanded" style="padding: 10px">
-         <p>Six <a href="#description-expanded-terms">Expanded</a> relations that can be further described using the Qualification Pattern.
+         <p>Seven <a href="#description-expanded-terms">Expanded</a> relations can be further described using the Qualification Pattern.
+            They are listed in the following normative table.
          </p>
          <div style="text-align: center">
             {% include "includes/qualifed-forms-expanded.html" %}
@@ -35,18 +42,19 @@
       </div>
 
 
-      <p>
-       The qualification classes and properties shown in the previous two tables can also be found in the <a href="#cross-reference">cross reference</a> 
+      <p>The qualification classes and properties shown in the previous two tables can also be found in the normative <a href="#cross-reference">cross reference</a> 
         in the next section of this document. 
 
          All influence classes (e.g. <span class="repeated">prov:Association</span>, <span class="repeated">prov:Usage</span>) are extensions of 
          <a class="qname" href="#Influence">prov:Influence</a> and either 
          <a class="qname" href="#EntityInfluence">prov:EntityInfluence</a>, 
          <a class="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>, or
-         <a class="qname" href="#AgentInfluence">prov:AgentInfluence</a>, which determine the property to use to cite the influencing resource (either
+         <a class="qname" href="#AgentInfluence">prov:AgentInfluence</a>, which determine the property used to cite the influencing resource (either
          <a class="qname" href="#entity">prov:entity</a>,
          <a class="qname" href="#activity">prov:activity</a>, or
-         <a class="qname" href="#agent">prov:agent</a>, respectively).
+         <a class="qname" href="#agent">prov:agent</a>, respectively). 
+         Because <span class="repeated">prov:Influence</span> is a broad relation, its most specific subclasses (e.g. <span class="repeated">prov:Communication</span>, 
+         <span class="repeated">prov:Delegation</span>, <span class="repeated">prov:End</span>, <span class="repeated">prov:Revision</span>, etc.) should be used when applicable.
 
          <div id="narrative-example-qualified-1" about="#narrative-example-qualified-1" typeof="prov:Entity" class="exampleOuter" xmlns:prov="http://www.w3.org/ns/prov#">
             <p>
@@ -66,8 +74,9 @@
          </div>
 
          <p>One can find that <a class="qname" href="#wasGeneratedBy">prov:wasGeneratedBy</a> 
-            can be qualified using the qualification property <a class="qname" href='#qualifiedGeneration'>prov:qualifiedGeneration</a> 
-            and the class <a class="qname" href='#Generation'>prov:Generation</a> (a subclass of <a class ="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>). 
+            can be qualified using the qualification property <a class="qname" href='#qualifiedGeneration'>prov:qualifiedGeneration</a>,
+            the class <a class="qname" href='#Generation'>prov:Generation</a> (a subclass of <a class ="qname" href="#ActivityInfluence">prov:ActivityInfluence</a>),
+            and the property <a class="qname" href='#activity'>prov:activity</a>.
             From this, the influence relation above can be restated with the <em>qualification pattern</em> as:
          </p>
 
@@ -79,16 +88,16 @@
             :e1 
                a prov:Entity;
                prov:wasGeneratedBy      :a1;
-               prov:qualifiedGeneration :e1Gen; # Add the qualification
+               prov:qualifiedGeneration :e1Gen; # Add the qualification.
             .
-
-            :a1 a prov:Activity .
 
             :e1Gen 
                a prov:Generation;
-               prov:activity :a1;               # Cite the influencing Activity.
-               ex:foo :bar;                     # Add additional attributes about the influence relation.
+               prov:activity            :a1;    # Cite the influencing Activity.
+               ex:foo                   :bar;   # Describe the Activity :a1's influence upon the Entity :e1.
             .
+
+            :a1 a prov:Activity .
             </pre>
          </div>
 
@@ -111,7 +120,7 @@
             asserted unless it adds additional information. -->
 
       <p>In addition to the previous two tables, <a href="#qualified-terms-figure">Figure 4</a> 
-         illustrates the classes and properties needed to apply the qualification pattern to the thirteen unqualified influence relations. 
+         illustrates the classes and properties needed to apply the qualification pattern to ten of the fourteen qualifiable influence relations. 
 
          For example, while <a class="qname" href="#qualifiedUsage">prov:qualifiedUsage</a>, 
          <a class="qname" href="#Usage">prov:Usage</a>, and <a class="qname" href="#entity">prov:entity</a> are used to qualify 
@@ -119,7 +128,7 @@
    
          <a class="qname" href="#qualifiedAssociation">prov:qualifiedAssociation</a>, <a class="qname" href="#Association">prov:Association</a>, 
          and <a class="qname" href="#agent">prov:agent</a> are used to qualify <span class="repeated">prov:wasAssociatedWith</span> 
-         relations. This pattern applies to the eleven other influence relations that can be qualified.
+         relations. This pattern applies to the twelve other influence relations that can be qualified.
       </p>
 
       <p>In subfigure <strong>a</strong> the <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property and references an instance of 
@@ -158,7 +167,8 @@
             to qualify the 
             <a href="#description-starting-point-terms">starting point</a> and 
             <a href="#description-expanded-terms">expanded</a> influence relations (<strong>dotted black</strong>). <br/>
-            <a href="#Quotation">Quotation</a>, <a href="#Revision">Revision</a>, and <a href="#Source">Source</a> 
+            The diagrams in this document depict Entities as ovals, Activities as rectangles, and Agents as pentagons.
+            <a href="#Quotation">Quotation</a>, <a href="#Revision">Revision</a>, and <a href="#PrimarySource">PrimarySource</a> 
              are omitted because they are special forms of <a href="#Derivation">Derivation</a> and follow the same pattern as subfigure <strong>g</strong>.</div>
        </div>
 
@@ -174,7 +184,7 @@
          </p>
           <div class="exampleOuter">
              <div><b>Qualified Usage</b></div>
-               <p>The <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property to provide an additional description to <code>ex:illustrationActivity</code>. The instance of <span class="repeated">prov:Usage</span> cites the data used (<code>ex:aggregatedByRegions</code>) and the time the activity used it (<code>2011-07-14T03:03:03Z</code>).
+               <p>The <span class="repeated">prov:qualifiedUsage</span> property parallels the <span class="repeated">prov:used</span> property to provide an additional description to <code>:illustrationActivity</code>. The instance of <span class="repeated">prov:Usage</span> cites the data used (<code>:aggregatedByRegions</code>) and the time the activity used it (<code>2011-07-14T03:03:03Z</code>).
              </p>
                 <pre class="example">{% include "includes/eg16-journalism-qualified-usage.ttl" %}</pre>
           </div>
@@ -187,9 +197,9 @@
         <div class="exampleOuter">
            <div><b>Qualified Association</b></div>
             <p>The <span class="repeated">prov:qualifiedAssociation</span> property parallels the 
-            <span class="repeated">prov:wasAssociatedWith</span> property to provide an additional description about the <code>ex:illustrationActivity</code> that Derek influenced. 
-            The instance of <span class="repeated">prov:Association</span> cites the influencing agent (<code>ex:derek</code>) that followed the instructions (<code>ex:tutorial_blog</code>). 
-            Further, Derek served the role of illustrationist during the activity.
+            <span class="repeated">prov:wasAssociatedWith</span> property to provide an additional description about the <code>:illustrationActivity</code> that Derek influenced. 
+            The instance of <span class="repeated">prov:Association</span> cites the influencing agent (<code>:derek</code>) that followed the instructions (<code>:tutorial_blog</code>). 
+            Further, Derek served the role of <code>:illustrationist</code> during the activity.
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-association.ttl" %}</pre>
         </div>
@@ -206,7 +216,7 @@
          </p>
         <div class="exampleOuter">
            <div><b>Qualified Generation</b></div>
-            <p>The <span class="repeated">prov:qualifiedGeneration</span> property parallels the <span class="repeated">prov:wasGeneratedBy</span> property to provide an additional description to <code>ex:chart1</code>. The instance of <span class="repeated">prov:Generation</span> cites the time (2011-07-14T15:52:14Z) that the activity (<code>ex:illustrationActivity</code>) generated the chart (<code>ex:chart1</code>).
+            <p>The <span class="repeated">prov:qualifiedGeneration</span> property parallels the <span class="repeated">prov:wasGeneratedBy</span> property to provide an additional description to <code>:bar_chart</code>. The instance of <span class="repeated">prov:Generation</span> cites the time (2011-07-14T15:52:14Z) that the activity (<code>:illustrationActivity</code>) generated the chart (<code>:bar_chart</code>).
             </p>
               <pre class="example">{% include "includes/eg16-journalism-qualified-generation.ttl" %}</pre>
         </div>
@@ -218,9 +228,11 @@
          </p>
         <div class="exampleOuter">
            <div><b>Qualified Derivation</b></div>
-            <p>The <span class="repeated">prov:qualifiedDerivation</span> property parallels the <span class="repeated">prov:wasDerivedFrom</span> property to provide an additional description to <code>ex:chart1</code>. The instance of <span class="repeated">prov:Derivation</span> cites the activity (<code>ex:illustrationActivity</code>) and the Usages and Generations that the activity conduced to create the chart (<code>ex:chart1</code>).
-            </p>
-              <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
+           <p>The <span class="repeated">prov:qualifiedDerivation</span> property parallels the <span class="repeated">prov:wasDerivedFrom</span> 
+              property to provide an additional description to <code>:bar_chart</code>. The instance of <span class="repeated">prov:Derivation</span> 
+              cites the activity (<code>:illustrationActivity</code>) and the Usages and Generations that the activity conduced to create the <code>:bar_chart</code>.
+           </p>
+           <pre class="example">{% include "includes/eg16-journalism-qualified-derivation.ttl" %}</pre>
         </div>
       </div>
 
